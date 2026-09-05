@@ -1,0 +1,1108 @@
+{
+  "id": "hugo",
+  "name": "Hugo Vlad",
+  "specialty": "Attack",
+  "faction": "Mockingbird",
+  "attribute": "Ice",
+  "rarity": "S",
+  "fullName": "Hugo Vlad",
+  "displayName": "Hugo",
+  "attributeIcon": "Ice",
+  "themeColor": "#8995D6",
+  "baseStats": {
+    "hp": 7940.7,
+    "atk": 844.3,
+    "def": 616.61
+  },
+  "combatBase": {
+    "impact": 95,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 86,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "hugo_vlad-core_1-terminating_verdict",
+      "source": "core",
+      "sourceId": "hugo_vlad-core",
+      "label": "Terminating Verdict (Core Passive)",
+      "description": "When Chain Attack: Trick of Fate hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the Dark Abyss Reverb state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%. When there is 1 Stun character in your squad, Hugo's ATK increases by 300.",
+      "shortDescription": "Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%. Hugo's ATK increases by 300 with a stun agent in the squad.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.12,
+        "critDmg": 0.25,
+        "atkFlatRaw": 300
+      }
+    },
+    {
+      "id": "hugo_vlad-core_2-terminating_verdict",
+      "source": "core",
+      "sourceId": "hugo_vlad_core",
+      "label": "Terminating Verdict (Core Passive)",
+      "description": "When Chain Attack: Trick of Fate hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the Dark Abyss Reverb state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%. When there are 2 Stun characters in your squad, Hugo's ATK increases by 900.",
+      "shortDescription": "Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%. Hugo's ATK increases by 900 with two stun agents in the squad.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.12,
+        "critDmg": 0.25,
+        "atkFlatRaw": 900
+      }
+    },
+    {
+      "id": "hugo_vlad-core_3-prelude_to_finality",
+      "source": "core",
+      "sourceId": "hugo_vlad-core",
+      "label": "Prelude to Finality (Additional Ability)",
+      "description": "When another character in your squad is a Stun character or shares the same attribute: Chain Attack: Trick of Fate's DMG increases by 15%, with a further increase of 35% against normal enemies. When Totalize is triggered, the DMG dealt by the skill increases by 40%. EX Special Attack: Soul Hunter - Punishment generates an additional 20 Energy when triggering Totalize on normal enemies. The Energy generation effect can trigger once every 30s.",
+      "shortDescription": "Hugo's DMG from Chain Attack: Trick of Fate is increased by 15%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["hugo-chain_attack-trick_of_fate"],
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "hugo_vlad-core_4-prelude_to_finality",
+      "source": "core",
+      "sourceId": "hugo_vlad-core",
+      "label": "Prelude to Finality (Additional Ability)",
+      "description": "When another character in your squad is a Stun character or shares the same attribute: Chain Attack: Trick of Fate's DMG increases by 15%, with a further increase of 35% against normal enemies. When Totalize is triggered, the DMG dealt by the skill increases by 40%. EX Special Attack: Soul Hunter - Punishment generates an additional 20 Energy when triggering Totalize on normal enemies. The Energy generation effect can trigger once every 30s.",
+      "shortDescription": "Hugo's DMG from Chain Attack: Trick of Fate is further increased by 15% against normal enemies.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["hugo-chain_attack-trick_of_fate"],
+          "value": 0.35
+        }
+      ]
+    },
+    {
+      "id": "hugo_vlad-core_5-prelude_to_finality",
+      "source": "core",
+      "sourceId": "hugo_vlad-core",
+      "label": "Prelude to Finality (Additional Ability)",
+      "description": "When another character in your squad is a Stun character or shares the same attribute:\n\nChain Attack: Trick of Fate's DMG increases by 15%, with a further increase of 35% against normal enemies. When Totalize is triggered, the DMG dealt by the skill increases by 40%. EX Special Attack: Soul Hunter - Punishment generates an additional 20 Energy when triggering Totalize on normal enemies. The Energy generation effect can trigger once every 30s.",
+      "shortDescription": "Hugo's DMG from Totalize is increased by 40%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "hugo-ex_special_attack-soul_hunter_punishment",
+          "hitName": "Totalize Finishing Move",
+          "value": 0.4
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "hugo-ultimate-blaspheme",
+          "hitName": "Totalize Finishing Move",
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "hugo_vlad-mindscape_1-child_of_hatred",
+      "source": "mindscape",
+      "sourceId": "hugo_vlad-mindscape_1",
+      "label": "Child of Hatred (Mindscape Cinema N°1)",
+      "description": "When triggering the Totalize effect in the Dark Abyss Reverb state, the skill's CRIT Rate is increased by an additional 12%, and CRIT DMG by 30%.",
+      "shortDescription": "Hugo's Totalize CRIT DMG is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitStatExclusive",
+          "stat": "critDmg",
+          "value": 0.3,
+          "appliesTo": [
+            "hugo-ex_special_attack-soul_hunter_punishment",
+            "hugo-ultimate-blaspheme"
+          ],
+          "hitName": "Totalize Finishing Move"
+        }
+      ]
+    },
+    {
+      "id": "hugo_vlad-mindscape_2-child_of_hatred",
+      "source": "mindscape",
+      "sourceId": "hugo_vlad-mindscape_2",
+      "label": "Child of Hatred (Mindscape Cinema N°2)",
+      "description": "When Ultimate: Blaspheme triggers Totalize, it will not end the enemy's Stunned state. Additionally, when Totalize is triggered, the skill will ignore 15% of the enemy's DEF.",
+      "shortDescription": "Hugo's Totalize DMG ignores 15% of the target's DEF.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitStatExclusive",
+          "stat": "defShred",
+          "value": 0.15,
+          "appliesTo": [
+            "hugo-ex_special_attack-soul_hunter_punishment",
+            "hugo-ultimate-blaspheme"
+          ],
+          "hitName": "Totalize Finishing Move"
+        }
+      ]
+    },
+    {
+      "id": "hugo_vlad-mindscape_4-dramatic_theory",
+      "source": "mindscape",
+      "sourceId": "hugo_vlad-mindscape_4",
+      "label": "Dramatic Theory (Mindscape Cinema N°4)",
+      "description": "After a Charged Shot hits an enemy, Hugo's attacks against that target will ignore 12% of that target's Ice RES for 15s, repeated triggers reset the duration.",
+      "shortDescription": "Hugo's attacks ignore 12% of the target's Ice RES.",
+      "target": "self",
+      "flat": {
+        "iceResShred": 0.12
+      }
+    },
+    {
+      "id": "hugo_vlad-mindscape_6-crown_of_thorns",
+      "source": "mindscape",
+      "sourceId": "hugo_vlad-mindscape_6",
+      "label": "Crown of Thorns (Mindscape Cinema N°6)",
+      "description": "All shooting attacks that hit enemies trigger the Dark Abyss Reverb state, lasting up to 6s, and repeated triggers reset the duration. Additionally, whenever any skill triggers the Totalize effect, that DMG is further increased by 60%. The Finishing Move of EX Special Attack: Soul Hunter - Punishment also triggers the Totalize effect when hitting an enemy that isn't Stunned, boosting the DMG multiplier of the Finishing Move by a fixed 1,000 %.",
+      "shortDescription": "Hugo's DMG from Totalize is further increased by 60%. Hugo's increased multipliers are available in the Damage Calculator.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "hugo-ex_special_attack-soul_hunter_punishment",
+          "hitName": "Totalize Finishing Move",
+          "value": 0.6
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "hugo-ultimate-blaspheme",
+          "hitName": "Totalize Finishing Move",
+          "value": 0.6
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "hugo-basic_attack-dark_abyss_quartet",
+        "name": "Dark Abyss Quartet (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to four attacks forward, dealing Physical DMG and Ice DMG. The fourth attack is a shot. During this attack, hold [BASIC] to charge and perform a charged shot. Anti-Interrupt level is increased during the fourth attack, and received damage reduced by 40%.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Slash DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Shot DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Charged Shot DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [43.1, 74.1, 169.6, 149.1, 58.6, 118]
+          },
+          {
+            "level": 2,
+            "multipliers": [47.1, 80.9, 185.1, 162.7, 64, 128.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [51.1, 87.7, 200.6, 176.3, 69.4, 139.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [55.1, 94.5, 216.1, 189.9, 74.8, 150.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [59.1, 101.3, 231.6, 203.5, 80.2, 161.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [63.1, 108.1, 247.1, 217.1, 85.6, 172]
+          },
+          {
+            "level": 7,
+            "multipliers": [67.1, 114.9, 262.6, 230.7, 91, 182.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [71.1, 121.7, 278.1, 244.3, 96.4, 193.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [75.1, 128.5, 293.6, 257.9, 101.8, 204.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [79.1, 135.3, 309.1, 271.5, 107.2, 215.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [83.1, 142.1, 324.6, 285.1, 112.6, 226]
+          },
+          {
+            "level": 12,
+            "multipliers": [87.1, 148.9, 340.1, 298.7, 118, 236.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [91.1, 155.7, 355.6, 312.3, 123.4, 247.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [95.1, 162.5, 371.1, 325.9, 128.8, 258.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [99.1, 169.3, 386.6, 339.5, 134.2, 269.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [103.1, 176.1, 402.1, 353.1, 139.6, 280]
+          }
+        ]
+      },
+      {
+        "id": "hugo-basic_attack-dark_abyss_concerto",
+        "name": "Dark Abyss Concerto (Basic Attack)",
+        "description": "After the 4th hit of /bBasic Attack: Dark Abyss Quartet//b, the shot of /bDodge Counter: Phantasm - Slash//b, or the shot of /bQuick Assist: Elegy//b, press or hold [BASIC] to activate:\n\nThrow the scythe forward to perform a slash, followed by a shot, dealing Ice DMG. During the shot, hold [BASIC] to charge and perform a charged shot. Anti-Interrupt level is increased while using this skill, and received damage reduced by 40%.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Slash DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Shot DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Charged Shot DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [143.4, 86.7, 170.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [156.5, 94.6, 186.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [169.6, 102.5, 201.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [182.7, 110.4, 217.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [195.8, 118.3, 233]
+          },
+          {
+            "level": 6,
+            "multipliers": [208.9, 126.2, 248.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [222, 134.1, 264.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [235.1, 142, 279.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [248.2, 149.9, 295.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [261.3, 157.8, 311]
+          },
+          {
+            "level": 11,
+            "multipliers": [274.4, 165.7, 326.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [287.5, 173.6, 342.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [300.6, 181.5, 357.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [313.7, 189.4, 373.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [326.8, 197.3, 389]
+          },
+          {
+            "level": 16,
+            "multipliers": [339.9, 205.2, 404.6]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "hugo-dash_attack-phantasm_shatter",
+        "name": "Phantasm - Shatter (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunch a dashing attack at enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [93.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [102]
+          },
+          {
+            "level": 3,
+            "multipliers": [110.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [119]
+          },
+          {
+            "level": 5,
+            "multipliers": [127.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [136]
+          },
+          {
+            "level": 7,
+            "multipliers": [144.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [153]
+          },
+          {
+            "level": 9,
+            "multipliers": [161.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [170]
+          },
+          {
+            "level": 11,
+            "multipliers": [178.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [187]
+          },
+          {
+            "level": 13,
+            "multipliers": [195.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [204]
+          },
+          {
+            "level": 15,
+            "multipliers": [212.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [221]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "hugo-dodge_counter-phantasm_slash",
+        "name": "Phantasm - Slash (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPerforms a series of attacks on enemies in front, dealing Ice DMG. During the skill, hold [BASIC] to launch a shot. During the shot, hold [BASIC] to charge and perform a charged shot. The shot is considered a /bBasic Attack//b, with its DMG treated as /bBasic Attack//b DMG.\n\nAfter the skill is used, it can be directly followed up with the 4th hit of /bBasic Attack: Dark Abyss Quartet//b. During the skill's ranged phase, Anti-Interrupt Level is increased, and received damage is reduced by 40%. Invulnerable during the slashes and ranged retreat of the skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "ALT Shot DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "ALT Charged Shot DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [245.9, 162.1, 212.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [268.3, 176.9, 231.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [290.7, 191.7, 250.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [313.1, 206.5, 270]
+          },
+          {
+            "level": 5,
+            "multipliers": [335.5, 221.3, 289.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [357.9, 236.1, 308.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [380.3, 250.9, 327.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [402.7, 265.7, 347.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [425.1, 280.5, 366.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [447.5, 295.3, 385.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [469.9, 310.1, 405.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [492.3, 324.9, 424.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [514.7, 339.7, 443.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [537.1, 354.5, 463]
+          },
+          {
+            "level": 15,
+            "multipliers": [559.5, 369.3, 482.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [581.9, 384.1, 501.6]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "hugo-quick_assist-elegy",
+        "name": "Elegy (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nPerforms a series of attacks on enemies in front, dealing Ice DMG. During the skill, hold [BASIC] to launch a shot. During the shot, hold [BASIC] to charge and perform a charged shot. The shot is considered a /bBasic Attack//b, with its DMG treated as /bBasic Attack//b DMG.\n\nAfter the skill is used, it can be directly followed up with the 4th hit of /bBasic Attack: Dark Abyss Quartet//b. During the skill's ranged phase, Anti-Interrupt Level is increased, and received damage is reduced by 40%. Invulnerable during the slashes and ranged retreat of the skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "ALT Shot DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "ALT Charged Shot DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [104.5, 124.7, 163.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [114, 136.1, 178.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [123.5, 147.5, 193]
+          },
+          {
+            "level": 4,
+            "multipliers": [133, 158.9, 207.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [142.5, 170.3, 222.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [152, 181.7, 237.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [161.5, 193.1, 252.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [171, 204.5, 267.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [180.5, 215.9, 282.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [190, 227.3, 297.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [199.5, 238.7, 312.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [209, 250.1, 327.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [218.5, 261.5, 342]
+          },
+          {
+            "level": 14,
+            "multipliers": [228, 272.9, 356.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [237.5, 284.3, 371.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [247, 295.7, 386.7]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "hugo-assist_follow_up-ace_reversal",
+        "name": "Ace Reversal (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nDash forward and perform two slashes, dealing Ice DMG. After the skill is used, it can be directly followed up with the 4th hit of /bBasic Attack: Dark Abyss Quartet//b. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [291.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [318.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [344.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [371.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [398.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [424.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [451.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [477.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [504.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [531.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [557.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [584.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [610.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [637.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [664.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [690.7]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "hugo-special_attack-soul_hunter_judgment",
+        "name": "Soul Hunter - Judgment (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nSpins the scythe and then unleashes a forward slash, dealing Ice DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [85.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [93.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [100.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [108.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [116.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [124.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [132.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [139.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [147.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [155.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [163.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [171.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [178.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [186.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [194.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [202.3]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "hugo-ex_special_attack-soul_hunter_punishment",
+        "name": "Soul Hunter - Punishment (EX Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\npins the scythe and then unleashes a forward slash, dealing Ice DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [373.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [407.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [441.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [475.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [509.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [543.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [577.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [611.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [645.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [679.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [713.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [747.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [781.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [815.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [849.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [883.2]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "hugo-chain_attack-trick_of_fate",
+        "name": "Trick of Fate (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nDash forward to perform a slash across a large area, then launch a shot, dealing massive Ice DMG. The shot activated by this skill is considered a charged shot. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [701.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [764.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [828.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [892.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [956.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [1020.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [1083.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [1147.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [1211.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [1275.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1339.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1402.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1466.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1530.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1594.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [1658.1]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "hugo-ultimate-blaspheme",
+        "name": "Blaspheme (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nThrows the scythe in a powerful spinning attack, then launches a /bFinishing Move//b, dealing massive Ice DMG. This skill is not counted as a heavy attack. After the skill is used, it can be directly followed up with the 4th hit of /bBasic Attack: Dark Abyss Quartet//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Slash DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1527.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [1666]
+          },
+          {
+            "level": 3,
+            "multipliers": [1804.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [1943.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [2082.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [2221.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [2360.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [2499.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [2638.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [2777.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [2916.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [3055]
+          },
+          {
+            "level": 13,
+            "multipliers": [3193.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [3332.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [3471.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [3610.6]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

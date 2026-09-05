@@ -1,0 +1,1264 @@
+{
+  "id": "harumasa",
+  "name": "Asaba Harumasa",
+  "specialty": "Attack",
+  "faction": "Hollow Special Operations Section 6",
+  "attribute": "Electric",
+  "rarity": "S",
+  "fullName": "Asaba Harumasa",
+  "displayName": "Harumasa",
+  "attributeIcon": "Electric",
+  "themeColor": "#DEBD52",
+  "baseStats": {
+    "hp": 7405.7,
+    "atk": 840.59,
+    "def": 600.59
+  },
+  "combatBase": {
+    "impact": 90,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 95,
+    "anomalyMastery": 80,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "asaba_harumuasa-core-day_break",
+      "source": "core",
+      "sourceId": "asaba_harumasa-core",
+      "label": "Day Break (Core Passive)",
+      "description": "The CRIT Rate of Dash Attack: Hiten no Tsuru - Slash increases by 25%, and when Harumasa's Dash Attack: Hiten no Tsuru - Slash triggers a critical hit against an enemy, he gains 1 stack of Gleaming Edge, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of Gleaming Edge increases the CRIT DMG of Dash Attack: Hiten no Tsuru - Slash by 12%",
+      "shortDescription": "Increases Harumasa's CRIT DMG from Dash Attack: Hiten no Tsuru - Slash by 12%, stacking up to 3 times.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": ["harumasa-dash_attack-hiten_no_tsuru_slash"],
+          "value": 0.12
+        }
+      ],
+      "maxStacks": 3
+    },
+    {
+      "id": "asaba_harumuasa-core-overclock",
+      "source": "core",
+      "sourceId": "asaba_harumasa-core",
+      "label": "Overclock (Aditional Ability)",
+      "description": "When another character in your squad is a Stun or Anomaly character:\n\nWhen Harumasa's attacks hit Stunned enemies or enemies under Attribute Anomaly, his DMG increases by 40%. When Harumasa's Falling Feather hits Stunned enemies or enemies under Attribute Anomaly, it will apply 2 stacks of Electro Prison to the target.",
+      "shortDescription": "Harumasa's DMG is increased by 40% against enemies that are stunned or under an attribute anomaly.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "asaba_harumasa-mindscape_1-high_spirit",
+      "source": "mindscape",
+      "sourceId": "asaba_harumasa-mindscape_1",
+      "label": "High Spirit (Mindscape Cinema N°1)",
+      "description": "The maximum stack limit of Electro Prison from Basic Attack: Ha-Oto no Ya increases to 14 stacks. When an Electro Quiver is triggered, 2 consecutive Ha-Oto no Ya will be fired at the target.",
+      "shortDescription": "This mindscape cinema does not affect Harumasa's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "asaba_harumasa-mindscape_2-languish",
+      "source": "mindscape",
+      "sourceId": "asaba_harumasa-mindscape_2",
+      "label": "Languish (Mindscape Cinema N°2)",
+      "description": "When using an Chain Attack or Ultimate, Harumasa gains 7 stacks of Electro Blitz, up to a max of 7 stacks. While possessing Electro Blitz, the DMG of Dash Attack: Hiten no Tsuru - Slash increases by 50%. Consume 1 stack of Electro Blitz once Dash Attack: Hiten no Tsuru - Slash ends.",
+      "shortDescription": "Increases Harumasa's DMG from Dash Attack: Hiten no Tsuru - Slash by 50%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["harumasa-dash_attack-hiten_no_tsuru_slash"],
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "asaba_harumasa-mindscape_4-ocasionally_motivated",
+      "source": "mindscape",
+      "sourceId": "asaba_harumasa-mindscape_4",
+      "label": "Occasionally Motivated (Mindscape Cinema N°4)",
+      "description": "Electro Prison now lasts for 20s. When Dash Attack: Hiten no Tsuru - Slash hits enemies, Harumasa gains 30 Decibels once per use of this skill. Upon activating an Ultimate, apply the maximum stacks of Electro Prison to all on-field enemies.",
+      "shortDescription": "This mindscape cinema does not affect Harumasa's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "asaba_harumasa-mindscape_6-tacit_understanding",
+      "source": "mindscape",
+      "sourceId": "asaba_harumasa-mindscape_6",
+      "label": "Tacit Understanding (Mindscape Cinema N°6)",
+      "description": "After Ha-Oto no Ya hits Stunned enemies or enemies under Attribute Anomalies, Harumasa will ignore 15% of the target's Electric RES for 12s. Every 12 times an enemy is hit by Ha-Oto no Ya, trigger an extra electromagnetic explosion, dealing 1,500% of Harumasa's ATK to the target as Electric DMG.",
+      "shortDescription": "Harumasa ignores 15% of the target's Electric RES for 12s. Ha-Oto no Ya's additional damage is available in the Damage Calculator.",
+      "target": "self",
+      "flat": {
+        "electricResShred": 0.15
+      }
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "harumasa-basic_attack-cloud_piercer",
+        "name": "Cloud Piercer (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunch up to five piercing attacks ahead, dealing Physical DMG and Electric DMG. When the 5th hit of the /bBasic Attack//b hits an enemy, it generates 2 /bElectro Quivers//b. After activating a /bChain Attack//b, the next time Harumasa activates the 5th hit of /bBasic Attack: Cloud Piercer//b and hits an enemy with it, it generates 6 /bElectro Quivers//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [42.4, 39.8, 70.9, 90.1, 132.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [46.3, 43.5, 77.4, 98.3, 145]
+          },
+          {
+            "level": 3,
+            "multipliers": [50.2, 47.2, 83.9, 106.5, 157.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [54.1, 50.9, 90.4, 114.7, 169.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [58, 54.6, 96.9, 122.9, 181.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [61.9, 58.3, 103.4, 131.1, 193.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [65.8, 62, 109.9, 139.3, 205.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [69.7, 65.7, 116.4, 147.5, 217.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [73.6, 69.4, 122.9, 155.7, 229.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [77.5, 73.1, 129.4, 163.9, 241.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [81.4, 76.8, 135.9, 172.1, 253.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [85.3, 80.5, 142.4, 180.3, 266]
+          },
+          {
+            "level": 13,
+            "multipliers": [89.2, 84.2, 148.9, 188.5, 278.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [93.1, 87.9, 155.4, 196.7, 290.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [97, 91.6, 161.9, 204.9, 302.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [100.9, 95.3, 168.4, 213.1, 314.4]
+          }
+        ]
+      },
+      {
+        "id": "harumasa-basic_attack-cloud_piercer_drift",
+        "name": "Cloud Piercer - Drift (Basic Attack)",
+        "description": "During /bBasic Attack: Cloud Piercer//b, drag the joystick and press [BASIC] to activate:\n\nShoot a ranged piercing attack and reposition towards the corresponding drag direction, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [69.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [75.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [82.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [88.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [95.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [101.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [107.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [114.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [120.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [127.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [133.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [139.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [146.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [152.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [159.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [165.5]
+          }
+        ]
+      },
+      {
+        "id": "harumasa-basic_attack-falling_feather",
+        "name": "Falling Feather (Basic Attack)",
+        "description": "After the 5th hit of /bBasic Attack: Cloud Piercer//b, a /bSpecial Attack//b, an /bEX Special Attack//b, or a /bChain Attack//b, hold [SPECIAL] to activate:\n\nImmediately shoot /bFalling Feather//b at enemies ahead, dealing Electric DMG.\n\nHold [BASIC] to aim at a target and release [BASIC] to activate:\n\nAfter drawing the bowstring and aiming, shoot /bFalling Feather//b at the target, dealing Electric DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [105.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [115]
+          },
+          {
+            "level": 3,
+            "multipliers": [124.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [134.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [143.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [153.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [163]
+          },
+          {
+            "level": 8,
+            "multipliers": [172.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [182.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [191.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [201.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [211]
+          },
+          {
+            "level": 13,
+            "multipliers": [220.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [230.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [239.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [249.4]
+          }
+        ]
+      },
+      {
+        "id": "harumasa-basic_attack-ha_oto_no_ya",
+        "name": "Ha-Oto no Ya (Basic Attack)",
+        "description": "When the 5th hit of /bBasic Attack: Cloud Piercer//b//bEX Special Attack//b//bChain Attack//b hits an enemy or the ground, it can generate 2/6/6 /bElectro Quivers//b. If there are no /bElectro Quivers//b on the field when any squad member applies an Attribute Anomaly to an enemy, generate 6 /bElectro Quivers//b. This effect can trigger once every 12s.\n\nThere can be up to 6 /bElectro Quivers//b present at a time. If there are any /bElectro Quivers//b present when Harumasa fires and hits enemies with /bFalling Feather//b, the /bElectro Quivers//b will activate and fire /bHa-Oto no Ya//b at the enemies hit by /bFalling Feather//b, dealing Electric DMG.\n\n/bHa-Oto no Ya//b will apply /bElectro Prison//b to enemies hit, stacking up to 8 times and lasting 10s, repeated triggers reset the duration. While a target has at least 2 stacks of /bElectro Prison//b, they will be /bX-Marked//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [15.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [17.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [18.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [20.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [21.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [23.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [24.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [26.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [27.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [29.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [30.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [32.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [33.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [35.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [36.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [38.4]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "harumasa-dash_attack-hiten_no_tsuru",
+        "name": "Hiten no Tsuru (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunch multiple piercing attacks ahead, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [80.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [88.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [95.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [102.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [110.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [117.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [125.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [132.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [139.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [147.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [154.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [162.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [169.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [176.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [184.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [191.7]
+          }
+        ]
+      },
+      {
+        "id": "harumasa-dash_attack-hiten_no_tsuru_slash",
+        "name": "Hiten no Tsuru - Slash (Dash Attack)",
+        "description": "While there are /bX-Marked//b enemies on the field, Harumasa will enter the /bAwakened//b state, switching /bDash Attack: Hiten no Tsuru//b for /bDash Attack: Hiten no Tsuru - Slash//b.\n\nWhile in the /bAwakened//b state, press [BASIC] during a dodge to activate:\n\nRush forwards to the closest /bX-Marked//b enemy and execute a powerful slash, dealing Electric DMG. When the slash hits the target, it consumes 2 stacks of /bElectro Prison//b. With less than 2 stacks of /bElectro Prison//b, /bX-Marked//b will be removed from the enemy. Before /bX-Marked//b is removed, repeatedly press [BASIC] to repeatedly use /bDash Attack: Hiten no Tsuru - Slash//b. While no /bX-Marked//b enemies exist on the field, Harumasa leaves the /bAwakened//b state.\n\nWhile in the /bAwakened//b state, press [BASIC] after /bBasic Attack: Falling Feather//b to quickly follow up with /bDash Attack: Hiten no Tsuru - Slash//b. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%..",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [162.3, 166.6, 189.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [177.1, 181.8, 206.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [191.9, 197, 224.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [206.7, 212.2, 241.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [221.5, 227.4, 258.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [236.3, 242.6, 276.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [251.1, 257.8, 293.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [265.9, 273, 310.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [280.7, 288.2, 328]
+          },
+          {
+            "level": 10,
+            "multipliers": [295.5, 303.4, 345.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [310.3, 318.6, 362.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [325.1, 333.8, 379.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [339.9, 349, 397.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [354.7, 364.2, 414.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [369.5, 379.4, 431.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [384.3, 394.6, 449.1]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "harumasa-dodge_counter-hidden_edge",
+        "name": "Hidden Edge (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPierces enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [219.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [239.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [259.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [279.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [299.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [319.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [339.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [359.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [379.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [399.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [419.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [439.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [459.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [479.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [499.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [519.6]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "harumasa-quick_assist-braced_bow",
+        "name": "Braced Bow (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nUnleash a piercing attack at enemies ahead, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [84.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [92]
+          },
+          {
+            "level": 3,
+            "multipliers": [99.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [107.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [115.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [122.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [130.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [138.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [145.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [153.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [161.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [169]
+          },
+          {
+            "level": 13,
+            "multipliers": [176.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [184.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [192.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [199.8]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "harumasa-assist_followup-yugamae_slash",
+        "name": "Yugamae - Slash (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleash a series of slashes at enemies ahead, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [307.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [335.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [363.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [391.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [419.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [447.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [475.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [503.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [531.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [559.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [587.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [615.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [643.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [671.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [699.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [727.1]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "harumasa-special_attack-nowhere_to_hide",
+        "name": "Nowhere to Hide (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunch an arrow forward, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [52.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [57.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [61.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [66.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [71.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [76.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [81.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [85.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [90.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [95.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [100.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [105.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [109.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [114.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [119.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [124.3]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "harumasa-ex_special_attack-nowhere_to_run",
+        "name": "Nowhere to Run (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLaunch daggers and an enhanced arrow ahead, dealing massive Electric DMG. When the enhanced arrow hits an enemy or the ground, it generates 6 /bElectro Quivers//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [449.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [490.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [531.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [572]
+          },
+          {
+            "level": 5,
+            "multipliers": [612.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [653.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [694.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [735.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [776.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [817.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [858.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [899.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [940.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [981]
+          },
+          {
+            "level": 15,
+            "multipliers": [1021.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1062.8]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "harumasa-chain_kai_hanare",
+        "name": "Kai - Hanare (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleash a piercing attack on enemies in a large area ahead then fire an enhanced arrow, dealing massive Electric DMG. When the arrow hits the ground, it generates 6 /bElectro Quivers//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [517.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [564.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [611.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [658.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [706]
+          },
+          {
+            "level": 6,
+            "multipliers": [753.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [800.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [847.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [894.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [941.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [988.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1035.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1082.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1129.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [1177]
+          },
+          {
+            "level": 16,
+            "multipliers": [1224.1]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "harumasa-ultimate_zanshin",
+        "name": "Zanshin (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleash a piercing attack on enemies in a large area ahead, dealing massive Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1953.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [2131.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [2309.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [2487]
+          },
+          {
+            "level": 5,
+            "multipliers": [2664.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [2842.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [3020.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [3197.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [3375.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [3553.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [3730.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [3908.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [4086.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [4264]
+          },
+          {
+            "level": 15,
+            "multipliers": [4441.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [4619.4]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "harumasa-mindscape-tacit_understanding",
+        "name": "Tacit Understanding (Mindscape Cinema N°6)",
+        "description": "After /bHa-Oto no Ya//b hits Stunned enemies or enemies under Attribute Anomalies, Harumasa will ignore 15% of the target's Electric RES for 12s. Every 12 times an enemy is hit by /bHa-Oto no Ya//b, trigger an extra electromagnetic explosion, dealing 1,500% of Harumasa's ATK to the target as Electric DMG.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1500]
+          }
+        ]
+      }
+    ]
+  }
+}

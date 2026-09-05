@@ -1,0 +1,232 @@
+{
+  "id": "qingming_birdcage",
+  "name": "Qingming Birdcage",
+  "rarity": "S",
+  "specialty": "Rupture",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 743,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "qingming_birdcage-cloud_flow-crit_rate",
+      "source": "wEngine",
+      "sourceId": "qingming_birdcage",
+      "label": "Cloud Flow (W-Engine Passive)",
+      "description": "CRIT Rate is increased. When the equipper launches an EX Special Attack, the character gains 1 stack of Qingming Companion effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the Qingming Companion effect increases the equipper's Ether DMG, and increases Ultimate and EX Special Attack Ether Sheer DMG.",
+      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.23 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.26 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.29 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.32 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+
+    {
+      "id": "qingming_birdcage-cloud_flow-ether_dmg",
+      "source": "wEngine",
+      "sourceId": "qingming_birdcage",
+      "label": "Cloud Flow (W-Engine Passive)",
+      "description": "CRIT Rate us increased. When the equipper launches an EX Special Attack, the character gains 1 stack of Qingming Companion effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the Qingming Companion effect increases the equipper's Ether DMG, and increases Ultimate and EX Special Attack Ether Sheer DMG",
+      "shortDescription": "Increases the equipper's Ether DMG for 15s, stacking up to 2 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ether",
+                "value": 0.08
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ether",
+                "value": 0.092
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ether",
+                "value": 0.104
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ether",
+                "value": 0.116
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ether",
+                "value": 0.128
+              }
+            ]
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+
+    {
+      "id": "qingming_birdcage-cloud_flow-ether_sheer_dmg",
+      "source": "wEngine",
+      "sourceId": "qingming_birdcage",
+      "label": "Cloud Flow (W-Engine Passive)",
+      "description": "CRIT Rate us increased. When the equipper launches an EX Special Attack, the character gains 1 stack of Qingming Companion effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the Qingming Companion effect increases the equipper's Ether DMG, and increases Ultimate and EX Special Attack Ether Sheer DMG",
+      "shortDescription": "Increases the equipper's Ether Sheer DMG from EX Special Attacks and Ultimates for 15s, stacking up to 2 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ultimate",
+                "element": "ether",
+                "value": 0.1
+              },
+
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ex",
+                "element": "ether",
+                "value": 0.1
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ultimate",
+                "element": "ether",
+                "value": 0.115
+              },
+
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ex",
+                "element": "ether",
+                "value": 0.115
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ultimate",
+                "element": "ether",
+                "value": 0.13
+              },
+
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ex",
+                "element": "ether",
+                "value": 0.13
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ultimate",
+                "element": "ether",
+                "value": 0.145
+              },
+
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ex",
+                "element": "ether",
+                "value": 0.145
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ultimate",
+                "element": "ether",
+                "value": 0.16
+              },
+
+              {
+                "type": "skillTypeElementalSheer",
+                "skillType": "ex",
+                "element": "ether",
+                "value": 0.16
+              }
+            ]
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    }
+  ]
+}

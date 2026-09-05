@@ -1,0 +1,1151 @@
+{
+  "id": "sunna",
+  "name": "Sunna",
+  "specialty": "Support",
+  "faction": "Angels of Delusion",
+  "attribute": "Physical",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Sunna",
+  "attributeIcon": "Physical",
+  "themeColor": "#E65D97",
+  "skins": [
+    {
+      "id": "default",
+      "img": "sunna.png"
+    },
+    {
+      "id": "afternoon_tea_break",
+      "img": "sunna-afternoon_tea_break.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 8477.2,
+    "atk": 675.75,
+    "def": 600.59
+  },
+  "combatBase": {
+    "impact": 98,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 95,
+    "anomalyMastery": 96,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["ATK", "Energy Regen"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "atkPercent": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "atkPercent": 0.07
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "atkPercent": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "atkPercent": 0.07
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "atkPercent": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "atkPercent": 0.07
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "atkPercent": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "sunna-ex_special_attack-ether_veil_delusion_reprise",
+      "source": "ex_special_attack",
+      "sourceId": "sunna-ex_special_attack",
+      "label": "Ether Veil: Delusion Reprise (EX Special Attack)",
+      "description": "... Before the heavy attack is executed, activates Ether Veil: Delusion Reprise. While Ether Veil: Delusion Reprise is active, all squad members gain an additional 50 ATK for 40s. Re-activating Ether Veil: Delusion Reprise will cancel the existing instance of Ether Veil: Delusion Reprise. ...",
+      "shortDescription": "All squad members' ATK is increased by 50 while Ether Veil: Delusion Reprise is active.",
+      "target": "team",
+      "flat": {
+        "atkFlatRaw": 50
+      }
+    },
+    {
+      "id": "sunna-core_1-cuteness_is_justice",
+      "source": "core",
+      "sourceId": "sunna-core",
+      "label": "Cuteness is Justice (Core Passive)",
+      "description": "Characters in the Angelic Chord-ination state gain increased ATK, equal to 30% of Sunna's initial ATK, up to a maximum of 1050 ATK. When Sunna's initial ATK reaches 3500, the ATK bonus granted to all squad members reaches its maximum...",
+      "shortDescription": "All squad members' ATK is increased based on Sunna's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 3500,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "perUnitBonus": 0.3,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 1050,
+            "perUnitBonus": 0.3
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "sunna-core_2-cuteness_is_justice",
+      "source": "core",
+      "sourceId": "sunna-core",
+      "label": "Cuteness Is Justice (Core Passive)",
+      "description": "When Attack or Anomaly characters in the squad continuously land attacks on enemies affected by Cat's Gaze, Cat's Gaze is triggered and removed:\n\nWhen triggered by an Attack character, deals the Agent's Attribute DMG equal to 300% of ATK to enemies in an area. When triggered by an Anomaly character, deals the Agent's Attribute DMG equal to 480% of ATK to enemies in an area. This DMG is guaranteed to CRIT, and the CRIT DMG is increased by 150%.",
+      "shortDescription": "Sunna triggers bonus damage based on her squad member's specialty.",
+      "target": "self",
+      "requiresManualTarget": true,
+      "referenceStatEffect": {
+        "type": "referenceStat",
+        "referenceSlot": "specific",
+        "statToRead": "atk",
+        "multiplier": 3,
+        "appliesTo": {
+          "skillIds": ["sunna-cats_gaze_trigger_damage"]
+        },
+        "specialtyMultipliers": {
+          "Attack": 3,
+          "Anomaly": 4.8
+        },
+        "specialtyStats": {
+          "Attack": "atk",
+          "Anomaly": "atk"
+        },
+        "guaranteedCrit": true,
+        "bonusCritDmg": 1.5
+      }
+    },
+    {
+      "id": "sunna-mindscape_1-loneliness_corruption_symptoms",
+      "source": "mindscape",
+      "sourceId": "sunna-mindscape_1",
+      "label": "Loneliness Corruption Symptoms (Mindscape Cinema N°1)",
+      "description": "When Sunna enters the battlefield, she gains 15 Energy. In Investigation Zone Mode, this effect can trigger once every 180s. When Cat's Gaze triggers and damages an enemy, the target's DEF is reduced by 7% for 40s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "shortDescription": "The target's DEF is reduced reduced by 7% for 40s, stacking up to 3 times.",
+      "target": "team",
+      "flat": {
+        "defShred": 0.07
+      },
+      "maxStacks": 3
+    },
+    {
+      "id": "sunna-mindscape_2-feline_go_with_the_flow",
+      "source": "mindscape",
+      "sourceId": "sunna-mindscape_2",
+      "label": "Feline Go-With-the-Flow (Mindscape Cinema N°2)",
+      "description": "While Sunna is within any Ether Veil, all squad members gain 10% ATK and she obtains 1 Claw Sharpener every 10s. The number of attacks required to trigger Cat's Gaze is reduced, and the DMG Multiplier on trigger is increased: When triggered by an Attack character, the DMG Multiplier is increased by 200%. When triggered by an Anomaly character, the DMG Multiplier is increased by 300%.",
+      "shortDescription": "All squad members' ATK is increased by 10% within any Ether Veil.",
+      "target": "team",
+      "flat": {
+        "atkPercentRaw": 0.1
+      }
+    },
+    {
+      "id": "sunna-mindscape_4-delusion_investigation_team",
+      "source": "mindscape",
+      "sourceId": "sunna-mindscape_4",
+      "label": "Delusion Investigation Team (Mindscape Cinema N°4)",
+      "description": "When Sunna uses her Ultimate, all squad members deal 18% increased DMG for 60s.",
+      "shortDescription": "All squad members' DMG is increased by 18% for 60s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.18
+        }
+      ]
+    },
+    {
+      "id": "sunna-mindscape_6-hollow_big_bang",
+      "source": "mindscape",
+      "sourceId": "sunna-mindscape_6",
+      "label": "Hollow Big Bang (Mindscape Cinema N°6)",
+      "description": "When Sunna uses an EX Special Attack, she enters the Focused Creation! state for 8s. While in the Focused Creation! state, all attacks Sunna performs are guaranteed to CRIT, and her CRIT DMG increases by 0.03% of her initial ATK, up to a maximum of 105%. While in the Focused Creation! state, Sunna's Anti-Interrupt Level is increased, and DMG taken is reduced by 40%. While in the Focused Creation! state, Sunna can trigger Cat's Gaze, its DMG being calculated using Attack Agent rules. If Cat's Gaze is triggered while Sunna has a Claw Sharpener, the Claw Sharpener is immediately consumed, and Cat's Gaze is reapplied to the enemy. While in the Focused Creation! state, DMG dealt when any squad member triggers Cat's Gaze increases by 50%.",
+      "shortDescription": "Sunna's CRIT DMG is increased based on her initial ATK.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 3500,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "perUnitBonus": 0.0003,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 1.05,
+            "perUnitBonus": 0.0003
+          }
+        ],
+        "affectedStats": ["critDmg"]
+      },
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["sunna-cats_gaze_trigger_damage"],
+          "value": 0.5
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "sunna-basic_attack-mischief_meteor_hammer",
+        "name": "Mischief Meteor Hammer (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to four attacks ahead, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [43.4, 175.9, 181.2, 405.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [47.4, 191.9, 197.7, 442.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [51.4, 207.9, 214.2, 479.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [55.4, 223.9, 230.7, 516]
+          },
+          {
+            "level": 5,
+            "multipliers": [59.4, 239.9, 247.2, 552.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [63.4, 255.9, 263.7, 589.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [67.4, 271.9, 280.2, 626.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [71.4, 287.9, 296.7, 663.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [75.4, 303.9, 313.2, 700.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [79.4, 319.9, 329.7, 737.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [83.4, 335.9, 346.2, 774.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [87.4, 351.9, 362.7, 811.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [91.4, 367.9, 379.2, 848.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [95.4, 383.9, 395.7, 885]
+          },
+          {
+            "level": 15,
+            "multipliers": [99.4, 399.9, 412.2, 921.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [103.4, 415.9, 428.7, 958.8]
+          }
+        ]
+      },
+      {
+        "id": "sunna-basic_attack-naughty_cat_spotted",
+        "name": "Naughty Cat Spotted (Basic Attack)",
+        "description": "During combat, when Sunna is off-field and there are no enemies with /bCat's Gaze//b, /bBubblegum//b consumes 1 /bClaw Sharpener//b to automatically launch an attack, dealing Physical DMG.\n\nWhen any squad member activates /bEther Veil//b, Sunna gains 2 /bClaw Sharpeners//b. When any squad member applies an Attribute Anomaly to an enemy, Sunna gains 1 /bClaw Sharpener//b. This effect can trigger at most once every 10s. /bBubblegum//b inherits Sunna's initial ATK. Sunna can hold up to 6 /bClaw Sharpeners//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [208]
+          },
+          {
+            "level": 2,
+            "multipliers": [227]
+          },
+          {
+            "level": 3,
+            "multipliers": [246]
+          },
+          {
+            "level": 4,
+            "multipliers": [265]
+          },
+          {
+            "level": 5,
+            "multipliers": [284]
+          },
+          {
+            "level": 6,
+            "multipliers": [303]
+          },
+          {
+            "level": 7,
+            "multipliers": [322]
+          },
+          {
+            "level": 8,
+            "multipliers": [341]
+          },
+          {
+            "level": 9,
+            "multipliers": [360]
+          },
+          {
+            "level": 10,
+            "multipliers": [379]
+          },
+          {
+            "level": 11,
+            "multipliers": [398]
+          },
+          {
+            "level": 12,
+            "multipliers": [417]
+          },
+          {
+            "level": 13,
+            "multipliers": [436]
+          },
+          {
+            "level": 14,
+            "multipliers": [455]
+          },
+          {
+            "level": 15,
+            "multipliers": [474]
+          },
+          {
+            "level": 16,
+            "multipliers": [493]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "sunna-dash_attack-skyward_hammer",
+        "name": "Skyward Hammer (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunches enemies in front into the air, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [99.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [108.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [117.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [127]
+          },
+          {
+            "level": 5,
+            "multipliers": [136.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [145.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [154.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [163.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [172.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [181.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [190.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [199.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [208.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [218]
+          },
+          {
+            "level": 15,
+            "multipliers": [227.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [236.2]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "sunna-dodge_counter-delusion_strikeout",
+        "name": "Delusion Strikeout (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nStrikes enemies in front with a series of hammer blows, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [318.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [347.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [376.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [405.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [434.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [463.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [492.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [521.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [550.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [579.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [608.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [637.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [666.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [695.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [724.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [753.8]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "sunna-quick_assist-sonic_beatdown",
+        "name": "Sonic Beatdown (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nUnleashes a series of hammer attacks against enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [72.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [79.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [86.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [92.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [99.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [106.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [112.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [119.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [126.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [133]
+          },
+          {
+            "level": 11,
+            "multipliers": [139.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [146.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [153.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [159.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [166.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [173.2]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "sunna-assist_follow_up-jump_training",
+        "name": "Jump Training (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nContinuously jumps forward on the inflatable hammer, dealing massive Physical DMG to enemies in front. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [535.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [584.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [633.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [681.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [730.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [779.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [827.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [876.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [925.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [974]
+          },
+          {
+            "level": 11,
+            "multipliers": [1022.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1071.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1120.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1168.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1217.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1266.2]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "sunna-special_attack-star_shooter",
+        "name": "Star Shooter (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nShoots /bBubblegum//b to attack enemies in front using an air gun, dealing Physical DMG. After activation, /bBubblegum//b enters combat.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [56.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [61.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [66.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [72]
+          },
+          {
+            "level": 5,
+            "multipliers": [77.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [82.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [87.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [92.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [98]
+          },
+          {
+            "level": 10,
+            "multipliers": [103.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [108.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [113.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [118.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [124]
+          },
+          {
+            "level": 15,
+            "multipliers": [129.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [134.4]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "sunna-ex_special_attack-bubblegum_barrage",
+        "name": "Bubblegum Barrage (EX Special Attack)",
+        "description": "With enough energy, press [EX] to activate:\n\nHurls /bBubblegum//b at the target, dealing Physical DMG. After activation, /bBubblegum//b enters combat. Upon activating this skill, all Agents in the squad gain /bAngelic Chord-ination//b for 40s.\n\nLanding a heavy attack with this skill triggers a /bQuick Assist//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Bubblegum Barrage DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Bubblegum Barrage DMG Multiplier when quickly chaining into Special Photography Technique",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [913.3, 794.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [996.4, 866.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [1079.5, 938.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [1162.6, 1010.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [1245.7, 1082.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [1328.8, 1155.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [1411.9, 1227.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1495, 1299.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [1578.1, 1371.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [1661.2, 1443.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1744.3, 1516.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1827.4, 1588.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [1910.5, 1660.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1993.6, 1732.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [2076.7, 1804.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [2159.8, 1877.1]
+          }
+        ]
+      },
+      {
+        "id": "sunna-ex_special_attack-special_photography_technique",
+        "name": "Special Photography Technique (EX Special Attack)",
+        "description": "While in the /bAngelic Chord-ination//b state, press [EX] to activate, or during /bEX Special Attack: Bubblegum Barrage//b, keep holding /bEX Special Attack//b to quickly activate:\n\nAttacks the target enemy in coordination with /bBubblegum//b, dealing Physical DMG. After activation, /bBubblegum//b enters combat.\n\nBefore the heavy attack is executed, activates /bEther Veil: Delusion Reprise//b. While /bEther Veil: Delusion Reprise//b is active, all squad members gain an additional 50 ATK for 40s. Re-activating /bEther Veil: Delusion Reprise//b will cancel the existing instance of /bEther Veil: Delusion Reprise//b.\n\nLanding a heavy attack with this skill triggers a /bQuick Assist//b. Character is invulnerable while using this skill.\n\n/bEX Special Attack: Special Photography Technique//b can be used once each time Sunna enters the /bAngelic Chord-ination//b state.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "DMG Multiplier (Coordinated)",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [828.1, 952.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [903.4, 1039]
+          },
+          {
+            "level": 3,
+            "multipliers": [978.7, 1125.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [1054, 1212.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [1129.3, 1298.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [1204.6, 1385.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [1279.9, 1472]
+          },
+          {
+            "level": 8,
+            "multipliers": [1355.2, 1558.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [1430.5, 1645.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [1505.8, 1731.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [1581.1, 1818.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1656.4, 1905]
+          },
+          {
+            "level": 13,
+            "multipliers": [1731.7, 1991.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [1807, 2078.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1882.3, 2164.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1957.6, 2251.4]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "sunna-chain_attack-dont_mess_with_the_cat",
+        "name": "Don't Mess With the Cat (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nCharges forward on /bBubblegum//b, dealing massive Physical DMG. Landing a heavy attack with this skill triggers a /bQuick Assist//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [811.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [885.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [958.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [1032.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [1106.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [1180.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [1254.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [1327.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [1401.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [1475.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [1549.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1623.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1696.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [1770.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [1844.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1918.3]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "sunna-ultimate-smash_it_all",
+        "name": "Smash It All! (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nAfter a series of hammer attacks, launches /bBubblegum//b to cause an explosion, dealing massive Physical DMG to enemies in an area. On activating the heavy attack, gains 6 /bClaw Sharpeners//b.\n\nUpon landing the downward attack from above on an enemy, triggers a /bQuick Assist//b and restores a set amount of HP to all squad members. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2090.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [2281]
+          },
+          {
+            "level": 3,
+            "multipliers": [2471.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [2661.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [2851.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [3041.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [3231.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [3421.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [3611.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [3801.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [3991.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [4182]
+          },
+          {
+            "level": 13,
+            "multipliers": [4372.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [4562.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [4752.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [4942.4]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

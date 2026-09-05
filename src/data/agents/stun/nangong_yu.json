@@ -1,0 +1,1045 @@
+{
+  "id": "nangong_yu",
+  "name": "Nangong Yu",
+  "specialty": "Stun",
+  "faction": "Angels of Delusion",
+  "attribute": "Ether",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Nangong Yu",
+  "attributeIcon": "Ether",
+  "themeColor": "#FF6B93",
+  "skins": [
+    {
+      "id": "default",
+      "img": "nangong_yu.png"
+    },
+    {
+      "id": "rhapsodys_muse",
+      "img": "nangong_yu-rhapsodys_muse.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 8374,
+    "atk": 671.5,
+    "def": 622.62
+  },
+  "combatBase": {
+    "impact": 120,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 90,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Mastery", "Impact"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "nangong_yu-ultimate-ether_veil_delusion_reprise",
+      "source": "ultimate",
+      "sourceId": "nangong_yu-ultimate",
+      "label": "Ether Veil: Delusion Reprise (Ultimate )",
+      "description": "... While Ether Veil: Delusion Reprise is active, all squad members gain an additional 50 ATK for 30s. ...",
+      "shortDescription": "All squad members' ATK is increased by 50 while Ether Veil: Delusion Reprise is active.",
+      "target": "team",
+      "flat": {
+        "atkFlatRaw": 50
+      }
+    },
+    {
+      "id": "nangong_yu-core_1-prodigious_idol",
+      "source": "core",
+      "sourceId": "nangong_yu-core",
+      "label": " Prodigious Idol (Core Passive)",
+      "description": "Nangong Yu's Anomaly Proficiency increases by 120. When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1. When an enemy is Stunned, each time any character triggers Abloom DMG, Disorder DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of Vibrato. ...",
+      "shortDescription": "Nangong Yu's Anomaly Proficiency is increased by 120.",
+      "target": "self",
+      "flat": {
+        "anomalyProficiency": 120
+      }
+    },
+    {
+      "id": "nangong_yu-core_2-prodigious_idol",
+      "source": "core",
+      "sourceId": "nangong_yu-core",
+      "label": " Prodigious Idol (Core Passive)",
+      "description": "Nangong Yu's Anomaly Proficiency increases by 120. When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1. When an enemy is Stunned, each time any character triggers Abloom DMG, Disorder DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of Vibrato. ...",
+      "shortDescription": "Nangong Yu's Impact is increased based on her initial Anomaly Mastery.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "anomalyMastery",
+        "threshold": 110,
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 99999,
+            "perUnitBonus": 1
+          }
+        ],
+        "affectedStats": ["impactBaseRaw"]
+      }
+    },
+    {
+      "id": "nangong_yu-core_3-prodigious_idol",
+      "source": "core",
+      "sourceId": "nangong_yu-core",
+      "label": " Prodigious Idol (Core Passive)",
+      "description": "... When Nangong Yu's Basic Attack: Adorable Explosive Impact or EX Special Attack: The Unbearable Weight of Love hits an enemy, her Anomaly Buildup Rate increases by 35%, and her Daze dealt increases by 20%, and all squad members' DMG dealt increases by 25% for 30s. Repeated triggers reset the duration. While in combat, Nangong Yu restores 3.8 Downbeats/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 Downbeats. This effect can trigger once every 6s. Nangong Yu can hold up to 100 Downbeats, and starts with 30 Downbeats upon entering the battlefield.",
+      "shortDescription": "All squad members' DMG is increased by 25% for 30s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "nangong_yu-mindscape_1-lazy_spotlight",
+      "source": "mindscape",
+      "sourceId": "nangong_yu-mindscape_1",
+      "label": "Lazy Spotlight (Mindscape Cinema N°1)",
+      "description": "When EX Special Attack: The Unbearable Weight of Love or Basic Attack: Adorable Explosive Impact hits an enemy, the enemy's All-Attribute RES decreases by 18% for 40s. Repeated triggers refresh the duration. When entering the battlefield, Nangong Yu's Downbeat is restored to the maximum. In Investigation Zone Mode, this effect can trigger once every 180s.",
+      "shortDescription": "The target's All-Attribute RES is reduced by 18% for 50s.",
+      "target": "team",
+      "perStack": {
+        "fireResShred": 0.18,
+        "iceResShred": 0.18,
+        "electricResShred": 0.18,
+        "physicalResShred": 0.18,
+        "etherResShred": 0.18,
+        "windResShred": 0.18
+      }
+    },
+    {
+      "id": "nangong_yu-mindscape_2-painless_tears",
+      "source": "mindscape",
+      "sourceId": "nangong_yu-mindscape_2",
+      "label": "Painless Tears (Mindscape Cinema N°2)",
+      "description": "Each stack of Vibrato's additional Abloom DMG ratio increase from Core Passive: Prodigious Idol increases by an additional 10%. The Stun DMG Multiplier provided by Additional Ability: Angel Captain increases by an additional 30%. When the active character's Chain Attack heavy attack hits an enemy that is both Stunned and affected by an Attribute Anomaly, it triggers Polarity Disorder, dealing DMG equal to 25% of the original Disorder DMG. Each enemy can only trigger this effect once during the same Stun period.",
+      "shortDescription": "This mindscape cinema does not affect Nangong Yu's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "nangong_yu-mindscape_4-accomplices_dance_step",
+      "source": "mindscape",
+      "sourceId": "nangong_yu-mindscape_4",
+      "label": "Accomplice's Dance Step (Mindscape Cinema N°4)",
+      "description": "Anomaly Proficiency increases by 40. The Anomaly Buildup of Basic Attack: Adorable Explosive Impact when hitting an enemy increases by 35%.",
+      "shortDescription": "Nangong Yu's Anomaly Proficiency is increased by 40.",
+      "target": "self",
+      "flat": {
+        "anomalyProficiency": 40
+      }
+    },
+    {
+      "id": "nangong_yu-mindscape_6-an_angels_delusion",
+      "source": "mindscape",
+      "sourceId": "nangong_yu-mindscape_6",
+      "label": "An Angel's Delusion (Mindscape Cinema N°6)",
+      "description": "Nangong Yu's attacks deal 50% more Daze. When the enemy is not Stunned, each time any character triggers Abloom DMG, Disorder DMG, or inflicts an Attribute Anomaly on them, the enemy gains 1 stacks of Vibrato: Modified. When hit by the heavy attack of EX Special Attack: The Unbearable Weight of Love or Basic Attack: Adorable Explosive Impact, they gain 1 stacks of Vibrato: Modified. When hit by the heavy attack of Ultimate: Meteor Shower, they gain 2 stacks of Vibrato: Modified.\n\nVibrato: Modified can stack up to 4 times. When the enemy becomes Stunned, all Vibrato: Modified stacks are cleared. When Vibrato: Modified is cleared, if the enemy is under an Ether, Electric, Fire, Physical, or Ice Anomaly, Nangong Yu triggers an instance of Abloom DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to 800%/400%/1,000%/70%/100% of the original Attribute Anomaly DMG. Each stack of Vibrato: Modified on the enemy increases this Abloom DMG ratio by an additional 25%. Vibrato: Modified cannot stack with Vibrato..",
+      "shortDescription": "This mindscape cinema does not affect Nangong Yu's stats.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "nangong_yu-basic_attack-shooting_star_step",
+        "name": "Shooting Star Step (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to three attacks forward, dealing Ether DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [114.9, 136.9, 263.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [125.4, 149.4, 287.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [135.9, 161.9, 311.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [146.4, 174.4, 335.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [156.9, 186.9, 359.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [167.4, 199.4, 383.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [177.9, 211.9, 407.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [188.4, 224.4, 431.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [198.9, 236.9, 455.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [209.4, 249.4, 479.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [219.9, 261.9, 503.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [230.4, 274.4, 527.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [240.9, 286.9, 551.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [251.4, 299.4, 575.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [261.9, 311.9, 599.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [272.4, 324.4, 623.8]
+          }
+        ]
+      },
+      {
+        "id": "nangong_yu-basic_attack-adorable_explosive_impact",
+        "name": "Adorable Explosive Impact (Basic Attack)",
+        "description": "Hold [BASIC] to launch a charged attack, dealing Ether DMG. Release the button at the right moment to trigger precise charging, increasing the Daze dealt by the skill by 20%.\n\nNangong Yu can perform up to three hits. The second and third hits each must consume 50 /bDownbeats//b.\n\nAfter using a /bChain Attack//b, /bUltimate//b, or /bEX Special Attack//b, if enough /bDownbeats//b are available, hold [BASIC] to skip the first hit and directly perform the second and third hits, which always trigger precise charging.\n\nWhen Nangong Yu is the active character, /bChain Attacks//b, /bUltimates//b, and /bEX Special Attacks//b do not interrupt the combo count of /bBasic Attack: Adorable Explosive Impact//b. While charging the first hit, Anti-Interrupt Level increases and DMG taken decreases by 60%.\n\nWhile charging the second and third hits, the character is Invulnerable. During the dash phase of the first hit, enemy attacks can be Blocked. On a successful Block, the attack is treated as a precise charging attack. Character is invulnerable during all attacks.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier (Coordinated)",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [104, 304.4, 510.8, 76.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [113.5, 332.1, 557.3, 83.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [123, 359.8, 603.8, 90.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [132.5, 387.5, 650.3, 97.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [142, 415.2, 696.8, 104.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [151.5, 442.9, 743.3, 111.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [161, 470.6, 789.8, 118.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [170.5, 498.3, 836.3, 125.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [180, 526, 882.8, 132.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [189.5, 553.7, 929.3, 139.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [199, 581.4, 975.8, 146.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [208.5, 609.1, 1022.3, 153.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [218, 636.8, 1068.8, 160.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [227.5, 664.5, 1115.3, 167.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [237, 692.2, 1161.8, 174.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [246.5, 719.9, 1208.3, 181.7]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "nangong_yu-dash_attack-spinning_meteor",
+        "name": "Spinning Meteor (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nDeliver a quick attack forward, dealing Ether DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [190.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [208.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [225.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [242.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [260.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [277.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [295.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [312.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [329.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [347.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [364.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [382.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [399.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [416.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [434.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [451.7]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "nangong_yu-dodge_counter-asteroid_waltz",
+        "name": "Asteroid Waltz (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLaunch a series of attacks on the target, dealing Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [355.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [387.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [419.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [452.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [484.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [516.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [549.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [581.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [613.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [646]
+          },
+          {
+            "level": 11,
+            "multipliers": [678.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [710.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [742.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [775.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [807.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [839.8]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "nangong_yu-quick_assist-emergency_save",
+        "name": "Emergency Save (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLaunches a series of attacks on the target, dealing Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [74.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [81.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [88.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [95.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [102]
+          },
+          {
+            "level": 6,
+            "multipliers": [108.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [115.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [122.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [129.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [136]
+          },
+          {
+            "level": 11,
+            "multipliers": [142.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [149.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [156.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [163.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [170]
+          },
+          {
+            "level": 16,
+            "multipliers": [176.8]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "nangong_yu-assist_follow_up-improvised_performance",
+        "name": "Improvised Performance (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nLaunches a series of attacks on the target, dealing massive Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [535.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [584.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [633.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [682.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [731]
+          },
+          {
+            "level": 6,
+            "multipliers": [779.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [828.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [877.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [926.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [975]
+          },
+          {
+            "level": 11,
+            "multipliers": [1023.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1072.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [1121.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [1170.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1219]
+          },
+          {
+            "level": 16,
+            "multipliers": [1267.8]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "nangong_yu-special_attack-the_weight_of_love",
+        "name": "The Weight of Love (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nDelivers a morning star attack, dealing Ether DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [83.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [91.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [98.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [106.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [113.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [121.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [129.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [136.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [144.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [151.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [159.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [167.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [174.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [182.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [189.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [197.5]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "nangong_yu-ex_special_attack-the_unbearable_weight_of_love",
+        "name": "The Unbearable Weight of Love (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nDelivers a morning star attack, dealing Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [533]
+          },
+          {
+            "level": 2,
+            "multipliers": [581.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [630]
+          },
+          {
+            "level": 4,
+            "multipliers": [678.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [727]
+          },
+          {
+            "level": 6,
+            "multipliers": [775.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [824]
+          },
+          {
+            "level": 8,
+            "multipliers": [872.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [921]
+          },
+          {
+            "level": 10,
+            "multipliers": [969.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [1018]
+          },
+          {
+            "level": 12,
+            "multipliers": [1066.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [1115]
+          },
+          {
+            "level": 14,
+            "multipliers": [1163.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1212]
+          },
+          {
+            "level": 16,
+            "multipliers": [1260.5]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "anby-chain_attack-electro_engine",
+        "name": "Electro Engine (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful upward slash at enemies in a small area, dealing massive Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [542.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [591.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [641.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [690.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [740]
+          },
+          {
+            "level": 6,
+            "multipliers": [789.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [838.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [888.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [937.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [987]
+          },
+          {
+            "level": 11,
+            "multipliers": [1036.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1085.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1135.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1184.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1234]
+          },
+          {
+            "level": 16,
+            "multipliers": [1283.4]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "nangong_yu-ultimate-meteor_shower",
+        "name": "Meteor Shower (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunch multiple attacks forward, dealing massive Ether DMG. Upon activating this skill, Nangong Yu activates /bEther Veil: Delusion Reprise//b. While /bEther Veil: Delusion Reprise//b is active, all squad members gain an additional 50 ATK for 30s.\n\nIf Nangong Yu activates /bEther Veil: Delusion Reprise//b again, the current /bEther Veil: Delusion Reprise//b will first deactivate. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2101.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [2292.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [2483.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [2675]
+          },
+          {
+            "level": 5,
+            "multipliers": [2866.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [3057.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [3248.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [3439.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [3630.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [3821.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [4012.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [4203.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [4394.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [4586]
+          },
+          {
+            "level": 15,
+            "multipliers": [4777.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [4968.2]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "flight_of_fancy",
+  "name": "Flight of Fancy",
+  "rarity": "S",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Anomaly Proficiency",
+
+  "stats": {
+    "base": 713,
+    "advanced": 90
+  },
+
+  "ingameEffects": [
+    {
+      "id": "flight_of_fancy-silver_spiked_feathers",
+      "source": "wEngine",
+      "sourceId": "flight_of_fancy",
+      "label": "Silver Spiked Feathers (W-Engine Passive)",
+      "description": "Increases the Anomaly Buildup Rate by a percentage. When the equipper deals Ether DMG, their Anomaly Proficiency is increased for 5s, stacking up to 6 times. This effect can trigger once every 0.5s, and repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "anomalyProficiency": 20 }
+          },
+          {
+            "level": 2,
+            "stats": { "anomalyProficiency": 23 }
+          },
+          {
+            "level": 3,
+            "stats": { "anomalyProficiency": 26 }
+          },
+          {
+            "level": 4,
+            "stats": { "anomalyProficiency": 29 }
+          },
+          {
+            "level": 5,
+            "stats": { "anomalyProficiency": 32 }
+          }
+        ],
+        "maxStacks": 6,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

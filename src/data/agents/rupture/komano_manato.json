@@ -1,0 +1,1189 @@
+{
+  "id": "manato",
+  "name": "Komano Manato",
+  "specialty": "Rupture",
+  "faction": "Spook Shack",
+  "attribute": "fire",
+  "rarity": "A",
+  "fullName": "Komano Manato",
+  "displayName": "Manato",
+  "attributeIcon": "Fire",
+  "themeColor": "#C75F5A",
+  "skins": [
+    {
+      "id": "default",
+      "img": "manato.png"
+    },
+    {
+      "id": "white_heart_silhouette",
+      "img": "manato-white_heart_silhouette.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7724.9,
+    "atk": 680.21,
+    "def": 443.56
+  },
+  "combatBase": {
+    "impact": 95,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 87,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "HP", "Sheer Force"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "hpPercent": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "hpPercent": 0.06
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "hpPercent": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "hpPercent": 0.06
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "hpPercent": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "hpPercent": 0.06
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "hpPercent": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "komano_manato-core_1-mighty_molten_edge",
+      "source": "core",
+      "sourceId": "komano_manato_core",
+      "label": "Mighty Molten Edge (Core Passive)",
+      "description": "... While in the Molten Edge state, Manato's CRIT Rate increases by 10%, and his Fire DMG increases by 20%.",
+      "shortDescription": "Manato's CRIT Rate is increased by 10% and Fire DMG is increased by 20%.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.1
+      },
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "fire",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "komano_manato-core_2-mighty_molten_edge",
+      "source": "core",
+      "sourceId": "komano_manato_core",
+      "label": "Mighty Molten Edge (Core Passive)",
+      "description": "... When consuming HP during Basic Attack: Blazing Wind - Misty Slash or during the consecutive slashes from an Assist Follow-Up, that attack's CRIT DMG increases by 50%, and the Adrenaline Generation Rate increases by 100%. ...",
+      "shortDescription": "Manato's CRIT DMG from Basic Attack: Blazing Wind - Misty Slash and Assist Follow-Up: Lone Shadow - Breaking Fang consecutive slashes is increased by 50%.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": [
+            "manato-basic_attack-blazing_wind-misty_slash",
+            "manato-assist_follow_up-lone_shadow_breaking_fang"
+          ],
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "komano_manato-mindscape_1-drifters_rules_of_survival",
+      "source": "mindscape",
+      "sourceId": "komano_manato-mindscape_1",
+      "label": "Drifter's Rules of Survival (Mindscape Cinema N°1)",
+      "description": "Whenever Manato loses HP, the amount of HP lost is tallied. Each 1% of his Max HP tallied increases the Fire DMG of Assist Follow-Ups and Basic Attacks by 0.4%, up to a max of 20%.",
+      "shortDescription": "Manato's Fire DMG from Basic Attacks and Assist Follow-Ups is increased by 0.4%, stacking up to 50 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "elementExclusive",
+          "element": "fire",
+          "appliesTo": [
+            "manato-basic_attack-blazing_wind_slash",
+            "manato-basic_attack-blazing_wind-misty_slash",
+            "manato-assist_follow_up-lone_shadow_breaking_fang"
+          ],
+          "value": 0.004
+        }
+      ],
+      "maxStacks": 50
+    },
+    {
+      "id": "komano_manato-mindscape_2-day_and_night_kitchen_and_love",
+      "source": "mindscape",
+      "sourceId": "komano_manato-mindscape_2",
+      "label": "Day & Night, Kitchen & Love (Mindscape Cinema N°2)",
+      "description": "While in the Molten Edge state, Manato ignores 8% of a target's Fire RES. After being hit by an enemy while using Special Attack: Return to Ashes or Special Attack: Return to Ashes - Sacrifice, press Basic Attack to trigger an Assist Follow-Up.",
+      "shortDescription": "Manato's attacks ignore 8% of the target's Fire RES.",
+      "target": "self",
+      "flat": {
+        "fireResShred": 0.08
+      }
+    },
+    {
+      "id": "komano_manato-mindscape_4-childhood_oath",
+      "source": "mindscape",
+      "sourceId": "komano_manato-mindscape_4",
+      "label": "Childhood Oath (Mindscape Cinema N°4)",
+      "description": "Max HP increases by 8%. During Special Attack: Return to Ashes and Special Attack: Return to Ashes - Sacrifice, when Manato takes fatal DMG, he remains in battle, with his HP not dropping below 1. This effect can trigger once every 10s.",
+      "shortDescription": "Manato's HP is increased by 8%.",
+      "target": "self",
+      "flat": {
+        "hpPercentRaw": 0.08
+      }
+    },
+    {
+      "id": "komano_manato-mindscape_6-beyond_dreams_of_the_past",
+      "source": "mindscape",
+      "sourceId": "komano_manato-mindscape_6",
+      "label": "Beyond Dreams of the Past (Mindscape Cinema N°6)",
+      "description": "When Special Attack: Return to Ashes hits a Stunned enemy, Manato gains 75 Blazing Heart and 4 stacks of Remnant Flame, and pressing [BASIC] will launch an Assist Follow-Up. This Remnant Flame effect can trigger once every 20s. When his Assist Follow-Up hits an enemy, Manato's Fire DMG increases by 3% for 8s, stacking up to 5 times. Repeated triggers reset the duration.",
+      "shortDescription": "Manato's Fire DMG Bonus increases by 3% for 8s, stacking up to 5 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "fire",
+          "value": 0.03
+        }
+      ],
+      "maxStacks": 5
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "manato-basic_attack-blazing_wind_slash",
+        "name": "Blazing Wind Slash (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to three forward slashes, dealing Physical DMG. During each slash, pressing /bSpecial Attack//b triggers Scorchwind, causing the attack to deal increased Fire DMG.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd Hit DMG Multiplier (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd Hit DMG Multiplier (Fire)",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd Hit DMG Multiplier (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd Hit DMG Multiplier (Fire)",
+            "damageType": "fire"
+          },
+          {
+            "name": "1st Hit DMG Multiplier Triggering Scorchwind (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "1st Hit DMG Multiplier Triggering Scorchwind (Fire)",
+            "damageType": "fire"
+          },
+          {
+            "name": "2nd Hit DMG Multiplier Triggering Scorchwind (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd Hit DMG Multiplier Triggering Scorchwind (Fire)",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd Hit DMG Multiplier Triggering Scorchwind (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd Hit DMG Multiplier Triggering Scorchwind (Fire)",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              28.7, 38.2, 44.5, 60, 74.6, 28.7, 34.4, 38.2, 57.3, 60, 83.3
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              31.4, 41.7, 48.6, 65.5, 81.4, 31.4, 37.6, 41.7, 62.6, 65.5, 90.9
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              34.1, 45.2, 52.7, 71, 88.2, 34.1, 40.8, 45.2, 67.9, 71, 98.5
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              36.8, 48.7, 56.8, 76.5, 95, 36.8, 44, 48.7, 73.2, 76.5, 106.1
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              39.5, 52.2, 60.9, 82, 101.8, 39.5, 47.2, 52.2, 78.5, 82, 113.7
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              42.2, 55.7, 65, 87.5, 108.6, 42.2, 50.4, 55.7, 83.8, 87.5, 121.3
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              44.9, 59.2, 69.1, 93, 115.4, 44.9, 53.6, 59.2, 89.1, 93, 128.9
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              47.6, 62.7, 73.2, 98.5, 122.2, 47.6, 56.8, 62.7, 94.4, 98.5, 136.5
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              50.3, 66.2, 77.3, 104, 129, 50.3, 60, 66.2, 99.7, 104, 144.1
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              53, 69.7, 81.4, 109.5, 135.8, 53, 63.2, 69.7, 105, 109.5, 151.7
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              55.7, 73.2, 85.5, 115, 142.6, 55.7, 66.4, 73.2, 110.3, 115, 159.3
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              58.4, 76.7, 89.6, 120.5, 149.4, 58.4, 69.6, 76.7, 115.6, 120.5,
+              166.9
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              61.1, 80.2, 93.7, 126, 156.2, 61.1, 72.8, 80.2, 120.9, 126, 174.5
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              63.8, 83.7, 97.8, 131.5, 163, 63.8, 76, 83.7, 126.2, 131.5, 182.1
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              66.5, 87.2, 101.9, 137, 169.8, 66.5, 79.2, 87.2, 131.5, 137, 189.7
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              69.2, 90.7, 106, 142.5, 176.6, 69.2, 82.4, 90.7, 136.8, 142.5,
+              197.3
+            ]
+          }
+        ]
+      },
+      {
+        "id": "manato-basic_attack-blazing_wind-misty_slash",
+        "name": "Blazing Wind - Misty Slash (Basic Attack)",
+        "description": "While in the /bMolten Edge//b state, press [BASIC] to activate:\n\nUnleash up to four forward slashes, dealing Fire DMG. If Manato's HP is above 30% when the skill is activated, 3.5% of his Max HP will be consumed.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [53.1, 111.2, 154.5, 237.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [58, 121.4, 168.6, 259.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [62.9, 131.6, 182.7, 281.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [67.8, 141.8, 196.8, 302.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [72.7, 152, 210.9, 324.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [77.6, 162.2, 225, 346.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [82.5, 172.4, 239.1, 368]
+          },
+          {
+            "level": 8,
+            "multipliers": [87.4, 182.6, 253.2, 389.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [92.3, 192.8, 267.3, 411.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [97.2, 203, 281.4, 433.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [102.1, 213.2, 295.5, 454.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [107, 223.4, 309.6, 476.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [111.9, 233.6, 323.7, 498.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [116.8, 243.8, 337.8, 519.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [121.7, 254, 351.9, 541.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [126.6, 264.2, 366, 563.3]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "manato-dash_attack-radiant_blade-zanshin",
+        "name": "Radiant Blade - Zanshin (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nPerform a shoulder slam forward, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [58.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [64.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [69.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [74.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [80.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [85.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [91.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [96.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [101.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [107.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [112.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [118.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [123.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [128.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [134.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [139.7]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "manato-dodge_counter-radiant_blade_battle_sweep",
+        "name": "Radiant Blade - Battle Sweep (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPerform a slash followed by a punch at enemies ahead, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [198]
+          },
+          {
+            "level": 2,
+            "multipliers": [216]
+          },
+          {
+            "level": 3,
+            "multipliers": [234]
+          },
+          {
+            "level": 4,
+            "multipliers": [252]
+          },
+          {
+            "level": 5,
+            "multipliers": [270]
+          },
+          {
+            "level": 6,
+            "multipliers": [288]
+          },
+          {
+            "level": 7,
+            "multipliers": [306]
+          },
+          {
+            "level": 8,
+            "multipliers": [324]
+          },
+          {
+            "level": 9,
+            "multipliers": [342]
+          },
+          {
+            "level": 10,
+            "multipliers": [360]
+          },
+          {
+            "level": 11,
+            "multipliers": [378]
+          },
+          {
+            "level": 12,
+            "multipliers": [396]
+          },
+          {
+            "level": 13,
+            "multipliers": [414]
+          },
+          {
+            "level": 14,
+            "multipliers": [432]
+          },
+          {
+            "level": 15,
+            "multipliers": [450]
+          },
+          {
+            "level": 16,
+            "multipliers": [468]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "manato-quick_assist-lone_shadow_regroup",
+        "name": "Lone Shadow - Regroup (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nSlashes and punches enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [90.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [99]
+          },
+          {
+            "level": 3,
+            "multipliers": [107.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [115.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [123.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [132.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [140.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [148.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [157.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [165.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [173.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [182]
+          },
+          {
+            "level": 13,
+            "multipliers": [190.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [198.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [206.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [215.2]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": [
+      {
+        "id": "manato-defensive_assist-lone_shadow_mountain_stand",
+        "name": "Lone Shadow - Mountain Stand (Defensive Assist)",
+        "description": "When the on-field character is about to be attacked, press [ASSIST] to activate:\n\nParries the enemy's attack, inflicting massive Daze and dealing Fire DMG. Gain 75 /bBlazing Heart//b upon activating this skill. Character is invulnerable while using this skill.",
+        "skillType": "perfectAssist",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [40]
+          },
+          {
+            "level": 2,
+            "multipliers": [43.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [47.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [51.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [54.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [58.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [62.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [65.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [69.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [73.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [77]
+          },
+          {
+            "level": 12,
+            "multipliers": [80.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [84.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [88.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [91.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [95.5]
+          }
+        ]
+      }
+    ],
+    "assistFollowup": [
+      {
+        "id": "manato-assist_follow_up-lone_shadow_breaking_fang",
+        "name": "Lone Shadow - Breaking Fang (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleash multiple slashes at enemies ahead, dealing Fire DMG. Repeated presses allow up to 7 extra consecutive slashes. While chaining slashes, if Manato's HP is above 30%, 2% of Max HP is consumed. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Combo Maximum DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [166.7, 570.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [181.9, 622]
+          },
+          {
+            "level": 3,
+            "multipliers": [197.1, 673.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [212.3, 725.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [227.5, 777.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [242.7, 829.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [257.9, 881.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [273.1, 933.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [288.3, 985.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [303.5, 1037.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [318.7, 1089.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [333.9, 1141]
+          },
+          {
+            "level": 13,
+            "multipliers": [349.1, 1192.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [364.3, 1244.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [379.5, 1296.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [394.7, 1348.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "manato-special_attack-return_to_ashes",
+        "name": "Return to Ashes (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nSlash forward at enemies, dealing Fire DMG. If hit by an enemy during the skill, restore 20% of missing HP when unleashing the slash. The healing effects of /bSpecial Attack: Return to Ashes//b and /bSpecial Attack: Return to Ashes - Sacrifice//b have a shared cooldown and can trigger once every 20s.\n\nIf hit by an enemy during the skill, the slash is enhanced. DMG taken is reduced by 40% while using this skill. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier (Charged or Successful Block)",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [50.7, 130.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [55.4, 142.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [60.1, 154.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [64.8, 166.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [69.5, 178.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [74.2, 190.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [78.9, 202.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [83.6, 214]
+          },
+          {
+            "level": 9,
+            "multipliers": [88.3, 225.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [93, 237.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [97.7, 249.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [102.4, 261.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [107.1, 273.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [111.8, 285.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [116.5, 297.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [121.2, 309.2]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "manato-ex_special_attack-return_to_ashes_fall",
+        "name": "Return to Ashes - Fall (EX Special Attack)",
+        "description": "While in the /bMolten Edge//b state and with sufficient Adrenaline, press [EX] to activate:\n\nJump up and unleash a falling slash on enemies in front, dealing massive Fire DMG. Upon activating the skill, restore 33% of Max HP. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [652.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [712]
+          },
+          {
+            "level": 3,
+            "multipliers": [771.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [830.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [890.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [949.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [1009]
+          },
+          {
+            "level": 8,
+            "multipliers": [1068.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [1127.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [1187.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [1246.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1306]
+          },
+          {
+            "level": 13,
+            "multipliers": [1365.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [1424.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1484.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1543.6]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "manato-chain_blazing_eruption",
+        "name": "Blazing Eruption (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nHurls his sword forward, then charges the enemy to trigger an explosion, dealing massive Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [483.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [527.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [571.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [615.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [659.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [703.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [747.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [791.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [835.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [879.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [923.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [967.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [1011.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1055.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [1099.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [1143.3]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "manato-ultimate_musou_aratama",
+        "name": "Musou Aratama (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nJump into the air and deliver a falling slash at enemies in front, followed by an explosion, dealing massive Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1562.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [1704.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [1846.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [1988.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [2130.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [2272.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [2414.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [2557]
+          },
+          {
+            "level": 9,
+            "multipliers": [2699.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [2841.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [2983.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [3125.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [3267.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [3409.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [3551.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [3693.8]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

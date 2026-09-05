@@ -1,0 +1,1339 @@
+{
+  "id": "pyrois",
+  "name": "Pyrois",
+  "specialty": "Attack",
+  "faction": "Phaeton",
+  "attribute": "Ether",
+  "rarity": "I",
+  "fullName": "",
+  "displayName": "Pyrois",
+  "attributeIcon": "Ether",
+  "themeColor": "#A29DC7",
+  "baseStats": {
+    "hp": 7674,
+    "atk": 849.05,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 94,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "pyrois-core_1-radiant_chariot",
+      "source": "core",
+      "sourceId": "pyrois-core",
+      "label": "Radiant Chariot (Core Passive)",
+      "description": "... Upper Branch - Ultimate: Total Annihilation: Gain 30 Solar Prominence and enter the Mirage state. While in the Mirage state, Pyrois' Ultimate deals 40% increased CRIT DMG against Stunned enemies, and with 30 or more Solar Prominence hold Basic Attack during the 4th hit of Basic Attack: Celestial Light to immediately follow up with the 3rd hit of Basic Attack: Celestial Light. This effect lasts 21s. Repeated triggers reset the duration. ...",
+      "shortDescription": "While in the Mirage state, Pyrois's CRIT DMG from Ultimates is increased by 40% for 21s against stunned enemies.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": [
+            "pyrois-ultimate-total_annihilation",
+            "pyrois-ultimate-triumphant_return",
+            "pyrois-ultimate-unbound_swordstorm",
+            "pyrois-ultimate-eternal_imprisonment"
+          ],
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "pyrois-core_2-radiant_chariot",
+      "source": "core",
+      "sourceId": "pyrois-core",
+      "label": "Radiant Chariot (Core Passive)",
+      "description": "... Lower Branch - Ultimate: Triumphant Return: Enter the Sunflare state. While in the Sunflare state, Energy Generation Rate increases by 15%, and DMG dealt increases by 40%, and triggering a Perfect Block with an EX Special Attack grants 10 Solar Prominence. This effect lasts 200s. Repeated triggers reset the duration. ...",
+      "shortDescription": "While in the Sunflare state, Pyrois's DMG is increased by 40% for 200s.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "pyrois-core_3-radiant_chariot",
+      "source": "core",
+      "sourceId": "pyrois-core",
+      "label": "Radiant Chariot (Core Passive)",
+      "description": "... Left Branch - Ultimate: Unbound Swordstorm: Heavy attacks that hit enemies in the Contamination state deal 900% of ATK as additional DMG. ...",
+      "shortDescription": "Pyrois' additional damage from heavy attacks is available in the Damage Calculator.",
+      "infoOnly": true
+    },
+    {
+      "id": "pyrois-core-glorious_legion",
+      "source": "core",
+      "sourceId": "pyrois-core",
+      "label": "Glorious Legion (Additional Passive)",
+      "description": "When another character in your squad is a Stun or Support character:\n\nPyrois' CRIT DMG increases by 40%. Using a Chain Attack grants 300 Decibels.",
+      "shortDescription": "Pyrois' CRIT DMG is increased by 40%.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.4
+      }
+    },
+    {
+      "id": "pyrois-mindscape_1-shadows_of_twilight_past",
+      "source": "mindscape",
+      "sourceId": "pyrois-mindscape_1",
+      "label": "Shadows of Twilight Past (Mindscape Cinema N°1)",
+      "description": "Upon entering the battlefield, Pyrois gains 1,000 Decibels. This effect can trigger once every 180s in Investigation Zone mode. CRIT Rate increases by 8%.",
+      "shortDescription": "Pyrois' CRIT Rate is increased by 8%.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.08
+      }
+    },
+    {
+      "id": "pyrois-mindscape_2-blazing_cavalry",
+      "source": "mindscape",
+      "sourceId": "pyrois-mindscape_2",
+      "label": "Blazing Cavalry (Mindscape Cinema N°2)",
+      "description": "Using Ultimate: Triumphant Return grants 1,500 Decibels. This effect can trigger once every 180s. Pyrois's Decibel limit increases by 1,000.",
+      "shortDescription": "This mindscape cinema does not affect Pyrois' stats.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "pyrois-basic_attack-emberglow",
+        "name": "Emberglow (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerforms up to three attacks forward, dealing Ether DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [45.6, 64.1, 276.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [49.8, 70, 301.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [54, 75.9, 326.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [58.2, 81.8, 351.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [62.4, 87.7, 377.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [66.6, 93.6, 402.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [70.8, 99.5, 427.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [75, 105.4, 452.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [79.2, 111.3, 477.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [83.4, 117.2, 503.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [87.6, 123.1, 528.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [91.8, 129, 553.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [96, 134.9, 578.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [100.2, 140.8, 603.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [104.4, 146.7, 629.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [108.6, 152.6, 654.3]
+          }
+        ]
+      },
+      {
+        "id": "pyrois-basic_attack-celestial_light",
+        "name": "Celestial Light (Basic Attack)",
+        "description": "With 30 or more /bSolar Prominence//b, hold [BASIC] to activate:\n\nUnleashes up to four attacks forward, dealing massive Ether DMG. If another character is switched in during the 3rd hit, Pyrois automatically performs the 4th hit off-field. Each hit consumes a certain amount of /bSolar Prominence//b. Character is invulnerable during the 3rd and 4th hits.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [107, 143.8, 549, 641]
+          },
+          {
+            "level": 2,
+            "multipliers": [116.8, 156.9, 599, 699.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [126.6, 170, 649, 757.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [136.4, 183.1, 699, 815.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [146.2, 196.2, 749, 874.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [156, 209.3, 799, 932.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [165.8, 222.4, 849, 990.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [175.6, 235.5, 899, 1049.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [185.4, 248.6, 949, 1107.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [195.2, 261.7, 999, 1165.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [205, 274.8, 1049, 1224]
+          },
+          {
+            "level": 12,
+            "multipliers": [214.8, 287.9, 1099, 1282.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [224.6, 301, 1149, 1340.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [234.4, 314.1, 1199, 1398.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [244.2, 327.2, 1249, 1457.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [254, 340.3, 1299, 1515.5]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "pyrois-dash_attack-sunrise",
+        "name": "Sunrise (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nDelivers a quick slash forward, dealing Ether DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [95.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [104]
+          },
+          {
+            "level": 3,
+            "multipliers": [112.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [121.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [130.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [138.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [147.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [156.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [164.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [173.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [182.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [191]
+          },
+          {
+            "level": 13,
+            "multipliers": [199.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [208.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [217.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [225.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "pyrois-dodge_counter-first_light",
+        "name": "First Light (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPerforms a forward spinning slash, dealing Ether DMG. After using the skill and with 30 or more /bSolar Prominence//b, hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [228.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [249.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [270.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [291.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [311.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [332.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [353.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [374.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [395.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [415.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [436.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [457.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [478.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [499.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [519.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [540.7]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "pyrois-quick_assist-duskguard",
+        "name": "Duskguard (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLaunches a series of attacks against the target, dealing Ether DMG. After using the skill and with 30 or more /bSolar Prominence//b, hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [41.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [45]
+          },
+          {
+            "level": 3,
+            "multipliers": [48.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [52.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [56.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [60.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [64]
+          },
+          {
+            "level": 8,
+            "multipliers": [67.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [71.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [75.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [79.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [83]
+          },
+          {
+            "level": 13,
+            "multipliers": [86.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [90.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [94.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [98.2]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "pyrois-assist_follow_up-return_to_daylight",
+        "name": "Return to Daylight (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nPerforms a forward thrust attack, dealing Ether DMG. After using the skill and with 30 or more /bSolar Prominence//b, press or hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [338.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [369.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [400.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [431]
+          },
+          {
+            "level": 5,
+            "multipliers": [461.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [492.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [523.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [554.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [585]
+          },
+          {
+            "level": 10,
+            "multipliers": [615.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [646.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [677.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [708.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [739]
+          },
+          {
+            "level": 15,
+            "multipliers": [769.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [800.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "pyrois-special-fading_rays",
+        "name": "Fading Rays (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nPerforms a rush attack, dealing Ether DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [52.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [56.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [61.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [66.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [71.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [76.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [80.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [85.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [90.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [95.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [100.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [104.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [109.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [114.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [119.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [124.1]
+          }
+        ]
+      },
+      {
+        "id": "pyrois-special-assault_directive",
+        "name": "Assault Directive (Special Attack)",
+        "description": "When an /bUltimate//b or /bEX Special Attack: Sun's Halo//b is used, Phaethon performs an assist attack, dealing Ether DMG. This effect can trigger once every 2.5s, and is guaranteed to trigger when using an /bUltimate//b.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [82.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [90.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [98]
+          },
+          {
+            "level": 4,
+            "multipliers": [105.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [113.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [120.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [128.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [136]
+          },
+          {
+            "level": 9,
+            "multipliers": [143.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [151.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [158.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [166.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [174]
+          },
+          {
+            "level": 14,
+            "multipliers": [181.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [189.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [196.8]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "pyrois-ex_special_attack-suns_halo",
+        "name": "Sun's Halo (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nQuickly charges forward and performs a series of consecutive attacks, dealing massive Ether DMG. If hit by an enemy attack during the charge, triggers a /bPerfect Block//b effect, nullifying the damage and increasing the move's Interrupt Level to that of a /bHeavy Defensive Assist//b.\n\nAfter using the skill and with 30 or more /bSolar Prominence//b, hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [737.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [804.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [871.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [938.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [1005.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [1072.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [1140]
+          },
+          {
+            "level": 8,
+            "multipliers": [1207.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [1274.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [1341.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1408.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1475.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [1542.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [1609.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [1676.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1743.9]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "pyrois-chain_attack-ceremonial_march",
+        "name": "Ceremonial March (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nPerforms a coordinated attack with Phaethon, dealing massive Ether DMG. After using the skill and with 30 or more /bSolar Prominence//b, press or hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1058.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [1154.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [1250.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [1347.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [1443.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [1539.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [1636.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [1732.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [1828.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [1925]
+          },
+          {
+            "level": 11,
+            "multipliers": [2021.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [2117.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [2213.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [2310.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [2406.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [2502.8]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "pyrois-ultimate-total_annihilation",
+        "name": "Total Annihilation (Ultimate)",
+        "description": "When Decibel Rating is at or above /bBlasting//b, press [ULTIMATE] and select the upper branch to activate:\n\nAfter charging, performs a downward slash, dealing massive Ether DMG. After using the skill and with 30 or more /bSolar Prominence//b, press or hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [866.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [945]
+          },
+          {
+            "level": 3,
+            "multipliers": [1023.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [1102.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [1181.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [1260.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [1339]
+          },
+          {
+            "level": 8,
+            "multipliers": [1417.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1496.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1575.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1654.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1733]
+          },
+          {
+            "level": 13,
+            "multipliers": [1811.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1890.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1969.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [2048.2]
+          }
+        ]
+      },
+      {
+        "id": "pyrois-ultimate-triumphant_return",
+        "name": "Triumphant Return (Ultimate)",
+        "description": "When Decibel Rating is at or above /bBlasting//b, press [ULTIMATE] and select the lower branch to activate:\n\nReleases an energy burst in the surrounding area, dealing massive Ether DMG. After using the skill and with 30 or more /bSolar Prominence//b, hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [535.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [584.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [633.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [681.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [730.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [779.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [827.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [876.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [925.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [974]
+          },
+          {
+            "level": 11,
+            "multipliers": [1022.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1071.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1120.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1168.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1217.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1266.2]
+          }
+        ]
+      },
+      {
+        "id": "pyrois-ultimate-unbound_swordstorm",
+        "name": "Unbound Swordstorm (Ultimate)",
+        "description": "When Decibel Rating is at or above /bBlasting//b, press [ULTIMATE] and select the left branch to activate:\n\nUnleashes consecutive attacks forward, dealing massive Ether DMG. After using the skill and with 30 or more /bSolar Prominence//b, hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [973.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [1061.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [1150.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [1238.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [1327.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [1415.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [1504.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1592.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1681.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [1769.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [1858.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1946.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [2035.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [2123.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [2212.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [2300.8]
+          }
+        ]
+      },
+      {
+        "id": "pyrois-ultimate-eternal_imprisonment",
+        "name": "Eternal Imprisonment (Ultimate)",
+        "description": "When Decibel Rating is at or above /bBlasting//b, press [ULTIMATE] and select the right branch to activate:\n\nGathers energy ahead before unleashing a /bFinishing Move//b, dealing massive Ether DMG. After using the skill and with 30 or more /bSolar Prominence//b, hold [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Celestial Light//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [997]
+          },
+          {
+            "level": 2,
+            "multipliers": [1087.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [1178.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [1269.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [1359.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [1450.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [1541.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [1631.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [1722.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1813.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1904]
+          },
+          {
+            "level": 12,
+            "multipliers": [1994.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [2085.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [2176.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [2266.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [2357.5]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "pyrois-core_1-radiant_chariot",
+        "name": "Left Branch: Additional DMG (Core Passive)",
+        "description": "/bLeft Branch - Ultimate: Unbound Swordstorm//b: Heavy attacks that hit enemies in the /bContamination//b state deal 900% of ATK as additional DMG",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [900]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+/* BUTTON */
+.kawaii-storage-btn {
+  background: linear-gradient(
+    45deg,
+    #ff9aa2,
+    #ffb7b2,
+    #ffdac1,
+    #e2f0cb,
+    #b5ead7,
+    #c7ceea
+  );
+  background-size: 400% 400%;
+  animation: rainbow 5s infinite;
+  border: 3px solid white;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 16px;
+  color: white;
+  text-shadow: 0 0 6px white;
+  box-shadow:
+    0 0 15px hotpink,
+    0 0 40px pink;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* .kawaii-storage-btn:hover {
+  transform: scale(1.1) rotate(-2deg);
+} */
+
+/* OVERLAY */
+.kawaii-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #ffd6ff88, #c8b6ff88, #b8f2e688);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* POPUP CARD */
+.kawaii-popup {
+  background: linear-gradient(
+    135deg,
+    #fff0f6,
+    #ffd6ff,
+    #c8b6ff,
+    #b8f2e6,
+    #ffe5ec
+  );
+  background-size: 300% 300%;
+  animation: rainbow 8s infinite;
+  border: 4px solid white;
+  padding: 32px;
+  border-radius: 32px;
+  text-align: center;
+  box-shadow:
+    0 0 20px #ff9aa2,
+    0 0 60px #c7ceea;
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  position: relative;
+}
+
+/* CHIBI FACE */
+.chibi-face {
+  font-size: 26px;
+  animation: wiggle 1.5s infinite;
+  text-shadow: 0 0 6px pink;
+}
+
+/* NUMBER */
+.number {
+  font-weight: bold;
+  color: hotpink;
+  font-size: 20px;
+}
+
+/* GUMMY BAR */
+.bar {
+  width: 260px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  padding: 4px;
+  border: 3px solid white;
+  box-shadow: inset 0 0 10px pink;
+  margin: 12px auto;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #ff9aa2,
+    #ffb7b2,
+    #ffdac1,
+    #e2f0cb,
+    #b5ead7,
+    #c7ceea
+  );
+  background-size: 300% 100%;
+  animation: rainbow 3s linear infinite;
+  box-shadow:
+    0 0 8px white,
+    inset 0 0 6px white;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #ff9aa2, #c7ceea);
+  border: 2px solid white;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 8px white;
+}
+
+/* SPARKLES */
+.sparkles {
+  font-size: 22px;
+  animation: sparkle 2s infinite alternate;
+}
+
+.floating-hearts {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  font-size: 22px;
+  animation: sparkle 1.5s infinite alternate;
+}
+
+/* ANIMATIONS */
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes sparkle {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+}

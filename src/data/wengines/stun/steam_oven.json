@@ -1,0 +1,55 @@
+{
+  "id": "steam_oven",
+  "name": "Steam Oven",
+  "rarity": "A",
+  "specialty": "Stun",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.5
+  },
+
+  "ingameEffects": [
+    {
+      "id": "steam_oven-thick_broth",
+      "source": "wEngine",
+      "sourceId": "steam_oven",
+      "label": "Thick Broth (W-Engine Passive)",
+      "description": "For every 10 Energy accumulated, the equipper's Impact is increased by, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
+      "shortDescription": "Increases the equipper's Impact, stacking up to 8 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "impactPercentRaw": 0.02 }
+          },
+          {
+            "level": 2,
+            "stats": { "impactPercentRaw": 0.023 }
+          },
+          {
+            "level": 3,
+            "stats": { "impactPercentRaw": 0.026 }
+          },
+          {
+            "level": 4,
+            "stats": { "impactPercentRaw": 0.029 }
+          },
+          {
+            "level": 5,
+            "stats": { "impactPercentRaw": 0.032 }
+          }
+        ],
+        "maxStacks": 8,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    }
+  ]
+}

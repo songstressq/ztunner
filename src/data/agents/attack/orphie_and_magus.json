@@ -1,0 +1,1324 @@
+{
+  "id": "orphie",
+  "name": "Orphie & Magus",
+  "specialty": "Attack",
+  "faction": "Obol Squad",
+  "attribute": "Fire",
+  "rarity": "S",
+  "fullName": "Orphie Magnusson & Magus",
+  "displayName": "Orphie & Magus",
+  "attributeIcon": "Fire",
+  "themeColor": "#F58733",
+  "baseStats": {
+    "hp": 7788.7,
+    "atk": 854.76,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 92,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "Energy Regen", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.1201
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "orphie_and_magus-core_1-taming_wind_and_fire_protocol",
+      "source": "core",
+      "sourceId": "orphie_and_magus-core",
+      "label": "Taming Wind and Fire Protocol (Core Passive)",
+      "description": "Orphie & Magus's CRIT Rate increases by 25%, and Aftershock DMG increases by 85%. Orphie & Magus initially gain 100 Bottled Heat, up to a maximum of 125. When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead.",
+      "shortDescription": "Orphie & Magus' CRIT Rate is increased by 25% and her damage from Aftershocks is increased by 85%.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.25
+      },
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "aftershock",
+          "value": 0.85
+        }
+      ]
+    },
+    {
+      "id": "orphie_and_magus-core_2-taming_wind_and_fire_protocol",
+      "source": "core",
+      "sourceId": "orphie_and_magus-core",
+      "label": "Taming Wind and Fire Protocol (Core Passive)",
+      "description": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead. When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by 280. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed 700. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+      "shortDescription": "All squad members' ATK is increased based on Orphie & Magus' initial Energy Regen.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.6,
+        "maxStat": 99999,
+        "baseBonus": 280,
+        "perUnit": 0.1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 700,
+            "perUnitBonus": 20
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "orphie_and_magus_core_forged_in_flames",
+      "source": "core",
+      "sourceId": "orphie_and_magus_core_3",
+      "label": "Forged in Flames (Aditional Ability)",
+      "description": "WWhen another character in your squad is a Stun or Support character: Aftershock DMG dealt by Agents with Zeroed In ignores 25% DEF.",
+      "shortDescription": "Aftershock DMG ignores 25% DEF.",
+      "target": "self",
+      "aftershockDefShred": 0.25
+    },
+    {
+      "id": "orphie_and_magus-mindscape_1_1-luxurious_cat_house",
+      "source": "mindscape",
+      "sourceId": "orphie_and_magus-mindscape_1_1",
+      "label": "Luxurious Cat House (Mindscape Cinema N°1)",
+      "description": "Orphie & Magus' Special Attack: Corrosive Flash, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, and EX Special Attack: Fiery Eruption ignore 15% of target's Fire RES, and Agents with Zeroed In deal 20% increased DMG.",
+      "shortDescription": "Orphie & Magus' Special Attack: Corrosive Flash, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, and EX Special Attack: Fiery Eruption ignore 15% of target's Fire RES.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "fireResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "orphie_magus-ex_special_attack-fiery_eruption",
+            "orphie_magus-ex_special_attack-heat_charge",
+            "orphie_magus-ex_special_attack-crimson_vortex",
+            "orphie_magus-special_attack-corrosive_flash"
+          ],
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "orphie_and_magus-mindscape_1_2-luxurious_cat_house",
+      "source": "mindscape",
+      "sourceId": "orphie_and_magus-mindscape_1_2",
+      "label": "Luxurious Cat House (Mindscape Cinema N°1)",
+      "description": "Orphie & Magus' Special Attack: Corrosive Flash, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, and EX Special Attack: Fiery Eruption ignore 15% of target's Fire RES, and Agents with Zeroed In deal 20% increased DMG.",
+      "shortDescription": "All squad members' DMG is increased by 20%.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "orphie_and_magus-mindscape_2-weird_food_list",
+      "source": "mindscape",
+      "sourceId": "orphie_and_magus-mindscape_2",
+      "label": "Weird Food List (Mindscape Cinema N°2)",
+      "description": "When Orphie & Magus launch an Aftershock, restore 65 Decibels. This effect can trigger once every 4s. After Orphie & Magus use their Ultimate, their ATK increases by 20% for up to 45s.",
+      "shortDescription": "Orphie & Magus' ATK is increased by 20% for 45s.",
+      "target": "self",
+      "flat": {
+        "atkPercentRaw": 0.2
+      }
+    },
+    {
+      "id": "orphie_and_magus-mindscape_4-pink_holster",
+      "source": "mindscape",
+      "sourceId": "orphie_and_magus-mindscape_4",
+      "label": "Pink Holster (Mindscape Cinema N°4)",
+      "description": "Initial duration of Zeroed In increases to 16s, and Orphie & Magus's EX Special Attack: Heat Charge and Ultimate: Dance With Fire DMG increases by 40%.",
+      "shortDescription": "Orphie & Magus' DMG from EX Special Attack: Heat Charge and Ultimate: Dance With Fire is increased by 40%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "orphie_magus-ex_special_attack-heat_charge",
+            "orphie_magus-ultimate-dance_with_fire"
+          ],
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "orphie_and_magus-mindscape_6-magic_seed",
+      "source": "mindscape",
+      "sourceId": "orphie_and_magus-mindscape_6",
+      "label": "Magic Seed (Mindscape Cinema N°4)",
+      "description": "With enough energy, after the fire blade attack of Basic Attack: High-Pressure Flamethrower, press EX Special Attack to immediately follow up with EX Special Attack: Crimson Vortex. When the fire blade attack of Basic Attack: High-Pressure Flamethrower is activated, recover 10 Bottled Heat, and the Interrupt Level during the low firepower phase of EX Special Attack: Heat Charge will also increase. When the laser from EX Special Attack: Heat Charge or Ultimate hits enemies, it deals additional Fire DMG equal to 250% of Orphie & Magus's ATK. This effect can trigger once every 0.5s and is counted as EX Special Attack and Aftershock DMG.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "orphie_and_magus-basic_attack-high_pressure_flamethrower",
+        "name": "High-Pressure Flamethrower (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 5 attacks in front, followed by a powerful flame blade strike, dealing Physical DMG and Fire DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Fire Blade DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [14.5, 44.4, 41.5, 86.7, 181.6, 158.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [15.9, 48.5, 45.3, 94.6, 198.2, 172.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [17.3, 52.6, 49.1, 102.5, 214.8, 187.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [18.7, 56.7, 52.9, 110.4, 231.4, 201.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [20.1, 60.8, 56.7, 118.3, 248, 216]
+          },
+          {
+            "level": 6,
+            "multipliers": [21.5, 64.9, 60.5, 126.2, 264.6, 230.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [22.9, 69, 64.3, 134.1, 281.2, 244.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [24.3, 73.1, 68.1, 142, 297.8, 259.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [25.7, 77.2, 71.9, 149.9, 314.4, 273.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [27.1, 81.3, 75.7, 157.8, 331, 288]
+          },
+          {
+            "level": 11,
+            "multipliers": [28.5, 85.4, 79.5, 165.7, 347.6, 302.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [29.9, 89.5, 83.3, 173.6, 364.2, 316.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [31.3, 93.6, 87.1, 181.5, 380.8, 331.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [32.7, 97.7, 90.9, 189.4, 397.4, 345.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [34.1, 101.8, 94.7, 197.3, 414, 360]
+          },
+          {
+            "level": 16,
+            "multipliers": [35.5, 105.9, 98.5, 205.2, 430.6, 374.4]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "orphie_magus-dash_attack-rush_command",
+        "name": "Rush Command (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nPerform a quick forward attack, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [62.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [68]
+          },
+          {
+            "level": 3,
+            "multipliers": [73.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [79.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [85.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [90.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [96.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [102.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [107.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [113.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [119.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [125]
+          },
+          {
+            "level": 13,
+            "multipliers": [130.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [136.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [142.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [147.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "orphie_magus-dodge_counter-counter_strike_opportunity",
+        "name": "Counter Strike Opportunity (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLaunch a series of attacks on enemies in front, dealing Physical DMG and Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [257.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [281.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [304.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [328.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [351.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [375.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [398.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [422.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [445.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [469.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [492.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [516.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [539.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [563.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [586.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [610.3]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "orphie_magus-quick_assist-searing_slash",
+        "name": "Searing Slash (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nUnleash a series of attacks on enemies in front, dealing Physical DMG and Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [113.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [124.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [134.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [144.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [155.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [165.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [176.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [186.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [196.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [207.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [217.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [228.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [238.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [248.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [259.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [269.7]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "orphie_magus-assist_follow_up-boiling_pierce",
+        "name": "Boiling Pierce (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleash multiple attacks against enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [360.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [393.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [426.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [459.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [492.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [525.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [558.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [591.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [624.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [657]
+          },
+          {
+            "level": 11,
+            "multipliers": [689.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [722.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [755.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [788.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [821.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [854.4]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "orphie_magus-special_attack-blazing_chamber",
+        "name": "Blazing Chamber (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nThrust forward and perform a tail attack, dealing Fire DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [39.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [43.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [46.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [50.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [53.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [57.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [61.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [64.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [68.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [71.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [75.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [79.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [82.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [86.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [89.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [93.5]
+          }
+        ]
+      },
+      {
+        "id": "orphie_magus-special_attack-corrosive_flash",
+        "name": "Corrosive Flash (Special Attack)",
+        "description": "Automatically triggers during ally attacks:\n\nUnleashes 4 laser /bAftershock//b attacks, dealing Fire DMG. Triggers once per 5s. Upon activating this skill, restore 20 Bottled Heat. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [495]
+          },
+          {
+            "level": 2,
+            "multipliers": [540]
+          },
+          {
+            "level": 3,
+            "multipliers": [585]
+          },
+          {
+            "level": 4,
+            "multipliers": [630]
+          },
+          {
+            "level": 5,
+            "multipliers": [675]
+          },
+          {
+            "level": 6,
+            "multipliers": [720]
+          },
+          {
+            "level": 7,
+            "multipliers": [765]
+          },
+          {
+            "level": 8,
+            "multipliers": [810]
+          },
+          {
+            "level": 9,
+            "multipliers": [855]
+          },
+          {
+            "level": 10,
+            "multipliers": [900]
+          },
+          {
+            "level": 11,
+            "multipliers": [945]
+          },
+          {
+            "level": 12,
+            "multipliers": [990]
+          },
+          {
+            "level": 13,
+            "multipliers": [1035]
+          },
+          {
+            "level": 14,
+            "multipliers": [1080]
+          },
+          {
+            "level": 15,
+            "multipliers": [1125]
+          },
+          {
+            "level": 16,
+            "multipliers": [1170]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "orphie_magus-ex_special_attack-watch_your_step",
+        "name": "Watch Your Step (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nPerform a sweeping laser attack forward, dealing Fire DMG. After using this skill, immediately follow up with the powerful fire blade from the /bBasic Attack//b. Upon activating this skill, restore 20 Bottled Heat. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [280.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [306.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [332.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [357.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [383.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [408.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [434.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [460.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [485.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [511.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [536.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [562.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [588.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [613.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [639.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [664.9]
+          }
+        ]
+      },
+      {
+        "id": "orphie_magus-ex_special_attack-crimson_vortex",
+        "name": "Crimson Vortex (EX Special Attack)",
+        "description": "When off-field with 60 or more Energy, automatically triggers during ally attacks:\n\nPerforms a sweeping laser attack in an area around, dealing Fire DMG. Upon activating this skill, restore 20 Bottled Heat. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [678.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [740.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [801.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [863.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [925.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [986.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [1048.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [1110.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [1172]
+          },
+          {
+            "level": 10,
+            "multipliers": [1233.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1295.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1357.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1418.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1480.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1542.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1603.9]
+          }
+        ]
+      },
+      {
+        "id": "orphie_magus-ex_special_attack-heat_charge",
+        "name": "Heat Charge (EX Special Attack)",
+        "description": "When Bottled Heat is greater than or equal to 100, hold [SPECIAL] to activate:\n\nConsume 100 Bottled Heat to continuously fire a laser forward, dealing Fire DMG. When firing begins, triggers /bQuick Assist//b. After continuous firing for a period, firepower increases, greatly boosting the skill's Interrupt Level. When attacked during firing, will parry enemy attacks and immediately increase firepower.\n\nWhen maximum firing duration is reached, automatically activates /bEX Special Attack: Fiery Eruption//b. During the low firepower phase, Anti-Interrupt Level increases and DMG taken is reduced by 40%, while character is invulnerable during the high firepower phase.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Laser Maximum DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [389.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [424.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [460.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [495.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [531]
+          },
+          {
+            "level": 6,
+            "multipliers": [566.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [601.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [637.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [672.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [708]
+          },
+          {
+            "level": 11,
+            "multipliers": [743.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [778.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [814.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [849.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [885]
+          },
+          {
+            "level": 16,
+            "multipliers": [920.4]
+          }
+        ]
+      },
+      {
+        "id": "orphie_magus-ex_special_attack-fiery_eruption",
+        "name": "Fiery Eruption (EX Special Attack)",
+        "description": "Automatically activates after /bEX Special Attack: Heat Charge//b reaches maximum firing time:\n\nPerforms a spinning attack forward, then fires a laser ahead dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [259.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [283.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [306.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [330.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [354]
+          },
+          {
+            "level": 6,
+            "multipliers": [377.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [401.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [424.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [448.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [472]
+          },
+          {
+            "level": 11,
+            "multipliers": [495.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [519.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [542.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [566.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [590]
+          },
+          {
+            "level": 16,
+            "multipliers": [613.6]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "orphie_magus-chain_attack-overheated_barrel",
+        "name": "Overheated Barrel (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nPerform a spinning attack forward, then fire a laser ahead, dealing Fire DMG. Upon activating this skill, restore 20 points of Bottled Heat. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [626.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [683.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [740.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [797.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [854.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [911.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [968.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1025.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [1082.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [1139.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1196.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1253.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [1310.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1367.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [1424.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [1481.3]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "orphie_magus-ultimate-dance_with_fire",
+        "name": "Dance with Fire (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nPerform a spinning attack forward, then fire a laser ahead, dealing Fire DMG. When leaping into the air, a /bQuick Assist//b will be triggered. If the /bQuick Assist//b is activated, Orphie & Magus will extend the laser firing duration. Upon activating this skill, recover 20 Bottled Heat. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          },
+          {
+            "name": "Extended Duration Total DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [698.7, 465.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [762.3, 508.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [825.9, 550.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [889.5, 593]
+          },
+          {
+            "level": 5,
+            "multipliers": [953.1, 635.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [1016.7, 677.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [1080.3, 720.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [1143.9, 762.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [1207.5, 805]
+          },
+          {
+            "level": 10,
+            "multipliers": [1271.1, 847.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1334.7, 889.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1398.3, 932.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1461.9, 974.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [1525.5, 1017]
+          },
+          {
+            "level": 15,
+            "multipliers": [1589.1, 1059.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [1652.7, 1101.8]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "orphie_and_magus-mindscape-magic_seed",
+        "name": "Magic Seed: Additional Fire DMG (Mindscape Cinema N°6)",
+        "description": "With enough energy, after the fire blade attack of /bBasic Attack: High-Pressure Flamethrower//b, press [EX] to immediately follow up with /bEX Special Attack: Crimson Vortex//b.\n\nWhen the fire blade attack of /bBasic Attack: High-Pressure Flamethrower//b is activated, recover 10 /bBottled Heat//b, and the Interrupt Level during the low firepower phase of /bEX Special Attack: Heat Charge//b will also increase.\n\nWhen the laser from /bEX Special Attack: Heat Charge//b or /bUltimate//b hits enemies, it deals additional Fire DMG equal to 250% of Orphie & Magus's ATK. This effect can trigger once every 0.5s and is counted as /bEX Special Attack//b and /bAftershock//b DMG.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Additional Hit",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [250]
+          }
+        ]
+      }
+    ]
+  }
+}

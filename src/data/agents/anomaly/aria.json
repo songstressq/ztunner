@@ -1,0 +1,1189 @@
+{
+  "id": "aria",
+  "name": "Aria",
+  "specialty": "Anomaly",
+  "faction": "Angels of Delusion",
+  "attribute": "Ether",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Aria",
+  "attributeIcon": "Ether",
+  "themeColor": "#F48795",
+  "skins": [
+    {
+      "id": "default",
+      "img": "aria.png"
+    },
+    {
+      "id": "aria-alt",
+      "img": "aria-alt.png"
+    },
+    {
+      "id": "aria-discordant_note",
+      "img": "aria-discordant_note.png"
+    },
+    {
+      "id": "aria-discordant_note_alt",
+      "img": "aria-discordant_note_alt.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7749.7,
+    "atk": 788.45,
+    "def": 619.61
+  },
+  "combatBase": {
+    "impact": 87,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 116,
+    "anomalyMastery": 115,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["ATK", "Anomaly Proficiency", "Anomaly Mastery"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "aria-core-innate_stage_presence",
+      "source": "core",
+      "sourceId": "aria-core",
+      "label": "Innate Stage Presence (Core Passive)",
+      "description": "Aria's Anomaly Proficiency increases by 90. If Aria's 3rd hit of Basic Attack: Perfect Pitch lands a heavy attack on an enemy suffering an Ether, Electric, Fire, Physical, or Ice Anomaly, it will trigger Abloom, which resolves an additional instance of Attribute Anomaly DMG. The additional DMG is calculated as 27.5%/14.3%/35.5%/2.5%/3.6% per 10 points of initial Anomaly Mastery of the original Anomaly DMG. If the target is Stunned, the DMG ratio is further increased by 50%.",
+      "shortDescription": "Aria's Anomaly Proficiency is increased by 90.",
+      "target": "self",
+      "flat": {
+        "anomalyProficiency": 90
+      }
+    },
+    {
+      "id": "aria-mindscape_1-energetic_sound_waves",
+      "source": "mindscape",
+      "sourceId": "aria-mindscape_1",
+      "label": "Energetic Sound Waves (Mindscape Cinema N°1)",
+      "description": "When Aria's Basic Attack, Special Attack, or EX Special Attack deals DMG to enemies, it ignores 10% of the target's Ether Anomaly Buildup RES. Additionally, when Aria triggers Abloom, it has a chance to trigger a critical hit. The base CRIT Rate is 25%, and CRIT DMG is 25%. If initial Anomaly Mastery exceeds 100, each additional point of initial Anomaly Mastery increases this effect's CRIT Rate by 0.5%.",
+      "shortDescription": "This mindscape cinema does not affect Aria's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "aria-mindscape_2-fantastical_beat",
+      "source": "mindscape",
+      "sourceId": "aria-mindscape_2",
+      "label": "Fantastical Beat (Mindscape Cinema N°2)",
+      "description": "When Aria attacks or triggers Abloom, it ignores 16% of the target's DEF. During Moment of Delusion, attacks and Abloom triggers also ignore an additional 8% of the target's DEF.",
+      "shortDescription": "Aria's attacks ignore 16% of the target's DEF, with an additional 8% during Moment of Delusion.",
+      "target": "self",
+      "baseStats": {
+        "defShred": 0.16
+      },
+      "conditionalStats": {
+        "stats": {
+          "defShred": 0.08
+        },
+        "requiresBuff": "Moment of Delusion"
+      }
+    },
+    {
+      "id": "aria-mindscape_4-mechanical_angel",
+      "source": "mindscape",
+      "sourceId": "aria-mindscape_4",
+      "label": "Mechanical Angel (Mindscape Cinema N°4)",
+      "description": "When Aria triggers Abloom, she gains 4 Energy and 70 Decibels. This effect can trigger once every 10s.",
+      "shortDescription": "This mindscape cinema does not affect Aria's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "aria-mindscape_6-fantastical_beat",
+      "source": "mindscape",
+      "sourceId": "aria-mindscape_6",
+      "label": "Fantastical Beat (Mindscape Cinema N°6)",
+      "description": "Upon entering the battlefield, Aria immediately gains 1,200 Decibels. In Investigation Zone mode, this effect can trigger once every 180s. After Aria enters Moment of Delusion, she will not exit it, and enhanced Basic Attack: Perfect Pitch and her Ultimate deal 40% increased Ether DMG. While in Moment of Delusion, when an enemy on the field enters an Anomaly state, Aria gains 1 stacks of All-Out Cheering. This effect can occur once every 6s. When gaining the All-Out Cheering effect, if already at 3 stacks of All-Out Cheering, any excess All-Out Cheering is converted into 2 Fandom Power and generated on the field.",
+      "shortDescription": "Aria's Ether DMG from enhanced Basic Attack: Perfect Pitch and Ultimate: 100% Energy is increased by 40%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "skillTypeElemental",
+          "skillType": "ultimate",
+          "element": "ether",
+          "value": 0.4
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "aria-basic_attack-perfect_pitch",
+          "hitName": "Enhanced Charge Attack DMG Multiplier",
+          "value": 0.4
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "aria-basic_attack-perfect_pitch",
+          "hitName": "Enhanced Charge Attack DMG Multiplier (Coordinated)",
+          "value": 0.4
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "aria-basic_attack-sweet_melody",
+        "name": "Sweet Melody (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunches up to four consecutive attacks forward, dealing Ether DMG. After hitting an enemy with the fourth hit, 1 /bFandom Power//b is generated on the field after the attack ends.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [33.2, 71.6, 93.8, 194.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [36.3, 78.2, 102.4, 211.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [39.4, 84.8, 111, 229.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [42.5, 91.4, 119.6, 247.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [45.6, 98, 128.2, 265]
+          },
+          {
+            "level": 6,
+            "multipliers": [48.7, 104.6, 136.8, 282.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [51.8, 111.2, 145.4, 300.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [54.9, 117.8, 154, 318.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [58, 124.4, 162.6, 335.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [61.1, 131, 171.2, 353.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [64.2, 137.6, 179.8, 371.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [67.3, 144.2, 188.4, 388.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [70.4, 150.8, 197, 406.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [73.5, 157.4, 205.6, 424.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [76.6, 164, 214.2, 442]
+          },
+          {
+            "level": 16,
+            "multipliers": [79.7, 170.6, 222.8, 459.7]
+          }
+        ]
+      },
+      {
+        "id": "aria-basic_attack-perfect_pitch",
+        "name": "Perfect Pitch (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nAria enters a charging state and can reach three levels of charge. Releasing [BASIC] or reaching the maximum charge time causes Aria to unleash a powerful downward attack forward based on the current charge level, dealing massive Ether DMG.\n\nIf there is /bFandom Power//b nearby while Aria is charging, she will absorb the /bFandom Power//b, with each absorbed /bFandom Power//b instantly increasing charge level by 1 and granting 1 stack of a buff that increases the next /bBasic Attack: Perfect Pitch//b's Ether Anomaly Buildup by 10%. This buff can stack up to 2 times and is removed after the attack ends.\n\nAfter the 4th hit of /bBasic Attack: Sweet Melody//b, /bSpecial Attack: Full-Sugar Electronica - No Ice//b, an /bEX Special Attack//b, the 3rd hit of /bBasic Attack: Perfect Pitch//b, a /bQuick Assist//b, a /bChain Attack//b, or an /bUltimate//b, if there are at least 2 /bFandom Power//b nearby, hold [BASIC] to consume 2 /bFandom Power//b and quickly activate the 3rd hit of /bBasic Attack: Perfect Pitch//b. After the 3rd hit of /bBasic Attack: Perfect Pitch//b, a /bChain Attack//b, or an /bUltimate//b, if there are at least 2 /bFandom Power//b nearby, the 3rd hit of /bBasic Attack: Perfect Pitch//b can also be quickly activated by pressing [BASIC] within a short window, consuming 2 /bFandom Power//b. Anti-Interrupt Level is increased while charging, and received DMG is reduced by 40%. Character is invulnerable while using this attack.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Charge Level One Attack DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Charge Level Two Attack DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Charge Level Three Attack DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Charge Level Three Attack DMG Multiplier (Coordinated)",
+            "damageType": "ether"
+          },
+          {
+            "name": "Enhanced Charge Attack DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Enhanced Charge Attack DMG Multiplier (Coordinated)",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [181.5, 207.2, 275, 316.3, 320.9, 362.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [198, 226.1, 300, 345.1, 350.1, 395.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [214.5, 245, 325, 373.9, 379.3, 428.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [231, 263.9, 350, 402.7, 408.5, 461.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [247.5, 282.8, 375, 431.5, 437.7, 494.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [264, 301.7, 400, 460.3, 466.9, 527.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [280.5, 320.6, 425, 489.1, 496.1, 560.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [297, 339.5, 450, 517.9, 525.3, 593.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [313.5, 358.4, 475, 546.7, 554.5, 626.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [330, 377.3, 500, 575.5, 583.7, 659.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [346.5, 396.2, 525, 604.3, 612.9, 692.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [363, 415.1, 550, 633.1, 642.1, 725.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [379.5, 434, 575, 661.9, 671.3, 758.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [396, 452.9, 600, 690.7, 700.5, 791.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [412.5, 471.8, 625, 719.5, 729.7, 824.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [429, 490.7, 650, 748.3, 758.9, 857.2]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "aria-dash_attack-silky_smooth_combo",
+        "name": "Silky-Smooth Combo (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nFlies forward with a swift slashing attack, dealing Ether DMG. If activated during a /bBasic Attack: Sweet Melody//b chain, this action does not reset the /bBasic Attack//b count.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [45.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [50]
+          },
+          {
+            "level": 3,
+            "multipliers": [54.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [58.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [62.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [66.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [71]
+          },
+          {
+            "level": 8,
+            "multipliers": [75.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [79.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [83.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [87.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [92]
+          },
+          {
+            "level": 13,
+            "multipliers": [96.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [100.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [104.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [108.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "aria-dodge_counter-slide_shift_variation",
+        "name": "Slide-Shift Variation (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nUnleashes a powerful slash against the target, dealing Ether DMG. After using this skill, it can be immediately followed up with the 3rd hit of /bBasic Attack: Sweet Melody//b. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [241.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [263.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [285.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [307.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [329.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [351.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [373.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [395.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [417.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [439.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [461.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [483.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [505.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [527.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [549.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [571.2]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "aria-quick_assist-shatter_fantasy",
+        "name": "Shatter Fantasy (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nDelivers a powerful slash to the target, dealing Ether DMG. After using this skill, it can be immediately followed up with the 3rd hit of /bBasic Attack: Sweet Melody//b. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [49.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [54.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [58.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [63.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [68]
+          },
+          {
+            "level": 6,
+            "multipliers": [72.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [77.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [81.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [86.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [91]
+          },
+          {
+            "level": 11,
+            "multipliers": [95.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [100.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [104.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [109.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [114]
+          },
+          {
+            "level": 16,
+            "multipliers": [118.6]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "aria-assist_follow_up-encore_song",
+        "name": "Encore Song (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleashes a powerful series of slashes on the target, dealing massive Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "followUp",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [363.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [396.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [429.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [462.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [495.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [529]
+          },
+          {
+            "level": 7,
+            "multipliers": [562.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [595.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [628.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [661.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [694.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [727.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [760.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [793.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [826.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [860]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "aria-special_attack-full_sugar_electronica",
+        "name": "Full-Sugar Electronica (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nDelivers a forward kick, dealing Ether DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [54.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [59.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [64.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [69.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [74.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [79.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [84.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [89.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [94.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [99.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [104.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [109.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [114.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [119.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [124.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [129.3]
+          }
+        ]
+      },
+      {
+        "id": "aria-special_attack-full_sugar_electronica_no_ice",
+        "name": "Full-Sugar Electronica - No Ice (Special Attack)",
+        "description": "After the 4th hit of /bBasic Attack: Sweet Melody//b, an /bAssist Follow-Up//b, a /bChain Attack//b, or an /bUltimate//b, press [SPECIAL] to activate:\n\nDelivers a quicker forward kick, dealing Ether DMG. If the attack hits an enemy, 1 /bFandom Power//b is generated on the field after the attack ends. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [64.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [70.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [76.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [82.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [88.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [94.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [100.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [106.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [112]
+          },
+          {
+            "level": 10,
+            "multipliers": [117.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [123.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [129.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [135.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [141.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [147.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [153.3]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "aria-ex_special_attack-fall_into_delusion",
+        "name": "Fall Into Delusion (EX Special Attack)",
+        "description": "With enough energy, press [EX] to activate:\n\nDelivers a powerful forward kick followed by a sonic wave attack, dealing Ether DMG. If the attack hits an enemy, 3 /bFandom Power//b are generated on the field after the attack ends. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [511.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [557.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [604.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [650.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [697.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [743.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [790.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [836.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [883.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [929.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [976.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1022.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1069.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1115.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [1162.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1208.7]
+          }
+        ]
+      },
+      {
+        "id": "aria-ex_special_attack-instantly_hooked",
+        "name": "Instantly Hooked (EX Special Attack)",
+        "description": "After launching /bEX Special Attack: Fall Into Delusion//b, and with enough Energy, press [EX] to activate:\n\nPerforms a powerful downward attack in front, dealing Ether DMG. If the attack hits an enemy, 3 /bFandom Power//b are generated on the field after the attack ends. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [544.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [594]
+          },
+          {
+            "level": 3,
+            "multipliers": [643.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [693]
+          },
+          {
+            "level": 5,
+            "multipliers": [742.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [792]
+          },
+          {
+            "level": 7,
+            "multipliers": [841.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [891]
+          },
+          {
+            "level": 9,
+            "multipliers": [940.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [990]
+          },
+          {
+            "level": 11,
+            "multipliers": [1039.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [1089]
+          },
+          {
+            "level": 13,
+            "multipliers": [1138.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1188]
+          },
+          {
+            "level": 15,
+            "multipliers": [1237.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1287]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "aria-chain_attack-dream_collab",
+        "name": "Dream Collab (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunches a series of attacks forward, dealing massive Ether DMG. 4 /bFandom Power//b are generated on the field on skill activation. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [816.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [890.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [964.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [1038.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [1113]
+          },
+          {
+            "level": 6,
+            "multipliers": [1187.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [1261.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1335.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [1409.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [1484]
+          },
+          {
+            "level": 11,
+            "multipliers": [1558.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1632.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1706.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [1780.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1855]
+          },
+          {
+            "level": 16,
+            "multipliers": [1929.2]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "aria-ultimate-100_percent_energy",
+        "name": "100% Energy (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nReleases all her power, entering /bMoment of Delusion//b, and fires multiple powerful shots at the target, dealing massive Ether DMG.\n\nUpon entering /bMoment of Delusion//b, Aria gains 3 stacks of /bAll-Out Cheering//b and activates /bEther Veil: Delusion Reprise//b. While /bEther Veil: Delusion Reprise//b is active, all squad members gain an additional 50 ATK for 30s. Re-activating /bEther Veil: Delusion Reprise//b will first cancel any existing instance of /bEther Veil: Delusion Reprise//b.\n\nWhile Aria is charging, if she has /bAll-Out Cheering//b, stacks of /bAll-Out Cheering//b are consumed first to charge. Each stack of /bAll-Out Cheering//b consumed increases the charge level by 2. Upon entering /bMoment of Delusion//b, if Aria already has /bAll-Out Cheering//b, all remaining stacks of /bAll-Out Cheering//b are first converted into /bFandom Power//b and generated on the field. Each stack of /bAll-Out Cheering//b is converted into 2 /bFandom Power//b.\n\n/bMoment of Delusion//b lasts for up to 15s. During /bMoment of Delusion//b, Aria's /bBasic Attack: Perfect Pitch//b 3rd hit is upgraded to an enhanced version. When exiting /bMoment of Delusion//b, if Aria has /bAll-Out Cheering//b, all remaining stacks of /bAll-Out Cheering//b are converted into /bFandom Power//b and generated on the field. Each stack of /bAll-Out Cheering//b is converted into 2 /bFandom Power//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1622.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [1770]
+          },
+          {
+            "level": 3,
+            "multipliers": [1917.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [2065]
+          },
+          {
+            "level": 5,
+            "multipliers": [2212.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [2360]
+          },
+          {
+            "level": 7,
+            "multipliers": [2507.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [2655]
+          },
+          {
+            "level": 9,
+            "multipliers": [2802.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [2950]
+          },
+          {
+            "level": 11,
+            "multipliers": [3097.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [3245]
+          },
+          {
+            "level": 13,
+            "multipliers": [3392.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [3540]
+          },
+          {
+            "level": 15,
+            "multipliers": [3687.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [3835]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

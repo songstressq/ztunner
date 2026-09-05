@@ -1,0 +1,1207 @@
+{
+  "id": "soukaku",
+  "name": "Soukaku",
+  "specialty": "Support",
+  "faction": "Hollow Special Operations Section 6",
+  "attribute": "Ice",
+  "rarity": "A",
+  "fullName": "",
+  "displayName": "Soukaku",
+  "attributeIcon": "Ice",
+  "themeColor": "#8FD6E1",
+  "baseStats": {
+    "hp": 8026,
+    "atk": 590.83,
+    "def": 597.59
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 96,
+    "anomalyMastery": 93,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "soukaku-core_1-blade_banner",
+      "source": "core",
+      "sourceId": "soukaku-core",
+      "label": "Blade Banner (Core Passive)",
+      "description": "When Soukaku launches Fly the Flag, her ATK is increased by 20%, up to 500, for 22s. When consuming Vortex during Fly the Flag, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via Quick Assists or Chain Attacks triggered by Fly the Flag, and it refreshes the duration of the buff.",
+      "shortDescription": "Agents' ATK is increased based on Soukaku's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 500,
+            "perUnitBonus": 0.2
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "soukaku-core_2-blade_banner",
+      "source": "core",
+      "sourceId": "soukaku-core",
+      "label": "Blade Banner (Core Passive)",
+      "description": "When Soukaku launches Fly the Flag, her ATK is increased by 20%, up to 500, for 22s. When consuming Vortex during Fly the Flag, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via Quick Assists or Chain Attacks triggered by Fly the Flag, and it refreshes the duration of the buff.",
+      "shortDescription": "Agents' ATK is increased based on Soukaku's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 1000,
+            "perUnitBonus": 0.4
+          }
+        ],
+        "affectedStats": ["atkFlat"]
+      }
+    },
+    {
+      "id": "soukaku-core-group_set_meal",
+      "source": "core",
+      "sourceId": "soukaku-core",
+      "label": "Group Set Meal (Additional Passive)",
+      "description": "When another character in your squad shares the same Attribute or Faction: When Soukaku consumes Vortex to activate Fly the Flag, the Ice DMG of the squad is increased by 20% for 22s.",
+      "shortDescription": "All squad members' Ice DMG is increased by 20% for 22s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "ice",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "soukaku-mindscape_1-uplifting_current",
+      "source": "mindscape",
+      "sourceId": "soukaku-mindscape_1",
+      "label": "Uplifting Current (Mindscape Cinema N°1)",
+      "description": "When Soukaku triggers Core Passive: Blade Banner or Additional Ability: Group Set Meal, the buff duration is increased by 8s.",
+      "shortDescription": "This mindscape cinema does not affect Soukaku's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "soukaku-mindscape_2-experimental_charging_module",
+      "source": "mindscape",
+      "sourceId": "soukaku-mindscape_2",
+      "label": "Experimental Charging Module (Mindscape Cinema N°2)",
+      "description": "When Soukaku's Basic Attack, Dash Attack, Dodge Counter, or Quick Assist hits an enemy, there's a 15% chance she gains 1 stack of Vortex, triggering up to once per second. When Vortex reaches max stacks, any additional stacks grant Soukaku 1.2 Energy instead.",
+      "shortDescription": "This mindscape cinema does not affect Soukaku's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "soukaku-mindscape_4-hypothermia",
+      "source": "mindscape",
+      "sourceId": "soukaku-mindscape_4",
+      "label": "Hypothermia (Mindscape Cinema N°4)",
+      "description": "If an enemy is hit by Fly the Flag, the target's Ice RES is reduced by 10% for 8s.",
+      "shortDescription": "The target's Ice RES is reduced by 10% for 8s.",
+      "target": "team",
+      "flat": {
+        "iceResShred": 0.1
+      }
+    },
+    {
+      "id": "soukaku-mindscape_6-northern_wind",
+      "source": "mindscape",
+      "sourceId": "soukaku-mindscape_6",
+      "label": "Northern Wind (Mindscape Cinema N°6)",
+      "description": "While in the Frosted Banner state, the number of usable enhanced Basic Attacks and enhanced Dash Attacks are increased to 12, and also deal 45% more DMG.",
+      "shortDescription": "Soukaku's DMG from Basic Attack: Making Rice Cakes (Frosted Banner) and Dash Attack: 50/50 (Frosted Banner) is increased by 45%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "soukaku-basic_attack-making_rice_cakes_frosted_banner",
+            "soukaku-dash_attack-50_50_frosted_banner"
+          ],
+          "value": 0.45
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "soukaku-basic_attack-making_rice_cakes",
+        "name": "Making Rice Cakes (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 3 attacks, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [66.2, 216.3, 293.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [72.3, 236.2, 319.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [78.4, 256.1, 346.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [84.5, 276, 373.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [90.6, 295.9, 399.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [96.7, 315.8, 426.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [102.8, 335.7, 453.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [108.9, 355.6, 480]
+          },
+          {
+            "level": 9,
+            "multipliers": [115, 375.5, 506.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [121.1, 395.4, 533.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [127.2, 415.3, 560.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [133.3, 435.2, 586.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [139.4, 455.1, 613.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [145.5, 475, 640.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [151.6, 494.9, 666.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [157.7, 514.8, 693.6]
+          }
+        ]
+      },
+      {
+        "id": "soukaku-basic_attack-making_rice_cakes_frosted_banner",
+        "name": "Making Rice Cakes (Frosted Banner) (Basic Attack)",
+        "description": "When Frosted Banner is active, press [BASIC] to activate:\n\nUnleashes up to 3 faster attacks in front, dealing Ice DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [76.6, 228.5, 511.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [83.6, 249.3, 557.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [90.6, 270.1, 604.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [97.6, 290.9, 650.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [104.6, 311.7, 697.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [111.6, 332.5, 743.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [118.6, 353.3, 790.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [125.6, 374.1, 836.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [132.6, 394.9, 883.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [139.6, 415.7, 929.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [146.6, 436.5, 976.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [153.6, 457.3, 1022.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [160.6, 478.1, 1069.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [167.6, 498.9, 1115.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [174.6, 519.7, 1162.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [181.6, 540.5, 1208.9]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "soukaku-dash_attack-50_50",
+        "name": "50/50 (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [76.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [83.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [90.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [97.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [104.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [111.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [118.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [125.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [132.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [139.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [146.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [153.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [160.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [167.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [174.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [181.7]
+          }
+        ]
+      },
+      {
+        "id": "soukaku-dash_attack-50_50_frosted_banner",
+        "name": "50/50 (Frosted Banner) (Dash Attack)",
+        "description": "When Frosted Banner is active, press [BASIC] during a Dodge to activate:\n\nSlashes enemies in front, dealing Ice DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [131.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [143.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [155.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [167.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [179.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [191.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [203.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [215.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [227.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [239.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [251.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [263.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [275.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [287.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [299.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [311.5]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "soukaku-dodge_counter-away_from_my_snacks",
+        "name": "Away From My Snacks (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nSlashes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [247.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [269.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [292.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [314.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [337.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [359.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [382.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [404.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [427.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [449.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [472.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [494.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [517.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [539.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [562.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [584.8]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "soukaku-quick_assist-a_set_for_two",
+        "name": "A Set for Two (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nSlashes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [113.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [123.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [134.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [144.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [155]
+          },
+          {
+            "level": 6,
+            "multipliers": [165.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [175.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [186.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [196.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [207]
+          },
+          {
+            "level": 11,
+            "multipliers": [217.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [227.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [238.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [248.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [259]
+          },
+          {
+            "level": 16,
+            "multipliers": [269.4]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "soukaku-assist_follow_up-sweeping_strike",
+        "name": "Sweeping Strike (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCharges and strikes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [264]
+          },
+          {
+            "level": 2,
+            "multipliers": [288]
+          },
+          {
+            "level": 3,
+            "multipliers": [312]
+          },
+          {
+            "level": 4,
+            "multipliers": [336]
+          },
+          {
+            "level": 5,
+            "multipliers": [360]
+          },
+          {
+            "level": 6,
+            "multipliers": [384]
+          },
+          {
+            "level": 7,
+            "multipliers": [408]
+          },
+          {
+            "level": 8,
+            "multipliers": [432]
+          },
+          {
+            "level": 9,
+            "multipliers": [456]
+          },
+          {
+            "level": 10,
+            "multipliers": [480]
+          },
+          {
+            "level": 11,
+            "multipliers": [504]
+          },
+          {
+            "level": 12,
+            "multipliers": [528]
+          },
+          {
+            "level": 13,
+            "multipliers": [552]
+          },
+          {
+            "level": 14,
+            "multipliers": [576]
+          },
+          {
+            "level": 15,
+            "multipliers": [600]
+          },
+          {
+            "level": 16,
+            "multipliers": [624]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "soukaku-special_attack-cooling_bento",
+        "name": "Cooling Bento (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nSoukaku releases a wind current in front of her and unleashes her finishing move, dealing Ice DMG. Anti-Interrupt level is increased while using this skill, and DMG taken is reduced by 40%.\n\nHolding [SPECIAL] while using this skill allows for a quick transition to /bFly the Flag//b.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Finishing Move DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [28.4, 100.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [31, 109.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [33.6, 118.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [36.2, 127.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [38.8, 136.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [41.4, 145.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [44, 154.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [46.6, 163.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [49.2, 172.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [51.8, 182]
+          },
+          {
+            "level": 11,
+            "multipliers": [54.4, 191.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [57, 200.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [59.6, 209.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [62.2, 218.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [64.8, 227.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [67.4, 236.6]
+          }
+        ]
+      },
+      {
+        "id": "soukaku-special_attack-rally",
+        "name": "Rally! (Special Attack)",
+        "description": "Hold [SPECIAL] to activate:\n\nSoukaku plunges her weapon into the ground, morphs it into a flag, and launches /bFly the Flag//b, dealing Ice DMG. Hitting an enemy with /bFly the Flag//b triggers a /bQuick Assist//b.\n\nPressing [BASIC] or [SPECIAL] after /bFly the Flag//b activates a /bSpecial Attack//b as she retracts the flag, dealing Ice DMG.\n\nIf Soukaku owns 3 stacks of /bVortex//b on using /bFly the Flag//b, she consumes all 3 stacks and enters the Frosted Banner state. In the Frosted Banner state, she can unleash an enhanced /bBasic Attack//b or an enhanced /bDash Attack//b, dealing massive Ice DMG. This effect can last up to 45s or stack up to 6 times.\n\nSoukaku's weapon gains /bVortex//bes in the following circumstances:\n\nGains 1 stack of /bVortex//b when launching an /bEX Special Attack//b.\n\nGains 1 stack of /bVortex//b when launching a /bChain Attack//b.\n\nGains 3 stacks of /bVortex//b when launching an /bUltimate//b.\n\nSoukaku can accumulate a maximum of 3 stacks of /bVortex//b.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Fly the Flag DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Quick Fly the Flag DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Lowering the Flag DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [250.1, 140.1, 245]
+          },
+          {
+            "level": 2,
+            "multipliers": [272.9, 152.9, 267.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [295.7, 165.7, 289.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [318.5, 178.5, 311.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [341.3, 191.3, 334.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [364.1, 204.1, 356.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [386.9, 216.9, 378.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [409.7, 229.7, 401.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [432.5, 242.5, 423.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [455.3, 255.3, 445.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [478.1, 268.1, 468]
+          },
+          {
+            "level": 12,
+            "multipliers": [500.9, 280.9, 490.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [523.7, 293.7, 512.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [546.5, 306.5, 534.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [569.3, 319.3, 557.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [592.1, 332.1, 579.5]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "soukaku-ex_special_attack-fanning_mosquitoes",
+        "name": "Fanning Mosquitoes (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nReleases wind currents of extended range in front of her, dealing massive Ice DMG. This skill can be used in rapid succession by pressing repeatedly. Each use consumes a specified amount of Energy. When Soukaku's Energy is depleted, or you stop pressing the button, she unleashes a powerful finishing move that deals massive Ice DMG. Anti-Interrupt level is increased while using this skill, and her DMG taken is reduced by 40%. Holding /bEX Special Attack//b while using this skill allows for a quick transition to /bFly the Flag//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Consecutive Attack DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Wind Current DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [131.2, 102.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [151.1, 111.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [171, 120.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [190.9, 130]
+          },
+          {
+            "level": 5,
+            "multipliers": [210.8, 139.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [230.7, 148.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [250.6, 157.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [270.5, 167.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [290.4, 176.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [310.3, 185.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [330.2, 195.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [350.1, 204.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [370, 213.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [389.9, 223]
+          },
+          {
+            "level": 15,
+            "multipliers": [409.8, 232.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [429.7, 241.6]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "soukaku-chain_attack-pudding_slash",
+        "name": "Pudding Slash (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nSoukaku quickly unleashes a series of strikes at enemies in front of her and follows up with /bFly the Flag//b, dealing massive Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [748.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [816.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [884.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [951.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [1019.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [1087.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [1155]
+          },
+          {
+            "level": 8,
+            "multipliers": [1222.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [1290.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [1358.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [1425.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1493.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [1561.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1628.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [1696.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [1764.3]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "soukaku-ultimate-jumbo_pudding_slash",
+        "name": "Jumbo Pudding Slash (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nSoukaku quickly unleashes an extended series of strikes at enemies in front of her and follows up with /bFly the Flag//b, dealing massive Ice DMG. Upon activating this skill, other squad members recover 10 Energy. The next character to switch in gains an additional 20 Energy. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1989.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [2170.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [2351.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [2532.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [2713.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [2894.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [3075.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [3256.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [3437]
+          },
+          {
+            "level": 10,
+            "multipliers": [3617.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [3798.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [3979.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [4160.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [4341.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [4522.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [4703.3]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

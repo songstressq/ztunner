@@ -1,0 +1,55 @@
+{
+  "id": "rainforest_gourmet",
+  "name": "Rainforest Gourmet",
+  "rarity": "A",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Anomaly Proficiency",
+
+  "stats": {
+    "base": 594,
+    "advanced": 75
+  },
+
+  "ingameEffects": [
+    {
+      "id": "rainforest_gourmet_dinners_ready",
+      "source": "wEngine",
+      "sourceId": "rainforest_gourmet",
+      "label": "Dinner's Ready! (W-Engine Passive)",
+      "description": "For every 10 Energy consumed, the equipper gains a buff that increases ATK for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+      "shortDescription": "Increases the equipper's ATK by a percentage, stacking up to 10 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "atkPercentRaw": 0.025 }
+          },
+          {
+            "level": 2,
+            "stats": { "atkPercentRaw": 0.028 }
+          },
+          {
+            "level": 3,
+            "stats": { "atkPercentRaw": 0.032 }
+          },
+          {
+            "level": 4,
+            "stats": { "atkPercentRaw": 0.036 }
+          },
+          {
+            "level": 5,
+            "stats": { "atkPercentRaw": 0.04 }
+          }
+        ],
+        "maxStacks": 10,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

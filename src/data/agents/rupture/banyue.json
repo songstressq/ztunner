@@ -1,0 +1,1709 @@
+{
+  "id": "banyue",
+  "name": "Banyue",
+  "specialty": "Rupture",
+  "faction": "Krampus Compliance Authority",
+  "attribute": "Fire",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Banyue",
+  "attributeIcon": "Fire",
+  "themeColor": "#889DA8",
+  "baseStats": {
+    "hp": 8497.1,
+    "atk": 784.91,
+    "def": 446
+  },
+  "combatBase": {
+    "impact": 95,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 89,
+    "anomalyMastery": 90,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "HP", "Sheer Force"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "banyue-core-one_with_the_mountains",
+      "source": "core",
+      "sourceId": "banyue-core",
+      "label": "One With the Mountains (Core Passive)",
+      "description": "... When Banyue uses an EX Special Attack or Assist Follow-Up, he increases his Sheer Force by 300, Fire DMG by 36%, and CRIT DMG by 36% for 30s. Repeated triggers reset the duration.",
+      "shortDescription": "Banyue's Sheer Force is increased by 300, Fire DMG is increased by 36% and CRIT DMG is increased by 36% for 36s.",
+      "target": "self",
+      "flat": {
+        "sheerForce": 300,
+        "critDmg": 0.36
+      },
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "fire",
+          "value": 0.36
+        }
+      ]
+    },
+    {
+      "id": "banyue-core-mountains_zenith",
+      "source": "core",
+      "sourceId": "banyue-core",
+      "label": "Mountain's Zenith (Additional Ability)",
+      "description": "When another character in your squad is a Support or Stun character:\n\nWhile in the Visage of Wrath state, when Banyue consumes Mountain's Might to unleash an EX Special Attack through a Basic Attack branch or quick input commands, he gains one stack of Vidyaraja. Each stack of Vidyaraja increases his Fire DMG by 5%, stacking up to 3 times and lasting 8s. Repeated triggers reset the duration.",
+      "shortDescription": "Banyue's Fire DMG increases by 5% for 8s, stacking up to 3 times",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "fire",
+          "value": 0.05
+        }
+      ],
+      "maxStacks": 3
+    },
+    {
+      "id": "banyue-mindscape_1_1-greed_burns_like_fire",
+      "source": "mindscape",
+      "sourceId": "banyue-mindscape_1",
+      "label": "Greed Burns Like Fire (Mindscape Cinema N°1)",
+      "description": "When Banyue hits an enemy with EX Special Attack: One's Path or EX Special Attack: Earth Shaker, he inflicts the Tremor state. In this state, enemies Fire RES is reduced by 10%, lasting 30s. When EX Special Attack: Lion's Roar, EX Special Attack: Lion's Roar - Wrath, EX Special Attack: Mountain Tremor, EX Special Attack: Mountain Tremor - Wrath, Basic Attack: Toppling Mountain, and Basic Attack: Crushing Peaks hits an enemy in the Tremor state, the Sheer DMG dealt is increased by 10%. When Basic Attack: Crushing Peaks hits a Stunned enemy, the current Stun duration is extended by 2s. This effect can only trigger once per Stun and does not stack with similar effects.",
+      "shortDescription": "The target's Fire RES is reduced by 10% for 30s.",
+      "target": "team",
+      "flat": {
+        "fireResShred": 0.1
+      }
+    },
+    {
+      "id": "banyue-mindscape_1_2-greed_burns_like_fire",
+      "source": "mindscape",
+      "sourceId": "banyue-mindscape_1",
+      "label": "Greed Burns Like Fire (Mindscape Cinema N°1)",
+      "description": "When Banyue hits an enemy with EX Special Attack: One's Path or EX Special Attack: Earth Shaker, he inflicts the Tremor state. In this state, enemies Fire RES is reduced by 10%, lasting 30s. When EX Special Attack: Lion's Roar, EX Special Attack: Lion's Roar - Wrath, EX Special Attack: Mountain Tremor, EX Special Attack: Mountain Tremor - Wrath, Basic Attack: Toppling Mountain, and Basic Attack: Crushing Peaks hits an enemy in the Tremor state, the Sheer DMG dealt is increased by 10%. When Basic Attack: Crushing Peaks hits a Stunned enemy, the current Stun duration is extended by 2s. This effect can only trigger once per Stun and does not stack with similar effects.",
+      "shortDescription": "Banyue's Sheer DMG from EX Special Attack: Lion's Roar, EX Special Attack: Lion's Roar - Wrath, EX Special Attack: Mountain Tremor, EX Special Attack: Mountain Tremor - Wrath, Basic Attack: Toppling Mountain, and Basic Attack: Crushing Peaks is increased by 10%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "exclusiveType": "sheerDmg",
+          "appliesTo": [
+            "banyue-basic_attack-crushing_peaks",
+            "banyue-basic_attack-toppling_mountain",
+            "banyue-ex_special_attack-mountain_tremor",
+            "banyue-ex_special_attack-lions_roar",
+            "banyue-ex_special_attack-mountain_tremor_wrath",
+            "banyue-ex_special_attack-lions_roar_wrath"
+          ],
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "banyue-mindscape_2-anger_cuts_like_a_blade",
+      "source": "mindscape",
+      "sourceId": "banyue-mindscape_2",
+      "label": "Anger Cuts Like a Blade (Mindscape Cinema N°2)",
+      "description": "The CRIT DMG bonus from the Core Passive is increased by an additional 15%, and the Fire DMG bonus is increased by an additional 15%. While in the Visage of Wrath state, Banyue restores an additional 5 Adrenaline when consuming Mountain's Might to unleash an EX Special Attack.",
+      "shortDescription": "Banyue's Fire DMG is further increased by 15% and CRIT DMG is further increased by 15%.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.15
+      },
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "fire",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "banyue-mindscape_4-purge_unit_type_zero",
+      "source": "mindscape",
+      "sourceId": "banyue-mindscape_4",
+      "label": "Purge Unit - Type Zero (Mindscape Cinema N°4)",
+      "description": "EX Special Attack: Lion's Roar - Wrath, EX Special Attack: Mountain Tremor - Wrath, Basic Attack: Toppling Mountain, and Basic Attack: Crushing Peaks DMG increase by 30%.",
+      "shortDescription": "Banyue's DMG from Basic Attack: Toppling Mountain, Basic Attack: Crushing Peaks, EX Special Attack: Lion's Roar - Wrath and EX Special Attack: Mountain Tremor - Wrath is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "banyue-basic_attack-crushing_peaks",
+            "banyue-basic_attack-toppling_mountain",
+            "banyue-ex_special_attack-mountain_tremor_wrath",
+            "banyue-ex_special_attack-lions_roar_wrath"
+          ],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "banyue-mindscape_6-descended_vidyaraja",
+      "source": "mindscape",
+      "sourceId": "banyue-mindscape_6",
+      "label": "Descended Vidyaraja (Mindscape Cinema N°6)",
+      "description": "At any time, when Banyue uses an EX Special Attack, he also gains Vidyaraja. The Fire DMG bonus from Vidyaraja is increased by an additional 8%, and its duration is extended to 30s. When activating Basic Attack: Crushing Peaks, Banyue deals Fire DMG equal to 600% of his Sheer Force to nearby enemies. Using Dodge: Battle Cry immediately after an EX Special Attack also grants Vidyaraja.",
+      "shortDescription": "Banye's Fire DMG from Vidyaraja is increased by an additional 8%, stacking up to 3 times. Banyue's additional DMG is available in the Damage Calculator.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "fire",
+          "value": 0.08
+        }
+      ],
+      "maxStacks": 3
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "banyue-basic_attack-towering_peaks",
+        "name": "Towering Peaks (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunches up to four attacks in front, dealing Fire DMG. Interrupt Level is increased during this skill.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [39.6, 49.8, 101.3, 116.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [43.2, 54.4, 110.6, 126.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [46.8, 59, 119.9, 137.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [50.4, 63.6, 129.2, 148.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [54, 68.2, 138.5, 158.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [57.6, 72.8, 147.8, 169.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [61.2, 77.4, 157.1, 179.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [64.8, 82, 166.4, 190.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [68.4, 86.6, 175.7, 201.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [72, 91.2, 185, 211.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [75.6, 95.8, 194.3, 222.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [79.2, 100.4, 203.6, 232.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [82.8, 105, 212.9, 243.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [86.4, 109.6, 222.2, 254.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [90, 114.2, 231.5, 264.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [93.6, 118.8, 240.8, 275.3]
+          }
+        ]
+      },
+      {
+        "id": "banyue-basic_attack-majestic_summit",
+        "name": "Majestic Summit (Basic Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunches up to four attacks in front, dealing Fire DMG. Anti-Interrupt Level is increased during this skill.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [52.8, 70.4, 135.5, 92.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [57.6, 76.8, 147.9, 100.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [62.4, 83.2, 160.3, 109.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [67.2, 89.6, 172.7, 117.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [72, 96, 185.1, 126]
+          },
+          {
+            "level": 6,
+            "multipliers": [76.8, 102.4, 197.5, 134.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [81.6, 108.8, 209.9, 142.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [86.4, 115.2, 222.3, 151.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [91.2, 121.6, 234.7, 159.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [96, 128, 247.1, 168]
+          },
+          {
+            "level": 11,
+            "multipliers": [100.8, 134.4, 259.5, 176.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [105.6, 140.8, 271.9, 184.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [110.4, 147.2, 284.3, 193.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [115.2, 153.6, 296.7, 201.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [120, 160, 309.1, 210]
+          },
+          {
+            "level": 16,
+            "multipliers": [124.8, 166.4, 321.5, 218.4]
+          }
+        ]
+      },
+      {
+        "id": "banyue-basic_attack-immolate",
+        "name": "Immolate (Basic Attack)",
+        "description": "While not in the /bVisage of Wrath//b state and with at least 120 /bWrathful Fires//b, hold [BASIC] to activate:\n\nDeals Fire DMG to nearby enemies, then enters the /bVisage of Wrath//b state.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [110.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [120.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [130.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [140.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [151]
+          },
+          {
+            "level": 6,
+            "multipliers": [161.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [171.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [181.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [191.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [201.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [211.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [221.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [231.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [241.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [252]
+          },
+          {
+            "level": 16,
+            "multipliers": [262.1]
+          }
+        ]
+      },
+      {
+        "id": "banyue-basic_attack-toppling_mountain",
+        "name": "Toppling Mountain (Basic Attack)",
+        "description": "When Banyue is in the /bVisage of Wrath//b state, hold [BASIC] to consume 120 /bWrathful Fires//b and activate:\n\nBanyue hurls a massive mountain at the enemy, dealing massive Fire DMG. After using this move, Banyue exits the /bVisage of Wrath//b state. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [869.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [948.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [1028]
+          },
+          {
+            "level": 4,
+            "multipliers": [1107.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [1186.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [1265.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [1344.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1423.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [1502.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1581.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1660.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1739.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1819]
+          },
+          {
+            "level": 14,
+            "multipliers": [1898.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1977.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [2056.3]
+          }
+        ]
+      },
+      {
+        "id": "banyue-basic_attack-crushing_peaks",
+        "name": "Crushing Peaks (Basic Attack)",
+        "description": "While Banyue is in the /bVisage of Wrath//b state and after performing two different /bEX Special Attacks//b through /bBasic Attack//b branches or quick input commands, hold [BASIC] to activate:\n\nBanyue launches his beads forward to imprison enemies, dealing massive Fire DMG. Banyue automatically follows up with /bBasic Attack: Toppling Mountain//b. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [378.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [412.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [447.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [481.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [515.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [550.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [584.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [619.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [653.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [687.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [722.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [756.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [791.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [825.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [859.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [894.3]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "banyue-dash_attack-scattering_sands",
+        "name": "Scattering Sands (Dash Attack)",
+        "description": "During a dodge, press [BASIC], or during /bDodge: Battle Cry//b, hold [BASIC] to activate:\n\nLaunches beads forward, dealing Fire DMG. After using this skill, can be followed up with the 2nd hit of /bBasic Attack: Towering Peaks//b or the 2nd hit of /bBasic Attack: Majestic Summit//b.",
+        "skillType": "dash",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [39.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [43.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [47.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [50.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [54.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [58.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [61.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [65.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [69.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [73]
+          },
+          {
+            "level": 11,
+            "multipliers": [76.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [80.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [84.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [87.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [91.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [95.2]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "banyue-dodge_counter-stoneburst",
+        "name": "Stoneburst (Dodge Counter)",
+        "description": "After a /bPerfect Dodge//b is triggered through /bDodge: Overcome Peaks//b, press [BASIC], or after a /bPerfect Dodge//b is triggered though /bDodge: Battle Cry//b, hold [BASIC] to activate:\n\nLaunches a forward attack that deals Fire DMG. After using this skill, can be chained into the 3rd hit of /bBasic Attack: Towering Peaks//b or the 3rd hit of /bBasic Attack: Majestic Summit//b. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [194.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [212.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [230.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [248.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [266.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [283.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [301.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [319.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [337.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [355.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [372.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [390.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [408.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [426.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [444.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [461.9]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "banyue-quick_assist-batholith",
+        "name": "Batholith (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nExecutes a series of attacks against enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [73.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [80.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [86.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [93.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [100.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [106.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [113.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [120.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [127]
+          },
+          {
+            "level": 10,
+            "multipliers": [133.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [140.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [147.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [153.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [160.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [167.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [173.9]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "banyue-assist_followup-lofty_ascent",
+        "name": "Lofty Ascent (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nQuickly dash forward and attack, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [241.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [263.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [285.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [307.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [329.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [351.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [373.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [395.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [417.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [439.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [461.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [483.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [505.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [527.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [549.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [571.6]
+          }
+        ]
+      },
+      {
+        "id": "banyue-assist_followup-pierce_heavens",
+        "name": "Pierce Heavens (Assist Follow-Up)",
+        "description": "After successfully parrying an enemy attack with /bDodge: Immovable Mountain//b, press [BASIC] to activate:\n\nQuickly dash forward and attack, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [221.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [241.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [262]
+          },
+          {
+            "level": 4,
+            "multipliers": [282.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [302.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [322.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [342.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [363]
+          },
+          {
+            "level": 9,
+            "multipliers": [383.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [403.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [423.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [443.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [464]
+          },
+          {
+            "level": 14,
+            "multipliers": [484.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [504.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [524.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": null,
+    "exSkills": [
+      {
+        "id": "banyue-ex_special_attack-earth_shaker",
+        "name": "Earth Shaker (EX Special Attack)",
+        "description": "With enough Adrenaline, can be activated in one of three ways:\n\nAfter the 3rd or 4th hit of /bBasic Attack: Towering Peaks//b, press [EX] to activate;\n\nAfter an /bAssist Follow-Up//b, /bDodge Counter//b, or /bQuick Assist//b, hold [EX] to activate;\n\nDuring an /bEX Special Attack//b, /bBasic Attack: Immolate//b, /bChain Attack//b, /bUltimate//b, /bAssist Follow-Up//b, /bDodge Counter//b, or /bQuick Assist//b, quickly input [BASIC] → [EX] → [BASIC] in sequence to activate:\n\nBanyue slams the ground repeatedly, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [254.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [278]
+          },
+          {
+            "level": 3,
+            "multipliers": [301.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [324.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [347.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [370.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [394]
+          },
+          {
+            "level": 8,
+            "multipliers": [417.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [440.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [463.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [486.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [510]
+          },
+          {
+            "level": 13,
+            "multipliers": [533.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [556.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [579.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [602.8]
+          }
+        ]
+      },
+      {
+        "id": "banyue-ex_special_attack-mountain_tremor",
+        "name": "Mountain Tremor (EX Special Attack)",
+        "description": "With enough Adrenaline, can be activated in one of two ways:\n\nAfter the 1st or 2nd hit of /bBasic Attack: Majestic Summit//b, press [BASIC] to activate;\n\nDuring an /bEX Special Attack//b, /bBasic Attack: Immolate//b, /bChain Attack//b, /bUltimate//b, /bAssist Follow-Up//b, /bDodge Counter//b, or /bQuick Assist//b, quickly input [EX] → [EX] → [BASIC] in sequence to activate:\n\nBanyue throws a mountain, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [171.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [186.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [202.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [218.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [233.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [249.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [264.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [280.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [296.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [311.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [327.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [342.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [358.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [374.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [389.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [405.3]
+          }
+        ]
+      },
+      {
+        "id": "banyue-ex_special_attack-ones_path",
+        "name": "One's Path (EX Special Attack)",
+        "description": "With enough Adrenaline, can be activated in one of three ways:\n\nAfter the 3rd or 4th hit of /bBasic Attack: Majestic Summit//b, press [BASIC] to activate;\n\nAfter an /bAssist Follow-Up//b, /bDodge Counter//b, or /bQuick Assist//b, hold [BASIC] to activate;\n\nDuring an /bEX Special Attack//b, /bBasic Attack: Immolate//b, /bChain Attack//b, /bUltimate//b, /bAssist Follow-Up//b, /bDodge Counter//b, or /bQuick Assist//b, quickly input [EX] → [BASIC] → [EX] in sequence to activate:\n\nBanyue throws out his beads, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [162.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [177.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [192]
+          },
+          {
+            "level": 4,
+            "multipliers": [206.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [221.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [236.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [251.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [266]
+          },
+          {
+            "level": 9,
+            "multipliers": [280.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [295.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [310.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [325.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [340]
+          },
+          {
+            "level": 14,
+            "multipliers": [354.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [369.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [384.4]
+          }
+        ]
+      },
+      {
+        "id": "banyue-ex_special_attack-lions_roar",
+        "name": "Lion's Roar (EX Special Attack)",
+        "description": "With enough Adrenaline, can be activated in one of two ways:\n\nAfter the 1st or 2nd hit of /bBasic Attack: Towering Peaks//b, press [EX] to activate;\n\nDuring an /bEX Special Attack//b, /bBasic Attack: Immolate//b, /bChain Attack//b, /bUltimate//b, /bAssist Follow-Up//b, /bDodge Counter//b, or /bQuick Assist//b, quickly input [BASIC] → [BASIC] → [EX] in sequence to activate:\n\nBanyue sends out a sonic wave forward, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [153.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [167.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [181.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [195.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [209.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [223.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [237.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [251.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [265.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [279.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [293.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [307.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [321.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [335.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [349.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [363.7]
+          }
+        ]
+      },
+      {
+        "id": "banyue-ex_special_attack-mountain_tremor_wrath",
+        "name": "Mountain Tremor - Wrath (EX Special Attack)",
+        "description": "With enough Adrenaline when using /bEX Special Attack: Earth Shaker//b, quickly input [EX] → [EX] → [BASIC] in sequence to activate:\n\nBanyue throws out an even larger mountain, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [325]
+          },
+          {
+            "level": 2,
+            "multipliers": [354.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [384.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [413.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [443.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [473]
+          },
+          {
+            "level": 7,
+            "multipliers": [502.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [532.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [561.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [591.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [621]
+          },
+          {
+            "level": 12,
+            "multipliers": [650.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [680.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [709.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [739.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [769]
+          }
+        ]
+      },
+      {
+        "id": "banyue-ex_special_attack-lions_roar_wrath",
+        "name": "Lion's Roar - Wrath (EX Special Attack)",
+        "description": "With enough Adrenaline when using /bEX Special Attack: One's Path//b, quickly input [BASIC] → [BASIC] → [EX] in sequence to activate:\n\nBanyue releases a powerful sonic wave in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [300.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [327.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [354.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [382]
+          },
+          {
+            "level": 5,
+            "multipliers": [409.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [436.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [463.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [491.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [518.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [545.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [573.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [600.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [627.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [655]
+          },
+          {
+            "level": 15,
+            "multipliers": [682.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [709.6]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "banyue-chain_attack-blazing_wrath",
+        "name": "Blazing Wrath (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunches a large area attack in front, dealing massive Fire DMG. If Banyue has more than 120 /bWrathful Fires//b, he automatically enters the /bVisage of Wrath//b state after the attack. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [560.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [611.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [662.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [713.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [764.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [815.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [866.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [917.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [968.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [1019.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1070.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [1121.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1172.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [1223.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [1274.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1325.9]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "banyue-ultimate-the_world_trembles",
+        "name": "The World Trembles (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunches a large area attack in front, dealing massive Fire DMG. If Banyue has more than 120 /bWrathful Fires//b, he automatically enters the /bVisage of Wrath//b state after the attack. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1598.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [1743.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [1889.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [2034.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [2180]
+          },
+          {
+            "level": 6,
+            "multipliers": [2325.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [2470.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [2616.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [2761.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [2907]
+          },
+          {
+            "level": 11,
+            "multipliers": [3052.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [3197.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [3343.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [3488.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [3634]
+          },
+          {
+            "level": 16,
+            "multipliers": [3779.4]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "banyue-mindscape-descended_vidyaraja",
+        "name": "Basic Attack: Crushing Peaks - Additional DMG (Mindscape Cinema N°6)",
+        "description": "At any time, when Banyue uses an /bEX Special Attack//b, he also gains /bVidyaraja//b. The Fire DMG bonus from /bVidyaraja//b is increased by an additional 8%, and its duration is extended to 30s. When activating /bBasic Attack: Crushing Peaks//b, Banyue deals Fire DMG equal to 600% of his Sheer Force to nearby enemies. Using /bDodge: Battle Cry//b immediately after an /bEX Special Attack//b also grants /bVidyaraja//b.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [600]
+          }
+        ]
+      }
+    ]
+  }
+}

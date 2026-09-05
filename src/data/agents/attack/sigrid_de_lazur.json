@@ -1,0 +1,630 @@
+{
+  "id": "sigrid",
+  "name": "Sigrid",
+  "specialty": "Attack",
+  "faction": "Airspace Patrol Department",
+  "attribute": "Ice",
+  "rarity": "S",
+
+  "fullName": "Sigrid de L'Azur",
+  "displayName": "Sigrid",
+  "attributeIcon": "Ice",
+
+  "themeColor": "#B6DCF4",
+
+  "skins": [
+    { "id": "default", "img": "sigrid.png" },
+    { "id": "majestic_wavechaser", "img": "sigrid-majestic_wavechaser.png" }
+  ],
+
+  "baseStats": {
+    "hp": 7789,
+    "atk": 863.21,
+    "def": 606.6
+  },
+
+  "combatBase": {
+    "impact": 92,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 92,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT DMG", "CRIT Rate", "ATK"]
+  },
+
+  "coreEnhancement": [
+    { "level": 0, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 2, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 4, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 6, "stats": { "atkFlat": 25, "critRate": 0 } }
+  ],
+
+  "ingameEffects": [
+    {
+      "id": "sigrid_de_lazur-chain_attack-tempered_effect",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Tempered Effect (Chain Attack)",
+      "description": "... Upon activating this skill, gains the Tempered effect, increasing the DMG dealt by subsequent Basic Attack: Converging Spear attacks by 20% for 50s. ...",
+      "shortDescription": "Sigrid's DMG from Basic Attack: Converging Spear is increased by 20% for 50s.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["sigrid_de_lazur-basic_attack-converging_spear"],
+          "value": 0.2
+        }
+      ]
+    },
+
+    {
+      "id": "sigrid_de_lazur-core-sky_knight",
+      "source": "core",
+      "sourceId": "sigrid_de_lazur-core",
+      "label": "Sky Knight (Core Passive)",
+      "description": "... Activating or refreshing Aerial Patrol Spear increases Sigrid's CRIT Rate by 66% for 8s. Repeated triggers extend the duration by 8s, up to a maximum of 40s. ...",
+      "shortDescription": "Sigrid's CRIT Rate is increased by 66% for 8s, up to a maximum duration of 40s.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.66
+      }
+    },
+
+    {
+      "id": "sigrid_de_lazur-core-legion_of_the_skies_1",
+      "source": "core",
+      "sourceId": "sigrid_de_lazur-core",
+      "label": "Legion of the Skies (Additional Ability)",
+      "description": "When another character in your squad is a Support or Stun character:\n\nSigrid's ATK increases by 120. This effect scales with character level, with each level providing an additional increase of 12, up to a maximum increase of 840. DMG increases by 15% when hitting enemies in the Contamination state.",
+      "shortDescription": "Sigrid's ATK is increased by 840.",
+      "target": "self",
+      "flat": {
+        "atkFlatRaw": 840
+      }
+    },
+
+    {
+      "id": "sigrid_de_lazur-core-legion_of_the_skies_2",
+      "source": "core",
+      "sourceId": "sigrid_de_lazur-core",
+      "label": "Legion of the Skies (Additional Ability)",
+      "description": "When another character in your squad is a Support or Stun character:\n\nSigrid's ATK increases by 120. This effect scales with character level, with each level providing an additional increase of 12, up to a maximum increase of 840. DMG increases by 15% when hitting enemies in the Contamination state.",
+      "shortDescription": "Sigrid's DMG is increased by 15% against enemies in the Contamination state.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.15
+        }
+      ]
+    },
+
+    {
+      "id": "sigrid_de_lazur-mindscape_1-long_long_ago",
+      "source": "mindscape",
+      "sourceId": "sunna-mindscape_1",
+      "label": "Long, Long Ago (Mindscape Cinema N°1)",
+      "description": "Upon activating the 3rd stage of Basic Attack: Converging Spear, enters the Aerial Patrol Spear and gains 1 additional activation of Basic Attack: Converging Spear. When activations exceed the stored Basic Attack: Converging Spear's activation limit, the next Basic Attack: Converging Spear's final hit deals an additional 100% of ATK as Ice DMG. Sigrid's ATK increases by 25%.",
+      "shortDescription": "Sigrid's ATK is increased by 25%. Basic Attack: Converging Spear's additional DMG is available in the Damage Calculator.",
+      "target": "self",
+      "flat": {
+        "atkPercentRaw": 0.25
+      }
+    },
+
+    {
+      "id": "sigrid_de_lazur-mindscape_2-legends_first_act",
+      "source": "mindscape",
+      "sourceId": "sigrid_de_lazur-mindscape_2",
+      "label": "Legend's First Act (Mindscape Cinema N°2)",
+      "description": "PEN Ratio of Unbridled Spear attacks and Basic Attack: Converging Spear increases by 24%. The duration of Aerial Patrol Spear is extended by 2s. Sigrid's Decibel Generation Rate increases by 10%.",
+      "shortDescription": "Sigrid's PEN Ratio from Unbridled Spear attacks and Basic Attack: Converging Spear is increased by 24%.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "penRatio",
+          "type": "exclusive",
+          "appliesTo": [
+            "sigrid_de_lazur-basic_attack-frost_tipped_spear",
+            "sigrid_de_lazur-basic_attack-converging_spear",
+            "sigrid_de_lazur-dodge_counter-counterthrust",
+            "sigrid_de_lazur-assist_follow_up-devouring_frost",
+            "sigrid_de_lazur-ex_special_attack-scattered_jade",
+            "sigrid_de_lazur-ex_special_attack-shattered_jade",
+            "sigrid_de_lazur-chain_attack-encroaching_ice",
+            "sigrid_de_lazur-ultimate-frozen_heavens"
+          ],
+          "value": 0.24
+        }
+      ]
+    },
+
+    {
+      "id": "sigrid_de_lazur-mindscape_4-hero_in_training",
+      "source": "mindscape",
+      "sourceId": "sigrid_de_lazur-mindscape_4",
+      "label": "Hero in Training (Mindscape Cinema N°4)",
+      "description": "Each time upon gaining Aerial Patrol Spear, DMG dealt increases by 18% for 8s. Repeated triggers extend the duration by 8s, up to a maximum of 40s.",
+      "shortDescription": "Sigrid's DMG is increased by 18% for 8s, up to a maximum duration of 40s.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.18
+        }
+      ]
+    },
+
+    {
+      "id": "sigrid_de_lazur-mindscape_6-hero_in_training",
+      "source": "mindscape",
+      "sourceId": "sigrid_de_lazur-mindscape_6",
+      "label": "Knight of the Skies (Mindscape Cinema N°6)",
+      "description": "When Basic Attack: Converging Spear's 1st/2nd/3rd stage's final hit lands, it deals an additional 80%/90%/100% ATK as Ice DMG. There is no more limit on the number of times Sigrid can enter the Formation Breaker state upon hitting a Stunned enemy with Chain Attack: Encroaching Ice. Formation Breaker state's Basic Attack: Converging Spear will activate faster.",
+      "shortDescription": "This ability is available in Sigrid's Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "sigrid_de_lazur-basic_attack-frost_tipped_spear",
+        "name": "Frost-Tipped Spear (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunches up to four forward slashes, dealing Ice DMG. The 4th hit of /bBasic Attack: Frost-Tipped Spear//b is considered an /bUnbridled Spear//b attack.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [77.0, 143.8, 101.4, 221.0] },
+          { "level": 2, "multipliers": [84.0, 156.9, 110.7, 241.1] },
+          { "level": 3, "multipliers": [91.0, 170.0, 120.0, 261.2] },
+          { "level": 4, "multipliers": [98.0, 183.1, 129.3, 281.3] },
+          { "level": 5, "multipliers": [105.0, 196.2, 138.6, 301.4] },
+          { "level": 6, "multipliers": [112.0, 209.3, 147.9, 321.5] },
+          { "level": 7, "multipliers": [119.0, 222.4, 157.2, 341.6] },
+          { "level": 8, "multipliers": [126.0, 235.5, 166.5, 361.7] },
+          { "level": 9, "multipliers": [133.0, 248.6, 175.8, 381.8] },
+          { "level": 10, "multipliers": [140.0, 261.7, 185.1, 401.9] },
+          { "level": 11, "multipliers": [147.0, 274.8, 194.4, 422.0] },
+          { "level": 12, "multipliers": [154.0, 287.9, 203.7, 442.1] },
+          { "level": 13, "multipliers": [161.0, 301.0, 213.0, 462.2] },
+          { "level": 14, "multipliers": [168.0, 314.1, 222.3, 482.3] },
+          { "level": 15, "multipliers": [175.0, 327.2, 231.6, 502.4] },
+          { "level": 16, "multipliers": [182.0, 340.3, 240.9, 522.5] }
+        ]
+      },
+
+      {
+        "id": "sigrid_de_lazur-basic_attack-converging_spear",
+        "name": "Converging Spear (Basic Attack)",
+        "description": "While in the /bAerial Patrol Spear//b state and /bBasic Attack: Converging Spear//b can be used, hold [BASIC] to activate:\n\nLaunches the corresponding /bBasic Attack: Converging Spear//b based on the current stage, dealing Ice DMG. /bBasic Attack: Converging Spear//b has three stages. Each use advances it to the next stage.\n\nAfter performing the third stage of /bBasic Attack: Converging Spear//b, it resets to the first stage. If Sigrid is attacked while charging the 1st or 2nd stage of /bBasic Attack: Converging Spear//b, she blocks with her shield. On a successful block, the attack's DMG is negated, the next /bBasic Attack: Converging Spear//b deals 100% more Daze, the state is refreshed, and she gains one use of /bBasic Attack: Converging Spear//b.\n\nPress [BASIC] after a successful block to perform the corresponding stage of /bBasic Attack: Converging Spear//b. /bBasic Attack: Converging Spear//b performed after /bBasic Attack: Frost-Tipped Spear//b retains the current stage of /bBasic Attack: Frost-Tipped Spear//b.\n\nDMG taken is reduced by 60% during this skill. Anti-Interrupt level is increased while using this skill. Character is invulnerable during the third stage of Basic Attack: Converging Spear.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Basic Attack: Converging Spear 1st Stage DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Basic Attack: Converging Spear 2nd Stage DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Basic Attack: Converging Spear 3rd Stage DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [358.3, 609.1, 814.6] },
+          { "level": 2, "multipliers": [390.9, 664.5, 888.7] },
+          { "level": 3, "multipliers": [423.5, 719.9, 962.8] },
+          { "level": 4, "multipliers": [456.1, 775.3, 1036.9] },
+          { "level": 5, "multipliers": [488.7, 830.7, 1111.0] },
+          { "level": 6, "multipliers": [521.3, 886.1, 1185.1] },
+          { "level": 7, "multipliers": [553.9, 941.5, 1259.2] },
+          { "level": 8, "multipliers": [586.5, 996.9, 1333.3] },
+          { "level": 9, "multipliers": [619.1, 1052.3, 1407.4] },
+          { "level": 10, "multipliers": [651.7, 1107.7, 1481.5] },
+          { "level": 11, "multipliers": [684.3, 1163.1, 1555.6] },
+          { "level": 12, "multipliers": [716.9, 1218.5, 1629.7] },
+          { "level": 13, "multipliers": [749.5, 1273.9, 1703.8] },
+          { "level": 14, "multipliers": [782.1, 1329.3, 1777.9] },
+          { "level": 15, "multipliers": [814.7, 1384.7, 1852.0] },
+          { "level": 16, "multipliers": [847.3, 1440.1, 1926.1] }
+        ]
+      }
+    ],
+
+    "dashAttacks": [
+      {
+        "id": "sigrid_de_lazur-dash_attack-windchase",
+        "name": "Windchase (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nPerforms a forward cleaving slash, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [119.0] },
+          { "level": 2, "multipliers": [129.9] },
+          { "level": 3, "multipliers": [140.8] },
+          { "level": 4, "multipliers": [151.7] },
+          { "level": 5, "multipliers": [162.6] },
+          { "level": 6, "multipliers": [173.5] },
+          { "level": 7, "multipliers": [184.4] },
+          { "level": 8, "multipliers": [195.3] },
+          { "level": 9, "multipliers": [206.2] },
+          { "level": 10, "multipliers": [217.1] },
+          { "level": 11, "multipliers": [228.0] },
+          { "level": 12, "multipliers": [238.9] },
+          { "level": 13, "multipliers": [249.8] },
+          { "level": 14, "multipliers": [260.7] },
+          { "level": 15, "multipliers": [271.6] },
+          { "level": 16, "multipliers": [282.5] }
+        ]
+      }
+    ],
+
+    "dodgeCounters": [
+      {
+        "id": "sigrid_de_lazur-dodge_counter-counterthrust",
+        "name": "Counterthrust (Dodge Counter)",
+        "description": "Press [BASIC] during a Perfect Dodge to activate:\n\nCondenses frost around the spearhead before unleashing a powerful counterattack, dealing Ice DMG. When performed after /bBasic Attack: Frost-Tipped Spear//b, /bDodge Counter: Counterthrust//b retains the current stage of /bBasic Attack: Frost-Tipped Spear//b. This skill is considered an /bUnbridled Spear//b attack. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [243.1] },
+          { "level": 2, "multipliers": [265.2] },
+          { "level": 3, "multipliers": [287.3] },
+          { "level": 4, "multipliers": [309.4] },
+          { "level": 5, "multipliers": [331.5] },
+          { "level": 6, "multipliers": [353.6] },
+          { "level": 7, "multipliers": [375.7] },
+          { "level": 8, "multipliers": [397.8] },
+          { "level": 9, "multipliers": [419.9] },
+          { "level": 10, "multipliers": [442.0] },
+          { "level": 11, "multipliers": [464.1] },
+          { "level": 12, "multipliers": [486.2] },
+          { "level": 13, "multipliers": [508.3] },
+          { "level": 14, "multipliers": [530.4] },
+          { "level": 15, "multipliers": [552.5] },
+          { "level": 16, "multipliers": [574.6] }
+        ]
+      }
+    ],
+
+    "quickAssists": [
+      {
+        "id": "sigrid_de_lazur-quick_assist-iron_sentinel",
+        "name": "Iron Sentinel (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nCondenses ice before lunging forward, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [39.7] },
+          { "level": 2, "multipliers": [43.4] },
+          { "level": 3, "multipliers": [47.1] },
+          { "level": 4, "multipliers": [50.8] },
+          { "level": 5, "multipliers": [54.5] },
+          { "level": 6, "multipliers": [58.2] },
+          { "level": 7, "multipliers": [61.9] },
+          { "level": 8, "multipliers": [65.6] },
+          { "level": 9, "multipliers": [69.3] },
+          { "level": 10, "multipliers": [73.0] },
+          { "level": 11, "multipliers": [76.7] },
+          { "level": 12, "multipliers": [80.4] },
+          { "level": 13, "multipliers": [84.1] },
+          { "level": 14, "multipliers": [87.8] },
+          { "level": 15, "multipliers": [91.5] },
+          { "level": 16, "multipliers": [95.2] }
+        ]
+      }
+    ],
+
+    "perfectAssists": null,
+
+    "assistFollowup": [
+      {
+        "id": "sigrid_de_lazur-assist_follow_up-devouring_frost",
+        "name": "Devouring Frost (Assist Follow-Up)",
+        "description": "Press [BASIC] after a /bDefensive Assist//b to activate:\n\nSwings the spear upward before following with a powerful downward attack, dealing massive Ice DMG. This skill is considered an /bUnbridled Spear//b attack. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [514.9] },
+          { "level": 2, "multipliers": [561.8] },
+          { "level": 3, "multipliers": [608.7] },
+          { "level": 4, "multipliers": [655.6] },
+          { "level": 5, "multipliers": [702.5] },
+          { "level": 6, "multipliers": [749.4] },
+          { "level": 7, "multipliers": [796.3] },
+          { "level": 8, "multipliers": [843.2] },
+          { "level": 9, "multipliers": [890.1] },
+          { "level": 10, "multipliers": [937.0] },
+          { "level": 11, "multipliers": [983.9] },
+          { "level": 12, "multipliers": [1030.8] },
+          { "level": 13, "multipliers": [1077.7] },
+          { "level": 14, "multipliers": [1124.6] },
+          { "level": 15, "multipliers": [1171.5] },
+          { "level": 16, "multipliers": [1218.4] }
+        ]
+      }
+    ],
+
+    "specialAttacks": [
+      {
+        "id": "sigrid_de_lazur-special-frostflower",
+        "name": "Frostflower (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nPerforms three forward thrusts, dealing Ice DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [53.7] },
+          { "level": 2, "multipliers": [58.6] },
+          { "level": 3, "multipliers": [63.5] },
+          { "level": 4, "multipliers": [68.4] },
+          { "level": 5, "multipliers": [73.3] },
+          { "level": 6, "multipliers": [78.2] },
+          { "level": 7, "multipliers": [83.1] },
+          { "level": 8, "multipliers": [88.0] },
+          { "level": 9, "multipliers": [92.9] },
+          { "level": 10, "multipliers": [97.8] },
+          { "level": 11, "multipliers": [102.7] },
+          { "level": 12, "multipliers": [107.6] },
+          { "level": 13, "multipliers": [112.5] },
+          { "level": 14, "multipliers": [117.4] },
+          { "level": 15, "multipliers": [122.3] },
+          { "level": 16, "multipliers": [127.2] }
+        ]
+      }
+    ],
+
+    "exSkills": [
+      {
+        "id": "sigrid_de_lazur-ex_special_attack-scattered_jade",
+        "name": "Scattered Jade (EX Special Attack)",
+        "description": "With enough Energy and while not in the /bAerial Patrol Spear//b state, press [EX] to activate:\n\nPerforms a series of powerful stabs ahead, dealing massive Ice DMG. This skill is considered an /BUnbridled Spear//b attack. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [438.8] },
+          { "level": 2, "multipliers": [478.7] },
+          { "level": 3, "multipliers": [518.6] },
+          { "level": 4, "multipliers": [558.5] },
+          { "level": 5, "multipliers": [598.4] },
+          { "level": 6, "multipliers": [638.3] },
+          { "level": 7, "multipliers": [678.2] },
+          { "level": 8, "multipliers": [718.1] },
+          { "level": 9, "multipliers": [758.0] },
+          { "level": 10, "multipliers": [797.9] },
+          { "level": 11, "multipliers": [837.8] },
+          { "level": 12, "multipliers": [877.7] },
+          { "level": 13, "multipliers": [917.6] },
+          { "level": 14, "multipliers": [957.5] },
+          { "level": 15, "multipliers": [997.4] },
+          { "level": 16, "multipliers": [1037.3] }
+        ]
+      },
+
+      {
+        "id": "sigrid_de_lazur-ex_special_attack-shattered_jade",
+        "name": "Shattered Jade (EX Special Attack)",
+        "description": "With enough Energy and while in the /bAerial Patrol State//b state, press [EX] to activate:\n\nPerforms a series of powerful lunging stabs ahead, dealing massive Ice DMG. This skill is considered an /bUnbridled Spear//b attack. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [1047.8] },
+          { "level": 2, "multipliers": [1143.1] },
+          { "level": 3, "multipliers": [1238.4] },
+          { "level": 4, "multipliers": [1333.7] },
+          { "level": 5, "multipliers": [1429.0] },
+          { "level": 6, "multipliers": [1524.3] },
+          { "level": 7, "multipliers": [1619.6] },
+          { "level": 8, "multipliers": [1714.9] },
+          { "level": 9, "multipliers": [1810.2] },
+          { "level": 10, "multipliers": [1905.5] },
+          { "level": 11, "multipliers": [2000.8] },
+          { "level": 12, "multipliers": [2096.1] },
+          { "level": 13, "multipliers": [2191.4] },
+          { "level": 14, "multipliers": [2286.7] },
+          { "level": 15, "multipliers": [2382.0] },
+          { "level": 16, "multipliers": [2477.3] }
+        ]
+      }
+    ],
+
+    "chainAttacks": [
+      {
+        "id": "sigrid_de_lazur-chain_attack-encroaching_ice",
+        "name": "Encroaching Ice (Chain Attack)",
+        "description": "When a /bChain Attack//b is triggered, select the character to activate:\n\nPerforms a powerful piercing attack against enemies ahead, dealing massive Ice DMG. Upon activating this skill, gains the /bTempered effect//b, increasing the DMG dealt by subsequent /bBasic Attack: Converging Spear//b attacks by 20% for 50s.\n\nWhen the current skill hits a Stunned elite or boss enemy for the first time, the current stage of /bBasic Attack: Converging Spear//b is recorded and then reset before entering the /bFormation Breaker//b state.\n\nWhile in /bFormation Breaker//b, /bAerial Patrol Spear//b's duration will not be reduced. Hold [BASIC] to continuously activate the 1st through 3rd stage of /bBasic Attack: Converging Spear//b. After activating the 3rd stage of /bBasic Attack: Converging Spear//b, /bFormation Break//b ends and /bBasic Attack: Converging Spear//b's stage is restored to the recorded stage.\n\n/bFormation Break//b can trigger at most once against the same target before the target recovers from Stun. This skill is considered an /bUnbridled Spear//b attack\n\nWhile in /bFormation Break//b the state, /bBasic Attack: Converging Spear//b does not trigger the /bChain Attack//b window when hitting Stunned enemies. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [943.7] },
+          { "level": 2, "multipliers": [1029.5] },
+          { "level": 3, "multipliers": [1115.3] },
+          { "level": 4, "multipliers": [1201.1] },
+          { "level": 5, "multipliers": [1286.9] },
+          { "level": 6, "multipliers": [1372.7] },
+          { "level": 7, "multipliers": [1458.5] },
+          { "level": 8, "multipliers": [1544.3] },
+          { "level": 9, "multipliers": [1630.1] },
+          { "level": 10, "multipliers": [1715.9] },
+          { "level": 11, "multipliers": [1801.7] },
+          { "level": 12, "multipliers": [1887.5] },
+          { "level": 13, "multipliers": [1973.3] },
+          { "level": 14, "multipliers": [2059.1] },
+          { "level": 15, "multipliers": [2144.9] },
+          { "level": 16, "multipliers": [2230.7] }
+        ]
+      }
+    ],
+
+    "ultimate": [
+      {
+        "id": "sigrid_de_lazur-ultimate-frozen_heavens",
+        "name": "Frozen Heavens (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nGathers the power of extreme cold before unleashing a devastating series of lunging attacks, dealing massive Ice DMG. This skill is considered an /bUnbridled Spear//b attack. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [2189.8] },
+          { "level": 2, "multipliers": [2388.9] },
+          { "level": 3, "multipliers": [2588.0] },
+          { "level": 4, "multipliers": [2787.1] },
+          { "level": 5, "multipliers": [2986.2] },
+          { "level": 6, "multipliers": [3185.3] },
+          { "level": 7, "multipliers": [3384.4] },
+          { "level": 8, "multipliers": [3583.5] },
+          { "level": 9, "multipliers": [3782.6] },
+          { "level": 10, "multipliers": [3981.7] },
+          { "level": 11, "multipliers": [4180.8] },
+          { "level": 12, "multipliers": [4379.9] },
+          { "level": 13, "multipliers": [4579.0] },
+          { "level": 14, "multipliers": [4778.1] },
+          { "level": 15, "multipliers": [4977.2] },
+          { "level": 16, "multipliers": [5176.3] }
+        ]
+      }
+    ],
+
+    "mindscapeAbilities": [
+      {
+        "id": "sigrid_de_lazur-mindscape-long_long_ago",
+        "name": "Basic Attack: Converging Spear - Additional DMG (Mindscape Cinema N°1)",
+        "description": "Upon activating the 3rd stage of /bBasic Attack: Converging Spear//b, enters the /bAerial Patrol Spear//b and gains 1 additional activation of /bBasic Attack: Converging Spear//b. When activations exceed the stored /bBasic Attack: Converging Spear//b's activation limit, the next /bBasic Attack: Converging Spear//b's final hit deals an additional 100% of ATK as Ice DMG. Sigrid's ATK increases by 25%.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [100]
+          }
+        ]
+      },
+
+      {
+        "id": "sigrid_de_lazur-mindscape-knight_of_the_skies",
+        "name": "Basic Attack: Converging Spear - Stages' Additional DMG (Mindscape Cinema N°6)",
+        "description": "When /bBasic Attack: Converging Spear//b's 1st/2nd/3rd stage's final hit lands, it deals an additional 80%/90%/100% ATK as Ice DMG. There is no more limit on the number of times Sigrid can enter the /bFormation Breaker//b state upon hitting a Stunned enemy with /bChain Attack: Encroaching Ice//b. /bFormation Breaker//b state's /bBasic Attack: Converging Spear//b will activate faster.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Basic Attack: Converging Spear 1st Stage DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Basic Attack: Converging Spear 2nd Stage DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Basic Attack: Converging Spear 3rd Stage DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [80, 90, 100]
+          }
+        ]
+      }
+    ]
+  }
+}

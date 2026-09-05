@@ -1,0 +1,92 @@
+{
+  "id": "serpentine_seeker",
+  "name": "Serpentine Seeker",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.6
+  },
+
+  "ingameEffects": [
+    {
+      "id": "serpentine_seeker-bioengineered_venom-crit_rate",
+      "source": "wEngine",
+      "sourceId": "serpentine_seeker",
+      "label": "Bioengineered Venom (W-Engine Passive)",
+      "description": "CRIT Rate is increased. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing Electric DMG, ignore a percentage of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.",
+      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.25 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.288 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.325 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.363 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.4 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "serpentine_seeker-bioengineered_venom-electric_res_shred",
+      "source": "wEngine",
+      "sourceId": "serpentine_seeker",
+      "label": "Bioengineered Venom (W-Engine Passive)",
+      "description": "CRIT Rate is increased. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing Electric DMG, ignore a percentage of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.",
+      "shortDescription": "The equipper's attacks ignore a percentage of the target's Electric RES.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "electricResShred": 0.28 }
+          },
+          {
+            "level": 2,
+            "stats": { "electricResShred": 0.315 }
+          },
+          {
+            "level": 3,
+            "stats": { "electricResShred": 0.35 }
+          },
+          {
+            "level": 4,
+            "stats": { "electricResShred": 0.385 }
+          },
+          {
+            "level": 5,
+            "stats": { "electricResShred": 0.42 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

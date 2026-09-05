@@ -1,0 +1,1124 @@
+{
+  "id": "soldier_11",
+  "name": "Soldier 11",
+  "specialty": "Attack",
+  "faction": "Defense Force - Silver Squad",
+  "attribute": "Fire",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Soldier 11",
+  "attributeIcon": "Fire",
+  "themeColor": "#F5B949",
+  "baseStats": {
+    "hp": 7673.7,
+    "atk": 813.57,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "soldier_11-core-heatwave",
+      "source": "core",
+      "sourceId": "soldier_11-core",
+      "label": "Heatwave (Core Passive)",
+      "description": "When triggering Fire Suppression during a Basic Attack or Dash Attack, increase that attack's DMG by 70%.",
+      "shortDescription": "Soldier 11's DMG from Basic Attack: Fire Suppresion and Dash Attack: Fire Suppresion is increased by 70%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "soldier_11-basic_attack-fire_suppression",
+            "oldier_11-dash_attack-fire_suppression"
+          ],
+          "value": 0.7
+        }
+      ]
+    },
+    {
+      "id": "soldier_11-core_1-fields_of_fire",
+      "source": "core",
+      "sourceId": "soldier_11-core",
+      "label": "Fields of Fire (Additional Ability)",
+      "description": "When another character in your squad shares the same Attribute or Faction:\n\nSoldier 11 deals 10% more Fire DMG. When attacking Stunned enemies, this effect is further enhanced by an additional 22.5%.",
+      "shortDescription": "Soldier 11's Fire DMG is increased by 10%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "fire",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "soldier_11-core_2-fields_of_fire",
+      "source": "core",
+      "sourceId": "soldier_11-core",
+      "label": "Fields of Fire (Additional Ability)",
+      "description": "When another character in your squad shares the same Attribute or Faction:\n\nSoldier 11 deals 10% more Fire DMG. When attacking Stunned enemies, this effect is further enhanced by an additional 22.5%.",
+      "shortDescription": "Soldier 11's Fire DMG is increased by an additional 22.5%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "fire",
+          "value": 0.225
+        }
+      ]
+    },
+    {
+      "id": "soldier_11-mindscape_1-rapid_heat",
+      "source": "mindscape",
+      "sourceId": "soldier_11-mindscape_1",
+      "label": "Rapid Heat (Mindscape Cinema N°1)",
+      "description": "When Soldier 11 enters combat or switches in, if her Energy is less than 40, her Energy is recovered to 80. This effect can trigger once every 50s.",
+      "shortDescription": "This mindscape cinema does not affect Soldier 11's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "soldier_11-mindscape_2-scorching_convergence",
+      "source": "mindscape",
+      "sourceId": "soldier_11-mindscape_2",
+      "label": "Scorching Convergence (Mindscape Cinema N°2)",
+      "description": "When triggering Fire Suppression, Basic Attack, Dash Attack, and Dodge Counter DMG increases by 3%, up to 12 stacks, lasting 15s, with the duration of each stack calculated separately.",
+      "shortDescription": "Soldier 11's DMG from Basic Attacks, Dash Attacks and Dodge Counters is increased by 3% for 15s, stacking up to 12 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "skillType",
+          "skillType": "basic",
+          "value": 0.03
+        },
+        {
+          "type": "skillType",
+          "skillType": "dash",
+          "value": 0.03
+        },
+        {
+          "type": "skillType",
+          "skillType": "counter",
+          "value": 0.03
+        }
+      ],
+      "maxStacks": 12
+    },
+    {
+      "id": "soldier_11-mindscape_4-indulgent_blaze",
+      "source": "mindscape",
+      "sourceId": "soldier_11-mindscape_4",
+      "label": "Indulgent Blaze (Mindscape Cinema N°4)",
+      "description": "If Fire Suppression is triggered during the 1st, 2nd, or 3rd hit of Soldier 11's Basic Attack or a Dash Attack, Anti-Interrupt Level increases and DMG received is reduced by 18% during skill activation. If Fire Suppression is triggered during the 4th hit of her Basic Attack, she becomes invulnerable during skill activation.",
+      "shortDescription": "This mindscape cinema does not affect Soldier 11's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "soldier_11-mindscape_6-scorching_flow",
+      "source": "mindscape",
+      "sourceId": "soldier_11-mindscape_6",
+      "label": "Scorching Flow (Mindscape Cinema N°6)",
+      "description": "When Soldier 11 uses her EX Special Attack, Chain Attack, or Ultimate, she gains 8 stacks of Charge (max 8 stacks). When Fire Suppression is triggered, 1 stack of Charge is consumed, causing the current move to ignore 25% of the target's Fire RES.",
+      "shortDescription": "Soldier 11's DMG from EX Special Attack: Fervent Fire, Chain Attack: Uplifting Flame and Ultimate: Bellowing Flame ignores 25% of target's Fire RES.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "fireResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "soldier_11-ex_special_attack-fervent_fire",
+            "soldier_11-chain_attack-uplifting_flame",
+            "soldier_11-ultimate-bellowing_flame"
+          ],
+          "value": 0.25
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "soldier_11-basic_attack-warmup_sparks",
+        "name": "Warmup Sparks (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 4 slashes, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [34.4, 41.2, 102.8, 213.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [37.6, 45, 112.2, 232.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [40.8, 48.8, 121.6, 252.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [44, 52.6, 131, 271.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [47.2, 56.4, 140.4, 291]
+          },
+          {
+            "level": 6,
+            "multipliers": [50.4, 60.2, 149.8, 310.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [53.6, 64, 159.2, 329.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [56.8, 67.8, 168.6, 349.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [60, 71.6, 178, 368.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [63.2, 75.4, 187.4, 388]
+          },
+          {
+            "level": 11,
+            "multipliers": [66.4, 79.2, 196.8, 407.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [69.6, 83, 206.2, 426.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [72.8, 86.8, 215.6, 446.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [76, 90.6, 225, 465.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [79.2, 94.4, 234.4, 485]
+          },
+          {
+            "level": 16,
+            "multipliers": [82.4, 98.2, 243.8, 504.4]
+          }
+        ]
+      },
+      {
+        "id": "soldier_11-basic_attack-fire_suppression",
+        "name": "Fire Suppression (Basic Attack)",
+        "description": "Press [BASIC] at the right moment activate:\n\nUnleashes a set of more powerful slashes, dealing Fire DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [55.1, 57.2, 132, 340.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [60.2, 62.4, 144, 371.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [65.3, 67.6, 156, 402.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [70.4, 72.8, 168, 433.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [75.5, 78, 180, 464.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [80.6, 83.2, 192, 495.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [85.7, 88.4, 204, 526.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [90.8, 93.6, 216, 557.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [95.9, 98.8, 228, 588.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [101, 104, 240, 619.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [106.1, 109.2, 252, 650.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [111.2, 114.4, 264, 681.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [116.3, 119.6, 276, 712.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [121.4, 124.8, 288, 743.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [126.5, 130, 300, 774.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [131.6, 135.2, 312, 805.7]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "soldier_11-dash_attack-blazing_fire",
+        "name": "Blazing Fire (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [68.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [74.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [80.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [87.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [93.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [99.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [106.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [112.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [118.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [125]
+          },
+          {
+            "level": 11,
+            "multipliers": [131.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [137.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [143.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [150.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [156.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [162.8]
+          }
+        ]
+      },
+      {
+        "id": "soldier_11-dash_attack-fire_suppression",
+        "name": "Fire Suppression (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Fire DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [78.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [86]
+          },
+          {
+            "level": 3,
+            "multipliers": [93.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [100.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [107.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [114.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [122]
+          },
+          {
+            "level": 8,
+            "multipliers": [129.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [136.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [143.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [150.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [158]
+          },
+          {
+            "level": 13,
+            "multipliers": [165.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [172.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [179.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [186.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "soldier_11-dodge_counter-backdraft",
+        "name": "Backdraft (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nExecutes a powerful slash against enemies in front, dealing massive Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [262]
+          },
+          {
+            "level": 2,
+            "multipliers": [285.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [309.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [333.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [357.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [381.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [405.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [429.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [453.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [477.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [501]
+          },
+          {
+            "level": 12,
+            "multipliers": [524.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [548.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [572.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [596.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [620.5]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "soldier_11-quick_assist-covering_fire",
+        "name": "Covering Fire (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nSlashes enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [120.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [131.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [142.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [153.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [164.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [175.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [186.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [197.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [208.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [219.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [230.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [241.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [252.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [263.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [274.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [285.8]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "soldier_11-assist_follow_up-reignition",
+        "name": "Reignition (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCharge and cross slash enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [383.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [418.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [453.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [488.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [523.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [558.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [593.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [628]
+          },
+          {
+            "level": 9,
+            "multipliers": [662.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [697.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [732.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [767.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [802.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [837.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [872.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [907.2]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "soldier_11-special_attack-raging_fire",
+        "name": "Raging Fire (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nSlashes enemies nearby, dealing Fire DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [52.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [57.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [62.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [67]
+          },
+          {
+            "level": 5,
+            "multipliers": [71.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [76.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [81.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [86.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [91]
+          },
+          {
+            "level": 10,
+            "multipliers": [95.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [100.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [105.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [110.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [115]
+          },
+          {
+            "level": 15,
+            "multipliers": [119.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [124.6]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "soldier_11-ex_special_attack-fervent_fire",
+        "name": "Fervent Fire (EX Special Attack)",
+        "description": "With enough Energy, press [SPECIAL] to activate:\n\nSlashes enemies nearby, dealing massive Fire DMG. Character is invulnerable while using this skill. After using this skill, Soldier 11's /bBasic Attacks//b and /bDash Attacks//b will trigger /bFire Suppression//b for up to 30s or 8 times.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [675]
+          },
+          {
+            "level": 2,
+            "multipliers": [736.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [797.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [859.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [920.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [982]
+          },
+          {
+            "level": 7,
+            "multipliers": [1043.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1104.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1166.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [1227.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [1289]
+          },
+          {
+            "level": 12,
+            "multipliers": [1350.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1411.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1473.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1534.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [1596]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "soldier_11-chain_attack-uplifting_flame",
+        "name": "Uplifting Flame (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful upward slash at enemies in a small area, dealing massive Fire DMG. Character is invulnerable while using this skill. After using this skill, Soldier 11's /bBasic Attacks//b and /bDash Attacks//b trigger /bFire Suppression//b for the next 30s, up to 8 times.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [632.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [690]
+          },
+          {
+            "level": 3,
+            "multipliers": [747.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [805]
+          },
+          {
+            "level": 5,
+            "multipliers": [862.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [920]
+          },
+          {
+            "level": 7,
+            "multipliers": [977.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [1035]
+          },
+          {
+            "level": 9,
+            "multipliers": [1092.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [1150]
+          },
+          {
+            "level": 11,
+            "multipliers": [1207.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [1265]
+          },
+          {
+            "level": 13,
+            "multipliers": [1322.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1380]
+          },
+          {
+            "level": 15,
+            "multipliers": [1437.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1495]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "soldier_11-ultimate-bellowing_flame",
+        "name": "Bellowing Flame (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a powerful upward slash at enemies in a small area, dealing massive Fire DMG. Character is invulnerable while using this skill. After using this skill, Soldier 11's /bBasic Attacks//b and /bDash Attacks//b trigger /bFire Suppression//b for the next 30s, up to 8 times.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2103]
+          },
+          {
+            "level": 2,
+            "multipliers": [2294.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [2485.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [2676.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [2867.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [3059]
+          },
+          {
+            "level": 7,
+            "multipliers": [3250.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [3441.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [3632.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [3823.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [4015]
+          },
+          {
+            "level": 12,
+            "multipliers": [4206.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [4397.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [4588.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [4779.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [4971]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

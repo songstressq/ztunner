@@ -1,0 +1,131 @@
+{
+  "id": "spectral_gaze",
+  "name": "Spectral Gaze",
+  "rarity": "S",
+  "specialty": "Stun",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT Rate%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.24
+  },
+
+  "ingameEffects": [
+    {
+      "id": "spectral_gaze-wind_seeker-def_shred",
+      "source": "wEngine",
+      "sourceId": "spectral_gaze",
+      "label": "Wind Seeker (W-Engine Passive)",
+      "description": "When the equipper hits an enemy with Aftershock, causing Electric DMG, the target's DEF is reduced for 5s. Passive effects of the same name do not stack. When this effect is triggered, if the equipper is not the active character, they gain 1 stack of Spirit Lock, up to a maximum of 3 stacks. This can trigger only once per use of a skill. Each stack of Spirit Lock increases the equipper's Impact by a percentage lasting 12s. The duration of each stack is calculated separately. At full stacks of Spirit Lock, the equipper's Impact increases by an additional percentage.",
+      "shortDescription": "The equipper's Electric DMG from aftershocks reduce the target's DEF for 5s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "defShred": 0.25 }
+          },
+          {
+            "level": 2,
+            "stats": { "defShred": 0.2875 }
+          },
+          {
+            "level": 3,
+            "stats": { "defShred": 0.325 }
+          },
+          {
+            "level": 4,
+            "stats": { "defShred": 0.3625 }
+          },
+          {
+            "level": 5,
+            "stats": { "defShred": 0.4 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "spectral_gaze-wind_seeker-impact",
+      "source": "wEngine",
+      "sourceId": "spectral_gaze",
+      "label": "Wind Seeker (W-Engine Passive)",
+      "description": "When the equipper hits an enemy with Aftershock, causing Electric DMG, the target's DEF is reduced for 5s. Passive effects of the same name do not stack. When this effect is triggered, if the equipper is not the active character, they gain 1 stack of Spirit Lock, up to a maximum of 3 stacks. This can trigger only once per use of a skill. Each stack of Spirit Lock increases the equipper's Impact by a percentage lasting 12s. The duration of each stack is calculated separately. At full stacks of Spirit Lock, the equipper's Impact increases by an additional percentage.",
+      "shortDescription": "The equipper's Impact is increased for 12s, stacking up to 3 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "impactPercentRaw": 0.04 }
+          },
+          {
+            "level": 2,
+            "stats": { "impactPercentRaw": 0.046 }
+          },
+          {
+            "level": 3,
+            "stats": { "impactPercentRaw": 0.052 }
+          },
+          {
+            "level": 4,
+            "stats": { "impactPercentRaw": 0.058 }
+          },
+          {
+            "level": 5,
+            "stats": { "impactPercentRaw": 0.064 }
+          }
+        ],
+        "maxStacks": 3,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    },
+
+    {
+      "id": "spectral_gaze-wind_seeker-additional_impact",
+      "source": "wEngine",
+      "sourceId": "spectral_gaze",
+      "label": "Wind Seeker (W-Engine Passive)",
+      "description": "When the equipper hits an enemy with Aftershock, causing Electric DMG, the target's DEF is reduced for 5s. Passive effects of the same name do not stack. When this effect is triggered, if the equipper is not the active character, they gain 1 stack of Spirit Lock, up to a maximum of 3 stacks. This can trigger only once per use of a skill. Each stack of Spirit Lock increases the equipper's Impact by a percentage lasting 12s. The duration of each stack is calculated separately. At full stacks of Spirit Lock, the equipper's Impact increases by an additional percentage.",
+      "shortDescription": "The equipper's Impact is further increased at full stacks.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "impactPercentRaw": 0.08 }
+          },
+          {
+            "level": 2,
+            "stats": { "impactPercentRaw": 0.092 }
+          },
+          {
+            "level": 3,
+            "stats": { "impactPercentRaw": 0.104 }
+          },
+          {
+            "level": 4,
+            "stats": { "impactPercentRaw": 0.116 }
+          },
+          {
+            "level": 5,
+            "stats": { "impactPercentRaw": 0.128 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    }
+  ]
+}

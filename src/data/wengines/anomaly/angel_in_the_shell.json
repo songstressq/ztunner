@@ -1,0 +1,180 @@
+{
+  "id": "angel_in_the_shell",
+  "name": "Angel in the Shell",
+  "rarity": "S",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Anomaly Mastery%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "angel_in_the_shell-energetic_strike-anomaly_proficiency",
+      "source": "wEngine",
+      "sourceId": "angel_in_the_shell",
+      "label": "Energetic Strike (W-Engine Passive)",
+      "description": "Increases the equipper's Anomaly Proficiency. When the equipper is an Ether character, and comes on-field or uses a Special Attack or EX Special Attack, they gain a buff: DMG dealt to enemies afflicted with Attribute Anomalies increases, and all Attribute Anomaly DMG they trigger increases by a percentage, lasting 15s. Repeated triggers reset the duration, and the effect is removed when switching off-field.",
+      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "anomalyProficiency": 90 }
+          },
+          {
+            "level": 2,
+            "stats": { "anomalyProficiency": 103 }
+          },
+          {
+            "level": 3,
+            "stats": { "anomalyProficiency": 117 }
+          },
+          {
+            "level": 4,
+            "stats": { "anomalyProficiency": 130 }
+          },
+          {
+            "level": 5,
+            "stats": { "anomalyProficiency": 140 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    },
+
+    {
+      "id": "angel_in_the_shell-energetic_strike-dmg_bonus",
+      "source": "wEngine",
+      "sourceId": "angel_in_the_shell",
+      "label": "Energetic Strike (W-Engine Passive)",
+      "description": "Increases the equipper's Anomaly Proficiency. When the equipper is an Ether character, and comes on-field or uses a Special Attack or EX Special Attack, they gain a buff: DMG dealt to enemies afflicted with Attribute Anomalies increases, and all Attribute Anomaly DMG they trigger increases by a percentage, lasting 15s. Repeated triggers reset the duration, and the effect is removed when switching off-field.",
+      "shortDescription": "The equipper's DMG is increased for 15s while attacking enemies affected by Attribute Anomalies.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.2
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.23
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.26
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.29
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.32
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    },
+
+    {
+      "id": "angel_in_the_shell-energetic_strike-anomaly_dmg",
+      "source": "wEngine",
+      "sourceId": "angel_in_the_shell",
+      "label": "Energetic Strike (W-Engine Passive)",
+      "description": "Increases the equipper's Anomaly Proficiency. When the equipper is an Ether character, and comes on-field or uses a Special Attack or EX Special Attack, they gain a buff: DMG dealt to enemies afflicted with Attribute Anomalies increases, and all Attribute Anomaly DMG they trigger increases by a percentage, lasting 15s. Repeated triggers reset the duration, and the effect is removed when switching off-field.",
+      "shortDescription": "Increases the equipper's Attribute Anomaly DMG for 15s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.1
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.11
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.13
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.145
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.16
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

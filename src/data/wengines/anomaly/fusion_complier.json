@@ -1,0 +1,60 @@
+{
+  "id": "fusion_complier",
+  "name": "Fusion Compiler",
+  "rarity": "S",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "PEN Ratio%",
+
+  "stats": {
+    "base": 684,
+    "advanced": 0.24
+  },
+
+  "ingameEffects": [
+    {
+      "id": "fusion_complier-data_flood",
+      "source": "wEngine",
+      "sourceId": "fusion_complier",
+      "label": "Data Flood (W-Engine Passive)",
+      "description": "Increases ATK by a percentage. When using a Special Attack or EX Special Attack, the equipper's Anomaly Proficiency is increased for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "shortDescription": "Increases the equipper's ATK and Anomaly Proficiency, the latter stacking up to 3 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "baseStats": { "atkPercentRaw": 0.12 },
+            "stats": { "anomalyProficiency": 25 }
+          },
+          {
+            "level": 2,
+            "baseStats": { "atkPercentRaw": 0.15 },
+            "stats": { "anomalyProficiency": 31 }
+          },
+          {
+            "level": 3,
+            "baseStats": { "atkPercentRaw": 0.18 },
+            "stats": { "anomalyProficiency": 37 }
+          },
+          {
+            "level": 4,
+            "baseStats": { "atkPercentRaw": 0.21 },
+            "stats": { "anomalyProficiency": 43 }
+          },
+          {
+            "level": 5,
+            "baseStats": { "atkPercentRaw": 0.24 },
+            "stats": { "anomalyProficiency": 50 }
+          }
+        ],
+        "maxStacks": 3,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1324 @@
+{
+  "id": "velina",
+  "name": "Velina Airgid",
+  "specialty": "Anomaly",
+  "faction": "External Strategy Department",
+  "attribute": "Wind",
+  "rarity": "S",
+  "fullName": "Velina Airgid",
+  "displayName": "Velina",
+  "attributeIcon": "Wind",
+  "themeColor": "#C2D0F0",
+  "skins": [
+    {
+      "id": "default",
+      "img": "velina.png"
+    },
+    {
+      "id": "shade_of_leisure",
+      "img": "velina-shade_of_leisure.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7789,
+    "atk": 797.57,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 83,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 111,
+    "anomalyMastery": 112,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Energy Regen", "Anomaly Proficiency", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 18
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 18
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 18
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "velina_airgid-core_1-breeze_in_bloom",
+      "source": "core",
+      "sourceId": "velina-core",
+      "label": "Breeze in Bloom (Core Passive)",
+      "description": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84. ...",
+      "shortDescription": "Velina's DMG is increased based on her initial Energy Regen.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBasedDamageBonus",
+        "basedOn": "energyRegen",
+        "threshold": 1.2,
+        "baseBonus": 0,
+        "perUnit": 0.01,
+        "skillLevels": [
+          {
+            "level": 1,
+            "perUnitBonus": 0.0021,
+            "maxBonus": 0.35
+          }
+        ],
+        "damageBonusType": "global"
+      }
+    },
+    {
+      "id": "velina_airgid-core_2-breeze_in_bloom",
+      "source": "core",
+      "sourceId": "velina-core",
+      "label": "Breeze in Bloom (Core Passive)",
+      "description": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84. ...",
+      "shortDescription": "Velina's Anomaly Mastery is increased based on her initial Energy Regen.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.2,
+        "baseBonus": 0,
+        "perUnit": 0.01,
+        "skillLevels": [
+          {
+            "level": 1,
+            "perUnitBonus": 0.5,
+            "maxBonus": 84
+          }
+        ],
+        "affectedStats": ["anomalyMastery"]
+      }
+    },
+    {
+      "id": "velina_airgid-core_3-breeze_in_bloom",
+      "source": "core",
+      "sourceId": "velina-core",
+      "label": "Breeze in Bloom (Core Passive)",
+      "description": "When Velina triggers Vortex, she gains 1 point of Windbite and summons a Condensed Cyclone, dealing Wind DMG. This effect can trigger once every 3s. When Velina has 2 points of Windbite, the next time she triggers Vortex, 2 points of Windbite are consumed to increase that Vortex's DMG Multiplier by 150%. In addition, a Sweeping Cyclone is summoned instead of a Condensed Cyclone, which does not grant Windbite.",
+      "shortDescription": "Velina's Vortex DMG Multiplier is increased by +150%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "vortexMultiplierBonus",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "id": "velina_airgrid-core-tea_party_etiquette",
+      "source": "core",
+      "sourceId": "velina_airgid-core",
+      "label": "Tea Party Etiquette (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same attribute:\n\nVelina's Windswept and Vortex DMG increases by 10%. When the heavy attack from an Ultimate hits an enemy suffering a Wind Attribute Anomaly, it triggers an instance of Abloom DMG against the target: resolves one additional instance of Attribute Anomaly DMG, fixed at 680% of Wind Attribute Anomaly DMG. For Core Passive: Breeze in Bloom, the Attribute Anomaly Buildup RES reduction from Sweeping Cyclone is further increased by 7%, while Daze inflicted increases by 30%, and accumulated Attribute Anomaly Buildup increases by 15%.",
+      "shortDescription": "Velina's DMG from Windswept Anomaly and Vortex is increased by 10%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "anomalyTypeDmg",
+          "anomalyType": "windswept",
+          "value": 0.1
+        },
+        {
+          "type": "vortexDmg",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "velina-mindscape_1-orderly_elegance",
+      "source": "mindscape",
+      "sourceId": "velina-mindscape_1",
+      "label": "Orderly Elegance (Mindscape Cinema N°1)",
+      "description": "Sweeping Cyclone from Additional Ability: Tea Party Etiquette deals an additional 20% Daze. When Velina triggers Vortex, she ignores 20% of the target's All-Attribute RES. When squad members deal Windswept DMG, 20% of the target's Wind RES is ignored.",
+      "shortDescription": "Velina's Vortex ignores 20% of All-Attribute RES.",
+      "target": "self",
+      "flat": {
+        "fireResShred": 0.2,
+        "iceResShred": 0.2,
+        "electricResShred": 0.2,
+        "physicalResShred": 0.2,
+        "etherResShred": 0.2,
+        "windResShred": 0.2
+      },
+      "condition": {
+        "appliesToVortexOnly": true
+      }
+    },
+    {
+      "id": "velina-mindscape_2-saturation_project",
+      "source": "mindscape",
+      "sourceId": "velina-mindscape_2",
+      "label": "Saturation Project (Mindscape Cinema N°2)",
+      "description": "When Velina triggers Windswept, she can also gain 1 point of Windbite. This effect can trigger once every 5s. After Sweeping Cyclone triggers the Chromatic Tint effect, it can accumulate the corresponding attribute's Anomaly Buildup. The buildup accumulated by this attack is excluded from Anomaly DMG calculations. The DMG increase effects of Velina's Windswept and Vortex from Additional Ability: Tea Party Etiquette are further increased by 15%.",
+      "shortDescription": "Velina's DMG from Windswept Anomaly and Vortex is further increased by 15%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "anomalyTypeDmg",
+          "anomalyType": "windswept",
+          "value": 0.15
+        },
+        {
+          "type": "vortexDmg",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "velina-mindscape_4-tea_party_tribunal",
+      "source": "mindscape",
+      "sourceId": "velina-mindscape_4",
+      "label": "Tea Party Tribunal (Mindscape Cinema N°4)",
+      "description": "When Velina uses an EX Special Attack, her ATK increases by 15% for 40s. Repeated triggers reset the duration.",
+      "shortDescription": "Velina's ATK is increased by 40% for 40s.",
+      "target": "self",
+      "flat": {
+        "atkPercentRaw": 0.4
+      }
+    },
+    {
+      "id": "velina-mindscape_6-chief_angel",
+      "source": "mindscape",
+      "sourceId": "velina-mindscape_6",
+      "label": "Chief Angel (Mindscape Cinema N°6)",
+      "description": "When Velina consumes 2 points of Windbite to increase the DMG Multiplier of Vortex, she gains 1 point of Windbite. This effect can trigger once every 6s. When Velina hits an enemy suffering a Wind Attribute Anomaly, the Wind Attribute Anomaly Buildup she inflicts increases by 20%. When Velina inflicts Windswept on an enemy already affected by Windswept, the new Windswept's DMG increases based on the remaining duration of the previous. Each remaining second increases the DMG by 2.5%, up to a maximum increase of 40%.",
+      "shortDescription": "Velina's Windswept DMG is increased based on the previous Windswept remaining duration, up to 40%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "anomalyTypeDmg",
+          "anomalyType": "windswept",
+          "value": 0.025
+        }
+      ],
+      "maxStacks": 16
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "velina_airgid-basic_attack-dancing_fans",
+        "name": "Dancing Fans (Basic Attack)",
+        "description": "Press [BASIC] to activate: Launches up to five attacks against enemies ahead, dealing Wind DMG. During the 5th attack, Velina's Anti-Interrupt Level increases, and DMG taken is reduced by 40%.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [51.7, 48.9, 169.1, 125.6, 229.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [56.4, 53.4, 184.5, 137.1, 250.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [61.1, 57.9, 199.9, 148.6, 271.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [65.8, 62.4, 215.3, 160.1, 292.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [70.5, 66.9, 230.7, 171.6, 313.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [75.2, 71.4, 246.1, 183.1, 334.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [79.9, 75.9, 261.5, 194.6, 355]
+          },
+          {
+            "level": 8,
+            "multipliers": [84.6, 80.4, 276.9, 206.1, 375.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [89.3, 84.9, 292.3, 217.6, 396.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [94, 89.4, 307.7, 229.1, 417.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [98.7, 93.9, 323.1, 240.6, 438.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [103.4, 98.4, 338.5, 252.1, 459.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [108.1, 102.9, 353.9, 263.6, 480.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [112.8, 107.4, 369.3, 275.1, 501.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [117.5, 111.9, 384.7, 286.6, 522.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [122.2, 116.4, 400.1, 298.1, 543.1]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "velina_airgid-dash_attack-gale_step",
+        "name": "Gale Step (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate: Delivers a quick attack forward, dealing Wind DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [99.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [108.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [117.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [127]
+          },
+          {
+            "level": 5,
+            "multipliers": [136.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [145.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [154.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [163.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [172.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [181.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [190.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [199.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [208.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [218]
+          },
+          {
+            "level": 15,
+            "multipliers": [227.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [236.2]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "velina_airgid-dodge_counter-cloudrend",
+        "name": "Cloudrend (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate: Launches a series of attacks on the target, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [394.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [430.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [466.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [502.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [538.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [574.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [610.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [646.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [682.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [718]
+          },
+          {
+            "level": 11,
+            "multipliers": [753.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [789.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [825.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [861.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [897.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [933.4]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "velina_airgid-quick_assist-emergency_protocol",
+        "name": "Emergency Protocol (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate: Unleashes consecutive attacks against the target, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [203.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [222.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [241]
+          },
+          {
+            "level": 4,
+            "multipliers": [259.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [278.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [296.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [315.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [334]
+          },
+          {
+            "level": 9,
+            "multipliers": [352.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [371.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [389.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [408.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [427]
+          },
+          {
+            "level": 14,
+            "multipliers": [445.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [464.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [482.8]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "velina_airgid-assist_follow_up-negotiation_techniques",
+        "name": "Negotiation Techniques (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate: Unleashes a series of attacks, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [532.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [581.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [629.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [678.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [726.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [775.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [823.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [872.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [920.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [969.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [1017.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1066.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1114.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1163.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1211.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [1260.2]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "velina_airgid-special_attack-wind_shear_purging_surge",
+        "name": "Wind Shear - Purging Surge (Special Attack)",
+        "description": "Press [SPECIAL] to activate: Unleashes a sweeping gust forward, dealing Wind DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [58.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [64]
+          },
+          {
+            "level": 3,
+            "multipliers": [69.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [74.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [80.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [85.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [91]
+          },
+          {
+            "level": 8,
+            "multipliers": [96.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [101.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [107.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [112.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [118]
+          },
+          {
+            "level": 13,
+            "multipliers": [123.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [128.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [134.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [139.6]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "velina_airgid-ex_special_attack-wind_shear_purifying_rise",
+        "name": "Wind Shear - Purifying Rise (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate: Dodges backward, then unleashes a massive wind blast to attack enemies, dealing Wind DMG. During the backward dodge, a dodge effect is active. Successfully dodging an enemy attack triggers /bVital View//b. After using this skill, press [BASIC] to chain into the 5th hit of the /bBasic Attack//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [440.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [480.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [520.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [560.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [600.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [641]
+          },
+          {
+            "level": 7,
+            "multipliers": [681.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [721.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [761.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [801.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [841.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [881.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [921.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [961.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1001.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1042]
+          }
+        ]
+      },
+      {
+        "id": "velina_airgid-ex_special_attack-wind_shear_triple_deathblow",
+        "name": "Wind Shear - Triple Deathblow (EX Special Attack)",
+        "description": "With enough energy and after using /bEX Special Attack: Wind Shear - Purifying Rise//b, press or hold [EX] to activate: Continuously swings the fan, dealing Wind DMG. After using this skill, press [BASIC] to chain into the 5th hit of the /bBasic Attack//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [725.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [791.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [857.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [923.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [989.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [1055.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [1121.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [1187.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [1253.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [1319.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [1385.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1451.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1517.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1583.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1649.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1715.2]
+          }
+        ]
+      },
+      {
+        "id": "velina_airgid-ex_special_attack-wind_shear_eye_of_the_storm",
+        "name": "Wind Shear - Eye of the Storm (EX Special Attack)",
+        "description": "With 90 or more Windbloom, hold [SPECIAL] or /bBasic Attack//b to activate: Velina channels a whirlwind and summons a /bSweeping Cyclone//b to continuously attack enemies and triggers the previous character's /bQuick Assist//b. /bSweeping Cyclone//b lasts for 5s and deals Wind DMG to nearby enemies once every 0.5s.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [216.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [236.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [256.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [275.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [295.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [315.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [334.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [354.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [374.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [394]
+          },
+          {
+            "level": 11,
+            "multipliers": [413.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [433.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [453.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [472.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [492.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [512.2]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "velina_airgid-chain_attack-thousandfold_spiral",
+        "name": "Thousandfold Spiral (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate: Transforms into a hurricane to unleash multiple attacks against enemies, followed by a /bFinishing Move//b, dealing massive Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [800.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [873.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [946]
+          },
+          {
+            "level": 4,
+            "multipliers": [1018.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [1091.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [1164.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [1237.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [1310]
+          },
+          {
+            "level": 9,
+            "multipliers": [1382.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [1455.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [1528.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1601.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1674]
+          },
+          {
+            "level": 14,
+            "multipliers": [1746.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1819.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [1892.4]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "velina_airgid-ultimate-heed_the_tempest",
+        "name": "Heed the Tempest (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate: Unleashes multiple attacks against enemies ahead, dealing massive Wind DMG. After using this skill, the previous character's /bQuick Assist//b is triggered. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2188.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [2387.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [2586.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [2785.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [2984.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [3183.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [3382.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [3581.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [3780.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [3979.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [4178.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [4377.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [4576.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [4775.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [4974.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [5173.3]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "velina_airgrid-core-condensed_cyclone",
+        "name": "Condensed Cyclone (Core Passive)",
+        "description": "When Velina triggers /bVortex//b, she summons a Condensed Cyclone that deals Wind DMG. When the Condensed Cyclone dissipates, it triggers an explosion. If the explosion hits an enemy afflicted with a Wind Anomaly, it deals one instance of /bAbloom//b DMG.",
+        "skillType": "core",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [32.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [35.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [38.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [41.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [44.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [47.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [50.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [53.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [56.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [59.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [62.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [65.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [68.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [71.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [74.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [77.5]
+          }
+        ]
+      },
+      {
+        "id": "velina_airgrid-core-sweeping_cyclone",
+        "name": "Sweeping Cyclone (Core Passive)",
+        "description": "When Velina uses /bEX Special Attack//b: Wind Shear - Eye of the Storm or triggers /bVortex//b while consuming 2 points of Windbite, she summons a /bSweeping Cyclone//b to continuously deal Wind DMG that is capable of triggering the Chromatic Tint effect. When /bSweeping Cyclone//b attacks hit enemies, the enemy's Wind Anomaly Buildup RES and the corresponding Attribute Anomaly Buildup RES from Chromatic Tint are reduced. When /bSweeping Cyclone//b dissipates, it triggers an explosion. If the explosion hits an enemy suffering a Wind Anomaly, it deals one instance of /bAbloom//b DMG.",
+        "skillType": "core",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Sweeping Cyclone Wind Attribute Single-Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "Sweeping Cyclone Attribute-Converted Single-Hit DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [39, 97.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [42.6, 106.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [46.2, 115.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [49.8, 124.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [53.4, 133.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [57, 142]
+          },
+          {
+            "level": 7,
+            "multipliers": [60.6, 150.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [64.2, 159.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [67.8, 168.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [71.4, 177.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [75, 186.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [78.6, 195.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [82.2, 204.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [85.8, 213.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [89.4, 222.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [93, 231]
+          }
+        ]
+      }
+    ]
+  }
+}

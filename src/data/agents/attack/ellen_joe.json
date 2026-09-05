@@ -1,0 +1,1284 @@
+{
+  "id": "ellen",
+  "name": "Ellen Joe",
+  "specialty": "Attack",
+  "faction": "Victoria Housekeeping",
+  "attribute": "Ice",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Ellen Joe",
+  "attributeIcon": "Ice",
+  "themeColor": "#9E7CE0",
+  "skins": [
+    {
+      "id": "default",
+      "img": "ellen.png"
+    },
+    {
+      "id": "on_campus",
+      "img": "ellen-on_campus.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7673.7,
+    "atk": 863.21,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "ellen_joe-core-sharp_toothed",
+      "source": "core",
+      "sourceId": "ellen_joe-core",
+      "label": "Sharp-Toothed (Core Passive)",
+      "description": "When Ellen launches a Charged Scissors strike during Dash Attack: Arctic Ambush, or consumes a Flash Freeze Charge to activate Basic Attack: Flash Freeze Trimming, the skill's CRIT DMG is increased by 100%.",
+      "shortDescription": "Increases Ellen Joe's CRIT DMG from Basic Attack: Flash Freeze Trimming by 100%.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": ["ellen_joe-basic-flash_freeze_trimming"],
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "ellen_joe-core-rising_storm",
+      "source": "core",
+      "sourceId": "ellen_joe-core",
+      "label": "Rising Storm (Additional Ability)",
+      "description": "When another character in your squad shares the same Attribute or Faction: When Ellen deals Ice DMG, subsequent Ice DMG increases by 3% for 10s. This effect can stack up to 10 times, and repeated triggers reset the duration.",
+      "shortDescription": "Ellen Joe's Ice DMG is increased by 3% for 10s, stacking up to 10 times",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "ice",
+          "value": 0.03
+        }
+      ],
+      "maxStacks": 10
+    },
+    {
+      "id": "ellen_joe-mindscape_1-glacial_omen",
+      "source": "mindscape",
+      "sourceId": "ellen_joe-mindscape_1",
+      "label": "Glacial Omen (Mindscape Cinema N°1)",
+      "description": "Upon hitting an enemy with Swift Scissors during Dash Attack: Arctic Ambush, the obtained Flash Freeze Charges are increased to 3. Upon hitting an enemy with Charged Scissor Strike during Dash Attack: Arctic Ambush, the obtained Flash Freeze Charge are increased to 6. For each point of Flash Freeze Charge consumed, Ellen’s CRIT Rate is increased by 2% for 15s, stacking up to 6 times. The duration of each stack is calculated separately.",
+      "shortDescription": "Ellen Joe's CRIT Rate is increased by 2% for 15s, stacking up to 6 times",
+      "target": "self",
+      "perStack": {
+        "critRate": 0.02
+      },
+      "maxStacks": 6
+    },
+    {
+      "id": "ellen_joe-mindscape_2-arctic_ocean_predator",
+      "source": "mindscape",
+      "sourceId": "ellen_joe-mindscape_2",
+      "label": "Arctic Ocean Predator (Mindscape Cinema N°2)",
+      "description": "The 3rd hit of Basic Attack: Flash Freeze Trimming can be directly followed up with EX Special Attack: Sharknami. When using an EX Special Attack, each Flash Freeze Charge increases the current attack's CRIT DMG by 20%, up to a maximum of 60%.",
+      "shortDescription": "Ellen Joe's CRIT DMG from EX Special Attacks is increased by 20%, stacking up to 3 times",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": [
+            "ellen_joe-ex_special_attack-sharknami",
+            "ellen_joe-ex_special_attack-tail_swipe"
+          ],
+          "value": 0.2
+        }
+      ],
+      "maxStacks": 3
+    },
+    {
+      "id": "ellen_joe-mindscape_4-endless_hoarfrost",
+      "source": "mindscape",
+      "sourceId": "ellen_joe-mindscape_4",
+      "label": "Endless Hoarfrost (Mindscape Cinema N°4)",
+      "description": "Whenever a squad member Freezes or Stuns an enemy, Ellen gains 6 Flash Freeze Charges and the Quick Charge effect. She also recovers 4 Energy. The Energy recovery effect can trigger once per 10s.",
+      "shortDescription": "This mindscape cinema does not affect Ellen Joe's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "ellen_joe-mindscape_6_1-the_feast_begins",
+      "source": "mindscape",
+      "sourceId": "ellen_joe-mindscape_6",
+      "label": "The Feast Begins (Mindscape Cinema N°6)",
+      "description": "When Ellen uses an EX Special Attack, Chain Attack, or gains Quick Charge, her PEN Ratio increases by 20% for 6s. She also gains 1 stack of The Feast Begins, up to a maximum of 3 stacks. With 3 stacks of The Feast Begins, using a Charged Scissors strike during Dash Attack: Arctic Ambush consumes all stacks, increasing the DMG of the current attack by 250%.",
+      "shortDescription": "Ellen Joe's PEN Ratio is increased by 20% for 6s.",
+      "target": "self",
+      "flat": {
+        "penRatio": 0.2
+      }
+    },
+    {
+      "id": "ellen_joe-mindscape_6_2-the_feast_begins",
+      "source": "mindscape",
+      "sourceId": "ellen_joe-mindscape_6",
+      "label": "The Feast Begins (Mindscape Cinema N°6)",
+      "description": "When Ellen uses an EX Special Attack, Chain Attack, or gains Quick Charge, her PEN Ratio increases by 20% for 6s. She also gains 1 stack of The Feast Begins, up to a maximum of 3 stacks. With 3 stacks of The Feast Begins, using a Charged Scissors strike during Dash Attack: Arctic Ambush consumes all stacks, increasing the DMG of the current attack by 250%.",
+      "shortDescription": "Ellen Joe's DMG from Charged Scissors is increased by 250%.",
+      "target": "self",
+      "flat": {
+        "penRatio": 0.2
+      },
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "ellen_joe-dash_attack-arctic_ambush",
+          "hitName": "Charged Scissors DMG Multiplier",
+          "value": 2.5
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "ellen_joe-basic-saw_teeth_trimming",
+        "name": "Saw Teeth Trimming (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 3 attacks, dealing Physical DMG. Press repeatedly or hold [BASIC] during the 3rd attack to extend the skill duration.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [48.8, 111.1, 297.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [53.3, 121.2, 324.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [57.8, 131.3, 351.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [62.3, 141.4, 378.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [66.8, 151.5, 405.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [71.3, 161.6, 432.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [75.8, 171.7, 459.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [80.3, 181.8, 487]
+          },
+          {
+            "level": 9,
+            "multipliers": [84.8, 191.9, 514.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [89.3, 202, 541.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [93.8, 212.1, 568.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [98.3, 222.2, 595.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [102.8, 232.3, 622.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [107.3, 242.4, 649.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [111.8, 252.5, 676.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [116.3, 262.6, 703.8]
+          }
+        ]
+      },
+      {
+        "id": "ellen_joe-basic-flash_freeze_trimming",
+        "name": "Flash Freeze Trimming (Basic Attack)",
+        "description": "While /bFlash Freeze//b is active, press [BASIC] to activate:\n\nLaunch up to 3 attacks at enemies in front, dealing Ice DMG. Each attack consumes 1 /bFlash Freeze Charge//b. Press repeatedly or hold [BASIC] during the 3rd attack to extend the skill duration.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [99.6, 184, 496.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [108.7, 200.8, 541.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [117.8, 217.6, 586.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [126.9, 234.4, 631.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [136, 251.2, 677]
+          },
+          {
+            "level": 6,
+            "multipliers": [145.1, 268, 722.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [154.2, 284.8, 767.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [163.3, 301.6, 812.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [172.4, 318.4, 857.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [181.5, 335.2, 903]
+          },
+          {
+            "level": 11,
+            "multipliers": [190.6, 352, 948.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [199.7, 368.8, 993.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [208.8, 385.6, 1038.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [217.9, 402.4, 1083.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [227, 419.2, 1129]
+          },
+          {
+            "level": 16,
+            "multipliers": [236.1, 436, 1174.2]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "ellen_joe-dash_attack-monstrous_wave",
+        "name": "Monstrous Wave (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunches a dashing slash attack at enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [77]
+          },
+          {
+            "level": 2,
+            "multipliers": [84]
+          },
+          {
+            "level": 3,
+            "multipliers": [91]
+          },
+          {
+            "level": 4,
+            "multipliers": [98]
+          },
+          {
+            "level": 5,
+            "multipliers": [105]
+          },
+          {
+            "level": 6,
+            "multipliers": [112]
+          },
+          {
+            "level": 7,
+            "multipliers": [119]
+          },
+          {
+            "level": 8,
+            "multipliers": [126]
+          },
+          {
+            "level": 9,
+            "multipliers": [133]
+          },
+          {
+            "level": 10,
+            "multipliers": [140]
+          },
+          {
+            "level": 11,
+            "multipliers": [147]
+          },
+          {
+            "level": 12,
+            "multipliers": [154]
+          },
+          {
+            "level": 13,
+            "multipliers": [161]
+          },
+          {
+            "level": 14,
+            "multipliers": [168]
+          },
+          {
+            "level": 15,
+            "multipliers": [175]
+          },
+          {
+            "level": 16,
+            "multipliers": [182]
+          }
+        ]
+      },
+      {
+        "id": "ellen_joe-dash_attack-cold_snap",
+        "name": "Cold Snap (Dash Attack)",
+        "description": "While /bFlash Freeze//b is active, press [BASIC] during a dodge to activate:\n\nLaunches a dashing slash attack at enemies in front, dealing Ice DMG. Consumes 1 /bFlash Freeze Charge//b.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [145.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [159]
+          },
+          {
+            "level": 3,
+            "multipliers": [172.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [185.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [198.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [212.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [225.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [238.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [252.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [265.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [278.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [292]
+          },
+          {
+            "level": 13,
+            "multipliers": [305.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [318.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [331.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [345.2]
+          }
+        ]
+      },
+      {
+        "id": "ellen_joe-dash_attack-arctic_ambush",
+        "name": "Arctic Ambush (Dash Attack)",
+        "description": "While in the /bRoaming//b state, press [BASIC] to activate:\n\nDelivers a spinning slash to enemies before opening her scissors for a Swift Scissors strike, dealing Ice DMG. Gain 1 point of /bFlash Freeze Charge//b when the Swift Scissors strike hits.\n\nWhile in the /bRoaming//b state, hold [BASIC] to activate:\n\nPerform a spinning slash against the enemy, then pull apart the scissors to unleash a Charged Scissors strike, dealing massive Ice DMG. Gain 3 points of /bFlash Freeze Charge//b when the Charged Scissors strike hits. If the enemy is Frozen, it always triggers Shatter. Anti-Interrupt level is increased while charging the skill, and DMG taken is reduced by 40%. Character is invulnerable while using this skill.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Spinning Slash DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Swift Scissors DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Charged Scissors DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [62.3, 127.6, 158.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [68, 139.2, 172.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [73.7, 150.8, 187]
+          },
+          {
+            "level": 4,
+            "multipliers": [79.4, 162.4, 201.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [85.1, 174, 215.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [90.8, 185.6, 230.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [96.5, 197.2, 244.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [102.2, 208.8, 259]
+          },
+          {
+            "level": 9,
+            "multipliers": [107.9, 220.4, 273.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [113.6, 232, 287.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [119.3, 243.6, 302.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [125, 255.2, 316.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [130.7, 266.8, 331]
+          },
+          {
+            "level": 14,
+            "multipliers": [136.4, 278.4, 345.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [142.1, 290, 359.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [147.8, 301.6, 374.2]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "ellen_joe-dodge_counter-reef_rock",
+        "name": "Reef Rock (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nRapidly move through enemies with open scissors for a cutting strike, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [152.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [166.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [180.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [194.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [208.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [222.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [236]
+          },
+          {
+            "level": 8,
+            "multipliers": [249.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [263.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [277.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [291.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [305.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [319.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [333.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [347.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [361.1]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "ellen_joe-quick_assist-shark_sentinel",
+        "name": "Shark Sentinel (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nSpeedily move through the enemy with open scissors for a cutting strike, dealing Ice DMG. Character is invulnerable while using this skill.\n\nWhen the character on the field is launched, drag the joystick/stick and press [ASSIST] to activate:\n\nEnter the /bRoaming//b state, enabling dashing movement. While in the /bRoaming//b state, use the joystick/stick to change directions and release to stop. Character is invulnerable briefly when triggering the skill. Upon triggering a /bQuick Assist//b, Ellen gains the /bQuick Charge//b effect, shortening the charging time of /bDash Attack: Arctic Ambush//b, lasting up to 5s or until it triggers once.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [121.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [132.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [143.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [154.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [165.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [176.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [187.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [198.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [209.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [221]
+          },
+          {
+            "level": 11,
+            "multipliers": [232.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [243.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [254.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [265.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [276.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [287.6]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "ellen_joe-assist_follow_up-shark_cruiser",
+        "name": "Shark Cruiser (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCharge and slash enemies in front, dealing Ice DMG. Press repeatedly or hold [BASIC] during the attack to extend the skill duration. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [437.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [477.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [517.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [557.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [597.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [637.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [677.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [717.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [757.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [797]
+          },
+          {
+            "level": 11,
+            "multipliers": [836.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [876.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [916.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [956.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [996.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1036.4]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "ellen_joe-special_attack-drift",
+        "name": "Drift (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nUse a quick tail sweep attack in front, dealing Ice DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [50.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [55.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [59.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [64.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [68.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [73.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [78.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [82.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [87.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [91.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [96.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [101.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [105.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [110.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [114.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [119.5]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "ellen_joe-ex_special_attack-tail_swipe",
+        "name": "Tail Swipe (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nPerform a forceful tail whip attack that deals massive Ice DMG. Gain 1 /bFlash Freeze Charge//b upon striking an enemy. Character is invulnerable while using this skill. After executing the move, you can immediately follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [377.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [411.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [445.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [480.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [514.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [548.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [583]
+          },
+          {
+            "level": 8,
+            "multipliers": [617.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [651.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [685.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [720.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [754.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [788.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [823.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [857.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [891.7]
+          }
+        ]
+      },
+      {
+        "id": "ellen_joe-ex_special_attack-sharknami",
+        "name": "Sharknami (EX Special Attack)",
+        "description": "With enough Energy and after executing /bEX Special Attack: Tail Swipe//b, press [EX] to activate:\n\nPerform a powerful series of slashes ahead that deal massive Ice DMG. Gain 1 /bFlash Freeze Charge//b upon striking an enemy. Character is invulnerable while using this skill. After executing the move, you can immediately follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [553.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [603.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [653.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [704.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [754.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [804.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [855.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [905.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [955.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [1006]
+          },
+          {
+            "level": 11,
+            "multipliers": [1056.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1106.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [1156.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [1207.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1257.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1307.8]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "ellen_joe-chain_attack-avalanche",
+        "name": "Avalanche (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nCrash down from above and unleash an ice storm, dealing massive Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [794.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [866.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [939.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [1011.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [1083.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [1156.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [1228.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1300.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [1373]
+          },
+          {
+            "level": 10,
+            "multipliers": [1445.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1517.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1589.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1662.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1734.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1806.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1879.1]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "ellen_joe-ultimate-endless_winter",
+        "name": "Endless Winter (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nCrash down from above and unleash an ice storm before a powerful scissor strike, dealing massive Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1890.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [2062.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [2234.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [2406.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [2578.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [2750.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [2922.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [3094.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [3266]
+          },
+          {
+            "level": 10,
+            "multipliers": [3437.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [3609.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [3781.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [3953.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [4125.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [4297.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [4469.3]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

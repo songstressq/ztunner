@@ -1,0 +1,92 @@
+{
+  "id": "metanukimorphosis",
+  "name": "Metanukimorphosis",
+  "rarity": "S",
+  "specialty": "Support",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.6
+  },
+
+  "ingameEffects": [
+    {
+      "id": "metanukimorphosis-exquisitely_ingenious-anomaly_mastery",
+      "source": "wEngine",
+      "sourceId": "metanukimorphosis",
+      "label": "Exquisitely Ingenious (W-Engine Passive)",
+      "description": "When the equipper's EX Special Attack or Ultimate deals Physical DMG, their Anomaly Mastery increases for 40s. When the equipper's Aftershock hits an enemy, all squad members' Anomaly Proficiency increases for 40s. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "The equipper's Anomaly Mastery is increased for 40s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "anomalyMasteryRaw": 30 }
+          },
+          {
+            "level": 2,
+            "stats": { "anomalyMasteryRaw": 34 }
+          },
+          {
+            "level": 3,
+            "stats": { "anomalyMasteryRaw": 39 }
+          },
+          {
+            "level": 4,
+            "stats": { "anomalyMasteryRaw": 43 }
+          },
+          {
+            "level": 5,
+            "stats": { "anomalyMasteryRaw": 48 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    },
+
+    {
+      "id": "metanukimorphosis-exquisitely_ingenious-anomaly_proficiency",
+      "source": "wEngine",
+      "sourceId": "metanukimorphosis",
+      "label": "Exquisitely Ingenious (W-Engine Passive)",
+      "description": "When the equipper's EX Special Attack or Ultimate deals Physical DMG, their Anomaly Mastery increases for 40s. When the equipper's Aftershock hits an enemy, all squad members' Anomaly Proficiency increases for 40s. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "All squad members' Anomaly Proficiency is increased for 40s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "anomalyProficiency": 60 }
+          },
+          {
+            "level": 2,
+            "stats": { "anomalyProficiency": 69 }
+          },
+          {
+            "level": 3,
+            "stats": { "anomalyProficiency": 78 }
+          },
+          {
+            "level": 4,
+            "stats": { "anomalyProficiency": 87 }
+          },
+          {
+            "level": 5,
+            "stats": { "anomalyProficiency": 96 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    }
+  ]
+}

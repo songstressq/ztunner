@@ -1,0 +1,269 @@
+{
+  "id": "test_b",
+  "name": "Test Agent B",
+  "specialty": "Anomaly",
+  "faction": "Not applicable",
+  "attribute": "Physical",
+  "rarity": "S",
+
+  "fullName": "Test Agent B",
+  "displayName": "Test B",
+  "attributeIcon": "Physical",
+
+  "themeColor": "#C8D8C4",
+
+  "baseStats": {
+    "hp": 10000,
+    "atk": 1000,
+    "def": 1000
+  },
+
+  "combatBase": {
+    "impact": 100,
+    "critRate": 0.5,
+    "critDmg": 1.5,
+    "anomalyProficiency": 100,
+    "anomalyMastery": 100,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "HP", "CRIT DMG"]
+  },
+
+  "coreEnhancement": [
+    { "level": 0, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 2, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 4, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 6, "stats": { "atkFlat": 0, "critRate": 0 } }
+  ],
+
+  "ingameEffects": [
+    {
+      "id": "test_agent_b-core-global_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "Global DMG Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Global DMG Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.1
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_b-core-element_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "Element DMG Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Physical DMG Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "physical",
+          "value": 0.1
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_b-core-anomaly_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "Anomaly DMG Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Anomaly DMG Bonus.",
+      "target": "self",
+      "flat": {
+        "anomalyDmgBonus": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-disorder_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "Disorder DMG Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Disorder DMG Bonus.",
+      "target": "self",
+      "flat": {
+        "disorderDmgBonus": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-disorder_multi_bonus",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "Disorder Multiplier Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Disorder Multiplier Bonus.",
+      "target": "self",
+      "flat": {
+        "disorderMultiplierBonus": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-def_shred",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "DEF Shred",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% DEF Shred.",
+      "target": "self",
+      "flat": {
+        "defShred": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-res_shred",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "Res Shred",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Res Shred.",
+      "target": "self",
+      "flat": {
+        "iceResShred": 0.1,
+        "etherResShred": 0.1,
+        "fireResShred": 0.1,
+        "electricResShred": 0.1,
+        "physicalResShred": 0.1,
+        "windResShred": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-atk_flat",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): ATK Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should give 1000 ATK.",
+      "target": "team",
+      "flat": {
+        "atkFlatRaw": 1000
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-atk_percent",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): ATK Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should give 100 ATK.",
+      "target": "team",
+      "flat": {
+        "atkPercentRaw": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-hp_flat",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): HP Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 1000 HP.",
+      "target": "team",
+      "flat": {
+        "hpFlatRaw": 1000
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-hp_percent",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): HP Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 500 HP.",
+      "target": "team",
+      "flat": {
+        "hpPercentRaw": 0.05
+      }
+    }
+  ],
+
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "test-basic_attack-ability_template",
+        "name": "Ability Template (Basic Attack)",
+        "description": "This is the description section: \n\nThis is just an ability made for testing stats and damage calculations, do not take seriously.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "5th-Hit DMG Multiplier", "damageType": "physical" }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [100, 200, 300, 400, 500] },
+          { "level": 2, "multipliers": [200, 300, 400, 500, 600] },
+          { "level": 3, "multipliers": [300, 400, 500, 600, 700] },
+          { "level": 4, "multipliers": [400, 500, 600, 700, 800] },
+          { "level": 5, "multipliers": [500, 600, 700, 800, 900] },
+          { "level": 6, "multipliers": [600, 700, 800, 900, 1000] },
+          { "level": 7, "multipliers": [700, 800, 900, 1000, 1100] },
+          { "level": 8, "multipliers": [800, 900, 1000, 1100, 1200] },
+          { "level": 9, "multipliers": [900, 1000, 1100, 1200, 1300] },
+          { "level": 10, "multipliers": [1000, 1100, 1200, 1300, 1400] },
+          { "level": 11, "multipliers": [1100, 1200, 1300, 1400, 1500] },
+          { "level": 12, "multipliers": [1200, 1300, 1400, 1500, 1600] },
+          { "level": 13, "multipliers": [1300, 1400, 1500, 1600, 1700] },
+          { "level": 14, "multipliers": [1400, 1500, 1600, 1700, 1800] },
+          { "level": 15, "multipliers": [1500, 1600, 1700, 1800, 1900] },
+          { "level": 16, "multipliers": [1600, 1700, 1800, 1900, 2000] }
+        ]
+      }
+    ],
+
+    "dashAttacks": null,
+
+    "dodgeCounters": null,
+
+    "quickAssists": null,
+
+    "perfectAssists": null,
+
+    "assistFollowup": null,
+
+    "specialAttacks": null,
+
+    "exSkills": null,
+
+    "chainAttacks": null,
+
+    "ultimate": null,
+
+    "mindscapeAbilities": null
+  }
+}

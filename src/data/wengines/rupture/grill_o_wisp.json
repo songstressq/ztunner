@@ -1,0 +1,132 @@
+{
+  "id": "grill_o_wisp",
+  "name": "Grill O'Wisp",
+  "rarity": "A",
+  "specialty": "Rupture",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 624,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "grill_o_wisp-caged_fire-fire_dmg",
+      "source": "wEngine",
+      "sourceId": "grill_o_wisp",
+      "label": "Caged Fire (W-Engine Passive)",
+      "description": "The equipper's Fire DMG is increased. When the equipper's HP decreases, their CRIT Rate increases for 5s.",
+      "shortDescription": "The equipper's Fire DMG is increased.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.15
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.1725
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.195
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.2175
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.24
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+
+    {
+      "id": "grill_o_wisp-caged_fire-crit_rate",
+      "source": "wEngine",
+      "sourceId": "grill_o_wisp",
+      "label": "Caged Fire (W-Engine Passive)",
+      "description": "The equipper's Fire DMG is increased. When the equipper's HP decreases, their CRIT Rate increases for 5s.",
+      "shortDescription": "The equipper's CRIT Rate is increased for 5s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": {
+              "critRate": 0.15
+            }
+          },
+          {
+            "level": 2,
+            "stats": {
+              "critRate": 0.1725
+            }
+          },
+          {
+            "level": 3,
+            "stats": {
+              "critRate": 0.195
+            }
+          },
+          {
+            "level": 4,
+            "stats": {
+              "critRate": 0.2175
+            }
+          },
+          {
+            "level": 5,
+            "stats": {
+              "critRate": 0.24
+            }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    }
+  ]
+}

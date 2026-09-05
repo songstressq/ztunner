@@ -1,0 +1,153 @@
+{
+  "id": "blazing_laurel",
+  "name": "Blazing Laurel",
+  "rarity": "S",
+  "specialty": "Stun",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Impact%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.18
+  },
+
+  "ingameEffects": [
+    {
+      "id": "blazing_laurel-flowing_flame-impact",
+      "source": "wEngine",
+      "sourceId": "blazing_laurel",
+      "label": "Flowing Flame (W-Engine Passive)",
+      "description": "Upon launching a Quick Assist or Perfect Assist, the equipper's Impact is increased for 8s. When the equipper launches and hits an enemy with a Basic Attack, apply Wilt to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of Wilt applied to the target, the CRIT DMG of the Ice DMG and Fire DMG dealt by that attack is increased. Only one of this effect can be active at a time in the same squad.",
+      "shortDescription": "The equipper's Impact is increased for 8s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "impactPercentRaw": 0.25 }
+          },
+          {
+            "level": 2,
+            "stats": { "impactPercentRaw": 0.2875 }
+          },
+          {
+            "level": 3,
+            "stats": { "impactPercentRaw": 0.325 }
+          },
+          {
+            "level": 4,
+            "stats": { "impactPercentRaw": 0.3625 }
+          },
+          {
+            "level": 5,
+            "stats": { "impactPercentRaw": 0.4 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    },
+
+    {
+      "id": "blazing_laurel-flowing_flame-fire_ice_crit_dmg",
+      "source": "wEngine",
+      "sourceId": "blazing_laurel",
+      "label": "Flowing Flame (W-Engine Passive)",
+      "description": "Upon launching a Quick Assist or Perfect Assist, the equipper's Impact is increased for 8s. When the equipper launches and hits an enemy with a Basic Attack, apply Wilt to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of Wilt applied to the target, the CRIT DMG of the Ice DMG and Fire DMG dealt by that attack is increased. Only one of this effect can be active at a time in the same squad.",
+      "shortDescription": "All squad members's Fire and Ice CRIT DMG is increased for 30s, stacking up to 20 times.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "critDamageElementalBonus",
+                "element": "ice",
+                "value": 0.015
+              },
+
+              {
+                "type": "critDamageElementalBonus",
+                "element": "fire",
+                "value": 0.015
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "critDamageElementalBonus",
+                "element": "ice",
+                "value": 0.0172
+              },
+
+              {
+                "type": "critDamageElementalBonus",
+                "element": "fire",
+                "value": 0.0172
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "critDamageElementalBonus",
+                "element": "ice",
+                "value": 0.0195
+              },
+
+              {
+                "type": "critDamageElementalBonus",
+                "element": "fire",
+                "value": 0.0195
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "critDamageElementalBonus",
+                "element": "ice",
+                "value": 0.0217
+              },
+
+              {
+                "type": "critDamageElementalBonus",
+                "element": "fire",
+                "value": 0.0217
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "critDamageElementalBonus",
+                "element": "ice",
+                "value": 0.024
+              },
+
+              {
+                "type": "critDamageElementalBonus",
+                "element": "fire",
+                "value": 0.024
+              }
+            ]
+          }
+        ],
+        "maxStacks": 20,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    }
+  ]
+}

@@ -1,0 +1,727 @@
+{
+  "enemies": [
+    {
+      "id": "tyrfing",
+      "name": "Tyrfing",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, Tyrfing will perform 3 melee attacks in a row, stopping if it lands a hit.",
+      "stats": {
+        "def": 572,
+        "defBase": 572,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "girtablullu",
+      "name": "Girtablullu",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, Girtablullu tears through surrounding space, using self-generated Ether wormholes to move unpredictably and launch sudden strikes. When the Corruptive Barrier is activated, it performs a powerful attack that requires two Agents to block jointly. Timing a Chain Parry correctly grants a tactical advantage.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "girtablullu_integrated",
+      "name": "Integrated - Girtablullu",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During the combat, Girtablullu will frequently create Ether wormholes to teleport around the field and lauch surprise attacks. It will also unleash various skills that require two Agents to guard together. Successfully performing Chain Parry will quickly weaken its Corruptive Barrier. At certain points in the fight, Girtablullu will summon its minions to launch consecutive attacks. Successfully blocking their attacks will trigger Active Conversion and give you an advantage in battle.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "girtablullu_stagnant_aberrant",
+      "name": "Girtablullu - Stagnant Aberrant",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During the combat, Girtablullu - Stagnant Aberrant will activate the Corruptive Barrier multiple times and wield a variety of weapons. During its first activation, it won't be Dazed, so break through and force it into a Stun state as quickly as possible. When the barrier is activated again, it will continuously charge, enhancing its Corruptive Barrier. Keep dealing massive damage to suppress its charge may give you the upper hand.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "symbiotic_ethereal_swarm_code_name_nineveh",
+      "name": "Nineveh",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "In battle, Nineveh will use attacks with wide areas of effect, barrage opponents with missiles, and summon Hornets to aid her.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "miama_priest",
+      "name": "Miasma Priest",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, the Miasma Priest will switch between different phases and use special skills for each phase. When Agents activate Perfect Assist against some of the Miasma Priest's skills, it won't consume Assist Points, and after multiple Defensive Assist activations in a short time, the Miasma Priest will enter a special Stagger state, during which Agents can deal increased DMG to the Miasma Priest.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.4,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "parasitic_ethereal_swarm_code_name_geppeto",
+      "name": "Geppetto",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "In combat, Geppetto unleashes large area attacks using both its body and Ether energy. After its hands and tail take sufficient DMG, they'll be destroyed, leaving it paralyzed. Geppetto will repair these destroyed parts when summoning Ether enemies or deploying Curtain of Phantoms. Additionally, Geppetto's Curtain of Phantoms inflicts the Suspended status on enemies who touch it, reducing their movement speed and preventing Skill usage.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "twin_marionettes",
+      "name": "Twin Marionettes",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, the Twin Marionettes perform a large number of chained attacks. Some of their dance attacks can be interrupted by multiple Defensive Assists, and the twins will attempt to resuscitate the other if one should fall.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "notorious_marionette",
+      "name": "Notorious - Marionette",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "In combat, Notorious - Marionette will summon her dance partner to attack. Every time her dance partner is defeated, her next Stun's duration will be increased.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "dead_end_butcher",
+      "name": "Dead End Butcher",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, Dead End Butcher's attacks vary greatly. Once enough damage has been taken, phase two attacks become flurried and with the addition of laser attacks. Use a high-level skill once its combo has finished to trigger bonus Stagger.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "newborn_dead_end_butcher",
+      "name": "Newborn Dead End Butcher",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, Newborn Dead End Butcher's attacks vary greatly. Once enough damage has been taken, phase two attacks become flurried and with the addition of laser attacks. Use a high-level skill once its combo has finished to trigger bonus Stagger. Newborn Dead End Butcher performs nimble dodges to evade enemy attacks.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "notorious_dead_end_butcher",
+      "name": "Notorious - Dead End Butcher",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "In combat, the notorious Dead End Butcher can skillfully utilize Ether Energy to unleash various ranged attacks and enter an \"Ether Enhanced\" state to boost their ATK; Dazing them will cancel their \"Ether Enhanced\" state.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "sanguine_sweeper",
+      "name": "Sanguine Sweeper",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Thugs",
+      "description": "In combat, the Sweeper inherits the original's fighting prowess while also gaining unique tech abilities through mechanical augmentation. Be careful!",
+      "stats": {
+        "def": 476,
+        "defBase": 476,
+        "fireResistance": 0.4,
+        "iceResistance": 0.0,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.4,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "rewritten_sanguine_sweeper",
+      "name": "Rewritten - Sanguine Sweeper",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Thugs",
+      "description": "In combat, the Sweeper inherits the original's fighting prowess while also gaining unique tech abilities through mechanical augmentation. Be careful!",
+      "stats": {
+        "def": 476,
+        "defBase": 476,
+        "fireResistance": 0.4,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "hollow_thug_rampant-brute",
+      "name": "Rampant Brute",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Thugs",
+      "description": "During combat, Hollow Thug - Rampant Brute charges up his armor with electricity to release a high-level attack. During this time, he enters a Shocked state where his charging is interrupted and he's instantly inflicted with Disorder if any other type of Attribute Anomaly is inflicted.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": -0.2,
+        "iceResistance": 0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+
+    {
+      "id": "wandering_hunter",
+      "name": "Wandering Hunter",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Corrupted",
+      "description": "In combat, the Wandering Hunter possesses extremely high DEF. Some of its ranged skills can generate Miasma Pool on the ground, while most skills can trigger Miasma Pool to create Stray Blades for disruptive shots. Additionally, when the Wandering Hunter activates Miasmic Field, it conceals itself and charges strength. When players use Perception Technique to break through Drowned Ideal - Lucia, the Wandering Hunter will reveal itself and launch an ambush. A successful Defensive Assist can interrupt its action, causing Impaired status and reducing its Miasmic Shield. If you fail to correctly identify Drowned Ideal: Lucia, or after a period of time, the Wandering Hunter will unleash a powerful skill that ignores the Invulnerable effect to deal DMG, maxing out the team's Miasma Contamination value.",
+      "stats": {
+        "def": 1588,
+        "defBase": 1588,
+        "fireResistance": -0.2,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.4,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "miasmic_fend_unfathomable",
+      "name": "Miasmic Fiend - Unfathomable",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Corrupted",
+      "description": "During combat, Miasmic Fiend - Unfathomable will enhance its weapon and unleash powerful attacks that cannot be blocked. Additionally, Miasmic Fiend - Unfathomable will leap to a high point to activate a Miasmic Field and consume Miasmic Shield to launch multiple waves of attacks. Draw its attacks to detonate the Miasma Pool to prevent it from absorbing the Miasma Pool and restoring its Miasmic Shield, and quickly move away when it jumps back into the battlefield to avoid being caught in its deadly finishing attack.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.4,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "corrupted_overlord_pompey",
+      "name": "Corrupted Overlord - Pompey",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Corrupted",
+      "description": "During combat, overlord [sic] Pompey attacks using a combination of a motorcycle and hover guns. However, during certain moves, if countered with a Defensive Assist, his weakness will be exposed. After taking a certain amount of damage, he will enter a second phase. In this phase, he alternates between using the motorcycle's rear wheel and a longsword for attacks. The motorcycle's rear wheel can also accumulate Ether energy, leading to a explosion across a large area.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": -0.2,
+        "iceResistance": 0.0,
+        "electricResistance": 0.4,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "notorious_pompey",
+      "name": "Notorious - Pompey",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Corrupted",
+      "description": "In combat, Notorious Pompey's attacks leave unstable Ether energy on the ground. When enemies approach, or he launches a Charged Attack, the Ether energy explodes violently. When necessary, he raises his weapon to block. Upon a successful block, he immediately counterattacks the enemy.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": -0.2,
+        "iceResistance": 0.0,
+        "electricResistance": 0.4,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "notorious_pompey",
+      "name": "Unknown Corruption Complex",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Corrupted",
+      "description": "During combat, Unknown Corruption Complex combines attacks from various machinery units, and can release a dense array of missiles. Attack its main body while Stunned until it becomes Impaired, taking significant damage in one shot. If its legs get damaged, it can also become Impaired, building up significant Daze in one shot.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "miasmic_rampant_brute",
+      "name": "Miasmic - Rampant Brute",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Corrupted",
+      "description": "In combat, the Miasmic - Rampant Brute absorbs powerful Miasma Energy, allowing it to use Miasma-enhanced attack. Inflicting an Anomaly on it will break its defense more efficiently.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": 0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "haytor",
+      "name": "Haytor",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Corrupted",
+      "description": "In combat, Haytor uses Phantoms to deceive opponents and launch surprise attacks; after entering Miasmic Field, Haytor can summon even larger Phantoms to attack alongside him. During this time, successfully parrying the large Phantoms' attacks will weaken the Miasmic Shield.",
+      "stats": {
+        "def": 1588,
+        "defBase": 1588,
+        "fireResistance": -0.2,
+        "iceResistance": -0.2,
+        "electricResistance": 0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+
+    {
+      "id": "specialized_assault_bomber",
+      "name": "Specialized Assault Bomber",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Rebel Soldiers",
+      "description": "In combat, the Specialized Assault Bomber combines martial arts with various weapons to suppress enemies. Upon entering an overheated state, certain moves are enhanced by flames for even fiercer attacks. If enough damage is inflicted during this overheated state, their gear can be destroyed, weakening their abilities.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.2,
+        "iceResistance": 0.0,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "autonomous_assault_unit_guardian_mk_iii",
+      "name": "Guardian MK III",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Rebel Soldiers",
+      "description": "During combat, Autonomous Assault Unit - Guardian Mk II performs aggressive melee attacks and a variety of ranged attacks. It sometimes also leaps into the air to launch a clobbering blow.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.2,
+        "iceResistance": 0.0,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "autonomous_assault_unit_typhon_destroyer",
+      "name": "Typhon Destroyer",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Rebel Soldiers",
+      "description": "In combat, the Autonomous Assault Unit Typhon Destroyer performs even more powerful combos. However, most of its skills cannot be countered by Perfect Assists. After charging its mechanical arm, it will unleash a charge attack that can trigger a Perfect Assist. If you use a Defensive Assist to counter the skill multiple times in a row, you can expose its weakness.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.2,
+        "iceResistance": 0.0,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "autonomous_tactical_unit_typhon_challenger",
+      "name": "Typhon Challenger",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Rebel Soldiers",
+      "description": "During combat, Autonomous Tactical Unit - Typhon Challenger performs powerful combos and sometimes also leaps into the air to launch a clobbering blow.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": -0.2,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "autonomous_tactical_unit_typhon_slugger",
+      "name": "Typhon Slugger",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Rebel Soldiers",
+      "description": "During combat, Autonomous Tactical Unit - Typhon Slugger performs powerful combos and sometimes also leaps into the air to launch a clobbering blow.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.2,
+        "iceResistance": 0.0,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "autonomous_tactical_unit_shielded_defender",
+      "name": "Shielded Defender",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Rebel Soldiers",
+      "description": "During combat, Shielded Defender becomes more aggressive and deploys a shield. While shielded, it will only accumulate Fire and Physical Anomaly Buildup. Inflict Burn, Assault, or Stun it to break the shield.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": -0.2,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "autonomous_tactical_unit_shielded_defender_omega",
+      "name": "Shielded Defender Omega",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Rebel Soldiers",
+      "description": "During combat, the Shielded Defender Omega becomes more aggressive and deploys a shield. While shielded, it is impossible to accumulate any Anomaly Buildup other than Electric. Applying the Shock effect or putting it into a Stunned state will immediately break the shield.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.2,
+        "iceResistance": 0.0,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "terror_raptor",
+      "name": "Terror Raptor",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Rebel Soldiers",
+      "description": "In combat, the Terror Raptor relies on its agile, powerful mechanical legs for close-range attacks while unleashing a barrage of ranged weapons to suppress its enemy. Use Defensive Assists to rebound its missiles back, leaving the Terror Raptor temporarily paralyzed.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.2,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+
+    {
+      "id": "phaeton_of_the_scorched_horizon",
+      "name": "Phaethon of the Scorched Horizon",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "In combat, Scorched Horizon can utilize its extraordinary mastery of Ether to reconstruct itself multiple times, simulating the attack patterns and corresponding attributes of various Etheric Irregularities. Scorched Horizon will activate Gale Scorcher at specific moments to enhance its attacks, generating tornadoes on the battlefield to fight by its side. Meanwhile, Scorched Horizon will enter the Windswept state. If another Attribute Anomaly is inflicted it will trigger Vortex and render it Impaired.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.4,
+        "etherResistance": 0.0,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "discordant_solo_vesper",
+      "name": "Discordant Solo - Vesper",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "Discordant Solo's skills shift the stage environment and change its combat style. By matching its own musical rhythm, you can cleverly counter its control skills. Successfully responding to a control skill and landing a Shutdown, or parrying the final hit of certain skills, will inflict an Impaired effect on Discordant Solo, creating an opening for Agents to deal damage.",
+      "stats": {
+        "def": 476,
+        "defBase": 476,
+        "fireResistance": 0.4,
+        "iceResistance": 0.4,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "primordial_nightmare_the_creator",
+      "name": "Primordial Nightmare - The Creator",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "Primordial Nightmare can exit or enter a Miasmic Field freely. Even when not in a Miasmic Field, the Miasmic Shield continues to protect it from being Stunned. Only when the Miasmic Shield is broken can it be Stunned. When Primordial Nightmare recovers from being Stunned, the protection from the Miasmic Shield will be restored. In combat, \"Primal Nightmare\" will use \"Control Skills\". Perfectly responding to each attack can grant an advantage in battle.",
+      "stats": {
+        "def": 476,
+        "defBase": 476,
+        "fireResistance": 0.0,
+        "iceResistance": 0.4,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.4,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "ye_shiyuan_the_thrall",
+      "name": "Ye Shiyuan the Thrall",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "During combat, The Thrall will summon Miasma Ravager - Sobek as an ally. Sobek cannot be Stunned and does not accumulate Anomaly Buildup. Each time Sobek is defeated, The Thrall will revive them and unleash an even more powerful combo move. If the player successfully defends the final hit of this combo move, Sobek will enter a Weakened state for a period of time.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.4,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.0,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "the_deflier",
+      "name": "The Deflier",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "In combat, The Defiler can unleash rapid and powerful attacks with their weapons. Successfully parrying the Miasmic Blades fired by The Defiler and the attacks from summoned Miasmic Troopers will expose their weakness. After taking a certain amount of DMG in battle, The Defiler will activate Miasmic Field and channel a Miasmic Tsunami to inflict Death Comes. Successfully breaking The Defiler's parts and impairing them during the channeling will generate Miasma barriers to block the Miasmic Tsunami.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.4,
+        "electricResistance": -0.2,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "sacrifice_bringer",
+      "name": "Sacrifice - Bringer",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "In combat, Sacrifice - Bringer will transform into multiple weapons to perform a combination of close and ranged attacks, and will summon massive creatures from fissures to assist in his assault. After taking a certain amount of damage, he'll enter the second phase, during which he'll use more advanced attacks and continuously launch dense ranged barrages. Dealing sufficient damage while he charges up his Sacrificial Knife will interrupt charging and leave him exposed.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.2,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    }
+  ]
+}

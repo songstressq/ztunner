@@ -1,0 +1,1639 @@
+{
+  "id": "remielle",
+  "name": "Remielle Dan",
+  "specialty": "Anomaly",
+  "faction": "Covenant of Dayat",
+  "attribute": "Lumiflux",
+  "rarity": "S",
+  "fullName": "Remielle Dan",
+  "displayName": "Remielle",
+  "attributeIcon": "Lumiflux",
+  "themeColor": "#FEDBF3",
+  "skins": [
+    {
+      "id": "default",
+      "img": "remielle.png"
+    },
+    {
+      "id": "remielle-moonlight_whispers",
+      "img": "remielle-moonlight_whispers.png"
+    },
+    {
+      "id": "remielle-moonlight_whispers-alt",
+      "img": "remielle-moonlight_whispers-alt.png"
+    },
+    {
+      "id": "remielle-seashade_pas_seul",
+      "img": "remielle-seashade_pas_seul.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7482,
+    "atk": 748.46,
+    "def": 600.59
+  },
+  "combatBase": {
+    "impact": 83,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 116,
+    "anomalyMastery": 115,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Proficiency", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 18
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 18
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 18
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "remielle_dan-special_attack-ode_to_dawn_radiant_turn",
+      "source": "ex_special_attack",
+      "sourceId": "astra-ex_special_attack",
+      "label": "Ode to Dawn - Radiant Turn (Special Attack)",
+      "description": "... If Remielle triggers 3 Refringe reactions in one Phase Flow state, or has at least 1 stored Voidflare when Floating Radiance is fully depleted, Assist: Flower & Feather Dance becomes available, and her normal switch-in is unlocked. Assist: Flower & Feather Dance is automatically used on Remielle's next normal switch-in. Upon entering the Phase Flow state, Remielle increases all squad members's DMG by a percentage for 60s. Repeated triggers reset the duration. ...",
+      "shortDescription": "All squad member's DMG is increased based on Remielle's Special Attack skill level.",
+      "target": "team",
+      "conditional": {
+        "type": "skillLevelBased",
+        "skillBonusTable": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.015
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.03
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.045
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.06
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.075
+              }
+            ]
+          },
+          {
+            "level": 6,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.09
+              }
+            ]
+          },
+          {
+            "level": 7,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.105
+              }
+            ]
+          },
+          {
+            "level": 8,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.12
+              }
+            ]
+          },
+          {
+            "level": 9,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.135
+              }
+            ]
+          },
+          {
+            "level": 10,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.15
+              }
+            ]
+          },
+          {
+            "level": 11,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.165
+              }
+            ]
+          },
+          {
+            "level": 12,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.18
+              }
+            ]
+          },
+          {
+            "level": 13,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.195
+              }
+            ]
+          },
+          {
+            "level": 14,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.21
+              }
+            ]
+          },
+          {
+            "level": 15,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.225
+              }
+            ]
+          },
+          {
+            "level": 16,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.24
+              }
+            ]
+          }
+        ]
+      },
+      "condition": {
+        "excludeOwner": true
+      }
+    },
+    {
+      "id": "remielle_dan-core_1-temporal_patterns_stilled_colors",
+      "source": "core",
+      "sourceId": "remielle-core",
+      "label": "Temporal Patterns = Stilled Colors (Core Passive)",
+      "description": "Remielle's Refringe Coefficient is equal to 0.02% of her Anomaly Proficiency. If there are 3 Anomaly characters in the squad, her Refringe Coefficient increases by an additional 10%. ...",
+      "shortDescription": "Remielle's Refringe Coefficient is increased based on her current Anomaly Proficiency.",
+      "target": "team",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyProficiency",
+        "perUnit": 1,
+        "perUnitBonus": 0.0002,
+        "threshold": 0,
+        "affectedStats": ["refringeCoefficient"]
+      },
+      "condition": {
+        "excludeOwner": true
+      }
+    },
+    {
+      "id": "remielle_dan-core_2-temporal_patterns_stilled_colors",
+      "source": "core",
+      "sourceId": "remielle-core",
+      "label": "Temporal Patterns = Stilled Colors (Core Passive)",
+      "description": "Remielle's Refringe Coefficient is equal to 0.02% of her Anomaly Proficiency. If there are 3 Anomaly characters in the squad, her Refringe Coefficient increases by an additional 10%. ...",
+      "shortDescription": "Remielle's Refringe Coefficient is increased by 10% whith 3 Anomaly agents in the squad.",
+      "target": "team",
+      "flat": {
+        "refringeCoefficient": 0.1
+      },
+      "condition": {
+        "excludeOwner": true
+      }
+    },
+    {
+      "id": "remielle_dan-core_3-temporal_patterns_stilled_colors",
+      "source": "core",
+      "sourceId": "remielle-core",
+      "label": "Temporal Patterns = Stilled Colors (Core Passive)",
+      "description": "... If Assist: Flower & Feather Dance, Ultimate: Dazzling Curtain Call, Basic Attack: Rainbow's End, or Basic Attack: Fleeting Grace hits a target, Luminize is triggered after the skill ends:\n\nBased on the Anomaly Effect Strength of all stored Voidflares, deals Attribute Anomaly DMG to the enemy using the corresponding skill's DMG multiplier. This multiplier is further increased by 0.2% of Remielle's Anomaly Proficiency. ...",
+      "shortDescription": "Remielle's Luminize Skill Multiplier is increased by 0.2% of her current Anomaly Proficiency",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyProficiency",
+        "perUnit": 1,
+        "perUnitBonus": 0.002,
+        "threshold": 0,
+        "affectedStats": ["luminizeMultiplierBonus"]
+      }
+    },
+    {
+      "id": "remielle_dan-core_1-invitation_to_bloom",
+      "source": "core",
+      "sourceId": "remielle-core",
+      "label": "Invitation to Bloom (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same faction:\n\nWhen there are 1/2/3 Anomaly characters in the squad, upon entering the battlefield, all squad members gain an ATK increase equal to 6%/12%/40% of Remielle's initial ATK, up to a maximum increase of 1,600 ATK. Remielle's Daze dealt while in the Phase Flow state increases by 6%/12%/35%. ...",
+      "shortDescription": "With 3 Anomaly agents in the squad, all squad members' ATK is increased based on Remielle's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 4000,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 1600,
+            "perUnitBonus": 0.4
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "remielle_dan-core_2-invitation_to_bloom",
+      "source": "core",
+      "sourceId": "remielle-core",
+      "label": "Invitation to Bloom (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same faction:\n\nWhen there are 1/2/3 Anomaly characters in the squad, upon entering the battlefield, all squad members gain an ATK increase equal to 6%/12%/40% of Remielle's initial ATK, up to a maximum increase of 1,600 ATK. Remielle's Daze dealt while in the Phase Flow state increases by 6%/12%/35%. ...",
+      "shortDescription": "With 2 Anomaly agents in the squad, all squad members' ATK is increased based on Remielle's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 13333.33,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 1600,
+            "perUnitBonus": 0.12
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "remielle_dan-core_3-invitation_to_bloom",
+      "source": "core",
+      "sourceId": "remielle-core",
+      "label": "Invitation to Bloom (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same faction:\n\nWhen there are 1/2/3 Anomaly characters in the squad, upon entering the battlefield, all squad members gain an ATK increase equal to 6%/12%/40% of Remielle's initial ATK, up to a maximum increase of 1,600 ATK. Remielle's Daze dealt while in the Phase Flow state increases by 6%/12%/35%. ...",
+      "shortDescription": "With 1 Anomaly agent in the squad, all squad members' ATK is increased based on Remielle's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 26666.67,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 1600,
+            "perUnitBonus": 0.06
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "remielle_dan-mindscape_1-naive_oath_1",
+      "source": "mindscape",
+      "sourceId": "remielle-mindscape_1",
+      "label": "Naive Oath (Mindscape Cinema N°1)",
+      "description": "Upon entering the battlefield, Remielle gains 3 special Voidflares. In Investigation Zone mode, this effect can trigger once every 180s. When Remielle triggers Luminize to deal DMG, she ignores 50% of the target's All-Attribute RES. When using Assist: Flower & Feather Dance, she gains 200 Decibels. This effect can trigger once every 18s. While Remielle is in the Phase Flow state, other squad members' Attribute Anomaly DMG increases by 10%.",
+      "shortDescription": "Remielle's DMG from Luminize ignores 50% of the target's All-Attribute RES.",
+      "target": "self",
+      "flat": {
+        "fireResShred": 0.5,
+        "iceResShred": 0.5,
+        "electricResShred": 0.5,
+        "physicalResShred": 0.5,
+        "etherResShred": 0.5,
+        "windResShred": 0.5
+      },
+      "condition": {
+        "appliesToLuminize": true
+      },
+      "linkedEffects": ["remielle_dan-mindscape_1-naive_oath_2"]
+    },
+    {
+      "id": "remielle_dan-mindscape_1-naive_oath_2",
+      "source": "mindscape",
+      "sourceId": "remielle-mindscape_1",
+      "label": "Naive Oath (Mindscape Cinema N°1)",
+      "description": "Upon entering the battlefield, Remielle gains 3 special Voidflares. In Investigation Zone mode, this effect can trigger once every 180s. When Remielle triggers Luminize to deal DMG, she ignores 50% of the target's All-Attribute RES. When using Assist: Flower & Feather Dance, she gains 200 Decibels. This effect can trigger once every 18s. While Remielle is in the Phase Flow state, other squad members' Attribute Anomaly DMG increases by 10%.",
+      "shortDescription": "The remaining squad members' DMG from Attribute Anomalies is increased by 10%.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "anomalyDmgBonus",
+          "value": 0.1
+        }
+      ],
+      "condition": {
+        "excludeOwner": true
+      }
+    },
+    {
+      "id": "remielle-mindscape_2-fall_into_the_noise_1",
+      "source": "mindscape",
+      "sourceId": "remielle-mindscape_2",
+      "label": "Refringe Amplify (Mindscape Cinema N°2)",
+      "description": "Remielle's Refringe Coefficient increases by 20%. When an Anomaly character in the squad deals Anomaly DMG to an enemy affected by Prismatic, the attack ignores 15% of the target's DEF. This effect persists for an additional 8s after Prismatic ends. While Remielle is in the Phase Flow state, the frequency at which she automatically attacks to apply Lumiflux Buildup to enemies increases.",
+      "shortDescription": "Remielle's Refringe Coefficient is increased by 20%.",
+      "target": "team",
+      "flat": {
+        "refringeCoefficient": 0.2
+      },
+      "linkedEffects": ["remielle-mindscape_2-fall_into_the_noise_2"]
+    },
+    {
+      "id": "remielle-mindscape_2-fall_into_the_noise_2",
+      "source": "mindscape",
+      "sourceId": "remielle-mindscape_2",
+      "label": "Refringe Amplify (Mindscape Cinema N°2)",
+      "description": "Remielle's Refringe Coefficient increases by 20%. When an Anomaly character in the squad deals Anomaly DMG to an enemy affected by Prismatic, the attack ignores 15% of the target's DEF. This effect persists for an additional 8s after Prismatic ends. While Remielle is in the Phase Flow state, the frequency at which she automatically attacks to apply Lumiflux Buildup to enemies increases.",
+      "shortDescription": "Anomaly squad members' DMG from Anomalies ignores the 15% of the target's DEF.",
+      "target": "team",
+      "flat": {
+        "defShred": 0.2
+      },
+      "condition": {
+        "appliesToAnomalyOnly": true
+      }
+    },
+    {
+      "id": "remielle-mindscape_4-the_long_goodbye",
+      "source": "mindscape",
+      "sourceId": "remielle-mindscape_4",
+      "label": "The Long Goodbye (Mindscape Cinema N°4)",
+      "description": "When Remielle triggers Luminize, the DMG multiplier is increased by an additional 12%. After entering the battlefield and gaining 3 special Voidflares, if all Voidflares are consumed, she immediately gains the maximum number of special Voidflares again. This effect to regain special Voidflares is removed after being triggered once or when Remielle enters the Phase Flow state.",
+      "shortDescription": "Remielle's Luminize Skill Multiplier is increased by 12% ",
+      "target": "self",
+      "flat": {
+        "luminizeMultiplierBonus": 0.12
+      }
+    },
+    {
+      "id": "remielle-mindscape_6-lone_feathers_endless_flight",
+      "source": "mindscape",
+      "sourceId": "remielle-mindscape_6",
+      "label": "Lone Feather's Endless Flight (Mindscape Cinema N°6)",
+      "description": "When Remielle uses Basic Attack: Rainbow's End or Basic Attack: Fleeting Grace, Luminize is triggered 2 times. If the 4th hit of her Basic Attack lands against a target, Remielle gains 3 special Voidflares after the skill ends. Special Voidflares gained this way deal DMG equal to 25% of the special Voidflares gained upon entering the battlefield..",
+      "shortDescription": "This mindscape cinema does not affect Remielle's stats.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "remielle_dan-basic_attack-leap",
+        "name": "Leap (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to four attacks ahead, dealing Lumiflux DMG. If the /bBasic Attack//b hits the target, gain /bFloating Radiance//b after the skill ends. After the 4th hit of the /bBasic Attack//b ends, 1 Lumiflux Buildup is applied to enemies hit.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "lumiflux"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "lumiflux"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "lumiflux"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [31.2, 54.5, 84.3, 250.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [34.1, 59.5, 92, 273.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [37, 64.5, 99.7, 296.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [39.9, 69.5, 107.4, 319.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [42.8, 74.5, 115.1, 342]
+          },
+          {
+            "level": 6,
+            "multipliers": [45.7, 79.5, 122.8, 364.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [48.6, 84.5, 130.5, 387.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [51.5, 89.5, 138.2, 410.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [54.4, 94.5, 145.9, 433.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [57.3, 99.5, 153.6, 456]
+          },
+          {
+            "level": 11,
+            "multipliers": [60.2, 104.5, 161.3, 478.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [63.1, 109.5, 169, 501.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [66, 114.5, 176.7, 524.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [68.9, 119.5, 184.4, 547.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [71.8, 124.5, 192.1, 570]
+          },
+          {
+            "level": 16,
+            "multipliers": [74.7, 129.5, 199.8, 592.8]
+          }
+        ]
+      },
+      {
+        "id": "remielle_dan-basic_attack-solo_dance",
+        "name": "Solo Dance (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nPerform a slash in an area ahead, dealing Lumiflux DMG. If it hits a target, gain /bFloating Radiance//b after the skill ends.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [96.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [105.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [114.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [122.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [131.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [140.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [149.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [158.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [166.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [175.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [184.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [193.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [202.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [210.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [219.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [228.5]
+          }
+        ]
+      },
+      {
+        "id": "remielle_dan-basic_attack-rainbows_end",
+        "name": "Rainbow's End (Basic Attack)",
+        "description": "When Remielle has stored /bVoidflare//b, hold [BASIC] to activate:\n\nUnleash a powerful large area attack ahead, dealing Lumiflux DMG. Grants a large amount of /bFloating Radiance//b when the skill ends. If the attack hits a target, triggers the Luminize effect after the skill ends with a set multiplier. Consumes all stored /bVoidflare//b upon use.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          },
+          {
+            "name": "Luminize Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [195, 105]
+          },
+          {
+            "level": 2,
+            "multipliers": [212.8, 110]
+          },
+          {
+            "level": 3,
+            "multipliers": [230.6, 115]
+          },
+          {
+            "level": 4,
+            "multipliers": [248.4, 120]
+          },
+          {
+            "level": 5,
+            "multipliers": [266.2, 125]
+          },
+          {
+            "level": 6,
+            "multipliers": [284, 130]
+          },
+          {
+            "level": 7,
+            "multipliers": [301.8, 135]
+          },
+          {
+            "level": 8,
+            "multipliers": [319.6, 140]
+          },
+          {
+            "level": 9,
+            "multipliers": [337.4, 145]
+          },
+          {
+            "level": 10,
+            "multipliers": [355.2, 150]
+          },
+          {
+            "level": 11,
+            "multipliers": [373, 155]
+          },
+          {
+            "level": 12,
+            "multipliers": [390.8, 160]
+          },
+          {
+            "level": 13,
+            "multipliers": [408.6, 165]
+          },
+          {
+            "level": 14,
+            "multipliers": [426.4, 170]
+          },
+          {
+            "level": 15,
+            "multipliers": [444.2, 175]
+          },
+          {
+            "level": 16,
+            "multipliers": [462, 180]
+          }
+        ]
+      },
+      {
+        "id": "remielle_dan-basic_attack-fleeting_grace",
+        "name": "Fleeting Grace (Basic Attack)",
+        "description": "When Remielle has stored /bVoidflare//b and is in the /bLuminous Reflection//b state, hold [BASIC] to activate:\n\nUnleashes a powerful attack across a large area ahead, dealing Lumiflux DMG. Grants a large amount of /bFloating Radiance//b when the skill ends. If the attack hits a target, triggers the Luminize effect after the skill ends with a set multiplier. Consumes all stored /bVoidflare//b upon use.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          },
+          {
+            "name": "Luminize Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [597.2, 210]
+          },
+          {
+            "level": 2,
+            "multipliers": [651.5, 220]
+          },
+          {
+            "level": 3,
+            "multipliers": [705.8, 230]
+          },
+          {
+            "level": 4,
+            "multipliers": [760.1, 240]
+          },
+          {
+            "level": 5,
+            "multipliers": [814.4, 250]
+          },
+          {
+            "level": 6,
+            "multipliers": [868.7, 260]
+          },
+          {
+            "level": 7,
+            "multipliers": [923, 270]
+          },
+          {
+            "level": 8,
+            "multipliers": [977.3, 280]
+          },
+          {
+            "level": 9,
+            "multipliers": [1031.6, 290]
+          },
+          {
+            "level": 10,
+            "multipliers": [1085.9, 300]
+          },
+          {
+            "level": 11,
+            "multipliers": [1140.2, 310]
+          },
+          {
+            "level": 12,
+            "multipliers": [1194.5, 320]
+          },
+          {
+            "level": 13,
+            "multipliers": [1248.8, 330]
+          },
+          {
+            "level": 14,
+            "multipliers": [1303.1, 340]
+          },
+          {
+            "level": 15,
+            "multipliers": [1357.4, 350]
+          },
+          {
+            "level": 16,
+            "multipliers": [1411.7, 360]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "remielle_dan-dash_attack-keen_light",
+        "name": "Keen Light (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunches a quick attack ahead, dealing Lumiflux DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [39]
+          },
+          {
+            "level": 2,
+            "multipliers": [42.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [46.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [49.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [53.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [57]
+          },
+          {
+            "level": 7,
+            "multipliers": [60.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [64.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [67.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [71.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [75]
+          },
+          {
+            "level": 12,
+            "multipliers": [78.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [82.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [85.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [89.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [93]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "remielle_dan-dodge_counter-mirrored_shadow",
+        "name": "Mirrored Shadow (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nUnleashes a powerful slash at the target, dealing Lumiflux DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [214.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [234]
+          },
+          {
+            "level": 3,
+            "multipliers": [253.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [273]
+          },
+          {
+            "level": 5,
+            "multipliers": [292.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [312]
+          },
+          {
+            "level": 7,
+            "multipliers": [331.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [351]
+          },
+          {
+            "level": 9,
+            "multipliers": [370.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [390]
+          },
+          {
+            "level": 11,
+            "multipliers": [409.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [429]
+          },
+          {
+            "level": 13,
+            "multipliers": [448.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [468]
+          },
+          {
+            "level": 15,
+            "multipliers": [487.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [507]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "remielle_dan-quick_assist-featherglow_rebirth",
+        "name": "Featherglow Rebirth (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nUnleashes a slash at the target, dealing Lumiflux DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [32.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [35.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [38.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [41.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [44.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [47.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [50.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [53.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [56.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [59.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [62.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [65.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [68.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [71.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [74.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [77.5]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "remielle_dan-assist_follow_up-awakening_glimmer",
+        "name": "Awakening Glimmer (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleashes a series of slashes against the target, dealing Lumiflux DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [381.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [415.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [450.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [485.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [519.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [554.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [589.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [624]
+          },
+          {
+            "level": 9,
+            "multipliers": [658.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [693.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [728.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [762.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [797.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [832.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [866.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [901.6]
+          }
+        ]
+      },
+      {
+        "id": "remielle_dan-assist-flower_feather_dance",
+        "name": "Flower & Feather Dance (Assist)",
+        "description": "Enters the battlefield and unleashes an attack in a large area, dealing Lumiflux DMG.\n\nConsumes 40 /bFloating Radiance//b pon activation. With 90 or fewer /bFloating Radiance//b remaining upon activation, this /bAssist: Flower & Feather Dance//b does not consume /bFloating Radiance//b. Remielle also enters the /bLuminous Reflection//b state, and the next /bBasic Attack: Rainbow's End//b is upgraded to /bBasic Attack: Fleeting Grace//b.\n\nWhen this skill hits a Stunned enemy, their Stun duration is extended by 3s. Each enemy can be affected by this effect only once per Stun window. This Stun duration increase cannot stack with other effects of the same type. If this skill lands a hit, the Luminize effect can be triggered after the skill ends with a set multiplier. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          },
+          {
+            "name": "Luminize Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [453.5, 210]
+          },
+          {
+            "level": 2,
+            "multipliers": [494.8, 220]
+          },
+          {
+            "level": 3,
+            "multipliers": [536.1, 230]
+          },
+          {
+            "level": 4,
+            "multipliers": [577.4, 240]
+          },
+          {
+            "level": 5,
+            "multipliers": [618.7, 250]
+          },
+          {
+            "level": 6,
+            "multipliers": [660, 260]
+          },
+          {
+            "level": 7,
+            "multipliers": [701.3, 270]
+          },
+          {
+            "level": 8,
+            "multipliers": [742.6, 280]
+          },
+          {
+            "level": 9,
+            "multipliers": [783.9, 290]
+          },
+          {
+            "level": 10,
+            "multipliers": [825.2, 300]
+          },
+          {
+            "level": 11,
+            "multipliers": [866.5, 310]
+          },
+          {
+            "level": 12,
+            "multipliers": [907.8, 320]
+          },
+          {
+            "level": 13,
+            "multipliers": [949.1, 330]
+          },
+          {
+            "level": 14,
+            "multipliers": [990.4, 340]
+          },
+          {
+            "level": 15,
+            "multipliers": [1031.7, 350]
+          },
+          {
+            "level": 16,
+            "multipliers": [1073, 360]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "remielle_dan-special-sliver_of_light",
+        "name": "Sliver of Light (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunches a ranged attack ahead, dealing Lumiflux DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [49.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [54.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [59.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [63.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [68.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [72.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [77.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [82.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [86.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [91.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [95.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [100.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [105.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [109.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [114.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [118.9]
+          }
+        ]
+      },
+      {
+        "id": "remielle_dan-special-ode_to_dawn_radiant_turn",
+        "name": "Ode to Dawn - Radiant Turn (Special Attack)",
+        "description": "When Remielle is in combat and her /bFloating Radiance//b reaches its maximum of 120, hold [SPECIAL] after a /bSpecial Attack//b or /bEX Special Attack//b to enter /bStance Shift//b. Switching characters while in /bStance Shift//b causes Remielle to enter the /bPhase Flow//b state:\n\nWhile in the /bPhase Flow//b state, Remielle acts autonomously to assist in combat. In this state, /bFloating Radiance//b is consumed over time, and some of her attacks apply Lumiflux Buildup to the target. When /bFloating Radiance//b is fully depleted or upon leaving combat, Remielle exits the /bPhase Flow//b state. Before exiting the /bPhase Flow//b state, Remielle cannot be actively switched in except via a /bChain Attack//b.\n\nIf Remielle triggers 3 Refringe reactions in one /bPhase Flow//b state, or has at least 1 stored /bVoidflare//b when /bFloating Radiance//b is fully depleted, /bAssist: Flower & Feather Dance//b becomes available, and her normal switch-in is unlocked. /bAssist: Flower & Feather Dance//b is automatically used on Remielle's next normal switch-in. Upon entering the /bPhase Flow//b state, Remielle increases all squad members's DMG by a percentage for 60s. Repeated triggers reset the duration.\n\nWhen Remielle's /bFloating Radiance//b has reached its maximum of 120 and her /bSpecial Attack//b or /bEX Special Attack//b hits a Stunned enemy, she can also enter the /bPhase Flow//b state by switching characters during the /bSpecial Attack//b or /bEX Special Attack//b. If no character is switched in after entering /bStance Shift//b, Remielle uses a downward attack to return to the ground instead.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [164.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [179.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [194.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [209.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [224.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [239.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [254.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [269.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [284.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [299.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [314.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [329.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [344.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [359.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [374.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [389.7]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "remielle_dan-ex_special_attack-ode_to_dawn",
+        "name": "Ode to Dawn (EX Special Attack)",
+        "description": "Upon entering the battlefield, if Remielle has less than 60 Energy, her Energy is recovered to 60. In Investigation Zone Mode, this effect can trigger once every 180s. With enough Energy, press [EX] to activate:\n\nUnleashes a powerful attack across a large area ahead, dealing Lumiflux DMG. After the skill ends, apply 2 Lumiflux Buildup to all enemies hit. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [721.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [787.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [852.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [918.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [983.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [1049.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [1115.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [1180.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [1246.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [1311.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1377.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [1443.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1508.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1574.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [1639.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1705.5]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "remielle_dan-chain_attack-interwoven_dance_steps",
+        "name": "Interwoven Dance Steps (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunches multiple attacks ahead in a large area, dealing Lumiflux DMG. Enters the /bLuminous Reflection//b state upon activation. The next /bBasic Attack: Rainbow's End//b is upgraded to /bBasic Attack: Fleeting Grace//b. After the skill ends, apply 2 Lumiflux Buildup to enemies hit. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [785.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [856.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [928]
+          },
+          {
+            "level": 4,
+            "multipliers": [999.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [1070.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [1142.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [1213.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [1285]
+          },
+          {
+            "level": 9,
+            "multipliers": [1356.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [1427.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [1499.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1570.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [1642]
+          },
+          {
+            "level": 14,
+            "multipliers": [1713.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [1784.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1856.2]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "remielle_dan-ultimate-dazzling_curtain_call",
+        "name": "Dazzling Curtain Call (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunches an attack across a large area in front, dealing Lumiflux DMG. If the skill hits, the Luminize effect can be triggered after the skill ends with a set multiplier. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "lumiflux"
+          },
+          {
+            "name": "Luminize Multiplier",
+            "damageType": "lumiflux"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2009.7, 220.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [2192.4, 231]
+          },
+          {
+            "level": 3,
+            "multipliers": [2375.1, 241.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [2557.8, 252]
+          },
+          {
+            "level": 5,
+            "multipliers": [2740.5, 262.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [2923.2, 273]
+          },
+          {
+            "level": 7,
+            "multipliers": [3105.9, 283.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [3288.6, 294]
+          },
+          {
+            "level": 9,
+            "multipliers": [3471.3, 304.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [3654, 315]
+          },
+          {
+            "level": 11,
+            "multipliers": [3836.7, 325.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [4019.4, 336]
+          },
+          {
+            "level": 13,
+            "multipliers": [4202.1, 346.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [4384.8, 357]
+          },
+          {
+            "level": 15,
+            "multipliers": [4567.5, 367.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [4750.2, 378]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "big_cylinder",
+  "name": "Big Cylinder",
+  "rarity": "A",
+  "specialty": "Defense",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "DEF%",
+
+  "stats": {
+    "base": 624,
+    "advanced": 0.4
+  },
+
+  "ingameEffects": [
+    {
+      "id": "big_cylinder-ten_top_ten",
+      "source": "wEngine",
+      "label": "Ten Top Ten (W-Engine Pasive)",
+      "description": "Reduces DMG taken by a percentage. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal additional DMG based on the equipper’s DEF. This effect can be triggered once every 7.5s.",
+      "shortDescription": "This w-engine does not affect the equipper's stats.",
+      "target": "self",
+      "infoOnly": true
+    }
+  ]
+}

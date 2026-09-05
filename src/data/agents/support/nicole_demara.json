@@ -1,0 +1,1136 @@
+{
+  "id": "nicole",
+  "name": "Nicole Demara",
+  "specialty": "Support",
+  "faction": "Cunning Hares",
+  "attribute": "Ether",
+  "rarity": "S",
+  "fullName": "Nicole Demara",
+  "displayName": "Nicole",
+  "attributeIcon": "Ether",
+  "themeColor": "#ECBCBA",
+  "skins": [
+    {
+      "id": "default",
+      "img": "nicole.png"
+    },
+    {
+      "id": "cunning_cutie",
+      "img": "nicole-cunning_cutie.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 8145.8,
+    "atk": 574.17,
+    "def": 622.62
+  },
+  "combatBase": {
+    "impact": 88,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 90,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Energy Regen"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "nicole_demara-core-mechanical_case",
+      "source": "core",
+      "sourceId": "nicole_demara-core",
+      "label": "Mechanical Case (Core Passive)",
+      "description": "WAfter hitting an enemy with a Special Attack, EX Special Attack, Chain Attack, or Ultimate, Nicole can reload, enhance her Basic Attack and Dash Attack. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by 40% for 3.5s.",
+      "shortDescription": "The target's DEF is reduced by 40% for 3.5s.",
+      "target": "team",
+      "flat": {
+        "defShred": 0.4
+      }
+    },
+    {
+      "id": "nicole_demara-core-stormy_nights_fright",
+      "source": "core",
+      "sourceId": "nicole_demara-core",
+      "label": "Stormy Night's Fright (Additional Passive)",
+      "description": "When another character in your squad shares the same Attribute or Faction: When Nicole's Core Passive: Mechanical Case applies a debuff to an enemy, all units deal 25% more Ether DMG to the target for 3.5s.",
+      "shortDescription": "All squad members' Ether DMG is increased by 25% for 3.5s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "ether",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "nicole_demara-mindscape_1-supercharged_bomb",
+      "source": "mindscape",
+      "sourceId": "nicole_demara-mindscape_1",
+      "label": "Supercharged Bomb (Mindscape Cinema N°1)",
+      "description": "The DMG and the Anomaly Buildup inflicted by Nicole's EX Special Attack increases by 16%. For each additional 0.1s of charging when Nicole activates her EX Special Attack, the duration of the energy field created at the target location increases by 0.15s.",
+      "shortDescription": "Nicole's DMG from EX Special Attack: Stufed Sugarcoated Bullet is increased by 16%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["nicole-ex_special_attack-stuffed_sugarcoated_bullet"],
+          "value": 0.16
+        }
+      ]
+    },
+    {
+      "id": "nicole_demara-mindscape_2-charging_device",
+      "source": "mindscape",
+      "sourceId": "nicole_demara-mindscape_2",
+      "label": "Charging Device (Mindscape Cinema N°2)",
+      "description": "Nicole recovers 5 Energy when Core Passive: Mechanical Case's debuff is triggered. This effect can trigger once every 15s.",
+      "shortDescription": "This mindscape cinema does not affect Nicole's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "nicole_demara-mindscape_4-field_expansion",
+      "source": "mindscape",
+      "sourceId": "nicole_demara-mindscape_4",
+      "label": "Field Expansion (Mindscape Cinema N°4)",
+      "description": "When Nicole uses her EX Special Attack, Chain Attack, or Ultimate, the diameter of the energy field generated at the target location is increased by 3m.",
+      "shortDescription": "This mindscape cinema does not affect Nicole's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "nicole_demara-mindscape_6-corrupting_energy_field",
+      "source": "mindscape",
+      "sourceId": "nicole_demara-mindscape_6",
+      "label": "Corrupting Energy Field (Mindscape Cinema N°6)",
+      "description": "When Nicole's energy fields deal DMG to an enemy, all units' CRIT Rate against that enemy increases by 1.5%, stacking up to 10 times, and lasting 12s. The duration of each stack is calculated separately.",
+      "shortDescription": "All Squad Members' CRIT Rate is increased by 1.5% for 12s, stacking up to 10 times.",
+      "target": "team",
+      "maxStacks": 10,
+      "perStack": {
+        "critRate": 0.015
+      }
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "nicole-basic_attack-cunning_combo",
+        "name": "Cunning Combo (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 3 strikes, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "1st-Hit DMG Multiplier x3",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier x4",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier x20",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [38.9, 9, 35.3, 9, 124.3, 9]
+          },
+          {
+            "level": 2,
+            "multipliers": [42.5, 9.9, 38.6, 9.8, 135.6, 9.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [46.1, 10.7, 41.9, 10.7, 146.9, 10.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [49.7, 11.5, 45.2, 11.5, 158.2, 11.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [53.3, 12.4, 48.5, 12.3, 169.5, 12.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [56.9, 13.2, 51.8, 13.2, 180.8, 13.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [60.5, 14, 55.1, 14, 192.1, 13.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [64.1, 14.9, 58.4, 14.8, 203.4, 14.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [67.7, 15.7, 61.7, 15.6, 214.7, 15.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [71.3, 16.5, 65, 16.4, 226, 16.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [74.9, 17.4, 68.3, 17.3, 237.3, 17.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [78.5, 18.2, 71.6, 18.1, 248.6, 18]
+          },
+          {
+            "level": 13,
+            "multipliers": [82.1, 19, 74.9, 18.9, 259.9, 18.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [85.7, 19.9, 78.2, 19.8, 271.2, 19.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [89.3, 20.7, 81.5, 20.6, 282.5, 20.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [92.9, 21.5, 84.8, 21.4, 293.8, 21.3]
+          }
+        ]
+      },
+      {
+        "id": "nicole-basic_attack-do_as_i_please",
+        "name": "Do As I Please (Basic Attack)",
+        "description": "After using a /bSpecial Attack//b, /bEX Special Attack//b, /bChain Attack//b, or /bUltimate//b, Nicole can reload, and her /bBasic Attack//b and /bDash Attack//b are enhanced, increasing the power of her bullets.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "1st-Hit DMG Multiplier x3",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier x4",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier x20",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [38.9, 16.4, 35.3, 16.4, 124.3, 16.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [42.5, 17.9, 38.6, 17.9, 135.6, 17.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [46.1, 19.4, 41.9, 19.4, 146.9, 19.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [49.7, 20.9, 45.2, 20.9, 158.2, 20.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [53.3, 22.4, 48.5, 22.4, 169.5, 22.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [56.9, 23.9, 51.8, 23.9, 180.8, 23.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [60.5, 25.4, 55.1, 25.4, 192.1, 25.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [64.1, 26.9, 58.4, 26.9, 203.4, 26.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [67.7, 28.4, 61.7, 28.4, 214.7, 28.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [71.3, 29.9, 65, 29.9, 226, 29.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [74.9, 31.4, 68.3, 31.4, 237.3, 31.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [78.5, 32.9, 71.6, 32.9, 248.6, 32.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [82.1, 34.4, 74.9, 34.4, 259.9, 34.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [85.7, 35.9, 78.2, 35.9, 271.2, 35.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [89.3, 37.4, 81.5, 37.4, 282.5, 37.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [92.9, 38.9, 84.8, 38.9, 293.8, 38.9]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "nicole-dash_attack-jack_in_the_box",
+        "name": "Jack in the Box (Dash Attack)",
+        "description": "When dragging the (stick/joystick) during a dodge, press [BASIC]:\n\nDashes in the target direction and strikes nearby enemies, dealing Physical DMG.\n\nWhen not dragging the (stick/joystick) during a dodge, press [BASIC]:\n\nVaults backward and launches a ranged strike against enemies in front, dealing Physical DMG. Automatically reloads after the attack to enhance her /bBasic Attack//b and /bDash Attack//b, up to 8 times.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Forward Dash DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Forward Dash DMG Multiplier x13",
+            "damageType": "physical"
+          },
+          {
+            "name": "Backward Vault DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [41.2, 9, 60]
+          },
+          {
+            "level": 2,
+            "multipliers": [45, 9.8, 65.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [48.8, 10.6, 71]
+          },
+          {
+            "level": 4,
+            "multipliers": [52.6, 11.5, 76.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [56.4, 12.3, 82]
+          },
+          {
+            "level": 6,
+            "multipliers": [60.2, 13.1, 87.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [64, 13.9, 93]
+          },
+          {
+            "level": 8,
+            "multipliers": [67.8, 14.7, 98.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [71.6, 15.6, 104]
+          },
+          {
+            "level": 10,
+            "multipliers": [75.4, 16.4, 109.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [79.2, 17.2, 115]
+          },
+          {
+            "level": 12,
+            "multipliers": [83, 18, 120.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [86.8, 18.9, 126]
+          },
+          {
+            "level": 14,
+            "multipliers": [90.6, 19.7, 131.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [94.4, 20.5, 137]
+          },
+          {
+            "level": 16,
+            "multipliers": [98.2, 21.3, 142.5]
+          }
+        ]
+      },
+      {
+        "id": "nicole-dash_attack-do_as_i_please",
+        "name": "Do As I Please (Dash Attack)",
+        "description": "After using a /bSpecial Attack//b, /bEX Special Attack//b, /bChain Attack//b, or /bUltimate//b, Nicole can reload, and her /bBasic Attack//b and /bDash Attack//b are enhanced, increasing the power of her bullets.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Forward Dash DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Forward Dash DMG Multiplier x13",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [41.2, 9]
+          },
+          {
+            "level": 2,
+            "multipliers": [45, 9.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [48.8, 10.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [52.6, 11.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [56.4, 12.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [60.2, 13.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [64, 13.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [67.8, 14.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [71.6, 15.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [75.4, 16.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [79.2, 17.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [83, 18]
+          },
+          {
+            "level": 13,
+            "multipliers": [86.8, 18.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [90.6, 19.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [94.4, 20.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [98.2, 21.3]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "nicole-dodge_counter-diverted_bombard",
+        "name": "Diverted Bombard (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nDodge backwards and sends a ranged strike at enemies in front, dealing Ether DMG. Character is invulnerable while using this skill. Automatically reloads after the attack to enhance /bBasic Attack//b and /bDash Attack//b up to 8 times.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [182.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [199]
+          },
+          {
+            "level": 3,
+            "multipliers": [215.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [232.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [248.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [265.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [282]
+          },
+          {
+            "level": 8,
+            "multipliers": [298.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [315.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [331.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [348.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [365]
+          },
+          {
+            "level": 13,
+            "multipliers": [381.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [398.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [414.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [431.4]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "nicole-quick_assist-emergency_bombard",
+        "name": "Emergency Bombard (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nDodge backwards and sends a ranged strike at enemies in front, dealing Ether DMG. Character is invulnerable while using this skill. Automatically reloads after the attack to enhance /bBasic Attack//b and /bDash Attack//b up to 8 times.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [63.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [69.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [75]
+          },
+          {
+            "level": 4,
+            "multipliers": [80.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [86.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [92.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [98.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [104]
+          },
+          {
+            "level": 9,
+            "multipliers": [109.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [115.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [121.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [127.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [133]
+          },
+          {
+            "level": 14,
+            "multipliers": [138.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [144.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [150.4]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "nicole-assist_follow_up-window_of_opportunity",
+        "name": "Window of Opportunity (Assist Follow-Up)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nDodge backwards and sends a ranged strike at enemies in front, dealing Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [377.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [411.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [445.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [480]
+          },
+          {
+            "level": 5,
+            "multipliers": [514.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [548.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [582.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [617.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [651.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [685.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [720.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [754.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [788.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [823]
+          },
+          {
+            "level": 15,
+            "multipliers": [857.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [891.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "nicole-special_attack-sugarcoated_bullet",
+        "name": "Sugarcoated Bullet (Special Attack)",
+        "description": "Press [SPECIAL] to launch this attack.\n\nUnleashes a ranged attack against enemies in front, dealing Ether DMG. Anti-Interrupt level is increased while using this skill. Automatically reloads after the attack to enhance /bBasic Attack//b and /bDash Attack//b up to 8 times.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [50]
+          },
+          {
+            "level": 2,
+            "multipliers": [52.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [54.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [57.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [59.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [62]
+          },
+          {
+            "level": 7,
+            "multipliers": [64.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [66.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [69.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [71.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [74]
+          },
+          {
+            "level": 12,
+            "multipliers": [76.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [78.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [81.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [83.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [86]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "nicole-ex_special_attack-stuffed_sugarcoated_bullet",
+        "name": "Stuffed Sugarcoated Bullet (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nA powerful ranged strike, generating an energy field that pulls enemies towards its center to deal Ether DMG.\n\nHold [EX] down to charge up this attack, during which a small energy field is generated at the muzzle as Energy is consumed, dealing bonus DMG to enemies nearby.\n\nCharacter is invulnerable while using this skill. A /bQuick Assist//b is triggered when this skill hits an enemy. Automatically reloads after the attack to enhance /bBasic Attack//b and /bDash Attack//b up to 8 times.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Charged Attack DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Bombard DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Energy Field DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [215, 215, 387]
+          },
+          {
+            "level": 2,
+            "multipliers": [234.6, 234.6, 422.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [254.2, 254.2, 457.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [273.8, 273.8, 492.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [293.4, 293.4, 527.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [313, 313, 563]
+          },
+          {
+            "level": 7,
+            "multipliers": [332.6, 332.6, 598.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [352.2, 352.2, 633.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [371.8, 371.8, 668.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [391.4, 391.4, 703.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [411, 411, 739]
+          },
+          {
+            "level": 12,
+            "multipliers": [430.6, 430.6, 774.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [450.2, 450.2, 809.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [469.8, 469.8, 844.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [489.4, 489.4, 879.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [509, 509, 915]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "nicole-chain_attack-ether_shellacking",
+        "name": "Ether Shellacking (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful ranged strike at enemies in a small area, generating an energy field that pulls enemies towards its center to deal Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Bombard DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Energy Field DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [209.6, 283]
+          },
+          {
+            "level": 2,
+            "multipliers": [228.8, 308.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [248, 334.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [267.2, 360.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [286.4, 386.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [305.6, 412]
+          },
+          {
+            "level": 7,
+            "multipliers": [324.8, 437.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [344, 463.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [363.2, 489.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [382.4, 515.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [401.6, 541]
+          },
+          {
+            "level": 12,
+            "multipliers": [420.8, 566.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [440, 592.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [459.2, 618.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [478.4, 644.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [497.6, 670]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "nicole-ultimate-ether_grenade",
+        "name": "Ether Grenade (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a powerful ranged strike at enemies in a small area, generating an energy field that pulls enemies towards its center to deal Ether DMG.\n\nWhen using this skill, other squad members recover 10 Energy. The next character to switch in gains an additional 20 Energy. Character is invulnerable while using this skill. A /bQuick Assist//b is triggered when this skill hits an enemy.\n\nAutomatically reloads after the attack to enhance /bBasic Attack//b and /bDash Attack//b up to 8 times.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Bombard DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Energy Field DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [646.8, 873.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [705.6, 952.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [764.4, 1032]
+          },
+          {
+            "level": 4,
+            "multipliers": [823.2, 1111.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [882, 1190.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [940.8, 1270.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [999.6, 1349.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [1058.4, 1429]
+          },
+          {
+            "level": 9,
+            "multipliers": [1117.2, 1508.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [1176, 1587.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [1234.8, 1667.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1293.6, 1746.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [1352.4, 1826]
+          },
+          {
+            "level": 14,
+            "multipliers": [1411.2, 1905.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [1470, 1984.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1528.8, 2064.2]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

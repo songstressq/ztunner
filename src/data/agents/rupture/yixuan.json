@@ -1,0 +1,1515 @@
+{
+  "id": "yixuan",
+  "name": "Yixuan",
+  "specialty": "Rupture",
+  "faction": "Yunkui Summit",
+  "attribute": "ether",
+  "anomalyAttribute": {
+    "type": "auricInk",
+    "parentAttribute": "ether",
+    "baseMultiplier": 0.625,
+    "disorderFormula": {
+      "baseMultiplier": 4.5,
+      "scalingType": "doubleTick",
+      "scalingFactor": 0.625,
+      "tickRate": 2
+    }
+  },
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Yixuan",
+  "attributeIcon": "Auric Ink",
+  "themeColor": "#E6BB60",
+  "skins": [
+    {
+      "id": "default",
+      "img": "yixuan.png"
+    },
+    {
+      "id": "trails_of_ink",
+      "img": "yixuan-trails_of_ink.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7953.9,
+    "atk": 872.57,
+    "def": 441.11
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 92,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "HP", "Sheer Force"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "critRate": 0,
+        "hpFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "critRate": 0,
+        "hpFlat": 140
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "critRate": 0.048,
+        "hpFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "critRate": 0,
+        "hpFlat": 140
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "critRate": 0.048,
+        "hpFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "critRate": 0,
+        "hpFlat": 140
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "critRate": 0.048,
+        "hpFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "yixuan-core-grandmaster_of_mysticism",
+      "source": "core",
+      "sourceId": "yixuan-core",
+      "label": "Grandmaster of Mysticism (Core Passive)",
+      "description": "... The DMG dealt by Yixuan's Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attack, Assist Follow-Up, Chain Attack, and Ultimate increases by 60%. ...",
+      "shortDescription": "Yixuan's DMG from Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attacks, Assist Follow-Ups, Chain Attacks, and Ultimates is increased by 60%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "yixuan-basic_attack-auric_array",
+            "yixuan-basic_attack-qingming_eruption",
+            "yixuan-assist_followup-celestial_cloud_blitz",
+            "yixuan-ex_special_attack-ink_manifestation",
+            "yixuan-ex_special_attack-cloud_shaper",
+            "yixuan-ex_special_attack-ashen_ink_becomes_shadows",
+            "yixuan-chain_attack-auric_ink_rush",
+            "yixuan-ultimate-qingming_skyshade",
+            "yixuan-ultimate-endless_talisman_suppression"
+          ],
+          "value": 0.6
+        }
+      ]
+    },
+    {
+      "id": "yixuan-core_1-aurik_ink_undercurrent",
+      "source": "core",
+      "sourceId": "yixuan-core",
+      "label": "Auric Ink Undercurrent (Additional Ability)",
+      "description": "... After activating her Ultimate, Yixuan enters the Meditation state, increasing her CRIT DMG by 40% for 15s.",
+      "shortDescription": "Yixuan's CRIT DMG is increased by 40% for 15s.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.4
+      }
+    },
+    {
+      "id": "yixuan-core_2-aurik_ink_undercurrent",
+      "source": "core",
+      "sourceId": "yixuan-core",
+      "label": "Auric Ink Undercurrent (Additional Ability)",
+      "description": "... EX Special Attack: Cloud-Shaper and EX Special Attack: Ashen Ink Becomes Shadows deal 30% increased DMG to Stunned enemies. ...",
+      "shortDescription": "Yixuan's DMG from EX Special Attack: Cloud-Shaper and EX Special Attack: Ashen Ink Becomes Shadows is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "yixuan-ex_special_attack-cloud_shaper",
+            "yixuan-ex_special_attack-ashen_ink_becomes_shadows"
+          ],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "yixuan-mindscape_1-spiritual_path",
+      "source": "mindscape",
+      "sourceId": "yixuan-mindscape_1",
+      "label": "Spiritual Path (Mindscape Cinema N°1)",
+      "description": "Upon entering combat, CRIT Rate increases by 10% and immediately gain 120 Technique Points. In Investigation Zone Mode, this effect can only trigger once every 180s. When any squad member lands a hit on an enemy, Yixuan automatically summons an extra lightning strike, dealing DMG equal to 50% of her Sheer Force and restoring 5 additional Adrenaline. This can trigger once every 6s.",
+      "shortDescription": "Yixuan's CRIT Rate is increased by 10%. Yixuan's additional damage is available in the Damage Calculator.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.1
+      }
+    },
+    {
+      "id": "yixuan-mindscape_2-ward_off_misfortune",
+      "source": "mindscape",
+      "sourceId": "yixuan-mindscape_2",
+      "label": "Ward Off Misfortune (Mindscape Cinema N°2)",
+      "description": "When an Ultimate or EX Special Attack deals DMG, it ignores 15% of the target's Ether RES. Triggering Ultimate: Qingming Skyshade extends all enemies' Stunned state by 3s. In a single Stun state duration, enemies can only have this effect applied once, and it does not stack with similar effects.\n\nAdditionally, when using Ultimate: Endless Talisman Suppression, gain one stack of the Condensed Ink effect After Basic Attack: Qingming Eruption or EX Special Attack: Ashen Ink Becomes Shadows, press the Basic Attack button, or after EX Special Attack: Qingming Eruption - Break, press the Special Attack button to consume one stack of Condensed Ink and launch EX Special Attack: Endless Talisman Suppression - Break, dealing DMG up to 1,200% of Sheer Force. Only one stack of Condensed Ink can be held at a time.",
+      "shortDescription": "Yixuan's DMG from Ultimates and EX Special Attacks ignore 15% of the target's Ether RES. Yixuan's additional damage is available in the Damage Calculator.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "etherResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "yixuan-ex_special_attack-ink_manifestation",
+            "yixuan-ex_special_attack-cloud_shaper",
+            "yixuan-ex_special_attack-ashen_ink_becomes_shadows",
+            "yixuan-ultimate-qingming_skyshade",
+            "yixuan-ultimate-endless_talisman_suppression",
+            "yixuan-mindscape-ward_off_misfortune"
+          ],
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "yixuan-mindscape_4-the_one_path_of_mysticism",
+      "source": "mindscape",
+      "sourceId": "yixuan-mindscape_4",
+      "label": "The One Path of Mysticism (Mindscape Cinema N°4)",
+      "description": "Activating an Ultimate grants one stack of Tranquility, up to a max of 2 stacks. For each stack of Tranquility, the next EX Special Attack: Cloud-Shaper DMG and EX Special Attack: Ashen Ink Becomes Shadows DMG increase by 30%.",
+      "shortDescription": "Yixuan's DMG from EX Special Attack: Cloud-Shaper and EX Special Attack: Ashen Ink Becomes Shadows is increased by 30%, stacking up to 2 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "yixuan-ex_special_attack-cloud_shaper",
+            "yixuan-ex_special_attack-ashen_ink_becomes_shadows"
+          ],
+          "value": 0.3
+        }
+      ],
+      "maxStacks": 2
+    },
+    {
+      "id": "yixuan-mindscape_6-swift_yet_still",
+      "source": "mindscape",
+      "sourceId": "yixuan-mindscape_6",
+      "label": "Swift Yet Still (Mindscape Cinema N°6)",
+      "description": "After using Ultimate: Qingming Skyshade, gain a stack of the Regulated Breathing effect. While under this effect, you can ignore the Technique Point cost to launch Ultimate: Endless Talisman Suppression once. The Regulated Breathing effect ends after Ultimate: Endless Talisman Suppression is used. This effect can only be gained once every 30s. Only one stack of Regulated Breathing can be held. Additionally, while in the Meditation state, Yixuan's Sheer DMG is increased by 20%.",
+      "shortDescription": "Yixuan's Sheer DMG is increased by 20%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "sheerDmg",
+          "value": 0.2
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "yixuan-basic_attack-cirrus_strike",
+        "name": "Cirrus Strike (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to five attacks forward, dealing Auric Ink DMG. This skill's Anti-Interrupt Level increases during the 3rd and 4th hit.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [45.8, 65.5, 87.1, 104.8, 113.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [50, 71.5, 95.1, 114.4, 124.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [54.2, 77.5, 103.1, 124, 134.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [58.4, 83.5, 111.1, 133.6, 144.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [62.6, 89.5, 119.1, 143.2, 155.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [66.8, 95.5, 127.1, 152.8, 165.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [71, 101.5, 135.1, 162.4, 176.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [75.2, 107.5, 143.1, 172, 186.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [79.4, 113.5, 151.1, 181.6, 196.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [83.6, 119.5, 159.1, 191.2, 207.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [87.8, 125.5, 167.1, 200.8, 217.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [92, 131.5, 175.1, 210.4, 228.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [96.2, 137.5, 183.1, 220, 238.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [100.4, 143.5, 191.1, 229.6, 248.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [104.6, 149.5, 199.1, 239.2, 259.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [108.8, 155.5, 207.1, 248.8, 269.7]
+          }
+        ]
+      },
+      {
+        "id": "yixuan-basic_attack-ink_veil_cloud_coalescence",
+        "name": "Ink‐Veil Cloud Coalescence (Basic Attack)",
+        "description": "Hold [DODGE] to activate:\n\nDeploy a Grand Tai Chi Formation, dealing Auric Ink DMG. When the skill ends, automatically launch the 5th hit of /bBasic Attack: Cirrus Strike//b. Anti-Interrupt level is increased while using this skill, and DMG received is reduced by 40%.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "Ink - Veil Cloud Coalescence Total DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [234.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [256.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [277.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [298.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [320.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [341.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [363.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [384.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [405.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [427.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [448.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [470.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [491.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [512.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [534.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [555.7]
+          }
+        ]
+      },
+      {
+        "id": "yixuan-basic_attack-auric_array",
+        "name": "Auric Array (Basic Attack)",
+        "description": "While possessing /bAuric Ink Point//b, tap /bBasic Attack//b while /bDodge: Nimbus Step//b is active or hold [DODGE] to activate:\n\nDeploy an array, continuously dealing Auric Ink DMG. When the skill ends, it automatically triggers /bBasic Attack: Qingming Eruption//b. While channeling, continuously recover Adrenaline, recovering 7/s, for up to 3s. Character is invulnerable while using this skill, and enters the /bVital View//b state.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "Auric Array Total DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [305.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [333]
+          },
+          {
+            "level": 3,
+            "multipliers": [360.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [388.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [416.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [444.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [472]
+          },
+          {
+            "level": 8,
+            "multipliers": [499.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [527.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [555.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [583.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [611]
+          },
+          {
+            "level": 13,
+            "multipliers": [638.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [666.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [694.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [722.2]
+          }
+        ]
+      },
+      {
+        "id": "yixuan-basic_attack-qingming_eruption",
+        "name": "Qingming Eruption (Basic Attack)",
+        "description": "Automatically activates when /bBasic Attack: Auric Array//b reaches the max duration:\n\nSpreads her wings to launch an explosive attack, dealing massive Auric Ink DMG. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [110.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [120.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [130.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [140.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [151]
+          },
+          {
+            "level": 6,
+            "multipliers": [161.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [171.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [181.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [191.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [201.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [211.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [221.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [231.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [241.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [252]
+          },
+          {
+            "level": 16,
+            "multipliers": [262.1]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "yixuan-dash_attack-skybreaker",
+        "name": "Skybreaker (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunch a forward rush attack, dealing Auric Ink DMG.",
+        "skillType": "dash",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [49.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [54.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [59.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [63.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [68.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [72.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [77.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [82.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [86.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [91.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [95.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [100.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [105.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [109.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [114.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [118.9]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "yixuan-dodge_counter-banishing_blow",
+        "name": "Banishing Blow (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLaunch a series of attacks on enemies ahead, dealing Auric Ink DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [219.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [239.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [259.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [279.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [299.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [319.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [339.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [359.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [379.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [399.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [419.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [439.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [459.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [479.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [499.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [519.6]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "yixuan-quick_assist-cloudstream_shadow",
+        "name": "Cloudstream Shadow (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLaunch a series of attacks on enemies ahead, dealing Auric Ink DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [101.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [110.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [119.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [129]
+          },
+          {
+            "level": 5,
+            "multipliers": [138.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [147.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [156.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [166.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [175.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [184.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [194.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [203.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [212.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [222]
+          },
+          {
+            "level": 15,
+            "multipliers": [231.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [240.6]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "yixuan-assist_followup-celestial_cloud_blitz",
+        "name": "Celestial Cloud Blitz (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nQuickly dash forward and attack, dealing Auric Ink DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [297]
+          },
+          {
+            "level": 2,
+            "multipliers": [324]
+          },
+          {
+            "level": 3,
+            "multipliers": [351]
+          },
+          {
+            "level": 4,
+            "multipliers": [378]
+          },
+          {
+            "level": 5,
+            "multipliers": [405]
+          },
+          {
+            "level": 6,
+            "multipliers": [432]
+          },
+          {
+            "level": 7,
+            "multipliers": [459]
+          },
+          {
+            "level": 8,
+            "multipliers": [486]
+          },
+          {
+            "level": 9,
+            "multipliers": [513]
+          },
+          {
+            "level": 10,
+            "multipliers": [540]
+          },
+          {
+            "level": 11,
+            "multipliers": [567]
+          },
+          {
+            "level": 12,
+            "multipliers": [594]
+          },
+          {
+            "level": 13,
+            "multipliers": [621]
+          },
+          {
+            "level": 14,
+            "multipliers": [648]
+          },
+          {
+            "level": 15,
+            "multipliers": [675]
+          },
+          {
+            "level": 16,
+            "multipliers": [702]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "yixuan-special_attack-shadow_ignition",
+        "name": "Shadow-Ignition (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nSwiftly retreat, then attack forward, dealing Auric Ink DMG. While retreating, a /bPerfect Dodge//b can be triggered, but cannot be followed up with a /bDodge Counter//b. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [52.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [56.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [61.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [66.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [71.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [76.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [80.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [85.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [90.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [95.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [100.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [104.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [109.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [114.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [119.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [124.1]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "yixuan-ex_special_attack-ink_manifestation",
+        "name": "Ink Manifestation (EX Special Attack)",
+        "description": "With enough Adrenaline, press or hold [EX] to activate:\n\nCharge continuously, and release [EX] to launch an upward wing attack, dealing massive Auric Ink DMG.\n\nWhile charging, incoming attacks are automatically blocked and will activate the upward wing attack. If hit at the exact moment charging begins, it triggers a /bPerfect Block//b effect, negating the DMG and increasing the skill's Interrupt Level to match a /bHeavy Defensive Assist//b, and recovering 10 Adrenaline.\n\nWhen an upward wing strike hits an enemy with a red flash or yellow flash, a /bPerfect Block//b can be triggered, negating the hit and increasing the skill's Interrupt Level to match a /bDefensive Assist//b and recovering 10 Adrenaline.\n\nThe /bPerfect Block//b effect can occur at most once every 0.5s. If charged until flashing or when triggering the /bPerfect Block//b effect, the upward wing attack can be followed by an additional /bTalisman Attack//b.\n\nAfter the skill, press [SPECIAL] to launch /bEX Special Attack: Celestial Cloud Blitz - Break//b.\n\nAfter /bEX Special Attack: Celestial Cloud Blitz - Break//b, and with enough Adrenaline, press [EX] to consume another 20 Adrenaline to launch /bEX Special Attack: Qingming Eruption - Break//b.\n\nAfter using /bEX Special Attack: Qingming Eruption - Break//b and with enough /bAuric Ink Points//b, hold [DODGE] to quickly follow up with /bBasic Attack: Auric Array//b.\n\nCharacter is invulnerable during the upward wing attack, and Anti-Interrupt Level is increased while charging.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Additional DMG Multiplier on Full Charge",
+            "damageType": "ether"
+          },
+          {
+            "name": "EX Special Attack: Celestial Cloud Blitz - Break Total DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "EX Special Attack: Qingming Eruption - Break Total DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [300.3, 149.6, 370.6, 426.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [327.6, 163.2, 404.3, 465.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [354.9, 176.8, 438, 504]
+          },
+          {
+            "level": 4,
+            "multipliers": [382.2, 190.4, 471.7, 542.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [409.5, 204, 505.4, 581.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [436.8, 217.6, 539.1, 620.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [464.1, 231.2, 572.8, 659.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [491.4, 244.8, 606.5, 698]
+          },
+          {
+            "level": 9,
+            "multipliers": [518.7, 258.4, 640.2, 736.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [546, 272, 673.9, 775.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [573.3, 285.6, 707.6, 814.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [600.6, 299.2, 741.3, 853.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [627.9, 312.8, 775, 892]
+          },
+          {
+            "level": 14,
+            "multipliers": [655.2, 326.4, 808.7, 930.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [682.5, 340, 842.4, 969.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [709.8, 353.6, 876.1, 1008.4]
+          }
+        ]
+      },
+      {
+        "id": "yixuan-ex_special_attack-cloud_shaper",
+        "name": "Cloud-Shaper (EX Special Attack)",
+        "description": "With enough Adrenaline, hold [BASIC] to activate:\n\nContinuously charge up, channeling energy around enemies to deal DMG over time, up to a max of 2s, dealing massive Auric Ink DMG. Once fully charged or if interrupted, automatically trigger /bEX Special Attack: Ashen Ink Becomes Shadows//b.\n\nAt the moment the skill is activated, a /bPerfect Dodge//b can be triggered. After the /bPerfect Dodge//b, enter the /bVital View//b state. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "Total DMG Multiplier During Charge",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [671.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [732.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [794]
+          },
+          {
+            "level": 4,
+            "multipliers": [855.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [916.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [977.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [1038.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1099.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [1160.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1221.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1282.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1343.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1405]
+          },
+          {
+            "level": 14,
+            "multipliers": [1466.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1527.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1588.3]
+          }
+        ]
+      },
+      {
+        "id": "yixuan-ex_special_attack-ashen_ink_becomes_shadows",
+        "name": "Ashen Ink Becomes Shadows (EX Special Attack)",
+        "description": "Triggers automatically during /bEX Special Attack: Cloud-Shaper//b:\n\nWhen the energy orb appears and contracts, it deals Auric Ink DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [234.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [255.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [276.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [298.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [319.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [340.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [362.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [383.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [404.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [426]
+          },
+          {
+            "level": 11,
+            "multipliers": [447.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [468.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [489.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [511.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [532.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [553.8]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "yixuan-chain_attack-auric_ink_rush",
+        "name": "Auric Ink Rush (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nRapidly dash forward and attack, followed by an explosive wing burst, dealing massive Auric Ink DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [533.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [581.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [630.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [678.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [727.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [775.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [824.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [872.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [921.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [969.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [1018.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1066.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [1115.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1163.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1212.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [1260.6]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "yixuan-ultimate-qingming_skyshade",
+        "name": "Qingming Skyshade (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunch a barrage of wing attacks, then guide countless talismans to attack, dealing massive Auric Ink DMG. Upon activating this skill, Yixuan evenly redistributes the squad's HP.\n\nAfter using this skill and with enough /bAuric Ink Points//b, hold [DODGE] to quickly follow up with /bBasic Attack: Auric Array//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1853.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [2021.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [2190.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [2358.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [2527.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [2695.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [2864.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [3032.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [3201.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [3369.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [3538.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [3706.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [3875.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [4043.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [4212.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [4380.9]
+          }
+        ]
+      },
+      {
+        "id": "yixuan-ultimate-endless_talisman_suppression",
+        "name": "Endless Talisman Suppression (Ultimate)",
+        "description": "With enough /bTechnique Points//b, press [ULTIMATE] to activate:\n\nConsumes 120 /bTechnique Points//b to spread her wings, then guide countless talismans to attack, dealing massive Auric Ink DMG. With both enough /bTechnique Points//b and Decibels, this skill triggers with priority.\n\nAfter using this skill and with enough /bAuric Ink Points//b, hold [DODGE] to quickly follow up with /bBasic Attack: Auric Array//b. Upon activating this skill, Yixuan evenly redistributes the squad's HP. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1466.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [1599.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [1732.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [1866.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [1999.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [2132.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [2266]
+          },
+          {
+            "level": 8,
+            "multipliers": [2399.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [2532.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [2665.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [2799.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [2932.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [3065.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [3199.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [3332.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [3465.7]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "yixuan-mindscape-spiritual_path",
+        "name": "Spiritual Path - Additional DMG (Mindscape Cinema N°1)",
+        "description": "Upon entering combat, CRIT Rate increases by 10% and immediately gain 120 /bTechnique Points//b. In Investigation Zone Mode, this effect can only trigger once every 180s. When any squad member lands a hit on an enemy, Yixuan automatically summons an extra lightning strike, dealing DMG equal to 50% of her Sheer Force and restoring 5 additional Adrenaline. This can trigger once every 6s.",
+        "skillType": "mindscape",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [50]
+          }
+        ]
+      },
+      {
+        "id": "yixuan-mindscape-ward_off_misfortune",
+        "name": "EX Special Attack: Endless Talisman Suppression - Break (Mindscape Cinema N°6)",
+        "description": "When an /bUltimate//b or /bEX Special Attack//b deals DMG, it ignores 15% of the target's Ether RES. Triggering /bUltimate: Qingming Skyshade//b extends all enemies' Stunned state by 3s. In a single Stun state duration, enemies can only have this effect applied once, and it does not stack with similar effects.\n\nAdditionally, when using /bUltimate: Endless Talisman Suppression//b, gain one stack of the /bCondensed Ink//b effect.\n\nAfter /bBasic Attack: Qingming Eruption//b or /bEX Special Attack: Ashen Ink Becomes Shadows//b, press the [BASIC] button, or after /bEX Special Attack//b: Qingming Eruption - Break, press the [SPECIAL] button to consume one stack of /bCondensed Ink//b and launch /bEX Special Attack: Endless Talisman Suppression - Break//b, dealing DMG up to 1,200% of Sheer Force. Only one stack of /bCondensed Ink//b can be held at a time.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "EX Special Attack: Endless Talisman Suppression - Break",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1200]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1007 @@
+{
+  "id": "seth",
+  "name": "Seth Lowell",
+  "specialty": "Defense",
+  "faction": "Criminal Investigation Special Response Team",
+  "attribute": "electric",
+  "rarity": "A",
+  "fullName": "Seth Lowell",
+  "displayName": "Seth",
+  "attributeIcon": "Electric",
+  "themeColor": "#3479D0",
+  "baseStats": {
+    "hp": 8701.3,
+    "atk": 568.3,
+    "def": 746.14
+  },
+  "combatBase": {
+    "impact": 94,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 86,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "seth_lowell-core-protector",
+      "source": "core",
+      "sourceId": "seth_lowell-core",
+      "label": "Protector (Core Passive)",
+      "description": "When Seth uses EX Special Attack: Thunder Shield Rush - High Voltage, he gains a Shield of Firm Resolve equal to 80% of his initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. When Basic Attack: Lightning Strike - Electrified or Assist Follow-Up: Public Security Ruling triggers a Quick Assist or Chain Attack, causing another squad member to enter the field, that squad member gains a Shield of Firm Resolve equal to 80% of Seth's initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. Having a Shield of Firm Resolve increases Anomaly Proficiency by 100.",
+      "shortDescription": "The on-field agent's Anomaly Proficiency is increased by 100.",
+      "target": "self",
+      "requiresManualTarget": true,
+      "flat": {
+        "anomalyProficiency": 100
+      },
+      "condition": {
+        "applyToSelectedOnly": true
+      }
+    },
+    {
+      "id": "seth_lowell-mindscape_1-heroism",
+      "source": "mindscape",
+      "sourceId": "seth_lowell-mindscape_1",
+      "label": "Heroism (Mindscape Cinema N°1)",
+      "description": "The shield value provided by Shield of Firm Resolve and its maximum limit is increased by 30%. When Shield of Firm Resolve ends, the Anomaly Proficiency increase provided by Core Passive: Protector lasts an additional 10s.",
+      "shortDescription": "This mindscape cinema does not affect Seth's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "seth_lowell-mindscape_2-recklessness_of_youth",
+      "source": "mindscape",
+      "sourceId": "seth_lowell-mindscape_2",
+      "label": "Recklessness of Youth (Mindscape Cinema N°2)",
+      "description": "Upon entering battle, Seth immediately gains 75% Resolve. Hitting an enemy with Basic Attack: Lightning Strike - Electrified increases the move's accumulated Electric Anomaly Buildup by 35%.",
+      "shortDescription": "This mindscape cinema does not affect Seth's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "seth_lowell-mindscape_4-core_aspiration",
+      "source": "mindscape",
+      "sourceId": "seth_lowell-mindscape_4",
+      "label": "Core Aspiration (Mindscape Cinema N°4)",
+      "description": "The Daze caused by Defensive Assist: Thundershield is increased by 25%.",
+      "shortDescription": "This mindscape cinema does not affect Seth's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "seth_lowell-mindscape_6-idealist",
+      "source": "mindscape",
+      "sourceId": "seth_lowell-mindscape_6",
+      "label": "Idealist (Mindscape Cinema N°6)",
+      "description": "When Seth lands a finishing strike on an enemy with Basic Attack: Lightning Strike - Electrified, it deals additional damage equal to 500% of his ATK. The attack is guaranteed to trigger a CRIT, and CRIT DMG is increased by 60%.",
+      "shortDescription": "Seth's CRIT DMG from Basic Attack: Lightning Strike - Electrified is increased by 60%. It's additional damage is available in the Damage Calculator.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": [
+            "seth-basic_attack-lightning_strike_electrified",
+            "seth_lowell-mindscape-idealist"
+          ],
+          "value": 0.6
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "seth-basic_attack-lightning_strike",
+        "name": "Lightning Strike (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 4 attacks in front, dealing Physical DMG and Electric DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [36.2, 56.5, 193.3, 97.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [39.5, 61.7, 210.9, 106.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [42.8, 66.9, 228.5, 115.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [46.1, 72.1, 246.1, 124.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [49.4, 77.3, 263.7, 133]
+          },
+          {
+            "level": 6,
+            "multipliers": [52.7, 82.5, 281.3, 141.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [56, 87.7, 298.9, 150.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [59.3, 92.9, 316.5, 159.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [62.6, 98.1, 334.1, 168.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [65.9, 103.3, 351.7, 177.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [69.2, 108.5, 369.3, 186.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [72.5, 113.7, 386.9, 195.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [75.8, 118.9, 404.5, 204.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [79.1, 124.1, 422.1, 213.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [82.4, 129.3, 439.7, 222]
+          },
+          {
+            "level": 16,
+            "multipliers": [85.7, 134.5, 457.3, 230.9]
+          }
+        ]
+      },
+      {
+        "id": "seth-basic_attack-lightning_strike_electrified",
+        "name": "Lightning Strike - Electrified (Basic Attack)",
+        "description": "When /bResolve//b reaches 75%, hold [BASIC] to activate.\n\nConsume 75% /bResolve//b to launch consecutive attacks in front, followed by a /bFinishing Move//b, dealing Electric DMG. When the /bFinishing Move//b hits an enemy, it triggers the /bQuick Assist//b of the squad member positioned before Seth. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Consecutive Attack DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Finishing Move DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [382.8, 424.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [417.6, 462.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [452.4, 501.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [487.2, 540]
+          },
+          {
+            "level": 5,
+            "multipliers": [522, 578.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [556.8, 617.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [591.6, 655.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [626.4, 694.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [661.2, 733]
+          },
+          {
+            "level": 10,
+            "multipliers": [696, 771.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [730.8, 810.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [765.6, 848.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [800.4, 887.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [835.2, 926]
+          },
+          {
+            "level": 15,
+            "multipliers": [870, 964.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [904.8, 1003.2]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "seth-dash_attack-thunder_assault",
+        "name": "Thunder Assault (Dash Attack)",
+        "description": "Press [BASIC] during a Dodge to activate:\n\nCharge forward with a shield attack, dealing Physical DMG. Damage received during the move is decreased by 40%.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [110]
+          },
+          {
+            "level": 2,
+            "multipliers": [120]
+          },
+          {
+            "level": 3,
+            "multipliers": [130]
+          },
+          {
+            "level": 4,
+            "multipliers": [140]
+          },
+          {
+            "level": 5,
+            "multipliers": [150]
+          },
+          {
+            "level": 6,
+            "multipliers": [160]
+          },
+          {
+            "level": 7,
+            "multipliers": [170]
+          },
+          {
+            "level": 8,
+            "multipliers": [180]
+          },
+          {
+            "level": 9,
+            "multipliers": [190]
+          },
+          {
+            "level": 10,
+            "multipliers": [200]
+          },
+          {
+            "level": 11,
+            "multipliers": [210]
+          },
+          {
+            "level": 12,
+            "multipliers": [220]
+          },
+          {
+            "level": 13,
+            "multipliers": [230]
+          },
+          {
+            "level": 14,
+            "multipliers": [240]
+          },
+          {
+            "level": 15,
+            "multipliers": [250]
+          },
+          {
+            "level": 16,
+            "multipliers": [260]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "seth-dodge_counter-retreat_to_advance",
+        "name": "Retreat to Advance (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nUnleash a quick downward slash on enemies in front, dealing Electric DMG. After the move, hold [EX] to chain into /bEX Special Attack: Thunder Shield Rush - High Voltage//b, enabling faster charging. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [230]
+          },
+          {
+            "level": 2,
+            "multipliers": [251]
+          },
+          {
+            "level": 3,
+            "multipliers": [272]
+          },
+          {
+            "level": 4,
+            "multipliers": [293]
+          },
+          {
+            "level": 5,
+            "multipliers": [314]
+          },
+          {
+            "level": 6,
+            "multipliers": [335]
+          },
+          {
+            "level": 7,
+            "multipliers": [356]
+          },
+          {
+            "level": 8,
+            "multipliers": [377]
+          },
+          {
+            "level": 9,
+            "multipliers": [398]
+          },
+          {
+            "level": 10,
+            "multipliers": [419]
+          },
+          {
+            "level": 11,
+            "multipliers": [440]
+          },
+          {
+            "level": 12,
+            "multipliers": [461]
+          },
+          {
+            "level": 13,
+            "multipliers": [482]
+          },
+          {
+            "level": 14,
+            "multipliers": [503]
+          },
+          {
+            "level": 15,
+            "multipliers": [524]
+          },
+          {
+            "level": 16,
+            "multipliers": [545]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "seth-quick_assist-armed_support",
+        "name": "Armed Support (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nUnleash a quick downward slash on enemies in front, dealing Electric DMG. After the move, hold [EX] to chain into /bEX Special Attack: Thunder Shield Rush - High Voltage//b, enabling faster charging. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [100]
+          },
+          {
+            "level": 2,
+            "multipliers": [109.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [118.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [127.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [136.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [145.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [154.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [163.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [172.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [181.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [191]
+          },
+          {
+            "level": 12,
+            "multipliers": [200.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [209.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [218.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [227.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [236.5]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "seth-assist_followup-public_security_ruling",
+        "name": "Public Security Ruling (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nLaunch a forward thrust attack, followed by two horizontal slashes, dealing Electric DMG. When the skill hits an enemy, it triggers the /bQuick Assist//b of the squad member positioned before Seth.\n\nAfter activating the move, hold [EX] to transition to /bEX Special Attack: Thunder Shield Rush - High Voltage//b and charge faster. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [428.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [467.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [506.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [545.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [584.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [623.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [662.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [701.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [740.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [779.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [818.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [857.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [896.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [935.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [974.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1013.5]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "seth-special_attack-thunder_shield_rush",
+        "name": "Thunder Shield Rush (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunch two shield attacks forward, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [69.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [75.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [81.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [88.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [94.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [100.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [107]
+          },
+          {
+            "level": 8,
+            "multipliers": [113.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [119.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [125.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [132.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [138.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [144.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [151.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [157.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [163.7]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "seth-ex_special_attack-thunder_shield_rush_high_voltage",
+        "name": "Thunder Shield Rush - High Voltage (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nUnleash a series of slashes in front, dealing massive Electric DMG. Hold [EX] to charge the move, and Seth will dash forward, unleashing a series of powerful slashes, dealing massive Electric DMG.\n\nActivating the move accumulates 75% /bResolve//b. Anti-Interrupt level is increased while charging this skill, and damage taken is reduced by 40%. Seth is invulnerable during the consecutive slashes.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "DMG Multiplier (Charged)",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [646, 999.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [704.8, 1090.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [763.6, 1181.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [822.4, 1272.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [881.2, 1363.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [940, 1454.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [998.8, 1545.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [1057.6, 1636.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [1116.4, 1727]
+          },
+          {
+            "level": 10,
+            "multipliers": [1175.2, 1817.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1234, 1908.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1292.8, 1999.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1351.6, 2090.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [1410.4, 2181.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1469.2, 2272.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [1528, 2363.3]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "seth-chain_attack-final_judgement",
+        "name": "Final Judgement (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunch a series of slashes in front, dealing massive Electric DMG. Activating the move accumulates 75% /bResolve//b.\n\nAfter the move, hold [EX] to chain into /bEX Special Attack: Thunder Shield Rush - High Voltage//b, enabling faster charging. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [704.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [768.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [832.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [896.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [960.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [1024.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [1088.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [1152.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1216.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [1281]
+          },
+          {
+            "level": 11,
+            "multipliers": [1345.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1409.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1473.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1537.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [1601.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1665.6]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "seth-ultimate-justice_prevails",
+        "name": "Justice Prevails (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunch a series of upward attacks in front, followed by a /bFinishing Move//b, dealing massive Electric DMG. Activating the move accumulates 75% /bResolve//b, and grants 3 additional /bAssist Points//b.\n\nAfter the move, hold [EX] to chain into /bEX Special Attack: Thunder Shield Rush - High Voltage//b, enabling faster charging. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2024.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [2208.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [2392.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [2576.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [2760.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [2944.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [3128.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [3313]
+          },
+          {
+            "level": 9,
+            "multipliers": [3497.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [3681.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [3865.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [4049.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [4233.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [4417.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [4601.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [4785.8]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "seth_lowell-mindscape-idealist",
+        "name": "Idealist - Additional DMG (Mindscape Cinema N°6)",
+        "description": "When Seth lands a finishing strike on an enemy with /bBasic Attack: Lightning Strike - Electrified//b, it deals additional damage equal to 500% of his ATK. The attack is guaranteed to trigger a CRIT, and CRIT DMG is increased by 60%.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Additional DMG",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [500]
+          }
+        ]
+      }
+    ]
+  }
+}

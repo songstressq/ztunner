@@ -1,0 +1,128 @@
+{
+  "id": "zanshin_herb_case",
+  "name": "Zanshin Herb Case",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT DMG%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.48
+  },
+
+  "ingameEffects": [
+    {
+      "id": "zanshin_herb_case-growth_through_adversity-crit_rate",
+      "source": "wEngine",
+      "sourceId": "zanshin_herb_case",
+      "label": "Growth Through Adversity (W-Engine Passive)",
+      "description": "CRIT Rate is increased. Dash Attack Electric DMG increases by a percentage. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate is further increased for 12s.",
+      "shortDescription": "Increases the equipper's CRIT Rate, stacking up to 2 times",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.1 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.115 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.13 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.145 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.16 }
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "zanshin_herb_case-growth_through_adversity-electric_dmg",
+      "source": "wEngine",
+      "sourceId": "zanshin_herb_case",
+      "label": "Growth Through Adversity (W-Engine Passive)",
+      "description": "CRIT Rate is increased. Dash Attack Electric DMG increases by a percentage. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate is further increased for 12s.",
+      "shortDescription": "Increases the equipper's Electric DMG from Dash Attacks.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.4
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.46
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.52
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.58
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.64
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

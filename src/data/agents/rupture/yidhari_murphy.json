@@ -1,0 +1,1275 @@
+{
+  "id": "yidhari",
+  "name": "Yidhary Murphy",
+  "specialty": "Rupture",
+  "faction": "Spook Shack",
+  "attribute": "ice",
+  "rarity": "S",
+  "fullName": "Yidhary Murphy",
+  "displayName": "Yidhari",
+  "attributeIcon": "Ice",
+  "themeColor": "#ca98d1",
+  "baseStats": {
+    "hp": 8497.1,
+    "atk": 784.91,
+    "def": 448.45
+  },
+  "combatBase": {
+    "impact": 95,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 87,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "HP", "Sheer Force"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "yidhari_murphy-chain_attack-ether_veil_wellspring",
+      "source": "core",
+      "sourceId": "yidhari_murphy-chain_attack",
+      "label": "Ether Veil: Wellspring (Chain Attack)",
+      "description": "When Decibel Rating is at Maximum, the final hit of Basic Attack: Frostbite Embrace, EX Special Attack: Frost Coil, EX Special Attack: Glacial Crush, and Chain Attack: Frostbound Oath will consume 3,000 Decibels to activate an Ether Veil: Wellspring. While Ether Veil: Wellspring is active, all squad members' Max HP increase by 5% for 30s. Repeated triggers extend the duration, up to a maximum of 300s. While Yidhari is within Ether Veil: Wellspring, the charge speed of Basic Attack: Frostbite Embrace increases, and HP is consumed faster during charging.",
+      "shortDescription": "All squad members' Max HP is increased by 5% while Ether Veil: Wellspring is active.",
+      "target": "team",
+      "flat": {
+        "hpPercentRaw": 0.05
+      }
+    },
+    {
+      "id": "yidhari_murphy-core-dreamscape_collection",
+      "source": "core",
+      "sourceId": "yidhari_murphy-core",
+      "label": "Dreamscape Collection (Core Passive)",
+      "description": "... Yidhari's skill DMG increases as her current HP percentage decreases. When her HP falls below 50%, the buff reaches its maximum value, increasing her DMG by up to 100%. Once her HP is restored to 50%, the maximum bonus remains for 5s thereafter. Yidhari gains fewer Decibels from landing skills. Instead, she gains Decibels as her HP decreases, with every 1% HP lost granting 10 Decibels.",
+      "shortDescription": "Yidhari's DMG is increased by 100% when her HP is bellow 50%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.01
+        }
+      ],
+      "maxStacks": 100
+    },
+    {
+      "id": "yidhari_murphy-core-narrative_completion",
+      "source": "core",
+      "sourceId": "yidhari_murphy_core",
+      "label": "Narrative Completion (Additional Ability)",
+      "description": "When another character in your squad is a Stun or Support character:\n\nWhen Yidhari's HP falls below 50%, CRIT DMG increases by 30% and DMG taken is reduced by 25%. While Yidhari is within Ether Veil: Wellspring, she gains the following additional effect: After the level 3 charged attack of Yidhari's Basic Attack: Frostbite Embrace or EX Special Attack: Glacial Crush, an icy tentacle is summoned to attack, dealing extra damage. This effect can trigger once every 12s. The above skill is considered an EX Special Attack, the DMG multiplier increases based on the EX Special Attack's level.",
+      "shortDescription": "Yidhari's CRIT DMG is increased by 30% when her HP is bellow 50%.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.3
+      }
+    },
+    {
+      "id": "yidhari_murphy-mindscape_1-the_past_lost_beneath_the_abyss",
+      "source": "mindscape",
+      "sourceId": "yidhari_murphy-mindscape_1",
+      "label": "The Past Lost Beneath the Abyss (Mindscape Cinema N°1)",
+      "description": "The Adrenaline cost to activate Yidhari's EX Special Attack is reduced by 10. After using EX Special Attack: Frost Coil or EX Special Attack: Glacial Crush, keeping hold of the Basic Attack or Special Attack button consumes 35 Adrenaline to forgo healing and immediately chain into another EX Special Attack: Glacial Crush. The HP restored by this EX Special Attack: Glacial Crush is increased by 100% of the original value. Yidhari's Basic Attacks and EX Special Attacks ignore 20% of targets' Ice RES.",
+      "shortDescription": "Yidhari's Basic Attacks an EX Special Attacks ignore 20% of the target's Ice RES.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "iceResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "yidhari-basic_attack-crushing_strike",
+            "yidhari-basic_attack-frostbite_embrace",
+            "yidhari-basic_attack-frosts_crushing_weight",
+            "yidhari-ex_special_attack-frost_coil",
+            "yidhari-ex_special_attack-glacial_crush"
+          ],
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "yidhari_murphy-mindscape_2-who_lingers_here_lost_in_thought",
+      "source": "mindscape",
+      "sourceId": "yidhari_murphy-mindscape_2",
+      "label": "Who Lingers Here, Lost in Thought? (Mindscape Cinema N°2)",
+      "description": "Yidhari's CRIT DMG increases by 40%. Triggering Surging Cold or Crushing Pursuit grants Adrenaline regen of 0.5/s for up to 30s. Repeated triggers reset the duration.",
+      "shortDescription": "Yidhari's CRIT DMG is increased by 40%.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.4
+      }
+    },
+    {
+      "id": "yidhari_murphy-mindscape_4-blooming_in_silence",
+      "source": "mindscape",
+      "sourceId": "yidhari_murphy-mindscape_4",
+      "label": "Blooming in Silence (Mindscape Cinema N°4)",
+      "description": "Yidhari gains 10% more Decibels when losing HP for Core Passive: Dreamscape Collection. While in Ether Veil: Wellspring, Yidhari's Max HP is further increased by 5%.",
+      "shortDescription": "Yidhari's Max HP is further increased by 5% while Ether Veil: Wellspring is active.",
+      "target": "self",
+      "flat": {
+        "hpPercentRaw": 0.05
+      }
+    },
+    {
+      "id": "yidhari_murphy-mindscape_6-at_last_a_peaceful_dream",
+      "source": "mindscape",
+      "sourceId": "yidhari_murphy-mindscape_6",
+      "label": "At Last, a Peaceful Dream (Mindscape Cinema N°6)",
+      "description": "After Yidhari spends Decibels to activate or extend Ether Veil: Wellspring, she gains Erudition for 30s. While Erudition is active, her Sheer DMG increases by 25%. Also, upon taking fatal DMG for the first time, her HP is reduced to at most 1, and for the next 5s, she cannot be defeated and will restore 25% HP over time.",
+      "shortDescription": "Yidhari's Sheer DMG is increased by 25%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "sheerDmg",
+          "value": 0.25
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "yidhari-basic_attack-crushing_strike",
+        "name": "Crushing Strike (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 3 strikes, dealing Ice DMG. On the 3rd hit, Yidhari recovers 10% HP.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "1st Hit DMG Multiplier ALT",
+            "damageType": "ice"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [60.7, 62.4, 86, 207.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [66.3, 68.1, 93.9, 226.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [71.9, 73.8, 101.8, 245.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [77.5, 79.5, 109.7, 264.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [83.1, 85.2, 117.6, 283.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [88.7, 90.9, 125.5, 302.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [94.3, 96.6, 133.4, 321.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [99.9, 102.3, 141.3, 340.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [105.5, 108, 149.2, 359]
+          },
+          {
+            "level": 10,
+            "multipliers": [111.1, 113.7, 157.1, 377.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [116.7, 119.4, 165, 396.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [122.3, 125.1, 172.9, 415.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [127.9, 130.8, 180.8, 434.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [133.5, 136.5, 188.7, 453.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [139.1, 142.2, 196.6, 472.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [144.7, 147.9, 204.5, 491.3]
+          }
+        ]
+      },
+      {
+        "id": "yidhari-basic_attack-frostbite_embrace",
+        "name": "Frostbite Embrace (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nYidhari begins charging, continuously consuming HP to reach up to three levels of charge. When /bBasic Attack//b is released, Yidhari unleashes a powerful charged hammer attack in front based on the current charge level, dealing massive Ice DMG. The higher Yidhari's HP, the faster charging consumes it. HP consumption will at most reduce Yidhari's HP to 25% of Max HP.\n\nAt 2 charge levels, after using the skill, press [BASIC] to immediately follow up with the 3rd hit of /bBasic Attack: Crushing Strike//b. The DMG of a /bBasic Attack: Crushing Strike//b triggered this way increases based on the current charge level, up to 30%. At 3 charge levels, Yidhari gains increased Anti-Interrupt level during the charged skill. Press [BASIC] to chain early into the finishing smash.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "Level-1 Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Level-2 Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Level-3 Charged Smash DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Level-3 Charged Spin DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [161.4, 254.1, 345.9, 235.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [176.1, 277.2, 377.4, 257.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [190.8, 300.3, 408.9, 278.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [205.5, 323.4, 440.4, 300.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [220.2, 346.5, 471.9, 321.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [234.9, 369.6, 503.4, 343.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [249.6, 392.7, 534.9, 364.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [264.3, 415.8, 566.4, 386.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [279, 438.9, 597.9, 407.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [293.7, 462, 629.4, 429.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [308.4, 485.1, 660.9, 450.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [323.1, 508.2, 692.4, 472.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [337.8, 531.3, 723.9, 493.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [352.5, 554.4, 755.4, 515.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [367.2, 577.5, 786.9, 536.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [381.9, 600.6, 818.4, 558.3]
+          }
+        ]
+      },
+      {
+        "id": "yidhari-basic_attack-frosts_crushing_weight",
+        "name": "Frost's Crushing Weight (Basic Attack)",
+        "description": "While charging or spinning during /bBasic Attack: Frostbite Embrace//b, if hit by an enemy, Yidhari can block with her tentacles, reducing the DMG taken by 25%.\n\nIf charging or not yet at full charge, Yidhari counterattacks with her tentacles, returning to the charging stance and instantly gaining 1 charge level, while also dealing Ice DMG to enemies ahead.\n\nWhile /bFrost's Crushing Weight//b is active, pressing /bBasic Attack//b makes Yidhari immediately unleash the finishing slam of /bBasic Attack: Frostbite Embrace//b based on her current charge level.\n\nWhile Frost's Crushing Weight is active, pressing [SPECIAL] or [EX] makes Yidhari unleash a /bSpecial Attack: Surging Cold//b, /bCrushing Pursuit//b that is guaranteed to trigger /bSurging Cold//b.",
+        "skillType": "basic",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [48.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [53.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [57.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [62.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [66.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [71.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [75.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [80.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [84.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [89.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [93.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [98.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [102.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [107.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [111.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [116.2]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "yidhari-dash_attack-frostbloom_impact",
+        "name": "Frostbloom Impact (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nStrike forward, dealing Ice DMG.",
+        "skillType": "dash",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [70.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [77]
+          },
+          {
+            "level": 3,
+            "multipliers": [83.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [90]
+          },
+          {
+            "level": 5,
+            "multipliers": [96.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [103]
+          },
+          {
+            "level": 7,
+            "multipliers": [109.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [116]
+          },
+          {
+            "level": 9,
+            "multipliers": [122.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [129]
+          },
+          {
+            "level": 11,
+            "multipliers": [135.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [142]
+          },
+          {
+            "level": 13,
+            "multipliers": [148.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [155]
+          },
+          {
+            "level": 15,
+            "multipliers": [161.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [168]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "yidhari-dodge_counter-icehaul_reverb",
+        "name": "Icehaul Reverb (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nStrikes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [185.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [202.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [219.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [236]
+          },
+          {
+            "level": 5,
+            "multipliers": [252.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [269.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [286.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [303.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [320.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [337.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [354.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [371.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [388.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [405]
+          },
+          {
+            "level": 15,
+            "multipliers": [421.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [438.8]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "yidhari-quick_assist-frostshock_reinforcement",
+        "name": "Frostshock Reinforcement (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nStrikes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [82.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [89.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [97.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [104.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [112.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [119.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [127.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [134.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [142.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [149.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [157.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [164.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [172.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [179.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [187.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [194.7]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "yidhari-assist_follow_up-glacial_onslaught",
+        "name": "Glacial Onslaught (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nExecute an ice shard hammer attack against enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [313.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [341.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [370.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [398.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [427.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [455.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [484.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [512.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [541.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [569.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [598.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [626.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [655.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [683.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [712.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [740.9]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "yidhari-special_attack-cease_thoughts",
+        "name": "Cease Thoughts (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunches enemies in front into the air, dealing Ice DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [39.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [43.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [46.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [50.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [54]
+          },
+          {
+            "level": 6,
+            "multipliers": [57.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [61.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [64.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [68.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [72]
+          },
+          {
+            "level": 11,
+            "multipliers": [75.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [79.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [82.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [86.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [90]
+          },
+          {
+            "level": 16,
+            "multipliers": [93.6]
+          }
+        ]
+      },
+      {
+        "id": "yidhari-special_attack-surging_cold-crushing_pursuit",
+        "name": "Surging Cold, Crushing Pursuit (Special Attack)",
+        "description": "Press [SPECIAL] or [EX] while charging or spinning during /bBasic Attack: Frostbite Embrace//b, or press [DODGE] while holding [BASIC] to activate:\n\nLaunches enemies in front into the air, dealing Ice DMG. When the skill's attack collides with an enemy's attack, it triggers /bSurging Cold//b. If the skill hits a Stunned enemy, and with sufficient Adrenaline, it triggers /bCrushing Pursuit//b.\n\nTriggering /bSurging Cold//b or /bCrushing Pursuit//b instantly raises the charge level to maximum. During this skill, press [BASIC] and Yidhari will immediately unleash the finishing slam of /bBasic Attack: Frostbite Embrace//b based on the current charge level. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [83.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [91.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [99.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [106.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [114.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [122.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [129.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [137.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [145.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [153]
+          },
+          {
+            "level": 11,
+            "multipliers": [160.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [168.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [176.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [183.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [191.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [199.2]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "yidhari-ex_special_attack-frost_coil",
+        "name": "Frost Coil (EX Special Attack)",
+        "description": "With enough Adrenaline, press [EX] to activate:\n\nPerform two consecutive upward strikes, then release an icy mist, dealing massive Ice DMG. If /bEX Special Attack: Frost Coil//b hits an enemy, Yidhari recovers HP at the end of the skill equal to 33% of her missing HP. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [510.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [556.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [603]
+          },
+          {
+            "level": 4,
+            "multipliers": [649.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [695.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [742.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [788.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [835]
+          },
+          {
+            "level": 9,
+            "multipliers": [881.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [927.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [974.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1020.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [1067]
+          },
+          {
+            "level": 14,
+            "multipliers": [1113.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [1159.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1206.2]
+          }
+        ]
+      },
+      {
+        "id": "yidhari-ex_special_attack-glacial_crush",
+        "name": "Glacial Crush (EX Special Attack)",
+        "description": "When triggering /bSurging Cold//b or /bCrushing Pursuit//b, and with enough Adrenaline, press [EX] or [BASIC] to activate:\n\nDash forward with an upward attack, then leap into the air before delivering a powerful downward smash, dealing massive Ice DMG. If /bEX Special Attack: Glacial Crush//b hits an enemy, Yidhari heals at the end of the skill for 33% of her missing HP.\n\nIf the skill is used after /bSurging Cold//b, it grants an additional 15 Adrenaline. This effect can trigger once every 1s. After using this skill, press [BASIC] to immediately unleash the finishing slam of /bBasic Attack: Frostbite Embrace//b based on the current charge level. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "EX Special Attack: Glacial Crush DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Aditional Ability Icy Tentacle DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1007.6, 79.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [1099.2, 86.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [1190.8, 93.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [1282.4, 100.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [1374, 108]
+          },
+          {
+            "level": 6,
+            "multipliers": [1465.6, 115.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [1557.2, 122.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1648.8, 129.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [1740.4, 136.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [1832, 144]
+          },
+          {
+            "level": 11,
+            "multipliers": [1923.6, 151.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [2015.2, 158.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [2106.8, 165.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [2198.4, 172.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [2290, 180]
+          },
+          {
+            "level": 16,
+            "multipliers": [2381.6, 187.2]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "yidhari-chain_attack-frostbound_oath",
+        "name": "Frostbound Oath (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleash a powerful strike against enemies in a small area ahead, dealing massive Ice DMG. If inside /bEther Veil: Wellspring//b, tentacles join in the assault, further enhancing the skill's power. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "DMG Multiplier in Ether Veil: Wellspring",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [572.7, 629.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [624.8, 687.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [676.9, 744.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [729, 801.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [781.1, 859.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [833.2, 916.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [885.3, 973.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [937.4, 1031]
+          },
+          {
+            "level": 9,
+            "multipliers": [989.5, 1088.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [1041.6, 1145.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [1093.7, 1202.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [1145.8, 1260.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1197.9, 1317.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1250, 1374.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1302.1, 1432.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [1354.2, 1489.4]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "yidhari-ultimate-final_act_crossing_the_river_of_regret",
+        "name": "Final Act - Crossing the River of Regret (Ultimate)",
+        "description": "After Yidhari expends Decibels to activate /bEther Veil: Wellspring//b, press [ULTIMATE] within 30s to activate:\n\nDeliver a powerful strike to enemies in a large area ahead, dealing massive Ice DMG. Character is invulnerable while using this skill. Each time Yidhari expends Decibels to activate an /bEther Veil: Wellspring//b, she can use this /bUltimate//b once.",
+        "skillType": "ultimate",
+        "statBase": "sheerForce",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1522.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [1660.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [1798.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [1937.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [2075.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [2214.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [2352.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [2490.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [2629.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [2767.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [2906.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [3044.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [3182.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [3321.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [3459.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [3598.1]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

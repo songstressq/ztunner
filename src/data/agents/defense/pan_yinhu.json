@@ -1,0 +1,1090 @@
+{
+  "id": "pan",
+  "name": "Pan Yinhu",
+  "specialty": "Defense",
+  "faction": "Yunkui Summit",
+  "attribute": "Physical",
+  "rarity": "A",
+  "fullName": "",
+  "displayName": "Pan Yinhu",
+  "attributeIcon": "Physical",
+  "themeColor": "#DBCFC3",
+  "skins": [
+    {
+      "id": "default",
+      "img": "pan.png"
+    },
+    {
+      "id": "culinary_jewel",
+      "img": "pan-culinary_jewel.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 8453.8,
+    "atk": 586.92,
+    "def": 712.94
+  },
+  "combatBase": {
+    "impact": 94,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 91,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "pan_yinhu-core-meridian_enlightenment",
+      "source": "core",
+      "sourceId": "pan_yinhu-core",
+      "label": "Meridian Enlightenment (Core Passive)",
+      "description": "For a brief period when Pan Yinhu's EX Special Attack: Mountainous Pulse Strike hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the Meridian Flow effect. This effect provides a Sheer Force boost equal to a percentage of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points.",
+      "shortDescription": "All squad members' Sheer Force is increased based on Pan Yinhu's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 540,
+            "perUnitBonus": 0.09
+          },
+          {
+            "level": 2,
+            "maxBonus": 540,
+            "perUnitBonus": 0.105
+          },
+          {
+            "level": 3,
+            "maxBonus": 540,
+            "perUnitBonus": 0.12
+          },
+          {
+            "level": 4,
+            "maxBonus": 540,
+            "perUnitBonus": 0.135
+          },
+          {
+            "level": 5,
+            "maxBonus": 540,
+            "perUnitBonus": 0.15
+          },
+          {
+            "level": 6,
+            "maxBonus": 540,
+            "perUnitBonus": 0.165
+          },
+          {
+            "level": 7,
+            "maxBonus": 540,
+            "perUnitBonus": 0.18
+          }
+        ],
+        "affectedStats": ["sheerForce"]
+      }
+    },
+    {
+      "id": "pan_yinhu-core-iron_stomach",
+      "source": "core",
+      "sourceId": "pan_yinhu-core",
+      "label": "Iron Stomach (Additional Ability)",
+      "description": "When another character in your squad is a Rupture character or shares the same Faction:\n\nWhen Pan Yinhu hits an enemy with Special Attack: Touch of Death, the enemy suffers the Depleted Qi effect, increasing all DMG against the target by 20%. Each hit of Special Attack: Touch of Death inflicts a 10s Depleted Qi effect. This effect can't stack, but repeated hits on the same enemy will extend the duration.",
+      "shortDescription": "All squad members' DMG is increased by 20% for 10s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "pan_yinhu-mindscape_1-qi_shield",
+      "source": "mindscape",
+      "sourceId": "pan_yinhu-mindscape_1",
+      "label": "Qi Shield (Mindscape Cinema N°1)",
+      "description": "All units deal 10% increased DMG to enemies affected by Depleted Qi.",
+      "shortDescription": "All squad members' DMG is further increased by 10% for 10s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "pan_yinhu-mindscape_2-yunkui_pressure_point_strike",
+      "source": "mindscape",
+      "sourceId": "pan_yinhu-mindscape_2",
+      "label": "Yunkui Pressure-Point Strike (Mindscape Cinema N°2)",
+      "description": "For every 6 points of Break Force consumed, Pan Yinhu will recover 4 Energy, and the Depleted Qi effect applied when Special Attack: Touch of Death hits an enemy will have its duration increased to 12s.",
+      "shortDescription": "This mindscape cinema does not affect Pan Yinhu's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "pan_yinhu-mindscape_4-first_class_head_chef",
+      "source": "mindscape",
+      "sourceId": "pan_yinhu-mindscape_4",
+      "label": "First-Class Head Chef (Mindscape Cinema N°4)",
+      "description": "When Ultimate: A Feast Fit for an Emperor! heals all squad members, the HP recovery is increased by 25%, and the healing over time effect is increased by 25%. On activating Ultimate: A Feast Fit for an Emperor!, gain the Backup Provisions effect. Whenever any character in the squad loses HP, consume the Backup Provisions effect to instantly restore 50% of the HP recovered with Ultimate: A Feast Fit for an Emperor!'s instant HP recovery effect. This effect cannot stack.",
+      "shortDescription": "This mindscape cinema does not affect Pan Yinhu's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "pan_yinhu-mindscape_6-meridian_theory",
+      "source": "mindscape",
+      "sourceId": "pan_yinhu-mindscape_6",
+      "label": "Meridian Theory (Mindscape Cinema N°6)",
+      "description": "The Meridian Flow effect provided by Core Passive: Meridian Enlightenment gains an additional Sheer Force bonus equal to 6% of Pan Yinhu's initial ATK. The maximum Sheer Force provided by this effect increases to 720.",
+      "shortDescription": "All squad members' Sheer Force is further increased based on Pan Yinhu's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 720,
+            "perUnitBonus": 0.15
+          },
+          {
+            "level": 2,
+            "maxBonus": 720,
+            "perUnitBonus": 0.165
+          },
+          {
+            "level": 3,
+            "maxBonus": 720,
+            "perUnitBonus": 0.18
+          },
+          {
+            "level": 4,
+            "maxBonus": 720,
+            "perUnitBonus": 0.195
+          },
+          {
+            "level": 5,
+            "maxBonus": 720,
+            "perUnitBonus": 0.21
+          },
+          {
+            "level": 6,
+            "maxBonus": 720,
+            "perUnitBonus": 0.225
+          },
+          {
+            "level": 7,
+            "maxBonus": 720,
+            "perUnitBonus": 0.24
+          }
+        ],
+        "affectedStats": ["sheerForce"]
+      }
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "pan_yinhu-basic_attack-unyielding_strikes",
+        "name": "Unyielding Strikes (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunches up to four consecutive melee attacks, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [49.7, 49.8, 109.4, 211.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [54.3, 54.4, 119.4, 230.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [58.9, 59, 129.4, 249.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [63.5, 63.6, 139.4, 269.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [68.1, 68.2, 149.4, 288.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [72.7, 72.8, 159.4, 307.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [77.3, 77.4, 169.4, 327.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [81.9, 82, 179.4, 346.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [86.5, 86.6, 189.4, 365.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [91.1, 91.2, 199.4, 385]
+          },
+          {
+            "level": 11,
+            "multipliers": [95.7, 95.8, 209.4, 404.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [100.3, 100.4, 219.4, 423.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [104.9, 105, 229.4, 442.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [109.5, 109.6, 239.4, 462.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [114.1, 114.2, 249.4, 481.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [118.7, 118.8, 259.4, 500.8]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "pan_yinhu-dash_attack-sizzling_oil_supreme",
+        "name": "Sizzling Oil Supreme (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nPerform a quick forward melee attack, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [83.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [91]
+          },
+          {
+            "level": 3,
+            "multipliers": [98.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [106.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [113.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [121.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [129]
+          },
+          {
+            "level": 8,
+            "multipliers": [136.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [144.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [151.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [159.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [167]
+          },
+          {
+            "level": 13,
+            "multipliers": [174.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [182.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [189.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [197.4]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "pan_yinhu-dodge_counter-moving_mountains_and_seas",
+        "name": "Moving Mountains and Seas (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPerform a melee attack on enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [219.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [239.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [259.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [279.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [299.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [319.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [339.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [359.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [379.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [399.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [419.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [439.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [459.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [479.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [499.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [519.2]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "pan_yinhu-quick_assist-lift_your_gaze_to_good_fortune",
+        "name": "Lift Your Gaze to Good Fortune (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nPerform a melee attack on enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [91.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [100.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [108.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [116.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [125.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [133.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [142.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [150.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [158.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [167.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [175.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [184.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [192.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [200.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [209.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [217.7]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "pan_yinhu-assist_follow_up-ride_the_momentum",
+        "name": "Ride the Momentum (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nPerform a melee attack on enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [337.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [368.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [398.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [429.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [460.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [490.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [521.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [552.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [583]
+          },
+          {
+            "level": 10,
+            "multipliers": [613.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [644.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [675.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [705.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [736.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [767.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [797.9]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "pan_yinhu-special_attack-sonic_pressure_point_strike",
+        "name": "Sonic Pressure-Point Strike (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nDelivers a forward melee technique while tossing firecrackers, dealing Physical DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [62.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [68.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [73.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [79.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [85.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [91]
+          },
+          {
+            "level": 7,
+            "multipliers": [96.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [102.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [108.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [113.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [119.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [125.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [130.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [136.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [142.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [148]
+          }
+        ]
+      },
+      {
+        "id": "pan_yinhu-special_attack-touch_of_death",
+        "name": "Touch of Death (Special Attack)",
+        "description": "With /bBreak Force//b, press [SPECIAL] to activate:\n\n/bSpecial Attack: Touch of Death//b attacks centered on the enemy, dealing Physical DMG. The skill can be chained up to three times. Each use of /bSpecial Attack: Touch of Death//b consumes 1 point of /bBreak Force//b.\n\nWhen Pan Yinhu is the active character, DMG received during the skill is reduced by 40% and Anti-Interrupt Level is increased. If he isn't the active character, he becomes Invulnerable.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [384.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [419.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [454.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [489.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [524.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [559.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [594.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [629.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [664.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [699.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [734.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [769.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [804.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [839.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [874.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [909.1]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "pan_yinhu-ex_special_attack-mountainous_pulse_strike",
+        "name": "Mountainous Pulse Strike (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\n/bEX Special Attack: Mountainous Pulse Strike//b unleashes a powerful strike forward, dealing Physical DMG. Gain 3 points of /bBreak Force//b on activation. Upon hitting an enemy, it triggers the /bQuick Assist//b of the previous character in the squad.\n\nAgents who enter the field via this /bQuick Assist//b will gain the Sheer Force bonus from the Core Passive. After switching out, Pan Yinhu will stay on the field and automatically launch /bSpecial Attack: Touch of Death//b until his /bBreak Force//b runs out, where he then leaves the field. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [97.3, 97.3, 97.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [106.2, 106.2, 106.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [115.1, 115.1, 115.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [124, 124, 124]
+          },
+          {
+            "level": 5,
+            "multipliers": [132.9, 132.9, 132.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [141.8, 141.8, 141.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [150.7, 150.7, 150.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [159.6, 159.6, 159.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [168.5, 168.5, 168.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [177.4, 177.4, 177.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [186.3, 186.3, 186.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [195.2, 195.2, 195.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [204.1, 204.1, 204.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [213, 213, 213]
+          },
+          {
+            "level": 15,
+            "multipliers": [221.9, 221.9, 221.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [230.8, 230.8, 230.8]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "pan_yinhu-chain_attack-anointed_with_wok_steam",
+        "name": "Anointed with Wok Steam (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nHop onto the Iron Wok and spin rapidly to ram into enemies, dealing massive Physical DMG to all enemies on the way. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [632.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [689.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [747.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [804.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [862.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [919.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [977.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1034.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1092.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [1149.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [1207.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1264.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1322.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1379.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1437.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [1494.8]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "pan_yinhu-ultimate-a_feast_fit_for_an_emperor",
+        "name": "A Feast Fit for an Emperor! (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nPerform a technique that compresses qi into fried rice and catapults it at foes, dealing massive Physical DMG and healing all squad members for a set amount of HP, while also applying a 8s heal over time on all squad members, recovering a percentage of HP per second. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1627.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [1775.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [1923.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [2071.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [2219.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [2367.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [2515.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [2663.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [2811.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [2959.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [3107.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [3255.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [3403.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [3551.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [3699.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [3847.9]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

@@ -1,0 +1,1228 @@
+{
+  "id": "seed",
+  "name": "Seed",
+  "specialty": "Attack",
+  "faction": "Obol Squad",
+  "attribute": "electric",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Seed",
+  "attributeIcon": "Electric",
+  "themeColor": "#C2ECEC",
+  "baseStats": {
+    "hp": 7673.7,
+    "atk": 854.76,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "seed_core_flower_chain_protocol",
+      "source": "core",
+      "sourceId": "seed_core_1",
+      "label": "Flower Chain Protocol (Core Passive)",
+      "description": "The Attack teammate with the highest initial ATK is considered Seed's Vanguard. When the Vanguard unleashes an EX Special Attack, Seed gains Onslaught status, increasing Seed's ATK by 1000 and CRIT DMG by 30%. When Seed unleashes an EX Special Attack, the Vanguard gains Direct Strike status, increasing the Vanguard's ATK by 1000 and CRIT DMG by 30%. When Direct Strike and Onslaught are both active, Seed and the Vanguard simultaneously gain Besiege status, increasing DMG dealt by 25%.",
+      "shortDescription": "Seed's and her Vanguard's ATK is increased by 1000 and CRIT DMG is increased by 30%.",
+      "target": "self",
+      "requiresManualVanguard": true,
+      "infoOnly": true
+    },
+    {
+      "id": "seed-core-surprise_strike",
+      "source": "core",
+      "sourceId": "seed-core",
+      "label": "Surprise Strike (Additional Ability)",
+      "description": "When another Attack Character is in your squad: When Seed deals DMG as the active character, restore 2 Energy to the Vanguard. This effect can trigger once every 1s. Seed's Basic Attack: Falling Petals - Slaughter, Basic Attack: Falling Petals - Downfall, and Ultimate: Clockwork Garden - Bloom! deal 30% increased DMG and ignore 25% of enemy Electric RES.",
+      "shortDescription": "Seed's DMG from Basic Attack: Falling Petals - Slaughter, Basic Attack: Falling Petals - Downfall and Ultimate: Clockwork Garden - Bloom! is increased by 30% and ignores 25% of the target's Electric RES.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "seed-basic_attack-falling_petals_slaughter",
+            "seed-basic_attack-falling_petals_downfall",
+            "seed-ultimate-clockwork_garden_bloom"
+          ],
+          "value": 0.3
+        }
+      ],
+      "exclusiveStatBonuses": [
+        {
+          "stat": "electricResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "seed-basic_attack-falling_petals_slaughter",
+            "seed-basic_attack-falling_petals_downfall",
+            "seed-ultimate-clockwork_garden_bloom"
+          ],
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "seed-mindscape_1-hibernation_period",
+      "source": "mindscape",
+      "sourceId": "seed-mindscape_1",
+      "label": "Hibernation Period (Mindscape Cinema N°1)",
+      "description": "When Seed's Steel Charge reaches 100, Basic Attack: Falling Petals - Downfall can be triggered, and the total Steel Charge consumed is reduced to 100. The amount of Steel Charge required to gain one chance to quickly release Basic Attack: Falling Petals - Slaughter is reduced to 100. Accumulate an additional 40/20 Steel Charge when entering the battlefield/using Ultimate. Increases Basic Attack: Falling Petals - Downfall CRIT DMG by 30%.",
+      "shortDescription": "Seed's CRIT DMG from Basic Attack: Falling Petals - Downfall is increased by 30%.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": ["seed-basic_attack-falling_petals_downfall"],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "seed-mindscape_2-light_absorption_technique_1",
+      "source": "mindscape",
+      "sourceId": "seed-mindscape_2",
+      "label": "Light Absorption Technique (Mindscape Cinema N°2)",
+      "description": "When Besiege is active for an Agent, that Agent's DMG ignores 20% of DEF. When activating EX Special Attack: Raining Iron Petals, after consuming a total of 60 Energy, Seed can continue consuming Energy to extend the duration of the skill until the button is released or a total of 120 Energy is consumed. For every 5 Energy consumed by EX Special Attack: Raining Iron Petals, the following Basic Attack: Falling Petals - Slaughter's DMG increases by 5%.",
+      "shortDescription": "Seed's and her Vanguard's DMG ignores 20% of the target's DEF.",
+      "target": "self",
+      "requiresManualTarget": true,
+      "flat": {
+        "defShred": 0.2
+      },
+      "linkedEffects": ["seed-mindscape_2-light_absorption_technique_2"]
+    },
+
+    {
+      "id": "seed-mindscape_2-light_absorption_technique_2",
+      "source": "mindscape",
+      "sourceId": "seed-mindscape_2",
+      "label": "Light Absorption Technique (Mindscape Cinema N°2)",
+      "description": "When Besiege is active for an Agent, that Agent's DMG ignores 20% of DEF. When activating EX Special Attack: Raining Iron Petals, after consuming a total of 60 Energy, Seed can continue consuming Energy to extend the duration of the skill until the button is released or a total of 120 Energy is consumed. For every 5 Energy consumed by EX Special Attack: Raining Iron Petals, the following Basic Attack: Falling Petals - Slaughter's DMG increases by 5%.",
+      "shortDescription": "Seed's DMG from Basic Attack: Falling Petals - Slaughter is increased by 30%, stacking up to 24 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["seed-basic_attack-falling_petals_slaughter"],
+          "value": 0.05
+        }
+      ],
+      "maxStacks": 24
+    },
+
+    {
+      "id": "seed-mindscape_4-fragrant_tune",
+      "source": "mindscape",
+      "sourceId": "seed-mindscape_4",
+      "label": "Fragrant Tune (Mindscape Cinema N°4)",
+      "description": "When Seed's Besiege status buff is active, her Decibel Generation Rate increases by 10%, and Ultimate DMG increases by 20%.",
+      "shortDescription": "Seed's DMG from Ultimates is increased by 20%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "skillType",
+          "skillType": "ultimate",
+          "value": 0.2
+        }
+      ]
+    },
+
+    {
+      "id": "seed_m6_theory_of_the_heart",
+      "source": "mindscape",
+      "sourceId": "seed_m6",
+      "label": "Theory of the Heart (Mindscape Cinema N°6)",
+      "description": "Seed's CRIT DMG increases by 50%. When using Basic Attack: Falling Petals - Slaughter, fires 3 additional laser beams, each dealing 165% of ATK as DMG. This effect can trigger once every 3s.",
+      "shortDescription": "Seed's CRIT DMG is increased by 50%. Basic Attack: Falling Petals - Slaughter's additional damage is available in the Damage Calculator",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.5
+      }
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "seed-basic_attack-chrysanthemum_wheel_dance",
+        "name": "Chrysanthemum Wheel Dance (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to 4 attacks forward, dealing Physical DMG for the first two hits and Electric DMG for the third and fourth hits. When attacked between the retreat of the 3rd hit to before the 4th hit, triggers an automatic dodge.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [46.5, 124.1, 71.8, 358.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [50.8, 135.4, 78.4, 391.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [55.1, 146.7, 85, 423.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [59.4, 158, 91.6, 456.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [63.7, 169.3, 98.2, 489]
+          },
+          {
+            "level": 6,
+            "multipliers": [68, 180.6, 104.8, 521.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [72.3, 191.9, 111.4, 554.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [76.6, 203.2, 118, 586.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [80.9, 214.5, 124.6, 619.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [85.2, 225.8, 131.2, 652]
+          },
+          {
+            "level": 11,
+            "multipliers": [89.5, 237.1, 137.8, 684.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [93.8, 248.4, 144.4, 717.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [98.1, 259.7, 151, 749.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [102.4, 271, 157.6, 782.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [106.7, 282.3, 164.2, 815]
+          },
+          {
+            "level": 16,
+            "multipliers": [111, 293.6, 170.8, 847.6]
+          }
+        ]
+      },
+      {
+        "id": "seed-basic_attack-falling_petals_slaughter",
+        "name": "Falling Petals - Slaughter (Basic Attack)",
+        "description": "After the 4th hit of a /bBasic Attack//b, /bDodge Counter//b, /bQuick Assist//b, or /bAssist Follow-Up//b, hold or press [BASIC] to activate:\n\nSummon the mech to perform a charged punch attack, dealing massive Electric DMG. When /bSteel Charge//b reaches 120, gain one chance to quickly activate /bBasic Attack: Falling Petals - Slaughter//b by holding [BASIC]. This effect expires when Steel Charge is less than 120 or after using the method above to activate /bBasic Attack: Falling Petals - Slaughter//b once. Does not accumulate /bSteel Charge//b on hit. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [166.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [181.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [197]
+          },
+          {
+            "level": 4,
+            "multipliers": [212.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [227.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [242.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [257.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [273]
+          },
+          {
+            "level": 9,
+            "multipliers": [288.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [303.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [318.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [333.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [349]
+          },
+          {
+            "level": 14,
+            "multipliers": [364.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [379.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [394.6]
+          }
+        ]
+      },
+      {
+        "id": "seed-basic_attack-falling_petals_downfall",
+        "name": "Falling Petals - Downfall (Basic Attack)",
+        "description": "Seed has /bSteel Charge//b, which she can accumulate by hitting enemies with her skills.\n\n/bSteel Charge//b has a maximum value of 150, and an initial value of 60. Upon reaching 120 /bSteel Charge//b and triggering /bBasic Attack: Falling Petals - Slaughter//b or /bUltimate: Clockwork Garden - Bloom!//b, press or hold [BASIC] to consume 60 /bSteel Charge//b and unleash /bBasic Attack: Falling Petals - Downfall First Form//b, then automatically consume 60 /bSteel Charge//b to follow up with /bBasic Attack: Falling Petals - Downfall Second Form//b. Pilots the mech to fire sweeping shots and perform a jumping smash, dealing massive Electric DMG. Does not accumulate /bSteel Charge//b on hit. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "First Form DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Second Form DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [528.3, 989.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [576.4, 1079.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [624.5, 1169.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [672.6, 1259.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [720.7, 1349.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [768.8, 1439.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [816.9, 1529.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [865, 1619.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [913.1, 1709.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [961.2, 1799.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1009.3, 1889.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1057.4, 1979.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1105.5, 2069.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [1153.6, 2159.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [1201.7, 2249.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [1249.8, 2339.4]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "seed-dash_attack-magnetic_wheel_dance",
+        "name": "Magnetic Wheel Dance (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nThrow steel wheels forward, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [64.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [70.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [76]
+          },
+          {
+            "level": 4,
+            "multipliers": [81.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [87.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [93.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [99.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [105.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [111.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [117.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [123.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [129.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [135]
+          },
+          {
+            "level": 14,
+            "multipliers": [140.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [146.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [152.7]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "seed-dodge_counter-blossom_burst",
+        "name": "Blossom Burst (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nUnleash a barrage of lasers at enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [320.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [349.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [378.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [407.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [436.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [465.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [494.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [523.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [552.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [582]
+          },
+          {
+            "level": 11,
+            "multipliers": [611.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [640.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [669.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [698.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [727.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [756.6]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "seed-quick_assist-barrage_of_raining_flowers",
+        "name": "Barrage of Raining Flowers (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nUnleash a barrage of lasers at enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [154]
+          },
+          {
+            "level": 2,
+            "multipliers": [168]
+          },
+          {
+            "level": 3,
+            "multipliers": [182]
+          },
+          {
+            "level": 4,
+            "multipliers": [196]
+          },
+          {
+            "level": 5,
+            "multipliers": [210]
+          },
+          {
+            "level": 6,
+            "multipliers": [224]
+          },
+          {
+            "level": 7,
+            "multipliers": [238]
+          },
+          {
+            "level": 8,
+            "multipliers": [252]
+          },
+          {
+            "level": 9,
+            "multipliers": [266]
+          },
+          {
+            "level": 10,
+            "multipliers": [280]
+          },
+          {
+            "level": 11,
+            "multipliers": [294]
+          },
+          {
+            "level": 12,
+            "multipliers": [308]
+          },
+          {
+            "level": 13,
+            "multipliers": [322]
+          },
+          {
+            "level": 14,
+            "multipliers": [336]
+          },
+          {
+            "level": 15,
+            "multipliers": [350]
+          },
+          {
+            "level": 16,
+            "multipliers": [364]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "seed-assist_follow_up-crimson_core_burst",
+        "name": "Crimson Core Burst (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleash continuous floating turret attacks at enemies ahead, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [456]
+          },
+          {
+            "level": 2,
+            "multipliers": [497.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [539]
+          },
+          {
+            "level": 4,
+            "multipliers": [580.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [622]
+          },
+          {
+            "level": 6,
+            "multipliers": [663.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [705]
+          },
+          {
+            "level": 8,
+            "multipliers": [746.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [788]
+          },
+          {
+            "level": 10,
+            "multipliers": [829.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [871]
+          },
+          {
+            "level": 12,
+            "multipliers": [912.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [954]
+          },
+          {
+            "level": 14,
+            "multipliers": [995.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1037]
+          },
+          {
+            "level": 16,
+            "multipliers": [1078.5]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "seed-special_attack-withered_in_frost",
+        "name": "Withered in Frost (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nThrow a steel wheel that traces a curved path, dealing Electric DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [47.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [52.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [56.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [60.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [65.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [69.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [74.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [78.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [82.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [87.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [91.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [96.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [100.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [104.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [109.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [113.7]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "seed-ex_special_attack-raining_iron_petals",
+        "name": "Raining Iron Petals (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nEnter flight mode, where Seed can move in four directions, and unleash a continuous barrage of missiles, dealing massive Electric DMG. Hold [EX] to extend the barrage duration while continuously consuming Energy.\n\nDuring flight, release [EX] to trigger /bEX Special Attack: Raining Iron Petals - Away//b. Upon consuming 60 Energy points in one flight, automatically trigger /bBasic Attack: Falling Petals - Slaughter//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [683.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [745.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [807.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [870]
+          },
+          {
+            "level": 5,
+            "multipliers": [932.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [994.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [1056.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [1118.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1181]
+          },
+          {
+            "level": 10,
+            "multipliers": [1243.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [1305.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1367.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [1429.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1492]
+          },
+          {
+            "level": 15,
+            "multipliers": [1554.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1616.4]
+          }
+        ]
+      },
+      {
+        "id": "seed-ex_special_attack-raining_iron_petals_away",
+        "name": "Raining Iron Petals - Away (EX Special Attack)",
+        "description": "During /bEX Special Attack: Raining Iron Petals//b, release [EX] to activate:\n\nUnleash rapid cannon fire, dealing Electric DMG. Does not accumulate /bSteel Charge//b on hit. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [18.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [20.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [21.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [23.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [25.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [26.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [28.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [30.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [32]
+          },
+          {
+            "level": 10,
+            "multipliers": [33.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [35.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [37.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [38.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [40.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [42.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [43.9]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "seed-chain_attack-tempest_of_frosty_petals",
+        "name": "Tempest of Frosty Petals (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nSummons her mech for protection, then launches cannon shots and a barrage of missiles, dealing massive Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [734.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [801]
+          },
+          {
+            "level": 3,
+            "multipliers": [867.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [934.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [1001.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [1068.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [1135]
+          },
+          {
+            "level": 8,
+            "multipliers": [1201.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1268.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1335.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1402.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1469]
+          },
+          {
+            "level": 13,
+            "multipliers": [1535.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1602.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1669.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [1736.2]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "seed-ultimate-clockwork_garden_bloom",
+        "name": "Clockwork Garden - Bloom! (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nSeed will pilot the mech personally, raining down missiles and a meteor shower of rockets, then performing a jumping smash, dealing massive Electric DMG. After using this skill, accumulate 60 /bSteel Charge//b. Does not accumulate /bSteel Charge//b on hit. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [3249.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [3545.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [3840.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [4136.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [4431.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [4727.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [5022.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [5318.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [5613.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [5909.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [6204.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [6500.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [6795.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [7091.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [7386.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [7682.2]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "seed-mindscape-theory_of_the_heart",
+        "name": "Basic Attack: Falling Petals - Slaughter - Additional DMG (Mindscape Cinema N°6)",
+        "description": "Seed's CRIT DMG increases by 50%. When using /bBasic Attack: Falling Petals - Slaughter//b, fires 3 additional laser beams, each dealing 165% of ATK as DMG. This effect can trigger once every 3s.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1 Laser Beam",
+            "damageType": "electric"
+          },
+          {
+            "name": "2 Laser Beams",
+            "damageType": "electric"
+          },
+          {
+            "name": "3 Laser Beams",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [165, 330, 495]
+          }
+        ]
+      }
+    ]
+  }
+}

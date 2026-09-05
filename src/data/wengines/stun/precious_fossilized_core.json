@@ -1,0 +1,26 @@
+{
+  "id": "precious_fossilized_core",
+  "name": "Precious Fossilized Core",
+  "rarity": "A",
+  "specialty": "Stun",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Impact%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.15
+  },
+
+  "ingameEffects": [
+    {
+      "id": "precious_fossilized_core-behemoth_hunter_core",
+      "source": "wEngine",
+      "label": "Behemoth Hunter Core (W-Engine Passive)",
+      "description": "When the target's HP is no lower than 50%, the equipper inflicts more Daze. When the target's HP is no lower than 75%, this bonus is further enhanced.",
+      "shortDescription": "This w-engine does not affect the equipper's stats.",
+      "target": "self",
+      "infoOnly": true
+    }
+  ]
+}

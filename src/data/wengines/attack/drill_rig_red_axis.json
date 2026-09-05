@@ -1,0 +1,118 @@
+{
+  "id": "drill_rig_red_axis",
+  "name": "Drill Rig - Red Axis",
+  "rarity": "A",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 624,
+    "advanced": 0.5
+  },
+
+  "ingameEffects": [
+    {
+      "id": "drill_rig_red_axis-hells_generator",
+      "source": "discSet",
+      "label": "Hell's Generator (W-Engine)",
+      "description": "When launching an EX Special Attack or Chain Attack, Electric DMG from Basic Attacks and Dash Attacks increases by a percentage for 10s. This effect can trigger once every 15s.",
+      "shortDescription": "Increases the equipper's Electric DMG from Basic Attacks and Dash Attacks.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "basic",
+                "value": 0.5
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.5
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "basic",
+                "value": 0.575
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.575
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "basic",
+                "value": 0.65
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.65
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "basic",
+                "value": 0.725
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.725
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "basic",
+                "value": 0.8
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "electric",
+                "skillType": "dash",
+                "value": 0.8
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

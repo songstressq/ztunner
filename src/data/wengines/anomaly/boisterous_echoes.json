@@ -1,0 +1,79 @@
+{
+  "id": "boisterous_echoes",
+  "name": "Boisterous Echoes",
+  "rarity": "A",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Anomaly Proficiency",
+
+  "stats": {
+    "base": 594,
+    "advanced": 75
+  },
+
+  "ingameEffects": [
+    {
+      "id": "boisterous_echoes-resounding_drum",
+      "source": "wEngine",
+      "sourceId": "boisterous_echoes",
+      "label": "Resounding Drum (W-Engine Passive)",
+      "description": "When the equipper triggers the Vortex effect, they gain energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals increased DMG.",
+      "shortDescription": "Increases the equipper's DMG by a percentage.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.115
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.132
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.15
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.167
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.184
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+/*         MAIN DROPDOWN           */
+
+.neon-trigger {
+  position: relative;
+  font-family: ZZZ;
+  border-radius: 8px;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid color-mix(in srgb, var(--theme) 75%, gray);
+  min-width: 0;
+  box-shadow:
+    inset 0 0 10px color-mix(in srgb, var(--theme) 40%, transparent),
+    0 0 9px 3px color-mix(in srgb, var(--theme) 10%, transparent);
+}
+
+/* FLECHITA ▼ */
+.neon-trigger::after {
+  content: "▼";
+  position: absolute;
+  right: var(--text-14_4px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--text-12px);
+  color: var(--theme);
+  transition: transform 0.25s ease;
+}
+
+.neon-trigger:hover {
+  color: white;
+  box-shadow:
+    inset 0 0 10px color-mix(in srgb, var(--theme) 60%, transparent),
+    0 0 9px 3px color-mix(in srgb, var(--theme) 20%, transparent);
+}
+
+.neon-trigger__text {
+  min-width: 0;
+  max-width: calc(100% - 2.3em);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  text-align: left;
+}
+
+.neon-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: rgba(110, 110, 110, 0.75);
+  border: 2px solid color-mix(in srgb, var(--theme) 75%, gray);
+  border-radius: 0.5em;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--theme) 40%, transparent);
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0.7);
+  transform-origin: top;
+  animation: neonDropdownOpen 0.22s ease forwards;
+  max-height: 250px; /* 👈 importante */
+  overflow-y: auto; /* 👈 scroll interno */
+  color: white;
+  overscroll-behavior: none;
+}
+
+@keyframes neonDropdownOpen {
+  from {
+    opacity: 0;
+    transform: scaleY(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.neon-option {
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    padding-left 0.15s ease;
+  color: white;
+}
+
+/* DEFAULT */
+.neon-dropdown--default {
+  max-height: min(260px, calc(100vh - 20px));
+  font-size: var(--text-13_6px);
+}
+
+.neon-dropdown--default .neon-option {
+  padding: var(--spacing-7px);
+  font-size: var(--home-16px);
+}
+
+.neon-dropdown--default .neon-option:hover:not(.neon-option--disabled) {
+  background: color-mix(in srgb, var(--theme) 20%, transparent);
+  padding-left: var(--padding-20px);
+  border-left: 2px solid var(--theme);
+}
+
+/* MAIN STAT */
+.neon-dropdown--main {
+  max-height: min(220px, calc(100vh - 20px));
+  font-size: var(--home-12_8px);
+}
+
+.neon-dropdown--main .neon-option {
+  padding: var(--padding-8px);
+  font-size: var(--home-16px);
+}
+
+.neon-dropdown--main .neon-option:hover:not(.neon-option--disabled) {
+  background: color-mix(in srgb, var(--theme) 20%, transparent);
+  padding-left: var(--padding-20px);
+  border-left: 2px solid var(--theme);
+}
+
+/* SUBSTATS */
+.neon-dropdown--substat {
+  max-height: min(150px, calc(100vh - 16px));
+  font-size: var(--home-8px);
+}
+
+.neon-dropdown--substat .neon-option {
+  padding: var(--padding-5px) var(--spacing-7px);
+  font-size: var(--home-14_4px);
+  letter-spacing: 0.4px;
+}
+
+.neon-dropdown--substat .neon-option:hover:not(.neon-option--disabled) {
+  background: color-mix(in srgb, var(--theme) 20%, transparent);
+  padding-left: var(--padding-20px);
+  border-left: 2px solid var(--theme);
+}
+
+.neon-option--disabled {
+  color: rgba(255, 255, 255, 0.35);
+  cursor: not-allowed;
+  pointer-events: none;
+  background: transparent;
+  text-shadow: none;
+}
+
+/* WRAPPER GENERAL */
+.neon-select-wrapper {
+  position: relative;
+  width: 100%;
+  --theme: #ffffff;
+}
+
+.neon-dropdown--skill {
+  max-height: min(320px, calc(100vh - 80px));
+  font-size: var(--home-13_4px);
+  padding: var(-padding-4px) 0;
+}
+
+/* Opciones normales */
+.neon-dropdown--skill .neon-option {
+  font-size: var(--home-16px);
+  padding: var(--padding-4px) var(--padding-6px) var(--padding-3px)
+    var(--text-24px);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.neon-dropdown--skill .neon-option:hover:not(.neon-option--disabled) {
+  background: color-mix(in srgb, var(--theme) 20%, transparent);
+  padding-left: var(--spacing-30px);
+  border-left: 2px solid var(--theme);
+}
+
+/* Grupos (opciones disabled) */
+.neon-dropdown--skill .neon-option--disabled {
+  font-weight: bold;
+  color: color-mix(in srgb, var(--theme) 80%, #888);
+  font-size: var(--home-14px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: var(--padding-6px) var(--padding-6px) var(--padding-3px)
+    var(--text-14px);
+  background: transparent !important;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Enemy Selector - Variante para EnemySelector */
+.neon-dropdown--enemy {
+  max-height: min(280px, calc(100vh - 80px));
+  font-size: var(--home-13_4px);
+  padding: var(--padding-4px) 0;
+}
+
+.neon-dropdown--enemy .neon-option {
+  font-size: var(--home-15px);
+  padding: var(--padding-6px) var(--padding-6px) var(--padding-6px)
+    var(--text-14px);
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neon-dropdown--enemy .neon-option:hover:not(.neon-option--disabled) {
+  background: color-mix(in srgb, var(--theme) 20%, transparent);
+  padding-left: var(--padding-20px);
+  border-left: 2px solid var(--theme);
+}
+
+.neon-dropdown--enemy .neon-option:last-child {
+  border-bottom: none;
+}
+
+.neon-dropdown--default .neon-option--disabled,
+.neon-dropdown--enemy .neon-option--disabled,
+.neon-dropdown--skill .neon-option--disabled {
+  color: rgba(255, 255, 255, 0.35);
+  cursor: not-allowed;
+  pointer-events: none;
+  background: transparent;
+  text-shadow: none;
+}
+
+.neon-empty-message {
+  padding: var(--padding-8px);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+  font-size: var(--text-14px);
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+}

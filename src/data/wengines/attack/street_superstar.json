@@ -1,0 +1,84 @@
+{
+  "id": "street_superstar",
+  "name": "Street Superstar",
+  "rarity": "A",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "street_superstar-flaming_bars",
+      "source": "discSet",
+      "label": "Flaming Bars (W-Engine)",
+      "description": "Whenever a squad member launches a Chain Attack, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own Ultimate, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by a percentage.",
+      "shortDescription": "Increases the equipper's Ultimate DMG, stacking up to 3 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.15
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.172
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.195
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.217
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.24
+              }
+            ]
+          }
+        ],
+        "maxStacks": 3,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

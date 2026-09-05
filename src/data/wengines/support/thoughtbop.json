@@ -1,0 +1,156 @@
+{
+  "id": "thoughtbop",
+  "name": "Thoughtbop",
+  "rarity": "S",
+  "specialty": "Support",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.6
+  },
+
+  "ingameEffects": [
+    {
+      "id": "thoughtbop-decibel_monologue-energy_regen",
+      "source": "wEngine",
+      "sourceId": "thoughtbop",
+      "label": "Decibel Monologue (W-Engine Passive)",
+      "description": "While not the active character, the equipper's Energy Regen is increased. When the equipper uses an EX Special Attack and deals Physical DMG, all squad members gain a buff that increases their DMG dealt for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain additional ATK. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "The equipper's Energy Regen is increased while off-field.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "energyRegenRaw": 0.6 }
+          },
+          {
+            "level": 2,
+            "stats": { "energyRegenRaw": 0.69 }
+          },
+          {
+            "level": 3,
+            "stats": { "energyRegenRaw": 0.78 }
+          },
+          {
+            "level": 4,
+            "stats": { "energyRegenRaw": 0.87 }
+          },
+          {
+            "level": 5,
+            "stats": { "energyRegenRaw": 0.96 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    },
+
+    {
+      "id": "thoughtbop-decibel_monologue-dmg_bonus",
+      "source": "wEngine",
+      "sourceId": "thoughtbop",
+      "label": "Decibel Monologue (W-Engine Passive)",
+      "description": "While not the active character, the equipper's Energy Regen is increased. When the equipper uses an EX Special Attack and deals Physical DMG, all squad members gain a buff that increases their DMG dealt for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain additional ATK. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "All squad members' DMG is increased for 40s, stacking up to 2 times.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.125
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.143
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.161
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.179
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.2
+              }
+            ]
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    },
+
+    {
+      "id": "thoughtbop-decibel_monologue-atk_percent",
+      "source": "wEngine",
+      "sourceId": "thoughtbop",
+      "label": "Decibel Monologue (W-Engine Passive)",
+      "description": "While not the active character, the equipper's Energy Regen is increased. When the equipper uses an EX Special Attack and deals Physical DMG, all squad members gain a buff that increases their DMG dealt for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain additional ATK. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "At full stacks, all squad members' ATK is increased.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "atkPercentRaw": 0.1 }
+          },
+          {
+            "level": 2,
+            "stats": { "atkPercentRaw": 0.115 }
+          },
+          {
+            "level": 3,
+            "stats": { "atkPercentRaw": 0.13 }
+          },
+          {
+            "level": 4,
+            "stats": { "atkPercentRaw": 0.145 }
+          },
+          {
+            "level": 5,
+            "stats": { "atkPercentRaw": 0.16 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    }
+  ]
+}

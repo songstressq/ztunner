@@ -1,0 +1,89 @@
+{
+  "id": "glided_blossom",
+  "name": "Gilded Blossom",
+  "rarity": "A",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "glided_blossom_extraordinary_anti_theft_measures",
+      "source": "wEngine",
+      "sourceId": "glided_blossom",
+      "label": "Extraordinary Anti-Theft Measures (W-Engine Passive)",
+      "description": "ATK increases by a percentage, and DMG dealt by EX Special Attacks is increased.",
+      "shortDescription": "Increases the equipper's ATK and EX Special Attack DMG by a percentage.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "atkPercent": 0.06 },
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.15
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "stats": { "atkPercent": 0.069 },
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.172
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "stats": { "atkPercent": 0.078 },
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.195
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "stats": { "atkPercent": 0.087 },
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.218
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "stats": { "atkPercent": 0.096 },
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.24
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1172 @@
+{
+  "id": "trigger",
+  "name": "Trigger",
+  "specialty": "Stun",
+  "faction": "Obol Squad",
+  "attribute": "Electric",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Trigger",
+  "attributeIcon": "Electric",
+  "themeColor": "#f9df78",
+  "baseStats": {
+    "hp": 7923.2,
+    "atk": 675.75,
+    "def": 600.59
+  },
+  "combatBase": {
+    "impact": 113,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 95,
+    "anomalyMastery": 96,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "Impact", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "trigger-mindscape_1-sharpened_senses",
+      "source": "mindscape",
+      "sourceId": "trigger-mindscape_1",
+      "label": "Sharpened Senses (Mindscape Cinema N°1)",
+      "description": "The Stun DMG Multiplier applied through Core Passive: Soul-Searching Gaze is increased by an additional 20%. When activating Basic Attack: Harmonizing Shot, the cooldown is reduced to 2s. Purge gained upon hitting an enemy with the continuous fire or charged counter in Sniper Stance increases by 25%. Maximum Purge increases to 125.",
+      "shortDescription": "This mindscape cinema does not affect Trigger's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "trigger-mindscape_2-ether_vision",
+      "source": "mindscape",
+      "sourceId": "trigger-mindscape_2",
+      "label": "Ether Vision (Mindscape Cinema N°2)",
+      "description": "Upon using an Aftershock, Trigger gains 1 stack of Hunter's Gaze. When executing a Finishing Move in Sniper Stance, Trigger gains 2 stacks of Hunter's Gaze. Each stack of Hunter's Gaze increases all squad members' CRIT DMG by 6%, stacking up to 4 times, and lasting 10s. Repeated triggers reset the duration.",
+      "shortDescription": "All squad members' CRIT DMG is increased by 6% for 10s, stacking up to 4 times.",
+      "target": "team",
+      "perStack": {
+        "critDmg": 0.06
+      },
+      "maxStacks": 4
+    },
+    {
+      "id": "trigger-mindscape_4-concealment",
+      "source": "mindscape",
+      "sourceId": "trigger-mindscape_4",
+      "label": "Concealment (Mindscape Cinema N°4)",
+      "description": "When Trigger enters or extends Coordinated Support, while the state is active, the next time other squad members trigger Basic Attack: Harmonizing Shot or Basic Attack: Harmonizing Shot - Tartarus, it will trigger Disconnect upon hitting an enemy, dealing additional DMG equal to 200% of Trigger's ATK and inflict Daze equal to 120% of Trigger's Impact. This skill has a relatively high Interrupt Level.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    },
+    {
+      "id": "trigger-mindscape_6-beyond_the_river_of_the_dead",
+      "source": "mindscape",
+      "sourceId": "trigger-mindscape_6",
+      "label": "Beyond the River of the Dead (Mindscape Cinema N°6)",
+      "description": "Upon entering the battlefield, Trigger gains 5 Armor Break Rounds. For every 25 Purge consumed, Trigger gains 1 additional Armor Break Round, up to a maximum of 5 rounds. While possessing Armor Break Rounds, when Trigger hits a target in Sniper Stance, 1 Armor Break Round is consumed to deal additional Electric DMG equal to 1,200% of Trigger's ATK. In addition, this instance of DMG is additionally increased by 50%. This effect can trigger once every 0.2s.",
+      "shortDescription": "Trigger DMG from Armor Break Rounds is increased by 50%. Armor Break Rounds' additional DMG is available in the Damage Calculator.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["trigger-mindscape-armor_break_rounds"],
+          "value": 0.5
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "trigger-basic_attack-cold_bore_shot",
+        "name": "Cold-Bore Shot (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 4 shots ahead. The first 3 hits deal Physical DMG, the 4th hit deals Electric DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [34.5, 56.9, 111.7, 243]
+          },
+          {
+            "level": 2,
+            "multipliers": [37.7, 62.1, 121.7, 265.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [40.9, 67.3, 131.7, 287.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [44.1, 72.5, 141.7, 309.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [47.3, 77.7, 151.7, 331.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [50.5, 82.9, 161.7, 353.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [53.7, 88.1, 171.7, 375.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [56.9, 93.3, 181.7, 397.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [60.1, 98.5, 191.7, 419.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [63.3, 103.7, 201.7, 441.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [66.5, 108.9, 211.7, 464]
+          },
+          {
+            "level": 12,
+            "multipliers": [69.7, 114.1, 221.7, 486.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [72.9, 119.3, 231.7, 508.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [76.1, 124.5, 241.7, 530.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [79.3, 129.7, 251.7, 552.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [82.5, 134.9, 261.7, 574.5]
+          }
+        ]
+      },
+      {
+        "id": "trigger-basic_attack-silenced_shot",
+        "name": "Silenced Shot (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nTrigger enters the /bSniper Stance//b and fires forward continuously, dealing Electric DMG.\n\nWhile continually firing, when attacked by an enemy, Trigger will automatically evade. This effect can trigger once every 8s. While continually firing, you can drag the stick/joystick to adjust her position to the left/right/back.\n\nAutomatically evading attacks or adjusting position when about to be hit will trigger a /bPerfect Dodge//b, followed by an automatic charged counter.\n\nAfter releasing [BASIC], Trigger will step back, ready her weapon and unleash a /bFinishing Move//b, then exit /bSniper Stance//b. Character is invulnerable during the charged counter and /bFinishing Move//b. When the continuous firing or the charged counter hits an enemy, Trigger gains 25 /bPurge//b, up to a maximum of 100 /bPurge//b.\n\nWhen the /bFinishing Move//b hits an enemy, it triggers the /bQuick Assist//b of the previous character in the squad. A /bQuick Assist//b can only be triggered through this method once every 25s.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Shot DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Counter DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Finishing Move DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [47.6, 233.9, 131.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [52, 255.2, 143.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [56.4, 276.5, 155.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [60.8, 297.8, 167.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [65.2, 319.1, 179.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [69.6, 340.4, 191.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [74, 361.7, 203.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [78.4, 383, 215.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [82.8, 404.3, 227.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [87.2, 425.6, 239.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [91.6, 446.9, 251.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [96, 468.2, 263.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [100.4, 489.5, 275.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [104.8, 510.8, 287.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [109.2, 532.1, 299.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [113.6, 553.4, 311.2]
+          }
+        ]
+      },
+      {
+        "id": "trigger-basic_attack-harmonizing_shot",
+        "name": "Harmonizing Shot (Basic Attack)",
+        "description": "When Trigger has /bPurge//b, use another active character in the squad to hit an enemy with a /bBasic Attack//b, /bDodge Counter//b, /bSpecial Attack//b, /bDash Attack//b or /bQuick Assist//b to activate:\n\nWhile encircling the enemy, rapidly fire two shots at the enemy, dealing Electric DMG. Upon activating this skill, consume 3 /bPurge//b. Character is invulnerable while using this skill. /bBasic Attack: Harmonizing Shot//b is an /bAftershock//b attack. The squad can trigger /bBasic Attack: Harmonizing Shot//b once every 3s.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Continuous Fire DMG Multiplier x2",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [47.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [52.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [56.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [61.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [65.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [69.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [74.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [78.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [83.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [87.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [91.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [96.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [100.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [105.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [109.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [113.9]
+          }
+        ]
+      },
+      {
+        "id": "trigger-basic_attack-harmonizing_shot_tartarus",
+        "name": "Harmonizing Shot - Tartarus (Basic Attack)",
+        "description": "When Trigger has /bPurge//b, use another active character in the squad to hit an enemy with a heavy attack from an /bEX Special Attack//b, /bAssist Follow-Up//b, or /bUltimate//b to activate:\n\nWhile encircling the enemy, rapidly fires three shots at the enemy, followed by a /bFinishing Move//b, dealing Electric DMG. Upon activating this skill, consume 5 /bPurge//b. Character is invulnerable while using this skill. /bBasic Attack: Harmonizing Shot - Tartarus//b is an /bAftershock//b attack.\n\nThe same skill type can trigger /bBasic Attack: Harmonizing Shot - Tartarus//b up to 2 times within 20s for the entire squad.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Continuous Fire DMG Multiplier x3",
+            "damageType": "electric"
+          },
+          {
+            "name": "Finishing Move DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [22.6, 45.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [24.7, 49.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [26.8, 53.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [28.9, 57.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [31, 62]
+          },
+          {
+            "level": 6,
+            "multipliers": [33.1, 66.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [35.2, 70.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [37.3, 74.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [39.4, 78.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [41.5, 83]
+          },
+          {
+            "level": 11,
+            "multipliers": [43.6, 87.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [45.7, 91.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [47.8, 95.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [49.9, 99.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [52, 104]
+          },
+          {
+            "level": 16,
+            "multipliers": [54.1, 108.2]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "trigger-dash_attack-vengeful_specter",
+        "name": "Vengeful Specter (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nRapidly lift the gun and fire, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [51.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [56.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [60.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [65.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [70.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [74.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [79.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [84.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [89]
+          },
+          {
+            "level": 10,
+            "multipliers": [93.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [98.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [103.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [107.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [112.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [117.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [121.9]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "trigger-dodge_counter-condemned_soul",
+        "name": "Condemned Soul (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nRotate and fire a quick shot at enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [219.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [239.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [259.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [279.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [299.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [319.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [339.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [359.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [379.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [399.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [419.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [439.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [459.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [479.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [499.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [519.7]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "trigger-quick_assist-cold_bore_cover_fire",
+        "name": "Cold-Bore Cover Fire (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nRotate and fire a quick shot at enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "quick_assist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [84.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [92.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [99.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [107.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [115.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [122.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [130.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [138.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [146]
+          },
+          {
+            "level": 10,
+            "multipliers": [153.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [161.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [169.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [176.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [184.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [192.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [199.9]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "trigger-assist_follow_up-piercing_thunder",
+        "name": "Piercing Thunder (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleash a series of slashes at enemies ahead, followed by a powerful charged shot after landing, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [432.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [472.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [511.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [551.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [590.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [629.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [669.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [708.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [748.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [787.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [826.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [866.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [905.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [945.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [984.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1023.9]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "trigger-special_attack-spectral_flash",
+        "name": "Spectral Flash (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLunge forward with a slash, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [71.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [78]
+          },
+          {
+            "level": 3,
+            "multipliers": [84.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [91]
+          },
+          {
+            "level": 5,
+            "multipliers": [97.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [104]
+          },
+          {
+            "level": 7,
+            "multipliers": [110.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [117]
+          },
+          {
+            "level": 9,
+            "multipliers": [123.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [130]
+          },
+          {
+            "level": 11,
+            "multipliers": [136.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [143]
+          },
+          {
+            "level": 13,
+            "multipliers": [149.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [156]
+          },
+          {
+            "level": 15,
+            "multipliers": [162.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [169]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "trigger-ex_special_attack-flash_burial",
+        "name": "Flash Burial (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLunge forward with a slash, then leap up with a powerful shot to the ground, dealing massive Electric DMG. Character is invulnerable while using this skill.\n\nWhen this skill hits an enemy, it triggers the /bQuick Assist//b of the previous character in the squad.\n\nWhen this skill hits an enemy, Trigger enters /bCoordinated Support//b. While in this state, when another active character in the squad hits an enemy with any attack, it triggers a /bBasic Attack: Harmonizing Shot//b without consuming /bPurge//b and with no cooldown restrictions. This state lasts 8s and the effect can trigger up to 4 times.\n\nRepeatedly entering /bCoordinated Support//b extends the duration and grants additional triggers, lasting a maximum of 20s and triggering up to a maximum of 10 times.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [634.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [692.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [749.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [807.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [865.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [922.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [980.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [1038.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [1096]
+          },
+          {
+            "level": 10,
+            "multipliers": [1153.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1211.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1269.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1326.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1384.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1442.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1499.9]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "trigger-chain_attack-stygian_guide",
+        "name": "Stygian Guide (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes continuous powerful shots forward, dealing massive Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [574.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [627]
+          },
+          {
+            "level": 3,
+            "multipliers": [679.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [731.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [783.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [836.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [888.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [940.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [993.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1045.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1097.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1150]
+          },
+          {
+            "level": 13,
+            "multipliers": [1202.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1254.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1306.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1359.2]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "trigger-ultimate-underworld_requiem",
+        "name": "Underworld Requiem (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nDeliver a powerful shot at enemies in a large area ahead, dealing massive Electric DMG. Character is invulnerable while using this skill.\n\nWhen the skill hits an enemy, it triggers the /bQuick Assist//b of the previous character in the squad.\n\nWhen the skill hits an enemy, Trigger enters /bCoordinated Support//b. While in this state, when another active character in the squad hits an enemy with any attack, it triggers a /bBasic Attack: Harmonizing Shot//b without consuming /bPurge//b and with no cooldown restrictions. This state lasts 12s and the effect can trigger up to 6 times.\n\nRepeatedly entering /bCoordinated Support//b extends the duration and grants additional triggers, lasting a maximum of 20s and triggering up to a maximum of 10 times.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1480.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [1615.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [1749.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [1884.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [2018.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [2153.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [2288.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [2422.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [2557.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [2691.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [2826.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [2961.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [3095.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [3230.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [3364.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [3499.5]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "trigger-mindscape-disconnect",
+        "name": "Concealment - Disconnect (Mindscape Cinema N°4)",
+        "description": "When Trigger enters or extends /bCoordinated Support//b, while the state is active, the next time other squad members trigger /bBasic Attack: Harmonizing Shot//b or /bBasic Attack: Harmonizing Shot - Tartarus//b, it will trigger /bDisconnect//b upon hitting an enemy, dealing additional DMG equal to 200% of Trigger's ATK and inflict Daze equal to 120% of Trigger's Impact. This skill has a relatively high Interrupt Level.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [200]
+          }
+        ]
+      },
+      {
+        "id": "trigger-mindscape-armor_break_rounds",
+        "name": "Beyond the River of the Dead - Armor Break Rounds (Mindscape Cinema N°6)",
+        "description": "Upon entering the battlefield, Trigger gains 5 /bArmor Break Rounds//b. For every 25 /bPurge//b consumed, Trigger gains 1 additional /bArmor Break Round//b, up to a maximum of 5 rounds.\n\nWhile possessing /bArmor Break Rounds//b, when Trigger hits a target in /bSniper Stance//b, 1 /bArmor Break Round//b is consumed to deal additional Electric DMG equal to 1,200% of Trigger's ATK.\n\nIn addition, this instance of DMG is additionally increased by 50%. This effect can trigger once every 0.2s.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1200]
+          }
+        ]
+      }
+    ]
+  }
+}

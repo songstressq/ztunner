@@ -1,0 +1,1138 @@
+{
+  "id": "zhu_yuan",
+  "name": "Zhu Yuan",
+  "specialty": "Attack",
+  "faction": "Criminal Investigation Special Response Team",
+  "attribute": "Ether",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Zhu Yuan",
+  "attributeIcon": "Ether",
+  "themeColor": "#347BC0",
+  "baseStats": {
+    "hp": 7482.7,
+    "atk": 844.3,
+    "def": 600.59
+  },
+  "combatBase": {
+    "impact": 90,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 92,
+    "anomalyMastery": 93,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "zhu_yuan-core-special_ops_ammunition",
+      "source": "core",
+      "sourceId": "zhu_yuan-core",
+      "label": "Special Ops Ammunition (Core Passive)",
+      "description": "When Zhu Yuan is under Suppressive Mode, using Enhanced Shotshells increases her DMG by 40%. When attacking Stunned enemies, this DMG buff is increased by an additional 40%. When Zhu Yuan enters the battlefield, she immediately gains 6 Enhanced Shotshells.",
+      "shortDescription": "Zhu Yuan's DMG from Basic Attack: Please Do Not Resist! and Dash Attack: Overwhelming Firepower is increased by 40%, further increasing by the same amount if the target is stunned.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "zhu_yuan-basic_attack-please_do_not_resist",
+            "zhu_yuan-dash_attack-overwhelming_firepower"
+          ],
+          "value": 0.4
+        }
+      ],
+      "maxStacks": 2
+    },
+    {
+      "id": "zhu_yuan-core-tactical_coordination",
+      "source": "core",
+      "sourceId": "zhu_yuan-core",
+      "label": "Tactical Coordination (Additional Ability)",
+      "description": "When another character in your squad is a Support character or shares the same Faction:\n\nZhu Yuan's CRIT Rate is increased by 30% 10s after using an EX Special Attack, Chain Attack, or Ultimate.",
+      "shortDescription": "Zhu Yuan's CRIT Rate is increased by 30%.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.3
+      }
+    },
+    {
+      "id": "zhu_yuan-mindscape_1-quick_reload",
+      "source": "mindscape",
+      "sourceId": "zhu_yuan-mindscape_1",
+      "label": "Quick Reload (Mindscape Cinema N°1)",
+      "description": "When Zhu Yuan activates a Chain Attack/Ultimate, she gains the Quick Reload effect. When Zhu Yuan has the Quick Reload effect and uses up all Enhanced Shotshells, the Quick Reload effect will be consumed to instantly gain 6/9 Enhanced Shotshells.",
+      "shortDescription": "This mindscape cinema does not affect Zhu Yuan's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "zhu_yuan-mindscape_2-ether_ember",
+      "source": "mindscape",
+      "sourceId": "zhu_yuan-mindscape_2",
+      "label": "Ether Ember (Mindscape Cinema N°2)",
+      "description": "In Suppressive Mode, Zhu Yuan's Anti-Interrupt level is increased and DMG taken reduced by 10%. When Zhu Yuan hits an enemy with Enhanced Shotshells, the target takes 10% more Ether DMG from Basic Attack: Please Do Not Resist and Dash Attack: Overwhelming Firepower, stacking up to 5 times and lasting for 5s. Each shot adds one stack of this effect, and repeated triggers reset the duration.",
+      "shortDescription": "Zhu Yuan's Ether DMG from Basic Attack: Please Do Not Resist! and Dash Attack: Overwhelming Firepower is increased by 10% for 5s, stacking up to 5 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "elementExclusive",
+          "element": "ether",
+          "value": 0.1,
+          "appliesTo": [
+            "zhu_yuan-basic_attack-please_do_not_resist",
+            "zhu_yuan-dash_attack-overwhelming_firepower"
+          ]
+        }
+      ],
+      "maxStacks": 5
+    },
+    {
+      "id": "zhu_yuan-mindscape_4-ether_perforaton",
+      "source": "mindscape",
+      "sourceId": "zhu_yuan-mindscape_4",
+      "label": "Ether Perforation (Mindscape Cinema N°4)",
+      "description": "When Zhu Yuan hits an enemy with Enhanced Shotshells, her Basic Attack: Please Do Not Resist and Dash Attack: Overwhelming Firepower ignore 25% of the target's Ether RES.",
+      "shortDescription": "Zhu Yuan's DMG from Basic Attack: Please Do Not Resist! and Dash Attack: Overwhelming Firepower ignores 25% of the target Ether RES.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "etherResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "zhu_yuan-basic_attack-please_do_not_resist",
+            "zhu_yuan-dash_attack-overwhelming_firepower"
+          ],
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "zhu_yuan-mindscape_6-expanded_energy_pack_iii",
+      "source": "mindscape",
+      "sourceId": "zhu_yuan-mindscape_6",
+      "label": "Expanded Energy Pack III (Mindscape Cinema N°6)",
+      "description": "When Zhu Yuan consumes a total of 12 Enhanced Shotshells, she receives the Ether Afterglow effect, and the Energy cost of the next EX Special Attack is reduced by 30. Launching an EX Special Attack will consume Ether Afterglow and shoot an additional 4-bullet Ether Buckshot. Each extra bullet deals DMG equal to 220% of Zhu Yuan's ATK.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "zhu_yuan-basic_attack-dont_move",
+        "name": "Don't Move! (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes a flurry of martial arts, bullets, and /bEther Buckshot//bs in a series of up to 5 attacks, dealing Physical DMG and Ether DMG. When the 4th or 5th hits strike an enemy, obtain 1 /bEnhanced Shotshell//b. A max of 1 can be obtained per activation of this /bBasic Attack//b.\n\nWhile using this skill, drag the joystick and press [BASIC] to activate /bDash Attack: Firepower Offensive//b and readjust to face the selected direction. While under /bAssault Mode//b, hold [BASIC] to switch to /bSuppressive Mode//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [43.1, 126.4, 137.3, 151, 162.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [47.1, 137.9, 149.8, 164.8, 177]
+          },
+          {
+            "level": 3,
+            "multipliers": [51.1, 149.4, 162.3, 178.6, 191.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [55.1, 160.9, 174.8, 192.4, 206.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [59.1, 172.4, 187.3, 206.2, 221.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [63.1, 183.9, 199.8, 220, 236.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [67.1, 195.4, 212.3, 233.8, 251]
+          },
+          {
+            "level": 8,
+            "multipliers": [71.1, 206.9, 224.8, 247.6, 265.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [75.1, 218.4, 237.3, 261.4, 280.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [79.1, 229.9, 249.8, 275.2, 295.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [83.1, 241.4, 262.3, 289, 310.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [87.1, 252.9, 274.8, 302.8, 325]
+          },
+          {
+            "level": 13,
+            "multipliers": [91.1, 264.4, 287.3, 316.6, 339.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [95.1, 275.9, 299.8, 330.4, 354.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [99.1, 287.4, 312.3, 344.2, 369.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [103.1, 298.9, 324.8, 358, 384.2]
+          }
+        ]
+      },
+      {
+        "id": "zhu_yuan-basic_attack-please_do_not_resist",
+        "name": "Please Do Not Resist (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nUnleash up to 3 Shotshell piercing attacks, dealing Physical DMG. If Zhu Yuan has /bEnhanced Shotshells//b upon firing, 1 /bEnhanced Shotshell//b will be consumed, dealing massive Ether DMG.\n\nWhile using this skill, drag the joystick to activate her /bDash Attack: Overwhelming Firepower//b and readjust to face the selected direction. While in /bSuppressive Mode//b, release /bBasic Attack//b to return to /bAssault Mode//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "1st-Hit DMG Multiplier (Ether)",
+            "damageType": "ether"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier (Ether)",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier (Ether)",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [53.7, 53.7, 160.9, 135.9, 135.9, 407.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [58.6, 58.6, 175.6, 148.3, 148.3, 444.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [63.5, 63.5, 190.3, 160.7, 160.7, 481.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [68.4, 68.4, 205, 173.1, 173.1, 519]
+          },
+          {
+            "level": 5,
+            "multipliers": [73.3, 73.3, 219.7, 185.5, 185.5, 556.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [78.2, 78.2, 234.4, 197.9, 197.9, 593.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [83.1, 83.1, 249.1, 210.3, 210.3, 630.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [88, 88, 263.8, 222.7, 222.7, 667.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [92.9, 92.9, 278.5, 235.1, 235.1, 704.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [97.8, 97.8, 293.2, 247.5, 247.5, 741.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [102.7, 102.7, 307.9, 259.9, 259.9, 778.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [107.6, 107.6, 322.6, 272.3, 272.3, 815.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [112.5, 112.5, 337.3, 284.7, 284.7, 852.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [117.4, 117.4, 352, 297.1, 297.1, 890]
+          },
+          {
+            "level": 15,
+            "multipliers": [122.3, 122.3, 366.7, 309.5, 309.5, 927.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [127.2, 127.2, 381.4, 321.9, 321.9, 964.2]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "zhu_yuan-dash_attack-firepower_offensive",
+        "name": "Firepower Offensive (Dash Attack)",
+        "description": "[/bAssault Mode//b] Press [BASIC] during a dodge to activate:\n\nUses handgun to attack, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [55.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [60.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [65.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [70.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [75.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [80.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [85.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [90.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [95.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [101]
+          },
+          {
+            "level": 11,
+            "multipliers": [106.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [111.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [116.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [121.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [126.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [131.6]
+          }
+        ]
+      },
+      {
+        "id": "zhu_yuan-dash_attack-overwhelming_firepower",
+        "name": "Overwhelming Firepower (Dash Attack)",
+        "description": "[/bSuppressive Mode//b] Drag the joystick during /bBasic Attack: Please Do Not Resist//b to activate:\n\nUnleashes a Shotshell piercing attack, dealign Physical DMG. If Zhu Yuan has /bEnhanced Shotshells//b when firing, 1 /bEnhanced Shotshell//b will be consumed, dealing massive Ether DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier (Physical)",
+            "damageType": "physical"
+          },
+          {
+            "name": "DMG Multiplier (Ether)",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [53.7, 135.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [58.6, 148.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [63.5, 160.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [68.4, 173.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [73.3, 185.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [78.2, 197.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [83.1, 210.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [88, 222.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [92.9, 235.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [97.8, 247.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [102.7, 259.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [107.6, 272.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [112.5, 284.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [117.4, 297.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [122.3, 309.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [127.2, 321.9]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "zhu_yuan-dodge_counter-fire_blast",
+        "name": "Fire Blast (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nShoots enemies in front with an /bEther Buckshot//b, dealing Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [176.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [192.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [209]
+          },
+          {
+            "level": 4,
+            "multipliers": [225.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [241.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [257.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [273.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [289.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [305.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [321.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [337.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [353.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [370]
+          },
+          {
+            "level": 14,
+            "multipliers": [386.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [402.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [418.3]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "zhu_yuan-quick_assist-covering_shot",
+        "name": "Covering Shot (Quick Assist)",
+        "description": "When the on-field character is launched in the air, press [ASSIST] to activate:\n\nShoots enemies in front with an /bEther Buckshot//b, dealing Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [51.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [56.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [60.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [65.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [70.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [74.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [79.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [84.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [89]
+          },
+          {
+            "level": 10,
+            "multipliers": [93.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [98.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [103.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [107.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [112.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [117.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [121.9]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "zhu_yuan-assist_follow_up-defensive_counter",
+        "name": "Defensive Counter (Assist Follow-Up)",
+        "description": "Press [BASIC] after an /bEvasive Assist//b to activate:\n\nAttack with a combination of martial arts and shotshells, dealing Physical DMG and Ether DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [355.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [388.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [420.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [453]
+          },
+          {
+            "level": 5,
+            "multipliers": [485.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [517.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [550.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [582.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [615]
+          },
+          {
+            "level": 10,
+            "multipliers": [647.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [679.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [712.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [744.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [777]
+          },
+          {
+            "level": 15,
+            "multipliers": [809.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [841.8]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "zhu_yuan-special_attack-buckshot_blast",
+        "name": "Buckshot Blast (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nShoots /bEther Buckshot//bs that deal Ether DMG. This can be repeated 3 times by repeatedly pressing /bSpecial Attack//b. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [18.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [20.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [21.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [23.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [25.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [26.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [28.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [30.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [32]
+          },
+          {
+            "level": 10,
+            "multipliers": [33.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [35.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [37.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [38.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [40.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [42.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [43.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "zhu_yuan-ex_special_attack-full_barrage",
+        "name": "Full Barrage (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nShoots a series of /bEther Buckshot//bs that explode and deal massive Ether DMG. Upon activation, gain 3 /bEnhanced Shotshells//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [587.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [640.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [694.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [747.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [801]
+          },
+          {
+            "level": 6,
+            "multipliers": [854.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [907.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [961.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [1014.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1068]
+          },
+          {
+            "level": 11,
+            "multipliers": [1121.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1174.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1228.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1281.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1335]
+          },
+          {
+            "level": 16,
+            "multipliers": [1388.4]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "zhu_yuan-chain_attack-eradication_mode",
+        "name": "Eradication Mode (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUses /bModified Master Firearm//b to execute a saturated attack, firing lasers and seeking missiles to deal massive Ether DMG. Upon activation, gain 3 /bEnhanced Shotshells//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [587.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [641]
+          },
+          {
+            "level": 3,
+            "multipliers": [694.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [748]
+          },
+          {
+            "level": 5,
+            "multipliers": [801.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [855]
+          },
+          {
+            "level": 7,
+            "multipliers": [908.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [962]
+          },
+          {
+            "level": 9,
+            "multipliers": [1015.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [1069]
+          },
+          {
+            "level": 11,
+            "multipliers": [1122.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [1176]
+          },
+          {
+            "level": 13,
+            "multipliers": [1229.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1283]
+          },
+          {
+            "level": 15,
+            "multipliers": [1336.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1390]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "zhu_yuan-ultimate-max_eradication_mode",
+        "name": "Max Eradication Mode (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUses /bModified Master Firearm//b to execute a saturated attack, firing lasers and seeking missiles to deal massive Ether DMG. Upon activation, gain 3 /bEnhanced Shotshells//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1977.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [2157.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [2337.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [2517]
+          },
+          {
+            "level": 5,
+            "multipliers": [2696.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [2876.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [3056.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [3236.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [3416]
+          },
+          {
+            "level": 10,
+            "multipliers": [3595.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [3775.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [3955.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [4135.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [4315]
+          },
+          {
+            "level": 15,
+            "multipliers": [4494.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [4674.6]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "zhu_yuan-mindscape-ether_buckshot",
+        "name": "Ether Buckshot (Mindscape Cinema N°6)",
+        "description": "When Zhu Yuan consumes a total of 12 /bEnhanced Shotshells//b, she receives the /bEther Afterglow//b effect, and the Energy cost of the next /bEX Special Attack//b is reduced by 30.\n\nLaunching an /bEX Special Attack//b will consume /bEther Afterglow//b and shoot an additional 4-bullet /bEther Buckshot//b. Each extra bullet deals DMG equal to 220% of Zhu Yuan's ATK.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1 Bullet",
+            "damageType": "ether"
+          },
+          {
+            "name": "4 Bullets",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [220, 880]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1252 @@
+{
+  "id": "anton",
+  "name": "Anton Ivanov",
+  "specialty": "Attack",
+  "faction": "Belobog Industries",
+  "attribute": "Electric",
+  "rarity": "A",
+  "fullName": "Anton Ivanov",
+  "displayName": "Anton",
+  "attributeIcon": "Electric",
+  "themeColor": "#B9B7B6",
+  "baseStats": {
+    "hp": 7219.1,
+    "atk": 716.65,
+    "def": 622.62
+  },
+  "combatBase": {
+    "impact": 95,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 86,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "ATK", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "anton_ivanov-core-brothers_in_arms_1",
+      "source": "core",
+      "sourceId": "anton_ivanov-core",
+      "label": "Brothers in Arms! (Core Passive)",
+      "description": "When Anton uses his Piledriver Attack, the skill's DMG is increased by 24% and when he uses his Drill Attack, the skill's damage is increased by 40%.",
+      "shortDescription": "Increases Anton's DMG from Piledriver Attacks by 24%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "anton-special_attack-spin_bro",
+            "anton-special_attack-explosive_drill_burst",
+            "anton-ex_special-smash_the_horizon_bro",
+            "anton-chain_attack-go_go_go",
+            "anton-ultimate-go_go_go_go_go"
+          ],
+          "value": 0.24
+        }
+      ]
+    },
+    {
+      "id": "anton_ivanov-core-brothers_in_arms_2",
+      "source": "core",
+      "sourceId": "anton_ivanov-core",
+      "label": "Brothers in Arms! (Core Passive)",
+      "description": "When Anton uses his Piledriver Attack, the skill's DMG is increased by 24% and when he uses his Drill Attack, the skill's damage is increased by 40%.",
+      "shortDescription": "Increases Anton's DMG from Drill Attacks by 40%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "anton-dodge_counter-retaliation",
+            "anton-quick_assist-shoulder_to_shoulder"
+          ],
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "anton_ivanov-mindscape_1-warp_up_exercises",
+      "source": "mindscape",
+      "sourceId": "anton_ivanov-mindscape_1",
+      "label": "Warm-Up Exercises (Mindscape Cinema N°1)",
+      "description": "When Drill Attack hits an enemy, Anton gains additional Energy, up to a maximum of 5 Energy per skill use.",
+      "shortDescription": "This mindscape cinema does not affect Anton's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "anton_ivanov-mindscape_2-state_of_flow",
+      "source": "mindscape",
+      "sourceId": "anton_ivanov-mindscape_2",
+      "label": "State of Flow (Mindscape Cinema N°2)",
+      "description": "When Anton uses his EX Special Attack and enters Burst Mode, he gains a Shield that equals to 7.5% of his max HP. While in Burst Mode, entering combat or switching in reapplies the Shield effect. This effect can trigger once every 15s. The Shield dissipates when Burst Mode ends.",
+      "shortDescription": "This mindscape cinema does not affect Anton's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "anton_ivanov-mindscape_4-everyone_get_fired_up",
+      "source": "mindscape",
+      "sourceId": "anton_ivanov-mindscape_4",
+      "label": "Everyone Get Fired Up! (Mindscape Cinema N°4)",
+      "description": "When Anton uses a Chain Attack or Ultimate, all squad members' CRIT Rate increases by 10% for 12s.",
+      "shortDescription": "All squad members's CRIT Rate is increased by 10%.",
+      "target": "team",
+      "flat": {
+        "critRate": 0.1
+      }
+    },
+    {
+      "id": "anton_ivanov-mindscape_6-break_the_limit",
+      "source": "mindscape",
+      "sourceId": "anton_ivanov-mindscape_6",
+      "label": "Break the Limit (Mindscape Cinema N°6)",
+      "description": "When Anton's Piledriver Attack triggers a critical hit, his Basic Attack: Enthusiastic Drills (Burst Mode) and Dodge Counter: Overload Drill (Burst Mode) deal 4% more DMG for 30s, stacking up to 6 times. Repeated triggers reset the duration.",
+      "shortDescription": "Anton's Enthusiastic Drills and Overload Drill DMG increases by +4%, stacking up to 6 times.",
+      "target": "self",
+      "maxStacks": 6,
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "anton-basic_attack-enthusiastic_drills_burst",
+            "anton-dodge_counter-overload_drill_burst"
+          ],
+          "value": 0.04
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "anton-basic_attack-enthusiastic_drills",
+        "name": "Enthusiastic Drills (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to four consecutive attacks in front, dealing Physical DMG. The fourth hit is a powerful /bPiledriver Attack//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [67.8, 92.3, 109.8, 229.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [74, 100.7, 119.8, 250]
+          },
+          {
+            "level": 3,
+            "multipliers": [80.2, 109.1, 129.8, 270.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [86.4, 117.5, 139.8, 291.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [92.6, 125.9, 149.8, 312.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [98.8, 134.3, 159.8, 333.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [105, 142.7, 169.8, 354.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [111.2, 151.1, 179.8, 375.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [117.4, 159.5, 189.8, 396.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [123.6, 167.9, 199.8, 417.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [129.8, 176.3, 209.8, 438.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [136, 184.7, 219.8, 459]
+          },
+          {
+            "level": 13,
+            "multipliers": [142.2, 193.1, 229.8, 479.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [148.4, 201.5, 239.8, 500.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [154.6, 209.9, 249.8, 521.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [160.8, 218.3, 259.8, 542.6]
+          }
+        ]
+      },
+      {
+        "id": "anton-basic_attack-enthusiastic_drills_burst",
+        "name": "Enthusiastic Drills (Burst Mode)",
+        "description": "Press [BASIC] while Anton is in /bBurst Mode//b to activate:\n\nUnleashes up to three consecutive attacks in front, dealing massive Electric DMG. During the second /bDrill Attack//b and third /bPiledriver Attack//b, repeatedly press or hold [BASIC] to extend the skill's duration.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [240.9, 469.2, 456.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [262.8, 511.9, 498.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [284.7, 554.6, 540.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [306.6, 597.3, 581.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [328.5, 640, 623.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [350.4, 682.7, 664.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [372.3, 725.4, 706.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [394.2, 768.1, 748.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [416.1, 810.8, 789.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [438, 853.5, 831.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [459.9, 896.2, 872.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [481.8, 938.9, 914.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [503.7, 981.6, 956.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [525.6, 1024.3, 997.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [547.5, 1067, 1039.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [569.4, 1109.7, 1080.9]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "anton-dash_attack-fire_with_fire",
+        "name": "Fire With Fire (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nRams into enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [68.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [74.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [81]
+          },
+          {
+            "level": 4,
+            "multipliers": [87.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [93.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [99.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [106.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [112.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [118.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [125.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [131.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [137.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [144]
+          },
+          {
+            "level": 14,
+            "multipliers": [150.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [156.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [162.9]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "anton-dodge_counter-retaliation",
+        "name": "Retaliation (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nContinuously strikes enemies in front with heavy punches, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [271.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [295.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [320.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [345.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [370]
+          },
+          {
+            "level": 6,
+            "multipliers": [394.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [419.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [444.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [468.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [493.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [518.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [542.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [567.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [592.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [617]
+          },
+          {
+            "level": 16,
+            "multipliers": [641.7]
+          }
+        ]
+      },
+      {
+        "id": "anton-dodge_counter-overload_drill_burst",
+        "name": "Overload Drill (Burst Mode) (Dodge Counter)",
+        "description": "While in /bBurst Mode//b, press [BASIC] during a [COUNTER] to activate:\n\nLaunches a /bDrill Attack//b at enemies in front, dealing massive Electric DMG. Character is invulnerable during the attack.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [465.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [507.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [550.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [592.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [635]
+          },
+          {
+            "level": 6,
+            "multipliers": [677.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [719.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [762.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [804.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [847]
+          },
+          {
+            "level": 11,
+            "multipliers": [889.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [931.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [974.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1016.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1059]
+          },
+          {
+            "level": 16,
+            "multipliers": [1101.4]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "anton-quick_assist-shoulder_to_shoulder",
+        "name": "Shoulder-To-Shoulder (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nContinuously strikes enemies in front with heavy punches, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [263.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [287.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [311.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [335.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [359.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [383.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [407.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [431.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [455.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [479.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [503.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [527.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [551.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [575.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [599.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [623.4]
+          }
+        ]
+      },
+      {
+        "id": "anton-quick_assist-protective_drill_burst",
+        "name": "Protective Drill (Burst Mode) (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nAttacks enemies in front with a /bDrill Attack//b, dealing massive Electric DMG. Character is invulnerable during the attack.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [365.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [398.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [432]
+          },
+          {
+            "level": 4,
+            "multipliers": [465.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [498.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [531.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [565.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [598.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [631.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [665.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [698.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [731.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [765]
+          },
+          {
+            "level": 14,
+            "multipliers": [798.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [831.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [864.9]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "anton-assist_follow_up-limit_burst",
+        "name": "Limit Burst (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nLaunches a /bDrill Attack//b that ends in a powerful /bPiledriver Attack//b, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [325.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [355.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [385.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [414.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [444.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [474.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [504]
+          },
+          {
+            "level": 8,
+            "multipliers": [533.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [563.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [593.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [622.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [652.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [682.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [711.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [741.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [771.3]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "anton-special_attack-spin_bro",
+        "name": "Spin, Bro! (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nUnleashes a /bPiledriver Attack//b against enemies in a line in front, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [44.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [48.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [52.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [56.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [60.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [64.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [68.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [72.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [77]
+          },
+          {
+            "level": 10,
+            "multipliers": [81.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [85.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [89.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [93.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [97.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [101.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [105.7]
+          }
+        ]
+      },
+      {
+        "id": "anton-special_attack-explosive_drill_burst",
+        "name": "Explosive Drill (Burst Mode) (Special Attack)",
+        "description": "Press [SPECIAL] while in /bBurst Mode//b to activate:\n\nLaunches a /bPiledriver Attack//b at enemies in front, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [231.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [252.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [273.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [294.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [315.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [336.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [358]
+          },
+          {
+            "level": 8,
+            "multipliers": [379.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [400.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [421.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [442.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [463.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [484.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [505.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [526.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [547.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "anton-ex_special-smash_the_horizon_bro",
+        "name": "Smash the Horizon, Bro! (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLaunches several /bPiledriver Attack//bs at enemies in a line in front of him, dealing massive Electric DMG. Character is invulnerable while using this skill. Anton enters /bBurst Mode//b after using this skill. When in /bBurst Mode//b, Anton's attacks become more powerful, dealing massive Electric DMG while continually consuming Energy upon hitting an enemy. /bBurst Mode//b remains active until his Energy is depleted.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [195.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [212.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [230.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [248.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [266.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [284.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [301.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [319.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [337.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [355.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [373.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [390.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [408.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [426.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [444.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [462.1]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "anton-chain_attack-go_go_go",
+        "name": "Go Go Go! (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a /bPiledriver Attack//b onto the ground in front of him over a large area, dealing massive Electric DMG to enemies within range. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [640.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [699]
+          },
+          {
+            "level": 3,
+            "multipliers": [757.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [815.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [873.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [932.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [990.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [1048.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1107.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1165.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1223.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1282]
+          },
+          {
+            "level": 13,
+            "multipliers": [1340.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1398.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1456.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1515.2]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "anton-ultimate-go_go_go_go_go",
+        "name": "Go Go Go Go Go! (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a /bPiledriver Attack//b onto the ground in front of him over a large area, dealing massive Electric DMG to enemies within range. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1816.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [1981.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [2146.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [2312]
+          },
+          {
+            "level": 5,
+            "multipliers": [2477.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [2642.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [2807.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [2972.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [3138]
+          },
+          {
+            "level": 10,
+            "multipliers": [3303.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [3468.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [3633.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [3798.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [3964]
+          },
+          {
+            "level": 15,
+            "multipliers": [4129.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [4294.4]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": null
+  }
+}

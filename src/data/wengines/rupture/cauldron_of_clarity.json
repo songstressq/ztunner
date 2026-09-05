@@ -1,0 +1,118 @@
+{
+  "id": "cauldron_of_clarity",
+  "name": "Cauldron of Clarity",
+  "rarity": "A",
+  "specialty": "Rupture",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "cauldron_of_clarity-summoning_arcanum-dmg_bonus",
+      "source": "wEngine",
+      "sourceId": "cauldron_of_clarity",
+      "label": "Summoning Arcanum (W-Engine Passive)",
+      "description": "When the equipper activates an EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's DMG, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate is increased.",
+      "shortDescription": "The equipper's DMG is increased for 20s, stacking up to 3 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.04
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.046
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.052
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.058
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.064
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false,
+        "maxStacks": 3
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+
+    {
+      "id": "cauldron_of_clarity-summoning_arcanum-crit_rate",
+      "source": "wEngine",
+      "sourceId": "cauldron_of_clarity",
+      "label": "Summoning Arcanum (W-Engine Passive)",
+      "description": "When the equipper activates an EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's DMG, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate is increased.",
+      "shortDescription": "Increases the equipper's CRIT Rate at full stacks.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.065 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.075 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.085 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.094 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.104 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    }
+  ]
+}

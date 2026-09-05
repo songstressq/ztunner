@@ -1,0 +1,1005 @@
+{
+  "id": "corin",
+  "name": "Corin Wickes",
+  "specialty": "Attack",
+  "faction": "Victoria Housekeeping",
+  "attribute": "Physical",
+  "rarity": "A",
+  "fullName": "Corin Wickes",
+  "displayName": "Corin",
+  "attributeIcon": "Physical",
+  "themeColor": "#C8D8C4",
+  "baseStats": {
+    "hp": 6976.9,
+    "atk": 732.14,
+    "def": 604.6
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 96,
+    "anomalyMastery": 93,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critDmg": 0.096
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critDmg": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "corin_wickes-core-hyperfocus",
+      "source": "core",
+      "sourceId": "corin_wickes-core",
+      "label": "Hyperfocus (Core Passive)",
+      "description": "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by 37.5%.",
+      "shortDescription": "Increases Corin's DMG from continuous extended slashes by 37.5%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "corin-basic_attack-wipeout",
+          "hitNames": ["3rd-Hit DMG Multiplier", "5th-Hit DMG Multiplier"],
+          "value": 0.375
+        },
+        {
+          "type": "exclusive",
+          "appliesTo": ["corin-dash_attack-oopsy_daisy"],
+          "value": 0.375
+        },
+        {
+          "type": "exclusive",
+          "appliesTo": ["corin-dodge_counter-nope"],
+          "value": 0.375
+        },
+        {
+          "type": "exclusive",
+          "appliesTo": ["corin-quick_assist-emergency_measures"],
+          "value": 0.375
+        },
+        {
+          "type": "exclusive",
+          "appliesTo": ["corin-assist_follow_up-quick_sweep"],
+          "value": 0.375
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "corin-special_attack-clean_sweep",
+          "hitName": "Extended Slash Maximum DMG Multiplier",
+          "value": 0.375
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "corin-ex_special_attack-skirt_alert",
+          "hitName": "Extended Slash Maximum DMG Multiplier",
+          "value": 0.375
+        },
+        {
+          "type": "exclusive",
+          "appliesTo": ["corin-chain_attack-sorry"],
+          "value": 0.375
+        },
+        {
+          "type": "exclusive",
+          "appliesTo": ["corin-ultimate-very_very_sorry"],
+          "value": 0.375
+        }
+      ]
+    },
+    {
+      "id": "corin_wickes-core-cleanup_assistance",
+      "source": "core",
+      "sourceId": "corin_wickes-core",
+      "label": "Cleanup Assistance (Aditional Ability)",
+      "description": "When another character in your squad shares the same Attribute or Faction:\n\nCorin deals 35% more DMG to Stunned enemies.",
+      "shortDescription": "Increases Corin's DMG by 35% against stunned enemies.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.35
+        }
+      ]
+    },
+    {
+      "id": "corin_wickes-mindscape_1-open_trauma",
+      "source": "mindscape",
+      "sourceId": "corin_wickes-mindscape_1",
+      "label": "Open Trauma (Mindscape Cinema N°1)",
+      "description": "When Corin's Chain Attack or Ultimate hits an enemy, her DMG against the target increases by 12% for 15s.",
+      "shortDescription": "Increases Corin's DMG by 12% for 15s.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.12
+        }
+      ]
+    },
+    {
+      "id": "corin_wickes-mindscape_2-atomic_smash",
+      "source": "mindscape",
+      "sourceId": "corin_wickes-mindscape_2",
+      "label": "Atomic Smash (Mindscape Cinema N°2)",
+      "description": "When Corin's EX Special Attack, Chain Attack or Ultimate hits an enemy, the target's Physical RES is reduced by 0.5%, stacking up to 20 times and lasting 5s. The duration of each stack is calculated separately.",
+      "shortDescription": "Corin ignores 0.5% of the target's Physical RES for 5s, stacking up to 20 times.",
+      "target": "self",
+      "flat": {
+        "physicalResShred": 0.005
+      },
+      "maxStacks": 20
+    },
+    {
+      "id": "corin_wickes-mindscape_4-battlefield_retainer",
+      "source": "mindscape",
+      "sourceId": "corin_wickes-mindscape_4",
+      "label": "Battlefield Retainer (Mindscape Cinema N°4)",
+      "description": "When Corin uses a Quick Assist, Defensive Assist, or Chain Attack, she recovers 7.2 Energy. This effect can trigger once every 16s.",
+      "shortDescription": "This mindscape cinema does not affect Corin's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "corin_wickes-mindscape_6-acummulated_release",
+      "source": "mindscape",
+      "sourceId": "corin_wickes-mindscape_6",
+      "label": "Accumulated Release (Mindscape Cinema N°6)",
+      "description": "When Corin's extended slash hits an enemy, she obtains a stack of Charge (max 40 stacks). During a Dodge Counter, Special Attack, EX Special Attack, Quick Assist, or Assist Follow-Up, when her chainsaw detonation hits an enemy, consumes all stacks of Charge. Each stack consumed causes the attack to deal an additional 3% of ATK as DMG.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "corin-basic_attack-wipeout",
+        "name": "Wipeout (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 5 slashes, dealing Physical DMG. Repeatedly press or hold the button during the 3rd and 5th hits to extend the chainsaw slash attack.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [82, 76.6, 179.2, 233.4, 421.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [89.5, 83.6, 195.5, 254.7, 459.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [97, 90.6, 211.8, 276, 497.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [104.5, 97.6, 228.1, 297.3, 536.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [112, 104.6, 244.4, 318.6, 574.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [119.5, 111.6, 260.7, 339.9, 612.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [127, 118.6, 277, 361.2, 651]
+          },
+          {
+            "level": 8,
+            "multipliers": [134.5, 125.6, 293.3, 382.5, 689.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [142, 132.6, 309.6, 403.8, 727.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [149.5, 139.6, 325.9, 425.1, 765.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [157, 146.6, 342.2, 446.4, 804.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [164.5, 153.6, 358.5, 467.7, 842.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [172, 160.6, 374.8, 489, 880.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [179.5, 167.6, 391.1, 510.3, 919.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [187, 174.6, 407.4, 531.6, 957.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [194.5, 181.6, 423.7, 552.9, 995.7]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "corin-dash_attack-oopsy_daisy",
+        "name": "Oopsy-Daisy! (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG. Repeatedly press or hold to enter Crouching Shot to extend the attack duration. Repeatedly press or hold the button to extend the chainsaw attack's duration.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Maximum DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [96.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [105.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [114.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [123.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [131.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [140.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [149.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [158.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [167.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [175.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [184.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [193.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [202.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [211.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [219.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [228.7]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "corin-dodge_counter-nope",
+        "name": "Nope! (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nSlashes enemies in front, before detonating her chainsaw, dealing Physical DMG. Repeatedly press or hold the button to extend the chainsaw slash attack. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [271.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [296]
+          },
+          {
+            "level": 3,
+            "multipliers": [320.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [345.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [370.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [395.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [420]
+          },
+          {
+            "level": 8,
+            "multipliers": [444.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [469.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [494.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [519.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [544]
+          },
+          {
+            "level": 13,
+            "multipliers": [568.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [593.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [618.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [643.2]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "corin-quick_assist-emergency_measures",
+        "name": "Emergency Measures (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nSlashes enemies in front before detonating her chainsaw, dealing Physical DMG. Repeatedly press or hold the button to extend the chainsaw slash attack. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [215]
+          },
+          {
+            "level": 2,
+            "multipliers": [234.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [254.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [273.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [293.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [313]
+          },
+          {
+            "level": 7,
+            "multipliers": [332.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [352.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [371.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [391.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [411]
+          },
+          {
+            "level": 12,
+            "multipliers": [430.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [450.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [469.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [489.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [509]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "corin-assist_follow_up-quick_sweep",
+        "name": "Quick Sweep (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleashes a series of slashes against enemies in front followed by an explosive chainsaw, dealing Physical DMG. Repeatedly press or hold [BASIC] to extend the chainsaw slash attack. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [547.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [597.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [647.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [696.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [746.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [796.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [846.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [896.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [945.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [995.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1045.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [1095.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [1145.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1194.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [1244.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [1294.5]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "corin-special_attack-clean_sweep",
+        "name": "Clean Sweep (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nUnleashes a series of slashes upon enemies in front, before detonating the chainsaw, dealing Physical DMG. Repeatedly press or hold the button to extend the chainsaw slash attack. Anti-Interrupt level is increased while using this skill, and DMG taken is reduced by 40%.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Spinning Slash DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Extended Slash Maximum DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Explosion DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [66.7, 37.5, 25]
+          },
+          {
+            "level": 2,
+            "multipliers": [72.8, 41, 27.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [78.9, 44.5, 29.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [85, 48, 31.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [91.1, 51.5, 34.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [97.2, 55, 36.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [103.3, 58.5, 38.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [109.4, 62, 41.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [115.5, 65.5, 43.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [121.6, 69, 45.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [127.7, 72.5, 48]
+          },
+          {
+            "level": 12,
+            "multipliers": [133.8, 76, 50.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [139.9, 79.5, 52.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [146, 83, 54.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [152.1, 86.5, 57.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [158.2, 90, 59.5]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "corin-ex_special_attack-skirt_alert",
+        "name": "Skirt Alert (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nUnleashes a series of slashes upon enemies in front, before detonating the chainsaw, dealing massive Physical DMG. Repeatedly press or hold the button to extend the chainsaw slash attack at the cost of Energy if the attack connects. Character is invulnerable during the spinning slash. Anti-Interrupt level is increased during the extended slash, and DMG taken is reduced by 40%.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Spinning Slash DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Extended Slash Maximum DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Explosion DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [345.1, 1035.2, 345.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [376.5, 1129.4, 376.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [407.9, 1223.6, 407.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [439.3, 1317.8, 439.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [470.7, 1412, 470.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [502.1, 1506.2, 502.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [533.5, 1600.4, 533.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [564.9, 1694.6, 564.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [596.3, 1788.8, 596.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [627.7, 1883, 627.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [659.1, 1977.2, 659.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [690.5, 2071.4, 690.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [721.9, 2165.6, 721.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [753.3, 2259.8, 753.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [784.7, 2354, 784.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [816.1, 2448.2, 816.1]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "corin-chain_attack-sorry",
+        "name": "Sorry... (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful slash at enemies in a small area, dealing massive Physical DMG. Repeatedly press or hold the button to extend the chainsaw slash attack. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [687.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [749.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [812.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [874.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [937.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [999.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [1062.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1124.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1187.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [1249.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [1312.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1374.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1437.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1499.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1562.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [1624.8]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "corin-ultimate-very_very_sorry",
+        "name": "Very, Very Sorry! (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a powerful slash at enemies in a small area, dealing massive Physical DMG. Repeatedly press or hold the button to extend the chainsaw slash attack. Character is invulnerable while using this skill..",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2028.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [2213.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [2397.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [2582.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [2766.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [2951.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [3135.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [3320.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [3504.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [3689.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [3873.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [4058.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [4242.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [4427.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [4611.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [4796.3]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "corin-mindscape-acummulated_release",
+        "name": "Accumulated Release: Additional DMG (Mindscape Cinema N°6)",
+        "description": "When Corin's extended slash hits an enemy, she obtains a stack of Charge (max 40 stacks). During a /bDodge Counter//b, /bSpecial Attack//b, /bEX Special Attack//b, /bQuick Assist//b, or /bAssist Follow-Up//b, when her chainsaw detonation hits an enemy, consumes all stacks of Charge. Each stack consumed causes the attack to deal an additional 3% of ATK as DMG.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1 Stack",
+            "damageType": "physical"
+          },
+          {
+            "name": "20 Stacks",
+            "damageType": "physical"
+          },
+          {
+            "name": "40 Stacks",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [3, 60, 120]
+          }
+        ]
+      }
+    ]
+  }
+}

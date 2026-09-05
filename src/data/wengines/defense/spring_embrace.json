@@ -1,0 +1,26 @@
+{
+  "id": "spring_embrace",
+  "name": "Spring Embrace",
+  "rarity": "A",
+  "specialty": "Defense",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "spring_embrace-hot_spring_soup",
+      "source": "wEngine",
+      "label": "Hot Spring Soup (W-Engine Passive)",
+      "description": "Reduces DMG taken by a percentage. When attacked, the equipper's Energy Generation Rate increased for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack.",
+      "shortDescription": "This w-engine does not affect the equipper's stats.",
+      "target": "self",
+      "infoOnly": true
+    }
+  ]
+}

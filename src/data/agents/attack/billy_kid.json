@@ -1,0 +1,942 @@
+{
+  "id": "billy",
+  "name": "Billy Kid",
+  "specialty": "Attack",
+  "faction": "Cunning Hares",
+  "attribute": "Physical",
+  "rarity": "A",
+  "fullName": "Billy Kid",
+  "displayName": "Billy",
+  "attributeIcon": "Physical",
+  "themeColor": "#EE5552",
+  "baseStats": {
+    "hp": 6907.3,
+    "atk": 712.28,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 91,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 91,
+    "anomalyMastery": 92,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "billy_kid-core-steady_shot",
+      "source": "core",
+      "sourceId": "billy_kid_core",
+      "label": "Steady Shot (Core Passive)",
+      "description": "Billy's DMG increases by 50% when he enters Crouching Shot during his Basic Attack. The effect ends if he moves, returns to standby, or is knocked back or launched by an attack.",
+      "shortDescription": "Billy's DMG is increased by 50%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "billy_kid-core-team_starlight",
+      "source": "core",
+      "sourceId": "billy_kid_core",
+      "label": "Team Starlight (Aditional Ability)",
+      "description": "When another character in your squad shares the same Attribute or Faction:\n\nAfter Billy uses a Chain Attack, the DMG of his next Ultimate is increased by 50%, stacking up to 2 times. This effect resets whenever an ultimate is activated.",
+      "shortDescription": "Increases Billy's DMG from Ultimate: Starlight, Shine Bright by 50%, stacking up to 2 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["billy-ultimate-starlight_shine_bright"],
+          "value": 0.5
+        }
+      ],
+      "maxStacks": 2
+    },
+    {
+      "id": "billy_kid-mindscape_1-dazzling_entrance",
+      "source": "mindscape",
+      "sourceId": "billy_kid-mindscape_1",
+      "label": "Dazzling Entrance (Mindscape Cinema N°1)",
+      "description": "When Billy hits an enemy with a Dash Attack or Dodge Counter, he gains an additional 2.7 Energy. Can trigger once every 5s.",
+      "shortDescription": "This mindscape cinema does not affect Billy's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "billy_kid-mindscape_2-roaming_gunslinger",
+      "source": "mindscape",
+      "sourceId": "billy_kid-mindscape_2",
+      "label": "Roaming Gunslinger (Mindscape Cinema N°2)",
+      "description": "Billy's Dodge Counter DMG increases by 25%. Rolling Shots during his Basic Attacks are treated as dodges, making Billy Invulnerable during the skill and able to trigger Perfect Dodges. When a Rolling Shot triggers a Perfect Dodge, it will automatically become a Dodge Counter.",
+      "shortDescription": "Increases Billy's DMG from Dodge Counters by 25%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["billy-dodge_counter-fair_fight"],
+          "value": 0.25
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "billy-basic_attack-full_firepower",
+          "hitName": "Rolling Shot DMG Multiplier",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "billy_kid-mindscape_4-starlight_ballistics",
+      "source": "mindscape",
+      "sourceId": "billy_kid-mindscape_4",
+      "label": "Starlight Ballistics (Mindscape Cinema N°4)",
+      "description": "When Billy hits an enemy with his EX Special Attack, the skill's CRIT Rate is increased based on the distance from the enemy. The closer he is to the target, the greater the effect, up to a maximum increase of 32%.",
+      "shortDescription": "This mindscape cinema does not affect Billy's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "billy_kid-mindscape_6-starlight_hero",
+      "source": "mindscape",
+      "sourceId": "billy_kid-mindscape_6",
+      "label": "Starlight Hero (Mindscape Cinema N°6)",
+      "description": "When Billy accumulates 10 hits on enemies or triggers a Perfect Dodge, his DMG increases by 6%, stacking up to 5 times and lasting until he's knocked back or launched by an attack.",
+      "shortDescription": "Increases Billy's DMG by 6%, stacking up to 5 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.06
+        }
+      ],
+      "maxStacks": 5
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "billy-basic_attack-full_firepower",
+        "name": "Full Firepower (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes a piercing attack, dealing Physical DMG. Repeatedly press or hold [BASIC] to enter /BCrouching Shot//B to extend the attack duration.\n\nDrag the stick/joystick during /BCrouching Shot//B to launch /BRolling Shot//B and adjust the character's position, dealing Physical DMG. Stop pressing or holding during /BCrouching Shot//B to launch /BFinishing Shot//B at enemies in front, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Standing Fire DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Standing Bullet DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Crouching Fire DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Crouching Bullet DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Rolling Shot DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Finishing Shot DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [68, 7.6, 61.8, 12.7, 61.8, 49.5] },
+          {
+            "level": 2,
+            "multipliers": [74.2, 8.3, 67.5, 13.9, 67.5, 54]
+          },
+          {
+            "level": 3,
+            "multipliers": [80.4, 9, 73.2, 15.1, 73.2, 58.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [86.6, 9.7, 78.9, 16.3, 78.9, 63]
+          },
+          {
+            "level": 5,
+            "multipliers": [92.8, 10.4, 84.6, 17.5, 84.6, 67.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [99, 11.1, 90.3, 18.7, 90.3, 72]
+          },
+          {
+            "level": 7,
+            "multipliers": [105.2, 11.8, 96, 19.9, 96, 76.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [111.4, 12.5, 101.7, 21.1, 101.7, 81]
+          },
+          {
+            "level": 9,
+            "multipliers": [117.6, 13.2, 107.4, 22.3, 107.4, 85.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [123.8, 13.9, 113.1, 23.5, 113.1, 90]
+          },
+          {
+            "level": 11,
+            "multipliers": [130, 14.6, 118.8, 24.7, 118.8, 94.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [136.2, 15.3, 124.5, 25.9, 124.5, 99]
+          },
+          {
+            "level": 13,
+            "multipliers": [142.4, 16, 130.2, 27.1, 130.2, 103.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [148.6, 16.7, 135.9, 28.3, 135.9, 108]
+          },
+          {
+            "level": 15,
+            "multipliers": [154.8, 17.4, 141.6, 29.5, 141.6, 112.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [161, 18.1, 147.3, 30.7, 147.3, 117]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "billy-dash_attack-starlight_sanction",
+        "name": "Starlight Sanction (Dash Attack)",
+        "description": "When dragging the joystick during a dodge, press [BASIC]:\n\nLaunches a piercing attack at nearby enemies within a large area, dealing Physical DMG. When not dragging the joystick during a dodge, press [BASIC]: Launches a piercing attack at enemies in a line, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "360-degree Shot DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Straight Shot DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [63, 39]
+          },
+          {
+            "level": 2,
+            "multipliers": [68.8, 42.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [74.6, 46.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [80.4, 50.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [86.2, 54.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [92, 58]
+          },
+          {
+            "level": 7,
+            "multipliers": [97.8, 61.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [103.6, 65.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [109.4, 69.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [115.2, 73.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [121, 77]
+          },
+          {
+            "level": 12,
+            "multipliers": [126.8, 80.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [132.6, 84.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [138.4, 88.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [144.2, 92.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [150, 96]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "billy-dodge_counter-fair_fight",
+        "name": "Fair Fight (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPierces enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [221.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [241.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [261.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [282]
+          },
+          {
+            "level": 5,
+            "multipliers": [302.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [322.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [342.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [362.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [383]
+          },
+          {
+            "level": 10,
+            "multipliers": [403.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [423.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [443.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [463.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [484]
+          },
+          {
+            "level": 15,
+            "multipliers": [504.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [524.4]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "billy-quick_assist-power_of_teamwork",
+        "name": "Power of Teamwork (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nLaunches a piercing attack at enemies in front, dealing Physical DMG. Character is invulnerable during the attack.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [93.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [101.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [110.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [118.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [127.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [135.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [144.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [152.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [161.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [169.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [178.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [186.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [195.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [203.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [212.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [220.9]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "billy-assist_follow_up-fatal_shot",
+        "name": "Fatal Shot (Assist Follow-Up)",
+        "description": "Press [BASIC] after an /bEvasive Assist//b to activate:\n\nPierces enemies in a large area in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [388.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [424.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [459.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [495]
+          },
+          {
+            "level": 5,
+            "multipliers": [530.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [565.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [601.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [636.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [672]
+          },
+          {
+            "level": 10,
+            "multipliers": [707.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [742.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [778.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [813.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [849]
+          },
+          {
+            "level": 15,
+            "multipliers": [884.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [919.8]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "billy-special_attack-stand_still",
+        "name": "Stand Still (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nPerforms up to 3 piercing attacks in a line, dealing Physical DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [24.2, 51.7, 50.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [26.4, 56.4, 54.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [28.6, 61.1, 59.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [30.8, 65.8, 63.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [33, 70.5, 68.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [35.2, 75.2, 73.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [37.4, 79.9, 77.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [39.6, 84.6, 82.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [41.8, 89.3, 86.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [44, 94, 91.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [46.2, 98.7, 96.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [48.4, 103.4, 100.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [50.6, 108.1, 105.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [52.8, 112.8, 109.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [55, 117.5, 114.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [57.2, 122.2, 119.1]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "billy-ex_special_attack-clearance_time",
+        "name": "Clearance Time (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLaunches a powerful piercing attack in a line, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [543.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [593.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [642.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [692.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [741.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [791.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [840.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [890.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [939.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [989.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1038.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1088.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [1137.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1187.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [1236.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1286.3]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "billy-chain_attack-starlight_mirage",
+        "name": "Starlight Mirage (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful piercing attack at surrounding enemies in a large area, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [735.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [802.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [869]
+          },
+          {
+            "level": 4,
+            "multipliers": [935.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [1002.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [1069.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [1136.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [1203.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [1270.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [1337.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1404.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1471.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1538]
+          },
+          {
+            "level": 14,
+            "multipliers": [1604.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [1671.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1738.7]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "billy-ultimate-starlight_shine_bright",
+        "name": "Starlight, Shine Bright (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a powerful piercing attack at surrounding enemies in a large area, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1597.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [1743]
+          },
+          {
+            "level": 3,
+            "multipliers": [1888.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [2033.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [2178.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [2324.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [2469.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [2614.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [2760.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [2905.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [3050.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [3196]
+          },
+          {
+            "level": 13,
+            "multipliers": [3341.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [3486.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [3631.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [3777.2]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

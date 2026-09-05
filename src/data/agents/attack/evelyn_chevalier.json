@@ -1,0 +1,1500 @@
+{
+  "id": "evelyn",
+  "name": "Evelyn Chevalier",
+  "specialty": "Attack",
+  "faction": "Stars of Lyra",
+  "attribute": "Fire",
+  "rarity": "S",
+  "fullName": "Evelyn Chevalier",
+  "displayName": "Evelyn",
+  "attributeIcon": "Fire",
+  "themeColor": "#8A77CE",
+  "baseStats": {
+    "hp": 7788.7,
+    "atk": 854.76,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 92,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "evelyn_chevalier-core-entangle",
+      "source": "core",
+      "sourceId": "evelyn_chevalier-core",
+      "label": "Entangle (Core Passive)",
+      "description": "Upon entering Binding Seal, Evelyn's CRIT Rate increases by 25%. After leaving Binding Seal, she retains the buff for 10s. If Evelyn switches to another character while in Binding Seal, she will automatically follow up with Special Attack: Binding Sunder - First Form.",
+      "shortDescription": "Evelyn's CRIT Rate is increased by 25% for 10s.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.25
+      }
+    },
+    {
+      "id": "evelyn_chevalier-core-ambush_point",
+      "source": "core",
+      "sourceId": "evelyn_chevalier-core",
+      "label": "Ambush Point (Aditional Ability)",
+      "description": "When another character in your squad is a Stun or Support character:\n\nEvelyn's Chain Attack and Ultimate DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her Chain Attack: Lunalux - Snare, Ultimate: Lunalux Garrote - Timbre and Ultimate: Lunalux Garrote - Shadow increases to 125% of the original value.",
+      "shortDescription": "Evelyn's DMG from Chain Attacks and Ultimates is increased by 30%. Evelyn's increased multipliers are available in the Damage Calculator.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "skillType",
+          "skillType": "ultimate",
+          "value": 0.3
+        },
+        {
+          "type": "skillType",
+          "skillType": "chain",
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "evelyn_chevalier-mindscape_1-dreamweave",
+      "source": "mindscape",
+      "sourceId": "evelyn_chevalier-mindscape_1",
+      "label": "Dreamweave (Mindscape Cinema N°1)",
+      "description": "Upon entering the battlefield, Evelyn immediately gains 1,500 Decibels. Enemies affected by Binding Seal will be Bound. When Evelyn attacks Bound enemies, she ignores 12% of their DEF. When Evelyn uses Special Attack: Binding Sunder - First Form or EX Special Attack: Binding Sunder - Final Form, the Bound effect spreads to all enemies hit by the skill. This spread Bound effect lasts for 10s.",
+      "shortDescription": "Evelyn's attacks ignore 12% of the target's DEF.",
+      "target": "self",
+      "flat": {
+        "defShred": 0.12
+      }
+    },
+    {
+      "id": "evelyn_chevalier-mindscape_2-dance_of_fire",
+      "source": "mindscape",
+      "sourceId": "evelyn_chevalier-mindscape_2",
+      "label": "Dance of Fire (Mindscape Cinema N°2)",
+      "description": "Evelyn's ATK increases by 15%. When Evelyn uses Basic Attack: Garrote - First Form or Basic Attack: Garrote - Second Form, the Burning Embers consumed will be returned. This effect can trigger once every 25s. When Evelyn consumes Burning Tether Point to trigger Chain Attack: Lunalux - Snare, the skill's Interrupt Level increases.",
+      "shortDescription": "Evelyn's ATK is increased by 15%.",
+      "target": "self",
+      "flat": {
+        "atkPercentRaw": 0.15
+      }
+    },
+    {
+      "id": "eevelyn_chevalier-mindscape_4-fates_melody",
+      "source": "mindscape",
+      "sourceId": "evelyn_chevalier-mindscape_4",
+      "label": "Fate's Melody (Mindscape Cinema N°4)",
+      "description": "Upon activating a Chain Attack or Ultimate, Evelyn immediately gains a shield equal to 10% of her Max HP. While this shield exists, Evelyn's CRIT DMG increases by 40%.",
+      "shortDescription": "Evelyn's CRIT DMG is increased by 40% while shielded.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.4
+      }
+    },
+    {
+      "id": "evelyn_chevalier-mindscape_6-bond_of_light_and_shadow",
+      "source": "mindscape",
+      "sourceId": "evelyn_chevalier-mindscape_6",
+      "label": "Bond of Light and Shadow (Mindscape Cinema N°6)",
+      "description": "When activating her Chain Attack or Ultimate, Evelyn gains Shadowstring Edge for 20s. During Shadowstring Edge, when Evelyn hits enemies with a Basic Attack, Dash Attack, Special Attack, or EX Special Attack, an additional Lunalux Garrote will be released for a follow-up attack, dealing Fire DMG equal to 375% of Evelyn's ATK. This DMG is considered Chain Attack DMG and can trigger up to 16 times. The number of triggers will be refreshed each time Shadowstring Edge is gained.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "evelyn-basic_attack-razor_wire",
+        "name": "Razor Wire (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunch up to five attacks ahead, dealing Physical DMG and Fire DMG. When the 5th hit lands against an enemy, Evelyn will use her /bLunalux Garrote//b to bind the primary target and enter /bBinding Seal//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [51.2, 62.1, 78.2, 186.7, 223.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [55.9, 67.8, 85.4, 203.7, 243.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [60.6, 73.5, 92.6, 220.7, 264.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [65.3, 79.2, 99.8, 237.7, 284.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [70, 84.9, 107, 254.7, 305]
+          },
+          {
+            "level": 6,
+            "multipliers": [74.7, 90.6, 114.2, 271.7, 325.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [79.4, 96.3, 121.4, 288.7, 345.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [84.1, 102, 128.6, 305.7, 366.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [88.8, 107.7, 135.8, 322.7, 386.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [93.5, 113.4, 143, 339.7, 407]
+          },
+          {
+            "level": 11,
+            "multipliers": [98.2, 119.1, 150.2, 356.7, 427.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [102.9, 124.8, 157.4, 373.7, 447.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [107.6, 130.5, 164.6, 390.7, 468.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [112.3, 136.2, 171.8, 407.7, 488.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [117, 141.9, 179, 424.7, 509]
+          },
+          {
+            "level": 16,
+            "multipliers": [121.7, 147.6, 186.2, 441.7, 529.4]
+          }
+        ]
+      },
+      {
+        "id": "evelyn-basic_attack-garrote_first_form",
+        "name": "Garrote - First Form (Basic Attack)",
+        "description": "When /bBurning Embers//b is at 50% or higher, hold [BASIC] or /bSpecial Attack//b to activate:\n\nConsume 50% /bBurning Embers//b to use /bLunalux Garrote//b to perform a slashing attack, dealing Fire DMG. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%. After using this skill, gain 1 /bBurning Tether Point//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [226.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [247]
+          },
+          {
+            "level": 3,
+            "multipliers": [267.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [288.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [308.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [329.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [350]
+          },
+          {
+            "level": 8,
+            "multipliers": [370.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [391.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [411.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [432.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [453]
+          },
+          {
+            "level": 13,
+            "multipliers": [473.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [494.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [514.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [535.4]
+          }
+        ]
+      },
+      {
+        "id": "evelyn-basic_attack-garrote_second_form",
+        "name": "Garrote - Second Form (Basic Attack)",
+        "description": "When /bBurning Embers//b is 50% or higher, after using /bBasic Attack: Garrote - First Form//b, continue to hold [BASIC] or /bSpecial Attack//b to activate:\n\nConsume 50% /bBurning Embers//b to use /bLunalux Garrote//b to perform a follow-up attack, dealing Fire DMG. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%. After using this skill, gain 1 /bBurning Tether Point//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [245.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [267.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [289.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [312.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [334.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [356.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [379]
+          },
+          {
+            "level": 8,
+            "multipliers": [401.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [423.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [445.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [468.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [490.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [512.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [535.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [557.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [579.7]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "evelyn-dash_attack-piercing_ambush",
+        "name": "Piercing Ambush (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nDeliver a kick to the enemy in front, causing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [60.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [66]
+          },
+          {
+            "level": 3,
+            "multipliers": [71.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [77]
+          },
+          {
+            "level": 5,
+            "multipliers": [82.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [88]
+          },
+          {
+            "level": 7,
+            "multipliers": [93.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [99]
+          },
+          {
+            "level": 9,
+            "multipliers": [104.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [110]
+          },
+          {
+            "level": 11,
+            "multipliers": [115.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [121]
+          },
+          {
+            "level": 13,
+            "multipliers": [126.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [132]
+          },
+          {
+            "level": 15,
+            "multipliers": [137.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [143]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "evelyn-dodge_counter-strangling_reversal",
+        "name": "Strangling Reversal (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nUse /bLunalux Garrote//b to slash surrounding enemies, dealing Fire DMG. When the attack hits an enemy, Evelyn will use /bLunalux Garrote//b to bind the primary target and enter /bBinding Seal//b. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [210.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [229.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [248.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [267.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [287]
+          },
+          {
+            "level": 6,
+            "multipliers": [306.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [325.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [344.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [363.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [383]
+          },
+          {
+            "level": 11,
+            "multipliers": [402.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [421.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [440.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [459.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [479]
+          },
+          {
+            "level": 16,
+            "multipliers": [498.2]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "evelyn-quick_assist-fierce_blade",
+        "name": "Fierce Blade (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nUse /bLunalux Garrote//b to slash surrounding enemies, dealing Fire DMG. When the attack hits an enemy, Evelyn will use /bLunalux Garrote//b to bind the primary target and enter /bBinding Seal//b. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [77.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [84.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [91.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [98.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [105.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [112.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [119.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [126.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [133.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [141]
+          },
+          {
+            "level": 11,
+            "multipliers": [148.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [155.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [162.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [169.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [176.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [183.6]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "evelyn-assist_follow_up-course_disruption",
+        "name": "Course Disruption (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nEvelyn slashes with /bLunalux Garrote//b, then triggers an explosion ahead, dealing Fire DMG. When the attack hits an enemy, Evelyn will use /bLunalux Garrote//b to bind the primary target and enter /bBinding Seal//b. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [291.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [318.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [344.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [371.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [398]
+          },
+          {
+            "level": 6,
+            "multipliers": [424.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [451.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [477.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [504.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [531]
+          },
+          {
+            "level": 11,
+            "multipliers": [557.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [584.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [610.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [637.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [664]
+          },
+          {
+            "level": 16,
+            "multipliers": [690.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "evelyn-special_attack-locked_position",
+        "name": "Locked Position (Special Attack)",
+        "description": "Before entering /bBinding Seal//b, press [SPECIAL] or /bEX Special Attack//b to activate:\n\nUse /bLunalux Garrote//b to pull the enemy and charge forward with a kick, dealing Fire DMG. When the attack hits the enemy, Evelyn will use /bLunalux Garrote//b to bind the primary target and enter /bBinding Seal//b. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [52.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [57.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [61.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [66.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [71.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [76.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [81.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [85.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [90.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [95.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [100.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [105.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [109.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [114.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [119.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [124.3]
+          }
+        ]
+      },
+      {
+        "id": "evelyn-special_attack-binding_sunder_first_form",
+        "name": "Binding Sunder - First Form (Special Attack)",
+        "description": "After entering /bBinding Seal//b, press or hold [SPECIAL] to activate:\n\nCentered on the target affected by /bBinding Seal//b, tether surrounding enemies and detonate an explosion, dealing Fire DMG. /bBinding Seal//b will end after detonation. Dodge enemy attacks upon activating the skill, and if a /bPerfect Dodge//b is triggered, gain an additional 25% /bBurning Embers//b.\n\nAfter tethering surrounding enemies, press [BASIC] to cancel detonation and immediately follow up with the /bBasic Attack//b's 3rd hit. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Bind DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Explosion DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [40.4, 34]
+          },
+          {
+            "level": 2,
+            "multipliers": [44.1, 37.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [47.8, 40.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [51.5, 43.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [55.2, 46.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [58.9, 49.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [62.6, 52.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [66.3, 55.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [70, 58.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [73.7, 61.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [77.4, 65]
+          },
+          {
+            "level": 12,
+            "multipliers": [81.1, 68.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [84.8, 71.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [88.5, 74.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [92.2, 77.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [95.9, 80.5]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "evelyn-ex_special_attack-binding_sunder_final_form",
+        "name": "Binding Sunder - Final Form (EX Special Attack)",
+        "description": "After entering /bBinding Seal//b and with enough Energy, press or hold [EX] to activate:\n\nCentered on the target affected by /bBinding Seal//b, tether surrounding enemies and detonate an explosion, dealing massive Fire DMG. /bBinding Seal//b will end after detonation. Dodge enemy attacks upon activating the skill, and if a /bPerfect Dodge//b is triggered, gain an additional 25% /bBurning Embers//b.\n\nAfter pulling in surrounding enemies, press [BASIC] to cancel detonation and immediately follow up with the /bBasic Attack//b's 3rd hit. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Bind DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Explosion DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [541.2, 59.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [590.4, 65.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [639.6, 70.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [688.8, 76.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [738, 81.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [787.2, 87.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [836.4, 92.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [885.6, 98.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [934.8, 103.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [984, 109.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [1033.2, 114.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1082.4, 120.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1131.6, 125.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [1180.8, 131.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1230, 136.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [1279.2, 142.1]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "evelyn-chain_attack-lunalux_snare",
+        "name": "Lunalux - Snare (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nEvelyn slashes in front with multiple /bLunalux Garrotes//b and detonates an explosion, dealing massive Fire DMG to enemies in the area. When the attack hits an enemy, Evelyn uses /bLunalux Garrote//b to bind the primary target and enters /bBinding Seal//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [829.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [904.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [980.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [1055.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [1130.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [1206.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [1281.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [1357.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [1432.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [1507.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1583.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1658.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1734.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1809.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1884.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1960.3]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "evelyn-ultimate-lunalux_garrote_timbre",
+        "name": "Lunalux Garrote Timbre (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nEvelyn slashes in front with multiple /bLunalux Garrotes//b and detonates an explosion, dealing massive Fire DMG to enemies in the area.\n\nUpon activating this skill, Evelyn removes her jacket and enters the /bDance of Awakened Fire//b state, which lasts for the entire battle. While in the /bDance of Awakened Fire//b state, when Evelyn consumes /bBurning Tether Points//b to activate /bChain Attack: Lunalux - Snare//b, she will retain 1 point of /bBurning Tether Point//b. When the attack hits an enemy, Evelyn uses /bLunalux Garrote//b to bind the primary target, entering /bBinding Seal//b. Character is invulnerable while using this skill. After using this skill, gain 1 /bBurning Tether Point//b.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1988.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [2169.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [2350.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [2530.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [2711.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [2892.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [3073.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [3254.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [3434.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [3615.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [3796.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [3977.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [4158.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [4338.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [4519.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [4700.5]
+          }
+        ]
+      },
+      {
+        "id": "evelyn-ultimate-lunalux_garrote_shadow",
+        "name": "Lunalux Garrote - Shadow (Ultimate)",
+        "description": "While under the /bDance of Awakened Fire//b state, and when Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nEvelyn slashes in front with multiple /bLunalux Garrotes//b and detonates an explosion, dealing massive Fire DMG to enemies in the area.\n\nWhen the attack hits an enemy, Evelyn uses /bLunalux Garrote//b to bind the primary target and enters /bBinding Seal//b. Character is invulnerable while using this skill. After using this skill, gain 1 /bBurning Tether Point//b.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1988.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [2169.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [2350.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [2530.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [2711.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [2892.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [3073.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [3254.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [3434.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [3615.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [3796.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [3977.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [4158.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [4338.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [4519.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [4700.5]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "evelyn-core-lunalux_snare",
+        "name": "Ambush Point: Lunalux - Snare (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nEvelyn slashes in front with multiple /bLunalux Garrotes//b and detonates an explosion, dealing massive Fire DMG to enemies in the area. When the attack hits an enemy, Evelyn uses /bLunalux Garrote//b to bind the primary target and enters /bBinding Seal//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1036.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [1130.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [1225.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [1319.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [1413.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [1507.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [1602.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [1696.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [1790.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1884.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1979.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [2073.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [2167.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [2261.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [2356.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [2450.4]
+          }
+        ]
+      },
+      {
+        "id": "evelyn-core-lunalux_garrote_timbre",
+        "name": "Ambush Point: Lunalux Garrote - Timbre (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nEvelyn slashes in front with multiple /bLunalux Garrotes//b and detonates an explosion, dealing massive Fire DMG to enemies in the area.\n\nUpon activating this skill, Evelyn removes her jacket and enters the /bDance of Awakened Fire//b state, which lasts for the entire battle. While in the /bDance of Awakened Fire//b state, when Evelyn consumes /bBurning Tether Points//b to activate /bChain Attack: Lunalux - Snare//b, she will retain 1 point of /bBurning Tether Point//b. When the attack hits an enemy, Evelyn uses /bLunalux Garrote//b to bind the primary target, entering /bBinding Seal//b. Character is invulnerable while using this skill. After using this skill, gain 1 /bBurning Tether Point//b.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2485.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [2711.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [2937.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [3163.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [3389.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [3615.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [3841.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [4067.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [4293.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [4519.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [4745.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [4971.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [5197.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [5423.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [5649.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [5875.6]
+          }
+        ]
+      },
+      {
+        "id": "evelyn-core-lunalux_garrote_shadow",
+        "name": "Ambush Point: Lunalux Garrote - Shadow (Ultimate)",
+        "description": "While under the /bDance of Awakened Fire//b state, and when Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nEvelyn slashes in front with multiple /bLunalux Garrotes//b and detonates an explosion, dealing massive Fire DMG to enemies in the area.\n\nWhen the attack hits an enemy, Evelyn uses /bLunalux Garrote//b to bind the primary target and enters /bBinding Seal//b. Character is invulnerable while using this skill. After using this skill, gain 1 /bBurning Tether Point//b.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2485.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [2711.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [2937.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [3163.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [3389.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [3615.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [3841.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [4067.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [4293.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [4519.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [4745.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [4971.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [5197.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [5423.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [5649.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [5875.6]
+          }
+        ]
+      },
+      {
+        "id": "evelyn-mindscape-shadowstring_edge",
+        "name": "Shadowstring Edge (Mindscape Cinema N°6)",
+        "description": "When activating her /bChain Attack//b or /bUltimate//b, Evelyn gains /bShadowstring Edge//b for 20s. During /bShadowstring Edge//b, when Evelyn hits enemies with a /bBasic Attack//b, /bDash Attack//b, /bSpecial Attack//b, or /bEX Special Attack//b, an additional /bLunalux Garrote//b will be released for a follow-up attack, dealing Fire DMG equal to 375% of Evelyn's ATK. This DMG is considered /bChain Attack//b DMG and can trigger up to 16 times. The number of triggers will be refreshed each time /bShadowstring Edge//b is gained.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [375]
+          }
+        ]
+      }
+    ]
+  }
+}

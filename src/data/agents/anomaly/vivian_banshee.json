@@ -1,0 +1,1189 @@
+{
+  "id": "vivian",
+  "name": "Vivian Banshee",
+  "specialty": "Anomaly",
+  "faction": "Mockingbird",
+  "attribute": "Ether",
+  "rarity": "S",
+  "fullName": "Vivian Banshee",
+  "displayName": "Vivian",
+  "attributeIcon": "Ether",
+  "themeColor": "#B39FF5",
+  "skins": [
+    {
+      "id": "default",
+      "img": "vivian.png"
+    },
+    {
+      "id": "iris_of_the_shore",
+      "img": "vivian-iris_of_the_shore.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7673.7,
+    "atk": 805.7,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 118,
+    "anomalyMastery": 108,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Mastery", "Anomaly Proficiency"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "vivian_banshee-core_1-dirge_of_destiny",
+      "source": "core",
+      "sourceId": "vivian_banshee-core",
+      "label": "Dirge of Destiny (Core Passive)",
+      "description": "... When Basic Attack: Fluttering Frock - Suspension or Basic Attack: Featherbloom hits a target suffering any Attribute Anomaly, it will inflict Vivian's Prophecy, causing the target to take Ether DMG equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. Vivian's Prophecy ends when the target is no longer suffering an Attribute Anomaly. When entering the battlefield, Vivian gains 2 Flight Feathers.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    },
+    {
+      "id": "vivian_banshee-core_2-dirge_of_destiny",
+      "source": "core",
+      "sourceId": "vivian_banshee-core",
+      "label": "Dirge of Destiny (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same attribute:\n\nWhenever another squad member applies an Attribute Anomaly to an enemy, Vivian will consume 1 Guard Feather to launch Basic Attack: Featherbloom on the target. This can trigger once every 0.5s. Corruption DMG dealt by all squad members and the Corruption status' Disorder DMG increases by 12%.",
+      "shortDescription": "All squad members' DMG from Corruption and it's Disorder DMG are increased by 12%.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "anomalyTypeDmg",
+          "anomalyType": "corruption",
+          "value": 0.12
+        },
+        {
+          "type": "disorderTypeDmg",
+          "anomalyType": "corruption",
+          "value": 0.12
+        }
+      ]
+    },
+    {
+      "id": "vivian_banshee-mindscape_1-alking_into_the_orchard_in_spring",
+      "source": "mindscape",
+      "sourceId": "vivian_banshee-mindscape_1",
+      "label": "Walking Into the Orchard in Spring (Mindscape Cinema N°1)",
+      "description": "When a total of 4 Guard Feathers are consumed, gain 1 Flight Feather. All Attribute Anomaly DMG and Disorder DMG received by targets under Vivian's Prophecy increases by 16%.",
+      "shortDescription": "All squad members' DMG from Attribute Anomalies and Disorders is increased by 16%.",
+      "target": "team",
+      "flat": {
+        "anomalyDmgBonus": 0.16,
+        "disorderDmgBonus": 0.16
+      }
+    },
+    {
+      "id": "vivian_banshee-mindscape_2-stormy_night_stormy_night",
+      "source": "mindscape",
+      "sourceId": "vivian_banshee-mindscape_2",
+      "label": "Stormy Night, Stormy Night (Mindscape Cinema N°2)",
+      "description": "Vivian's Ether Anomaly Buildup Rate increases by 25%. The benefits of Abloom from Anomaly Proficiency are raised to 130% of the original value, and 15% of the target's All-Attribute RES is ignored.",
+      "shortDescription": "Vivian's attacks ignore 15% of the target's All-Attribute RES",
+      "target": "self",
+      "perStack": {
+        "fireResShred": 0.15,
+        "iceResShred": 0.15,
+        "electricResShred": 0.15,
+        "physicalResShred": 0.15,
+        "etherResShred": 0.15,
+        "windResShred": 0.15
+      }
+    },
+    {
+      "id": "vivian_banshee-mindscape_4-the_wind_between_the_reeds",
+      "source": "mindscape",
+      "sourceId": "vivian_banshee-mindscape_4",
+      "label": "The Wind Between the Reeds (Mindscape Cinema N°4)",
+      "description": "Basic Attack: Fluttering Frock - Suspension and Basic Attack: Featherbloom will always CRIT on hit, and they will also increase Vivian's ATK by 12% for 12s. Repeated triggers reset the duration. When entering the battlefield, Vivian immediately gains 5 Guard Feathers.",
+      "shortDescription": "Vivian's ATK is increased by 12% for 12s.",
+      "target": "self",
+      "flat": {
+        "atkPercentRaw": 0.12
+      }
+    },
+    {
+      "id": "vivian_banshee-mindscape_6-vivian",
+      "source": "mindscape",
+      "sourceId": "vivian_banshee-mindscape_6",
+      "label": "Vivian (Mindscape Cinema N°6)",
+      "description": "Vivian's Ether DMG increases by 40%. When triggering a Perfect Dodge during Basic Attack: Noblewoman - Waltz's dash, or using EX Special Attack: Violet Requiem, gain 1 additional Flight Feather. Launching Basic Attack: Fluttering Frock - Suspension consumes all Guard Feathers, the downward attack's area of effect increases, and upon hit, triggers a special instance of Abloom. Each additional Guard Feather consumed will increase the proportion of additional Anomaly DMG dealt by that instance of Abloom, consuming a maximum of 5 Guard Feathers to increase the DMG up to a maximum of 5 times the original.",
+      "shortDescription": "Vivian's Ether DMG is increased by 40%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "ether",
+          "value": 0.4
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "vivian-basic_attack-feathered_strike",
+        "name": "Feathered Strike (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to four attacks in front, dealing Physical DMG and Ether DMG. After triggering the fourth attack, enter the /bNoblewoman//b state. With /bFlight Feathers//b available, holding [BASIC] during the fourth attack will activate the /bFluttering Frock//b state.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [34.1, 24.2, 76.9, 128.4] },
+          {
+            "level": 2,
+            "multipliers": [37.2, 26.4, 83.9, 140.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [40.3, 28.6, 90.9, 151.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [43.4, 30.8, 97.9, 163.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [46.5, 33, 104.9, 175.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [49.6, 35.2, 111.9, 186.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [52.7, 37.4, 118.9, 198.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [55.8, 39.6, 125.9, 210.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [58.9, 41.8, 132.9, 222]
+          },
+          {
+            "level": 10,
+            "multipliers": [62, 44, 139.9, 233.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [65.1, 46.2, 146.9, 245.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [68.2, 48.4, 153.9, 257.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [71.3, 50.6, 160.9, 268.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [74.4, 52.8, 167.9, 280.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [77.5, 55, 174.9, 292.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [80.6, 57.2, 181.9, 303.9]
+          }
+        ]
+      },
+      {
+        "id": "vivian-basic_attack-noblewoman_waltz",
+        "name": "Noblewoman - Waltz (Basic Attack)",
+        "description": "Press [BASIC] while in the /bNoblewoman//b state to activate:\n\nDash forward with an attack that deals Ether DMG and restores 1 /bFlight Feather//b upon hitting an enemy. Character is invulnerable while using this skill.\n\nIf a /bPerfect Dodge//b is triggered during the dash, gain 1 additional /bFlight Feather//b. If /bFlight Feathers//b are available after the skill, enter the /bFluttering Frock//b state, which can be canceled by holding [DODGE] when the skill is used.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [47.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [52.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [56.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [61]
+          },
+          {
+            "level": 5,
+            "multipliers": [65.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [69.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [74.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [78.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [83]
+          },
+          {
+            "level": 10,
+            "multipliers": [87.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [91.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [96.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [100.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [105]
+          },
+          {
+            "level": 15,
+            "multipliers": [109.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [113.8]
+          }
+        ]
+      },
+      {
+        "id": "vivian-basic_attack-fluttering_frock_suspension",
+        "name": "Fluttering Frock - Suspension (Basic Attack)",
+        "description": "Press [BASIC] while in the /bFluttering Frock//b state to activate:\n\nAttack an area ahead, dealing Ether DMG. After activation, this skill consumes all /bFlight Feathers//b, and each one consumed grants 1 /bGuard Feather//b. Character is invulnerable while using this skill.\n\nWhen switching characters during the /bFluttering Frock//b state, Vivian will automatically perform /bBasic Attack: Fluttering Frock - Suspension//b. While in the /bFluttering Frock//b state, press [DODGE] to exit the state.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [80.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [87.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [94.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [102.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [109.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [116.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [124]
+          },
+          {
+            "level": 8,
+            "multipliers": [131.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [138.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [145.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [153.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [160.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [167.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [175.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [182.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [189.7]
+          }
+        ]
+      },
+      {
+        "id": "vivian-basic_attack-featherbloom",
+        "name": "Featherbloom (Basic Attack)",
+        "description": "After any squad member hits a target with an /bEX Special Attack//b, Vivian will consume 1 /bGuard Feather//b to launch /bBasic Attack: Featherbloom//b against the target, dealing Ether DMG, triggering at most once per use of a skill. This effect can trigger even while Vivian is off-field. A maximum of 5 /bGuard Feathers//b can be stored.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [220]
+          },
+          {
+            "level": 2,
+            "multipliers": [240]
+          },
+          {
+            "level": 3,
+            "multipliers": [260]
+          },
+          {
+            "level": 4,
+            "multipliers": [280]
+          },
+          {
+            "level": 5,
+            "multipliers": [300]
+          },
+          {
+            "level": 6,
+            "multipliers": [320]
+          },
+          {
+            "level": 7,
+            "multipliers": [340]
+          },
+          {
+            "level": 8,
+            "multipliers": [360]
+          },
+          {
+            "level": 9,
+            "multipliers": [380]
+          },
+          {
+            "level": 10,
+            "multipliers": [400]
+          },
+          {
+            "level": 11,
+            "multipliers": [420]
+          },
+          {
+            "level": 12,
+            "multipliers": [440]
+          },
+          {
+            "level": 13,
+            "multipliers": [460]
+          },
+          {
+            "level": 14,
+            "multipliers": [480]
+          },
+          {
+            "level": 15,
+            "multipliers": [500]
+          },
+          {
+            "level": 16,
+            "multipliers": [520]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "vivian-dash_attack-silver_thorned_melody",
+        "name": "Silver Thorned Melody (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunches a forward thrust at enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [49.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [54.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [58.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [63.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [68]
+          },
+          {
+            "level": 6,
+            "multipliers": [72.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [77.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [81.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [86.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [91]
+          },
+          {
+            "level": 11,
+            "multipliers": [95.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [100.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [104.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [109.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [114]
+          },
+          {
+            "level": 16,
+            "multipliers": [118.6]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "vivian-dodge_counter-wingblade_reverb",
+        "name": "Wingblade Reverb (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLaunches an attack on enemies ahead, dealing Physical DMG and Ether DMG. Character is invulnerable while using this skill. After activating the skill, enter the /bNoblewoman//b state. When there are /bFlight Feathers//b available, hold [BASIC] during skill activation to enter the /bFluttering Frock//b state.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [236.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [257.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [279.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [300.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [322.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [343.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [365.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [386.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [408.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [429.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [451.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [472.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [494.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [515.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [537.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [558.9]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "vivian-quick_assist-frostwing_guard",
+        "name": "Frostwing Guard (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLaunches an attack on enemies ahead, dealing Physical DMG and Ether DMG. Character is invulnerable while using this skill. After the skill activates, enter the /bNoblewoman//b state. With /bFlight Feathers//b available, hold [BASIC] during skill activation to enter the /bFluttering Frock//b state.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [97.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [106.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [115.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [124]
+          },
+          {
+            "level": 5,
+            "multipliers": [132.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [141.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [150.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [159.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [168.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [177.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [186.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [195.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [204.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [213]
+          },
+          {
+            "level": 15,
+            "multipliers": [221.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [230.8]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "vivian-assist_follow_up-featherblade_execution",
+        "name": "Featherblade Execution (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nLaunch an attack at enemies ahead, dealing Ether DMG and gaining 2 /bFlight Feathers//b. Character is invulnerable while using this skill. After the skill activates enter the /bFluttering Frock//b state, which can be canceled by holding [DODGE] during the skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [373.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [407.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [441.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [475.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [509.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [543.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [577.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [611.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [645.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [679.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [713.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [747.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [781.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [815.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [849.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [883.9]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "vivian-special_attack-song_of_silver_wings",
+        "name": "Song of Silver Wings (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nQuickly attack forward, dealing Physical DMG and Ether DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [56.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [62.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [67.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [72.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [77.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [82.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [88.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [93.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [98.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [103.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [108.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [114.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [119.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [124.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [129.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [134.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "vivian-ex_special_attack-violet_requiem",
+        "name": "Violet Requiem (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nUnleash a powerful forward attack that deals massive Ether DMG and grants 3 /bFlight Feathers//b. Character is invulnerable while using this skill. Enter the /bFluttering Frock//b state after using the skill. Hold [DODGE] during the skill to enter the /bNoblewoman//b state.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [592.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [646.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [700.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [754.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [808.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [862.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [916]
+          },
+          {
+            "level": 8,
+            "multipliers": [969.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [1023.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [1077.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1131.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1185.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [1239.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [1293.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [1347.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1401.1]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "vivian-chain_attack-chorus_of_celestial_wings",
+        "name": "Chorus of Celestial Wings (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunch a powerful attack on a large area of enemies ahead, dealing massive Ether DMG and gaining 2 /bFlight Feathers//b. Character is invulnerable while using this skill. After the skill activates, enter the /bFluttering Frock//b state, which can be canceled by holding Dodge during the skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [658.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [718.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [778.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [838.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [898.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [958.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [1018.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1078.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [1138.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1198]
+          },
+          {
+            "level": 11,
+            "multipliers": [1257.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [1317.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1377.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1437.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1497.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1557.4]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "vivian-ultimate-soaring_birds_song",
+        "name": "Soaring Bird's Song (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunch a powerful attack on a large area of enemies ahead, dealing massive Ether DMG and gaining 5 /bFlight Feathers//b. Character is invulnerable while using this skill. After the skill is activated, enter the /bFluttering Frock//b state, which can be canceled by holding [DODGE] during the skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1686.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [1840.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [1993.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [2147]
+          },
+          {
+            "level": 5,
+            "multipliers": [2300.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [2453.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [2607.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [2760.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [2914]
+          },
+          {
+            "level": 10,
+            "multipliers": [3067.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [3220.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [3374.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [3527.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [3681]
+          },
+          {
+            "level": 15,
+            "multipliers": [3834.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [3987.8]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "vivian_banshee-core-vivians_prophecy",
+        "name": "Dirge of Destiny - Vivian's Prophecy (Core Passive)",
+        "description": "When /bBasic Attack: Featherbloom//b hits a target that is suffering from an Ether Anomaly, Electric Anomaly, Fire Anomaly, Physical Anomaly, Ice Anomaly or Wind Anomaly it will trigger /bAbloom//b, dealing additional Attribute Anomaly DMG. The additional DMG is 6.15%/3.2%/8%/0.75%/1.08% per 10 points of Anomaly Proficiency of the original Anomaly DMG.\n\nWhen Basic Attack: /bFluttering Frock - Suspension//b or /bBasic Attack: Featherbloom//b hits a target suffering any Attribute Anomaly, it will inflict /bVivian's Prophecy//b, causing the target to take Ether DMG equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. /bVivian's Prophecy//b ends when the target is no longer suffering an Attribute Anomaly. When entering the battlefield, Vivian gains 2 /bFlight Feathers//b.",
+        "skillType": "core",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [55]
+          }
+        ]
+      }
+    ]
+  }
+}

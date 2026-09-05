@@ -1,0 +1,92 @@
+{
+  "id": "myriad_eclipse",
+  "name": "Myriad Eclipse",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT Rate%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.24
+  },
+
+  "ingameEffects": [
+    {
+      "id": "myriad_eclipse-false_personas-crit_dmg",
+      "source": "wEngine",
+      "sourceId": "myriad_eclipse",
+      "label": "False Personas (W-Engine Passive)",
+      "description": "Increases CRIT DMG. When using an EX Special Attack, Chain Attack, or Ultimate to deal Ice DMG, the equipper gains the Absolute Zero Death Sentence effect for 3s. While Absolute Zero Death Sentence is active, the character ignores a portion of the enemy's DEF when landing a hit.",
+      "shortDescription": "Increases the equipper's CRIT DMG.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critDmg": 0.45 }
+          },
+          {
+            "level": 2,
+            "stats": { "critDmg": 0.5175 }
+          },
+          {
+            "level": 3,
+            "stats": { "critDmg": 0.585 }
+          },
+          {
+            "level": 4,
+            "stats": { "critDmg": 0.6525 }
+          },
+          {
+            "level": 5,
+            "stats": { "critDmg": 0.72 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "myriad_eclipse-false_personas-def_shred",
+      "source": "wEngine",
+      "sourceId": "myriad_eclipse",
+      "label": "False Personas (W-Engine Passive)",
+      "description": "Increases CRIT DMG. When using an EX Special Attack, Chain Attack, or Ultimate to deal Ice DMG, the equipper gains the Absolute Zero Death Sentence effect for 3s. While Absolute Zero Death Sentence is active, the character ignores a portion of the enemy's DEF when landing a hit.",
+      "shortDescription": "The equipper's attacks ignore a percentage of the Enemy's DEF.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "defShred": 0.25 }
+          },
+          {
+            "level": 2,
+            "stats": { "defShred": 0.2875 }
+          },
+          {
+            "level": 3,
+            "stats": { "defShred": 0.325 }
+          },
+          {
+            "level": 4,
+            "stats": { "defShred": 0.3625 }
+          },
+          {
+            "level": 5,
+            "stats": { "defShred": 0.4 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

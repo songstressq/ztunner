@@ -1,0 +1,2086 @@
+{
+  "id": "ye_shunguang",
+  "name": "Ye Shunguang",
+  "specialty": "Attack",
+  "faction": "Yunkui Summit",
+  "attribute": "Physical",
+  "anomalyAttribute": {
+    "type": "honedEdge",
+    "parentAttribute": "physical",
+    "baseMultiplier": 7.13,
+    "disorderFormula": {
+      "baseMultiplier": 4.5,
+      "scalingType": "linear",
+      "scalingFactor": 0.075,
+      "tickRate": 1
+    }
+  },
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Ye Shunguang",
+  "attributeIcon": "Honed Edge",
+  "themeColor": "#DEBBB8",
+  "skins": [
+    {
+      "id": "default",
+      "img": "ye_shunguang.png"
+    },
+    {
+      "id": "ye_shunguang-alt",
+      "img": "ye_shunguang-alt.png"
+    },
+    {
+      "id": "touch_of_dawnlight",
+      "img": "ye_shunguang-touch_of_dawnlight.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7673.7,
+    "atk": 863.21,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 83,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT DMG", "CRIT Rate", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "ye_shunguang-core-burning_clarity",
+      "source": "core",
+      "sourceId": "ye_shunguang-core",
+      "label": "Burning Clarity (Core Passive)",
+      "description": "... Upon entering the battlefield, gain Unity, increasing CRIT Rate by 30% and DMG by 25%. ...",
+      "shortDescription": "Ye Shunguang's CRIT Rate increased by 30% and her DMG is increased by 25%.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.3
+      },
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "ye_shunguang-mindscape_1-dreambound_self",
+      "source": "mindscape",
+      "sourceId": "ye_shunguang-mindscape_1",
+      "label": "Dreambound Self (Mindscape Cinema N°1)",
+      "description": "Upon entering the battlefield, gains 6 Qingming Sword Force. This effect can trigger once every 180s in Investigation Zone mode. The Unity effect from Core Passive: Burning Clarity increases DMG dealt by an additional 10%, and they ignore 20% of the target's DEF.",
+      "shortDescription": "Ye Shunguang's DMG is further increased by 10% and her attacks ignore 20% of the target's DEF.",
+      "target": "self",
+      "flat": {
+        "defShred": 0.2
+      },
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "ye_shunguang-mindscape_2-light_and_shadow",
+      "source": "mindscape",
+      "sourceId": "ye_shunguang-mindscape_2",
+      "label": "Light & Shadow (Mindscape Cinema N°2)",
+      "description": "The max stack count of Bearer increases to 6, and Culmination can stack up to 9 times. While in the Enlightened Mind state, each point of Qingming Sword Force consumed grants 1 stack of Culmination. EX Special Attack: Enlightened Mind - Soaring Light and Ultimate: Cleaving Heavens's DMG ignore 40% of the target's DEF.",
+      "shortDescription": "Ye Shunguang's DMG from EX Special Attack: Enlightened Mind - Soaring Light and Ultimate: Cleaving Heavens ignores 40% of the target's DEF.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "defShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "ye_shunguang-ex_special_attack-enlightened_mind_soaring_light",
+            "ye_shunguang-ultimate-cleaving_heavens"
+          ],
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "ye_shunguang-mindscape_4-together_into_the_dust",
+      "source": "mindscape",
+      "sourceId": "ye_shunguang-mindscape_4",
+      "label": "Together into the Dust (Mindscape Cinema N°4)",
+      "description": "Upon entering the battlefield, gains 1,000 Decibels. In Investigation Zone mode, this effect can trigger once every 180s. The Vulnerability bonus provided by Ether Veil: Verdict is increased to a maximum of 200%.",
+      "shortDescription": "This mindscape cinema does not affect Ye Shunguang's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "ye_shunguang-mindscape_6-lantern_wish",
+      "source": "mindscape",
+      "sourceId": "ye_shunguang-mindscape_6",
+      "label": "Lantern Wish (Mindscape Cinema N°6)",
+      "description": "Upon entering the battlefield, gains 2 stacks of Lantern Wish. When entering the Enlightened Mind state, gains 1 stack of Lantern Wish, stacking up to 4 times. With 3 stacks of Lantern Wish, EX Special Attack: Enlightened Mind - Return to Dust is replaced with Ultimate: Cleaving Heavens. When this Ultimate: Cleaving Heavens is activated, it consumes 3 stacks of Lantern Wish. The last hit of Enlightened Mind - Return to Dust and Ultimate: Cleaving Heavens deal 1,500% of ATK as additional Physical DMG.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "ye_shunguang-basic_attack-swiftedge",
+        "name": "Swiftedge (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunches up to four forward slashes, dealing Physical DMG. Can be chained into /bDash Attack: Phantasm Dash//b after the 4th hit.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [79.4, 244.1, 124.6, 368]
+          },
+          {
+            "level": 2,
+            "multipliers": [86.7, 266.3, 136, 401.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [94, 288.5, 147.4, 435]
+          },
+          {
+            "level": 4,
+            "multipliers": [101.3, 310.7, 158.8, 468.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [108.6, 332.9, 170.2, 502]
+          },
+          {
+            "level": 6,
+            "multipliers": [115.9, 355.1, 181.6, 535.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [123.2, 377.3, 193, 569]
+          },
+          {
+            "level": 8,
+            "multipliers": [130.5, 399.5, 204.4, 602.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [137.8, 421.7, 215.8, 636]
+          },
+          {
+            "level": 10,
+            "multipliers": [145.1, 443.9, 227.2, 669.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [152.4, 466.1, 238.6, 703]
+          },
+          {
+            "level": 12,
+            "multipliers": [159.7, 488.3, 250, 736.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [167, 510.5, 261.4, 770]
+          },
+          {
+            "level": 14,
+            "multipliers": [174.3, 532.7, 272.8, 803.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [181.6, 554.9, 284.2, 837]
+          },
+          {
+            "level": 16,
+            "multipliers": [188.9, 577.1, 295.6, 870.5]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-basic_attack-cloudstream_sword_will",
+        "name": "Cloudstream Sword Will (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nLaunches a flurry of blade shockwaves, dealing Physical DMG. Hold to extend the attack. Anti-Interrupt Level is increased during this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Individual Blade Energy DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [16.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [18.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [19.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [21.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [22.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [24.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [25.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [27.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [28.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [30.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [32]
+          },
+          {
+            "level": 12,
+            "multipliers": [33.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [35]
+          },
+          {
+            "level": 14,
+            "multipliers": [36.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [38.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [39.6]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-basic_attack-enlightened_mind_splitting_currents",
+        "name": "Enlightened Mind - Splitting Currents (Basic Attack)",
+        "description": "While in the /bEnlightened Mind//b state and on the ground, press [BASIC] to activate:\n\nPerforms up to three forward slashes, dealing Physical DMG. If struck by an enemy attack during the 3rd hit, triggers a block, negating that instance of DMG. If she possesses /bQingming Sword Force//b, the 3rd hit is replaced with /bBasic Attack: Enlightened Mind - Skyward Ascent//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [112.6, 155.9, 216.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [122.9, 170.1, 236.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [133.2, 184.3, 256]
+          },
+          {
+            "level": 4,
+            "multipliers": [143.5, 198.5, 275.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [153.8, 212.7, 295.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [164.1, 226.9, 315.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [174.4, 241.1, 334.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [184.7, 255.3, 354.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [195, 269.5, 374.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [205.3, 283.7, 393.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [215.6, 297.9, 413.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [225.9, 312.1, 433.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [236.2, 326.3, 453]
+          },
+          {
+            "level": 14,
+            "multipliers": [246.5, 340.5, 472.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [256.8, 354.7, 492.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [267.1, 368.9, 512.1]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-basic_attack-enlightened_mind_skyward_ascent",
+        "name": "Enlightened Mind - Skyward Ascent (Basic Attack)",
+        "description": "While in the /bEnlightened Mind//b state and with /bQingming Sword Force//b, after the 2nd hit of /bBasic Attack: Enlightened Mind - Splitting Currents//b, press [BASIC] to activate:\n\nLaunches a swift rising attack, dealing Physical DMG and entering an airborne state. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [91]
+          },
+          {
+            "level": 2,
+            "multipliers": [99.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [107.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [115.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [124.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [132.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [140.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [149.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [157.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [165.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [174]
+          },
+          {
+            "level": 12,
+            "multipliers": [182.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [190.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [198.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [207.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [215.5]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-basic_attack-enlightened_mind_sunderlight_maximum",
+        "name": "Enlightened Mind - Sunderlight Maximum (Basic Attack)",
+        "description": "After activating /bBasic Attack: Enlightened Mind - Sunderlight Annihilation//b, and with /bQingming Sword Force//b, press [BASIC] to activate:\n\nLaunches a wide sweeping slash forward, dealing massive Physical DMG. On hit, 1 point of /bQingming Sword Force//b is consumed. If struck by an enemy during the skill, triggers a block, negating that instance of DMG and increasing the skill's Interrupt Level.\n\nAfter using this skill and with /bQingming Sword Force//b, press [EX] to consume 1 point of /bQingming Sword Force//b and launch a hit of /bEX Special Attack: Enlightened Mind - Soaring Light//b. This skill is automatically followed up with /bBasic Attack: Enlightened Mind - Skyward Ascent//b, and Ye Shunguang enters an airborne state. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [604.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [659.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [714.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [769.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [824.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [879.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [934.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [989.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1044.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [1099.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [1154.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1209.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1264.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1319.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1374.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1429.8]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-basic_attack-enlightened_mind_sunderlight",
+        "name": "Enlightened Mind - Sunderlight (Basic Attack)",
+        "description": "In the /bEnlightened Mind//b state, and while airborne, press [BASIC] to activate:\n\nLaunches up to two downward slashes in front, dealing Physical DMG. Ye Shunguang will not exit the /bEnlightened Mind//b state during this skill. Press [EX] or [DODGE] to follow up with /bBasic Attack: Enlightened Mind - Sunderlight Annihilation//b. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [120.7, 156.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [131.7, 170.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [142.7, 185.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [153.7, 199.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [164.7, 213.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [175.7, 228]
+          },
+          {
+            "level": 7,
+            "multipliers": [186.7, 242.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [197.7, 256.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [208.7, 270.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [219.7, 285.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [230.7, 299.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [241.7, 313.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [252.7, 328.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [263.7, 342.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [274.7, 356.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [285.7, 371]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-basic_attack-enlightened_mind_sunderlight_annihilation",
+        "name": "Enlightened Mind - Sunderlight Annihilation (Basic Attack)",
+        "description": "After the 2nd hit of /bBasic Attack: Enlightened Mind - Sunderlight//b, press [BASIC] to activate:\n\nPerforms a falling attack in front, entering a grounded state, and dealing Physical DMG. When launching this skill with 2 or more points of /bQingming Sword Force//b, Ye Shunguang will perform a downward falling strike across a large area in front instead, dealing massive Physical DMG. On hit, 2 points of /bQingming Sword Force//b are consumed, granting the /bCulmination//b effect.\n\nAfter using this skill, if Ye Shunguang possesses /bQingming Sword Force//b, press [EX] to consume 1 point of /bQingming Sword Force//b and launch a hit of /bEX Special Attack: Enlightened Mind - Soaring Light//b, which can be quickly followed up with /bBasic Attack: Enlightened Mind - Sunderlight Maximum//b. Ye Shunguang will not exit the /bEnlightened Mind//b state during this skill. During this skill, if attacked by enemies, triggers a block, negating that instance of DMG. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier With Qingming Sword Force",
+            "damageType": "physical"
+          },
+          {
+            "name": "DMG Multiplier Without Qingming Sword Force",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [891.2, 159.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [972.3, 174.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [1053.4, 189.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [1134.5, 203.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [1215.6, 218.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [1296.7, 232.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [1377.8, 247.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [1458.9, 262.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [1540, 276.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [1621.1, 291.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1702.2, 305.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [1783.3, 320.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [1864.4, 335.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1945.5, 349.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [2026.6, 364.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [2107.7, 378.9]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "ye_shunguang-dash_attack-phantasm_dash",
+        "name": "Phantasm Dash (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [105]
+          },
+          {
+            "level": 2,
+            "multipliers": [114.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [124.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [133.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [143.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [153]
+          },
+          {
+            "level": 7,
+            "multipliers": [162.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [172.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [181.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [191.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [201]
+          },
+          {
+            "level": 12,
+            "multipliers": [210.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [220.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [229.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [239.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [249]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "ye_shunguang-dodge_counter-swallow_strike",
+        "name": "Swallow Strike (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLeaps into the air and thrusts forward, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [346.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [377.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [409.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [440.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [472.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [503.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [535.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [566.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [598.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [629.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [661.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [692.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [724.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [755.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [787.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [818.8]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "ye_shunguang-entry_skill-illuminating_darkness",
+        "name": "Illuminating Darkness (Entry Skill)",
+        "description": "With 6 /bQingming Sword Force//b and while not in the /bEnlightened Mind//b state, hold [BASIC] to activate, or press [ASSIST] while in combat and switch on-field from off-field to activate:\n\nEnters the /bEnlightened Mind//b state and activates /bEther Veil: Verdict//b. Deals Physical DMG to enemies in a large area in front. Activating this skill is considered as activating a /bQuick Assist//b. Enters the airborne state after using this skill. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [400.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [436.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [473.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [509.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [546]
+          },
+          {
+            "level": 6,
+            "multipliers": [582.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [618.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [655.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [691.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [728]
+          },
+          {
+            "level": 11,
+            "multipliers": [764.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [800.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [837.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [873.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [910]
+          },
+          {
+            "level": 16,
+            "multipliers": [946.4]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-quick_assist-support_guard",
+        "name": "Support Guard (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLeaps into the air and thrusts forward, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [80.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [87.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [95.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [102.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [110.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [117.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [124.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [132.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [139.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [147.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [154.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [161.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [169.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [176.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [184.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [191.5]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-quick_assist-tactical_support",
+        "name": "Enlightened Mind - Tactical Support (Quick Assist)",
+        "description": "While in the /bEnlightened Mind//b state, when the active character is launched, press [ASSIST] to activate:\n\nLaunches a forward slash, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [67.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [73.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [79.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [85.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [92.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [98.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [104.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [110.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [116.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [123.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [129.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [135.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [141.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [147.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [154.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [160.3]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "ye_shunguang-assist_follow_up-cease_hostility",
+        "name": "Cease Hostility (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nDeals massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [413.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [451.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [489.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [526.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [564.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [602.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [639.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [677.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [715.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [753]
+          },
+          {
+            "level": 11,
+            "multipliers": [790.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [828.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [866.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [903.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [941.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [979.2]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-assist_follow_up-unification",
+        "name": "Enlightened Mind - Unification (Assist Follow-Up)",
+        "description": "While in the /bEnlightened Mind//b state and after a [PERFECT], press [BASIC] to activate:\n\nDeals massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [430]
+          },
+          {
+            "level": 2,
+            "multipliers": [469.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [508.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [547.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [586.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [625.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [664.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [703.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [742.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [781.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [821]
+          },
+          {
+            "level": 12,
+            "multipliers": [860.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [899.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [938.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [977.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [1016.5]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "ye_shunguang-special-guiding_tides",
+        "name": "Guiding Tides (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nIf a dodge is available, 1 dodge chance is consumed, and the action is counted as activating a Dodge. If no dodge is available or a /bPerfect Dodge//b is not triggered, launches a quick sword energy attack that deals Physical DMG.\n\nIf a /bPerfect Dodge//b is triggered at this time, launches a flying sword attack, dealing Physical DMG, and immediately follow up with the 2nd hit of /bBasic Attack: Swiftedge//b. Character is briefly invulnerable during the skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Perfect Dodge Triggered DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [98.9, 315.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [107.9, 344.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [116.9, 373.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [125.9, 402.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [134.9, 431.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [143.9, 459.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [152.9, 488.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [161.9, 517.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [170.9, 546.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [179.9, 575.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [188.9, 603.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [197.9, 632.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [206.9, 661.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [215.9, 690.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [224.9, 719.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [233.9, 747.9]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-special_attack-enlightened_mind_clean_exit",
+        "name": "Enlightened Mind - Clean Exit (Special Attack)",
+        "description": "While in the /bEnlightened Mind//b state and grounded, press [EX] to activate:\n\nPerforms a swift backstep slash, dealing Physical DMG. If a dodge is available, 1 dodge chance is consumed, and the action is counted as activating a Dodge. If a /bPerfect Dodge//b is triggered at this time, press [BASIC] to quickly activate /bEnlightened Mind - Sunderlight Maximum//b and enter /bVital View//b.\n\nAfter this /bEnlightened Mind - Sunderlight Maximum//b activates, it can be immediately followed up with /bBasic Attack: Enlightened Mind - Skyward Ascent//b. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [71]
+          },
+          {
+            "level": 2,
+            "multipliers": [77.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [84]
+          },
+          {
+            "level": 4,
+            "multipliers": [90.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [97]
+          },
+          {
+            "level": 6,
+            "multipliers": [103.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [110]
+          },
+          {
+            "level": 8,
+            "multipliers": [116.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [123]
+          },
+          {
+            "level": 10,
+            "multipliers": [129.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [136]
+          },
+          {
+            "level": 12,
+            "multipliers": [142.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [149]
+          },
+          {
+            "level": 14,
+            "multipliers": [155.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [162]
+          },
+          {
+            "level": 16,
+            "multipliers": [168.5]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "ye_shunguang-ex_special_attack-gale_suppression",
+        "name": "Gale Suppression (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLaunches a rushing slash and a flying sword attack at the enemy, dealing massive Physical DMG. Enemy attacks can be dodged during this skill. After this skill is used, gain 1 point of /bQingming Sword Force//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1178.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [1285.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [1392.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [1500]
+          },
+          {
+            "level": 5,
+            "multipliers": [1607.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [1714.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [1821.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [1928.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [2036]
+          },
+          {
+            "level": 10,
+            "multipliers": [2143.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [2250.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [2357.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [2464.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [2572]
+          },
+          {
+            "level": 15,
+            "multipliers": [2679.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [2786.4]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-ex_special_attack-enlightened_mind_soaring_light",
+        "name": "Enlightened Mind - Soaring Light (EX Special Attack)",
+        "description": "In the /bEnlightened Mind//b state and with /bQingming Sword Force//b, hold [EX] to activate:\n\nPerforms quick consecutive slashes, dealing massive Physical DMG while rapidly consuming /bQingming Sword Force//b until none remains. The skill ends early if /bQingming Sword Force//b is insufficient or if [EX] is released. Ye Shunguang will not exit the /bEnlightened Mind//b state during this skill. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1 Quingming Sword Force Consumed DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "6 Quingming Sword Force Consumed DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [176.3, 1058]
+          },
+          {
+            "level": 2,
+            "multipliers": [192.4, 1154.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [208.4, 1250.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [224.4, 1346.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [240.5, 1442.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [256.5, 1539]
+          },
+          {
+            "level": 7,
+            "multipliers": [272.5, 1635.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [288.6, 1731.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [304.6, 1827.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [320.6, 1923.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [336.7, 2020]
+          },
+          {
+            "level": 12,
+            "multipliers": [352.7, 2116.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [368.7, 2212.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [384.8, 2308.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [400.8, 2404.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [416.8, 2501]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-ex_special_attack-enlightened_mind_return_to_dust",
+        "name": "Enlightened Mind - Return to Dust (EX Special Attack)",
+        "description": "In the /bEnlightened Mind//b state, press [ULTIMATE] or hold [EX] when all /bQingming Sword Force//b is expended to activate:\n\nDeals massive Physical DMG to enemies in a large area. Ye Shunguang will not exit the /bEnlightened Mind//b state during this skill. After using this skill, /bEther Veil: Verdict//b is removed and the /bEnlightened Mind//b state ends. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1161.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [1266.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [1372.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [1477.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [1583.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [1689.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [1794.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [1900.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [2005.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [2111.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [2217.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [2322.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [2428.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [2533.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [2639.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [2745.1]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "ye_shunguang-chain_attack-smite_the_wicked",
+        "name": "Smite the Wicked (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful slash at enemies ahead in a large area, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [871.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [950.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [1030.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [1109.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [1188.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [1268.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [1347.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1426.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [1506]
+          },
+          {
+            "level": 10,
+            "multipliers": [1585.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1664.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1743.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1823.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1902.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1981.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [2061.1]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-chain_attack-lure_thunder",
+        "name": "Enlightened Mind - Lure Thunder (Chain Attack)",
+        "description": "While in the /bEnlightened Mind//b state, and when a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful slash at enemies ahead in a large area, dealing massive Physical DMG. Ye Shunguang will not exit the /bEnlightened Mind//b state during this skill. Enter the airborne state after using this skill. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [908.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [991.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [1073.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [1156.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [1239]
+          },
+          {
+            "level": 6,
+            "multipliers": [1321.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [1404.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [1486.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1569.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [1652]
+          },
+          {
+            "level": 11,
+            "multipliers": [1734.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1817.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1899.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1982.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [2065]
+          },
+          {
+            "level": 16,
+            "multipliers": [2147.6]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "ye_shunguang-ultimate-chasing_storms",
+        "name": "Chasing Storms (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nSummons a sword formation and enter the /bEnlightened Mind//b state, activating an /bEther Veil: Verdict//b while also gaining 6 /bQingming Sword Force//b. This skill deals massive Physical DMG.\n\nUpon activating this skill, if Decibels are consumed, press [ULTIMATE] while in this /bEnlightened Mind//b state to launch an /bUltimate: Cleaving Heavens//b that doesn't consume Decibels. Enter the airborne state after using this skill. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1925]
+          },
+          {
+            "level": 2,
+            "multipliers": [2100]
+          },
+          {
+            "level": 3,
+            "multipliers": [2275]
+          },
+          {
+            "level": 4,
+            "multipliers": [2450]
+          },
+          {
+            "level": 5,
+            "multipliers": [2625]
+          },
+          {
+            "level": 6,
+            "multipliers": [2800]
+          },
+          {
+            "level": 7,
+            "multipliers": [2975]
+          },
+          {
+            "level": 8,
+            "multipliers": [3150]
+          },
+          {
+            "level": 9,
+            "multipliers": [3325]
+          },
+          {
+            "level": 10,
+            "multipliers": [3500]
+          },
+          {
+            "level": 11,
+            "multipliers": [3675]
+          },
+          {
+            "level": 12,
+            "multipliers": [3850]
+          },
+          {
+            "level": 13,
+            "multipliers": [4025]
+          },
+          {
+            "level": 14,
+            "multipliers": [4200]
+          },
+          {
+            "level": 15,
+            "multipliers": [4375]
+          },
+          {
+            "level": 16,
+            "multipliers": [4550]
+          }
+        ]
+      },
+      {
+        "id": "ye_shunguang-ultimate-cleaving_heavens",
+        "name": "Cleaving Heavens (Ultimate)",
+        "description": "After consuming Decibels to launch /bUltimate: Chasing Storms//b and while in the /bEnlightened Mind//b state, press [ULTIMATE] or hold [EX] when all /bQingming Sword Force//b is expended to activate:\n\nSummons a massive blade, dealing massive Physical DMG to enemies. Ye Shunguang will not exit the /bEnlightened Mind//b state during this skill. After using this skill, the /bEnlightened Mind//b state ends, and /bEther Veil: Verdict//b is removed. This skill doesn't consume Decibels. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [3084.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [3364.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [3645.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [3925.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [4205.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [4486.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [4766.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [5047.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [5327.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [5607.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [5888.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [6168.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [6449.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [6729.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [7009.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [7290.3]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "ye_shunguang-mindscape-lantern_wish",
+        "name": "Lantern Wish (Mindscape Cinema N°6)",
+        "description": "Upon entering the battlefield, gains 2 stacks of /bLantern Wish//b. When entering the /bEnlightened Mind//b state, gains 1 stack of /bLantern Wish//b, stacking up to 4 times.\n\nWith 3 stacks of /bLantern Wish//b, /bEX Special Attack: Enlightened Mind - Return to Dust//b is replaced with /bUltimate: Cleaving Heavens//b. When this /bUltimate: Cleaving Heavens//b is activated, it consumes 3 stacks of /bLantern Wish//b. The last hit of /bEnlightened Mind - Return to Dust//b and /bUltimate: Cleaving Heavens//b deal 1,500% of ATK as additional Physical DMG.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1500]
+          }
+        ]
+      }
+    ]
+  }
+}

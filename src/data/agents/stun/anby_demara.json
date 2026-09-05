@@ -1,0 +1,970 @@
+{
+  "id": "anby",
+  "name": "Anby Demara",
+  "specialty": "Stun",
+  "faction": "Cunning Hares",
+  "attribute": "Electric",
+  "rarity": "A",
+  "fullName": "Anby Demara",
+  "displayName": "Anby",
+  "attributeIcon": "Electric",
+  "themeColor": "#aac97b",
+  "baseStats": {
+    "hp": 7500.7,
+    "atk": 583.96,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 118,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Impact"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "anby_demara-mindscape_1-rapid_charge_mode",
+      "source": "mindscape",
+      "sourceId": "anby_demara-mindscape_1",
+      "label": "Rapid Charge Mode (Mindscape Cinema N°1)",
+      "description": "When the 4th-hit of Anby's Basic Attack hits an enemy, her Energy Generation Rate is increased by 12% for 30s.",
+      "shortDescription": "This mindscape cinema does not affect Anby's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "anby_demara-mindscape_2-precision_discharge",
+      "source": "mindscape",
+      "sourceId": "anby_demara-mindscape_2",
+      "label": "Precision Discharge (Mindscape Cinema N°2)",
+      "description": "When Basic Attack: Thunderbolt hits a Stunned enemy, its DMG is increased by 30%. When Anby's EX Special Attack hits an enemy that is not Stunned, the Daze inflicted is increased by 10%.",
+      "shortDescription": "Anby's DMG from Basic Attack: Thunderbolt is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["anby-basic_attack-thunderbolt"],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "anby_demara-mindscape_4-conducting_charge",
+      "source": "mindscape",
+      "sourceId": "anby_demara-mindscape_4",
+      "label": "Conducting Charge (Mindscape Cinema N°4)",
+      "description": "When Anby launches a Chain Attack or uses her Ultimate, off-field Electric characters recover 3 Energy. For every 12% of Anby's Energy Generation Rate, recover an additional 2 Energy, up to a maximum of 6 additional Energy.",
+      "shortDescription": "This mindscape cinema does not affect Anby's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "anby_demara-mindscape_6-charging_field",
+      "source": "mindscape",
+      "sourceId": "anby_demara-mindscape_6",
+      "label": "Charging Field (Mindscape Cinema N°6)",
+      "description": "When Anby uses her EX Special Attack, she gains 8 stacks of Charge (max 8 stacks). When she hits an enemy with her Basic Attack or Dash Attack, 1 stack of Charge is consumed, increasing that attack's DMG by 45%.",
+      "shortDescription": "Anby's DMG from Basic Attacks or Dash Attacks is increased by 45%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "anby-basic_attack-turbo_volt",
+            "anby-basic_attack-thunderbolt",
+            "anby-dash_attack-taser_blast"
+          ],
+          "value": 0.45
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "anby-basic_attack-turbo_volt",
+        "name": "Turbo Volt (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 4 slashes. The first 3 hits deal Physical DMG, the 4th hit deals Electric DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [31.2, 33.7, 113.6, 239.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [34.1, 36.8, 124, 260.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [37, 39.9, 134.4, 282.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [39.9, 43, 144.8, 304.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [42.8, 46.1, 155.2, 326.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [45.7, 49.2, 165.6, 348.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [48.6, 52.3, 176, 369.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [51.5, 55.4, 186.4, 391.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [54.4, 58.5, 196.8, 413.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [57.3, 61.6, 207.2, 435.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [60.2, 64.7, 217.6, 457.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [63.1, 67.8, 228, 478.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [66, 70.9, 238.4, 500.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [68.9, 74, 248.8, 522.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [71.8, 77.1, 259.2, 544.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [74.7, 80.2, 269.6, 566.1]
+          }
+        ]
+      },
+      {
+        "id": "anby-basic_attack-thunderbolt",
+        "name": "Thunderbolt (Basic Attack)",
+        "description": "After unleashing the 3rd hit of the /bBasic Attack//b, hold down or pause for a short while, and then press [BASIC] to activate:\n\nUnleashes a downward strike that deals Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [328.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [358.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [388.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [418.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [448.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [478.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [508]
+          },
+          {
+            "level": 8,
+            "multipliers": [537.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [567.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [597.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [627.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [657.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [687.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [717.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [747.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [777.1]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "anby-dash_attack-taser_blast",
+        "name": "Taser Blast (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\n Slashes all nearby enemies, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [56.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [61.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [67.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [72.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [77.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [82.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [87.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [93.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [98.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [103.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [108.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [113.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [119.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [124.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [129.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [134.7]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "anby-dodge_counter-thunderclap",
+        "name": "Thunderclap (Dodge Counter)",
+        "description": "Press [BASIC] during a perfect dodge to activate:\n\nSlashes all nearby enemies, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [180.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [196.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [213]
+          },
+          {
+            "level": 4,
+            "multipliers": [229.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [245.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [262.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [278.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [295]
+          },
+          {
+            "level": 9,
+            "multipliers": [311.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [327.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [344.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [360.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [377]
+          },
+          {
+            "level": 14,
+            "multipliers": [393.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [409.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [426.2]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "anby-quick_assist-thunderfall",
+        "name": "Thunderfall (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nSlashes enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [61.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [67.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [73.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [78.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [84.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [90.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [95.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [101.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [107.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [113]
+          },
+          {
+            "level": 11,
+            "multipliers": [118.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [124.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [130.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [135.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [141.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [147.2]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "anby-assist_follow_up-lightning_whirl",
+        "name": "Lightning Whirl (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nPerform a spinning slash against enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [335.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [365.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [396.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [426.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [457.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [487.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [518.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [548.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [579.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [609.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [640.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [670.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [701.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [731.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [762.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [792.7]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "anby-special_attack-fork_lightning",
+        "name": "Fork Lightning (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nUnleashes an upward slash that deals Electric DMG. This attack launches faster when used after the 3rd-hit of the /bBasic Attack//b or /bBasic Attack: Thunderbolt//b. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [93.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [101.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [110.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [118.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [127.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [135.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [144.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [152.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [161.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [169.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [178.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [186.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [195.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [203.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [212.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [220.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "anby-ex_special_attack-lightning_bolt",
+        "name": "Lightning Bolt (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nUnleashes a powerful upward slash that deals Electric DMG. This attack launches faster when used after the 3rd-hit of her /bBasic Attack//b or /bBasic Attack: Thunderbolt//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [583]
+          },
+          {
+            "level": 2,
+            "multipliers": [636]
+          },
+          {
+            "level": 3,
+            "multipliers": [689]
+          },
+          {
+            "level": 4,
+            "multipliers": [742]
+          },
+          {
+            "level": 5,
+            "multipliers": [795]
+          },
+          {
+            "level": 6,
+            "multipliers": [848]
+          },
+          {
+            "level": 7,
+            "multipliers": [901]
+          },
+          {
+            "level": 8,
+            "multipliers": [954]
+          },
+          {
+            "level": 9,
+            "multipliers": [1007]
+          },
+          {
+            "level": 10,
+            "multipliers": [1060]
+          },
+          {
+            "level": 11,
+            "multipliers": [1113]
+          },
+          {
+            "level": 12,
+            "multipliers": [1166]
+          },
+          {
+            "level": 13,
+            "multipliers": [1219]
+          },
+          {
+            "level": 14,
+            "multipliers": [1272]
+          },
+          {
+            "level": 15,
+            "multipliers": [1325]
+          },
+          {
+            "level": 16,
+            "multipliers": [1431]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "anby-chain_attack-electro_engine",
+        "name": "Electro Engine (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful upward slash at enemies in a small area, dealing massive Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [542.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [591.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [641.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [690.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [740]
+          },
+          {
+            "level": 6,
+            "multipliers": [789.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [838.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [888.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [937.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [987]
+          },
+          {
+            "level": 11,
+            "multipliers": [1036.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1085.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1135.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1184.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1234]
+          },
+          {
+            "level": 16,
+            "multipliers": [1283.4]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "anby-ultimate-overdrive_engine",
+        "name": "Overdrive Engine (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a powerful upward slash at enemies in a small area followed by several downward strikes, dealing massive Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1512.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [1649.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [1785.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [1922.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [2059]
+          },
+          {
+            "level": 6,
+            "multipliers": [2195.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [2332.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [2468.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [2605.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [2742]
+          },
+          {
+            "level": 11,
+            "multipliers": [2878.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [3015.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [3151.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [3288.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [3425]
+          },
+          {
+            "level": 16,
+            "multipliers": [3561.6]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

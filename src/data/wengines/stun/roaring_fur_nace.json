@@ -1,0 +1,78 @@
+{
+  "id": "roaring_fur_nace",
+  "name": "Roaring Fur-nace",
+  "rarity": "S",
+  "specialty": "Stun",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "roaring_fur_nace-tiger_spirit_rising",
+      "source": "wEngine",
+      "label": "Tiger Spirit Rising (W-Engine Passive)",
+      "description": "The Daze dealt by the equipper's EX Special Attack, Chain Attack, and Ultimate is increased. When using a Chain Attack or Ultimate to deal Fire DMG, the DMG dealt by all squad members is increased, stacking up to 2 times and lasting 30s. The duration of each stack is calculated separately. Triggers once per use of a skill. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "All squad members' DMG is increased for 30s, stacking up to 2 times.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.1
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.115
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.13
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.145
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.16
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    }
+  ]
+}

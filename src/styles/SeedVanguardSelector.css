@@ -1,0 +1,86 @@
+.svs-main_wrapper {
+  border: 1px solid #444;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.svs-main_wrapper-title_wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.svs-main_wrapper-title_wrapper strong {
+  font-size: 14;
+}
+
+.svs-main_wrapper-title_wrapper .info-icon {
+  margin-left: 8px;
+  font-size: 11px;
+  color: #666;
+  cursor: help;
+  background-color: #333;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svs-main_wrapper-ability_info {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #202020;
+}
+
+.svs-main_wrapper-ability_label {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.svs-main_wrapper-ability_input {
+  margin-right: 6px;
+}
+
+.svs-main_wrapper-selector_wrapper {
+  margin-top: 10px;
+}
+
+.svs-main_wrapper-selector_wrapper label {
+  font-size: 12px;
+  color: #aaa;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.svs-main_wrapper-selector_wrapper-agent_slots {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.svs-main_wrapper-selector_wrapper-agent_slots button {
+  padding: 6px 12px;
+  font-size: 11px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.svs-main_wrapper-selector_wrapper-agent_slots-text {
+  font-size: 11px;
+  color: #7effdb;
+  margin-top: 6px;
+}
+
+.svs-main_wrapper-extra_info {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-top: 12px;
+  border-top: 1px solid #333;
+  padding-top: 4px;
+}

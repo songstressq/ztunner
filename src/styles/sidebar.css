@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Tiny5";
+  src: url("../resources/fonts/Tiny5.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Georama";
+  src: url("../resources/fonts/Georama.ttf") format("truetype");
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  width: var(--sidebar-width);
+  overflow: hidden;
+  top: 0;
+  height: 100dvh;
+  background-color: #23232e;
+  transition: width 400ms ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 3000;
+}
+
+/* Cuando la sidebar está abierta (clase 'open') */
+.sidebar.open {
+  width: var(--sidebar-300px);
+}
+
+/* El main-content se desplaza según el estado de la sidebar */
+.sidebar.open + .main-content {
+  margin-left: var(--sidebar-300px);
+}
+.sidebar + .main-content {
+  margin-left: var(--sidebar-width);
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.sidebar-item {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.sidebar-list .sidebar-item:last-child {
+  margin-top: auto;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  height: var(--sidebar-80px);
+  flex-shrink: 0;
+  color: #ffffff7e;
+  text-decoration: none;
+  filter: grayscale(100%);
+  pointer-events: none;
+  cursor: default;
+}
+.sidebar.open .sidebar-link {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.sidebar-link:hover {
+  filter: grayscale(0%);
+  background: #141418;
+  color: #ffffff;
+}
+
+/* ÍCONOS */
+.item-icon {
+  width: var(var(--sidebar-50px));
+  height: var(--sidebar-50px);
+  margin-left: var(--sidebar-22_5px);
+  transform: rotate(0deg);
+  transition: transform 250ms;
+  filter: invert(75%);
+}
+.sidebar-link:hover .item-icon {
+  transform: rotate(360deg);
+  filter: invert(100%);
+}
+
+/* TEXTO DE LOS ENLACES */
+.item-text {
+  position: absolute;
+  left: var(--sidebar-90px);
+  top: auto;
+  width: var(--sidebar-170px);
+  font-family: Georama;
+  font-size: var(--text-21_6px);
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+.sidebar.open .item-text {
+  opacity: 1;
+}
+
+/* FLECHA / BOTÓN HAMBURGUESA */
+.arrow {
+  padding-top: var(--sidebar-20px);
+  padding-right: var(--sidebar-25px);
+  padding-bottom: var(--sidebar-20px);
+  margin: 0px;
+  text-align: right;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ececec;
+  background: #141418;
+  font-size: var(--sidebar-25px);
+  letter-spacing: 0.3ch;
+  filter: grayscale(100%);
+  cursor: pointer; /* siempre clickeable */
+}
+.arrow:hover {
+  filter: grayscale(0%);
+}
+
+.arrow-icon {
+  width: var(--sidebar-50px);
+  height: var(--sidebar-50px);
+  transition: transform 500ms;
+  filter: invert(75%);
+}
+.sidebar.open .arrow-icon {
+  transform: rotate(-540deg);
+  filter: invert(100%);
+}
+
+.arrow-text {
+  font-family: Tiny5;
+  font-size: var(--sidebar-35px);
+  position: fixed;
+  top: auto;
+  bottom: auto;
+  left: var(--sidebar-neg250px);
+  transition: left 500ms;
+  top: var(--sidebar-25px);
+}
+.sidebar.open .arrow-text {
+  left: var(--sidebar-20px);
+}
+
+/* ============================================================
+   MEDIA QUERY PARA DISPOSITIVOS TÁCTILES (sin hover)
+   ============================================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* En táctiles, el hover no debe hacer nada, así que dejamos
+     que el estado 'open' controle todo */
+  .sidebar {
+    /* ya está controlado por la clase open */
+  }
+  .sidebar.open {
+    width: var(--sidebar-300px);
+  }
+  .sidebar.open + .main-content {
+    margin-left: var(--sidebar-300px);
+  }
+  .sidebar + .main-content {
+    margin-left: var(--sidebar-width);
+  }
+  /* Opcional: hacer el arrow más grande para facilitar toque */
+  .arrow {
+    padding: var(--sidebar-20px);
+  }
+}
