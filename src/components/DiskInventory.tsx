@@ -572,7 +572,7 @@ const DiskInventory = ({
         options={discSets.map((set) => ({
           id: set.id,
           name: set.name,
-          img: `/resources/images/sets/${set.id}.png`,
+          img: `{`${import.meta.env.BASE_URL}resources/images/sets/${set.id}.png`,
         }))}
         onClose={() => setSetModalOpen(false)}
         onSelect={(id) => {

@@ -252,7 +252,7 @@ const WEngineEffectToggle = ({
           {showOwnerIcon && (ownerAgentId || effect.ownerAgentId) && (
             <div className="ingame_toggle-agent_icon">
               <img
-                src={`/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`}
+                src={`{`${import.meta.env.BASE_URL}resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`}
                 alt={
                   ownerDisplayName ||
                   effect.ownerDisplayName ||
@@ -275,7 +275,7 @@ const WEngineEffectToggle = ({
                 }}
               >
                 <img
-                  src={`/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
+                  src={`{`${import.meta.env.BASE_URL}resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
                   alt={effect.condition.requiresSpecialty}
                 />
                 {effect.condition.requiresSpecialty}

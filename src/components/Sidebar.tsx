@@ -52,7 +52,10 @@ const Sidebar = () => {
   return (
     <nav className={`sidebar ${isSidebarOpen ? "open" : ""}`} ref={sidebarRef}>
       <div className="arrow" onClick={toggleSidebar}>
-        <img src="/resources/images/sidebar/logo.png" className="arrow-icon" />
+        <img
+          src="{`${import.meta.env.BASE_URL}resources/images/sidebar/logo.png"
+          className="arrow-icon"
+        />
         <span className="arrow-text">Z-TUNNER</span>
       </div>
       <ul className="sidebar-list">
@@ -64,7 +67,7 @@ const Sidebar = () => {
             onClick={() => handleLinkClick("/home")}
           >
             <img
-              src="/resources/images/sidebar/home.png"
+              src="{`${import.meta.env.BASE_URL}resources/images/sidebar/home.png"
               className="item-icon"
             />
             <span className="item-text">Home</span>
@@ -77,7 +80,7 @@ const Sidebar = () => {
             onClick={() => handleLinkClick("/build-creator")}
           >
             <img
-              src="/resources/images/sidebar/wengines.png"
+              src="{`${import.meta.env.BASE_URL}resources/images/sidebar/wengines.png"
               className="item-icon"
             />
             <span className="item-text">Build Creator</span>
@@ -90,7 +93,7 @@ const Sidebar = () => {
             onClick={() => handleLinkClick("/damage-simulator")}
           >
             <img
-              src="/resources/images/sidebar/simu.png"
+              src="{`${import.meta.env.BASE_URL}resources/images/sidebar/simu.png"
               className="item-icon"
             />
             <span className="item-text">Damage Calculator</span>
@@ -103,7 +106,7 @@ const Sidebar = () => {
             onClick={() => handleLinkClick("/build-manager")}
           >
             <img
-              src="/resources/images/sidebar/agents.png"
+              src="{`${import.meta.env.BASE_URL}resources/images/sidebar/agents.png"
               className="item-icon"
             />
             <span className="item-text">Build Manager</span>
@@ -116,7 +119,7 @@ const Sidebar = () => {
             onClick={() => handleLinkClick("/disc-inventory")}
           >
             <img
-              src="/resources/images/sidebar/disks.png"
+              src="{`${import.meta.env.BASE_URL}resources/images/sidebar/disks.png"
               className="item-icon"
             />
             <span className="item-text">Disc Inventory</span>
@@ -129,7 +132,7 @@ const Sidebar = () => {
             onClick={() => handleLinkClick("/info-settings")}
           >
             <img
-              src="/resources/images/sidebar/calc.png"
+              src="{`${import.meta.env.BASE_URL}resources/images/sidebar/calc.png"
               className="item-icon"
             />
             <span className="item-text">Info & Settings</span>

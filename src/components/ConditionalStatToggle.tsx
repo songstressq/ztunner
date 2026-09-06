@@ -64,7 +64,7 @@ const ConditionalStatToggle = ({
       >
         {showOwnerIcon && effect.ownerAgentId && (
           <img
-            src={`/resources/images/agents/icons/${effect.ownerAgentId}.png`}
+            src={`{`${import.meta.env.BASE_URL}resources/images/agents/icons/${effect.ownerAgentId}.png`}
             alt={effect.ownerDisplayName || effect.ownerAgentId}
             style={{ width: "32px", height: "32px", borderRadius: "50%" }}
           />

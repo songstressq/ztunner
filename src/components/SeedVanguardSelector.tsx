@@ -39,7 +39,7 @@ const SeedVanguardSelector = ({
             {ownerAgentId && (
               <div className="ingame_toggle-agent_icon">
                 <img
-                  src={`/resources/images/agents/icons/${ownerAgentId}.png`}
+                  src={`{`${import.meta.env.BASE_URL}resources/images/agents/icons/${ownerAgentId}.png`}
                   alt={ownerDisplayName || ownerAgentId}
                   title={ownerDisplayName || ownerAgentId}
                 />
@@ -113,7 +113,7 @@ const SeedVanguardSelector = ({
                         }}
                       >
                         <img
-                          src="/resources/images/icons/specialties/Attack.png"
+                          src="{`${import.meta.env.BASE_URL}resources/images/icons/specialties/Attack.png"
                           alt="Attack"
                           className="slotref-specialty-icon"
                         />

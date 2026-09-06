@@ -331,7 +331,7 @@ export default function LuminizeCalculator({
           <div className="anomaly-grid-header">
             <div className="anomaly-title-with-icon">
               <img
-                src="/resources/images/icons/attributes/Lumiflux.png"
+                src="{`${import.meta.env.BASE_URL}resources/images/icons/attributes/Lumiflux.png"
                 alt="Lumiflux"
                 className="anomaly-attribute-icon"
               />
