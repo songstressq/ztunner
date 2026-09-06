@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import DamageSimulator from "../pages/DamageSimulator";
 import BuildManager from "../pages/BuildManager";
@@ -7,7 +7,7 @@ import BuildCreator from "../pages/BuildCreator";
 import InfoAndSettings from "../pages/InfoAndSettings";
 import Home from "../pages/Home";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     element: <MainLayout />,
