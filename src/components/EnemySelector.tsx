@@ -139,7 +139,7 @@ export default function EnemySelector({
             <div key={key} className="enemy_selector-resistance_row">
               <span>
                 <img
-                  src={`{`${import.meta.env.BASE_URL}resources/images/icons/attributes/${key}.png`}
+                  src={`/resources/images/icons/attributes/${key}.png`}
                   alt={key}
                   className="enemy_selector-element_icon"
                 />

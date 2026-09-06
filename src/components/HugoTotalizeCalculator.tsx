@@ -155,7 +155,7 @@ export default function HugoTotalizeCalculator({
       <div className="totalize-header">
         <div className="totalize-header-left">
           <img
-            src="{`${import.meta.env.BASE_URL}resources/images/icons/skilltypes/core.png"
+            src="/resources/images/icons/skilltypes/core.png"
             alt="core"
             className="totalize-icon"
           />
