@@ -938,7 +938,7 @@ const DamageSimulator = () => {
             <div className="slot-agent_card-block" style={emptySlotStyle}>
               {/* Imagen fullbody */}
               <img
-                src={`/resources/images/agents/fullbody/test_slot.png`}
+                src={`/ztunner/resources/images/agents/fullbody/test_slot.png`}
                 alt={"test_slot"}
               />
               <div className="slot-agent_tag-container">
@@ -1160,7 +1160,7 @@ const DamageSimulator = () => {
           <div className="slot-agent_card-block" style={emptyObjectsStyle}>
             {/* Imagen fullbody */}
             <img
-              src={`/resources/images/agents/fullbody/${
+              src={`/ztunner/resources/images/agents/fullbody/${
                 skin?.img || agent.id + ".png"
               }`}
               alt={agent.displayName}

@@ -53,7 +53,7 @@ const SlotReferenceToggle = ({
     if (!iconName) return <span className="slotref-icon">👤</span>;
     return (
       <img
-        src={`/resources/images/icons/specialties/${iconName}.png`}
+        src={`/ztunner/resources/images/icons/specialties/${iconName}.png`}
         alt={specialty}
         className="slotref-specialty-icon"
       />
@@ -120,7 +120,7 @@ const SlotReferenceToggle = ({
             {showOwnerIcon && (ownerAgentId || effect.ownerAgentId) && (
               <div className="ingame_toggle-agent_icon">
                 <img
-                  src={`/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`}
+                  src={`/ztunner/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`}
                   alt={
                     ownerDisplayName ||
                     effect.ownerDisplayName ||
@@ -160,7 +160,7 @@ const SlotReferenceToggle = ({
                   style={{ color: "#7EFFDB", backgroundColor: "#1a3a2a" }}
                 >
                   <img
-                    src={`/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
+                    src={`/ztunner/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
                     alt={effect.condition.requiresSpecialty}
                   />
                   {effect.condition.requiresSpecialty}

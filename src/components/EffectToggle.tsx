@@ -57,10 +57,10 @@ const EffectToggle = ({
               <img
                 src={
                   (ownerAgentId || effect.ownerAgentId) === "gameMode"
-                    ? "/resources/images/agents/icons/game_mode.png"
+                    ? "/ztunner/resources/images/agents/icons/game_mode.png"
                     : ownerAgentId || effect.ownerAgentId
-                      ? `/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`
-                      : "/resources/images/agents/icons/game_mode.png"
+                      ? `/ztunner/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`
+                      : "/ztunner/resources/images/agents/icons/game_mode.png"
                 }
                 alt={ownerDisplayName || effect.ownerDisplayName || "Game Mode"}
                 title={

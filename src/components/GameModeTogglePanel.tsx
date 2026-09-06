@@ -255,8 +255,8 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   };
 
   const modeIcons: Record<string, string> = {
-    deadly_assault: "/resources/images/other/deadly_assault.png",
-    shiyu_defense: "/resources/images/other/shiyu_defense.png",
+    deadly_assault: "/ztunner/resources/images/other/deadly_assault.png",
+    shiyu_defense: "/ztunner/resources/images/other/shiyu_defense.png",
   };
 
   return (
@@ -345,7 +345,7 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
                     <div className="ingame_toggle-first_row">
                       <div className="ingame_toggle-agent_icon">
                         <img
-                          src="/resources/images/agents/icons/game_mode.png"
+                          src="/ztunner/resources/images/agents/icons/game_mode.png"
                           alt="Game Mode"
                           className="ingame_toggle-agent_icon-img"
                         />

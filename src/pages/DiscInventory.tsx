@@ -441,7 +441,7 @@ const DiscInventory = () => {
           </button>
           {currentDisk.setId && (
             <img
-              src={`/resources/images/sets/${currentDisk.setId}-alt.png`}
+              src={`/ztunner/resources/images/sets/${currentDisk.setId}-alt.png`}
               alt={currentDisk.setId}
               style={{
                 width: "44px",
@@ -1068,7 +1068,7 @@ const DiscInventory = () => {
                   >
                     {disk.setId && (
                       <img
-                        src={`/resources/images/sets/${disk.setId}.png`}
+                        src={`/ztunner/resources/images/sets/${disk.setId}.png`}
                         alt={disk.setId}
                         style={{
                           width: "34px",
@@ -1593,7 +1593,7 @@ const DiscInventory = () => {
         options={discSets.map((set) => ({
           id: set.id,
           name: set.name,
-          img: `/resources/images/sets/${set.id}.png`,
+          img: `/ztunner/resources/images/sets/${set.id}.png`,
         }))}
         onClose={() => setSetModalOpen(false)}
         onSelect={(id) => {

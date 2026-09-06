@@ -53,7 +53,7 @@ export default function AnomalyBonusesPanel({
     if (source.source === "gameMode") {
       return (
         <img
-          src="/resources/images/agents/icons/game_mode.png"
+          src="/ztunner/resources/images/agents/icons/game_mode.png"
           alt="Game Mode"
           className="damage_panel-item_summary-icon"
           title="Game Mode"
@@ -68,7 +68,7 @@ export default function AnomalyBonusesPanel({
     if (source.ownerAgentId) {
       return (
         <img
-          src={`/resources/images/agents/icons/${source.ownerAgentId}.png`}
+          src={`/ztunner/resources/images/agents/icons/${source.ownerAgentId}.png`}
           alt={source.ownerDisplayName || source.ownerAgentId}
           className="damage_panel-item_summary-icon"
           title={source.ownerDisplayName || source.ownerAgentId}

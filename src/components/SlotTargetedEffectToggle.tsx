@@ -51,7 +51,7 @@ const SlotTargetedEffectToggle = ({
             {showOwnerIcon && (ownerAgentId || effect.ownerAgentId) && (
               <div className="ingame_toggle-agent_icon">
                 <img
-                  src={`/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`}
+                  src={`/ztunner/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`}
                   alt={
                     ownerDisplayName ||
                     effect.ownerDisplayName ||
@@ -91,7 +91,7 @@ const SlotTargetedEffectToggle = ({
                   style={{ color: "#7EFFDB", backgroundColor: "#1a3a2a" }}
                 >
                   <img
-                    src={`/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
+                    src={`/ztunner/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
                     alt={effect.condition.requiresSpecialty}
                   />
                   {effect.condition.requiresSpecialty}

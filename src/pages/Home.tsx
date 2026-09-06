@@ -20,10 +20,10 @@ const Home = () => {
   // Construir la ruta de la imagen
   const imageUrl = useMemo(() => {
     if (dominantAgent && !imageError) {
-      return `/resources/images/agents/mindscape/${dominantAgent.id}_mindscape.png`;
+      return `/ztunner/resources/images/agents/mindscape/${dominantAgent.id}_mindscape.png`;
     }
     // Fallback: imagen por defecto (puedes usar una imagen genérica)
-    return ""; // o "/resources/images/agents/mindscape/default_mindscape.png"
+    return ""; // o "/ztunner/resources/images/agents/mindscape/default_mindscape.png"
   }, [dominantAgent, imageError]);
 
   const shouldShowImage = !!imageUrl && !imageError;
@@ -283,18 +283,18 @@ const Home = () => {
                     <div className="home_content-agent_image">
                       <div className="home_content-agent_icons">
                         <img
-                          src="/resources/images/icons/attributes/Lumiflux.png"
+                          src="/ztunner/resources/images/icons/attributes/Lumiflux.png"
                           alt="Lumiflux"
                           className="remielle_icons"
                         />
                         <img
-                          src="/resources/images/icons/specialties/Anomaly.png"
+                          src="/ztunner/resources/images/icons/specialties/Anomaly.png"
                           alt="Anomaly"
                           className="remielle_icons"
                         />
                       </div>
                       <img
-                        src="/resources/images/agents/other/remielle.png"
+                        src="/ztunner/resources/images/agents/other/remielle.png"
                         alt="Remielle Dan"
                         className="remielle_img"
                       />
@@ -305,18 +305,18 @@ const Home = () => {
                     <div className="home_content-agent_image">
                       <div className="home_content-agent_icons">
                         <img
-                          src="/resources/images/icons/attributes/Ice.png"
+                          src="/ztunner/resources/images/icons/attributes/Ice.png"
                           alt="Ice"
                           className="sigrid_icons"
                         />
                         <img
-                          src="/resources/images/icons/specialties/Attack.png"
+                          src="/ztunner/resources/images/icons/specialties/Attack.png"
                           alt="Attack"
                           className="sigrid_icons"
                         />
                       </div>
                       <img
-                        src="/resources/images/agents/other/sigrid.png"
+                        src="/ztunner/resources/images/agents/other/sigrid.png"
                         alt="Sigrid de L'Azur"
                         className="sigrid_img"
                       />
@@ -330,7 +330,7 @@ const Home = () => {
                   <div className="home_content-card_section order_2">
                     <div className="home_content-agent_image">
                       <img
-                        src="/resources/images/wengines/knights_extolment.png"
+                        src="/ztunner/resources/images/wengines/knights_extolment.png"
                         alt="Knight's Extolment"
                         className="sigrid_img no_agent_icon"
                       />
@@ -340,7 +340,7 @@ const Home = () => {
                   <div className="home_content-card_section order_3">
                     <div className="home_content-agent_image">
                       <img
-                        src="/resources/images/wengines/ode_of_resurrected_wings.png"
+                        src="/ztunner/resources/images/wengines/ode_of_resurrected_wings.png"
                         alt="Ode of Resurrected Wings"
                         className="remielle_img no_agent_icon"
                       />
@@ -354,7 +354,7 @@ const Home = () => {
                   <div className="home_content-card_section order_2">
                     <div className="home_content-agent_image">
                       <img
-                        src="/resources/images/sets/feathered_fate.png"
+                        src="/ztunner/resources/images/sets/feathered_fate.png"
                         alt="Feathered Fate"
                         className="remielle_img no_agent_icon"
                       />
@@ -365,7 +365,7 @@ const Home = () => {
                   <div className="home_content-card_section order_3">
                     <div className="home_content-agent_image">
                       <img
-                        src="/resources/images/sets/thorned_rose.png"
+                        src="/ztunner/resources/images/sets/thorned_rose.png"
                         alt="Thorned Rose"
                         className="thorned_rose_img no_agent_icon"
                       />

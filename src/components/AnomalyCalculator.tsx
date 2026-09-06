@@ -1471,7 +1471,7 @@ export default function AnomalyCalculator({
             <div className="anomaly-grid-header">
               <div className="anomaly-title-with-icon">
                 <img
-                  src={`/resources/images/icons/attributes/${
+                  src={`/ztunner/resources/images/icons/attributes/${
                     agent.anomalyAttribute?.type
                       ? agent.anomalyAttribute.type.charAt(0).toUpperCase() +
                         agent.anomalyAttribute.type.slice(1)
@@ -2040,7 +2040,7 @@ export default function AnomalyCalculator({
           <div className="anomaly-grid-header">
             <div className="anomaly-title-with-icon">
               <img
-                src="/resources/images/icons/attributes/Physical.png"
+                src="/ztunner/resources/images/icons/attributes/Physical.png"
                 alt="Physical"
                 className="anomaly-attribute-icon"
               />
@@ -2377,7 +2377,7 @@ export default function AnomalyCalculator({
           <div className="anomaly-grid-header">
             <div className="anomaly-title-with-icon">
               <img
-                src="/resources/images/icons/attributes/Physical.png"
+                src="/ztunner/resources/images/icons/attributes/Physical.png"
                 alt="Physical"
                 className="anomaly-attribute-icon"
               />
@@ -2571,7 +2571,7 @@ export default function AnomalyCalculator({
           <div className="anomaly-grid-header">
             <div className="anomaly-title-with-icon">
               <img
-                src="/resources/images/icons/attributes/Electric.png"
+                src="/ztunner/resources/images/icons/attributes/Electric.png"
                 alt="Electric"
                 className="anomaly-attribute-icon"
               />
@@ -2960,7 +2960,7 @@ export default function AnomalyCalculator({
           <div className="anomaly-grid-header">
             <div className="anomaly-title-with-icon">
               <img
-                src="/resources/images/icons/attributes/Ether.png"
+                src="/ztunner/resources/images/icons/attributes/Ether.png"
                 alt="Ether"
                 className="anomaly-attribute-icon"
               />

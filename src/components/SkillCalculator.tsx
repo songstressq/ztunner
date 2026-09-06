@@ -334,12 +334,12 @@ export default function SkillCalculator({
       "[EX]": {
         icon:
           agentSpecialty === "Rupture"
-            ? "/resources/images/icons/skilltypes/ex_rupture.png"
-            : "/resources/images/icons/skilltypes/ex.png",
+            ? "/ztunner/resources/images/icons/skilltypes/ex_rupture.png"
+            : "/ztunner/resources/images/icons/skilltypes/ex.png",
         name: "EX Special Attack",
       },
       "[ULTIMATE]": {
-        icon: "/resources/images/icons/skilltypes/ultimate.png",
+        icon: "/ztunner/resources/images/icons/skilltypes/ultimate.png",
         name: "Ultimate",
       },
       "[CHAIN]": {
@@ -347,15 +347,15 @@ export default function SkillCalculator({
         name: "Chain Attack",
       },
       "[BASIC]": {
-        icon: "/resources/images/icons/skilltypes/basic.png",
+        icon: "/ztunner/resources/images/icons/skilltypes/basic.png",
         name: "Basic Attack",
       },
       "[SPECIAL]": {
-        icon: "/resources/images/icons/skilltypes/special.png",
+        icon: "/ztunner/resources/images/icons/skilltypes/special.png",
         name: "Special Attack",
       },
       "[DODGE]": {
-        icon: "/resources/images/icons/skilltypes/dodge.png",
+        icon: "/ztunner/resources/images/icons/skilltypes/dodge.png",
         name: "Dodge",
       },
       "[COUNTER]": {
@@ -363,7 +363,7 @@ export default function SkillCalculator({
         name: "Perfect Dodge",
       },
       "[QUICK]": {
-        icon: "/resources/images/icons/skilltypes/quick.png",
+        icon: "/ztunner/resources/images/icons/skilltypes/quick.png",
         name: "Quick Assist",
       },
       "[PERFECT]": {
@@ -371,7 +371,7 @@ export default function SkillCalculator({
         name: "Defensive Assist",
       },
       "[ASSIST]": {
-        icon: "/resources/images/icons/skilltypes/assist.png",
+        icon: "/ztunner/resources/images/icons/skilltypes/assist.png",
         name: "Assist",
       },
     };
@@ -2033,7 +2033,7 @@ export default function SkillCalculator({
             <div className="totalize-header">
               <div className="totalize-header-left">
                 <img
-                  src="/resources/images/icons/skilltypes/ultimate_white.png"
+                  src="/ztunner/resources/images/icons/skilltypes/ultimate_white.png"
                   alt="ultimate"
                   className="totalize-icon"
                 />
@@ -2313,7 +2313,7 @@ export default function SkillCalculator({
             <div className="extra-panel-header">
               <div className="extra-panel-header-left">
                 <img
-                  src="/resources/images/icons/skilltypes/core.png"
+                  src="/ztunner/resources/images/icons/skilltypes/core.png"
                   alt="core"
                   className="totalize-icon"
                 />
@@ -2418,7 +2418,7 @@ export default function SkillCalculator({
             <div className="extra-panel-header">
               <div className="extra-panel-header-left">
                 <img
-                  src="/resources/images/icons/skilltypes/core.png"
+                  src="/ztunner/resources/images/icons/skilltypes/core.png"
                   alt="core"
                   className="totalize-icon"
                 />

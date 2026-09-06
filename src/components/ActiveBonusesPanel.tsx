@@ -169,7 +169,7 @@ export default function ActiveBonusesPanel({
     if (source.source === "gameMode") {
       return (
         <img
-          src="/resources/images/agents/icons/game_mode.png"
+          src="/ztunner/resources/images/agents/icons/game_mode.png"
           alt="Game Mode"
           className="damage_panel-item_summary-icon"
           title="Game Mode"
@@ -184,7 +184,7 @@ export default function ActiveBonusesPanel({
     if (source.ownerAgentId) {
       return (
         <img
-          src={`/resources/images/agents/icons/${source.ownerAgentId}.png`}
+          src={`/ztunner/resources/images/agents/icons/${source.ownerAgentId}.png`}
           alt={source.ownerDisplayName || source.ownerAgentId}
           className="damage_panel-item_summary-icon"
           title={source.ownerDisplayName || source.ownerAgentId}
@@ -219,12 +219,12 @@ export default function ActiveBonusesPanel({
     }
 
     const elementMap: Record<string, string> = {
-      fire: "/resources/images/icons/attributes/Fire.png",
-      ice: "/resources/images/icons/attributes/Ice.png",
-      electric: "/resources/images/icons/attributes/Electric.png",
-      physical: "/resources/images/icons/attributes/Physical.png",
-      ether: "/resources/images/icons/attributes/Ether.png",
-      wind: "/resources/images/icons/attributes/Wind.png",
+      fire: "/ztunner/resources/images/icons/attributes/Fire.png",
+      ice: "/ztunner/resources/images/icons/attributes/Ice.png",
+      electric: "/ztunner/resources/images/icons/attributes/Electric.png",
+      physical: "/ztunner/resources/images/icons/attributes/Physical.png",
+      ether: "/ztunner/resources/images/icons/attributes/Ether.png",
+      wind: "/ztunner/resources/images/icons/attributes/Wind.png",
     };
 
     const iconPath = elementMap[element?.toLowerCase()];

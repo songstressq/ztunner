@@ -473,7 +473,7 @@ const BuildManager = () => {
                         <div className="agents-build-identity">
                           <div className="agents-build-avatar">
                             <img
-                              src={`/resources/images/agents/icons/${agent.id}.png`}
+                              src={`/ztunner/resources/images/agents/icons/${agent.id}.png`}
                               alt={agent.displayName}
                             />
                           </div>
@@ -560,7 +560,7 @@ const BuildManager = () => {
                         <div className="agents-engine">
                           <div className="agents-engine-icon">
                             <img
-                              src={`/resources/images/wengines/${engine.id}.png`}
+                              src={`/ztunner/resources/images/wengines/${engine.id}.png`}
                               alt={engine.name}
                             />
                           </div>
@@ -766,7 +766,7 @@ const BuildManager = () => {
                                   className="agents-active-set-item"
                                 >
                                   <img
-                                    src={`/resources/images/sets/${set.setId}.png`}
+                                    src={`/ztunner/resources/images/sets/${set.setId}.png`}
                                     alt={setInfo?.name}
                                   />
                                   <span className="agents-active-set-name">
