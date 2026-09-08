@@ -1,0 +1,130 @@
+{
+  "id": "half_sugar_bunny",
+  "name": "Half-Sugar Bunny",
+  "rarity": "S",
+  "specialty": "Defense",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "half_sugar_bunny-fraggile_sweetness-energy_regen",
+      "source": "wEngine",
+      "sourceId": "half_sugar_bunny",
+      "label": "Fragile Sweetness (W-Engine Passive)",
+      "description": "The equipper's Energy Regen is increased. All squad members gain ATK and Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an Ether Veil, all squad members gain additional CRIT DMG for 60s. Repeated triggers reset the duration.",
+      "shortDescription": "The equipper's Energy Regen is increased.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "energyRegenRaw": 0.46 }
+          },
+          {
+            "level": 2,
+            "stats": { "energyRegenRaw": 0.53 }
+          },
+          {
+            "level": 3,
+            "stats": { "energyRegenRaw": 0.6 }
+          },
+          {
+            "level": 4,
+            "stats": { "energyRegenRaw": 0.67 }
+          },
+          {
+            "level": 5,
+            "stats": { "energyRegenRaw": 0.74 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    },
+
+    {
+      "id": "half_sugar_bunny-fraggile_sweetness-hp_atk",
+      "source": "wEngine",
+      "sourceId": "half_sugar_bunny",
+      "label": "Fragile Sweetness (W-Engine Passive)",
+      "description": "The equipper's Energy Regen is increased. All squad members gain ATK and Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an Ether Veil, all squad members gain additional CRIT DMG for 60s. Repeated triggers reset the duration.",
+      "shortDescription": "All squad members's Max HP and ATK are increased.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "hpPercentRaw": 0.1, "atkPercentRaw": 0.1 }
+          },
+          {
+            "level": 2,
+            "stats": { "hpPercentRaw": 0.115, "atkPercentRaw": 0.115 }
+          },
+          {
+            "level": 3,
+            "stats": { "hpPercentRaw": 0.13, "atkPercentRaw": 0.13 }
+          },
+          {
+            "level": 4,
+            "stats": { "hpPercentRaw": 0.145, "atkPercentRaw": 0.145 }
+          },
+          {
+            "level": 5,
+            "stats": { "hpPercentRaw": 0.16, "atkPercentRaw": 0.16 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    },
+
+    {
+      "id": "half_sugar_bunny-fraggile_sweetness-crit_dmg",
+      "source": "wEngine",
+      "sourceId": "half_sugar_bunny",
+      "label": "Fragile Sweetness (W-Engine Passive)",
+      "description": "The equipper's Energy Regen is increased. All squad members gain ATK and Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an Ether Veil, all squad members gain additional CRIT DMG for 60s. Repeated triggers reset the duration.",
+      "shortDescription": "All squad members' CRIT DMG is increased for 60s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critDmg": 0.3 }
+          },
+          {
+            "level": 2,
+            "stats": { "critDmg": 0.345 }
+          },
+          {
+            "level": 3,
+            "stats": { "critDmg": 0.39 }
+          },
+          {
+            "level": 4,
+            "stats": { "critDmg": 0.435 }
+          },
+          {
+            "level": 5,
+            "stats": { "critDmg": 0.48 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    }
+  ]
+}

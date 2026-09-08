@@ -1,0 +1,236 @@
+{
+  "id": "cordis_germina",
+  "name": "Cordis Germina",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT Rate%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.24
+  },
+
+  "ingameEffects": [
+    {
+      "id": "cordis_germina-sprouting_core-crit_rate",
+      "source": "wEngine",
+      "sourceId": "cordis_germina",
+      "label": "Sprouting Core (W-Engine Passive)",
+      "description": "Increases CRIT Rate. When the equipper deals DMG with a Basic Attack or EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's Electric DMG, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's Basic Attack and Ultimate DMG ignore a portion of enemy DEF.",
+      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "baseStats": {
+              "critRate": 0.15
+            }
+          },
+          {
+            "level": 2,
+            "baseStats": {
+              "critRate": 0.17
+            }
+          },
+          {
+            "level": 3,
+            "baseStats": {
+              "critRate": 0.19
+            }
+          },
+          {
+            "level": 4,
+            "baseStats": {
+              "critRate": 0.21
+            }
+          },
+          {
+            "level": 5,
+            "baseStats": {
+              "critRate": 0.23
+            }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "cordis_germina-sprouting_core-electric_dmg",
+      "source": "wEngine",
+      "sourceId": "cordis_germina",
+      "label": "Sprouting Core (W-Engine Passive)",
+      "description": "Increases CRIT Rate. When the equipper deals DMG with a Basic Attack or EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's Electric DMG, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's Basic Attack and Ultimate DMG ignore a portion of enemy DEF.",
+      "shortDescription": "Increases the equipper's Electric DMG, stacking up to 2 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.125
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.145
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.165
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.185
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.2
+              }
+            ]
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "cordis_germina-sprouting_core-def_shred",
+      "source": "wEngine",
+      "sourceId": "cordis_germina",
+      "label": "Sprouting Core (W-Engine Passive)",
+      "description": "Increases CRIT Rate. When the equipper deals DMG with a Basic Attack or EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's Electric DMG, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's Basic Attack and Ultimate DMG ignore a portion of enemy DEF.",
+      "shortDescription": "The equipper's Basic Attacks and Ultimates ignore a percentage of the target's DEF.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "skillTypeStat",
+                "skillType": "basic",
+                "stat": "defShred",
+                "value": 0.2
+              },
+              {
+                "type": "skillTypeStat",
+                "skillType": "ultimate",
+                "stat": "defShred",
+                "value": 0.2
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "skillTypeStat",
+                "skillType": "basic",
+                "stat": "defShred",
+                "value": 0.23
+              },
+              {
+                "type": "skillTypeStat",
+                "skillType": "ultimate",
+                "stat": "defShred",
+                "value": 0.23
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "skillTypeStat",
+                "skillType": "basic",
+                "stat": "defShred",
+                "value": 0.26
+              },
+              {
+                "type": "skillTypeStat",
+                "skillType": "ultimate",
+                "stat": "defShred",
+                "value": 0.26
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "skillTypeStat",
+                "skillType": "basic",
+                "stat": "defShred",
+                "value": 0.29
+              },
+              {
+                "type": "skillTypeStat",
+                "skillType": "ultimate",
+                "stat": "defShred",
+                "value": 0.29
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "skillTypeStat",
+                "skillType": "basic",
+                "stat": "defShred",
+                "value": 0.32
+              },
+              {
+                "type": "skillTypeStat",
+                "skillType": "ultimate",
+                "stat": "defShred",
+                "value": 0.32
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1118 @@
+{
+  "id": "qingyi",
+  "name": "Qingyi",
+  "specialty": "Stun",
+  "faction": "Criminal Investigation Special Response Team",
+  "attribute": "electric",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Qingyi",
+  "attributeIcon": "Electric",
+  "themeColor": "#53AAAD",
+  "baseStats": {
+    "hp": 8250.6,
+    "atk": 683.2,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 118,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Impact"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "qingyi-basic_attack-flash_connect",
+      "source": "basic_attack",
+      "sourceId": "qingyi-basic_attack",
+      "label": "Flash Connect (Basic Attack)",
+      "description": "When Qingyi deals Electric DMG with a skill, she accumulates Flash Connect Voltage. When Flash Connect Voltage reaches 75%, she will enter the Flash Connect state. When using her Basic Attack: Enchanted Moonlit Blossoms, Qingyi will consume all Flash Connect Voltage and exit the Flash Connect state. For every 1% of Flash Connect Voltage consumed over 75%, her Damage and Daze inflicted by this skill will be increased by 1%/0.5%. Basic Attack: Enchanted Moonlit Blossoms itself does not accumulate Flash Connect Voltage",
+      "shortDescription": "Qingyi's DMG from Basic Attack: Enchanted Moonlit Blossoms is increased by 1% per Flash Connect Voltage consumed over 75%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["qingyi-basic_attack-enchanted_moonlit_blossoms"],
+          "value": 0.01
+        }
+      ],
+      "maxStacks": 25
+    },
+    {
+      "id": "qingyi-core-three_verses_of_farewell_at_yang_pass",
+      "source": "core",
+      "sourceId": "qingyi_core",
+      "label": "Three Verses of Farewell at Yang Pass (Additional Ability)",
+      "description": "When another character in your squad is an Attack character or shares the same Faction:\n\nBasic Attacks deal 20% increased Daze. If Qingyi's Impact is greater than 120, each point over increases her ATK by 6, up to a maximum of 600.",
+      "shortDescription": "Qingyi's ATK is increased based on her current Impact, up to a maximum of 600.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "impact",
+        "threshold": 120,
+        "perUnit": 1,
+        "perUnitBonus": 6,
+        "maxBonus": 600,
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "qingyi-mindscape_1_1-insulation_breakdown",
+      "source": "mindscape",
+      "sourceId": "qingyi-mindscape_1",
+      "label": "Insulation Breakdown (Mindscape Cinema N°1)",
+      "description": "When Qingyi enters combat, Flash Connect Voltage is instantly restored to its maximum, and the accumulation rate is increased by 30%. When using her Basic Attack: Enchanted Moonlit Blossoms, if Flash Connect Voltage is at its maximum, the attack will reduce the DEF of the enemy it hits by 15%, and Qingyi's CRIT Rate against that enemy will increase by 20% for 15s.",
+      "shortDescription": "Qingyi's CRIT Rate is increased by 20% for 15s.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.2
+      }
+    },
+    {
+      "id": "qingyi-mindscape_1_2-insulation_breakdown",
+      "source": "mindscape",
+      "sourceId": "qingyi-mindscape_1",
+      "label": "Insulation Breakdown (Mindscape Cinema N°1)",
+      "description": "When Qingyi enters combat, Flash Connect Voltage is instantly restored to its maximum, and the accumulation rate is increased by 30%. When using her Basic Attack: Enchanted Moonlit Blossoms, if Flash Connect Voltage is at its maximum, the attack will reduce the DEF of the enemy it hits by 15%, and Qingyi's CRIT Rate against that enemy will increase by 20% for 15s.",
+      "shortDescription": "The target's DEF is reduced by 15%.",
+      "target": "self",
+      "flat": {
+        "defShred": 0.15
+      }
+    },
+    {
+      "id": "qingyi-mindscape_2-minimal_effort_maximum_impact",
+      "source": "mindscape",
+      "sourceId": "qingyi-mindscape_2",
+      "label": "Minimal Effort, Maximum Impact (Mindscape Cinema N°2)",
+      "description": "The Stun DMG Multiplier increase provided by each stack of Subjugation in Core Passive: Eternal Seasons increases to 135% of its original value. When Qingyi's attack hits an enemy and the stacks of Subjugation she applies reaches its maximum stacks, her Daze dealt to the target increases by 15%.",
+      "shortDescription": "This mindscape cinema does not affect Qingyi's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "qingyi-mindscape_4-stable_arc_barrier",
+      "source": "mindscape",
+      "sourceId": "qingyi-mindscape_4",
+      "label": "Stable Arc Barrier (Mindscape Cinema N°4)",
+      "description": "Upon entering or exiting Flash Connect state, gain a shield equal to 10% of Qingyi's Max HP. If a previous shield is still active when the shield effect refreshes, Qingyi generates 5 Energy. This Energy Generation effect can be triggered once every 10s.",
+      "shortDescription": "This mindscape cinema does not affect Qingyi's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "qingyi-mindscape_6_1-eight_meridians",
+      "source": "mindscape",
+      "sourceId": "qingyi-mindscape_6",
+      "label": "Eight Meridians (Mindscape Cinema N°6)",
+      "description": "The Interrupt Level of Basic Attack: Enchanted Moonlit Blossoms is greatly increased, and the CRIT DMG is increased by an additional 100%. When Qingyi hits an enemy with her Basic Attack: Enchanted Moonlit Blossoms, the target's Attribute DMG RES is reduced by 20% for 15s.",
+      "shortDescription": "Qingyi's CRIT DMG from Basic Attack: Enchanted Moonlit Blossoms is increased by 100%.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": ["qingyi-basic_attack-enchanted_moonlit_blossoms"],
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "qingyi-mindscape_6_2-eight_meridians",
+      "source": "mindscape",
+      "sourceId": "qingyi-mindscape_6",
+      "label": "Eight Meridians (Mindscape Cinema N°6)",
+      "description": "The Interrupt Level of Basic Attack: Enchanted Moonlit Blossoms is greatly increased, and the CRIT DMG is increased by an additional 100%. When Qingyi hits an enemy with her Basic Attack: Enchanted Moonlit Blossoms, the target's Attribute DMG RES is reduced by 20% for 15s.",
+      "shortDescription": "Target's All-Attribute RES is reduced by 20% for 15s.",
+      "target": "team",
+      "flat": {
+        "fireResShred": 0.2,
+        "iceResShred": 0.2,
+        "electricResShred": 0.2,
+        "physicalResShred": 0.2,
+        "etherResShred": 0.2,
+        "windResShred": 0.2
+      }
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "qingyi-basic_attack-penultimate",
+        "name": "Penultimate (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunch up to four strikes forward, dealing Physical DMG and Electric DMG. During the 3rd hit, repeatedly press [BASIC] to continue the attack, continuously striking the enemy. Using /bDodge//b during this period will not interrupt Qingyi's /bBasic Attack//b combo count.\n\nDuring the 3rd hit, stop pressing [BASIC] to interrupt the continuous attack, transitioning automatically to the 4th hit. If the continuous attack lasts for a certain time, the 4th hit will be enhanced. Anti-Interrupt Level is increased and DMG received is reduced by 40% during the 3rd and 4th hit.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "1st Hit DMG Multiplier (ALT)",
+            "damageType": "electric"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th Hit DMG Multiplier (Enhanced)",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [47.2, 110.3, 122.1, 17.6, 106.4, 234.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [51.5, 120.4, 133.2, 19.2, 116.1, 255.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [55.8, 130.5, 144.3, 20.8, 125.8, 277.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [60.1, 140.6, 155.4, 22.4, 135.5, 298.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [64.4, 150.7, 166.5, 24, 145.2, 320]
+          },
+          {
+            "level": 6,
+            "multipliers": [68.7, 160.8, 177.6, 25.6, 154.9, 341.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [73, 170.9, 188.7, 27.2, 164.6, 362.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [77.3, 181, 199.8, 28.8, 174.3, 384.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [81.6, 191.1, 210.9, 30.4, 184, 405.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [85.9, 201.2, 222, 32, 193.7, 427]
+          },
+          {
+            "level": 11,
+            "multipliers": [90.2, 211.3, 233.1, 33.6, 203.4, 448.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [94.5, 221.4, 244.2, 35.2, 213.1, 469.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [98.8, 231.5, 255.3, 36.8, 222.8, 491.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [103.1, 241.6, 266.4, 38.4, 232.5, 512.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [107.4, 251.7, 277.5, 40, 242.2, 534]
+          },
+          {
+            "level": 16,
+            "multipliers": [111.7, 261.8, 288.6, 41.6, 251.9, 555.4]
+          }
+        ]
+      },
+      {
+        "id": "qingyi-basic_attack-enchanted_blossoms",
+        "name": "Enchanted Blossoms (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunches a forward rush attack, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [85.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [93.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [101.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [109]
+          },
+          {
+            "level": 5,
+            "multipliers": [116.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [124.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [132.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [140.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [148]
+          },
+          {
+            "level": 10,
+            "multipliers": [155.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [163.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [171.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [179.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [187]
+          },
+          {
+            "level": 15,
+            "multipliers": [194.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [202.6]
+          }
+        ]
+      },
+      {
+        "id": "qingyi-basic_attack-enchanted_moonlit_blossoms",
+        "name": "Enchanted Moonlit Blossoms (Basic Attack)",
+        "description": "During the /bFlash Connect//b state, hold [BASIC] to activate:\n\nLaunch five consecutive forward rush attacks, then execute a /bFinishing Move//b that inflicts massive Electric DMG. Release [BASIC] during the move to trigger the /bFinishing Move//b early.\n\nActivate the finishing strike just before the character is attacked to trigger /bPerfect Dodge//b. Anti-Interrupt level is increased during the rush attack. Qingyi is invulnerable during the /bFinishing Move//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Rush DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Finishing Move DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [448.7, 394.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [489.5, 430.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [530.3, 466.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [571.1, 502.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [611.9, 538]
+          },
+          {
+            "level": 6,
+            "multipliers": [652.7, 573.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [693.5, 609.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [734.3, 645.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [775.1, 681.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [815.9, 717.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [856.7, 753.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [897.5, 789.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [938.3, 825.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [979.1, 861.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1019.9, 897]
+          },
+          {
+            "level": 16,
+            "multipliers": [1060.7, 932.9]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "qingyi-dash_attack-breach",
+        "name": "Breach (Dash Attack)",
+        "description": "Press [BASIC] during a Dodge to activate:\n\nRush forward and then launch an upward attack, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [49.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [54]
+          },
+          {
+            "level": 3,
+            "multipliers": [58.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [63]
+          },
+          {
+            "level": 5,
+            "multipliers": [67.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [72]
+          },
+          {
+            "level": 7,
+            "multipliers": [76.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [81]
+          },
+          {
+            "level": 9,
+            "multipliers": [85.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [90]
+          },
+          {
+            "level": 11,
+            "multipliers": [94.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [99]
+          },
+          {
+            "level": 13,
+            "multipliers": [103.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [108]
+          },
+          {
+            "level": 15,
+            "multipliers": [112.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [117]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "qingyi-dodge_counter-lingering_sentiments",
+        "name": "Lingering Sentiments (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLeap into the air and then perform a downward attack, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [284]
+          },
+          {
+            "level": 2,
+            "multipliers": [309.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [335.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [361.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [387.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [413.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [439.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [465.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [491.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [517.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [543]
+          },
+          {
+            "level": 12,
+            "multipliers": [568.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [594.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [620.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [646.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [672.5]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "qingyi-quick_assist-wind_through_the_pines",
+        "name": "Wind Through the Pines (Quick Assist)",
+        "description": "When the onfield character is launched, press [ASSIST] to activate:\n\nLeap into the air and perform a downward attack, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [133.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [146.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [158.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [170.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [182.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [194.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [207.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [219.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [231.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [243.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [255.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [268.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [280.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [292.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [304.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [316.9]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "qingyi-assist_follow_up-song_of_the_clear_river",
+        "name": "Song of the Clear River (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nRush forward with an attack and inject electrical energy into the ground, then pull back to trigger an explosion, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [376.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [410.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [445]
+          },
+          {
+            "level": 4,
+            "multipliers": [479.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [513.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [547.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [582.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [616.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [650.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [685.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [719.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [753.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [788]
+          },
+          {
+            "level": 14,
+            "multipliers": [822.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [856.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [890.9]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "qingyi-special_attack-sunlit_glory",
+        "name": "Sunlit Glory (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nQuickly swings upward, followed by a downward smash, dealing Electric DMG. Anti-interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [62.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [68.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [73.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [79.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [85.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [90.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [96.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [102.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [108]
+          },
+          {
+            "level": 10,
+            "multipliers": [113.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [119.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [125.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [130.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [136.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [142.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [147.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "qingyi-ex_special_attack-moonlit_begonia",
+        "name": "Moonlit Begonia (EX Special Attack)",
+        "description": "When Qingyi has enough energy, press [EX] to activate:\n\nQuickly swings upward and leaps into the air, turning around to launch a series of attacks, then follows up with a powerful downward smash, dealing massive Electric DMG.\n\nHold [EX] to consume additional energy to increase the number of hits of the series of attacks. Character is invulnerable while using this skill. After executing the move, you can directly follow up with the 3rd-hit of a /bBasic Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [602.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [657.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [712.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [767.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [822.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [877.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [932.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [987.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [1042]
+          },
+          {
+            "level": 10,
+            "multipliers": [1096.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1151.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1206.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1261.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [1316.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1371.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [1426.3]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "qingyi-chain_attack-tranquil_serenade",
+        "name": "Tranquil Serenade (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunch a series of powerful strikes over a large area in front, dealing massive Electric DMG.\n\nWhen this attack hits an enemy, the skill's DMG increases by 3% for every stack of /bSubjugation//b in /bCore Passive: Eternal Seasons//b the target has. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [647.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [706.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [765.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [824.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [883.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [942.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [1001.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1060.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [1119.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1178]
+          },
+          {
+            "level": 11,
+            "multipliers": [1236.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [1295.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1354.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1413.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1472.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1531.4]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "qingyi-ultimate-eight_sounds_of_ganzhou",
+        "name": "Eight Sounds of Ganzhou (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunch a series of powerful strikes over a large area in front, followed by a /bFinishing Move//b, dealing massive Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1670.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [1822.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [1974.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [2126.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [2278.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [2430.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [2582.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [2734]
+          },
+          {
+            "level": 9,
+            "multipliers": [2885.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [3037.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [3189.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [3341.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [3493.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [3645.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [3797.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [3949.2]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

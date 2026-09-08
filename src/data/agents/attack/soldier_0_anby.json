@@ -1,0 +1,1134 @@
+{
+  "id": "sanby",
+  "name": "Soldier 0 - Anby",
+  "specialty": "Attack",
+  "faction": "Defense Force - Silver Squad",
+  "attribute": "Electric",
+  "rarity": "S",
+  "fullName": "Soldier 0 - Anby",
+  "displayName": "Anby",
+  "attributeIcon": "Electric",
+  "themeColor": "#FCCE9F",
+  "baseStats": {
+    "hp": 7673.7,
+    "atk": 854.76,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT DMG", "CRIT Rate", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "soldier_0_anby-core_1-voltage_gap",
+      "source": "core",
+      "sourceId": "soldier_0_anby-core",
+      "label": "Voltage Gap (Core Passive)",
+      "description": "Soldier 0 - Anby's DMG against enemies with the Silver Star mark increases by 25%. After an enemy is marked with Silver Star, the CRIT DMG received from Aftershock attacks is further increased by 30% of Soldier 0 - Anby's CRIT DMG.",
+      "shortDescription": "Soldier 0 - Anby's DMG is increased by 25%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "soldier_0_anby-core_2-voltage_gap",
+      "source": "core",
+      "sourceId": "soldier_0_anby-core",
+      "label": "Voltage Gap (Core Passive)",
+      "description": "Soldier 0 - Anby's DMG against enemies with the Silver Star mark increases by 25%. After an enemy is marked with Silver Star, the CRIT DMG received from Aftershock attacks is further increased by 30% of Soldier 0 - Anby's CRIT DMG.",
+      "shortDescription": "Soldier 0 - Anby's CRIT DMG from Aftershocks is increased by 30% of her current CRIT DMG.",
+      "target": "self",
+      "dynamicStatBonuses": [
+        {
+          "stat": "critDmg",
+          "multiplier": 0.3,
+          "targetStat": "critDmg",
+          "appliesTo": {
+            "element": "aftershock"
+          }
+        }
+      ]
+    },
+    {
+      "id": "soldier_0_anby-core_1-voltage_surge",
+      "source": "core",
+      "sourceId": "soldier_0_anby-core",
+      "label": "Voltage Surge (Additional Ability)",
+      "description": "When another character in your squad is a Stun or Support character:\n\nSoldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' Aftershock DMG to enemies with a Silver Star mark increases by 25%.",
+      "shortDescription": "Soldier 0 - Anby's CRIT Rate is increased by 10%.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.1
+      }
+    },
+    {
+      "id": "soldier_0_anby-core_2-voltage_surge",
+      "source": "core",
+      "sourceId": "soldier_0_anby-core",
+      "label": "Voltage Surge (Additional Ability)",
+      "description": "When another character in your squad is a Stun or Support character: Soldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' Aftershock DMG to enemies with a Silver Star mark increases by 25%.",
+      "shortDescription": "All squad members' DMG from Aftershocks is increased by 25%.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "aftershock",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "soldier_0_anby-mindscape_1-static_charge",
+      "source": "mindscape",
+      "sourceId": "soldier_0_anby-mindscape_1",
+      "label": "Static Charge (Mindscape Cinema N°1)",
+      "description": "When Soldier 0 - Anby uses an EX Special Attack to hit an enemy, it triggers the additional DMG from White Thunder 3 times. This effect does not consume any White Thunder stacks.",
+      "shortDescription": "This mindscape cinema does not affect Soldier 0 - Anby's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "soldier_0_anby-mindscape_2-fail_safe_protocol",
+      "source": "mindscape",
+      "sourceId": "soldier_0_anby-mindscape_2",
+      "label": "Fail-Safe Protocol (Mindscape Cinema N°2)",
+      "description": "Soldier 0 - Anby's CRIT Rate increases by 12%. When she uses her Ultimate, she gains 6 stacks of Thunder's Cry (max 6 stacks). With Thunder's Cry, when using Special Attack: Azure Flash to hit an enemy with White Thunder, it will consume 1 stack of Thunder's Cry instead. Only 1 stack of Thunder's Cry will be consumed when a single use of a skill hits multiple enemies, and consuming Thunder's Cry will still activate the additional DMG from White Thunder.",
+      "shortDescription": "Soldier 0 - Anby's CRIT Rate is increased by 12%.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.12
+      }
+    },
+    {
+      "id": "soldier_0_anby-mindscape_4-silver_reverb",
+      "source": "mindscape",
+      "sourceId": "soldier_0_anby-mindscape_4",
+      "label": "Silver Reverb (Mindscape Cinema N°4)",
+      "description": "When hitting an enemy marked with Silver Star, Soldier 0 - Anby ignores 12% of the target's Electric RES.",
+      "shortDescription": "Soldier 0 - Anby ignores 12% of the target's Electric RES.",
+      "target": "self",
+      "flat": {
+        "electricResShred": 0.12
+      }
+    },
+    {
+      "id": "soldier_0_anby-mindscape_6-prequel_protagonist",
+      "source": "mindscape",
+      "sourceId": "soldier_0_anby-mindscape_6",
+      "label": "Prequel Protagonist (Mindscape Cinema N°6)",
+      "description": "Upon triggering 6 instances of White Thunder's additional DMG, an electromagnetic vortex will be generated, dealing 1,000% of Soldier 0 - Anby's ATK as Electric DMG against the target and surrounding enemies. This DMG is considered Aftershock DMG.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "soldier_0_anby-basic_attack-penetrating_shock",
+        "name": "Penetrating Shock (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to five slashes ahead, dealing Electric DMG. After the 4th attack hits the enemy, repeatedly press or hold [BASIC] to quickly pass through enemies in front up to 5 times.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd Hit Finisher DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [32.7, 62.2, 80.1, 39.9, 154.5, 148.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [35.7, 67.9, 87.4, 43.6, 168.6, 162]
+          },
+          {
+            "level": 3,
+            "multipliers": [38.7, 73.6, 94.7, 47.3, 182.7, 175.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [41.7, 79.3, 102, 51, 196.8, 189]
+          },
+          {
+            "level": 5,
+            "multipliers": [44.7, 85, 109.3, 54.7, 210.9, 202.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [47.7, 90.7, 116.6, 58.4, 225, 216]
+          },
+          {
+            "level": 7,
+            "multipliers": [50.7, 96.4, 123.9, 62.1, 239.1, 229.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [53.7, 102.1, 131.2, 65.8, 253.2, 243]
+          },
+          {
+            "level": 9,
+            "multipliers": [56.7, 107.8, 138.5, 69.5, 267.3, 256.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [59.7, 113.5, 145.8, 73.2, 281.4, 270]
+          },
+          {
+            "level": 11,
+            "multipliers": [62.7, 119.2, 153.1, 76.9, 295.5, 283.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [65.7, 124.9, 160.4, 80.6, 309.6, 297]
+          },
+          {
+            "level": 13,
+            "multipliers": [68.7, 130.6, 167.7, 84.3, 323.7, 310.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [71.7, 136.3, 175, 88, 337.8, 324]
+          },
+          {
+            "level": 15,
+            "multipliers": [74.7, 142, 182.3, 91.7, 351.9, 337.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [77.7, 147.7, 189.6, 95.4, 366, 351]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "soldier_0_anby-dash_attack-torrent",
+        "name": "Torrent (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nPerform a horizontal slash forward, then follow up with a thrust attack, dealing Electric DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multiplier": 82.5
+          },
+          {
+            "level": 2,
+            "multiplier": 90
+          },
+          {
+            "level": 3,
+            "multiplier": 97.5
+          },
+          {
+            "level": 4,
+            "multiplier": 105
+          },
+          {
+            "level": 5,
+            "multiplier": 112.5
+          },
+          {
+            "level": 6,
+            "multiplier": 120
+          },
+          {
+            "level": 7,
+            "multiplier": 127.5
+          },
+          {
+            "level": 8,
+            "multiplier": 135
+          },
+          {
+            "level": 9,
+            "multiplier": 142.5
+          },
+          {
+            "level": 10,
+            "multiplier": 150
+          },
+          {
+            "level": 11,
+            "multiplier": 157.5
+          },
+          {
+            "level": 12,
+            "multiplier": 165
+          },
+          {
+            "level": 13,
+            "multiplier": 172.5
+          },
+          {
+            "level": 14,
+            "multiplier": 180
+          },
+          {
+            "level": 15,
+            "multiplier": 187.5
+          },
+          {
+            "level": 16,
+            "multiplier": 195
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "soldier_0_anby-dodge_counter-ground_flash_counter",
+        "name": "Ground Flash Counter (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nRepeatedly slash enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multiplier": 250.6
+          },
+          {
+            "level": 2,
+            "multiplier": 273.4
+          },
+          {
+            "level": 3,
+            "multiplier": 296.2
+          },
+          {
+            "level": 4,
+            "multiplier": 319
+          },
+          {
+            "level": 5,
+            "multiplier": 341.8
+          },
+          {
+            "level": 6,
+            "multiplier": 364.6
+          },
+          {
+            "level": 7,
+            "multiplier": 387.4
+          },
+          {
+            "level": 8,
+            "multiplier": 410.2
+          },
+          {
+            "level": 9,
+            "multiplier": 433
+          },
+          {
+            "level": 10,
+            "multiplier": 455.8
+          },
+          {
+            "level": 11,
+            "multiplier": 478.6
+          },
+          {
+            "level": 12,
+            "multiplier": 501.4
+          },
+          {
+            "level": 13,
+            "multiplier": 524.2
+          },
+          {
+            "level": 14,
+            "multiplier": 547
+          },
+          {
+            "level": 15,
+            "multiplier": 569.8
+          },
+          {
+            "level": 16,
+            "multiplier": 592.6
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "soldier_0_anby-quick_assist-cloud_flash",
+        "name": "Cloud Flash (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nRepeatedly slash enemies in front, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [108.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [118.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [128]
+          },
+          {
+            "level": 4,
+            "multipliers": [137.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [147.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [157.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [167.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [177.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [187.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [197.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [207.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [217.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [227]
+          },
+          {
+            "level": 14,
+            "multipliers": [236.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [246.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [256.7]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "soldier_0_anby-assist_follow_up-conducting_blow",
+        "name": "Conducting Blow (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nDash forward and unleash a series of slashes at enemies ahead, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [407.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [444.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [481.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [518.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [555.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [592.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [629.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [666.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [703.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [741]
+          },
+          {
+            "level": 11,
+            "multipliers": [778.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [815.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [852.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [889.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [926.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [963.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "soldier_0_anby-special_attack-celestial_thunder",
+        "name": "Celestial Thunder (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nDash diagonally forward, then unleash a cross slash, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [59.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [65.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [70.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [76.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [81.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [87.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [92.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [98.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [103.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [109.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [114.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [120.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [125.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [131.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [136.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [142.1]
+          }
+        ]
+      },
+      {
+        "id": "soldier_0_anby-special_attack-azure_flash",
+        "name": "Azure Flash (Special Attack)",
+        "description": "When Soldier 0 - Anby's attacks hit an enemy, they apply the /bSilver Star//b mark and charges the target. For every one-third of charge, the enemy receives 1 stack of /bWhite Thunder//b, stacking up to 3 times.\n\nWhen the enemy has /bWhite Thunder//b, press [SPECIAL] to activate:\n\nQuickly dash forward, slashing through enemies and dealing multiple hits of Electric DMG. When the skill hits an enemy, it will consume 1 stack of /bWhite Thunder//b to trigger an /bAftershock//b that deals 1 extra instance of Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "White Thunder DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [167.2, 43]
+          },
+          {
+            "level": 2,
+            "multipliers": [182.4, 47]
+          },
+          {
+            "level": 3,
+            "multipliers": [197.6, 51]
+          },
+          {
+            "level": 4,
+            "multipliers": [212.8, 55]
+          },
+          {
+            "level": 5,
+            "multipliers": [228, 59]
+          },
+          {
+            "level": 6,
+            "multipliers": [243.2, 63]
+          },
+          {
+            "level": 7,
+            "multipliers": [258.4, 67]
+          },
+          {
+            "level": 8,
+            "multipliers": [273.6, 71]
+          },
+          {
+            "level": 9,
+            "multipliers": [288.8, 75]
+          },
+          {
+            "level": 10,
+            "multipliers": [304, 79]
+          },
+          {
+            "level": 11,
+            "multipliers": [319.2, 83]
+          },
+          {
+            "level": 12,
+            "multipliers": [334.4, 87]
+          },
+          {
+            "level": 13,
+            "multipliers": [349.6, 91]
+          },
+          {
+            "level": 14,
+            "multipliers": [364.8, 95]
+          },
+          {
+            "level": 15,
+            "multipliers": [380, 99]
+          },
+          {
+            "level": 16,
+            "multipliers": [395.2, 103]
+          }
+        ]
+      },
+      {
+        "id": "soldier_0_anby-special_attack-thunder_smite",
+        "name": "Thunder Smite (Special Attack)",
+        "description": "When the additional damage from /bWhite Thunder//b triggers 3 times on the same enemy:\n\nA lightning strike will fall at the enemy's location, dealing Electric DMG to enemies within range. This DMG is considered /bAftershock//b DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Thunder Smite DMG Multiplier",
+            "damageType": "electric",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [188.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [205.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [222.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [239.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [256.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [273.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [290.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [307.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [324.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [342]
+          },
+          {
+            "level": 11,
+            "multipliers": [359.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [376.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [393.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [410.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [427.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [444.6]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "soldier_0_anby-ex_special_attack-sundering_bolt",
+        "name": "Sundering Bolt (EX Special Attack)",
+        "description": "With enough energy, hold [EX] to activate:\n\nCombines her twin swords and throws them forward for a high-speed slash, dealing massive Electric DMG. When the skill hits an enemy, it will fully charge /bSilver Star//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [379.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [414.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [448.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [483.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [518]
+          },
+          {
+            "level": 6,
+            "multipliers": [552.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [587.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [621.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [656.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [691]
+          },
+          {
+            "level": 11,
+            "multipliers": [725.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [760.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [794.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [829.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [864]
+          },
+          {
+            "level": 16,
+            "multipliers": [898.6]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "soldier_0_anby-chain_attack-leaping_thunderstrike",
+        "name": "Leaping Thunderstrike (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLeap forward, then quickly dive and perform a cross slash, dealing massive Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [563.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [615.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [666.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [717.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [769]
+          },
+          {
+            "level": 6,
+            "multipliers": [820.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [871.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [922.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [974.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [1025.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [1076.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1128.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1179.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [1230.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [1282]
+          },
+          {
+            "level": 16,
+            "multipliers": [1333.3]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "soldier_0_anby-ultimate-voidstrike",
+        "name": "Voidstrike (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nPerform a powerful series of slashes at a large area in front, followed by a lightning strike, dealing massive Electric DMG. When the skill hits an enemy, it will fully charge /bSilver Star//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1734.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [1892.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [2050.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [2208.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [2366.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [2523.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [2681.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [2839.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [2997.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [3155.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [3312.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [3470.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [3628.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [3786.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [3944.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [4101.9]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "soldier_0_anby-mindscape-electromagnetix_vortex",
+        "name": "Electromagnetic Vortex (Mindscape Cinema N°6)",
+        "description": "Upon triggering 6 instances of /bWhite Thunder//b's additional DMG, an electromagnetic vortex will be generated, dealing 1,000% of Soldier 0 - Anby's ATK as Electric DMG against the target and surrounding enemies. This DMG is considered /bAftershock//b DMG.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1000]
+          }
+        ]
+      }
+    ]
+  }
+}

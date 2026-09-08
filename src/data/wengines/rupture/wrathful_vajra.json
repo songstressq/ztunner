@@ -1,0 +1,123 @@
+{
+  "id": "wrathful_vajra",
+  "name": "Wrathful Vajra",
+  "rarity": "S",
+  "specialty": "Rupture",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "wrathful_vajra-purging_karmic_fire-crit_rate",
+      "source": "wEngine",
+      "sourceId": "wrathful_vajra",
+      "label": "Purging Karmic Fire (W-Engine Passive)",
+      "description": "CRIT Rate is increased. When the equipper launches an EX Special Attack, their Fire Sheer DMG increases, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.",
+      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.23 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.26 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.29 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.32 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+
+    {
+      "id": "wrathful_vajra-purging_karmic_fire-fire_sheer_dmg",
+      "source": "wEngine",
+      "sourceId": "wrathful_vajra",
+      "label": "Purging Karmic Fire (W-Engine Passive)",
+      "description": "CRIT Rate is increased. When the equipper launches an EX Special Attack, their Fire Sheer DMG increases, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.",
+      "shortDescription": "Increases the equipper's Fire Sheer DMG for 20s, stacking up to 2 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "fire",
+                "value": 0.09
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "fire",
+                "value": 0.1035
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "fire",
+                "value": 0.117
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "fire",
+                "value": 0.1305
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "fire",
+                "value": 0.144
+              }
+            ]
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    }
+  ]
+}

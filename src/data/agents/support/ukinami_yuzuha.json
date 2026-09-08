@@ -1,0 +1,1476 @@
+{
+  "id": "yuzuha",
+  "name": "Ukinami Yuzuha",
+  "specialty": "Support",
+  "faction": "Spook Shack",
+  "attribute": "physical",
+  "rarity": "S",
+  "fullName": "Ukinami Yuzuha",
+  "displayName": "Yuzuha",
+  "attributeIcon": "Physical",
+  "themeColor": "#E26B71",
+  "skins": [
+    {
+      "id": "default",
+      "img": "yuzuha.png"
+    },
+    {
+      "id": "tanuki_in_broad_daylight",
+      "img": "yuzuha-tanuki_in_broad_daylight.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 8829.5,
+    "atk": 683.2,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 88,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Mastery", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "ukinami_yuzuha-core-whimsical_wonder",
+      "source": "core",
+      "sourceId": "ukinami_yuzuha-core",
+      "label": "Whimsical Wonder (Core Passive)",
+      "description": "Upon entering the battlefield, Yuzuha immediately gains 3 Sugar Points. Yuzuha can have up to 6 Sugar Points. When Yuzuha's EX Special Attack: Cavity Alert, EX Special Attack: Cavity Alert, Right Now!, or Ultimate: Surrender or Suffer the Mischief hits an enemy, all squad members receive the Tanuki Wish effect. Tanuki Wish grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of 1200, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration. If Yuzuha's initial ATK reaches 3000, she grants the full ATK bonus to all squad members.",
+      "shortDescription": "All squad members' ATK is increased based on Yuzuha's Initial ATK for 40s, and their DMG is increased by 15% for 40s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.15
+        }
+      ],
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 3000,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 1200,
+            "perUnitBonus": 0.4
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "ukinami_yuzuha-core-the_more_the_merrier",
+      "source": "core",
+      "sourceId": "ukinami_yuzuha-core",
+      "label": "The More the Merrier (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same Faction:\n\nIf Yuzuha's Anomaly Mastery exceeds 100, every point over increases the Anomaly Buildup Rate of characters with Tanuki Wish by 0.2%, up to a maximum of 20%, and all Attribute Anomaly DMG and Disorder DMG by 0.2%, up to a maximum of 20%. When Yuzuha's Anomaly Mastery is at 200, she grants the full buff effect.",
+      "shortDescription": "All squad members' DMG from Attribute Anomalies or Disorders is increased based on Yuzuha's current Anomaly Mastery.",
+      "target": "team",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyMastery",
+        "threshold": 100,
+        "perUnit": 1,
+        "perUnitBonus": 0.002,
+        "maxBonus": 0.2,
+        "affectedStats": ["anomalyDmgBonus", "disorderDmgBonus"],
+        "affectsAnomaly": true,
+        "affectsDisorder": true
+      }
+    },
+    {
+      "id": "ukinami_yuzuha-mindscape_1-lucky_constitution",
+      "source": "mindscape",
+      "sourceId": "ukinami_yuzuha-mindscape_1",
+      "label": "Lucky Constitution (Mindscape Cinema N°1)",
+      "description": "Yuzuha regains 30 Energy when she enters the battlefield. In Investigation Zone Mode, this effect can trigger at most once every 180s. Enemies in the Sweet Scare state have their All-Attribute RES reduced by 10%. The Attribute Anomaly DMG and Disorder DMG buff from her Additional Ability is increased to 130% of its original value.",
+      "shortDescription": "All squad members' attacks ignore 10% of the target All-Attribute RES.",
+      "target": "team",
+      "perStack": {
+        "fireResShred": 0.1,
+        "iceResShred": 0.1,
+        "electricResShred": 0.1,
+        "physicalResShred": 0.1,
+        "etherResShred": 0.1,
+        "windResShred": 0.1
+      }
+    },
+    {
+      "id": "ukinami_yuzuha-mindscape_2-full_of_colorful_company",
+      "source": "mindscape",
+      "sourceId": "ukinami_yuzuha-mindscape_2",
+      "label": "Full of Colorful Company (Mindscape Cinema N°2)",
+      "description": "When Yuzuha's EX Special Attack: Cavity Alert, EX Special Attack: Cavity Alert, Right Now!, or Ultimate: Surrender or Suffer the Mischief hits an enemy, all squad members' DMG increases by 15% and Anomaly Buildup Rate by 15%, lasting 40s and repeated triggers reset the duration. When a heavy attack hits an enemy that is not Stunned, it will trigger a forced Chain Attack. Chain Attacks triggered this way have reduced Interrupt Level and forced Chain Attacks can only occur once every 20s. Whenever another character enters through a Chain Attack, Yuzuha gains 1 Sugar Points. Yuzuha's Basic Attack: Hard Candy Shot cooldown is reduced by 25%.",
+      "shortDescription": "All squad members' DMG is increased by 15% for 14s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "ukinami_yuzuha-mindscape_4-falling_magic",
+      "source": "mindscape",
+      "sourceId": "ukinami_yuzuha-mindscape_4",
+      "label": "Falling Magic (Mindscape Cinema N°4)",
+      "description": "The DMG from Yuzuha's Assist Follow-Up: Stuffed Hard Candy Shot and Assist Follow-Up: We Have Cookies increases by 30%, Anomaly Buildup Rate by 20%, and triggers a Quick Assist when it hits an enemy.",
+      "shortDescription": "Yuzuha's DMG from Assist Follow-Up: Stuffed Hard Candy Shot and Assist Follow-Up: We Have Cookies is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "yuzuha-assist_follow_up-we_have_cookies",
+            "yuzuha-assist_follow_up-stuffed_hard_candy_shot"
+          ],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ukinami_yuzuha-mindscape_6-put_down_roots",
+      "source": "mindscape",
+      "sourceId": "ukinami_yuzuha-mindscape_6",
+      "label": "Put Down Roots (Mindscape Cinema N°6)",
+      "description": "Gain 1 additional Sugar Points when successfully parrying an enemy attack using a Defensive Assist or Basic Attack: Tanuki Cloak. When using Assist Follow-Up: Stuffed Hard Candy Shot, hold Basic Attack to charge for up to 0.8 seconds. Releasing Basic Attack or reaching full charge fires an extra powerful shell at the enemy. For every 0.4s charged, Yuzuha consumes 1 Sugar Point to fire an additional powerful shell, each dealing 300% of her ATK as Physical DMG. If any powerful shell from Assist Follow-Up: Stuffed Hard Candy Shot hits an enemy, all squad members' Disorder DMG Multiplier increases by 105% for 40s, and stacking up to 3 times, with each stack duration being calculated separately. In addition, if the powerful shell hits an enemy under Sweet Scare, it'll trigger 1 Basic Attack: Sugarburst Sparkles - Max attack. If Yuzuha is attacked while charging, she will automatically dodge the attack and immediately unleash the max-charged attack.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "yuzuha-basic_attack-tanuki_claws",
+        "name": "Tanuki Claws (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 5 strikes ahead, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [37.7, 57.7, 66, 98.1, 164.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [41.2, 63, 72, 107.1, 179.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [44.7, 68.3, 78, 116.1, 194.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [48.2, 73.6, 84, 125.1, 209.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [51.7, 78.9, 90, 134.1, 224.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [55.2, 84.2, 96, 143.1, 239.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [58.7, 89.5, 102, 152.1, 254.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [62.2, 94.8, 108, 161.1, 269.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [65.7, 100.1, 114, 170.1, 284.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [69.2, 105.4, 120, 179.1, 299.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [72.7, 110.7, 126, 188.1, 314.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [76.2, 116, 132, 197.1, 329.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [79.7, 121.3, 138, 206.1, 344.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [83.2, 126.6, 144, 215.1, 359.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [86.7, 131.9, 150, 224.1, 374.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [90.2, 137.2, 156, 233.1, 389.1]
+          }
+        ]
+      },
+      {
+        "id": "yuzuha-basic_attack-hard_candy_shot",
+        "name": "Hard Candy Shot (Basic Attack)",
+        "description": "When Yuzuha has /bSugar Points//b, landing a hit with other active characters' attacks will have Yuzuha continuously twirl her umbrella and attack centered around the target before launching a powerful shell, dealing Physical DMG. When this attack lands a heavy attack, Yuzuha consumes 1 Sugar Point.\n\n/bBasic Attack: Hard Candy Shot//b is considered an /bAftershock//b.\n\n/bBasic Attack: Hard Candy Shot//b can be triggered once every 8s.\n\nCharacter is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [132]
+          },
+          {
+            "level": 2,
+            "multipliers": [144]
+          },
+          {
+            "level": 3,
+            "multipliers": [156]
+          },
+          {
+            "level": 4,
+            "multipliers": [168]
+          },
+          {
+            "level": 5,
+            "multipliers": [180]
+          },
+          {
+            "level": 6,
+            "multipliers": [192]
+          },
+          {
+            "level": 7,
+            "multipliers": [204]
+          },
+          {
+            "level": 8,
+            "multipliers": [216]
+          },
+          {
+            "level": 9,
+            "multipliers": [228]
+          },
+          {
+            "level": 10,
+            "multipliers": [240]
+          },
+          {
+            "level": 11,
+            "multipliers": [252]
+          },
+          {
+            "level": 12,
+            "multipliers": [264]
+          },
+          {
+            "level": 13,
+            "multipliers": [276]
+          },
+          {
+            "level": 14,
+            "multipliers": [288]
+          },
+          {
+            "level": 15,
+            "multipliers": [300]
+          },
+          {
+            "level": 16,
+            "multipliers": [312]
+          }
+        ]
+      },
+      {
+        "id": "yuzuha-basic_attack-sugarburst_sparkles",
+        "name": "Sugarburst Sparkles (Basic Attack)",
+        "description": "Enemies under the effect of /bSweet Scare//b will be attacked by a /bBasic Attack: Sugarburst Sparkles//b once every 1s.\n\n/bBasic Attack: Sugarburst Sparkles//b initially deals Physical DMG.\n\n/bBasic Attack: Sugarburst Sparkles//b does not contribute its accumulated Attribute Anomaly Buildup toward Anomaly DMG calculation.\n\n/bBasic Attack: Sugarburst Sparkles//b Anomaly Buildup Rate increases by a percentage.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [27.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [30]
+          },
+          {
+            "level": 3,
+            "multipliers": [32.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [35]
+          },
+          {
+            "level": 5,
+            "multipliers": [37.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [40]
+          },
+          {
+            "level": 7,
+            "multipliers": [42.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [45]
+          },
+          {
+            "level": 9,
+            "multipliers": [47.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [50]
+          },
+          {
+            "level": 11,
+            "multipliers": [52.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [55]
+          },
+          {
+            "level": 13,
+            "multipliers": [57.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [60]
+          },
+          {
+            "level": 15,
+            "multipliers": [62.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [65]
+          }
+        ]
+      },
+      {
+        "id": "yuzuha-basic_attack-sugarburst_sparkles_max",
+        "name": "Sugarburst Sparkles - Max (Basic Attack)",
+        "description": "Enemies affected by /bSweet Scare//b will be attacked by a /bBasic Attack: Sugarburst Sparkles - Max//b when hit with a heavy attack from /bBasic Attack: Hard Candy Shot//b or /bAssist Follow-Up: Stuffed Hard Candy Shot//b.\n\n/bBasic Attack: Sugarburst Sparkles - Max//b initially deals Physical DMG.\n\n/bBasic Attack: Sugarburst Sparkles - Max//b does not contribute its accumulated Attribute Anomaly Buildup toward Anomaly DMG calculation.\n\n/bBasic Attack: Sugarburst Sparkles - Max//b Anomaly Buildup Rate increases by a percentage.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [308]
+          },
+          {
+            "level": 2,
+            "multipliers": [336]
+          },
+          {
+            "level": 3,
+            "multipliers": [364]
+          },
+          {
+            "level": 4,
+            "multipliers": [392]
+          },
+          {
+            "level": 5,
+            "multipliers": [420]
+          },
+          {
+            "level": 6,
+            "multipliers": [448]
+          },
+          {
+            "level": 7,
+            "multipliers": [476]
+          },
+          {
+            "level": 8,
+            "multipliers": [504]
+          },
+          {
+            "level": 9,
+            "multipliers": [532]
+          },
+          {
+            "level": 10,
+            "multipliers": [560]
+          },
+          {
+            "level": 11,
+            "multipliers": [588]
+          },
+          {
+            "level": 12,
+            "multipliers": [616]
+          },
+          {
+            "level": 13,
+            "multipliers": [644]
+          },
+          {
+            "level": 14,
+            "multipliers": [672]
+          },
+          {
+            "level": 15,
+            "multipliers": [700]
+          },
+          {
+            "level": 16,
+            "multipliers": [728]
+          }
+        ]
+      },
+      {
+        "id": "yuzuha-basic_attack-tanuki_helper",
+        "name": "Tanuki Helper (Basic Attack)",
+        "description": "When Yuzuha is off-field, tanuki /bKama//b assists the active character in attacking enemies, dealing Physical DMG.\n\nWhen Yuzuha performs /bBasic Attack: Tanuki Cloak//b, tanuki /bKama//b joins her in attacking the enemy, dealing Physical DMG. Tanuki /bKama//b inherits Yuzuha's initial ATK.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Tanuki Kama & Yuzuha Coordinated Attack DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [110]
+          },
+          {
+            "level": 2,
+            "multipliers": [120]
+          },
+          {
+            "level": 3,
+            "multipliers": [130]
+          },
+          {
+            "level": 4,
+            "multipliers": [140]
+          },
+          {
+            "level": 5,
+            "multipliers": [150]
+          },
+          {
+            "level": 6,
+            "multipliers": [160]
+          },
+          {
+            "level": 7,
+            "multipliers": [170]
+          },
+          {
+            "level": 8,
+            "multipliers": [180]
+          },
+          {
+            "level": 9,
+            "multipliers": [190]
+          },
+          {
+            "level": 10,
+            "multipliers": [200]
+          },
+          {
+            "level": 11,
+            "multipliers": [210]
+          },
+          {
+            "level": 12,
+            "multipliers": [220]
+          },
+          {
+            "level": 13,
+            "multipliers": [230]
+          },
+          {
+            "level": 14,
+            "multipliers": [240]
+          },
+          {
+            "level": 15,
+            "multipliers": [250]
+          },
+          {
+            "level": 16,
+            "multipliers": [260]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "yuzuha-dash_attack-youre_outta_luck",
+        "name": "You're Outta Luck! (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nRapidly strikes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [69.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [76.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [82.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [89]
+          },
+          {
+            "level": 5,
+            "multipliers": [95.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [101.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [108.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [114.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [121]
+          },
+          {
+            "level": 10,
+            "multipliers": [127.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [133.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [140.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [146.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [153]
+          },
+          {
+            "level": 15,
+            "multipliers": [159.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [165.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "yuzuha-dodge_counter-time_for_payback",
+        "name": "Time for Payback~ (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nDeliver a quick strike forward, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [276.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [302.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [327.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [352.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [377.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [402.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [428.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [453.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [478.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [503.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [528.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [554.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [579.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [604.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [629.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [654.9]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "yuzuha-quick_assist-dessert_time",
+        "name": "Dessert Time (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nStrike enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [122.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [134.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [145.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [156.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [167.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [178.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [190.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [201.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [212.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [223.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [234.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [246.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [257.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [268.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [279.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [290.9]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "yuzuha-assist_follow_up-we_have_cookies",
+        "name": "We Have Cookies (Assist Follow-Up)",
+        "description": "After triggering a /bDefensive Assist//b or successfully parrying an enemy attack with /bBasic Attack: Tanuki Cloak//b, press [BASIC] to activate:\n\nStrike enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [294.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [321.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [347.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [374.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [401.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [428.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [455.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [481.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [508.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [535.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [562.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [589.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [615.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [642.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [669.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [696.3]
+          }
+        ]
+      },
+      {
+        "id": "yuzuha-assist_follow_up-stuffed_hard_candy_shot",
+        "name": "Stuffed Hard Candy Shot (Assist Follow-Up)",
+        "description": "After triggering a /bDefensive Assist//b or successfully parrying an enemy attack with /bBasic Attack: Tanuki Cloak//b, press [BASIC] at the right moment to activate:\n\nFollowing a continuous spinning umbrella attack, fire a powerful projectile that deals Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [463.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [505.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [548]
+          },
+          {
+            "level": 4,
+            "multipliers": [590.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [632.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [674.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [716.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [759]
+          },
+          {
+            "level": 9,
+            "multipliers": [801.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [843.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [885.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [927.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [970]
+          },
+          {
+            "level": 14,
+            "multipliers": [1012.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1054.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [1096.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "yuzuha-special_attack-gummy_bombardment",
+        "name": "Gummy Bombardment (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nFire a cannon shot forward, dealing Physical DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [50.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [55.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [59.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [64.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [68.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [73.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [78.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [82.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [87.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [91.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [96.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [101.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [105.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [110.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [114.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [119.5]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "yuzuha-ex_special_attack-cavity_alert",
+        "name": "Cavity Alert (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nThrow a bomb at the enemy, dealing Physical DMG. Upon hitting an enemy with a heavy attack, it inflicts the /bSweet Scare//b state. Gains 2 /bSugar Points//b upon activation. A /bQuick Assist//b is triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [421]
+          },
+          {
+            "level": 2,
+            "multipliers": [459.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [497.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [535.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [574.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [612.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [650.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [689.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [727.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [765.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [804]
+          },
+          {
+            "level": 12,
+            "multipliers": [842.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [880.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [918.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [957.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [995.5]
+          }
+        ]
+      },
+      {
+        "id": "yuzuha-ex_special_attack-cavity_alert_right_now",
+        "name": "Cavity Alert, Right Now! (EX Special Attack)",
+        "description": "After using /bDodge Counter: Time for Payback~//b, /bQuick Assist: Dessert Time//b, /bAssist Follow-Up: We Have Cookies//b, or /bAssist Follow-Up: Stuffed Hard Candy Shot//b, or when a /bPerfect Dodge//b is triggered, press [EX] to activate:\n\nQuickly throw a bomb at the enemy, dealing Physical DMG. On hitting an enemy with a heavy attack, it inflicts the /bSweet Scare//b state. Gains 2 /bSugar Points//b upon activation. A /bQuick Assist//b is triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [241.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [263.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [285.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [307.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [329.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [351.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [373.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [395.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [417.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [439.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [461.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [483.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [505.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [527.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [549.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [571.4]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "yuzuha-chain_attack-prank_assault",
+        "name": "Prank Assault (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleash a powerful strike on enemies in a small area ahead, dealing massive Physical DMG. Gains 1 /bSugar Points//b when used. A /bQuick Assist//b is triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [598.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [653.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [707.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [762.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [816.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [871.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [925.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [980.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [1034.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [1089.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [1143.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1198.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1252.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1307.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1361.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [1416.2]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "yuzuha-ultimate-surrender_or_suffer_the_mischief",
+        "name": "Surrender or Suffer the Mischief (Ultimate)",
+        "description": "When Decibel Rating reaches Maximum, press [ULTIMATE] to trigger:\n\nUnleash a powerful strike on enemies in a large area around the character, dealing massive Physical DMG. Enemies hit with a heavy attack are inflicted with the /bSweet Scare//b state.\n\nUpon activating this skill, other squad members gain additional Energy. Upon activating this skill, gain 2 /bSugar Points//b. A /bQuick Assist//b is triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1443.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [1574.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [1705.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [1836.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [1968]
+          },
+          {
+            "level": 6,
+            "multipliers": [2099.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [2230.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [2361.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [2492.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [2624]
+          },
+          {
+            "level": 11,
+            "multipliers": [2755.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [2886.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [3017.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [3148.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [3280]
+          },
+          {
+            "level": 16,
+            "multipliers": [3411.2]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "ukinami_yuzuha-mindscape-put_down_roots",
+        "name": "Truth - Additional DMG (Mindscape Cinema N°6)",
+        "description": "Gain 1 additional /bSugar Points//b when successfully parrying an enemy attack using a /bDefensive Assist//b or /bBasic Attack: Tanuki Cloak//b.\n\nWhen using /bAssist Follow-Up: Stuffed Hard Candy Shot//b, hold [BASIC] to charge for up to 0.8 seconds. Releasing [BASIC] or reaching full charge fires an extra powerful shell at the enemy. For every 0.4s charged, Yuzuha consumes 1 /bSugar Point//b to fire an additional powerful shell, each dealing 300% of her ATK as Physical DMG.\n\nIf any powerful shell from /bAssist Follow-Up: Stuffed Hard Candy Shot//b hits an enemy, all squad members' Disorder DMG Multiplier increases by 105% for 40s, and stacking up to 3 times, with each stack duration being calculated separately.\n\nIn addition, if the powerful shell hits an enemy under /bSweet Scare//b, it'll trigger 1 /bBasic Attack: Sugarburst Sparkles - Max//b attack. If Yuzuha is attacked while charging, she will automatically dodge the attack and immediately unleash the max-charged attack.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1 Sugar Point DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2 Sugar Points DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3 Sugar Points DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4 Sugar Points DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5 Sugar Points DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "6 Sugar Points DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [300, 600, 900, 1200, 1500, 1800]
+          }
+        ]
+      }
+    ]
+  }
+}

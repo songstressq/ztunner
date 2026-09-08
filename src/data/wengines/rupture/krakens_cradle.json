@@ -1,0 +1,123 @@
+{
+  "id": "krakens_cradle",
+  "name": "Kraken's Cradle",
+  "rarity": "S",
+  "specialty": "Rupture",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "krakens_cradle-heartfelt_caress-ice_sheer_dmg",
+      "source": "wEngine",
+      "sourceId": "krakens_cradle",
+      "label": "Heartfelt Caress (W-Engine Passive)",
+      "description": "When the equipper's HP decreases, their Ice Sheer DMG increases, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of Max HP or below, CRIT Rate is increased.",
+      "shortDescription": "Increases the equipper's Ice Sheer DMG for 25s, stacking up to 3 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "ice",
+                "value": 0.06
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "ice",
+                "value": 0.07
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "ice",
+                "value": 0.08
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "ice",
+                "value": 0.09
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "ice",
+                "value": 0.1
+              }
+            ]
+          }
+        ],
+        "maxStacks": 3,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+
+    {
+      "id": "krakens_cradle-heartfelt_caress-crit_rate",
+      "source": "wEngine",
+      "sourceId": "krakens_cradle",
+      "label": "Heartfelt Caress (W-Engine Passive)",
+      "description": "When the equipper's HP decreases, their Ice Sheer DMG increases, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of Max HP or below, CRIT Rate is increased.",
+      "shortDescription": "Increases the equipper's CRIT Rate when below 50% Max HP.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.23 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.26 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.29 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.32 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    }
+  ]
+}

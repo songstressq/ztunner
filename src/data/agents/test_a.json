@@ -1,0 +1,308 @@
+{
+  "id": "test_a",
+  "name": "Test Agent A",
+  "specialty": "Anomaly",
+  "faction": "Not applicable",
+  "attribute": "Wind",
+  "rarity": "S",
+
+  "fullName": "Test Agent A",
+  "displayName": "Test A",
+  "attributeIcon": "Wind",
+
+  "themeColor": "#53AAAD",
+
+  "baseStats": {
+    "hp": 10000,
+    "atk": 1000,
+    "def": 1000
+  },
+
+  "combatBase": {
+    "impact": 100,
+    "critRate": 0.5,
+    "critDmg": 1.5,
+    "anomalyProficiency": 100,
+    "anomalyMastery": 100,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 2.0,
+
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "ATK", "CRIT DMG"]
+  },
+
+  "coreEnhancement": [
+    { "level": 0, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 2, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 4, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 6, "stats": { "atkFlat": 0, "critRate": 0 } }
+  ],
+
+  "ingameEffects": [
+    {
+      "id": "test_agent_a-core-initial_energy_regen_atk",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "INITIAL STAT (Team): Energy Regen - ATK",
+      "description": "This toggle is present on Orphie & Magus' file.",
+      "shortDescription": "This should add 200 ATK based on initial Energy Regen.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.0,
+        "maxStat": 99999,
+        "perUnit": 0.1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 700,
+            "perUnitBonus": 20
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-initial_hp_crit_rate",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "INITIAL STAT (Team): HP - CRIT Rate",
+      "description": "This toggle is present on Zhao's file.",
+      "shortDescription": "This should add 5% CRIT Rate based on each initial 1000 HP.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1000,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 99999,
+            "perUnitBonus": 0.05
+          }
+        ],
+        "affectedStats": ["critRate"]
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-initial_atk_atk",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "INITIAL STAT (Team): ATK - ATK",
+      "description": "This toggle is present on Astra Yao, Lucy, Soucancer, Sunna and Yuzuha's file.",
+      "shortDescription": "This should add 35% ATK based on initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 3429,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 1200,
+            "perUnitBonus": 0.35
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-global_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "Global DMG Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Global DMG Bonus.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.1
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-energy_regen_flat",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "STAT (Team): Energy Regen Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 0.5 Energy Regen.",
+      "target": "team",
+      "flat": {
+        "energyRegenRaw": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-element_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "Element DMG Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Wind DMG Bonus.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "wind",
+          "value": 0.1
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_a-core-anomaly_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "Anomaly DMG Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Anomaly DMG Bonus.",
+      "target": "team",
+      "flat": {
+        "anomalyDmgBonus": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-vortex_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "Vortex DMG Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Vortex DMG Bonus.",
+      "target": "self",
+      "flat": {
+        "vortexDmgBonus": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-vortex_multi_bonus",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "Vortex Multiplier Bonus",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Vortex Multiplier Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "vortexMultiplierBonus",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_a-core-def_shred",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "DEF Shred",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% DEF Shred.",
+      "target": "self",
+      "flat": {
+        "defShred": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-res_shred",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "Res Shred",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 10% Res Shred.",
+      "target": "self",
+      "flat": {
+        "iceResShred": 0.1,
+        "etherResShred": 0.1,
+        "fireResShred": 0.1,
+        "electricResShred": 0.1,
+        "physicalResShred": 0.1,
+        "windResShred": 0.1
+      }
+    }
+  ],
+
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "test-basic_attack-ability_template",
+        "name": "Ability Template (Basic Attack)",
+        "description": "This is the description section: \n\nThis is just an ability made for testing stats and damage calculations, do not take seriously.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "5th-Hit DMG Multiplier", "damageType": "physical" }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [100, 200, 300, 400, 500] },
+          { "level": 2, "multipliers": [200, 300, 400, 500, 600] },
+          { "level": 3, "multipliers": [300, 400, 500, 600, 700] },
+          { "level": 4, "multipliers": [400, 500, 600, 700, 800] },
+          { "level": 5, "multipliers": [500, 600, 700, 800, 900] },
+          { "level": 6, "multipliers": [600, 700, 800, 900, 1000] },
+          { "level": 7, "multipliers": [700, 800, 900, 1000, 1100] },
+          { "level": 8, "multipliers": [800, 900, 1000, 1100, 1200] },
+          { "level": 9, "multipliers": [900, 1000, 1100, 1200, 1300] },
+          { "level": 10, "multipliers": [1000, 1100, 1200, 1300, 1400] },
+          { "level": 11, "multipliers": [1100, 1200, 1300, 1400, 1500] },
+          { "level": 12, "multipliers": [1200, 1300, 1400, 1500, 1600] },
+          { "level": 13, "multipliers": [1300, 1400, 1500, 1600, 1700] },
+          { "level": 14, "multipliers": [1400, 1500, 1600, 1700, 1800] },
+          { "level": 15, "multipliers": [1500, 1600, 1700, 1800, 1900] },
+          { "level": 16, "multipliers": [1600, 1700, 1800, 1900, 2000] }
+        ]
+      }
+    ],
+
+    "dashAttacks": null,
+
+    "dodgeCounters": null,
+
+    "quickAssists": null,
+
+    "perfectAssists": null,
+
+    "assistFollowup": null,
+
+    "specialAttacks": null,
+
+    "exSkills": null,
+
+    "chainAttacks": null,
+
+    "ultimate": null,
+
+    "mindscapeAbilities": null
+  }
+}

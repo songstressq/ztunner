@@ -1,0 +1,92 @@
+{
+  "id": "bellicose_blaze",
+  "name": "Bellicose Blaze",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.6
+  },
+
+  "ingameEffects": [
+    {
+      "id": "bellicose_blaze-flame_devouring_choir-crit_rate",
+      "source": "wEngine",
+      "sourceId": "bellicose_blaze",
+      "label": "Flame-Devouring Choir (W-Engine Passive)",
+      "description": "Increases CRIT Rate. When the equipper triggers an Aftershock that deals Fire DMG, their attacks ignore a portion of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.23 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.26 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.29 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.32 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "bellicose_blaze-flame_devouring_choir-def_shred",
+      "source": "wEngine",
+      "sourceId": "bellicose_blaze",
+      "label": "Flame-Devouring Choir (W-Engine Passive)",
+      "description": "Increases CRIT Rate. When the equipper triggers an Aftershock that deals Fire DMG, their attacks ignore a portion of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
+      "shortDescription": "The equipper's attacks ignore a percentage of the Enemy's DEF",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "defShred": 0.15 }
+          },
+          {
+            "level": 2,
+            "stats": { "defShred": 0.172 }
+          },
+          {
+            "level": 3,
+            "stats": { "defShred": 0.195 }
+          },
+          {
+            "level": 4,
+            "stats": { "defShred": 0.217 }
+          },
+          {
+            "level": 5,
+            "stats": { "defShred": 0.24 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

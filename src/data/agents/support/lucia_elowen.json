@@ -1,0 +1,1291 @@
+{
+  "id": "lucia",
+  "name": "Lucia Elowen",
+  "specialty": "Support",
+  "faction": "Spook Shack",
+  "attribute": "Ether",
+  "rarity": "S",
+  "fullName": "Lucia Elowen",
+  "displayName": "Lucia",
+  "attributeIcon": "Ether",
+  "themeColor": "#789EEC",
+  "baseStats": {
+    "hp": 8477.2,
+    "atk": 683.2,
+    "def": 594.59
+  },
+  "combatBase": {
+    "impact": 83,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 95,
+    "anomalyMastery": 96,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["HP"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "lucia_elowen-ex_special_attack-symphony_of_the_reaper_daybreak",
+      "source": "ex_special_attack",
+      "sourceId": "lucia_elowen-ex_special_attack",
+      "label": "Symphony of the Reaper - Daybreak (EX Special Attack)",
+      "description": "With enough Energy, press EX Special Attack to activate: This EX Special Attack is a Harmony. When activated, it summons an Ethereal figure that delivers a powerful forward slash in a line, dealing Ether DMG.\n\nWhen Lucia uses any Harmony, all squad members gain the Darkbreaker state. While in Darkbreaker state, Sheer Force increases by 12. Every 200 points of Lucia's initial Max HP grants an additional amount of Sheer Force. The Darkbreaker state can increase Sheer Force by up to a maximum value, lasting 20s and repeated triggers reset the duration. When Lucia's initial Max HP reaches 24,000, the above bonus effect reaches its maximum value.\n\nWhen any Harmony deals DMG, Lucia increases the final attack's DMG by an additional percentage of her Max HP. If she activates this EX Special Attack while in the Dream state and under the effect of Ether Veil: Wellspring, Ether Veil: Wellspring duration is extended by 16s. After activating her EX Special Attack, Lucia can immediately follow up with the 5th hit of her Basic Attack. If not in the Dream state, Lucia gains 60 Dream Points upon using this Harmony. Character is invulnerable while using this skill.",
+      "shortDescription": "All squad members Sheer Force is increased based on Lucia's initial HP.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 24000,
+        "baseBonus": 12,
+        "perUnit": 200,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 636,
+            "perUnitBonus": 5.2
+          },
+          {
+            "level": 2,
+            "maxBonus": 660,
+            "perUnitBonus": 5.4
+          },
+          {
+            "level": 3,
+            "maxBonus": 684,
+            "perUnitBonus": 5.6
+          },
+          {
+            "level": 4,
+            "maxBonus": 708,
+            "perUnitBonus": 5.8
+          },
+          {
+            "level": 5,
+            "maxBonus": 732,
+            "perUnitBonus": 6
+          },
+          {
+            "level": 6,
+            "maxBonus": 756,
+            "perUnitBonus": 6.2
+          },
+          {
+            "level": 7,
+            "maxBonus": 780,
+            "perUnitBonus": 6.4
+          },
+          {
+            "level": 8,
+            "maxBonus": 804,
+            "perUnitBonus": 6.6
+          },
+          {
+            "level": 9,
+            "maxBonus": 828,
+            "perUnitBonus": 6.8
+          },
+          {
+            "level": 10,
+            "maxBonus": 852,
+            "perUnitBonus": 7
+          },
+          {
+            "level": 11,
+            "maxBonus": 876,
+            "perUnitBonus": 7.2
+          },
+          {
+            "level": 12,
+            "maxBonus": 900,
+            "perUnitBonus": 7.4
+          },
+          {
+            "level": 13,
+            "maxBonus": 924,
+            "perUnitBonus": 7.6
+          },
+          {
+            "level": 14,
+            "maxBonus": 948,
+            "perUnitBonus": 7.8
+          },
+          {
+            "level": 15,
+            "maxBonus": 972,
+            "perUnitBonus": 8
+          },
+          {
+            "level": 16,
+            "maxBonus": 996,
+            "perUnitBonus": 8.2
+          }
+        ],
+        "affectedStats": ["sheerForce"]
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+    {
+      "id": "lucia_elowen-core_1-lost_nocturne",
+      "source": "core",
+      "sourceId": "lucia_elowen-core",
+      "label": "Lost Nocturne (Core Passive)",
+      "description": "When entering the battlefield, Lucia immediately gains 60 Dream Points. If her Dream Points reaches 100 upon activating a Whim or Harmony, she enters the Dream state. When entering the Dream state, it triggers a Quick Assist and simultaneously activates Ether Veil: Wellspring. While Ether Veil: Wellspring is active, all squad members' Max HP increase by 5%, lasting 40s. Repeated triggers extend the duration, up to a max of 300s. ...",
+      "shortDescription": "All squad members' Max HP is increased by 5% while Ether Veil: Wellspring is active.",
+      "target": "team",
+      "flat": {
+        "hpPercentRaw": 0.05
+      }
+    },
+    {
+      "id": "lucia_elowen-core_2-lost_nocturne",
+      "source": "core",
+      "sourceId": "lucia_elowen-core",
+      "label": "Lost Nocturne (Core Passive)",
+      "description": "... While Lucia is in the Dream state, using any Whim consumes 25 Dream Points and upgrades it to Harmony. Whenever another active character's attack hits an enemy, Lucia consumes 25 Dream Points to unleash an Aftershock. This Aftershock is a Harmony. After Lucia triggers a skill upgrade or Aftershock, Aftershock cannot be triggered for 8s.\n\nWhen Lucia triggers a skill upgrade or an Aftershock, all squad members gain the Dreamer's Nursery Rhyme state. While in Dreamer's Nursery Rhyme state, DMG dealt increases for 12s. Repeated triggers reset the duration. If Lucia runs out of Dream Points or she leaves the Ether Veil, she exits the Dream state.",
+      "shortDescription": "All squad members' DMG is increased by 20% for 12s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "lucia_elowen-core-ballad_of_the_long_night",
+      "source": "core",
+      "sourceId": "lucia_elowen-core",
+      "label": "Ballad of the Long Night (Aditional Ability)",
+      "description": "When another character in your squad is a Rupture or Stun character:\n\nWhen applying Darkbreaker, additionally applies a 30% CRIT DMG increase effect.",
+      "shortDescription": "All squad members' CRIT DMG is increased by 30%.",
+      "target": "team",
+      "flat": {
+        "critDmg": 0.3
+      }
+    },
+    {
+      "id": "lucia_elowen-mindscape_1-secret_friend",
+      "source": "mindscape",
+      "sourceId": "lucia_elowen-mindscape_1",
+      "label": "Secret Friend (Mindscape Cinema N°1)",
+      "description": "When Dreamer's Nursery Rhyme deals additional DMG, ignore 18% of enemy All-Attribute RES and have 5% increased Decibel Generation Rate. Each time Lucia performs a skill upgrade, she gains 1 stack of Echo, stacking up to 4 times. When Dreamer's Nursery Rhyme ends, if Lucia has any Echo stacks, 1 stack is consumed to reapply Dreamer's Nursery Rhyme to all squad members.",
+      "shortDescription": "The target's All-Attribute RES is reduced by 18%.",
+      "target": "team",
+      "perStack": {
+        "fireResShred": 0.18,
+        "iceResShred": 0.18,
+        "electricResShred": 0.18,
+        "physicalResShred": 0.18,
+        "etherResShred": 0.18,
+        "windResShred": 0.18
+      }
+    },
+    {
+      "id": "lucia_elowen-mindscape_2_1-great_magician",
+      "source": "mindscape",
+      "sourceId": "lucia_elowen-mindscape_2",
+      "label": "Great Magician (Mindscape Cinema N°2)",
+      "description": "While Lucia is inside Ether Veil: Wellspring, Harmony deals 15% more DMG. Agents in the Darkbreaker state gain an additional 15% Sheer DMG increase while in Ether Veil: Wellspring.",
+      "shortDescription": "Lucia's DMG from Harmonies is increased by 15%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "lucia-basic_attack-orbital_combo",
+          "hitNames": ["Harmony DMG Multiplier", "Aftershock DMG Multiplier"],
+          "value": 0.15
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "lucia-dodge_counter-stardust_echo",
+          "hitName": "Harmony DMG Multiplier",
+          "value": 0.15
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "lucia-quick_assist-crushing_mist",
+          "hitNames": ["Harmony DMG Multiplier", "Aftershock DMG Multiplier"],
+          "value": 0.15
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "lucia-assist_follow_up-harmony_of_painted_dreams",
+          "hitName": "Harmony DMG Multiplier",
+          "value": 0.15
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "lucia-special_attack-symphony_of_the_reaper_storm",
+          "hitNames": ["Harmony DMG Multiplier", "Aftershock DMG Multiplier"],
+          "value": 0.15
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "lucia-ex_special_attack-symphony_of_the_reaper_daybreak",
+          "hitName": "DMG Multiplier",
+          "value": 0.15
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "lucia-chain_attack-stage_of_brilliance",
+          "hitName": "Harmony DMG Multiplier",
+          "value": 0.15
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "lucia-ultimate-charge_great_armor",
+          "hitNames": ["Charge Single-Hit DMG Multiplier", "DMG Multiplier"],
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "lucia_elowen-mindscape_2_2-great_magician",
+      "source": "mindscape",
+      "sourceId": "lucia_elowen-mindscape_2",
+      "label": "Great Magician (Mindscape Cinema N°2)",
+      "description": "While Lucia is inside Ether Veil: Wellspring, Harmony deals 15% more DMG. Agents in the Darkbreaker state gain an additional 15% Sheer DMG increase while in Ether Veil: Wellspring.",
+      "shortDescription": "All squad members' Sheer DMG is increased by 15%.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "sheerDmg",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "lucia_elowen-mindscape_4-late_night_hours",
+      "source": "mindscape",
+      "sourceId": "lucia_elowen-mindscape_4",
+      "label": "Late-Night Hours (Mindscape Cinema N°4)",
+      "description": "When Ether Veil is activated or extended on the field, Lucia grants all squad members 100 Decibels. This effect can trigger once every 15s.",
+      "shortDescription": "This mindscape cinema does not affect Lucia's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "lucia_elowen-mindscape_6_1-the_never_ending_journey",
+      "source": "mindscape",
+      "sourceId": "lucia_elowen-mindscape_6",
+      "label": "The Never-Ending Journey (Mindscape Cinema N°6)",
+      "description": "When Lucia is inside any Ether Veil, her ATK increases by 2% of her initial Max HP, and Harmony always triggers a CRIT with Harmony CRIT DMG increased by 30%.",
+      "shortDescription": "Lucia's ATK is increased based on her initial HP.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 99999,
+            "perUnitBonus": 0.02
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "lucia_elowen-mindscape_6_2-the_never_ending_journey",
+      "source": "mindscape",
+      "sourceId": "lucia_elowen-mindscape_6",
+      "label": "The Never-Ending Journey (Mindscape Cinema N°6)",
+      "description": "When Lucia is inside any Ether Veil, her ATK increases by 2% of her initial Max HP, and Harmony always triggers a CRIT with Harmony CRIT DMG increased by 30%.",
+      "shortDescription": "Lucia's CRIT DMG from any Harmony is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitStatExclusive",
+          "skillId": "lucia-basic_attack-orbital_combo",
+          "hitNames": ["Harmony DMG Multiplier", "Aftershock DMG Multiplier"],
+          "stat": "critDmg",
+          "value": 0.3
+        },
+        {
+          "type": "hitStatExclusive",
+          "skillId": "lucia-dodge_counter-stardust_echo",
+          "hitName": "Harmony DMG Multiplier",
+          "stat": "critDmg",
+          "value": 0.3
+        },
+        {
+          "type": "hitStatExclusive",
+          "skillId": "lucia-quick_assist-crushing_mist",
+          "hitNames": ["Harmony DMG Multiplier", "Aftershock DMG Multiplier"],
+          "stat": "critDmg",
+          "value": 0.3
+        },
+        {
+          "type": "hitStatExclusive",
+          "skillId": "lucia-assist_follow_up-harmony_of_painted_dreams",
+          "hitName": "Harmony DMG Multiplier",
+          "stat": "critDmg",
+          "value": 0.3
+        },
+        {
+          "type": "hitStatExclusive",
+          "skillId": "lucia-special_attack-symphony_of_the_reaper_storm",
+          "hitNames": ["Harmony DMG Multiplier", "Aftershock DMG Multiplier"],
+          "stat": "critDmg",
+          "value": 0.3
+        },
+        {
+          "type": "hitStatExclusive",
+          "skillId": "lucia-ex_special_attack-symphony_of_the_reaper_daybreak",
+          "hitName": "DMG Multiplier",
+          "stat": "critDmg",
+          "value": 0.3
+        },
+        {
+          "type": "hitStatExclusive",
+          "skillId": "lucia-chain_attack-stage_of_brilliance",
+          "hitName": "Harmony DMG Multiplier",
+          "stat": "critDmg",
+          "value": 0.3
+        },
+        {
+          "type": "hitStatExclusive",
+          "skillId": "lucia-ultimate-charge_great_armor",
+          "hitNames": [
+            "Charge Single-Hit DMG Multiplier",
+            "Ultimate DMG Multiplier"
+          ],
+          "stat": "critDmg",
+          "value": 0.3
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "lucia-basic_attack-orbital_combo",
+        "name": "Orbital Combo (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to five forward strikes, dealing Ether DMG. The fifth attack is a /bWhim//b, conjuring an Ethereal figure that inflicts Ether DMG on enemies in a circular area ahead.\n\nWhen in combat and not in the /bDream//b state, Lucia gains 40 /bDream Points//b upon using this /bWhim//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Whim DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Harmony DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Aftershock DMG Multiplier",
+            "damageType": "ether",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [40.9, 27.8, 83.5, 80.1, 172.9, 412.5, 550]
+          },
+          {
+            "level": 2,
+            "multipliers": [44.7, 30.4, 91.1, 87.4, 188.7, 450, 600]
+          },
+          {
+            "level": 3,
+            "multipliers": [48.5, 33, 98.7, 94.7, 204.5, 487.5, 650]
+          },
+          {
+            "level": 4,
+            "multipliers": [52.3, 35.6, 106.3, 102, 220.3, 525, 700]
+          },
+          {
+            "level": 5,
+            "multipliers": [56.1, 38.2, 113.9, 109.3, 236.1, 562.5, 750]
+          },
+          {
+            "level": 6,
+            "multipliers": [59.9, 40.8, 121.5, 116.6, 251.9, 600, 800]
+          },
+          {
+            "level": 7,
+            "multipliers": [63.7, 43.4, 129.1, 123.9, 267.7, 637.5, 850]
+          },
+          {
+            "level": 8,
+            "multipliers": [67.5, 46, 136.7, 131.2, 283.5, 675, 900]
+          },
+          {
+            "level": 9,
+            "multipliers": [71.3, 48.6, 144.3, 138.5, 299.3, 712.5, 950]
+          },
+          {
+            "level": 10,
+            "multipliers": [75.1, 51.2, 151.9, 145.8, 315.1, 750, 1000]
+          },
+          {
+            "level": 11,
+            "multipliers": [78.9, 53.8, 159.5, 153.1, 330.9, 787.5, 1050]
+          },
+          {
+            "level": 12,
+            "multipliers": [82.7, 56.4, 167.1, 160.4, 346.7, 825, 1100]
+          },
+          {
+            "level": 13,
+            "multipliers": [86.5, 59, 174.7, 167.7, 362.5, 862.5, 1150]
+          },
+          {
+            "level": 14,
+            "multipliers": [90.3, 61.6, 182.3, 175, 378.3, 900, 1200]
+          },
+          {
+            "level": 15,
+            "multipliers": [94.1, 64.2, 189.9, 182.3, 394.1, 937.5, 1250]
+          },
+          {
+            "level": 16,
+            "multipliers": [97.9, 66.8, 197.5, 189.6, 409.9, 975, 1300]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "lucia-dash_attack-refraction",
+        "name": "Refraction (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nDeliver a quick strike forward, dealing Ether DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [86.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [94.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [102.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [110]
+          },
+          {
+            "level": 5,
+            "multipliers": [117.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [125.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [133.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [141.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [149.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [157.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [165.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [173.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [181.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [189]
+          },
+          {
+            "level": 15,
+            "multipliers": [196.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [204.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "lucia-dodge_counter-stardust_echo",
+        "name": "Stardust Echo (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nThis /bDodge Counter//b is a /bWhim//b. When activated, summons an Ethereal figure that delivers a downward attack in a circular area ahead, dealing Ether DMG.\n\nIf not in the /bDream//b state, Lucia gains 20 /bDream Points//b upon using this /bWhim//b. This effect can trigger once every 5s. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Whim DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Harmony DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [248.3, 385.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [270.9, 420.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [293.5, 456]
+          },
+          {
+            "level": 4,
+            "multipliers": [316.1, 491.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [338.7, 526.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [361.3, 561.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [383.9, 596.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [406.5, 631.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [429.1, 666.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [451.7, 701.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [474.3, 736.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [496.9, 771.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [519.5, 807]
+          },
+          {
+            "level": 14,
+            "multipliers": [542.1, 842.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [564.7, 877.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [587.3, 912.3]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "lucia-quick_assist-crushing_mist",
+        "name": "Crushing Mist (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nThis /bQuick Assist//b is a /bWhim//b. When activated, it summons an Ethereal figure that delivers a downward attack in a circular area ahead, dealing Ether DMG.\n\nIf not in the /bDream//b state, Lucia gains 20 /bDream Points//b upon using this /bWhim//b. This effect can trigger once every 5s. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Whim DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Harmony DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Aftershock DMG Multiplier",
+            "damageType": "ether",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [106.4, 243.9, 550]
+          },
+          {
+            "level": 2,
+            "multipliers": [116.1, 266.1, 600]
+          },
+          {
+            "level": 3,
+            "multipliers": [125.8, 288.3, 650]
+          },
+          {
+            "level": 4,
+            "multipliers": [135.5, 310.5, 700]
+          },
+          {
+            "level": 5,
+            "multipliers": [145.2, 332.7, 750]
+          },
+          {
+            "level": 6,
+            "multipliers": [154.9, 354.9, 800]
+          },
+          {
+            "level": 7,
+            "multipliers": [164.6, 377.1, 850]
+          },
+          {
+            "level": 8,
+            "multipliers": [174.3, 399.3, 900]
+          },
+          {
+            "level": 9,
+            "multipliers": [184, 421.5, 950]
+          },
+          {
+            "level": 10,
+            "multipliers": [193.7, 443.7, 1000]
+          },
+          {
+            "level": 11,
+            "multipliers": [203.4, 465.9, 1050]
+          },
+          {
+            "level": 12,
+            "multipliers": [213.1, 488.1, 1100]
+          },
+          {
+            "level": 13,
+            "multipliers": [222.8, 510.3, 1150]
+          },
+          {
+            "level": 14,
+            "multipliers": [232.5, 532.5, 1200]
+          },
+          {
+            "level": 15,
+            "multipliers": [242.2, 554.7, 1250]
+          },
+          {
+            "level": 16,
+            "multipliers": [251.9, 576.9, 1300]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "lucia-assist_follow_up-harmony_of_painted_dreams",
+        "name": "Harmony of Painted Dreams (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nThis /bAssist Follow-Up//b is a /bHarmony//b. When activated, it summons an Ethereal figure that delivers a downward attack in a circular area ahead, dealing Ether DMG.\n\nIf not in the /bDream//b state, Lucia gains 40 /bDream Points//b upon using this /bHarmony//b. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [327.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [357.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [387.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [417.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [446.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [476.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [506.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [536.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [566.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [595.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [625.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [655.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [685.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [715.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [744.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [774.7]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "lucia-special_attack-symphony_of_the_reaper_storm",
+        "name": "Symphony of the Reaper - Storm (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nThis /bSpecial Attack//b is a /bWhim//b. When activated, it recreates an Ethereal figure that slashes forward in a line, dealing Ether DMG.\n\nWhen in combat and not in the /bDream//b state, Lucia gains 20 /bDream Points//b upon using this /bWhim//b. This effect can trigger once every 5s.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Whim DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Harmony DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Aftershock DMG Multiplier",
+            "damageType": "ether",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [45.9, 183.4, 550]
+          },
+          {
+            "level": 2,
+            "multipliers": [50.1, 200.1, 600]
+          },
+          {
+            "level": 3,
+            "multipliers": [54.3, 216.8, 650]
+          },
+          {
+            "level": 4,
+            "multipliers": [58.5, 233.5, 700]
+          },
+          {
+            "level": 5,
+            "multipliers": [62.7, 250.2, 750]
+          },
+          {
+            "level": 6,
+            "multipliers": [66.9, 266.9, 800]
+          },
+          {
+            "level": 7,
+            "multipliers": [71.1, 283.6, 850]
+          },
+          {
+            "level": 8,
+            "multipliers": [75.3, 300.3, 900]
+          },
+          {
+            "level": 9,
+            "multipliers": [79.5, 317, 950]
+          },
+          {
+            "level": 10,
+            "multipliers": [83.7, 333.7, 1000]
+          },
+          {
+            "level": 11,
+            "multipliers": [87.9, 350.4, 1050]
+          },
+          {
+            "level": 12,
+            "multipliers": [92.1, 367.1, 1100]
+          },
+          {
+            "level": 13,
+            "multipliers": [96.3, 383.8, 1150]
+          },
+          {
+            "level": 14,
+            "multipliers": [100.5, 400.5, 1200]
+          },
+          {
+            "level": 15,
+            "multipliers": [104.7, 417.2, 1250]
+          },
+          {
+            "level": 16,
+            "multipliers": [108.9, 433.9, 1300]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "lucia-ex_special_attack-symphony_of_the_reaper_daybreak",
+        "name": "Symphony of the Reaper - Daybreak (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nThis /bEX Special Attack//b is a /bHarmony//b. When activated, it summons an Ethereal figure that delivers a powerful forward slash in a line, dealing Ether DMG.\n\nWhen Lucia uses any /bHarmony//b, all squad members gain the /bDarkbreaker//b state. While in /bDarkbreaker//b state, Sheer Force increases by 12. Every 200 points of Lucia's initial Max HP grants an additional amount of Sheer Force. The /bDarkbreaker//b state can increase Sheer Force by a set amount up to a maximum value, lasting 20s and repeated triggers reset the duration. When Lucia's initial Max HP reaches 24,000, the above bonus effect reaches its maximum value.\n\nWhen any /bHarmony//b deals DMG, Lucia increases the final attack's DMG by an additional percentage of her Max HP.\n\nIf she activates this /bEX Special Attack//b while in the /bDream//b state and under the effect of /bEther Veil: Wellspring//b, /bEther Veil: Wellspring//b duration is extended by 16s. After activating her /bEX Special Attack//b, Lucia can immediately follow up with the 5th hit of her /bBasic Attack//b.\n\nIf not in the /bDream//b state, Lucia gains 60 /bDream Points//b upon using this /bHarmony//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [638.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [696.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [754.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [812.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [870.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [928.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [986.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [1044.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1102.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [1161]
+          },
+          {
+            "level": 11,
+            "multipliers": [1219.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1277.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1335.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1393.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [1451.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1509.6]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "lucia-chain_attack-stage_of_brilliance",
+        "name": "Stage of Brilliance (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nThis /bChain Attack//b is a /bHarmony//b. When activated, it summons an Ethereal figure that pulls in enemies in a circular area ahead and deals Ether DMG.\n\nIf not in the /bDream//b state, Lucia gains 40 /bDream Points//b upon using this /bHarmony//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [616.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [672.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [728.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [785]
+          },
+          {
+            "level": 5,
+            "multipliers": [841.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [897.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [953.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1009.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [1065.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [1121.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [1177.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1233.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1289.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [1346]
+          },
+          {
+            "level": 15,
+            "multipliers": [1402.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [1458.2]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "lucia-ultimate-charge_great_armor",
+        "name": "Charge, Great Armor! (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nThis /bUltimate//b is a /bHarmony//b. When activated, Lucia summons an Ethereal figure and rides it forward in a charge. Holding a directional button allows her to steer and extend the charge, up to 3s. During the charge, Anti-Interrupt Level is increased, DMG taken is reduced by 40%, and when Lucia takes fatal DMG, she remains in battle with HP not dropping below 1.\n\nWhen the charge ends, Lucia unleashes a powerful strike in a large area around her, dealing Ether DMG. A /bQuick Assist//b is triggered when this skill hits an enemy, and after the skill is used, it leaves behind a /bStarlight Convergence//b. /bStarlight Convergence//b lasts 8s. While inside /bStarlight Convergence//b, the currently active character gains HP regeneration equal to a percentage of Lucia's Max HP per second. This effect ends 4s after leaving the /bStarlight Convergence//b or immediately when switching out.\n\nAfter activation, if Lucia is in the /bDream//b state and /bEther Veil: Wellspring//b is active, /bEther Veil: Wellspring//b duration is extended by 32s. If not in the /bDream//b state, Lucia gains 100 /bDream Points//b upon using this /bHarmony//b. If she is in the /bDream//b state when activating this /bHarmony//b, she will gain 100 /bDream Points//b and re-enter /bDream//b state the next time she exits it. This effect cannot be stacked. Character is invulnerable while performing the powerful strike.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Charge Single-Hit DMG Multiplier",
+            "damageType": "ether"
+          },
+          {
+            "name": "Ultimate DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [93, 1902.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [101.5, 2075.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [110, 2248.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [118.5, 2421.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [127, 2594.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [135.5, 2767.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [144, 2940.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [152.5, 3113.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [161, 3286.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [169.5, 3459.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [178, 3632.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [186.5, 3805.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [195, 3978.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [203.5, 4151.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [212, 4324.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [220.5, 4497.7]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "lucia-ex_special_attack-harmony_additional_dmg",
+        "name": "Harmony - Additional DMG (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nThis /bEX Special Attack//b is a /bHarmony//b. When activated, it summons an Ethereal figure that delivers a powerful forward slash in a line, dealing Ether DMG.\n\nWhen Lucia uses any /bHarmony//b, all squad members gain the /bDarkbreaker//b state. While in /bDarkbreaker//b state, Sheer Force increases by 12. Every 200 points of Lucia's initial Max HP grants an additional amount of Sheer Force. The /bDarkbreaker//b state can increase Sheer Force by a set amount up to a maximum value, lasting 20s and repeated triggers reset the duration. When Lucia's initial Max HP reaches 24,000, the above bonus effect reaches its maximum value.\n\nWhen any /bHarmony//b deals DMG, Lucia increases the final attack's DMG by an additional percentage of her Max HP.\n\nIf she activates this /bEX Special Attack//b while in the /bDream//b state and under the effect of /bEther Veil: Wellspring//b, /bEther Veil: Wellspring//b duration is extended by 16s. After activating her /bEX Special Attack//b, Lucia can immediately follow up with the 5th hit of her /bBasic Attack//b.\n\nIf not in the /bDream//b state, Lucia gains 60 /bDream Points//b upon using this /bHarmony//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "hp",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ether"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [37]
+          },
+          {
+            "level": 2,
+            "multipliers": [40]
+          },
+          {
+            "level": 3,
+            "multipliers": [43]
+          },
+          {
+            "level": 4,
+            "multipliers": [46]
+          },
+          {
+            "level": 5,
+            "multipliers": [49]
+          },
+          {
+            "level": 6,
+            "multipliers": [52]
+          },
+          {
+            "level": 7,
+            "multipliers": [55]
+          },
+          {
+            "level": 8,
+            "multipliers": [58]
+          },
+          {
+            "level": 9,
+            "multipliers": [61]
+          },
+          {
+            "level": 10,
+            "multipliers": [64]
+          },
+          {
+            "level": 11,
+            "multipliers": [67]
+          },
+          {
+            "level": 12,
+            "multipliers": [70]
+          },
+          {
+            "level": 13,
+            "multipliers": [73]
+          },
+          {
+            "level": 14,
+            "multipliers": [76]
+          },
+          {
+            "level": 15,
+            "multipliers": [79]
+          },
+          {
+            "level": 16,
+            "multipliers": [82]
+          }
+        ]
+      }
+    ]
+  }
+}

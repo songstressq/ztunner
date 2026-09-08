@@ -1,0 +1,1179 @@
+{
+  "id": "cissia",
+  "name": "Cissia",
+  "specialty": "Attack",
+  "faction": "Metropolitan Order Division",
+  "attribute": "electric",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Cissia",
+  "attributeIcon": "Electric",
+  "themeColor": "#B3FC58",
+  "baseStats": {
+    "hp": 7674,
+    "atk": 863.21,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Energy Regen", "ATK", "CRIT Rate", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "cissia-ultimate-ophidiophobia",
+      "source": "ultimate",
+      "sourceId": "cissia-ultimate",
+      "label": "Ophidiophobia - Ether Veil: Cold-Blooded (Ultimate)",
+      "description": "... After using this skill, activate Ether Veil: Cold-Blooded, lasting 30s. All squad members' CRIT DMG increases by 5% for the duration. Re-activating Ether Veil: Cold-Blooded a second time will first deactivate the active Ether Veil: Cold-Blooded. ...",
+      "shortDescription": "All squad members' CRIT DMG is increased by 5% while Ether Veil: Cold-Blooded is active.",
+      "target": "team",
+      "flat": {
+        "critDmg": 0.05
+      }
+    },
+    {
+      "id": "cissia-basic_attack-corrode_bone",
+      "source": "core",
+      "sourceId": "cissia-basic_attack",
+      "label": "Corrode Bone (Basic Attack)",
+      "description": "... Each trigger increases CRIT Rate by 6% for 15s, stacking up to 3 times. Repeated triggers refresh the duration.",
+      "shortDescription": "Cissia's CRIT Rate is increased by 6% for 15s, stacking up to 3 times.",
+      "target": "self",
+      "maxStacks": 3,
+      "flat": {
+        "critRate": 0.06
+      }
+    },
+    {
+      "id": "cissia-core-fatal_concoction",
+      "source": "core",
+      "sourceId": "cissia-core",
+      "label": "Fatal Concoction (Core Passive)",
+      "description": "... With Venom, the squad's Electric DMG ignores 6% of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional 1% of the enemy's DEF is ignored, up to a maximum of 25% of enemy DEF. This effect lasts until 30s after Venom is depleted. ...",
+      "shortDescription": "All squad members' Electric RES Shred is increased based on Cissia's initial Energy Regen.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.4,
+        "maxStat": 99999,
+        "baseBonus": 0.06,
+        "perUnit": 0.12,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 0.25,
+            "perUnitBonus": 0.01
+          }
+        ],
+        "affectedStats": ["electricResShred"]
+      }
+    },
+    {
+      "id": "cissia-core_1-festering_venom",
+      "source": "core",
+      "sourceId": "cissia-core",
+      "label": "Festering Venom (Additional Ability)",
+      "description": "When another character in your squad is a Stun character or shares the same attribute:\n\nWhile possessing Venom, increases all squad members' CRIT DMG by 40%, with Cissia gaining an additional 10%. The effect lasts until 30s after Venom is depleted.",
+      "shortDescription": "Cissia's CRIT DMG is increased by 50% for 30s.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.5
+      }
+    },
+    {
+      "id": "cissia-core_2-festering_venom",
+      "source": "core",
+      "sourceId": "cissia-core",
+      "label": "Festering Venom (Additional Ability)",
+      "description": "When another character in your squad is a Stun character or shares the same attribute:\n\nWhile possessing Venom, increases all squad members' CRIT DMG by 40%, with Cissia gaining an additional 10%. The effect lasts until 30s after Venom is depleted.",
+      "shortDescription": "The remaining squad members' CRIT DMG is increased by 40% for 30s",
+      "target": "team",
+      "flat": {
+        "critDmg": 0.4
+      },
+      "condition": {
+        "excludeOwner": true
+      }
+    },
+    {
+      "id": "cissia-mindscape_1_1-traveler_and_prey",
+      "source": "mindscape",
+      "sourceId": "cissia-mindscape_1_1",
+      "label": "Traveler and Prey (Mindscape Cinema N°1)",
+      "description": "The Venom gained upon entering the battlefield increases to 6. The DEF ignore from the Core Passive increases to 140% of its original value, and all squad members ignore 5% of the target's Electric RES. Corrode Bone DMG ignores 10% of the target's Electric RES.",
+      "shortDescription": "All squad members' Electric RES Shred is further increased based on Cissia's initial Energy Regen.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.4,
+        "maxStat": 99999,
+        "baseBonus": 0.084,
+        "perUnit": 0.12,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 0.35,
+            "perUnitBonus": 0.014
+          }
+        ],
+        "affectedStats": ["electricResShred"]
+      },
+      "flat": {
+        "electricResShred": 0.05
+      },
+      "linkedEffects": ["cissia-mindscape_1_2-traveler_and_prey"]
+    },
+    {
+      "id": "cissia-mindscape_1_2-traveler_and_prey",
+      "source": "mindscape",
+      "sourceId": "cissia-mindscape_1_2",
+      "label": "Traveler and Prey (Mindscape Cinema N°1)",
+      "description": "The Venom gained upon entering the battlefield increases to 6. The DEF ignore from the Core Passive increases to 140% of its original value, and all squad members ignore 5% of the target's Electric RES. Corrode Bone DMG ignores 10% of the target's Electric RES.",
+      "shortDescription": "Cissia's DMG from Corrode Bone ignores 10% of the target's Electric RES.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "electricResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "cissia-basic_attack-corrode_bone",
+            "cissia-core_passive-corrode_bone"
+          ],
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "cissia-mindscape_2-hunger_and_hard_truths",
+      "source": "mindscape",
+      "sourceId": "cissia-mindscape_2",
+      "label": "Hunger and Hard Truths (Mindscape Cinema N°2)",
+      "description": "After a Chain Attack: Gang Operation or Ultimate: Ophidiophobia hits a Stunned enemy, gain an additional 3 Venom. Basic Attack: Serpent's Kiss deals 35% increased DMG.",
+      "shortDescription": "Cissia's DMG from Basic Attack: Serpent's Kiss is increased by 35%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["cissia-basic_attack-serpents_kiss"],
+          "value": 0.35
+        }
+      ]
+    },
+    {
+      "id": "cissia-mindscape_4-a_rogues_resolve",
+      "source": "mindscape",
+      "sourceId": "cissia-mindscape_4",
+      "label": "A Rogue's Resolve (Mindscape Cinema N°4)",
+      "description": "When using an EX Special Attack, Chain Attack, or Ultimate, gain 1 stack of Decidedness, stacking up to 3 times. When using Basic Attack: Serpent's Kiss, consume all Decidedness. Each stack consumed triggers 1 special instance of Corrode Bone that does not consume Venom. This Corrode Bone does not cause Daze.",
+      "shortDescription": "This mindscape cinema does not affect Cissia's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "cissia-mindscape_6-home_and_sixth_street",
+      "source": "mindscape",
+      "sourceId": "cissia-mindscape_6",
+      "label": "Home and Sixth Street (Mindscape Cinema N°6)",
+      "description": "Each time Corrode Bone is triggered, gain 1 stack of Bone-Deep Corrosion. When attacks from any squad member, other than Corrode Bone, hit an enemy, consume 1 stack of Bone-Deep Corrosion to trigger 1 special Corrode Bone. This instance of Corrode Bone cannot inflict Daze, and at most 1 stack of Bone-Deep Corrosion can be consumed every 3s.",
+      "shortDescription": "This mindscape cinema does not affect Cissia's stats.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "cissia-basic_attack-tongue_flick",
+        "name": "Tongue Flick (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunch up to four attacks forward, dealing Electric DMG. When the 4th hit lands, gain 2 points of /bVenom//b. Hitting a Stunned enemy grants an additional 1 point of /bVenom//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [77.7, 138.7, 135.1, 250.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [84.8, 151.4, 147.4, 273]
+          },
+          {
+            "level": 3,
+            "multipliers": [91.9, 164.1, 159.7, 295.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [99, 176.8, 172, 318.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [106.1, 189.5, 184.3, 341.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [113.2, 202.2, 196.6, 364.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [120.3, 214.9, 208.9, 387]
+          },
+          {
+            "level": 8,
+            "multipliers": [127.4, 227.6, 221.2, 409.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [134.5, 240.3, 233.5, 432.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [141.6, 253, 245.8, 455.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [148.7, 265.7, 258.1, 478.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [155.8, 278.4, 270.4, 501]
+          },
+          {
+            "level": 13,
+            "multipliers": [162.9, 291.1, 282.7, 523.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [170, 303.8, 295, 546.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [177.1, 316.5, 307.3, 569.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [184.2, 329.2, 319.6, 592.2]
+          }
+        ]
+      },
+      {
+        "id": "cissia-basic_attack-serpents_kiss",
+        "name": "Serpent's Kiss (Basic Attack)",
+        "description": "With /bSerpentine Shadow//b, hold [BASIC] to launch:\n\nCissia leaps into the air and locks onto a target, then slams down, dealing Electric DMG to enemies in the area. While locking on, continue to hold [BASIC] and drag the stick to extend the lock-on duration and freely control the landing position.\n\nFor every 6 points of /bVenom//b gained, gain 1 stack of /bSerpentine Shadow//b, stacking up to 3 times. Upon entering the battlefield, gain 1 stack of /bSerpentine Shadow//b. Using this skill consumes 1 stack of /bSerpentine Shadow//b. Upon hitting an enemy, all /bVenom//b is consumed to trigger /bCorrode Bone//b. Upon activating this skill, a /bQuick Assist//b is triggered. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [504.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [550.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [596]
+          },
+          {
+            "level": 4,
+            "multipliers": [641.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [687.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [733.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [779.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [825.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [871.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [917.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [963.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1009.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1055]
+          },
+          {
+            "level": 14,
+            "multipliers": [1100.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [1146.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1192.7]
+          }
+        ]
+      },
+      {
+        "id": "cissia-basic_attack-corrode_bone",
+        "name": "Corrode Bone (Basic Attack)",
+        "description": "Deal Electric DMG to nearby enemies.\n\nEach trigger increases CRIT Rate by 6% for 15s, stacking up to 3 times. Repeated triggers refresh the duration.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [126.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [138.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [150]
+          },
+          {
+            "level": 4,
+            "multipliers": [161.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [173.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [184.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [196.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [208]
+          },
+          {
+            "level": 9,
+            "multipliers": [219.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [231.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [242.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [254.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [266]
+          },
+          {
+            "level": 14,
+            "multipliers": [277.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [289.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [300.8]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "cissia-dash_attack-bite_mark",
+        "name": "Bite Mark (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nDash forward with a swift slash, dealing Electric DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [147.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [160.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [174.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [187.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [200.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [214.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [227.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [241.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [254.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [267.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [281.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [294.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [308.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [321.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [334.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [348.3]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "cissia-dodge_counter-bite_back",
+        "name": "Bite Back (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLeap forward and perform a sweeping attack upon landing, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [324.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [354]
+          },
+          {
+            "level": 3,
+            "multipliers": [383.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [413]
+          },
+          {
+            "level": 5,
+            "multipliers": [442.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [472]
+          },
+          {
+            "level": 7,
+            "multipliers": [501.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [531]
+          },
+          {
+            "level": 9,
+            "multipliers": [560.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [590]
+          },
+          {
+            "level": 11,
+            "multipliers": [619.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [649]
+          },
+          {
+            "level": 13,
+            "multipliers": [678.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [708]
+          },
+          {
+            "level": 15,
+            "multipliers": [737.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [767]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "cissia-quick_assist-alarm_system",
+        "name": "Alarm System (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLeaps forward and performs a sweeping attack upon landing, dealing Electric DMG. During this skill, you can quickly chain into /bSpecial Attack: Bared Fangs//b, /bEX Special Attack: Venomous Bite//b, and /bBasic Attack: Serpent's Kiss//b. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [74.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [81.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [88.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [95.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [102]
+          },
+          {
+            "level": 6,
+            "multipliers": [108.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [115.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [122.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [129.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [136]
+          },
+          {
+            "level": 11,
+            "multipliers": [142.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [149.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [156.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [163.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [170]
+          },
+          {
+            "level": 16,
+            "multipliers": [176.8]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "cissia-assist_follow_up-partners_in_crime",
+        "name": "Partners in Crime (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleash a series of downward smash attacks, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [520.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [568]
+          },
+          {
+            "level": 3,
+            "multipliers": [615.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [662.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [710.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [757.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [805]
+          },
+          {
+            "level": 8,
+            "multipliers": [852.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [899.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [947.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [994.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1042]
+          },
+          {
+            "level": 13,
+            "multipliers": [1089.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [1136.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1184.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1231.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "cissia-special_attack-bared_fangs",
+        "name": "Bared Fangs (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunches a long-range snake bite forward, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [52]
+          },
+          {
+            "level": 2,
+            "multipliers": [56.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [61.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [66.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [71.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [76]
+          },
+          {
+            "level": 7,
+            "multipliers": [80.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [85.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [90.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [95.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [100]
+          },
+          {
+            "level": 12,
+            "multipliers": [104.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [109.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [114.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [119.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [124]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "cissia-ex_special_attack-venomous_bite",
+        "name": "Venomous Bite (EX Special Attack)",
+        "description": "With enough energy, press or hold [EX] to activate:\n\nUnleash multiple long-range snake bites forward, dealing Electric DMG. Grants 5 Energy when the move is used.\n\nWhen activating by holding [EX], consumes additional Energy. For every 20 additional Energy consumed, unleash 1 extra strike that deals Electric DMG, up to a maximum of 60 additional Energy. After activating by holding, gain 3 /bVenom//b. For every additional 20 Energy consumed while holding, gain 1 more /bVenom//b.\n\nAfter using this skill, it can be immediately followed up with the 4th hit of /bBasic Attack: Tongue Flick//b. A /bQuick Assist//b is triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Additional Strike DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [668, 200.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [729, 218.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [790, 237]
+          },
+          {
+            "level": 4,
+            "multipliers": [851, 255.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [912, 273.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [973, 291.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [1034, 310.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [1095, 328.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [1156, 346.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [1217, 365.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [1278, 383.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1339, 401.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1400, 420]
+          },
+          {
+            "level": 14,
+            "multipliers": [1461, 438.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [1522, 456.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [1583, 474.9]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "cissia-chain_attack-gang_operation",
+        "name": "Gang Operation (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunch multiple attacks ahead, dealing massive Electric DMG. After using this skill, gain 3 /bVenom//b. A /bQuick Assist//b is triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [737.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [804.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [872]
+          },
+          {
+            "level": 4,
+            "multipliers": [939.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [1006.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [1073.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [1140.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1207.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [1274.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1341.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1408.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1475.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1543]
+          },
+          {
+            "level": 14,
+            "multipliers": [1610.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1677.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1744.3]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "cissia-ultimate-ophidiophobia",
+        "name": "Ophidiophobia (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nDeliver a downward smash in front, dealing massive Electric DMG. After using this skill, obtain 3 /bVenom//b. After using this skill, activate /bEther Veil: Cold-Blooded//b, lasting 30s. All squad members' CRIT DMG increases by 5% for the duration.\n\nRe-activating /bEther Veil: Cold-Blooded//b a second time will first deactivate the active /bEther Veil: Cold-Blooded//b. A /bQuick Assist//b is triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1811]
+          },
+          {
+            "level": 2,
+            "multipliers": [1975.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [2140.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [2305.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [2469.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [2634.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [2799.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [2963.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [3128.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [3293.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [3458]
+          },
+          {
+            "level": 12,
+            "multipliers": [3622.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [3787.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [3952.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [4116.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [4281.5]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "cissia-core_passive-corrode_bone",
+        "name": "Fatal Concoction - Corrode Bone (Core Passive)",
+        "description": "Upon entering the battlefield, gain 3 /bVenom//b. In Investigation Zone mode, this effect can trigger once every 180s. While possessing /bVenom//b, consume 1 /bVenom//b every 5s while in combat to trigger /bCorrode Bone//b, dealing Electric DMG.\n\nWith /bVenom//b, the squad's Electric DMG ignores 6% of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional 1% of the enemy's DEF is ignored, up to a maximum of 25% of enemy DEF. This effect lasts until 30s after /bVenom//b is depleted.\n\n/bCorrode Bone//b deals additional Electric DMG equal to 335% of ATK. When there are 1/2 Electric characters in the squad, the Daze dealt by /bCorrode Bone//b increases by 40%/60%. When gaining /bVenom//b, every 1 excess point of /bVenom//b triggers /bCorrode Bone//b once.",
+        "skillType": "core",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [335]
+          }
+        ]
+      }
+    ]
+  }
+}

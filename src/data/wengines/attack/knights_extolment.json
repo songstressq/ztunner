@@ -1,0 +1,93 @@
+{
+  "id": "knights_extolment",
+  "name": "Knight's Extolment",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT DMG%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.48
+  },
+
+  "ingameEffects": [
+    {
+      "id": "knights_extolment-kinghts_rite-crit_dmg",
+      "source": "wEngine",
+      "sourceId": "knights_extolment",
+      "label": "Knight's Rite (W-Engine Passive)",
+      "description": "When the equipper's Basic Attack or EX Special Attack's heavy attack hits an enemy, they gain 1 stack of Battle Edge, increasing CRIT DMG for 25s. Battle Edge can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all Battle Edge. At 2 stacks of Battle Edge, the equipper gains Bonechill: Their DMG ignores a percentage of the target's Ice RES.",
+      "shortDescription": "The equipper's CRIT DMG is increased for 25s, stacking up to 2 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critDmg": 0.32 }
+          },
+          {
+            "level": 2,
+            "stats": { "critDmg": 0.368 }
+          },
+          {
+            "level": 3,
+            "stats": { "critDmg": 0.416 }
+          },
+          {
+            "level": 4,
+            "stats": { "critDmg": 0.464 }
+          },
+          {
+            "level": 5,
+            "stats": { "critDmg": 0.512 }
+          }
+        ],
+        "stackMultiplier": false,
+        "maxStacks": 2
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "knights_extolment-kinghts_rite-ice_res_shred",
+      "source": "wEngine",
+      "sourceId": "knights_extolment",
+      "label": "Knight's Rite (W-Engine Passive)",
+      "description": "When the equipper's Basic Attack or EX Special Attack's heavy attack hits an enemy, they gain 1 stack of Battle Edge, increasing CRIT DMG for 25s. Battle Edge can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all Battle Edge. At 2 stacks of Battle Edge, the equipper gains Bonechill: Their DMG ignores a percentage of the target's Ice RES.",
+      "shortDescription": "The equipper's DMG ignores a portion of the target's Ice RES at full stacks.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "iceResShred": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "iceResShred": 0.23 }
+          },
+          {
+            "level": 3,
+            "stats": { "iceResShred": 0.26 }
+          },
+          {
+            "level": 4,
+            "stats": { "iceResShred": 0.29 }
+          },
+          {
+            "level": 5,
+            "stats": { "iceResShred": 0.32 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

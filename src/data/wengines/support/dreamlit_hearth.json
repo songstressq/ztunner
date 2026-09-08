@@ -1,0 +1,155 @@
+{
+  "id": "dreamlit_hearth",
+  "name": "Dreamlit Hearth",
+  "rarity": "S",
+  "specialty": "Support",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "dreamlit_hearth-moontide_epic-energy_regen",
+      "source": "wEngine",
+      "sourceId": "dreamlit_hearth",
+      "label": "Moontide Epic (W-Engine Passive)",
+      "description": "The equipper's Energy Regen is increased. When the equipper activates Ether Veil or extends its duration, all squad members gain increased DMG and increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "The equipper's Energy Regen is increased.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "energyRegenRaw": 0.4 }
+          },
+          {
+            "level": 2,
+            "stats": { "energyRegenRaw": 0.46 }
+          },
+          {
+            "level": 3,
+            "stats": { "energyRegenRaw": 0.52 }
+          },
+          {
+            "level": 4,
+            "stats": { "energyRegenRaw": 0.58 }
+          },
+          {
+            "level": 5,
+            "stats": { "energyRegenRaw": 0.64 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    },
+
+    {
+      "id": "dreamlit_hearth-moontide_epic-dmg_bonus",
+      "source": "wEngine",
+      "sourceId": "dreamlit_hearth",
+      "label": "Moontide Epic (W-Engine Passive)",
+      "description": "The equipper's Energy Regen is increased. When the equipper activates Ether Veil or extends its duration, all squad members gain increased DMG and increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "All squad members' DMG is increased for 45s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.25
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.288
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.325
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.363
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.4
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    },
+
+    {
+      "id": "dreamlit_hearth-moontide_epic-hp",
+      "source": "wEngine",
+      "sourceId": "dreamlit_hearth",
+      "label": "Moontide Epic (W-Engine Passive)",
+      "description": "The equipper's Energy Regen is increased. When the equipper activates Ether Veil or extends its duration, all squad members gain increased DMG and increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
+      "shortDescription": "All squad members' Max HP is increased for 45s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "hpPercentRaw": 0.15 }
+          },
+          {
+            "level": 2,
+            "stats": { "hpPercentRaw": 0.173 }
+          },
+          {
+            "level": 3,
+            "stats": { "hpPercentRaw": 0.195 }
+          },
+          {
+            "level": 4,
+            "stats": { "hpPercentRaw": 0.218 }
+          },
+          {
+            "level": 5,
+            "stats": { "hpPercentRaw": 0.24 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    }
+  ]
+}

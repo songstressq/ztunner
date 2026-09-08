@@ -1,0 +1,123 @@
+{
+  "id": "starlight_rider_faceplate",
+  "name": "Starligt Rider Faceplate",
+  "rarity": "S",
+  "specialty": "Rupture",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "starlight_rider_faceplate-knights_morale-crit_rate",
+      "source": "wEngine",
+      "sourceId": "starlight_rider_faceplate",
+      "label": "Knight's Morale (W-Engine Passive)",
+      "description": "Increases CRIT Rate by a percentage. When the equipper launches a Special Attack, their Physical Sheer DMG is increased, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.23 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.26 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.29 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.32 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+
+    {
+      "id": "starlight_rider_faceplate-knights_morale-physical_sheer_dmg",
+      "source": "wEngine",
+      "sourceId": "starlight_rider_faceplate",
+      "label": "Knight's Morale (W-Engine Passive)",
+      "description": "Increases CRIT Rate by a percentage. When the equipper launches a Special Attack, their Physical Sheer DMG is increased, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's Physical Sheer DMG for 30s, stacking up to 2 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "physical",
+                "value": 0.1
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "physical",
+                "value": 0.115
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "physical",
+                "value": 0.13
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "physical",
+                "value": 0.145
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "elementSheerDmg",
+                "element": "physical",
+                "value": 0.16
+              }
+            ]
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    }
+  ]
+}

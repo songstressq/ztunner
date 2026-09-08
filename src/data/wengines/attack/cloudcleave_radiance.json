@@ -1,0 +1,122 @@
+{
+  "id": "cloudcleave_radiance",
+  "name": "Cloudcleave Radiance",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT DMG%",
+
+  "stats": {
+    "base": 743,
+    "advanced": 0.48
+  },
+
+  "ingameEffects": [
+    {
+      "id": "cloudcleave_radiance-jade_soul_frozen_heart-physical_res_shred",
+      "source": "wEngine",
+      "sourceId": "cloudcleave_radiance",
+      "label": "Jade Soul, Frozen Heart (W-Engine Passive)",
+      "description": "The equipper's DMG ignores a portion of the target's Physical RES. When the equipper activates an Ether Veil, the equipper's DMG and CRIT DMG are increased for 40s. Repeated triggers reset the duration.",
+      "shortDescription": "The equipper's attacks ignore a portion of the target's Physical RES.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "physicalResShred": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "physicalResShred": 0.22 }
+          },
+          {
+            "level": 3,
+            "stats": { "physicalResShred": 0.24 }
+          },
+          {
+            "level": 4,
+            "stats": { "physicalResShred": 0.26 }
+          },
+          {
+            "level": 5,
+            "stats": { "physicalResShred": 0.28 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "cloudcleave_radiance-jade_soul_frozen_heart-crit_dmg",
+      "source": "wEngine",
+      "sourceId": "cloudcleave_radiance",
+      "label": "Jade Soul, Frozen Heart (W-Engine Passive)",
+      "description": "The equipper's DMG ignores a portion of the target's Physical RES. When the equipper activates an Ether Veil, the equipper's DMG and CRIT DMG are increased for 40s. Repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's DMG and CRIT DMG.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critDmg": 0.25 },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.25
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "stats": { "critDmg": 0.287 },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.287
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "stats": { "critDmg": 0.325 },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.325
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "stats": { "critDmg": 0.362 },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.362
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "stats": { "critDmg": 0.4 },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.4
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

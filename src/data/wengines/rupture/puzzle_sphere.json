@@ -1,0 +1,122 @@
+{
+  "id": "puzzle_sphere",
+  "name": "Puzzle Sphere",
+  "rarity": "A",
+  "specialty": "Rupture",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "puzzle_sphere-ingenious_craft-crit_dmg",
+      "source": "wEngine",
+      "sourceId": "puzzle_sphere",
+      "label": "Ingenious Craft (W-Engine Passive)",
+      "description": "Upon launching an EX Special Attack, the equipper's CRIT DMG is increased for 12s. Additionally, if the target's current HP is below 50% of their Max HP, EX Special Attack DMG is increased.",
+      "shortDescription": "Increases the equipper's CRIT DMG for 12s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critDmg": 0.16 }
+          },
+          {
+            "level": 2,
+            "stats": { "critDmg": 0.184 }
+          },
+          {
+            "level": 3,
+            "stats": { "critDmg": 0.208 }
+          },
+          {
+            "level": 4,
+            "stats": { "critDmg": 0.232 }
+          },
+          {
+            "level": 5,
+            "stats": { "critDmg": 0.256 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    },
+
+    {
+      "id": "puzzle_sphere-ingenious_craft-ex_dmg",
+      "source": "wEngine",
+      "sourceId": "puzzle_sphere",
+      "label": "Ingenious Craft (W-Engine Passive)",
+      "description": "Upon launching an EX Special Attack, the equipper's CRIT DMG is increased for 12s. Additionally, if the target's current HP is below 50% of their Max HP, EX Special Attack DMG is increased.",
+      "shortDescription": "Increases the equipper's EX Special Attack DMG when the target's HP is below 50%.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.2
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.23
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.26
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.29
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.32
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    }
+  ]
+}

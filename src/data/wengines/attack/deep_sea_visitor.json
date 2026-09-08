@@ -1,0 +1,123 @@
+{
+  "id": "deep_sea_visitor",
+  "name": "Deep Sea Visitor",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT Rate%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.24
+  },
+
+  "ingameEffects": [
+    {
+      "id": "deep_sea_visitor-lord_of_seas-ice_dmg",
+      "source": "wEngine",
+      "sourceId": "deep_sea_visitor",
+      "label": "Lord of Seas (W-Engine Passive)",
+      "description": "Increases Ice DMG by a percentage. Upon hitting an enemy with a Basic Attack, the equipper's CRIT Rate is increased for 8s. When dealing Ice DMG with a Dash Attack, the equipper's CRIT Rate is further increased for 15s. The duration of each effect is calculated separately.",
+      "shortDescription": "Increases the equipper's Ice DMG.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ice",
+                "value": 0.25
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ice",
+                "value": 0.315
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ice",
+                "value": 0.38
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ice",
+                "value": 0.45
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "ice",
+                "value": 0.5
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "deep_sea_visitor-lord_of_seas-crit_rate",
+      "source": "wEngine",
+      "sourceId": "deep_sea_visitor",
+      "label": "Lord of Seas  (W-Engine Passive)",
+      "description": "Increases Ice DMG by a percentage. Upon hitting an enemy with a Basic Attack, the equipper's CRIT Rate is increased for 8s. When dealing Ice DMG with a Dash Attack, the equipper's CRIT Rate is further increased for 15s. The duration of each effect is calculated separately.",
+      "shortDescription": "Increases the equipper's Crit Rate, stacking up to 2 times",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.1 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.125 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.15 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.175 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.2 }
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

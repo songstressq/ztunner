@@ -1,0 +1,934 @@
+{
+  "id": "ben",
+  "name": "Ben Bigger",
+  "specialty": "Defense",
+  "faction": "Belobog Industries",
+  "attribute": "Fire",
+  "rarity": "A",
+  "fullName": "Ben Bigger",
+  "displayName": "Ben",
+  "attributeIcon": "Fire",
+  "themeColor": "#ab9f89",
+  "baseStats": {
+    "hp": 8577.6,
+    "atk": 577.5,
+    "def": 724.04
+  },
+  "combatBase": {
+    "impact": 95,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 86,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["DEF"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "ben_bigger-core-contractual_agreement",
+      "source": "core",
+      "sourceId": "ben_bigger-core",
+      "label": "Contractual Agreement (Aditional Ability)",
+      "description": "When another character in your squad shares the same Attribute or Faction:\n\nWhile the Shield from Core Passive: Guardian is in effect, the character's CRIT Rate is increased by 16%.",
+      "shortDescription": "All squad members' CRIT Rate is increased by 16%.",
+      "target": "team",
+      "flat": {
+        "critRate": 0.16
+      }
+    },
+    {
+      "id": "ben_bigger-mindscape_1-reacting_force",
+      "source": "mindscape",
+      "sourceId": "ben_bigger-mindscape_1",
+      "label": "Reacting Force (Mindscape Cinema N°1)",
+      "description": "When successfully Blocking an enemy with Ben's Special Attack or EX Special Attack, the DMG dealt by the blocked enemy is reduced by 30% for 15s.",
+      "shortDescription": "This mindscape cinema does not affect Ben's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "ben_bigger-mindscape_2-offensive_through_defense",
+      "source": "mindscape",
+      "sourceId": "ben_bigger-mindscape_2",
+      "label": "Offensive Through Defense (Mindscape Cinema N°2)",
+      "description": "When successfully triggering a Block Counter during Ben's Special Attack or EX Special Attack, inflict an additional 300% of Ben's DEF as DMG.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    },
+    {
+      "id": "ben_bigger-mindscape_4-agile_adaptation",
+      "source": "mindscape",
+      "sourceId": "ben_bigger-mindscape_4",
+      "label": "Agile Adaptation (Mindscape Cinema N°4)",
+      "description": "When successfully blocking enemy DMG with Ben's invulnerable effect during his Special Attack or EX Special Attack, the following counter deals 30% more DMG.",
+      "shortDescription": "Ben's DMG from Block Counters is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "ben-special_attack-fiscal_fist",
+          "hitNames": ["Block Counter DMG Multiplier"],
+          "value": 0.3
+        },
+        {
+          "type": "exclusive",
+          "skillId": "ben-ex_special_attack-cashflow_counter",
+          "appliesTo": [
+            "Block Counter DMG Multiplier",
+            "Block Follow-Up DMG Multiplier"
+          ],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ben_bigger-mindscape_6-wild_spirit",
+      "source": "mindscape",
+      "sourceId": "ben_bigger-mindscape_6",
+      "label": "Wild Spirit (Mindscape Cinema N°6)",
+      "description": "After launching an attack or follow-up attack during Ben's EX Special Attack, Daze inflicted by Basic Attacks, Dash Attack, and Dodge Counter is increased by 20%, lasting 12s.",
+      "shortDescription": "This mindscape cinema does not affect Ben's stats.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "ben-basic_attack-debt_reconciliation",
+        "name": "Debt Reconciliation (Basic Attack)",
+        "description": "Press [BASIC] to launch this attack.\n\nUnleashes up to 3 strikes, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [65.9, 189, 348.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [71.9, 206.2, 380]
+          },
+          {
+            "level": 3,
+            "multipliers": [77.9, 223.4, 411.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [83.9, 240.6, 443.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [89.9, 257.8, 475.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [95.9, 275, 506.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [101.9, 292.2, 538.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [107.9, 309.4, 570.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [113.9, 326.6, 601.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [119.9, 343.8, 633.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [125.9, 361, 665.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [131.9, 378.2, 697]
+          },
+          {
+            "level": 13,
+            "multipliers": [137.9, 395.4, 728.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [143.9, 412.6, 760.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [149.9, 429.8, 792.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [155.9, 447, 823.8]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "ben-dash_attack-incoming_expense",
+        "name": "Incoming Expense (Dash Attack)",
+        "description": "Press [BASIC] during a Dodge to activate:\n\nStrikes enemies in front of him, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [138.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [151]
+          },
+          {
+            "level": 3,
+            "multipliers": [163.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [176.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [188.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [201.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [214]
+          },
+          {
+            "level": 8,
+            "multipliers": [226.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [239.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [251.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [264.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [277]
+          },
+          {
+            "level": 13,
+            "multipliers": [289.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [302.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [314.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [327.4]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "ben-dodge_counter-accounts_settled",
+        "name": "Accounts Settled (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nStrikes enemies in front of him, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [225.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [246.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [266.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [287.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [308.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [328.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [349.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [369.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [390.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [411.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [431.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [452.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [472.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [493.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [514.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [534.7]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "ben-quick_assist-joint_account",
+        "name": "Joint Account (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nStrikes enemies in front, dealing Fire DMG. Character is invulnerable during the attack.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [96.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [105.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [114.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [123.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [131.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [140.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [149.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [158.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [167.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [175.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [184.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [193.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [202.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [211.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [219.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [228.7]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "ben-assist_follow_up-dont_break_contract",
+        "name": "Don't Break Contract (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCharges and strikes enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [325.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [355.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [385.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [415]
+          },
+          {
+            "level": 5,
+            "multipliers": [444.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [474.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [504.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [533.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [563.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [593.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [622.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [652.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [682.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [712]
+          },
+          {
+            "level": 15,
+            "multipliers": [741.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [771.4]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "ben-special_attack-fiscal_fist",
+        "name": "Fiscal Fist (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nBen lifts his weapon, blocking the enemy's attack before unleashing a forward strike, dealing Physical DMG. Successfully blocking an attack enhances the power of this skill and triggers /bBlock Counter//b, dealing massive Physical DMG.\n\nHold [SPECIAL] to remain in the /bBlocking//b stance.\n\nWhile in the /bBlocking//b stance, Ben gains a /bShield//b that weakens over time. After leaving the blocking stance, the /bShield//b is removed and recovers over time. The /bShield//b cannot exceed 16% of Ben's Max HP. Ben is invulnerable when activating Block. Anti-Interrupt level is increased while launching strikes.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Active Attack DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Block Counter DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [41.7, 233.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [45.5, 254.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [49.3, 276]
+          },
+          {
+            "level": 4,
+            "multipliers": [53.1, 297.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [56.9, 318.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [60.7, 339.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [64.5, 361.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [68.3, 382.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [72.1, 403.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [75.9, 425.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [79.7, 446.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [83.5, 467.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [87.3, 489]
+          },
+          {
+            "level": 14,
+            "multipliers": [91.1, 510.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [94.9, 531.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [98.7, 552.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "ben-ex_special_attack-cashflow_counter",
+        "name": "Cashflow Counter (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nBen lifts his weapon, blocking the enemy's attacks before unleashing a forward strike, dealing Fire DMG. Successfully blocking an attack enhances the power of this skill and triggers /bBlock Counter//b, dealing massive Fire DMG.\n\nHold [EX] to remain in the Blocking stance.\n\nWhile in the /bBlocking//b stance, Ben gains a /bShield//b that weakens over time. After leaving the blocking stance, the /bShield//b is removed and recovers over time. The /bShield//b cannot exceed 16 of Ben's Max HP. When this skill is activated, the /bShield//b is restored to its maximum value. After activating the skill, press [SPECIAL] again to follow up with a powerful forward strike, dealing massive Fire DMG. Ben is invulnerable when activating Block. Ben is invulnerable while launching strikes..",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Active Attack DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Follow-Up Attack DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Block Counter DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Block Follow-Up DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [438.5, 438.5, 500.5, 551.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [478.4, 478.4, 546, 601.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [518.3, 518.3, 591.5, 651.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [558.2, 558.2, 637, 701.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [598.1, 598.1, 682.5, 752]
+          },
+          {
+            "level": 6,
+            "multipliers": [638, 638, 728, 802.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [677.9, 677.9, 773.5, 852.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [717.8, 717.8, 819, 902.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [757.7, 757.7, 864.5, 952.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [797.6, 797.6, 910, 1003]
+          },
+          {
+            "level": 11,
+            "multipliers": [837.5, 837.5, 955.5, 1053.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [877.4, 877.4, 1001, 1103.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [917.3, 917.3, 1046.5, 1153.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [957.2, 957.2, 1092, 1203.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [997.1, 997.1, 1137.5, 1254]
+          },
+          {
+            "level": 16,
+            "multipliers": [1037, 1037, 1183, 1304.2]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "ben-chain_attack-signed_and_sealed",
+        "name": "Signed and Sealed (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful strike in a large area, dealing massive Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [627.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [684.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [741.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [798.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [855.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [912.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [969.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [1027]
+          },
+          {
+            "level": 9,
+            "multipliers": [1084.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1141.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [1198.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1255.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1312.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1369.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1426.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [1483.8]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "ben-ultimate-complete_payback",
+        "name": "Complete Payback (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a powerful strike at enemies in front in a large area, dealing massive Fire DMG. When activating the skill, additionally recover 3 /bAssist Points//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1643]
+          },
+          {
+            "level": 2,
+            "multipliers": [1792.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [1941.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [2091.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [2240.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [2390]
+          },
+          {
+            "level": 7,
+            "multipliers": [2539.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [2688.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [2838.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [2987.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [3137]
+          },
+          {
+            "level": 12,
+            "multipliers": [3286.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [3435.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [3585.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [3734.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [3884]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "ben_bigger-mindscape-offensive_through_defense",
+        "name": "Offensive Through Defense - Additional DMG (Mindscape Cinema N°2)",
+        "description": "When successfully triggering a /bBlock Counter//b during Ben's /bSpecial Attack//b or /bEX Special Attack//b, inflict an additional 300% of Ben's DEF as DMG.",
+        "skillType": "mindscape",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [300]
+          }
+        ]
+      }
+    ]
+  }
+}

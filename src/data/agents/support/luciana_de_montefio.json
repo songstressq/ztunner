@@ -1,0 +1,1188 @@
+{
+  "id": "lucy",
+  "name": "Luciana de Montefio",
+  "specialty": "Support",
+  "faction": "Sons of Calydon",
+  "attribute": "Fire",
+  "rarity": "A",
+  "fullName": "Luciana de Montefio",
+  "displayName": "Lucy",
+  "attributeIcon": "Fire",
+  "themeColor": "#D64E45",
+  "baseStats": {
+    "hp": 8026,
+    "atk": 583.96,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 92,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "luciana_de_montefio-special_attack-cheer_on",
+      "source": "special_attack",
+      "sourceId": "luciana_de_montefio-special_attack",
+      "label": "Cheer On! (Special Attack)",
+      "description": "After using EX Special Attack, when a guard boar triggers an explosion, it will apply the Cheer On! status to all squad members and Bangboo, and the guard boars themselves. While under the Cheer On! status, allies' ATK increases by a percentage of Lucy's initial ATK plus a set amount, up to a maximum of 600. The Cheer On! status lasts for 10s when a Line Drive is hit, and 15s when a Fly Ball is hit. Repeated triggers reset the duration.",
+      "shortDescription": "All squad members' ATK is increased based on Lucy's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 99999,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 600,
+            "perUnitBonus": 0.138,
+            "baseBonus": 44
+          },
+          {
+            "level": 2,
+            "maxBonus": 600,
+            "perUnitBonus": 0.146,
+            "baseBonus": 48
+          },
+          {
+            "level": 3,
+            "maxBonus": 600,
+            "perUnitBonus": 0.154,
+            "baseBonus": 52
+          },
+          {
+            "level": 4,
+            "maxBonus": 600,
+            "perUnitBonus": 0.162,
+            "baseBonus": 56
+          },
+          {
+            "level": 5,
+            "maxBonus": 600,
+            "perUnitBonus": 0.17,
+            "baseBonus": 60
+          },
+          {
+            "level": 6,
+            "maxBonus": 600,
+            "perUnitBonus": 0.178,
+            "baseBonus": 64
+          },
+          {
+            "level": 7,
+            "maxBonus": 600,
+            "perUnitBonus": 0.186,
+            "baseBonus": 68
+          },
+          {
+            "level": 8,
+            "maxBonus": 600,
+            "perUnitBonus": 0.194,
+            "baseBonus": 72
+          },
+          {
+            "level": 9,
+            "maxBonus": 600,
+            "perUnitBonus": 0.202,
+            "baseBonus": 76
+          },
+          {
+            "level": 10,
+            "maxBonus": 600,
+            "perUnitBonus": 0.21,
+            "baseBonus": 80
+          },
+          {
+            "level": 11,
+            "maxBonus": 600,
+            "perUnitBonus": 0.218,
+            "baseBonus": 84
+          },
+          {
+            "level": 12,
+            "maxBonus": 600,
+            "perUnitBonus": 0.226,
+            "baseBonus": 88
+          },
+          {
+            "level": 13,
+            "maxBonus": 600,
+            "perUnitBonus": 0.234,
+            "baseBonus": 92
+          },
+          {
+            "level": 14,
+            "maxBonus": 600,
+            "perUnitBonus": 0.242,
+            "baseBonus": 96
+          },
+          {
+            "level": 15,
+            "maxBonus": 600,
+            "perUnitBonus": 0.25,
+            "baseBonus": 100
+          },
+          {
+            "level": 16,
+            "maxBonus": 600,
+            "perUnitBonus": 0.258,
+            "baseBonus": 104
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "luciana_de_montefio-mindscape_1-drill_formations",
+      "source": "mindscape",
+      "sourceId": "luciana_de_montefio-mindscape_1",
+      "label": "Drill Formations (Mindscape Cinema N°1)",
+      "description": "When the guard boars launch Guard Boars: Spinning Swing!, Lucy recovers 2 Energy. This effect can trigger once every 15s, with each guard boar having its own separate cooldown.",
+      "shortDescription": "This mindscape cinema does not affect Lucy's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "luciana_de_montefio-mindscape_2-little_boar_captain",
+      "source": "mindscape",
+      "sourceId": "luciana_de_montefio-mindscape_2",
+      "label": "Little Boar Captain (Mindscape Cinema N°2)",
+      "description": "When Lucy uses a Chain Attack or Ultimate, it grants all squad members and Bangboo, and the guard boars themselves the Cheer On! status for 10s.",
+      "shortDescription": "This mindscape cinema does not affect Lucy's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "luciana_de_montefio-mindscape_4-chaos_ball_game",
+      "source": "mindscape",
+      "sourceId": "luciana_de_montefio-mindscape_4",
+      "label": "Chaos Ball Game (Mindscape Cinema N°4)",
+      "description": "While in the Cheer On! state, allies' CRIT DMG is increased by an additional 10%.",
+      "shortDescription": "All Squad Members' CRIT DMG is increased by 10%.",
+      "target": "team",
+      "flat": {
+        "critDmg": 0.1
+      }
+    },
+    {
+      "id": "luciana_de_montefio-mindscape_6-fierce_fangs_of_fire",
+      "source": "mindscape",
+      "sourceId": "luciana_de_montefio-mindscape_6",
+      "label": "Fierce Fangs of Fire (Mindscape Cinema N°6)",
+      "description": "When another squad member in the Cheer On! state hits an enemy with an EX Special Attack, a guard boar will drop from the sky and cause an explosion, dealing Fire DMG equal to 300% of the guard boar's ATK. This will extend the duration of the Cheer On! buff for all squad members and Bangboo, and for the guard boars themselves by 5s. The duration can increase up to 3 times, with a maximum duration of 30s. Refreshing the Cheer On! state resets the stack count. After the guard boar's explosion, it will launch Guard Boars: Spinning Swing!.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "lucy-basic_attack-ladys_bat",
+        "name": "Lady's Bat (Basic Attack)",
+        "description": "Press [BASIC] to launch this attack.\n\nStrike forward up to 4 times, dealing Physical DMG and Fire DMG. When Lucy uses her 4th /bBasic Attack//b, the currently on-field Guard Boars: Spinning Swing! together.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd Hit (ALT) DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [56.6, 77.8, 188.9, 211.5, 272.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [61.8, 84.9, 206.1, 230.8, 297.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [67, 92, 223.3, 250.1, 322.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [72.2, 99.1, 240.5, 269.4, 347]
+          },
+          {
+            "level": 5,
+            "multipliers": [77.4, 106.2, 257.7, 288.7, 371.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [82.6, 113.3, 274.9, 308, 396.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [87.8, 120.4, 292.1, 327.3, 421.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [93, 127.5, 309.3, 346.6, 446.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [98.2, 134.6, 326.5, 365.9, 471]
+          },
+          {
+            "level": 10,
+            "multipliers": [103.4, 141.7, 343.7, 385.2, 495.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [108.6, 148.8, 360.9, 404.5, 520.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [113.8, 155.9, 378.1, 423.8, 545.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [119, 163, 395.3, 443.1, 570.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [124.2, 170.1, 412.5, 462.4, 595]
+          },
+          {
+            "level": 15,
+            "multipliers": [129.4, 177.2, 429.7, 481.7, 619.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [134.6, 184.3, 446.9, 501, 644.6]
+          }
+        ]
+      },
+      {
+        "id": "lucy-basic_attack-guard_boars_to_arms",
+        "name": "Guard Boars: To Arms! (Basic Attack)",
+        "description": "In combat, the guard boars will randomly use a baseball bat, boxing gloves, or a slingshot to automatically attack enemies, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Baseball Bat DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Boxing Gloves DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Slingshot DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [92.5, 127.5, 175]
+          },
+          {
+            "level": 2,
+            "multipliers": [101, 139.1, 191]
+          },
+          {
+            "level": 3,
+            "multipliers": [109.5, 150.7, 207]
+          },
+          {
+            "level": 4,
+            "multipliers": [118, 162.3, 223]
+          },
+          {
+            "level": 5,
+            "multipliers": [126.5, 173.9, 239]
+          },
+          {
+            "level": 6,
+            "multipliers": [135, 185.5, 255]
+          },
+          {
+            "level": 7,
+            "multipliers": [143.5, 197.1, 271]
+          },
+          {
+            "level": 8,
+            "multipliers": [152, 208.7, 287]
+          },
+          {
+            "level": 9,
+            "multipliers": [160.5, 220.3, 303]
+          },
+          {
+            "level": 10,
+            "multipliers": [169, 231.9, 319]
+          },
+          {
+            "level": 11,
+            "multipliers": [177.5, 243.5, 335]
+          },
+          {
+            "level": 12,
+            "multipliers": [186, 255.1, 351]
+          },
+          {
+            "level": 13,
+            "multipliers": [194.5, 266.7, 367]
+          },
+          {
+            "level": 14,
+            "multipliers": [203, 278.3, 383]
+          },
+          {
+            "level": 15,
+            "multipliers": [211.5, 289.9, 399]
+          },
+          {
+            "level": 16,
+            "multipliers": [220, 301.5, 415]
+          }
+        ]
+      },
+      {
+        "id": "lucy-basic_attack-guard_boars-spinning_swing",
+        "name": "Guard Boars: Spinning Swing! (Basic Attack)",
+        "description": "When Lucy uses the fourth /bBasic Attack//b, or when she gains the /bCheer On!//b status, the guard boars will whirl their baseball bats in a continuous motion, dealing Physical DMG to nearby enemies. If the attack cannot be executed immediately, the guard boars will remember the required number of times to execute it.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Spinning Swing DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [250]
+          },
+          {
+            "level": 2,
+            "multipliers": [272.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [295.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [318.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [341.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [364]
+          },
+          {
+            "level": 7,
+            "multipliers": [386.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [409.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [432.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [455.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [478]
+          },
+          {
+            "level": 12,
+            "multipliers": [500.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [523.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [546.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [569.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [592]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "lucy-dash_attack-fearless_boar",
+        "name": "Fearless Boar! (Dash Attack)",
+        "description": "Press [BASIC] during dodge to activate:\n\nRapidly strikes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [78.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [85.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [92.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [100]
+          },
+          {
+            "level": 5,
+            "multipliers": [107.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [114.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [121.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [128.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [136]
+          },
+          {
+            "level": 10,
+            "multipliers": [143.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [150.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [157.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [164.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [172]
+          },
+          {
+            "level": 15,
+            "multipliers": [179.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [186.4]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "lucy-dodge_counter-returning_tusk",
+        "name": "Returning Tusk! (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nStrike enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [308]
+          },
+          {
+            "level": 2,
+            "multipliers": [336]
+          },
+          {
+            "level": 3,
+            "multipliers": [364]
+          },
+          {
+            "level": 4,
+            "multipliers": [392]
+          },
+          {
+            "level": 5,
+            "multipliers": [420]
+          },
+          {
+            "level": 6,
+            "multipliers": [448]
+          },
+          {
+            "level": 7,
+            "multipliers": [476]
+          },
+          {
+            "level": 8,
+            "multipliers": [504]
+          },
+          {
+            "level": 9,
+            "multipliers": [532]
+          },
+          {
+            "level": 10,
+            "multipliers": [560]
+          },
+          {
+            "level": 11,
+            "multipliers": [588]
+          },
+          {
+            "level": 12,
+            "multipliers": [616]
+          },
+          {
+            "level": 13,
+            "multipliers": [644]
+          },
+          {
+            "level": 14,
+            "multipliers": [672]
+          },
+          {
+            "level": 15,
+            "multipliers": [700]
+          },
+          {
+            "level": 16,
+            "multipliers": [728]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "lucy-quick_assist-hit_by_pitch",
+        "name": "Hit By Pitch! (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nStrikes enemies in front, dealing Fire DMG. Character is invulnerable during the attack.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [160]
+          },
+          {
+            "level": 2,
+            "multipliers": [174.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [189.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [203.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [218.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [233]
+          },
+          {
+            "level": 7,
+            "multipliers": [247.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [262.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [276.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [291.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [306]
+          },
+          {
+            "level": 12,
+            "multipliers": [320.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [335.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [349.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [364.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [379]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "lucy-assist_follow_up-scored_a_run",
+        "name": "Scored a Run! (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nStrikes enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [349.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [380.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [412.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [444.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [476.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [508.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [539.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [571.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [603.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [635.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [667.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [698.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [730.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [762.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [794.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [826.1]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "lucy-special_attack-solid_hit",
+        "name": "Solid Hit! (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nRecall a guard boar and launch it as a /bLine Drive//b. The guard boar will cause an explosion upon hitting enemies or walls, dealing Fire DMG.\n\nHold [SPECIAL] to activate:\n\nRecall a guard boar and launch it as a /bFly Ball//b. The guard boar will cause an explosion upon landing, dealing Fire DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Line Drive DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Fly Ball DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [61.7, 69.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [67.4, 75.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [73.1, 81.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [78.8, 88.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [84.5, 94.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [90.2, 100.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [95.9, 107]
+          },
+          {
+            "level": 8,
+            "multipliers": [101.6, 113.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [107.3, 119.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [113, 125.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [118.7, 132.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [124.4, 138.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [130.1, 144.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [135.8, 151.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [141.5, 157.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [147.2, 163.7]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "lucy-ex_special_attack-home_run",
+        "name": "Home Run! (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nRecall a guard boar and launch it as a /bLine Drive//b. The guard boar will cause an explosion upon hitting enemies or walls, dealing massive Fire DMG. Character is invulnerable while using this skill. When the skill hits an enemy, it triggers a /bQuick Assist//b.\n\nWith enough Energy, hold [EX] to activate:\n\nRecall a guard boar and launch it as a /bFly Ball//b. The guard boar will cause an explosion upon landing, dealing massive Fire DMG. Character is invulnerable while using this skill. When the skill hits an enemy, it triggers a /bQuick Assist//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Line Drive DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Fly Ball DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [508.4, 536.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [554.7, 585.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [601, 634]
+          },
+          {
+            "level": 4,
+            "multipliers": [647.3, 682.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [693.6, 731.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [739.9, 780.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [786.2, 829.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [832.5, 878]
+          },
+          {
+            "level": 9,
+            "multipliers": [878.8, 926.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [925.1, 975.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [971.4, 1024.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1017.7, 1073.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1064, 1122]
+          },
+          {
+            "level": 14,
+            "multipliers": [1110.3, 1170.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1156.6, 1219.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [1202.9, 1268.4]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "lucy-chain_attack-grand_slam",
+        "name": "Grand Slam! (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLucy jumps up and sends a guard boar at enemies in front in a large area, dealing massive Fire DMG. Character is invulnerable while using this skill. When the skill hits an enemy, it triggers a /bQuick Assist//b.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier x3",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [164.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [179]
+          },
+          {
+            "level": 3,
+            "multipliers": [194]
+          },
+          {
+            "level": 4,
+            "multipliers": [208.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [223.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [238.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [253.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [268.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [283.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [298.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [313.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [328.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [343.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [358.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [373.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [388.1]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "lucy-ultimate-walk_off_home_run",
+        "name": "Walk-Off Home Run! (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunch all guard boars sequentially, dealing massive Fire DMG in a large area to enemies ahead.\n\nWhile using this skill, other squad members recover 10 energy, and the next character to switch in gains an additional 20 energy. Character is invulnerable while using this skill. When the skill hits an enemy, it triggers a /bQuick Assist//b.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier x3",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [572.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [624.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [677]
+          },
+          {
+            "level": 4,
+            "multipliers": [729.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [781.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [833.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [885.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [937.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [989.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1041.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1093.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1145.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1198]
+          },
+          {
+            "level": 14,
+            "multipliers": [1250.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1302.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1354.3]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "lucy-mindscape-fierce_fangs_of_fire",
+        "name": "Fierce Fangs of Fire - Additional DMG (Mindscape Cinema N°6)",
+        "description": "When another squad member in the /bCheer On!//b state hits an enemy with an /bEX Special Attack//b, a guard boar will drop from the sky and cause an explosion, dealing Fire DMG equal to 300% of the guard boar's ATK.\n\nThis will extend the duration of the /bCheer On!//b buff for all squad members and Bangboo, and for the guard boars themselves by 5s. The duration can increase up to 3 times, with a maximum duration of 30s. Refreshing the /bCheer On!//b state resets the stack count.\n\nAfter the guard boar's explosion, it will launch /bGuard Boars: Spinning Swing!//b.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [300]
+          }
+        ]
+      }
+    ]
+  }
+}

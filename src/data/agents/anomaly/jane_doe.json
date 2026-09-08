@@ -1,0 +1,1278 @@
+{
+  "id": "jane",
+  "name": "Jane Doe",
+  "specialty": "Anomaly",
+  "faction": "Criminal Investigation Special Response Team",
+  "attribute": "Physical",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Jane Doe",
+  "attributeIcon": "Ice",
+  "themeColor": "#82B1BA",
+  "skins": [
+    {
+      "id": "default",
+      "img": "jane.png"
+    },
+    {
+      "id": "nocturne_of_light",
+      "img": "jane-nocturne_of_light.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7788.7,
+    "atk": 805.7,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 114,
+    "anomalyMastery": 112,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["ATK", "Anomaly Proficiency"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "jane_doe-basic_attack-passion",
+      "source": "basic_attack",
+      "sourceId": "jane_doe-basic_attack",
+      "label": "Passion (Basic Attack)",
+      "description": "When Jane triggers Perfect Dodge, Defensive Assist, or performs a move that deals damage to the enemy, she accumulates Passion Stream. Upon reaching the maximum Passion Stream, Jane enters the Passion state.\n\nWhile in the Passion state, Jane's Physical Anomaly Buildup Rate is increased by 25%. Additionally, if Jane's Anomaly Proficiency exceeds 120 points, each extra point raises her ATK by 2, up to a maximum of 600. In the Passion state, Jane's skills that deal damage expend Passion Stream. Activating a Perfect Dodge or Defensive Assist regenerates Passion Stream. Jane exits the Passion state when all of her Passion Stream is expended.",
+      "shortDescription": "Jane Doe's ATK is increased based on her current Anomaly Proficiency.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyProficiency",
+        "threshold": 120,
+        "perUnit": 1,
+        "perUnitBonus": 2,
+        "maxBonus": 600,
+        "affectedStats": ["atkFlatRaw"],
+        "affectsAnomaly": false,
+        "affectsDisorder": false
+      }
+    },
+    {
+      "id": "jane_doe-core-insight",
+      "source": "core",
+      "sourceId": "jane_doe-core",
+      "label": "Insight (Core Passive)",
+      "description": "When Jane's attacks hit an enemy, it causes them to enter the Gnawed state, lasting for 10s. If any squad member triggers Assault on an enemy in the Gnawed state and causes the Flinch effect, the Flinch effect duration is extended by 5s. Assault DMG has a chance to trigger a critical hit against enemies in the Gnawed state, with a base CRIT Rate of 40% and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases this CRIT Rate by 0.16%.",
+      "shortDescription": "All squad members' Assaults can trigger critical hits with a base CRIT DMG of 50%.",
+      "target": "team",
+      "assaultCritDmgBase": 0.5
+    },
+    {
+      "id": "jane_doe-mindscape_1-crime_counsel",
+      "source": "core",
+      "sourceId": "jane_doe-mindscape_1",
+      "label": "Crime Counsel (Mindscape Cinema N°1)",
+      "description": "The maximum uses of Basic Attack: Salchow Jump are increased by one. While in the Passion state, Jane's Physical Anomaly Buildup Rate increases by an extra 15% and each point of Jane's Anomaly Proficiency increases her damage by 0.1%, up to a maximum of 30%.",
+      "shortDescription": "Jane Doe's DMG is increased based on her current Anomaly Proficiency.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyProficiency",
+        "threshold": 0,
+        "perUnit": 1,
+        "perUnitBonus": 0.001,
+        "maxBonus": 0.3,
+        "affectedStats": ["anomalyDmgBonus"]
+      },
+      "affectsDisorder": false
+    },
+    {
+      "id": "jane_doe-mindscape_2-adapt_to_the_enviroment",
+      "source": "core",
+      "sourceId": "jane_doe-mindscape_2",
+      "label": "Adapt to the Environment (Mindscape Cinema N°2)",
+      "description": "When Jane's attack hits an enemy in the Gnawed state, or when any squad member triggers Assault on an enemy in the Gnawed state, 15% of the enemy's DEF is ignored. Additionally, when Assault DMG triggers a CRIT, the CRIT DMG is increased by 50%.",
+      "shortDescription": "All squad members' attacks ignore 15% of the target's DEF. All squad members' CRIT DMG from Assaults is increased by 50%",
+      "target": "team",
+      "flat": {
+        "defShred": 0.15
+      },
+      "damageBonuses": [
+        {
+          "type": "assaultCritDmgBonus",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "jane_doe-mindscape_4-adapt_and_thrive",
+      "source": "core",
+      "sourceId": "jane_doe-mindscape_4",
+      "label": "Adapt and Thrive (Mindscape Cinema N°2)",
+      "description": "When any squad member triggers the Assault or Disorder effects, all squad members' Attribute Anomaly DMG is increased by 18%, lasting 15s.",
+      "shortDescription": "All squad members' DMG form Attribute Anomalies and Disorders is increased by 18% for 15s",
+      "target": "team",
+      "flat": {
+        "anomalyDmgBonus": 0.18,
+        "disorderDmgBonus": 0.18
+      }
+    },
+    {
+      "id": "jane_doe-mindscape_6-shady_technique",
+      "source": "core",
+      "sourceId": "jane_doe-mindscape_6",
+      "label": "Shady Technique (Mindscape Cinema N°6)",
+      "description": "While in the Passion state, Jane's CRIT Rate increases by 20%, and CRIT DMG by 40%. After any squad member inflicts Assault, Jane instantly enters the Passion state, and gains max Passion Stream. When that instance of Assault triggers a critical hit, Jane performs an additional attack on the target, dealing Physical equal to 1,600% of her Anomaly Proficiency.",
+      "shortDescription": "All squad members' CRIT DMG from Assaults is increased by 40%",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "assaultCritDmgBonus",
+          "value": 0.4
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "jane_doe-basic_attack-dancing_blades",
+        "name": "Dancing Blades (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 6 attacks in front, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "6th Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [36.1, 62.3, 83.5, 163.4, 98.8, 291.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [39.4, 68, 91.1, 178.3, 107.8, 317.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [42.7, 73.7, 98.7, 193.2, 116.8, 344.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [46, 79.4, 106.3, 208.1, 125.8, 370.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [49.3, 85.1, 113.9, 223, 134.8, 397.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [52.6, 90.8, 121.5, 237.9, 143.8, 423.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [55.9, 96.5, 129.1, 252.8, 152.8, 450.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [59.2, 102.2, 136.7, 267.7, 161.8, 476.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [62.5, 107.9, 144.3, 282.6, 170.8, 503.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [65.8, 113.6, 151.9, 297.5, 179.8, 529.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [69.1, 119.3, 159.5, 312.4, 188.8, 556.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [72.4, 125, 167.1, 327.3, 197.8, 582.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [75.7, 130.7, 174.7, 342.2, 206.8, 609.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [79, 136.4, 182.3, 357.1, 215.8, 635.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [82.3, 142.1, 189.9, 372, 224.8, 662.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [85.6, 147.8, 197.5, 386.9, 233.8, 688.8]
+          }
+        ]
+      },
+      {
+        "id": "jane_doe-basic_attack-salchow_jump",
+        "name": "Salchow Jump (Basic Attack)",
+        "description": "Entering the /bPassion//b state grants Jane one use of Basic Attack:\n\nSalchow Jump. When available, hold [BASIC] to activate: Launch rapid consecutive attacks forward, followed by a finishing strike, dealing Physical DMG. Hold the button during the continuous attacks to extend the skill duration.\n\nRelease [BASIC] to trigger the finishing strike early. Anti-Interrupt level is increased during the continuous attacks, and Jane takes 40% reduced DMG. Jane is invulnerable during the finishing strike. Using /bBasic Attack: Salchow Jump//b while in the /bPassion//b state generates /bPassion Stream//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Consecutive Attack DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Finishing Move DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [300.8, 161.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [328.2, 176]
+          },
+          {
+            "level": 3,
+            "multipliers": [355.6, 190.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [383, 205.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [410.4, 220.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [437.8, 234.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [465.2, 249.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [492.6, 264.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [520, 278.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [547.4, 293.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [574.8, 308.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [602.2, 323]
+          },
+          {
+            "level": 13,
+            "multipliers": [629.6, 337.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [657, 352.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [684.4, 367.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [711.8, 381.8]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "jane_doe-dash_attack-edge_jump",
+        "name": "Edge Jump (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nIf after a single dodge, launch an upward slash in front, dealing Physical DMG. If after a second dodge, perform a series of slashes in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Dodge DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Dodge DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [71.5, 71.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [78, 78]
+          },
+          {
+            "level": 3,
+            "multipliers": [84.5, 84.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [91, 91]
+          },
+          {
+            "level": 5,
+            "multipliers": [97.5, 97.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [104, 104]
+          },
+          {
+            "level": 7,
+            "multipliers": [110.5, 110.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [117, 117]
+          },
+          {
+            "level": 9,
+            "multipliers": [123.5, 123.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [130, 130]
+          },
+          {
+            "level": 11,
+            "multipliers": [136.5, 136.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [143, 143]
+          },
+          {
+            "level": 13,
+            "multipliers": [149.5, 149.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [156, 156]
+          },
+          {
+            "level": 15,
+            "multipliers": [162.5, 162.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [169, 169]
+          }
+        ]
+      },
+      {
+        "id": "jane_doe-dash_attack-phantom_thrust",
+        "name": "Phantom Thrust (Dash Attack)",
+        "description": "While in the Passion state, press [BASIC] during a dodge to activate:\n\nLaunch three quick slashes in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [104.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [114]
+          },
+          {
+            "level": 3,
+            "multipliers": [123.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [133]
+          },
+          {
+            "level": 5,
+            "multipliers": [142.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [152]
+          },
+          {
+            "level": 7,
+            "multipliers": [161.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [171]
+          },
+          {
+            "level": 9,
+            "multipliers": [180.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [190]
+          },
+          {
+            "level": 11,
+            "multipliers": [199.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [209]
+          },
+          {
+            "level": 13,
+            "multipliers": [218.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [228]
+          },
+          {
+            "level": 15,
+            "multipliers": [237.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [247]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "jane_doe-dodge_counter-swift_shadow",
+        "name": "Swift Shadow (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nIf after a single dodge, unleash multiple slashes at enemies in front, followed by a downward thrust, dealing Physical DMG. If after a second dodge, leap up and deliver three consecutive attack combos to enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Dodge DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Dodge DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [341.2, 341.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [372.3, 372.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [403.4, 403.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [434.5, 434.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [465.6, 465.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [496.7, 496.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [527.8, 527.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [558.9, 558.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [590, 590]
+          },
+          {
+            "level": 10,
+            "multipliers": [621.1, 621.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [652.2, 652.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [683.3, 683.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [714.4, 714.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [745.5, 745.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [776.6, 776.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [807.7, 807.7]
+          }
+        ]
+      },
+      {
+        "id": "jane_doe-dodge_counter-swift_shadow_dance",
+        "name": "Swift Shadow Dance (Dodge Counter)",
+        "description": "While in the /bPassion//b state, press [BASIC] during a [COUNTER] to activate:\n\nSlash enemies in front quickly multiple times, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [387]
+          },
+          {
+            "level": 2,
+            "multipliers": [422.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [457.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [492.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [527.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [563]
+          },
+          {
+            "level": 7,
+            "multipliers": [598.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [633.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [668.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [703.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [739]
+          },
+          {
+            "level": 12,
+            "multipliers": [774.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [809.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [844.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [879.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [915]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "jane_doe-quick_assist-dark_thorn",
+        "name": "Dark Thorn (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nUnleash multiple slashes followed by a downward thrust, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [119.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [130.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [141]
+          },
+          {
+            "level": 4,
+            "multipliers": [151.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [162.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [173.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [184.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [195.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [206.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [217.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [228.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [239.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [250]
+          },
+          {
+            "level": 14,
+            "multipliers": [260.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [271.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [282.7]
+          }
+        ]
+      },
+      {
+        "id": "jane_doe-quick_assist-lutz_jump",
+        "name": "Lutz Jump (Quick Assist)",
+        "description": "While in the Passion state, when the on-field character is launched, press [ASSIST] to activate:\n\nSlash enemies in front quickly multiple times, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [137.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [150]
+          },
+          {
+            "level": 3,
+            "multipliers": [162.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [175]
+          },
+          {
+            "level": 5,
+            "multipliers": [187.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [200]
+          },
+          {
+            "level": 7,
+            "multipliers": [212.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [225]
+          },
+          {
+            "level": 9,
+            "multipliers": [237.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [250]
+          },
+          {
+            "level": 11,
+            "multipliers": [262.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [275]
+          },
+          {
+            "level": 13,
+            "multipliers": [287.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [300]
+          },
+          {
+            "level": 15,
+            "multipliers": [312.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [325]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "jane_doe-assist_follow_up-gale_sweep",
+        "name": "Gale Sweep (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nLeap up and slash the enemy, then execute a wide sweeping slash across a large area in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [345.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [377]
+          },
+          {
+            "level": 3,
+            "multipliers": [408.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [440]
+          },
+          {
+            "level": 5,
+            "multipliers": [471.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [503]
+          },
+          {
+            "level": 7,
+            "multipliers": [534.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [566]
+          },
+          {
+            "level": 9,
+            "multipliers": [597.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [629]
+          },
+          {
+            "level": 11,
+            "multipliers": [660.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [692]
+          },
+          {
+            "level": 13,
+            "multipliers": [723.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [755]
+          },
+          {
+            "level": 15,
+            "multipliers": [786.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [818]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "jane_doe-special_attack-aerial_sweep",
+        "name": "Aerial Sweep (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLeaps into the air to launch a series of kicks forward, then sweeps across, dealing Physical DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [57.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [63.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [68.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [73.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [79]
+          },
+          {
+            "level": 6,
+            "multipliers": [84.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [89.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [94.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [100.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [105.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [110.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [116.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [121.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [126.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [132]
+          },
+          {
+            "level": 16,
+            "multipliers": [137.3]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "jane_doe-ex_special_attack-aerial_sweep_clearout",
+        "name": "Aerial Sweep - Clearout (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLeaps into the air to launch a series of kicks forward, then sweeps across, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [574.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [627]
+          },
+          {
+            "level": 3,
+            "multipliers": [679.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [731.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [783.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [836.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [888.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [940.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [993.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1045.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1097.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1150]
+          },
+          {
+            "level": 13,
+            "multipliers": [1202.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1254.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1306.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1359.2]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "jane_doe-chain_attack-flowers_of_sin",
+        "name": "Flowers of Sin (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nSlash enemies in a large area in front, dealing massive Physical DMG. Jane enters the /bPassion//b state when using the skill, and gains max /bPassion Stream//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [632.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [690.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [747.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [805.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [863]
+          },
+          {
+            "level": 6,
+            "multipliers": [920.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [978.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [1035.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1093.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [1151]
+          },
+          {
+            "level": 11,
+            "multipliers": [1208.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [1266.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1323.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1381.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [1439]
+          },
+          {
+            "level": 16,
+            "multipliers": [1496.6]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "jane_doe-ultimate-final_curtain",
+        "name": "Final Curtain (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nSlash enemies back and forth in a large area, followed by a finishing strike, dealing massive Physical DMG. Jane enters the /bPassion//b state when using the skill, and gains max /bPassion Stream//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1470.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [1604.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [1738]
+          },
+          {
+            "level": 4,
+            "multipliers": [1871.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [2005.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [2139.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [2272.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [2406.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [2540.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [2673.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [2807.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [2941.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [3075]
+          },
+          {
+            "level": 14,
+            "multipliers": [3208.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [3342.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [3476.1]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

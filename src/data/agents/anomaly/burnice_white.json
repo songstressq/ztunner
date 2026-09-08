@@ -1,0 +1,1179 @@
+{
+  "id": "burnice",
+  "name": "Burnice White",
+  "specialty": "Anomaly",
+  "faction": "Sons of Calydon",
+  "attribute": "Fire",
+  "rarity": "S",
+  "fullName": "Burnice White",
+  "displayName": "Burnice",
+  "attributeIcon": "Fire",
+  "themeColor": "#C44A3D",
+  "baseStats": {
+    "hp": 7368.2,
+    "atk": 788.45,
+    "def": 600.59
+  },
+  "combatBase": {
+    "impact": 83,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 120,
+    "anomalyMastery": 118,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Proficiency", "ATK", "Energy Regen"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "burnice_white-core_1-nitro_fuel_cocktail",
+      "source": "core",
+      "sourceId": "burnice_white-core",
+      "label": "Nitro-Fuel Cocktail (Core Passive)",
+      "description": "When Burnice expends Energy, she accumulates Heat, up to a max of 100. She gains 1.4 Heat for each 1 point of Energy consumed. At 50 Heat, she enters the Nitro-Fuel Cocktail state until all Heat is expended. Upon entering the battlefield, Burnice instantly accumulates 100 Heat.\n\nWhile in the Nitro-Fuel Cocktail state, when Burnice hits an enemy with a Basic Attack: Mixed Flame Blend, EX Special Attack: Intense Heat Stirring Method, EX Special Attack: Intense Heat Stirring Method - Double Shot, Chain Attack: Fuel-Fed Flame, or Ultimate: Glorious Inferno, she applies the Scorched effect to the target until she exits the Nitro-Fuel Cocktail state. When other squad members hit enemies under the Scorched status, it triggers the Afterburn effect, expending 8 Heat to deal Fire DMG equal to 350% of Burnice's ATK and accumulate Fire Anomaly Buildup. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, Afterburn DMG increases by 1%, up to a max of 30%. DMG from the Afterburn effect is considered Assist DMG.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    },
+    {
+      "id": "burnice_white-core_2-nitro_fuel_cocktail",
+      "source": "core",
+      "sourceId": "burnice_white-core",
+      "label": "Nitro-Fuel Cocktail (Core Passive)",
+      "description": "When Burnice expends Energy, she accumulates Heat, up to a max of 100. She gains 1.4 Heat for each 1 point of Energy consumed. At 50 Heat, she enters the Nitro-Fuel Cocktail state until all Heat is expended. Upon entering the battlefield, Burnice instantly accumulates 100 Heat.\n\nWhile in the Nitro-Fuel Cocktail state, when Burnice hits an enemy with a Basic Attack: Mixed Flame Blend, EX Special Attack: Intense Heat Stirring Method, EX Special Attack: Intense Heat Stirring Method - Double Shot, Chain Attack: Fuel-Fed Flame, or Ultimate: Glorious Inferno, she applies the Scorched effect to the target until she exits the Nitro-Fuel Cocktail state. When other squad members hit enemies under the Scorched status, it triggers the Afterburn effect, expending 8 Heat to deal Fire DMG equal to 350% of Burnice's ATK and accumulate Fire Anomaly Buildup. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, Afterburn DMG increases by 1%, up to a max of 30%. DMG from the Afterburn effect is considered Assist DMG.",
+      "shortDescription": "Burnice's DMG from Afterburn is increased based on her initial Anomaly Proficiency.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBasedDamageBonus",
+        "basedOn": "anomalyProficiency",
+        "threshold": 0,
+        "baseBonus": 0,
+        "perUnit": 10,
+        "skillLevels": [
+          {
+            "level": 1,
+            "perUnitBonus": 0.01,
+            "maxBonus": 0.3
+          }
+        ],
+        "damageBonusType": "exclusive",
+        "damageBonusAppliesTo": [
+          "burnice_white-core-afterburn",
+          "burnice_white-mindscape-kindred_flames",
+          "burnice_white-mindscape-burning_invitation"
+        ]
+      }
+    },
+    {
+      "id": "burnice_white-mindscape_1-kindred_flames",
+      "source": "mindscape",
+      "sourceId": "burnice_white-mindscape_1",
+      "label": "Kindred Flames (Mindscape Cinema N°1)",
+      "description": "Increases the limit of Heat from 100 to 140. Upon entering the battlefield, Burnice accumulates an additional 40 Heat. Increases the DMG Multiplier of the Afterburn effect by 100% of Burnice's ATK. Additionally, the accumulated Fire Anomaly Buildup from the Afterburn effect is increased by 25%.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    },
+    {
+      "id": "burnice_white-mindscape_2-extra_at_no_additional_charge",
+      "source": "mindscape",
+      "sourceId": "burnice_white-mindscape_2",
+      "label": "Extra at No Additional Charge (Mindscape Cinema N°2)",
+      "description": "When triggering the Afterburn effect, Thermal Penetration is applied to the enemy, stacking up to 5 times and lasting 6s. Repeated triggers reset the duration. When any allied unit in the squad hits the enemy, the attack's PEN Ratio is increased by 4% for each stack of Thermal Penetration, up to a max of 20%.",
+      "shortDescription": "Allies' PEN Ratio from their attacks is increased by 4%, stacking up to 5 times.",
+      "target": "team",
+      "perStack": {
+        "penRatio": 0.04
+      },
+      "maxStacks": 5
+    },
+    {
+      "id": "burnice_white-mindscape_4-ultimate_fuel_supply",
+      "source": "mindscape",
+      "sourceId": "burnice_white-mindscape_4",
+      "label": "Ultimate Fuel Supply (Mindscape Cinema N°4)",
+      "description": "When an EX Special Attack or Assist hits an enemy, the move's CRIT Rate increases by 30%. The max flame spray duration of EX Special Attack: Intense Heat Stirring Method - Double Shot is increased by 1s.",
+      "shortDescription": "This mindscape cinema does not affect Burnice's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "burnice_white-mindscape_6_1-burning_invitation",
+      "source": "mindscape",
+      "sourceId": "burnice_white-mindscape_6",
+      "label": "Burning Invitation (Mindscape Cinema N°6)",
+      "description": "When Burnice hits an enemy with EX Special Attack: Intense Heat Stirring Method - Double Shot, it triggers an additional special Afterburn effect, dealing 60% of Burnice's ATK as Fire DMG to the target. This effect can trigger once every 0.5s and does not consume Heat. After hitting an enemy with EX Special Attack: Intense Heat Stirring Method - Double Shot, while the move is active, EX Special Attack: Intense Heat Stirring Method - Double Shot, special Afterburn effects, and Burn effects will ignore 25% of the target's Fire RES. When EX Special Attack: Intense Heat Stirring Method - Double Shot's fire blast hits an enemy, if that enemy is Burned, trigger an additional instance of Burn DMG equal to 1,800% of the original DMG. This effect can trigger once every 20s for each target.",
+      "shortDescription": "Burnice's EX Special Attack: Intense Heat Stirring Method - Double Shot, Afterburn Effects and Burn ignore 25% of the target's Fire RES.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "fireResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "burnice-ex_special_attack-intense_heat_stirring_method_double_shot",
+            "burnice_white-core-afterburn",
+            "burnice_white-mindscape-kindred_flames",
+            "burnice_white-mindscape-burning_invitation"
+          ],
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "id": "burnice_white-mindscape_6_2-burning_invitation",
+      "source": "mindscape",
+      "sourceId": "burnice_white-mindscape_6",
+      "label": "Burning Invitation (Mindscape Cinema N°6)",
+      "description": "When Burnice hits an enemy with EX Special Attack: Intense Heat Stirring Method - Double Shot, it triggers an additional special Afterburn effect, dealing 60% of Burnice's ATK as Fire DMG to the target. This effect can trigger once every 0.5s and does not consume Heat. After hitting an enemy with EX Special Attack: Intense Heat Stirring Method - Double Shot, while the move is active, EX Special Attack: Intense Heat Stirring Method - Double Shot, special Afterburn effects, and Burn effects will ignore 25% of the target's Fire RES. When EX Special Attack: Intense Heat Stirring Method - Double Shot's fire blast hits an enemy, if that enemy is Burned, trigger an additional instance of Burn DMG equal to 1,800% of the original DMG. This effect can trigger once every 20s for each target.",
+      "shortDescription": "Burnice's DMG from Burn ignores 25% of the target's Fire RES.",
+      "target": "self",
+      "flat": {
+        "fireResShred": 0.25
+      },
+      "condition": {
+        "appliesToAnomalyOnly": true
+      }
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "burnice-basic_attack-direct_flame_blend",
+        "name": "Direct Flame Blend (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 5 attacks in front, dealing Physical DMG and Fire DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [44.8, 43.5, 71.7, 66.6, 96.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [48.9, 32.2, 78.3, 72.7, 105.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [53, 33.6, 84.9, 78.8, 113.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [57.1, 35, 91.5, 84.9, 122.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [61.2, 36.4, 98.1, 91, 131.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [65.3, 37.8, 104.7, 97.1, 140.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [69.4, 39.2, 111.3, 103.2, 149.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [73.5, 40.6, 117.9, 109.3, 157.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [77.6, 42, 124.5, 115.4, 166.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [81.7, 43.4, 131.1, 121.5, 175.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [85.8, 44.8, 137.7, 127.6, 184.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [89.9, 46.2, 144.3, 133.7, 193.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [94, 47.6, 150.9, 139.8, 201.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [98.1, 49, 157.5, 145.9, 210.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [102.2, 50.4, 164.1, 152, 219.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [106.3, 51.8, 170.7, 158.1, 228.3]
+          }
+        ]
+      },
+      {
+        "id": "burnice-basic_attack-mixed_flame_blend",
+        "name": "Mixed Flame Blend (Basic Attack)",
+        "description": "In the /bNitro-Fuel Cocktail//b state, press and hold [BASIC] to activate:\n\nSpin continuously while spraying flames around, followed by a finishing blow that inflicts Fire DMG. Continuing to hold extends the flame-spraying duration. When the move is activated, it consumes 20 /bHeat//b; Anti-Interrupt level is increased while using this skill. After executing the move, pressing [EX] will directly chain into /bEX Special Attack: Intense Heat Stirring Method - Double Shot//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Continuous Spray DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Finishing Move DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [125.4, 232.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [136.8, 254]
+          },
+          {
+            "level": 3,
+            "multipliers": [148.2, 275.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [159.6, 296.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [171, 317.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [182.4, 338.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [193.8, 360]
+          },
+          {
+            "level": 8,
+            "multipliers": [205.2, 381.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [216.6, 402.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [228, 423.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [239.4, 444.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [250.8, 466]
+          },
+          {
+            "level": 13,
+            "multipliers": [262.2, 487.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [273.6, 508.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [285, 529.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [296.4, 550.8]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "burnice-dash_attack-dangerous_fermentation",
+        "name": "Dangerous Fermentation (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nPerform a forward thrust with the flamethrower, causing Fire DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [67.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [74.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [80.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [86.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [92.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [98.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [105.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [111.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [117.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [123.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [129.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [136.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [142.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [148.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [154.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [160.9]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "burnice-dodge_counter-fluttering_steps",
+        "name": "Fluttering Steps (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLaunch a series of attacks on enemies in front while spraying flames, dealing Physical DMG and Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [219.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [239.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [259.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [279.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [299.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [319.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [339.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [359.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [379.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [399.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [419.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [439.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [459.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [479.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [499.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [519.7]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "burnice-quick_assist-energizing_specialty_drink",
+        "name": "Energizing Specialty Drink (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nUnleash a flurry of attacks on enemies in front while spraying flames, dealing Physical DMG and Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [84.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [92.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [99.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [107.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [115.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [122.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [130.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [138.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [146]
+          },
+          {
+            "level": 10,
+            "multipliers": [153.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [161.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [169.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [176.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [184.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [192.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [199.9]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "burnice-assist_follow_up-scorching_dew",
+        "name": "Scorching Dew (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nLeap into the air and quickly spin forward while spraying flames in all directions, dealing Fire DMG. After using the skill, press [EX] to immediately follow up with /bEX Special Attack: Intense Heat Stirring Method - Double Shot//b. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [327.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [357.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [387.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [417]
+          },
+          {
+            "level": 5,
+            "multipliers": [446.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [476.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [506.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [536.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [566]
+          },
+          {
+            "level": 10,
+            "multipliers": [595.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [625.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [655.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [685.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [715]
+          },
+          {
+            "level": 15,
+            "multipliers": [744.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [774.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "burnice-special_attack-intense_heat_aging_method",
+        "name": "Intense Heat Aging Method (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nUnleash a fire blast forward, inflicting Fire DMG; Press and hold [SPECIAL] to charge, boosting the move's potency. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Charged Attack DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [57.8, 62.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [63.1, 68.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [68.4, 73.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [73.7, 79.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [79, 85.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [84.3, 90.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [89.6, 96.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [94.9, 102.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [100.2, 108]
+          },
+          {
+            "level": 10,
+            "multipliers": [105.5, 113.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [110.8, 119.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [116.1, 125.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [121.4, 130.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [126.7, 136.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [132, 142.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [137.3, 147.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "burnice-ex_special_attack-intense_heat_stirring_method",
+        "name": "Intense Heat Stirring Method (EX Special Attack)",
+        "description": "With enough energy, press [EX] to activate:\n\nContinuously spray flames with a one-handed flamethrower, then release a fire blast in a straight line ahead, causing massive Fire DMG. Continue holding to steadily consume energy and extend the spray's duration. While continuously spraying, drag the joystick to execute a sidestep dodge, adjusting your position in the corresponding direction.\n\nAnti-Interrupt Level is increased while continuously spraying, and DMG taken is reduced by 40%. Invincibility is granted during sidestep dodge and fire blast.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Continuous Spray DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Fire Blast DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [543.8, 96.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [593.3, 105.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [642.8, 114.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [692.3, 123.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [741.8, 131.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [791.3, 140.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [840.8, 149.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [890.3, 158.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [939.8, 167.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [989.3, 175.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1038.8, 184.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1088.3, 193.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [1137.8, 202.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1187.3, 211.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1236.8, 219.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1286.3, 228.7]
+          }
+        ]
+      },
+      {
+        "id": "burnice-ex_special_attack-intense_heat_stirring_method_double_shot",
+        "name": "Intense Heat Stirring Method - Double Shot (EX Special Attack)",
+        "description": "When activating /bEX Special Attack: Intense Heat Stirring Method//b with enough Energy, press [EX] to activate:\n\nUse a dual-handed flamethrower to continuously spray flames, followed by a fire blast in a front line, dealing massive Fire DMG. Keep holding to continue consuming Energy and extend the spray's duration. Anti-Interrupt Level is increased while spraying, and DMG received is reduced by 40%. Invincibility is granted during the fire blast.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Continuous Spray DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Fire Blast DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [958.1, 287.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [1045.2, 313.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [1132.3, 339.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [1219.4, 365.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [1306.5, 391.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [1393.6, 417.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [1480.7, 443.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [1567.8, 469.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1654.9, 495.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [1742, 522]
+          },
+          {
+            "level": 11,
+            "multipliers": [1829.1, 548.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1916.2, 574.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [2003.3, 600.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [2090.4, 626.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [2177.5, 652.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [2264.6, 678.6]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "burnice-chain_attack-fuel_fed_flame",
+        "name": "Fuel-Fed Flame (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nQuickly dash forward while spraying flames, then launch a fire blast in a fan-shaped area ahead, dealing massive Fire DMG. After using the skill, press [EX] to immediately follow up with /bEX Special Attack: Intense Heat Stirring Method - Double Shot//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [680.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [742.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [804.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [866.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [928.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [990.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [1052.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [1114.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [1176.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1238]
+          },
+          {
+            "level": 11,
+            "multipliers": [1299.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [1361.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1423.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1485.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1547.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1609.4]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "burnice-ultimate-glorious_inferno",
+        "name": "Glorious Inferno (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nDash forward quickly, then leap into the air and continuously spray flames over a wide area ahead, dealing massive Fire DMG. When leaping into the air, a /bQuick Assist//b will be triggered. If the /bQuick Assist//b is triggered, Burnice will spray flames for an extended duration. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Maximum DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2012.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [2195.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [2378.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [2561.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [2744.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [2927.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [3110.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [3293.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [3476.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [3659.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [3842.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [4025.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [4208.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [4391.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [4574.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [4757.2]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "burnice_white-core-afterburn",
+        "name": "Afterburn (Core Passive)",
+        "description": "When Burnice expends Energy, she accumulates /bHeat//b, up to a max of 100. She gains 1.4 /bHeat//b for each 1 point of Energy consumed. At 50 /bHeat//b, she enters the /bNitro-Fuel Cocktail//b state until all /bHeat//b is expended. Upon entering the battlefield, Burnice instantly accumulates 100 /bHeat//b.\n\nWhile in the /bNitro-Fuel Cocktail//b state, when Burnice hits an enemy with a /bBasic Attack: Mixed Flame Blend//b, /bEX Special Attack: Intense Heat Stirring Method//b, /bEX Special Attack: Intense Heat Stirring Method - Double Shot//b, /bChain Attack: Fuel-Fed Flame//b, or /bUltimate: Glorious Inferno//b, she applies the /bScorched//b effect to the target until she exits the /bNitro-Fuel Cocktail//b state.\n\nWhen other squad members hit enemies under the /bScorched//b status, it triggers the /bAfterburn//b effect, expending 8 Heat to deal Fire DMG equal to 350% of Burnice's ATK and accumulate Fire Anomaly Buildup. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, /bAfterburn DMG//b increases by 1%, up to a max of 30%. DMG from the /bAfterburn//b effect is considered /bAssist DMG//b.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [350]
+          }
+        ]
+      },
+      {
+        "id": "burnice_white-mindscape-kindred_flames",
+        "name": "Afterburn (Mindscape Cinema N°1)",
+        "description": "Increases the limit of /bHeat//b from 100 to 140. Upon entering the battlefield, Burnice accumulates an additional 40 /bHeat//b. Increases the DMG Multiplier of the /bAfterburn//b effect by 100% of Burnice's ATK. Additionally, the accumulated Fire Anomaly Buildup from the /bAfterburn//b effect is increased by 25%.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [450]
+          }
+        ]
+      },
+      {
+        "id": "burnice_white-mindscape-burning_invitation",
+        "name": "Afterburn - Additional DMG (Mindscape Cinema N°6)",
+        "description": "When Burnice hits an enemy with /bEX Special Attack: Intense Heat Stirring Method - Double Shot//b, it triggers an additional special /bAfterburn//b effect, dealing 60% of Burnice's ATK as Fire DMG to the target. This effect can trigger once every 0.5s and does not consume /bHeat//b.\n\nAfter hitting an enemy with /bEX Special Attack: Intense Heat Stirring Method - Double Shot//b, while the move is active, /bEX Special Attack: Intense Heat Stirring Method - Double Shot//b, special /bAfterburn//b effects, and Burn effects will ignore 25% of the target's Fire RES.\n\nWhen /bEX Special Attack: Intense Heat Stirring Method - Double Shot//b's fire blast hits an enemy, if that enemy is /BBurned//B, trigger an additional instance of Burn DMG equal to 1,800% of the original DMG. This effect can trigger once every 20s for each target.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [60]
+          }
+        ]
+      }
+    ]
+  }
+}

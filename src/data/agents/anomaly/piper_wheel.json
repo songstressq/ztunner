@@ -1,0 +1,1064 @@
+{
+  "id": "piper",
+  "name": "Piper Wheel",
+  "specialty": "Anomaly",
+  "faction": "Sons of Calydon",
+  "attribute": "Physical",
+  "rarity": "A",
+  "fullName": "Piper Wheel",
+  "displayName": "Piper",
+  "attributeIcon": "Physical",
+  "themeColor": "#D6D1BC",
+  "baseStats": {
+    "hp": 6976.9,
+    "atk": 683.42,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 118,
+    "anomalyMastery": 116,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Proficiency"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "energyRegenFlat": 0.12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "energyRegenFlat": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "piper_wheel-core-synced_acceleration",
+      "source": "core",
+      "sourceId": "piper_wheel-core",
+      "label": "Synced Acceleration (Aditional Ability)",
+      "description": "When another character in your squad shares the same Attribute or Faction:\n\nWhen Piper has 20 or more stacks of Power, all squad members' DMG is increased by 18%.",
+      "shortDescription": "All squad members' DMG is increased by 18% at full stacks.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.18
+        }
+      ]
+    },
+    {
+      "id": "piper_wheel-mindscape_1-leisure_moment",
+      "source": "mindscape",
+      "sourceId": "piper_wheel-mindscape_1",
+      "label": "Leisure Moment (Mindscape Cinema N°1)",
+      "description": "When Piper's Special Attack: Tire Spin, EX Special Attack: Engine Spin, or Ultimate hits an enemy with a spinning slash, there is a 50% chance to gain an additional stack of Power. The maximum stack limit of Power is increased to 30.",
+      "shortDescription": "This mindscape cinema does not affect Piper's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "piper_wheel-mindscape_2-motivation",
+      "source": "mindscape",
+      "sourceId": "piper_wheel-mindscape_2",
+      "label": "Motivation (Mindscape Cinema N°2)",
+      "description": "During Special Attack: Tire Spin and EX Special Attack: Engine Spin, Piper's movement speed increases. When using Special Attack: One Trillion Tons, EX Special Attack: Really Heavy, or Ultimate to launch a downward smash that hits an enemy, the Physical DMG dealt by the move is increased by 10%. For every stack of Power, this buff is further increased by 1%.",
+      "shortDescription": "The Physical DMG from Special Attack: One Trillion Tons, EX Special Attack: Really Heavy and piper-ultimate-hold_on_tight is increased by 10%, up to 40%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "elementExclusive",
+          "element": "physical",
+          "value": 0.1,
+          "appliesTo": [
+            "piper-special_attack-one_trillion_tons",
+            "piper-ex_special_attack-really_heavy",
+            "piper-ultimate-hold_on_tight"
+          ]
+        }
+      ],
+      "maxStacks": 4
+    },
+    {
+      "id": "piper_wheel-mindscape_4-refined_techniques",
+      "source": "mindscape",
+      "sourceId": "piper_wheel-mindscape_4",
+      "label": "Refined Techniques (Mindscape Cinema N°4)",
+      "description": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, Piper recovers 20 Energy. This effect can trigger every 30s.",
+      "shortDescription": "This mindscape cinema does not affect Piper's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "piper_wheel-mindscape_6-mild_excitement",
+      "source": "mindscape",
+      "sourceId": "piper_wheel-mindscape_6",
+      "label": "Mild Excitement (Mindscape Cinema N°6)",
+      "description": "WIncreases the duration limit of EX Special Attack: Engine Spin by 2s and extends the duration of Power by 4s.",
+      "shortDescription": "This mindscape cinema does not affect Piper's stats.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "piper-basic_attack-load_up_and_roll_out",
+        "name": "Load Up and Roll Out (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 4 slashes, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [59, 78.8, 150.1, 320.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [64.4, 86, 163.8, 349.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [69.8, 93.2, 177.5, 379]
+          },
+          {
+            "level": 4,
+            "multipliers": [75.2, 100.4, 191.2, 408.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [80.6, 107.6, 204.9, 437.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [86, 114.8, 218.6, 466.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [91.4, 122, 232.3, 495.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [96.8, 129.2, 246, 525]
+          },
+          {
+            "level": 9,
+            "multipliers": [102.2, 136.4, 259.7, 554.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [107.6, 143.6, 273.4, 583.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [113, 150.8, 287.1, 612.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [118.4, 158, 300.8, 641.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [123.8, 165.2, 314.5, 671]
+          },
+          {
+            "level": 14,
+            "multipliers": [129.2, 172.4, 328.2, 700.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [134.6, 179.6, 341.9, 729.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [140, 186.8, 355.6, 758.6]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "piper-dash_attack-pedal_to_the_metal",
+        "name": "Pedal to the Metal (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [90.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [98.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [106.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [114.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [122.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [131.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [139.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [147.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [155.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [163.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [172.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [180.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [188.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [196.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [204.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [213.1]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "piper-dodge_counter-power_drift",
+        "name": "Power Drift (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nUnleash a downward smash attack in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [269]
+          },
+          {
+            "level": 2,
+            "multipliers": [293.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [318]
+          },
+          {
+            "level": 4,
+            "multipliers": [342.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [367]
+          },
+          {
+            "level": 6,
+            "multipliers": [391.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [416]
+          },
+          {
+            "level": 8,
+            "multipliers": [440.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [465]
+          },
+          {
+            "level": 10,
+            "multipliers": [489.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [514]
+          },
+          {
+            "level": 12,
+            "multipliers": [538.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [563]
+          },
+          {
+            "level": 14,
+            "multipliers": [587.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [612]
+          },
+          {
+            "level": 16,
+            "multipliers": [636.5]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "piper-quick_assist-brake_tap",
+        "name": "Brake Tap (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLaunches a downward smash attack at enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [130]
+          },
+          {
+            "level": 2,
+            "multipliers": [141.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [153.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [165.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [177.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [189.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [201.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [213.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [225.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [237.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [249]
+          },
+          {
+            "level": 12,
+            "multipliers": [260.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [272.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [284.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [296.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [308.5]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "piper-assist_follow_up-overtaking_maneuver",
+        "name": "Overtaking Maneuver (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCharge and slash enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [400.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [437]
+          },
+          {
+            "level": 3,
+            "multipliers": [473.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [510]
+          },
+          {
+            "level": 5,
+            "multipliers": [546.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [583]
+          },
+          {
+            "level": 7,
+            "multipliers": [619.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [656]
+          },
+          {
+            "level": 9,
+            "multipliers": [692.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [729]
+          },
+          {
+            "level": 11,
+            "multipliers": [765.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [802]
+          },
+          {
+            "level": 13,
+            "multipliers": [838.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [875]
+          },
+          {
+            "level": 15,
+            "multipliers": [911.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [948]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "piper-special_attack-tire_spin",
+        "name": "Tire Spin (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nPiper spins and launches a sweeping slash around her, dealing Physical DMG.\n\nHold [SPECIAL] to extend the skill duration, unleashing increasingly powerful spinning slashes and increasing the charge level of the skill up to 2 times.\n\nIf the skill is used after the first 3 hits of a /bBasic Attack//b, /bDash Attack//b, or /bDodge Counter//b, you can quickly activate /bSpecial Attack: Tire Spin//b of an increased charge level. During the skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [271.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [296.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [321.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [345.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [370.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [395.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [419.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [444.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [469.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [494]
+          },
+          {
+            "level": 11,
+            "multipliers": [518.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [543.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [568.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [592.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [617.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [642.2]
+          }
+        ]
+      },
+      {
+        "id": "piper-special_attack-one_trillion_tons",
+        "name": "One Trillion Tons (Special Attack)",
+        "description": "While /bSpecial Attack: Tire Spin//b is active, release /bSpecial Attack//b to trigger a downward smash attack based on the charge level of /bSpecial Attack: Tire Spin//b, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Level-1 Charged Attack DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Level-2 Charged Attack DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Level-3 Charged Attack DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [93.4, 103.4, 235]
+          },
+          {
+            "level": 2,
+            "multipliers": [101.9, 112.8, 256.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [110.4, 122.2, 277.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [118.9, 131.6, 299.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [127.4, 141, 320.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [135.9, 150.4, 342]
+          },
+          {
+            "level": 7,
+            "multipliers": [144.4, 159.8, 363.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [152.9, 169.2, 384.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [161.4, 178.6, 406.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [169.9, 188, 427.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [178.4, 197.4, 449]
+          },
+          {
+            "level": 12,
+            "multipliers": [186.9, 206.8, 470.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [195.4, 216.2, 491.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [203.9, 225.6, 513.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [212.4, 235, 534.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [220.9, 244.4, 556]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "piper-ex_special_attack-engine_spin",
+        "name": "Engine Spin (EX Special Attack)",
+        "description": "With enough Energy, continue holding /bEX Special Attack//b after /bSpecial Attack: Tire Spin//b reaches maximum charge level to activate:\n\nRapidly spins, unleashing powerful spinning slashes around her and dealing massive Physical DMG. This skill consumes Energy continuously for up to 3s. During the skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier Every Spin",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [93.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [102.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [110.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [119.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [127.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [136.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [144.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [153.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [161.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [170.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [179.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [187.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [196.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [204.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [213.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [221.8]
+          }
+        ]
+      },
+      {
+        "id": "piper-ex_special_attack-really_heavy",
+        "name": "Really Heavy (EX Special Attack)",
+        "description": "During /bEX Special Attack: Engine Spin//b, release /bEX Special Attack//b to activate:\n\nPiper unleashes a downward smash attack, dealing massive Physical DMG. If the duration of /bEX Special Attack: Engine Spin//b reaches its limit or Energy drops to 20, /bEX Special Attack: Really Heavy//b will automatically activate. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [612.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [668.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [724.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [780.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [836.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [891.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [947.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [1003.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [1059.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [1115.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [1170.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [1226.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1282.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1338.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [1394.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [1449.9]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "piper-chain_attack-buckle_up",
+        "name": "Buckle Up (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful downward smash at enemies ahead in a large area, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [652.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [711.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [770.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [830.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [889.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [948.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [1008.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [1067.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [1126.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [1186]
+          },
+          {
+            "level": 11,
+            "multipliers": [1245.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1304.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [1363.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [1423.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1482.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1541.8]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "piper-ultimate-hold_on_tight",
+        "name": "Hold~ On~ Tight~ (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nRapidly spins, unleashing powerful spinning slashes at enemies in a large area ahead, followed by a downward smash, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1660.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [1811.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [1962.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [2113.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [2264.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [2415.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [2566.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [2717.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [2868.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [3019.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [3170.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [3321.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [3472.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [3623.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [3774.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [3925.4]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

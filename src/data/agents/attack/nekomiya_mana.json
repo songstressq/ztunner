@@ -1,0 +1,999 @@
+{
+  "id": "nekomata",
+  "name": "Nekomiya Mana",
+  "specialty": "Attack",
+  "faction": "Cunning Hares",
+  "attribute": "Physical",
+  "rarity": "S",
+  "fullName": "Nekomiya Mana",
+  "displayName": "Nekomata",
+  "attributeIcon": "Physical",
+  "themeColor": "#CF665B",
+  "baseStats": {
+    "hp": 7560.2,
+    "atk": 835.6,
+    "def": 587.58
+  },
+  "combatBase": {
+    "impact": 92,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 96,
+    "anomalyMastery": 97,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "nekomata-core-stealthy_paws",
+      "source": "core",
+      "sourceId": "nekomata-core",
+      "label": "Stealthy Paws (Core Passive)",
+      "description": "When Nekomata's Dodge Counter or Quick Assist hits an enemy, her DMG increases by a percentage for 6s",
+      "shortDescription": "Nekomata' DMG is increased by 60% for 6s.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.6
+        }
+      ]
+    },
+    {
+      "id": "nekomata-core-catwalk",
+      "source": "core",
+      "sourceId": "nekomata-core",
+      "label": "Catwalk (Aditional Passive)",
+      "description": "When another character in your squad shares the same Attribute or Faction:\n\nAfter any character inflicts Assault, increases the DMG of Nekomata's next EX Special Attack by 35%, stacking up to 2 times.",
+      "shortDescription": "Nekomata's DMG from EX Special Attack: Surprise Attack! is increased by 35%, stacking up to 2 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["nekomata-ex_special_attack-super_surprise_attack"],
+          "value": 0.35
+        }
+      ],
+      "maxStacks": 2
+    },
+    {
+      "id": "nekomata-mindscape_1-bird_hunter",
+      "source": "mindscape",
+      "sourceId": "nekomata-mindscape_1",
+      "label": "Bird Hunter (Mindscape Cinema N°1)",
+      "description": "When Nekomata hits an enemy from behind, she ignores 16% of her target's Physical RES. If the enemy is Stunned, all Nekomata's attacks against them are considered back attacks.",
+      "shortDescription": "Nekomata's attacks ignore 16% of the target's Physical RES.",
+      "target": "self",
+      "flat": {
+        "physicalResShred": 0.16
+      }
+    },
+    {
+      "id": "nekomata-mindscape_1-cat_and_mouse",
+      "source": "mindscape",
+      "sourceId": "nekomata-mindscape_2",
+      "label": "Cat & Mouse (Mindscape Cinema N°2)",
+      "description": "When there's only one enemy on the field and Nekomata is in combat, her Energy Generation Rate is increased by 25%.",
+      "shortDescription": "This mindscape cinema does not affect Nekomata's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "nekomata-mindscape_4-sharpen_claws",
+      "source": "mindscape",
+      "sourceId": "nekomata-mindscape_4",
+      "label": "Sharpen Claws (Mindscape Cinema N°4)",
+      "description": "When Nekomata uses her EX Special Attack, her CRIT Rate increases by 7% for 15s, stacking up to 2 times, with each stack's duration being calculated separately.",
+      "shortDescription": "Nekomata's CRIT Rate is increased by 7% for 15s, stacking up to 2 times.",
+      "target": "self",
+      "perStack": {
+        "critRate": 0.07
+      },
+      "maxStacks": 2
+    },
+    {
+      "id": "nekomata-mindscape_6-predator_lineage",
+      "source": "mindscape",
+      "sourceId": "nekomata-mindscape_6",
+      "label": "Predator Lineage (Mindscape Cinema N°6)",
+      "description": "When Nekomata launches a Chain Attack or uses her Ultimate, her CRIT DMG increases by 18%, stacking up to 3 times. The effect expires when she's no longer in-combat. This effect gains maximum stacks immediately on defeating an enemy.",
+      "shortDescription": "Nekomata's CRIT DMG is increased by 18%, stacking up to 3 times.",
+      "target": "self",
+      "perStack": {
+        "critDmg": 0.18
+      },
+      "maxStacks": 3
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "nekomata-basic_attack-kitty_slash",
+        "name": "Kitty Slash (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 5 slashes, dealing Physical DMG. On the last hit, there is a 33.33% chance to repeat this hit 3 times.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [55.2, 62.6, 72.7, 170.2, 123.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [60.3, 68.3, 79.4, 185.7, 134.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [65.4, 74, 86.1, 201.2, 146.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [70.5, 79.7, 92.8, 216.7, 157.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [75.6, 85.4, 99.5, 232.2, 168.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [80.7, 91.1, 106.2, 247.7, 180.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [85.8, 96.8, 112.9, 263.2, 191.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [90.9, 102.5, 119.6, 278.7, 202.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [96, 108.2, 126.3, 294.2, 214]
+          },
+          {
+            "level": 10,
+            "multipliers": [101.1, 113.9, 133, 309.7, 225.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [106.2, 119.6, 139.7, 325.2, 236.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [111.3, 125.3, 146.4, 340.7, 247.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [116.4, 131, 153.1, 356.2, 259.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [121.5, 136.7, 159.8, 371.7, 270.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [126.6, 142.4, 166.5, 387.2, 281.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [131.7, 148.1, 173.2, 402.7, 293.1]
+          }
+        ]
+      },
+      {
+        "id": "nekomata-basic_attack-crimson_blade",
+        "name": "Crimson Blade (Basic Attack)",
+        "description": "Hold [BASIC] during the first 3 hits of Nekomata's /bBasic Attack//b to activate:\n\nSlashes enemies in front and passes through them, dealing Physical DMG. Upon activation, there is a 33.33% chance to repeat this attack 3 times.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [71.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [78.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [85]
+          },
+          {
+            "level": 4,
+            "multipliers": [91.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [98.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [104.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [111.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [118]
+          },
+          {
+            "level": 9,
+            "multipliers": [124.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [131.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [137.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [144.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [151]
+          },
+          {
+            "level": 14,
+            "multipliers": [157.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [164.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [170.8]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "nekomata-dash_attack-over_here",
+        "name": "Over Here! (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [35.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [38.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [41.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [44.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [47.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [51.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [54.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [57.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [60.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [63.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [67.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [70.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [73.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [76.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [79.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [83.1]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "nekomata-dodge_counter-phantom_claws",
+        "name": "Phantom Claws (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nSlashes enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [227.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [248.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [269.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [290.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [311.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [331.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [352.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [373.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [394.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [415.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [435.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [456.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [477.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [498.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [519.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [539.9]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "nekomata-quick_assist-cats_paw",
+        "name": "Cat's Paw (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nSlashes enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [94.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [103.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [111.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [120.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [128.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [137.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [146.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [154.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [163.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [171.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [180.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [189.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [197.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [206.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [214.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [223.5]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "nekomata-assist_follow_up-shadow_strike",
+        "name": "Shadow Strike (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCharge and slash enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [300.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [327.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [355.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [382.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [410]
+          },
+          {
+            "level": 6,
+            "multipliers": [437.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [464.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [492.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [519.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [547]
+          },
+          {
+            "level": 11,
+            "multipliers": [574.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [601.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [629.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [656.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [684]
+          },
+          {
+            "level": 16,
+            "multipliers": [711.4]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "nekomata-special_attack-surprise_attack",
+        "name": "Surprise Attack (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nUnleashes a downward strike, dealing Physical DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [47.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [51.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [55.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [60.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [64.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [68.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [73.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [77.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [81.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [86]
+          },
+          {
+            "level": 11,
+            "multipliers": [90.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [94.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [98.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [103.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [107.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [111.8]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "nekomata-ex_special_attack-super_surprise_attack",
+        "name": "Super Surprise Attack! (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nUnleashes a powerful falling slash that deals massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [539.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [588.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [637.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [687]
+          },
+          {
+            "level": 5,
+            "multipliers": [736.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [785.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [834.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [883.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [932.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [981.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [1030.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1079.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1128.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [1178]
+          },
+          {
+            "level": 15,
+            "multipliers": [1227.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [1276.2]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "nekomata-chain_attack-claw_swipe",
+        "name": "Claw Swipe (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful slash at enemies ahead in a large area, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [536.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [585]
+          },
+          {
+            "level": 3,
+            "multipliers": [633.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [682.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [731.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [780.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [829]
+          },
+          {
+            "level": 8,
+            "multipliers": [877.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [926.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [975.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1024.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [1073]
+          },
+          {
+            "level": 13,
+            "multipliers": [1121.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1170.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1219.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [1268.2]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "nekomata-ultimate-claw_smash",
+        "name": "Claw Smash (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes powerful slashes at enemies ahead in a large area, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1571.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [1714]
+          },
+          {
+            "level": 3,
+            "multipliers": [1856.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [1999.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [2142.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [2285.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [2428.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [2571.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [2714.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [2857.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [3000.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [3143]
+          },
+          {
+            "level": 13,
+            "multipliers": [3285.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [3428.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [3571.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [3714.6]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "tusks_of_fury",
+  "name": "Tusks of Fury",
+  "rarity": "S",
+  "specialty": "Defense",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Impact%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.18
+  },
+
+  "ingameEffects": [
+    {
+      "id": "tusks_of_fury-invincible_rider",
+      "source": "wEngine",
+      "label": "Invincible Rider (W-Engine Passive)",
+      "description": "The Shield value provided by the equipper is increased. When any squad member triggers Interrupt or Perfect Dodge, all squad members' DMG and Daze dealt is increased for 20s. Passive effects of the same name do not stack.",
+      "shortDescription": "All squad members' DMG is increased for 20s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.18
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.225
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.27
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.315
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.36
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    }
+  ]
+}

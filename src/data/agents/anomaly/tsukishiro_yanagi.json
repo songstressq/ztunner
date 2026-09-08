@@ -1,0 +1,1051 @@
+{
+  "id": "yanagi",
+  "name": "Tsukishiro Yanagi",
+  "specialty": "Anomaly",
+  "faction": "Hollow Special Operations Section 6",
+  "attribute": "Electric",
+  "rarity": "S",
+  "fullName": "Tsukishiro Yanagi",
+  "displayName": "Yanagi",
+  "attributeIcon": "Electric",
+  "themeColor": "#F3CFCD",
+  "baseStats": {
+    "hp": 7788.7,
+    "atk": 797.57,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 114,
+    "anomalyMastery": 112,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Proficiency", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "tsukishiro_yanagi-basic_attack_1-jougen_stance",
+      "source": "basic_attack",
+      "sourceId": "tsukishiro_yanagi-basic_attack",
+      "label": "Tsukuyomi Kagura - Jougen Stance (Basic Attack)",
+      "description": "Yanagi has two stances: Jougen and Kagen. Press Basic Attack to activate:\n\nExecute up to five forward slashes based on the current stance, causing Physical DMG and Electric DMG. During combat, Yanagi gains the corresponding stance buff based on her current stance:\n\nJougen stance buff: Electric DMG increases by 10%. Anti-Interrupt Level increases during Basic Attacks.\n\nKagen stance buff: PEN Ratio increases by 10%. Interrupt Level increases for Basic Attacks. For 8s after switching stances, Yanagi retains the bonus from the previous stance.",
+      "shortDescription": "Yanagi's Electric DMG is increased by 10% during Jougen Stance.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "electric",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "tsukishiro_yanagi-basic_attack_2-kagen_stance",
+      "source": "basic_attack",
+      "sourceId": "tsukishiro_yanagi-basic_attack",
+      "label": "Tsukuyomi Kagura - Kagen Stance (Basic Attack)",
+      "description": "Yanagi has two stances: Jougen and Kagen. Press Basic Attack to activate:\n\nExecute up to five forward slashes based on the current stance, causing Physical DMG and Electric DMG. During combat, Yanagi gains the corresponding stance buff based on her current stance:\n\nJougen stance buff: Electric DMG increases by 10%. Anti-Interrupt Level increases during Basic Attacks.\n\nKagen stance buff: PEN Ratio increases by 10%. Interrupt Level increases for Basic Attacks. For 8s after switching stances, Yanagi retains the bonus from the previous stance.",
+      "shortDescription": "Yanagi's PEN Ratio is increased by 10% during Kagen Stance.",
+      "target": "self",
+      "flat": {
+        "penRatio": 0.1
+      }
+    },
+    {
+      "id": "tsukishiro_yanagi-core_1-lunar_eclipse",
+      "source": "core",
+      "sourceId": "tsukishiro_yanagi-core",
+      "label": "Lunar Eclipse (Core Passive)",
+      "description": "After Yanagi activates her EX Special Attack, the DMG multiplier of Disorder is increased by 250% when any squad member applies the Disorder effect to an enemy, lasting 15s. When her EX Special Attack hits an enemy, Yanagi's Electric DMG against the target is increased by 20% for 15s.",
+      "shortDescription": "All squad members' Disorder Multiplier is increased by 250% for 15s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "disorderMultiplier",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "id": "tsukishiro_yanagi-core_2-lunar_eclipse",
+      "source": "core",
+      "sourceId": "tsukishiro_yanagi-core",
+      "label": "Lunar Eclipse (Core Passive)",
+      "description": "After Yanagi activates her EX Special Attack, the DMG multiplier of Disorder is increased by 250% when any squad member applies the Disorder effect to an enemy, lasting 15s. When her EX Special Attack hits an enemy, Yanagi's Electric DMG against the target is increased by 20% for 15s.",
+      "shortDescription": "Yanagi's Electric DMG is increased by 20% for 15s.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "electric",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "tsukishiro_yanagi-mindscape_1-know_thy_self_know_thy_enemy",
+      "source": "mindscape",
+      "sourceId": "tsukishiro_yanagi-mindscape_1",
+      "label": "Know Thy Self, Know Thy Enemy (Mindscape Cinema N°1)",
+      "description": "When any squad member inflicts an Anomaly on an enemy, Yanagi gains 1 stack of Clarity, lasting 15s, stacking up to 3 times. Repeated triggers reset the duration. Upon being hit by an enemy attack, Yanagi consumes 1 stack of Clarity to gain invulnerability for 1s. When Yanagi has 1 or more stacks of Clarity, her Anomaly Proficiency increases by 80.",
+      "shortDescription": "Yanagi's Anomaly Proficiency is increased by 80.",
+      "target": "self",
+      "flat": {
+        "anomalyProficiency": 80
+      }
+    },
+    {
+      "id": "tsukishiro_yanagi-mindscape_2-outstanding_adaptability",
+      "source": "mindscape",
+      "sourceId": "tsukishiro_yanagi-mindscape_2",
+      "label": "Outstanding Adaptability (Mindscape Cinema N°1)",
+      "description": "During her EX Special Attack, the rapid thrust's Electric Anomaly Buildup increases by 20%. Holding down the Special Attack button after a rapid thrust hits an enemy will consume 10 additional Energy to launch another thrust. If Energy is insufficient or the button is released, the attack automatically follows up with the downward attack. When the downward attack hits an enemy suffering an Anomaly and triggers Polarity Disorder, the DMG multiplier increases to 20% of the original Disorder effect. Each additional thrust increases this multiplier by 15%, up to a maximum of 2 extra thrusts.",
+      "shortDescription": "This mindscape cinema does not affect Yanagi's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "tsukishiro_yanagi-mindscape_4-chessmaster",
+      "source": "mindscape",
+      "sourceId": "tsukishiro_yanagi-mindscape_4",
+      "label": "Chessmaster (Mindscape Cinema N°4)",
+      "description": "When Yanagi inflicts Attribute Anomaly DMG on an enemy, they suffer the Exposed effect, lasting 15s. Attacks on enemies under the Expose effect will have 16% increased PEN Ratio.",
+      "shortDescription": "All squad members' PEN Ratio is increased by 16%.",
+      "target": "self",
+      "flat": {
+        "penRatio": 0.16
+      }
+    },
+    {
+      "id": "tsukishiro_yanagi-mindscape_6-inhuman_blood",
+      "source": "mindscape",
+      "sourceId": "tsukishiro_yanagi-mindscape_6",
+      "label": "Inhuman Blood (Mindscape Cinema N°6)",
+      "description": "After a thrust attack during her EX Special Attack, the duration of the Shinrabanshou state increases to 30s. While the state is active, Yanagi's ATK increases by 15%, and her EX Special Attack DMG increases by 20%. The maximum number of times the additional DMG multiplier increase effect for Polarity Disorder in Outstanding Adaptability can be triggered increases to 4, and the Energy cost for the first 4 additional thrust attacks is halved.",
+      "shortDescription": "Yanagi's ATK increases by 15% and her DMG from EX Special Attack: Gekka Ruten is increased by 20%.",
+      "target": "self",
+      "flat": {
+        "atkPercentRaw": 0.15
+      },
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["yanagi-ex_special_attack-gekka_ruten"],
+          "value": 0.2
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "yanagi-basic_attack-tsukuyomi_kagura-jougen",
+        "name": "Tsukuyomi Kagura - Jougen Stance (Basic Attack)",
+        "skillType": "basic",
+        "description": "Yanagi has two stances: /bJougen//b and /bKagen//b. Press [BASIC] to activate:\n\nExecute up to five forward slashes based on the current stance, causing Physical DMG and Electric DMG. During combat, Yanagi gains the corresponding stance buff based on her current stance.\n\n/bJougen//b stance buff: Electric DMG increases by 10%. Anti-Interrupt Level increases during /bBasic Attacks//b. For 8s after switching stances, Yanagi retains the bonus from the previous stance.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [56.6, 99.7, 113.1, 126.6, 236.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [61.8, 108.8, 123.4, 138.2, 258.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [67, 117.9, 133.7, 149.8, 280.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [72.2, 127, 144, 161.4, 301.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [77.4, 136.1, 154.3, 173, 323.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [82.6, 145.2, 164.6, 184.6, 344.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [87.8, 154.3, 174.9, 196.2, 366.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [93, 163.4, 185.2, 207.8, 388.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [98.2, 172.5, 195.5, 219.4, 409.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [103.4, 181.6, 205.8, 231, 431.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [108.6, 190.7, 216.1, 242.6, 452.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [113.8, 199.8, 226.4, 254.2, 474.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [119, 208.9, 236.7, 265.8, 496.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [124.2, 218, 247, 277.4, 517.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [129.4, 227.1, 257.3, 289, 539.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [134.6, 236.2, 267.6, 300.6, 560.9]
+          }
+        ]
+      },
+      {
+        "id": "yanagi-basic_attack-tsukuyomi_kagura-kagen",
+        "name": "Tsukuyomi Kagura - Kagen Stance (Basic Attack)",
+        "skillType": "basic",
+        "description": "Yanagi has two stances: /bJougen//b and /bKagen//b. Press [BASIC] to activate:\n\nExecute up to five forward slashes based on the current stance, causing Physical DMG and Electric DMG. During combat, Yanagi gains the corresponding stance buff based on her current stance.\n\n/bKagen//b stance buff: PEN Ratio increases by 10%. Interrupt Level increases for /bBasic Attacks//b. For 8s after switching stances, Yanagi retains the bonus from the previous stance.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [113.1, 129.2, 72.8, 107.7, 271.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [123.4, 141, 79.5, 117.5, 296.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [133.7, 152.8, 86.2, 127.3, 321.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [144, 164.6, 92.9, 137.1, 346.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [154.3, 176.4, 99.6, 146.9, 371]
+          },
+          {
+            "level": 6,
+            "multipliers": [164.6, 188.2, 106.3, 156.7, 395.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [174.9, 200, 113, 166.5, 420.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [185.2, 211.8, 119.7, 176.3, 445.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [195.5, 223.6, 126.4, 186.1, 470.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [205.8, 235.4, 133.1, 195.9, 495]
+          },
+          {
+            "level": 11,
+            "multipliers": [216.1, 247.2, 139.8, 205.7, 519.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [226.4, 259, 146.5, 215.5, 544.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [236.7, 270.8, 153.2, 225.3, 569.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [247, 282.6, 159.9, 235.1, 594.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [257.3, 294.4, 166.6, 244.9, 619]
+          },
+          {
+            "level": 16,
+            "multipliers": [267.6, 306.2, 173.3, 254.7, 643.8]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "yanagi-dash_attack-fleeting_flight",
+        "name": "Fleeting Flight (Dash Attack)",
+        "skillType": "dash",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [50.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [55]
+          },
+          {
+            "level": 3,
+            "multipliers": [59.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [64.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [68.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [73.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [78]
+          },
+          {
+            "level": 8,
+            "multipliers": [82.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [87.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [91.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [96.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [101]
+          },
+          {
+            "level": 13,
+            "multipliers": [105.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [110.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [114.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [119.4]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "yanagi-dodge_counter-rapid_retaliation",
+        "name": "Rapid Retaliation (Dodge Counter)",
+        "skillType": "counter",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nSlashes enemies in front, dealing Electric DMG. Character is invulnerable while using this skill. After using this skill, you can immediately follow up with the 3rd hit of the current stance's /bBasic Attack//b.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [231.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [252.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [273.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [294.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [316]
+          },
+          {
+            "level": 6,
+            "multipliers": [337.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [358.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [379.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [400.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [421.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [442.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [463.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [484.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [505.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [527]
+          },
+          {
+            "level": 16,
+            "multipliers": [548.1]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "yanagi-quick_assist-blade_of_elegance",
+        "name": "Blade of Elegance (Quick Assist)",
+        "skillType": "quickAssist",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nSlashes enemies in front, dealing Electric DMG. Character is invulnerable while using this skill. After using this skill, you can immediately follow up with the 3rd hit of the current stance's /bBasic Attack//b.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [93.6]
+          },
+          {
+            "level": 2,
+            "multipliers": [102.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [110.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [119.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [128]
+          },
+          {
+            "level": 6,
+            "multipliers": [136.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [145.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [153.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [162.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [171]
+          },
+          {
+            "level": 11,
+            "multipliers": [179.6]
+          },
+          {
+            "level": 12,
+            "multipliers": [188.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [196.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [205.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [214]
+          },
+          {
+            "level": 16,
+            "multipliers": [222.6]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "yanagi-assist_follow_up-weeping_willow_stab",
+        "name": "Weeping Willow Stab (Assist Follow-Up)",
+        "skillType": "followup",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nSwitch stances, and quickly deliver multiple slashes to enemies in front, dealing Electric DMG. Character is invulnerable while using this skill. After using this skill, you can immediately follow up with the 3rd hit of the current stance's /bBasic Attack//b.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [407.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [444.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [481.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [518.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [555.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [592.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [629.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [666.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [703.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [741]
+          },
+          {
+            "level": 11,
+            "multipliers": [778.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [815.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [852.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [889.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [926.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [963.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "yanagi-special_attack-ruten",
+        "name": "Ruten (Special Attack)",
+        "skillType": "special",
+        "description": "Press [SPECIAL] to activate:\n\nPerform a forward slash, dealing Electric DMG, and switch the current stance. Anti-Interrupt level is increased while using this skill. If activated after the 3rd, 4th, or 5th hit of a /bBasic Attack//b, it activates /bSwift Ruten//b, speeding up the slashes while switching her current stance.\n\nBlock enemy attacks while /bSwift Ruten//b is active. Upon activating /bSwift Ruten//b, Yanagi can immediately follow up with the 3rd hit of the current stance's /bBasic Attack//b.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [117.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [128.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [138.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [149.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [160.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [170.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [181.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [192.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [203]
+          },
+          {
+            "level": 10,
+            "multipliers": [213.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [224.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [235.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [245.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [256.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [267.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [277.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "yanagi-ex_special_attack-gekka_ruten",
+        "name": "Gekka Ruten (EX Special Attack)",
+        "skillType": "ex",
+        "description": "With enough Energy, hold [EX] to activate:\n\nCharge up power for a quick forward thrust, followed by a downward attack, dealing massive Electric DMG. Upon executing the thrust, Yanagi switches stances and enters the /bShinrabanshou//b state, lasting 15s. For the duration of this state, when following up with a subsequent /bBasic Attack//b from the 5th hit of a /bBasic Attack//b or other skills, the combo will begin directly from the 3rd hit of the /bBasic Attack//b.\n\nIf the downward attack hits an enemy suffering an Anomaly, it triggers a special /bDisorder//b effect, /bPolarity Disorder//b, dealing 15% of the original /bDisorder//b effect's DMG to the target, plus an additional percentage of Yanagi's Anomaly Proficiency. /bPolarity Disorder//b will not remove the target's Anomaly. Character is invulnerable while using this skill.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Thrust Attack DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Downward Attack DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [163.8, 377.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [178.7, 412.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [193.6, 446.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [208.5, 481]
+          },
+          {
+            "level": 5,
+            "multipliers": [223.4, 515.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [238.3, 549.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [253.2, 584.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [268.1, 618.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [283, 653]
+          },
+          {
+            "level": 10,
+            "multipliers": [297.9, 687.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [312.8, 721.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [327.7, 756.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [342.6, 790.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [357.5, 825]
+          },
+          {
+            "level": 15,
+            "multipliers": [372.4, 859.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [387.3, 893.8]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "yanagi-chain_attack-celestial_harmony",
+        "name": "Celestial Harmony (Chain Attack)",
+        "skillType": "chain",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nSwitch stances and unleash a powerful slash on enemies in front, dealing massive Electric DMG. Character is invulnerable while using this skill. After using this skill, you can immediately follow up with the 3rd hit of the current stance's /bBasic Attack//b.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [593.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [647.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [701.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [755.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [809.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [863.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [917.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [971.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [1025.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1079.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [1133.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1187.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [1241.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1295.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1349.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [1403.1]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "yanagi-ultimate-raiei_tenge",
+        "name": "Raiei Tenge (Ultimate)",
+        "skillType": "ultimate",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nYanagi unleashes her potential and delivers a powerful slash to a large area of enemies in front in a very short time, followed by an additional lightning strike, dealing massive Electric DMG.\n\nWhen the lightning strike hits an enemy affected by an Attribute Anomaly, it triggers a special /bDisorder//b effect called /bPolarity Disorder//b. This deals DMG equal to 15% of the original /bDisorder//b effect plus an additional percentage of Yanagi's Anomaly Proficiency. /bPolarity Disorder//b will not remove the target's Anomaly. Character is invulnerable while using this skill. After using this skill, Yanagi can immediately follow up with the 3rd hit of the current stance's /bBasic Attack//b.",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1511.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [1649.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [1786.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [1924.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [2061.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [2199.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [2336.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [2474.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [2611.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [2749.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [2886.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [3024.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [3161.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [3299.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [3436.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [3574.3]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

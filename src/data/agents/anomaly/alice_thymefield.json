@@ -1,0 +1,1612 @@
+{
+  "id": "alice",
+  "name": "Alice Thymefield",
+  "specialty": "Anomaly",
+  "faction": "Spook Shack",
+  "attribute": "Physical",
+  "rarity": "S",
+  "fullName": "Alice Thymefield",
+  "displayName": "Alice",
+  "attributeIcon": "Physical",
+  "themeColor": "#E6CDA1",
+  "skins": [
+    {
+      "id": "default",
+      "img": "alice.png"
+    },
+    {
+      "id": "sea_of_thyme",
+      "img": "alice-sea_of_thyme.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7673.7,
+    "atk": 805.7,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 118,
+    "anomalyMastery": 106,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": [
+      "Anomaly Proficiency",
+      "Anomaly Mastery",
+      "ATK"
+    ]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "alice_thymefield-core_1-twin_rainbows_of_the_swordheart",
+      "source": "core",
+      "sourceId": "alice_thymefield-core",
+      "label": "Twin Rainbows of the Swordheart (Core Passive)",
+      "description": "After any squad member inflicts a Physical Anomaly on an enemy, Alice deals additional DMG each 0.95s of its active duration, equal to 2.5% of the original Physical Anomaly DMG. ...",
+      "shortDescription": "This ability is available in the Anomaly Calculator.",
+      "infoOnly": true
+    },
+    {
+      "id": "alice_thymefield-core_2-twin_rainbows_of_the_swordheart",
+      "source": "core",
+      "sourceId": "alice_thymefield-core",
+      "label": "Twin Rainbows of the Swordheart (Core Passive)",
+      "description": "... If Disorder is triggered while the enemy is suffering a Physical Anomaly, for every 1s of remaining Physical Anomaly duration, the Disorder DMG multiplier increases by 18%, up to a max of 180%. ...",
+      "shortDescription": "The target's Disorder DMG Multiplier suffered is increased by 18% for physical anomalies, stacking up to 10 times.",
+      "target": "team",
+      "perStack": {
+        "disorderMultiplierBonus": 0.18
+      },
+      "maxStacks": 10,
+      "condition": {
+        "requiresDisorderAttribute": "physical"
+      }
+    },
+    {
+      "id": "alice_thymefield-core-mystery_hunt",
+      "source": "core",
+      "sourceId": "alice_thymefield-core",
+      "label": "Mystery Hunt (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly or Support character:\n\nWhen any squad member triggers Disorder, Alice gains 30 Blade Etiquette. If Alice's Anomaly Mastery exceeds 140, each additional point grants her 1.6 Anomaly Proficiency. Upon entering the battlefield, Alice gains 300 Blade Etiquette. This effect can trigger once every 180s in Investigation Zone mode. ...",
+      "shortDescription": "Alice's Anomaly Proficiency is incresed based on her current Anomaly Mastery.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyMastery",
+        "threshold": 140,
+        "perUnit": 1,
+        "perUnitBonus": 1.6,
+        "maxBonus": 99999,
+        "affectedStats": [
+          "anomalyProficiency"
+        ],
+        "affectsAnomaly": false,
+        "affectsDisorder": false
+      }
+    },
+    {
+      "id": "alice_thymefield-mindscape_1-paimful_of_cilantro",
+      "source": "mindscape",
+      "sourceId": "alice_thymefield-mindscape_1",
+      "label": "Palmful of Cilantro (Mindscape Cinema N°1)",
+      "description": "When Alice triggers a Polarized Assault, she gains 25 Blade Etiquette. When she triggers Assault against an enemy, the target's DEF is reduced by 20% for 30s.",
+      "shortDescription": "The target's DEF is reduced by 20%.",
+      "target": "team",
+      "flat": {
+        "defShred": 0.2
+      }
+    },
+    {
+      "id": "alice_thymefield-mindscape_2-sage_at_the_swords_tip",
+      "source": "mindscape",
+      "sourceId": "alice_thymefield-mindscape_2",
+      "label": "Sage at the Sword's Tip (Mindscape Cinema N°2)",
+      "description": "When Ultimate: Starfall Finale's Finishing Move hits an enemy, it triggers Polarized Assault. All squad members' Assault DMG increases by 15%. Disorder DMG against enemies suffering from Physical Anomaly increases by 15%.",
+      "shortDescription": "All squad members' DMG from Assault and its Disorder DMG are increased by 15%.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "anomalyTypeDmg",
+          "anomalyType": "assault",
+          "value": 0.15
+        },
+        {
+          "type": "disorderTypeDmg",
+          "anomalyType": "assault",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "alice_thymefield-mindscape_4-rosemary_on_her_lips",
+      "source": "mindscape",
+      "sourceId": "alice_thymefield-mindscape_4",
+      "label": "Rosemary on Her Lips (Mindscape Cinema N°4)",
+      "description": "Alice ignores 10% of the target's Physical RES. Enhanced Basic Attack: Celestial Overture accumulates 25% more Physical Anomaly Buildup.",
+      "shortDescription": "Alice ignores 10% of the target's Physical RES.",
+      "target": "self",
+      "flat": {
+        "physicalResShred": 0.1
+      }
+    },
+    {
+      "id": "alice_thymefield-mindscape_6-a_heart_of_thyme",
+      "source": "mindscape",
+      "sourceId": "alice_thymefield-mindscape_6",
+      "label": "A Heart of Thyme (Mindscape Cinema N°6)",
+      "description": "When Alice uses a third-stage charged Basic Attack: Starshine Waltz or Ultimate: Starfall Finale, she enters the Victory State for 30s. During this time, whenever any squad member lands a hit on a target, Alice will follow up with an extra attack against the target, dealing Physical DMG equal to 3,300% of her Anomaly Proficiency. This effect can trigger once every 1s and is guaranteed to CRIT. This effect can trigger up to 6 times. Gaining the Victory State again refreshes the available trigger count.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "alice-basic_attack-celestial_overture",
+        "name": "Celestial Overture (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to 5 slashes forward, dealing Physical DMG. When Alice triggers Assault through Attribute Anomaly Buildup, the 5th hit of her next /bBasic Attack//b is enhanced.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th Hit (Enhanced) DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              55.1,
+              88,
+              66.1,
+              111.9,
+              130.3,
+              218.3
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              60.2,
+              96,
+              72.2,
+              122.1,
+              142.2,
+              238.2
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              65.3,
+              104,
+              78.3,
+              132.3,
+              154.1,
+              258.1
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              70.4,
+              112,
+              84.4,
+              142.5,
+              166,
+              278
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              75.5,
+              120,
+              90.5,
+              152.7,
+              177.9,
+              297.9
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              80.6,
+              128,
+              96.6,
+              162.9,
+              189.8,
+              317.8
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              85.7,
+              136,
+              102.7,
+              173.1,
+              201.7,
+              337.7
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              90.8,
+              144,
+              108.8,
+              183.3,
+              213.6,
+              357.6
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              95.9,
+              152,
+              114.9,
+              193.5,
+              225.5,
+              377.5
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              101,
+              160,
+              121,
+              203.7,
+              237.4,
+              397.4
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              106.1,
+              168,
+              127.1,
+              213.9,
+              249.3,
+              417.3
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              111.2,
+              176,
+              133.2,
+              224.1,
+              261.2,
+              437.2
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              116.3,
+              184,
+              139.3,
+              234.3,
+              273.1,
+              457.1
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              121.4,
+              192,
+              145.4,
+              244.5,
+              285,
+              477
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              126.5,
+              200,
+              151.5,
+              254.7,
+              296.9,
+              496.9
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              131.6,
+              208,
+              157.6,
+              264.9,
+              308.8,
+              516.8
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alice-basic_attack-starshine_waltz",
+        "name": "Starshine Waltz (Basic Attack)",
+        "description": "When Alice's /bBlade Etiquette//b reaches 1 bar, hold [BASIC] to activate:\n\nHold to charge, expending up to 3 bars of /bBlade Etiquette//b. Release /bBasic Attack//b or when /bBlade Etiquette//b is below 1 bar, Alice performs a series of slashes in an area centered on the target enemy, with the number of hits determined by charge level, dealing massive Physical DMG.\n\nWhen the /bFinishing Move//b of a three-stage charged /bBasic Attack: Starshine Waltz//b hits, it triggers a special Assault effect: Polarized Assault. This deals DMG equal to a percentage of the original Assault, ignoring Anomaly Buildup, and can interact with other Attribute Anomalies, including Physical, to trigger /bDisorder//b. /bBlade Etiquette//b does not accumulate when hitting an enemy. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "One-Staged Charged Attack DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Two-Staged Charged Attack DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Three-Staged Charged Attack DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              188.9,
+              304.4,
+              965.7
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              206.1,
+              332.1,
+              1053.5
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              223.3,
+              359.8,
+              1141.3
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              240.5,
+              387.5,
+              1229.1
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              257.7,
+              415.2,
+              1316.9
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              274.9,
+              442.9,
+              1404.7
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              292.1,
+              470.6,
+              1492.5
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              309.3,
+              498.3,
+              1580.3
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              326.5,
+              526,
+              1668.1
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              343.7,
+              553.7,
+              1755.9
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              360.9,
+              581.4,
+              1843.7
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              378.1,
+              609.1,
+              1931.5
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              395.3,
+              636.8,
+              2019.3
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              412.5,
+              664.5,
+              2107.1
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              429.7,
+              692.2,
+              2194.9
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              446.9,
+              719.9,
+              2282.7
+            ]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "alice-dash_attack-blade_dancers_gale",
+        "name": "Blade-Dancer's Gale (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              75.3
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              82.2
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              89.1
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              96
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              102.9
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              109.8
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              116.7
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              123.6
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              130.5
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              137.4
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              144.3
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              151.2
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              158.1
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              165
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              171.9
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              178.8
+            ]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "alice-dodge_counter-ceremony_of_swordlight",
+        "name": "Ceremony of Swordlight (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nSlash and kick enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              284
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              309.9
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              335.8
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              361.7
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              387.6
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              413.5
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              439.4
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              465.3
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              491.2
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              517.1
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              543
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              568.9
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              594.8
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              620.7
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              646.6
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              672.5
+            ]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "alice-quick_assist-intertwined_stab",
+        "name": "Intertwined Stab (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nSlash and kick enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "assist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              163.3
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              178.2
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              193.1
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              208
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              222.9
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              237.8
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              252.7
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              267.6
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              282.5
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              297.4
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              312.3
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              327.2
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              342.1
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              357
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              371.9
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              386.8
+            ]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "alice-assist_followup-cross_riposte",
+        "name": "Cross Riposte (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCharge forward and slash enemies in front, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              332.7
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              363
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              393.3
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              423.6
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              453.9
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              484.2
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              514.5
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              544.8
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              575.1
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              605.4
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              635.7
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              666
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              696.3
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              726.6
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              756.9
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              787.2
+            ]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "alice-special_attack-piercing_dawn",
+        "name": "Piercing Dawn (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nHurl the blade to strike and pass through enemies ahead, dealing Physical DMG. Upon activating this skill, a /bPerfect Dodge//b can be triggered. After triggering a /bPerfect Dodge//b, press [BASIC] to follow up with the 5th hit of a /bBasic Attack//b. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              62.4
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              68.1
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              73.8
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              79.5
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              85.2
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              90.9
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              96.6
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              102.3
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              108
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              113.7
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              119.4
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              125.1
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              130.8
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              136.5
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              142.2
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              147.9
+            ]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "alice-ex_special_attack-aurora_thrust_northern_cross",
+        "name": "Aurora Thrust - Northern Cross (EX Special Attack)",
+        "description": "With enough energy, drag the stick/joystick forward and press [EX] to activate:\n\nA thrust attack that goes through enemies ahead, dealing massive Physical DMG. Activating the skill can trigger /bPerfect Dodge//b and restores 10 /bBlade Etiquette//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              460
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              501.9
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              543.8
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              585.7
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              627.6
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              669.5
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              711.4
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              753.3
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              795.2
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              837.1
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              879
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              920.9
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              962.8
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              1004.7
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              1046.6
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              1088.5
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alice-ex_special_attack-aurora_thrust_southern_cross",
+        "name": "Aurora Thrust - Southern Cross (EX Special Attack)",
+        "description": "With enough energy, and without moving the stick/joystick or when dragging it backwards, press [EX] to activate:\n\nBack away with a slash, then thrust forward, dealing Physical DMG. Activating the skill can trigger /bPerfect Dodge//b and restores 10 /bBlade Etiquette//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              532
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              580.4
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              628.8
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              677.2
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              725.6
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              774
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              822.4
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              870.8
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              919.2
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              967.6
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              1016
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              1064.4
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              1112.8
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              1161.2
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              1209.6
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              1258
+            ]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "alice-chain_attack-starfall_intermission",
+        "name": "Starfall Intermission (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes powerful consecutive slashes at enemies ahead, dealing massive Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              666.3
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              726.9
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              787.5
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              848.1
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              908.7
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              969.3
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              1029.9
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              1090.5
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              1151.1
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              1211.7
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              1272.3
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              1332.9
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              1393.5
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              1454.1
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              1514.7
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              1575.3
+            ]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "alice-ultimate-starfall_finale",
+        "name": "Starfall Finale (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes powerful slashes at enemies in a large area ahead, dealing massive Physical DMG. Activating this skill restores 200 /bBlade Etiquette//b. /bBlade Etiquette//b does not accumulate when hitting an enemy. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              2262
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              2467.7
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              2673.4
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              2879.1
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              3084.8
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              3290.5
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              3496.2
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              3701.9
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              3907.6
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              4113.3
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              4319
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              4524.7
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              4730.4
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              4936.1
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              5141.8
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              5347.5
+            ]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "alice_thymefield-mindscape-victory_state",
+        "name": "Victory State (Mindscape Cinema N°6)",
+        "description": "When Alice uses a third-stage charged /bBasic Attack: Starshine Waltz//b or /bUltimate: Starfall Finale//b, she enters the /bVictory State//b for 30s. During this time, whenever any squad member lands a hit on a target, Alice will follow up with an extra attack against the target, dealing Physical DMG equal to 3,300% of her Anomaly Proficiency. This effect can trigger once every 1s and is guaranteed to CRIT. This effect can trigger up to 6 times. Gaining the /bVictory State//b again refreshes the available trigger count.",
+        "skillType": "mindscape",
+        "statBase": "anomalyProficiency",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              3300
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

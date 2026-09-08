@@ -1,0 +1,1332 @@
+{
+  "id": "dialyn",
+  "name": "Dialyn",
+  "specialty": "Stun",
+  "faction": "Krampus Compliance Authority",
+  "attribute": "Physical",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Dialyn",
+  "attributeIcon": "Physical",
+  "themeColor": "#7EFFDB",
+  "baseStats": {
+    "hp": 8250.6,
+    "atk": 683.2,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 110,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 93,
+    "anomalyMastery": 94,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "Energy Regen"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "critRate": 0.048
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "critRate": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "dialyn-core-five_star_service_hotline",
+      "source": "core",
+      "sourceId": "dialyn-core",
+      "label": "Five-Star Service Hotline (Core Passive)",
+      "description": "Upon entering the battlefield, Dialyn starts with 60 Positive Reviews. If her initial CRIT Rate surpasses 50%, her Impact increases by 2 for each additional 1%, up to a maximum increase of 100. ...",
+      "shortDescription": "Dialyn's Impact is increased based on her initial CRIT Rate.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "critRate",
+        "threshold": 50,
+        "maxStat": 100,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 100,
+            "perUnitBonus": 2
+          }
+        ],
+        "affectedStats": ["impactBaseRaw"]
+      }
+    },
+    {
+      "id": "dialyn-core_1-external_line",
+      "source": "core",
+      "sourceId": "dialyn-core",
+      "label": "External Line (Additional Ability)",
+      "description": "When another character in your squad is an Attack or Rupture character:\n\nDialyn's EX Special Attack CRIT DMG is increased by 50%. ....",
+      "shortDescription": "Dialyn's CRIT DMG from EX Special Attacks is increased by 50%.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": [
+            "dialyn-ex_special_attack-get_lost",
+            "dialyn-ex_special_attack-rock",
+            "dialyn-ex_special_attack-scissors",
+            "dialyn-ex_special_attack-paper"
+          ],
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "dialyn-core_2-external_line",
+      "source": "core",
+      "sourceId": "dialyn-core",
+      "label": "External Line (Additional Ability)",
+      "description": "... When an EX Special Attack or Ultimate is activated, all squad members gain the Overwhelmingly Positive effect. While Overwhelmingly Positive is active, DMG dealt is increased by 40% for 15s. When Dialyn uses an EX Special Attack or Ultimate while Overwhelmingly Positive is active, if the remaining duration of Overwhelmingly Positive is less than 35s, its duration is extended by 10s ...",
+      "shortDescription": "All squad members' DMG is increased by 40% for 15s.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "dialyn-core_3-external_line",
+      "source": "core",
+      "sourceId": "dialyn-core",
+      "label": "External Line (Additional Ability)",
+      "description": "... When a heavy attack from EX Special Attack: Rock, EX Special Attack: Scissors, or EX Special Attack: Paper! hits, additional DMG is dealt based on the previous squad member's Specialty:\n\nIf the squad member is an Attack Agent, EX Special Attack: Rock, EX Special Attack: Scissors, and EX Special Attack: Paper! deal additional DMG equal to 320% of that Attack Agent's ATK.\n\nIf the squad member is a Rupture Agent, EX Special Attack: Rock, EX Special Attack: Scissors, and EX Special Attack: Paper! deal additional DMG equal to 400% of that Rupture Agent's Sheer Force.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "target": "self",
+      "requiresManualTarget": true,
+      "referenceStatEffect": {
+        "type": "referenceStat",
+        "referenceSlot": "previous",
+        "statToRead": "atk",
+        "multiplier": 3.2,
+        "appliesTo": {
+          "skillIds": [
+            "dialyn-ex_special_attack-get_lost",
+            "dialyn-ex_special_attack-rock",
+            "dialyn-ex_special_attack-scissors",
+            "dialyn-ex_special_attack-paper"
+          ]
+        },
+        "specialtyMultipliers": {
+          "Attack": 3.2,
+          "Rupture": 4
+        },
+        "specialtyStats": {
+          "Attack": "atk",
+          "Rupture": "sheerForce"
+        }
+      }
+    },
+    {
+      "id": "dialyn-mindscape_1-boundless_hospitality",
+      "source": "mindscape",
+      "sourceId": "dialyn-mindscape_1",
+      "label": "Boundless Hospitality (Mindscape Cinema N°1)",
+      "description": "The amount of Positive Reviews accumulated each second and gained when EX Special Attack: Rock, EX Special Attack: Scissors, or EX Special Attack: Paper! hits an enemy increase by 16%. While the Overwhelmingly Positive effect is active, characters ignore 15% of enemy All-Attribute RES.",
+      "shortDescription": "All squad members' attacks ignore 15% of the target All-Attribute RES.",
+      "target": "team",
+      "perStack": {
+        "fireResShred": 0.15,
+        "iceResShred": 0.15,
+        "electricResShred": 0.15,
+        "physicalResShred": 0.15,
+        "etherResShred": 0.15,
+        "windResShred": 0.15
+      }
+    },
+    {
+      "id": "dialyn-mindscape_2-24_7_hotline",
+      "source": "mindscape",
+      "sourceId": "dialyn-mindscape_2",
+      "label": "24/7 Hotline (Mindscape Cinema N°2)",
+      "description": "Enemies affected by Malicious Complaint gain an additional 20% Stun DMG Multiplier when Stunned. All units deal 15% increased DMG to targets affected by Malicious Complaint.",
+      "shortDescription": "All squad members' DMG is increased by 15%.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "dialyn-mindscape_4-the_past_never_fades",
+      "source": "mindscape",
+      "sourceId": "dialyn-mindscape_4",
+      "label": "The Past Never Fades (Mindscape Cinema N°4)",
+      "description": "Upon entering combat, Dialyn recovers 20 Energy. This effect can trigger once every 180s in Investigation Zone Mode. While the Overwhelmingly Positive effect is active, Dialyn's ATK increases by 500.",
+      "shortDescription": "Dialyn's ATK is increased by 500.",
+      "target": "self",
+      "flat": {
+        "atkFlatRaw": 500
+      }
+    },
+    {
+      "id": "dialyn-mindscape_6-truth",
+      "source": "mindscape",
+      "sourceId": "dialyn-mindscape_6",
+      "label": "Truth (Mindscape Cinema N°6)",
+      "description": "When an ally enters the field with an Ultimate through the Core Passive's effect, that ally gains the Aftertone effect. With this effect, landing an attack causes Dialyn to deal an additional instance of Physical DMG equal to 480% of Dialyn's ATK. This DMG is treated as EX Special Attack DMG, and can trigger once every second, up to 12 times. Gaining Aftertone again refreshes its trigger count. Only one ally can have Aftertone at a time.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "dialyn-basic_attack-happy_to_be_of_service",
+        "name": "Happy to Be of Service (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to four attacks, dealing Physical DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [25.6, 51.3, 64.8, 99.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [28, 56, 70.7, 108.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [30.4, 60.7, 76.6, 117.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [32.8, 65.4, 82.5, 126.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [35.2, 70.1, 88.4, 135.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [37.6, 74.8, 94.3, 145]
+          },
+          {
+            "level": 7,
+            "multipliers": [40, 79.5, 100.2, 154.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [42.4, 84.2, 106.1, 163.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [44.8, 88.9, 112, 172.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [47.2, 93.6, 117.9, 181.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [49.6, 98.3, 123.8, 190.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [52, 103, 129.7, 199.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [54.4, 107.7, 135.6, 208.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [56.8, 112.4, 141.5, 217.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [59.2, 117.1, 147.4, 226.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [61.6, 121.8, 153.3, 236]
+          }
+        ]
+      },
+      {
+        "id": "dialyn-basic_attack-rock_paper_scissors",
+        "name": "Rock, Paper, Scissors (Basic Attack)",
+        "description": "After /bEX Special Attack: Rock//b or /bEX Special Attack: Scissors//b, press [BASIC] to activate:\n\nPerforms up to two attacks, dealing Physical DMG. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [89.5, 113.9, 103.1, 100.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [97.7, 124.3, 112.5, 109.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [105.9, 134.7, 121.9, 118.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [114.1, 145.1, 131.3, 127.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [122.3, 155.5, 140.7, 137.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [130.5, 165.9, 150.1, 146.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [138.7, 176.3, 159.5, 155.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [146.9, 186.7, 168.9, 164.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [155.1, 197.1, 178.3, 173.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [163.3, 207.5, 187.7, 183.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [171.5, 217.9, 197.1, 192.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [179.7, 228.3, 206.5, 201.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [187.9, 238.7, 215.9, 210.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [196.1, 249.1, 225.3, 219.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [204.3, 259.5, 234.7, 229.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [212.5, 269.9, 244.1, 238.3]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "dialyn-dash_attack-sudden_call",
+        "name": "Sudden Call (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunches a dashing attack at enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [60.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [66]
+          },
+          {
+            "level": 3,
+            "multipliers": [71.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [77]
+          },
+          {
+            "level": 5,
+            "multipliers": [82.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [88]
+          },
+          {
+            "level": 7,
+            "multipliers": [93.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [99]
+          },
+          {
+            "level": 9,
+            "multipliers": [104.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [110]
+          },
+          {
+            "level": 11,
+            "multipliers": [115.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [121]
+          },
+          {
+            "level": 13,
+            "multipliers": [126.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [132]
+          },
+          {
+            "level": 15,
+            "multipliers": [137.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [143]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "dialyn-dodge_counter-number_unavailable",
+        "name": "Number Unavailable (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLaunches consecutive attacks against enemies in front, dealing Physical DMG. After using this skill, can immediately follow up with the 4th hit of /bBasic Attack: Happy to Be of Service//b. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [267.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [291.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [315.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [340.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [364.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [388.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [413.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [437.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [461.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [486]
+          },
+          {
+            "level": 11,
+            "multipliers": [510.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [534.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [558.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [583.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [607.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [631.8]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "dialyn-quick_assist-forward_call",
+        "name": "Forward Call (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLaunches consecutive attacks against enemies in front, dealing Physical DMG. After using this skill, can immediately follow up with the 4th hit of /bBasic Attack: Happy to Be of Service//b. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [121]
+          },
+          {
+            "level": 2,
+            "multipliers": [132]
+          },
+          {
+            "level": 3,
+            "multipliers": [143]
+          },
+          {
+            "level": 4,
+            "multipliers": [154]
+          },
+          {
+            "level": 5,
+            "multipliers": [165]
+          },
+          {
+            "level": 6,
+            "multipliers": [176]
+          },
+          {
+            "level": 7,
+            "multipliers": [187]
+          },
+          {
+            "level": 8,
+            "multipliers": [198]
+          },
+          {
+            "level": 9,
+            "multipliers": [209]
+          },
+          {
+            "level": 10,
+            "multipliers": [220]
+          },
+          {
+            "level": 11,
+            "multipliers": [231]
+          },
+          {
+            "level": 12,
+            "multipliers": [242]
+          },
+          {
+            "level": 13,
+            "multipliers": [253]
+          },
+          {
+            "level": 14,
+            "multipliers": [264]
+          },
+          {
+            "level": 15,
+            "multipliers": [275]
+          },
+          {
+            "level": 16,
+            "multipliers": [286]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "dialyn-assist_follow_up-back_to_back_calls",
+        "name": "Back-to-Back Calls (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nPerforms a rapid dash followed by a slash attack, dealing Physical DMG. After using this skill, can immediately follow up with the 4th hit of /bBasic Attack: Happy to Be of Service//b. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [376.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [410.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [445]
+          },
+          {
+            "level": 4,
+            "multipliers": [479.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [513.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [547.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [582.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [616.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [650.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [685.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [719.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [753.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [788]
+          },
+          {
+            "level": 14,
+            "multipliers": [822.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [856.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [890.9]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "dialyn-special_attack-welcome_gesture",
+        "name": "Welcome Gesture (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nThrows dual rings to slash enemies, dealing Physical DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [54.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [59.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [64.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [69.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [74.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [79.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [84.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [89.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [94.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [99.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [104.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [109.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [114.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [119.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [124.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [129.2]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "dialyn-ex_special_attack-get_lost",
+        "name": "Get Lost! (EX Special Attack)",
+        "description": "With /bCustomer Complaint//b, hold [BASIC] to activate:\n\nDelivers a forward martial salute attack. On activation, it consumes 1 /bCustomer Complaint//b and deals Physical DMG. After activation, the previous character's /bQuick Assist//b is triggered. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [549.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [599.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [649.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [699.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [749.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [799.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [849.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [899.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [949.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [999.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1049.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1099.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1149.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1199.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [1249.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [1299.7]
+          }
+        ]
+      },
+      {
+        "id": "dialyn-ex_special_attack-rock",
+        "name": "Rock (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLaunches a fist attack, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [404]
+          },
+          {
+            "level": 2,
+            "multipliers": [440.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [477.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [514.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [551.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [588]
+          },
+          {
+            "level": 7,
+            "multipliers": [624.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [661.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [698.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [735.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [772]
+          },
+          {
+            "level": 12,
+            "multipliers": [808.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [845.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [882.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [919.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [956]
+          }
+        ]
+      },
+      {
+        "id": "dialyn-ex_special_attack-scissors",
+        "name": "Scissors (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLaunches a scissors attack, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [524.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [572.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [620.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [668.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [716.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [763.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [811.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [859.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [907.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [955.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [1002.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [1050.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [1098.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1146.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [1194.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [1241.9]
+          }
+        ]
+      },
+      {
+        "id": "dialyn-ex_special_attack-paper",
+        "name": "Paper! (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLaunches a paper attack, dealing Physical DMG. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [701.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [765.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [829.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [893.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [956.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [1020.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [1084.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [1148.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [1212.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [1275.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [1339.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [1403.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [1467.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1531.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1594.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1658.7]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "dialyn-chain_attack-welcome_mat",
+        "name": "Welcome Mat (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunches consecutive kicks against enemies in front, dealing massive Physical DMG. After using this skill, can immediately follow up with the 4th hit of /bBasic Attack: Happy to Be of Service//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [620.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [676.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [733.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [789.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [846]
+          },
+          {
+            "level": 6,
+            "multipliers": [902.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [958.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [1015.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [1071.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1128]
+          },
+          {
+            "level": 11,
+            "multipliers": [1184.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [1240.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1297.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [1353.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1410]
+          },
+          {
+            "level": 16,
+            "multipliers": [1466.4]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "dialyn-ultimate-service_stopped_for_number_dialed",
+        "name": "Service Stopped for Number Dialed (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nRushes forward and performs a finger flick attack, dealing massive Physical DMG. After using this skill, can immediately follow up with the 4th hit of /bBasic Attack: Happy to Be of Service//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1622.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [1770]
+          },
+          {
+            "level": 3,
+            "multipliers": [1917.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [2065]
+          },
+          {
+            "level": 5,
+            "multipliers": [2212.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [2360]
+          },
+          {
+            "level": 7,
+            "multipliers": [2507.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [2655]
+          },
+          {
+            "level": 9,
+            "multipliers": [2802.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [2950]
+          },
+          {
+            "level": 11,
+            "multipliers": [3097.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [3245]
+          },
+          {
+            "level": 13,
+            "multipliers": [3392.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [3540]
+          },
+          {
+            "level": 15,
+            "multipliers": [3687.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [3835]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "dialyn-mindscape-truth",
+        "name": "Truth (Mindscape Cinema N°6)",
+        "description": "When an ally enters the field with an /bUltimate//b through the /bCore Passive//b's effect, that ally gains the /bAftertone//b effect.\n\nWith this effect, landing an attack causes Dialyn to deal an additional instance of Physical DMG equal to 480% of Dialyn's ATK. This DMG is treated as /bEX Special Attack//b DMG, and can trigger once every second, up to 12 times.\n\nGaining /bAftertone//b again refreshes its trigger count. Only one ally can have /bAftertone//b at a time.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [480]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+/* En index.css */
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: hidden; /* Cambia de hidden/auto a visible */
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Mueve el scroll AQUÍ */
+  overflow-x: hidden;
+}
+
+/* En tu otro CSS */
+.main-content {
+  position: relative; /* Cambia de absolute a relative */
+  margin-left: var(--sidebar-width);
+  transition: margin-left 400ms ease;
+  width: 100%;
+  min-height: 100%; /* En lugar de max-height */
+  overflow-y: visible; /* Deja que #root maneje el scroll */
+}

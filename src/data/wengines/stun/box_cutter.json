@@ -1,0 +1,84 @@
+{
+  "id": "box_cutter",
+  "name": "Box Cutter",
+  "rarity": "A",
+  "specialty": "Stun",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Impact%",
+
+  "stats": {
+    "base": 624,
+    "advanced": 0.15
+  },
+
+  "ingameEffects": [
+    {
+      "id": "box_cutter-watch_your_fingers",
+      "source": "wEngine",
+      "sourceId": "box_cutter",
+      "label": "Watch your Fingers (W-Engine Passive)",
+      "description": "When launching an Aftershock, the equipper's Physical DMG is increased, and their Daze inflicted increases for 10s.",
+      "shortDescription": "Increases the equipper's Physical DMG.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.15
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.173
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.195
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.218
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.24
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    }
+  ]
+}

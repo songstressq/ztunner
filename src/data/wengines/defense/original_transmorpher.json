@@ -1,0 +1,92 @@
+{
+  "id": "original_transmorpher",
+  "name": "Original Transmorpher",
+  "rarity": "A",
+  "specialty": "Defense",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "original_transmorpher-starlight_knight_flying_kick-hp",
+      "source": "wEngine",
+      "sourceId": "original_transmorpher",
+      "label": "Starlight Knight Flying Kick (W-Engine Passive)",
+      "description": "Increases Max HP by a percentage. When attacked, the equipper's Impact is increased by a percentage for 12s.",
+      "shortDescription": "Increases the equipper's Max HP.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "hpPercentRaw": 0.08 }
+          },
+          {
+            "level": 2,
+            "stats": { "hpPercentRaw": 0.09 }
+          },
+          {
+            "level": 3,
+            "stats": { "hpPercentRaw": 0.1 }
+          },
+          {
+            "level": 4,
+            "stats": { "hpPercentRaw": 0.11 }
+          },
+          {
+            "level": 5,
+            "stats": { "hpPercentRaw": 0.125 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    },
+
+    {
+      "id": "original_transmorpher-starlight_knight_flying_kick-impact",
+      "source": "wEngine",
+      "sourceId": "original_transmorpher",
+      "label": "Starlight Knight Flying Kick (W-Engine Passive)",
+      "description": "Increases Max HP by a percentage. When attacked, the equipper's Impact is increased by a percentage for 12s.",
+      "shortDescription": "Increases the equipper's Impact.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "impactPercentRaw": 0.1 }
+          },
+          {
+            "level": 2,
+            "stats": { "impactPercentRaw": 0.115 }
+          },
+          {
+            "level": 3,
+            "stats": { "impactPercentRaw": 0.13 }
+          },
+          {
+            "level": 4,
+            "stats": { "impactPercentRaw": 0.145 }
+          },
+          {
+            "level": 5,
+            "stats": { "impactPercentRaw": 0.16 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    }
+  ]
+}

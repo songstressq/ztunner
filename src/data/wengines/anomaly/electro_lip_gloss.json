@@ -1,0 +1,91 @@
+{
+  "id": "electro_lip_gloss",
+  "name": "Electro-Lip Gloss",
+  "rarity": "A",
+  "specialty": "Anomaly",
+  "baseStatType": "ATK",
+  "advancedStatType": "Anomaly Proficiency",
+  "stats": {
+    "base": 594,
+    "advanced": 75
+  },
+  "ingameEffects": [
+    {
+      "id": "electro_lip_gloss-kiss_of_death",
+      "source": "wEngine",
+      "sourceId": "electro_lip_gloss",
+      "label": "Kiss of Death (W-Engine Passive)",
+      "description": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK is increased and they deal additional DMG to the target.",
+      "shortDescription": "Increases the equipper's ATK and deals additional DMG.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": {
+              "atkPercent": 0.1
+            },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.15
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "stats": {
+              "atkPercent": 0.115
+            },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.175
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "stats": {
+              "atkPercent": 0.13
+            },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.2
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "stats": {
+              "atkPercent": 0.145
+            },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.225
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "stats": {
+              "atkPercent": 0.16
+            },
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.25
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

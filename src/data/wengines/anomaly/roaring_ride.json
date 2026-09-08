@@ -1,0 +1,54 @@
+{
+  "id": "roaring_ride",
+  "name": "Roaring Ride",
+  "rarity": "A",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 624,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "roaring_ride_collision_potential",
+      "source": "wEngine",
+      "sourceId": "roaring_ride",
+      "label": "Collision Potential (W-Engine Passive)",
+      "description": "When EX Special Attack hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. the same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once: Increases the equipper's ATK, increases the equipper's Anomaly Proficiency, or increases the equipper's Anomaly Buildup Rate.",
+      "shortDescription": "Increases the equipper's ATK and/or Anomaly Proficiency.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "atkPercentRaw": 0.08, "anomalyProficiency": 40 }
+          },
+          {
+            "level": 2,
+            "stats": { "atkPercentRaw": 0.092, "anomalyProficiency": 46 }
+          },
+          {
+            "level": 3,
+            "stats": { "atkPercentRaw": 0.104, "anomalyProficiency": 52 }
+          },
+          {
+            "level": 4,
+            "stats": { "atkPercentRaw": 0.116, "anomalyProficiency": 58 }
+          },
+          {
+            "level": 5,
+            "stats": { "atkPercentRaw": 0.128, "anomalyProficiency": 64 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

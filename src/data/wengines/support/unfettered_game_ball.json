@@ -1,0 +1,54 @@
+{
+  "id": "unfettered_game_ball",
+  "name": "Unfettered Game Ball",
+  "rarity": "A",
+  "specialty": "Support",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.5
+  },
+
+  "ingameEffects": [
+    {
+      "id": "unfettered_game_ball-game_start",
+      "source": "wEngine",
+      "sourceId": "unfettered_game_ball",
+      "label": "Game Start! (W-Engine Passive)",
+      "description": "Whenever the equipper's attack triggers an Attribute Counter effect, all units' CRIT Rate against the struck enemy increases for 12s. The bonuses triggered by the same type of passive effects do not stack.",
+      "shortDescription": "All squad members' CRIT Rate is increased for 12s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.12 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.135 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.155 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.175 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.2 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    }
+  ]
+}

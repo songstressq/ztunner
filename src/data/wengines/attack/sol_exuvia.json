@@ -1,0 +1,92 @@
+{
+  "id": "sol_exuvia",
+  "name": "Sol Exuvia",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "sol_exuvia-eclipse_effect-crit_rate",
+      "source": "wEngine",
+      "sourceId": "sol_exuvia",
+      "label": "Eclipse Effect (W-Engine Passive)",
+      "description": "CRIT Rate increases by 20%. When the equipper is Pyrois, using an Ultimate grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores a percentage of Ether RES, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect.",
+      "shortDescription": "Increases the equipper's CRIT Rate by 20%.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.2 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "sol_exuvia-eclipse_effect-ether_res_shred",
+      "source": "wEngine",
+      "sourceId": "sol_exuvia",
+      "label": "Eclipse Effect (W-Engine Passive)",
+      "description": "CRIT Rate is increased. When the equipper is Pyrois, using an Ultimate grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores a percentage of Ether RES, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect.",
+      "shortDescription": "Pyrois's DMG ignores a portion of the target's Ether RES for 45s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "etherResShred": 0.16 }
+          },
+          {
+            "level": 2,
+            "stats": { "etherResShred": 0.175 }
+          },
+          {
+            "level": 3,
+            "stats": { "etherResShred": 0.19 }
+          },
+          {
+            "level": 4,
+            "stats": { "etherResShred": 0.205 }
+          },
+          {
+            "level": 5,
+            "stats": { "etherResShred": 0.22 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

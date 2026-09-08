@@ -1,0 +1,92 @@
+{
+  "id": "bunny_band",
+  "name": "Bunny Band",
+  "rarity": "A",
+  "specialty": "Defense",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "DEF%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.4
+  },
+
+  "ingameEffects": [
+    {
+      "id": "bunny_band-pet_the_bunny-hp",
+      "source": "wEngine",
+      "sourceId": "bunny_band",
+      "label": "Pet the Bunny (W-Engine Passive)",
+      "description": "Increases Max HP by a percentage. Increases the equipper's ATK when they are shielded.",
+      "shortDescription": "Increases the equipper's Max HP.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "hpPercentRaw": 0.08 }
+          },
+          {
+            "level": 2,
+            "stats": { "hpPercentRaw": 0.092 }
+          },
+          {
+            "level": 3,
+            "stats": { "hpPercentRaw": 0.104 }
+          },
+          {
+            "level": 4,
+            "stats": { "hpPercentRaw": 0.116 }
+          },
+          {
+            "level": 5,
+            "stats": { "hpPercentRaw": 0.128 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    },
+
+    {
+      "id": "bunny_band-pet_the_bunny-atk",
+      "source": "wEngine",
+      "sourceId": "bunny_band",
+      "label": "Pet the Bunny (W-Engine Passive)",
+      "description": "Increases Max HP by a percentage. Increases the equipper's ATK when they are shielded.",
+      "shortDescription": "Increases the equipper's ATK.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "atkPercent": 0.1 }
+          },
+          {
+            "level": 2,
+            "stats": { "atkPercent": 0.115 }
+          },
+          {
+            "level": 3,
+            "stats": { "atkPercent": 0.13 }
+          },
+          {
+            "level": 4,
+            "stats": { "atkPercent": 0.145 }
+          },
+          {
+            "level": 5,
+            "stats": { "atkPercent": 0.16 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    }
+  ]
+}

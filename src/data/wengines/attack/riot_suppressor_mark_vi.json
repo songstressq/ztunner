@@ -1,0 +1,157 @@
+{
+  "id": "riot_suppressor_mark_vi",
+  "name": "Riot Suppressor Mark VI",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT DMG%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.48
+  },
+
+  "ingameEffects": [
+    {
+      "id": "riot_suppressor_mark_vi-security_patrol-crit_rate",
+      "source": "wEngine",
+      "sourceId": "riot_suppressor_mark_vi",
+      "label": "Security Patrol (W-Engine Passive)",
+      "description": "Increases CRIT Rate. Launching an EX Special Attack grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's Basic Attack or Dash Attack deals Ether DMG, consumes a Charge stack and increases the skill's DMG.",
+      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.15 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.188 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.226 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.264 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.3 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "riot_suppressor_mark_vi-security_patrol-ether_dmg",
+      "source": "wEngine",
+      "sourceId": "riot_suppressor_mark_vi",
+      "label": "Security Patrol (W-Engine Passive)",
+      "description": "Increases CRIT Rate. Launching an EX Special Attack grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's Basic Attack or Dash Attack deals Ether DMG, consumes a Charge stack and increases the skill's DMG.",
+      "shortDescription": "Increases the equipper's Ether DMG from Basic Attacks and Dash Attacks.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "basic",
+                "value": 0.35
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "dash",
+                "value": 0.35
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "basic",
+                "value": 0.435
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "dash",
+                "value": 0.435
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "basic",
+                "value": 0.52
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "dash",
+                "value": 0.52
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "basic",
+                "value": 0.605
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "dash",
+                "value": 0.605
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "basic",
+                "value": 0.7
+              },
+              {
+                "type": "skillTypeElemental",
+                "element": "ether",
+                "skillType": "dash",
+                "value": 0.7
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

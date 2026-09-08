@@ -1,0 +1,975 @@
+{
+  "id": "lycaon",
+  "name": "Von Lycaon",
+  "specialty": "Stun",
+  "faction": "Victoria Housekeeping",
+  "attribute": "ice",
+  "rarity": "S",
+  "fullName": "Von Lycaon",
+  "displayName": "Lycaon",
+  "attributeIcon": "Ice",
+  "themeColor": "#E8E9D6",
+  "baseStats": {
+    "hp": 8416.3,
+    "atk": 653.59,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 119,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 91,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Impact"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "lycaon-core-metallic_paws",
+      "source": "core",
+      "sourceId": "lycaon-core",
+      "label": "Metallic Paws (Core Passive)",
+      "description": "When Lycaon charges his Basic Attack to completion, the attack deals 80% increased Daze. When EX Special Attack: Thrill of the Hunt or Assist Follow-Up: Vengeful Counterattack hits an enemy, the target's Ice DMG RES decreases by 25% for 30s.",
+      "shortDescription": "The target's Ice RES is reduced by 25% for 30s.",
+      "target": "team",
+      "flat": {
+        "iceResShred": 0.25
+      }
+    },
+    {
+      "id": "lycaon-mindscape_1-full_moon_momentum",
+      "source": "mindscape",
+      "sourceId": "lycaon-mindscape_1",
+      "label": "Full Moon Momentum (Mindscape Cinema N°1)",
+      "description": "When Lycaon's EX Special Attack: Thrill of the Hunt hits an enemy, the attack's Daze increases by 12%. This effect can trigger once every 8s. When he charges his EX Special Attack: Thrill of the Hunt to completion, this buff will increase by an additional 10%.",
+      "shortDescription": "This mindscape cinema does not affect Lycaon's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "lycaon-mindscape_2-energy_feedback",
+      "source": "mindscape",
+      "sourceId": "lycaon-mindscape_2",
+      "label": "Energy Feedback (Mindscape Cinema N°2)",
+      "description": "When Stunning an enemy or triggering a squad member's Chain Attack, Lycaon gains 5 Energy. Can trigger once every 1s.",
+      "shortDescription": "This mindscape cinema does not affect Lycaon's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "lycaon-mindscape_4-graceful_demeanor",
+      "source": "mindscape",
+      "sourceId": "lycaon-mindscape_4",
+      "label": "Graceful Demeanor (Mindscape Cinema N°4)",
+      "description": "If Lycaon is attacked while using a Basic Attack or Special Attack, he will immediately gain a Shield equal to 7.5% of his Max HP, lasting for 15s. During the Shield's duration, his Anti-Interrupt level is increased. This effect can trigger once every 15s.",
+      "shortDescription": "This mindscape cinema does not affect Lycaon's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "lycaon-mindscape_6-ruthless_humter",
+      "source": "mindscape",
+      "sourceId": "lycaon-mindscape_6",
+      "label": "Ruthless Hunter (Mindscape Cinema N°6)",
+      "description": "When a charged attack hits an enemy, the target suffers 10% increased DMG from Lycaon, stacking up to 5 times and lasting 12s. Only one stack can be gained per skill use, and repeated triggers reset the duration.",
+      "shortDescription": "Lycaon's DMG is increased by 10% for 12s, stacking up to 5 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.1
+        }
+      ],
+      "maxStacks": 5
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "lycaon-basic_attack-moon_hunter",
+        "name": "Moon Hunter (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 5 strikes in front, dealing Physical DMG. Hold down [BASIC] to charge up, increasing the power of the attack and dealing Ice DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "1st-Hit Attack DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "2nd-Hit Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "3rd-Hit Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "4th-Hit Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "5th-Hit Level-1 Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "5th-Hit Level-2 Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              29.2, 34.9, 58.4, 152, 180.7, 37.1, 56.4, 99.5, 210.9, 277.6,
+              355.7
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              31.9, 38.1, 63.8, 165.9, 197.2, 40.5, 61.6, 108.6, 230.1, 302.9,
+              388.1
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              34.6, 41.3, 69.2, 179.8, 213.7, 43.9, 66.8, 117.7, 249.3, 328.2,
+              420.5
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              37.3, 44.5, 74.6, 193.7, 230.2, 47.3, 72, 126.8, 268.5, 353.5,
+              452.9
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              40, 47.7, 80, 207.6, 246.7, 50.7, 77.2, 135.9, 287.7, 378.8, 485.3
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              42.7, 50.9, 85.4, 221.5, 263.2, 54.1, 82.4, 145, 306.9, 404.1,
+              517.7
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              45.4, 54.1, 90.8, 235.4, 279.7, 57.5, 87.6, 154.1, 326.1, 429.4,
+              550.1
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              48.1, 57.3, 96.2, 249.3, 296.2, 60.9, 92.8, 163.2, 345.3, 454.7,
+              582.5
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              50.8, 60.5, 101.6, 263.2, 312.7, 64.3, 98, 172.3, 364.5, 480,
+              614.9
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              53.5, 63.7, 107, 277.1, 329.2, 67.7, 103.2, 181.4, 383.7, 505.3,
+              647.3
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              56.2, 66.9, 112.4, 291, 345.7, 71.1, 108.4, 190.5, 402.9, 530.6,
+              679.7
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              58.9, 70.1, 117.8, 304.9, 362.2, 74.5, 113.6, 199.6, 422.1, 555.9,
+              712.1
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              61.6, 73.3, 123.2, 318.8, 378.7, 77.9, 118.8, 208.7, 441.3, 581.2,
+              744.5
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              64.3, 76.5, 128.6, 332.7, 395.2, 81.3, 124, 217.8, 460.5, 606.5,
+              776.9
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              67, 79.7, 134, 346.6, 411.7, 84.7, 129.2, 226.9, 479.7, 631.8,
+              809.3
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              69.7, 82.9, 139.4, 360.5, 428.2, 88.1, 134.4, 236, 498.9, 657.1,
+              841.7
+            ]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "lycaon-dash_attack-keep_it_clean",
+        "name": "Keep it Clean (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlides forward, launching a series of strikes in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [47.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [51.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [55.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [60.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [64.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [68.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [73.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [77.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [81.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [86]
+          },
+          {
+            "level": 11,
+            "multipliers": [90.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [94.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [98.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [103.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [107.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [111.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "lycaon-dodge_counter-etiquette_manual",
+        "name": "Etiquette Manual (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nStrikes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [187]
+          },
+          {
+            "level": 2,
+            "multipliers": [204]
+          },
+          {
+            "level": 3,
+            "multipliers": [221]
+          },
+          {
+            "level": 4,
+            "multipliers": [238]
+          },
+          {
+            "level": 5,
+            "multipliers": [255]
+          },
+          {
+            "level": 6,
+            "multipliers": [272]
+          },
+          {
+            "level": 7,
+            "multipliers": [289]
+          },
+          {
+            "level": 8,
+            "multipliers": [306]
+          },
+          {
+            "level": 9,
+            "multipliers": [323]
+          },
+          {
+            "level": 10,
+            "multipliers": [340]
+          },
+          {
+            "level": 11,
+            "multipliers": [357]
+          },
+          {
+            "level": 12,
+            "multipliers": [374]
+          },
+          {
+            "level": 13,
+            "multipliers": [391]
+          },
+          {
+            "level": 14,
+            "multipliers": [408]
+          },
+          {
+            "level": 15,
+            "multipliers": [425]
+          },
+          {
+            "level": 16,
+            "multipliers": [442]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "lycaon-quick_assist-wolf_pack",
+        "name": "Wolf Pack (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nStrikes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [63.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [68.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [74.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [80.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [86.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [92.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [97.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [103.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [109.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [115.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [121.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [126.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [132.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [138.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [144.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [150.1]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "lycaon-assist_follow_up-vengeful_counterattack",
+        "name": "Vengeful Counterattack (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCreates an icicle in front, which strikes all enemies within range, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [288.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [314.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [340.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [367.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [393.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [419.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [446.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [472.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [498.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [525]
+          },
+          {
+            "level": 11,
+            "multipliers": [551.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [577.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [603.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [630.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [656.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [682.8]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "lycaon-special_attack-time_to_hunt",
+        "name": "Time to Hunt (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nUnleashes a series of strikes in front, dealing Ice DMG. Hold down [SPECIAL] to charge up, increasing its power. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [77.1, 133.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [84.2, 145.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [91.3, 157.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [98.4, 169.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [105.5, 181.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [112.6, 194.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [119.7, 206.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [126.8, 218.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [133.9, 230.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [141, 242.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [148.1, 255.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [155.2, 267.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [162.3, 279.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [169.4, 291.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [176.5, 303.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [183.6, 316.1]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "lycaon-ex_special_attack-thrill_of_the_hunt",
+        "name": "Thrill of the Hunt (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nUnleashes a series of powerful strikes in front, dealing massive Ice DMG. Hold [EX] to charge, consuming Energy and enhancing the power of the attack. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Charged Attack DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [534.3, 789.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [583, 861.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [631.7, 933.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [680.4, 1005.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [729.1, 1077.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [777.8, 1149]
+          },
+          {
+            "level": 7,
+            "multipliers": [826.5, 1220.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [875.2, 1292.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [923.9, 1364.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [972.6, 1436.6]
+          },
+          {
+            "level": 11,
+            "multipliers": [1021.3, 1508.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [1070, 1580.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1118.7, 1652.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1167.4, 1724.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1216.1, 1796.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [1264.8, 1868]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "lycaon-chain_attack-as_you_wish",
+        "name": "As You Wish (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a series of powerful strikes at enemies in a small area in front, dealing massive Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [637.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [695.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [753.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [811.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [869.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [927.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [985.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [1043.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1101.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [1159.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [1217.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1275.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [1333.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [1391.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1449.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1507.8]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "lycaon-ultimate-mission_complete",
+        "name": "Mission Complete (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes multiple powerful strikes at enemies in a large area, dealing massive Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1694.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [1848.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [2002.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [2156.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [2310.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [2464.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [2618.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [2772.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [2926.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [3081]
+          },
+          {
+            "level": 11,
+            "multipliers": [3235.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [3389.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [3543.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [3697.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [3851.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [4005.6]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

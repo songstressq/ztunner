@@ -1,0 +1,1101 @@
+{
+  "id": "miyabi",
+  "name": "Hoshimi Miyabi",
+  "specialty": "Anomaly",
+  "faction": "Hollow Special Operations Section 6",
+  "attribute": "Ice",
+  "anomalyAttribute": {
+    "type": "frost",
+    "parentAttribute": "ice",
+    "baseMultiplier": 5,
+    "disorderFormula": {
+      "baseMultiplier": 4.5,
+      "scalingType": "linear",
+      "scalingFactor": 0.075,
+      "tickRate": 1
+    }
+  },
+  "rarity": "S",
+  "fullName": "Hoshimi Miyabi",
+  "displayName": "Miyabi",
+  "attributeIcon": "Frost",
+  "themeColor": "#169799",
+  "skins": [
+    {
+      "id": "default",
+      "img": "miyabi.png"
+    },
+    {
+      "id": "dignified_blossom",
+      "img": "miyabi-dignified_blossom.png"
+    }
+  ],
+  "baseStats": {
+    "hp": 7673.7,
+    "atk": 805.7,
+    "def": 606.6
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 148,
+    "anomalyMastery": 116,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 30
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 30
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyProficiency": 30
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyProficiency": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "hoshimi_miyabi-ultimate-lingering_snow",
+      "source": "ultimate",
+      "sourceId": "hoshimi_miyabi-ultimate",
+      "label": "Lingering Snow (Ultimate)",
+      "description": "When Decibel Rating is at Maximum, press Ultimate to activate:\n\nUnleashes powerful slashes at enemies ahead in a large area then pauses, before unleashing a Finishing Move, dealing massive Frost DMG. Upon activating this skill, gain 3 points of Fallen Frost and increase Ice DMG by 30% for 12s. Character is invulnerable while using this skill.",
+      "shortDescription": "Miyabi's Ice DMG is increased by 30% for 12s.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "ice",
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "hoshimi_miyabi-core-searing_cold",
+      "source": "core",
+      "sourceId": "hoshimi_miyabi-core_1",
+      "label": "Searing Cold (Core Passive)",
+      "description": "... When Hoshimi Miyabi applies Frostbite to enemies with Icefire, it will consume the Icefire to trigger Frostburn - Break, dealing Frost DMG equal to 1500% of Hoshimi Miyabi's ATK and causing the target to enter the Frostburn state. All units accumulate 20% more Anomaly Buildup against enemies under the Frostburn state, but Hoshimi Miyabi cannot reapply Icefire to these enemies. The Frostburn state ends when Frostbite expires. While this state remains active, triggering another Attribute Anomaly will overwrite Frostbite and remove Frostburn. Upon triggering Frostburn - Break, Hoshimi Miyabi obtains 1 point of Fallen Frost. This effect can trigger once every 10s.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    },
+    {
+      "id": "hoshimi_miyabi-core_1-bask_in_frost",
+      "source": "core",
+      "sourceId": "hoshimi_miyabi-core",
+      "label": "Bask in Frost (Additional Ability)",
+      "description": "When another character in your squad is a Support character or shares the same Faction: Basic Attack: Shimotsuki DMG increases by 60%. When any squad member triggers Disorder, Hoshimi Miyabi obtains 2 points of Fallen Frost and Basic Attack: Shimotsuki during the next Shimotsuki Stance will ignore 30% of the target's Ice RES.",
+      "shortDescription": "Miyabi's DMG from Basic Attack: Shimotsuki is increased by 60%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["miyabi-basic_attack-shimotsuki"],
+          "value": 0.6
+        }
+      ]
+    },
+    {
+      "id": "hoshimi_miyabi-core_2-bask_in_frost",
+      "source": "core",
+      "sourceId": "hoshimi_miyabi-core",
+      "label": "Bask in Frost (Additional Ability)",
+      "description": "When another character in your squad is a Support character or shares the same Faction: Basic Attack: Shimotsuki DMG increases by 60%. When any squad member triggers Disorder, Hoshimi Miyabi obtains 2 points of Fallen Frost and Basic Attack: Shimotsuki during the next Shimotsuki Stance will ignore 30% of the target's Ice RES.",
+      "shortDescription": "Miyabi's Basic Attack: Shimotsuki DMG ignores 30% of the target's Ice RES.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "iceResShred",
+          "type": "exclusive",
+          "appliesTo": ["miyabi-basic_attack-shimotsuki"],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "hoshimi_miyabi-mindscape_1-frost_atop_the_snow",
+      "source": "mindscape",
+      "sourceId": "hoshimi_miyabi-mindscape_1",
+      "label": "Frost Atop the Snow (Mindscape Cinema N°1)",
+      "description": "While in Shimotsuki Stance, every 1 point of Fallen Frost consumed will allow Basic Attack: Shimotsuki to ignore 6% of DEF, stacking up to 6 times and lasting until Shimotsuki Stance ends. When a charge-level three slash of Basic Attack: Shimotsuki hits an enemy suffering Frostburn, it will immediately remove the Frostburn state and increase all squad members' Anomaly Buildup Rate by 20% for 10s.",
+      "shortDescription": "Miyabi's Basic Attack: Shimotsuki ignores 6% of the target's DEF, stacking up to 6 times.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "defShred",
+          "type": "exclusive",
+          "appliesTo": ["miyabi-basic_attack-shimotsuki"],
+          "value": 0.06
+        }
+      ],
+      "maxStacks": 6
+    },
+    {
+      "id": "hoshimi_miyabi-mindscape_2-breath_technique",
+      "source": "mindscape",
+      "sourceId": "hoshimi_miyabi-mindscape_2",
+      "label": "Breath Technique (Mindscape Cinema N°2)",
+      "description": "Basic Attack: Kazahana and Dodge Counter DMG increases by 30%. Hoshimi Miyabi gains 1 point of Fallen Frost when the final move of the 5th hit of Basic Attack: Kazahana hits an enemy. Upon entering the battlefield, Hoshimi Miyabi immediately obtains 6 points of Fallen Frost and her CRIT Rate increases by 15%.",
+      "shortDescription": "Miyabi's CRIT Rate is increased by 15% and her DMG from Basic Attack: Kazahana and Dodge Counter: Kan Suzume is increased by 30%. ",
+      "target": "self",
+      "flat": {
+        "critRate": 0.15
+      },
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "miyabi-basic_attack-kazahana",
+            "miyabi-dodge_counter-kan_suzume"
+          ],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "hoshimi_miyabi-mindscape_4-rupture",
+      "source": "mindscape",
+      "sourceId": "hoshimi_miyabi-mindscape_4",
+      "label": "Rupture (Mindscape Cinema N°4)",
+      "description": "Frostburn - Break DMG increases by 30%. Upon triggering Frostburn - Break, Hoshimi Miyabi generates 250 more Decibels.",
+      "shortDescription": "Miyabi's DMG from Frostburn - Break is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["miyabi-core-frostburn_break"],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "hoshimi_miyabi-mindscape_6-prodigious_talent",
+      "source": "mindscape",
+      "sourceId": "hoshimi_miyabi-mindscape_6",
+      "label": "Prodigious Talent (Mindscape Cinema N°6)",
+      "description": "During Shimotsuki Stance, Hoshimi Miyabi obtains Polar, which increases Basic Attack: Shimotsuki DMG by 30%. After obtaining Polar, Hoshimi Miyabi will automatically draw her blade and unleash powerful slashes based on the current charge level upon consuming Fallen Frost. Before Fallen Frost is completely depleted, the draw and slashes will not interrupt charging under Shimotsuki Stance. Each occurrence of Shimotsuki Stance can perform up to 3 draws and slashes.",
+      "shortDescription": "Miyabi's DMG from Basic Attack: Shimotsuki is increased by 30%, stacking up to 3 times.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["miyabi-core-frostburn_break"],
+          "value": 0.3
+        }
+      ],
+      "maxStacks": 3
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "miyabi-basic_attack-kazahana",
+        "name": "Kazahana (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to five slashes ahead, the first two deal Physical DMG, and the last three deal Frost DMG. Block enemy attacks during the 5th hit of the /bBasic Attack//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [26.9, 29.6, 62.8, 96.5, 129] },
+          {
+            "level": 2,
+            "multipliers": [29.4, 32.3, 68.6, 105.3, 140.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [31.9, 35, 74.4, 114.1, 152.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [34.4, 37.7, 80.2, 122.9, 164.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [36.9, 40.4, 86, 131.7, 176.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [39.4, 43.1, 91.8, 140.5, 188]
+          },
+          {
+            "level": 7,
+            "multipliers": [41.9, 45.8, 97.6, 149.3, 199.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [44.4, 48.5, 103.4, 158.1, 211.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [46.9, 51.2, 109.2, 166.9, 223.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [49.4, 53.9, 115, 175.7, 235.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [51.9, 56.6, 120.8, 184.5, 247]
+          },
+          {
+            "level": 12,
+            "multipliers": [54.4, 59.3, 126.6, 193.3, 258.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [56.9, 62, 132.4, 202.1, 270.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [59.4, 64.7, 138.2, 210.9, 282.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [61.9, 67.4, 144, 219.7, 294.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [64.4, 70.1, 149.8, 228.5, 306]
+          }
+        ]
+      },
+      {
+        "id": "miyabi-basic_attack-shimotsuki",
+        "name": "Shimotsuki (Basic Attack)",
+        "description": "With at least 2 points of /bFallen Frost//b, hold [BASIC] to activate:\n\nHoshimi Miyabi sheaths her blade, enters /bShimotsuki Stance//b and starts to charge up. Every level of charge will consume 2 points of /bFallen Frost//b, up to a maximum of three levels of charge. When releasing [BASIC], or when /bFallen Frost//b is completely depleted, Hoshimi Miyabi will draw her blade and unleash a powerful slash ahead based on the current charge level, dealing massive Frost DMG. She then exits /bShimotsuki Stance//b.\n\nCharacter is invulnerable during /bShimotsuki Stance//b. Hoshimi Miyabi can have up to 6 points of /bFallen Frost//b. Upon entering the battlefield, Hoshimi Miyabi immediately obtains 3 points of /bFallen Frost//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Charge Level One Slash DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Charge Level Two Slash DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Charge Level Three Slash DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [454.7, 858.1, 2141.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [496.1, 936.2, 2335.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [537.5, 1014.3, 2530.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [578.9, 1092.4, 2725.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [620.3, 1170.5, 2919.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [661.7, 1248.6, 3114.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [703.1, 1326.7, 3309.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [744.5, 1404.8, 3504]
+          },
+          {
+            "level": 9,
+            "multipliers": [785.9, 1482.9, 3698.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [827.3, 1561, 3893.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [868.7, 1639.1, 4088.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [910.1, 1717.2, 4282.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [951.5, 1795.3, 4477.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [992.9, 1873.4, 4672.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [1034.3, 1951.5, 4866.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1075.7, 2029.6, 5061.6]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "miyabi-dash_attack-fuyubachi",
+        "name": "Fuyubachi (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [25.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [28.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [30.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [33]
+          },
+          {
+            "level": 5,
+            "multipliers": [35.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [37.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [40.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [42.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [45]
+          },
+          {
+            "level": 10,
+            "multipliers": [47.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [49.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [52.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [54.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [57]
+          },
+          {
+            "level": 15,
+            "multipliers": [59.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [61.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "miyabi-dodge_counter-kan_suzume",
+        "name": "Kan Suzume (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nSlashes enemies in front, dealing Frost DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [245.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [268.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [290.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [313.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [335.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [357.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [380.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [402.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [425.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [447.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [469.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [492.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [514.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [537.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [559.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [581.9]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "miyabi-quick_assist-dancing_petals",
+        "name": "Dancing Petals (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nSlashes enemies in front, dealing Frost DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [104.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [114]
+          },
+          {
+            "level": 3,
+            "multipliers": [123.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [133]
+          },
+          {
+            "level": 5,
+            "multipliers": [142.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [152]
+          },
+          {
+            "level": 7,
+            "multipliers": [161.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [171]
+          },
+          {
+            "level": 9,
+            "multipliers": [180.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [190]
+          },
+          {
+            "level": 11,
+            "multipliers": [199.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [209]
+          },
+          {
+            "level": 13,
+            "multipliers": [218.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [228]
+          },
+          {
+            "level": 15,
+            "multipliers": [237.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [247]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "miyabi-assist_followup-falling_petals",
+        "name": "Falling Petals (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCharges and slashes enemies in front, dealing Frost DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [337.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [368.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [399.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [430.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [461]
+          },
+          {
+            "level": 6,
+            "multipliers": [491.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [522.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [553.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [584.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [615]
+          },
+          {
+            "level": 11,
+            "multipliers": [645.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [676.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [707.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [738.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [769]
+          },
+          {
+            "level": 16,
+            "multipliers": [799.8]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "miyabi-special_attack-miyuki",
+        "name": "Miyuki (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nQuickly draws her blade and slashes ahead, dealing Frost DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [35.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [39.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [42.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [45.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [49]
+          },
+          {
+            "level": 6,
+            "multipliers": [52.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [55.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [58.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [62.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [65.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [68.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [72.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [75.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [78.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [82]
+          },
+          {
+            "level": 16,
+            "multipliers": [85.3]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "miyabi-ex_special_attack-hisetsu",
+        "name": "Hisetsu (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nRush forward, unleashing powerful slashes against enemies along the way, dealing massive Frost DMG. Upon activating this skill, gain 2 points of /bFallen Frost//b. Character is invulnerable while using this skill.\n\nAfter using this skill, with enough Energy, press [EX] again to activate:\n\nConsume extra Energy and unleash a powerful follow-up attack against enemies in front, dealing massive Frost DMG. Upon activating this skill, gain 2 points of /bFallen Frost//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Slash DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Follow-Up DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [393.4, 483.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [429.3, 527.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [465.2, 571.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [501.1, 615.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [537, 659.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [572.9, 703.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [608.8, 747.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [644.7, 791.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [680.6, 835.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [716.5, 879.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [752.4, 923.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [788.3, 967.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [824.2, 1011.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [860.1, 1055.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [896, 1099.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [931.9, 1143.2]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "miyabi-chain_attack-springs_call",
+        "name": "Spring's Call (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful slash at enemies in front in a large area, dealing massive Frost DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [628]
+          },
+          {
+            "level": 2,
+            "multipliers": [685.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [742.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [799.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [857.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [914.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [971.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [1029.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [1086.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [1143.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1201]
+          },
+          {
+            "level": 12,
+            "multipliers": [1258.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [1315.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [1372.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [1430.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1487.5]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "miyabi-ultimate-lingering_snow",
+        "name": "Lingering Snow (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes powerful slashes at enemies ahead in a large area then pauses, before unleashing a /bFinishing Move//b, dealing massive Frost DMG. Upon activating this skill, gain 3 points of /bFallen Frost//b and increase Ice DMG by 30% for 12s. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2388]
+          },
+          {
+            "level": 2,
+            "multipliers": [2605.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [2822.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [3039.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [3256.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [3473.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [3690.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [3907.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [4124.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [4341.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [4559]
+          },
+          {
+            "level": 12,
+            "multipliers": [4776.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [4993.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [5210.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [5427.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [5644.5]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "miyabi-core-frostburn_break",
+        "name": "Frostburn - Break (Core Passive)",
+        "description": "... When Hoshimi Miyabi applies Frostbite to enemies with /bIcefire//b, it will consume the /bIcefire//b to trigger Frostburn - Break, dealing Frost DMG equal to a percentage of Hoshimi Miyabi's ATK and causing the target to enter the Frostburn state.\n\nAll units accumulate more Anomaly Buildup against enemies under the Frostburn state, but Hoshimi Miyabi cannot reapply /bIcefire//b to these enemies. The Frostburn state ends when Frostbite expires. While this state remains active, triggering another Attribute Anomaly will overwrite Frostbite and remove Frostburn. Upon triggering Frostburn - Break, Hoshimi Miyabi obtains 1 point of /bFallen Frost//b. This effect can trigger once every 10s.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1500]
+          }
+        ]
+      }
+    ]
+  }
+}

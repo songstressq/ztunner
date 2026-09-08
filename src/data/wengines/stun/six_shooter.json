@@ -1,0 +1,26 @@
+{
+  "id": "six_shooter",
+  "name": "Six Shooter",
+  "rarity": "A",
+  "specialty": "Stun",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Impact%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.15
+  },
+
+  "ingameEffects": [
+    {
+      "id": "six_shooter-fore",
+      "source": "wEngine",
+      "label": "Fire! (W-Engine Passive)",
+      "description": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an EX Special Attack, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted.",
+      "shortDescription": "This w-engine does not affect the equipper's stats.",
+      "target": "self",
+      "infoOnly": true
+    }
+  ]
+}

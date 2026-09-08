@@ -1,0 +1,109 @@
+{
+  "id": "tremor_trigram_vessel",
+  "name": "Tremor Trigram Vessel",
+  "rarity": "A",
+  "specialty": "Defense",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 624,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "tremor_trigram_vessel-meridian_mapping",
+      "source": "wEngine",
+      "label": "Meridian Mapping (W-Engine)",
+      "description": "The equipper's EX Special Attack and Ultimate DMG is increased Whenever any squad member takes DMG or recovers HP, the equipper gains Energy. This effect can trigger once every 5s.",
+      "shortDescription": "Increases the equipper's EX Special Attack and Ultimate DMG.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.25
+              },
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.25
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.287
+              },
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.287
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.325
+              },
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.325
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.362
+              },
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.362
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "skillType",
+                "skillType": "ultimate",
+                "value": 0.4
+              },
+              {
+                "type": "skillType",
+                "skillType": "ex",
+                "value": 0.4
+              }
+            ]
+          }
+        ],
+        "maxStacks": 3,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Defense"
+      }
+    }
+  ]
+}

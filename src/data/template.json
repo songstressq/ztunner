@@ -1,0 +1,958 @@
+{
+  "id": "grace",
+  "name": "Grace Howard",
+  "specialty": "Anomaly",
+  "faction": "Belobog Industries",
+  "attribute": "Electric",
+  "rarity": "S",
+
+  "fullName": "Grace Howard",
+  "displayName": "Grace",
+  "attributeIcon": "Electric",
+
+  "themeColor": "#9692a1",
+
+  "baseStats": {
+    "hp": 7482.7,
+    "atk": 750.97,
+    "def": 600.59
+  },
+
+  "combatBase": {
+    "impact": 83,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 116,
+    "anomalyMastery": 115,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Proficiency", "ATK"]
+  },
+
+  "coreEnhancement": [
+    { "level": 0, "stats": { "atkFlat": 0, "anomalyMastery": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "anomalyMastery": 12 } },
+    { "level": 2, "stats": { "atkFlat": 25, "anomalyMastery": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "anomalyMastery": 12 } },
+    { "level": 4, "stats": { "atkFlat": 25, "anomalyMastery": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "anomalyMastery": 12 } },
+    { "level": 6, "stats": { "atkFlat": 25, "anomalyMastery": 0 } }
+  ],
+
+  "ingameEffects": [],
+
+  "skills": {
+    "basicAttacks": [],
+
+    "dashAttacks": [],
+
+    "dodgeCounters": [],
+
+    "quickAssists": [],
+
+    "perfectAssists": null,
+
+    "assistFollowup": [],
+
+    "specialAttacks": [],
+
+    "exSkills": [],
+
+    "chainAttacks": [],
+
+    "ultimate": [],
+
+    "mindscapeAbilities": []
+  }
+}
+
+// EFECTOS TEST A
+
+ {
+      "id": "test_agent_a-core-atk_flat",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): ATK Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 1000 ATK.",
+      "target": "self",
+      "flat": {
+        "atkFlatRaw": 1000
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-atk_percent",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): ATK Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 100 ATK.",
+      "target": "self",
+      "flat": {
+        "atkPercentRaw": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-hp_flat",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): HP Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 1000 HP.",
+      "target": "self",
+      "flat": {
+        "hpFlatRaw": 1000
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-hp_percent",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): HP Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 500 HP.",
+      "target": "self",
+      "flat": {
+        "hpPercentRaw": 0.05
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-def_flat",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): DEF Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 1000 DEF.",
+      "target": "self",
+      "flat": {
+        "defFlatRaw": 1000
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-def_percent",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): DEF Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 DEF.",
+      "target": "self",
+      "flat": {
+        "defPercentRaw": 0.05
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-impact_flat",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Impact Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 10 Impact.",
+      "target": "self",
+      "flat": {
+        "impactFlatRaw": 10
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-impact_percent",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Impact Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 Impact.",
+      "target": "self",
+      "flat": {
+        "impactPercentRaw": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-crit_rate",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): CRIT Rate",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 10% CRIT Rate.",
+      "target": "self",
+      "flat": {
+        "critRate": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-crit_dmg",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): CRIT DMG",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50% CRIT DMG.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-anomaly_proficiency",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Anomaly Proficiency",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 250 Anomaly Proficiency.",
+      "target": "self",
+      "flat": {
+        "anomalyProficiency": 250
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-anomaly_mastery_percent",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Anomaly Mastery Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 Anomaly Mastery.",
+      "target": "self",
+      "flat": {
+        "anomalyMasteryPercent": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-anomaly_mastery_flat",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Anomaly Mastery Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 10 Anomaly Mastery.",
+      "target": "self",
+      "flat": {
+        "anomalyMasteryRaw": 10
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-pen_ratio",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): PEN Ratio",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50% PEN Ratio.",
+      "target": "self",
+      "flat": {
+        "penRatio": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-pen",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): PEN",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 PEN.",
+      "target": "self",
+      "flat": {
+        "pen": 50
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-pen",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): PEN",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 PEN.",
+      "target": "self",
+      "flat": {
+        "pen": 50
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-energy_regen_flat",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Energy Regen Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 0.5 Energy Regen.",
+      "target": "self",
+      "flat": {
+        "energyRegenRaw": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-energy_regen_percent",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Energy Regen Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 0.11 Energy Regen.",
+      "target": "self",
+      "flat": {
+        "energyRegenPercent": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-energy_regen_percent_current",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Energy Regen Percent (Current)",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This updates current Energy Regen by 100%.",
+      "target": "self",
+      "flat": {
+        "energyRegenPercentRaw": 1
+      }
+    },
+
+    {
+      "id": "test_agent_a-core-sheer_force",
+      "source": "core",
+      "sourceId": "test_agent_a-core",
+      "label": "STAT (Self): Sheer Force",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 1000 Sheer Force.",
+      "target": "self",
+      "flat": {
+        "sheerForce": 1000
+      }
+    },
+
+  
+
+    // EFECTOS TEST B
+
+
+    {
+      "id": "test_agent_b-core-def_flat",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): DEF Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 1000 DEF.",
+      "target": "team",
+      "flat": {
+        "defFlatRaw": 1000
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-def_percent",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): DEF Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 DEF.",
+      "target": "team",
+      "flat": {
+        "defPercentRaw": 0.05
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-impact_flat",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Impact Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 10 Impact.",
+      "target": "team",
+      "flat": {
+        "impactFlatRaw": 10
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-impact_percent",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Impact Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 Impact.",
+      "target": "team",
+      "flat": {
+        "impactPercentRaw": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-crit_rate",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): CRIT Rate",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 10% CRIT Rate.",
+      "target": "team",
+      "flat": {
+        "critRate": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-crit_dmg",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): CRIT DMG",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50% CRIT DMG.",
+      "target": "team",
+      "flat": {
+        "critDmg": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-anomaly_proficiency",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Anomaly Proficiency",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 250 Anomaly Proficiency.",
+      "target": "team",
+      "flat": {
+        "anomalyProficiency": 250
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-anomaly_mastery_percent",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Anomaly Mastery Percent",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 Anomaly Mastery.",
+      "target": "team",
+      "flat": {
+        "anomalyMasteryPercent": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-anomaly_mastery_flat",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Anomaly Mastery Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 10 Anomaly Mastery.",
+      "target": "team",
+      "flat": {
+        "anomalyMasteryRaw": 10
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-pen_ratio",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): PEN Ratio",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50% PEN Ratio.",
+      "target": "team",
+      "flat": {
+        "penRatio": 0.5
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-pen",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): PEN",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 PEN.",
+      "target": "team",
+      "flat": {
+        "pen": 50
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-pen",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): PEN",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 50 PEN.",
+      "target": "team",
+      "flat": {
+        "pen": 50
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-energy_regen_flat",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Energy Regen Flat",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 0.5 Energy Regen.",
+      "target": "team",
+      "flat": {
+        "energyRegenRaw": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-energy_regen_percent",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Energy Regen Percent CHECK ROUNDING",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 0.11 Energy Regen.",
+      "target": "team",
+      "flat": {
+        "energyRegenPercent": 0.1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-energy_regen_percent_current",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Energy Regen Percent (Current)",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This updates current Energy Regen by 100%.",
+      "target": "team",
+      "flat": {
+        "energyRegenPercentRaw": 1
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-sheer_force",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "STAT (Team): Sheer Force",
+      "description": "This section is where the effect toggle's description should be, ok?",
+      "shortDescription": "This should add 1000 Sheer Force.",
+      "target": "team",
+      "flat": {
+        "sheerForce": 1000
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-initial_atk_sheer_force",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "INITIAL STAT (Team): ATK - Sheer Force",
+      "description": "This toggle is present on Pan Yinhu's file.",
+      "shortDescription": "This should add 10% from initial ATK as Sheer Force.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 540,
+            "perUnitBonus": 0.1
+          }
+        ],
+        "affectedStats": ["sheerForce"]
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-initial_crit_rate_impact",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "INITIAL STAT (Team): CRIT Rate - Impact",
+      "description": "This toggle is present on Dialyn's file.",
+      "shortDescription": "This should add 2 Impact based on initial 1% CRIT Rate.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "critRate",
+        "threshold": 0,
+        "maxStat": 100,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 100,
+            "perUnitBonus": 2
+          }
+        ],
+        "affectedStats": ["impactBaseRaw"]
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-initial_atk_crit_dmg",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "INITIAL STAT (Team): ATK - CRIT DMG",
+      "description": "This toggle is present on Ju Fufu and Sunna's file.",
+      "shortDescription": "This should add 5% CRIT DMG based on each initial 100 ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 3400,
+        "perUnit": 100,
+        "perUnitBonus": 5,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 0.5,
+            "perUnitBonus": 5
+          }
+        ],
+        "affectedStats": ["critDmg"]
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-initial_hp_sheer_force",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "INITIAL STAT (Team): HP - Sheer Force",
+      "description": "This toggle is present on Lucia's file.",
+      "shortDescription": "This should add 10 Sheer Force based on each 200 initial HP.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 24000,
+        "perUnit": 200,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 636,
+            "perUnitBonus": 10
+          }
+        ],
+        "affectedStats": ["sheerForce"]
+      }
+    },
+
+    {
+      "id": "test_agent_b-core-initial_hp_atk",
+      "source": "core",
+      "sourceId": "test_agent_b-core",
+      "label": "INITIAL STAT (Team): HP - ATK",
+      "description": "This toggle is present on Lucia's file.",
+      "shortDescription": "This should add 2% ATK based on initial HP.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 99999,
+            "perUnitBonus": 0.02
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    }
+
+    //EFECTOS TEST C
+
+      {
+      "id": "test_agent_c-core-initial_anomaly_mastery_impact",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "INITIAL STAT (Team): Anomaly Mastery - Impact",
+      "description": "This toggle is present on Nangong Yu's file.",
+      "shortDescription": "This should add 1% Impact based on each initial 1.5 Anomaly Mastery.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "anomalyMastery",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1.5,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 99999,
+            "perUnitBonus": 1
+          }
+        ],
+        "affectedStats": ["impactBaseRaw"]
+      }
+    },
+
+    {
+      "id": "test_agent_c-core-initial_pen_ratio_pen_ratio",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "INITIAL STAT (Team): PEN Ratio - PEN Ratio",
+      "description": "This toggle is present on Rina's file.",
+      "shortDescription": "This should add 1% PEN Ratio based on each initial 1% PEN Ratio.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "penRatio",
+        "maxStat": 99999,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 0.5,
+            "perUnitBonus": 0.01
+          }
+        ],
+        "affectedStats": ["penRatio"]
+      }
+    },
+
+    {
+      "id": "test_agent_c-core-global_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Global DMG Bonus: WORKING (fixed)",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Global DMG Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-element_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Element DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Ether DMG Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "element",
+          "element": "ether",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-skill_type_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Skill Type DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Basic Attack DMG Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "skillType",
+          "skillType": "basic",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-skill_type_elemental_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Skill Type Elemental DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Basic Attack Ether DMG Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "skillTypeElemental",
+          "element": "ether",
+          "skillType": "basic",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-skill_type_stat_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Skill Type Stat DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Basic Attack CRIT DMG Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "skillTypeStat",
+          "stat": "critDmg",
+          "skillType": "basic",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-crit_dmg_elemental_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "CRIT DMG Elemental Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Basic Attack Ether CRIT DMG Bonus.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "critDamageElementalBonus",
+          "element": "ether",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-exclusive_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Exclusive DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% DMG Bonus to Ability Template (Basic Attack).",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": ["test-basic_attack-ability_template"],
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-exclusive_stat_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Exclusive Stat Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% CRIT DMG Bonus to Ability Template (Basic Attack).",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": ["test-basic_attack-ability_template"],
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-hit_specific_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Hit Specific DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% to 2nd-Hit DMG Multiplier from Ability Template (Basic Attack).",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "test-basic_attack-ability_template",
+          "hitName": "2nd-Hit DMG Multiplier",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-hit_stat_exclusive_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Hit Stat Exclusive DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% CRIT DMG to 2nd-Hit DMG Multiplier from Ability Template (Basic Attack).",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitStatExclusive",
+          "skillId": "test-basic_attack-ability_template",
+          "hitName": "2nd-Hit DMG Multiplier",
+          "stat": "critDmg",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-general_sheer_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "General Sheer DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% General Sheer DMG Bonus.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "sheerDmg",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-element_sheer_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Element Sheer DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Physical Sheer DMG Bonus.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "elementSheerDmg",
+          "element": "physical",
+          "value": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "test_agent_c-core-skill_type_elemental_sheer_dmg_bonus",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Skill Type Elemental Sheer DMG Bonus: IS WORKING",
+      "description": "This toggle is for DMG Calculation purposes.",
+      "shortDescription": "This should add 50% Physical Sheer DMG Bonus to Basic Attacks.",
+      "target": "team",
+      "damageBonuses": [
+        {
+          "type": "skillTypeElementalSheer",
+          "skillType": "basic",
+          "element": "physical",
+          "value": 0.5
+        }
+      ]
+    }

@@ -1,0 +1,55 @@
+{
+  "id": "kaboom_the_cannon",
+  "name": "Kaboom the Cannon",
+  "rarity": "A",
+  "specialty": "Support",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 624,
+    "advanced": 0.5
+  },
+
+  "ingameEffects": [
+    {
+      "id": "kaboom_the_cannon-stampede_accident",
+      "source": "wEngine",
+      "sourceId": "kaboom_the_cannon",
+      "label": "Stampede Accident (W-Engine Passive)",
+      "description": "When any friendly unit in the squad attacks and hits an enemy, all squad members' ATK increases for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
+      "shortDescription": "All squad members' ATK is increased for 8s, stacking up to 4 times.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "atkPercentRaw": 0.025 }
+          },
+          {
+            "level": 2,
+            "stats": { "atkPercentRaw": 0.028 }
+          },
+          {
+            "level": 3,
+            "stats": { "atkPercentRaw": 0.032 }
+          },
+          {
+            "level": 4,
+            "stats": { "atkPercentRaw": 0.036 }
+          },
+          {
+            "level": 5,
+            "stats": { "atkPercentRaw": 0.4 }
+          }
+        ],
+        "maxStacks": 4,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
+      }
+    }
+  ]
+}

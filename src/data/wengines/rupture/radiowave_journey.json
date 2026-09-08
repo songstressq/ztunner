@@ -1,0 +1,55 @@
+{
+  "id": "radiowave_journey",
+  "name": "Radiowave Journey",
+  "rarity": "A",
+  "specialty": "Rupture",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "HP%",
+
+  "stats": {
+    "base": 594,
+    "advanced": 0.25
+  },
+
+  "ingameEffects": [
+    {
+      "id": "radiowave_journey-easy_strides",
+      "source": "wEngine",
+      "sourceId": "radiowave_journey",
+      "label": "Easy Strides (W-Engine Passive)",
+      "description": "When launching a Chain Attack or Ultimate, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately.",
+      "shortDescription": "Increases the equipper's Sheer Force for 12s, stacking up to 3 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "sheerForce": 80 }
+          },
+          {
+            "level": 2,
+            "stats": { "sheerForce": 92 }
+          },
+          {
+            "level": 3,
+            "stats": { "sheerForce": 104 }
+          },
+          {
+            "level": 4,
+            "stats": { "sheerForce": 116 }
+          },
+          {
+            "level": 5,
+            "stats": { "sheerForce": 128 }
+          }
+        ],
+        "maxStacks": 3,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Rupture"
+      }
+    }
+  ]
+}

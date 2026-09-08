@@ -1,0 +1,100 @@
+{
+  "id": "practiced_perfection",
+  "name": "Practiced Perfection",
+  "rarity": "S",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "practiced_perfection-gift_of_stardust",
+      "source": "wEngine",
+      "sourceId": "practiced_perfection",
+      "label": "Gift of Stardust (W-Engine Passive)",
+      "description": "The equipper's Anomaly Mastery is increased. When inflicting Assault, the equipper's Physical DMG increases by a percentage for 20s, stacking up to 2 times. Repeated triggers reset the duration. When the equipper enters combat, immediately gain 2 stacks.",
+      "shortDescription": "Increases the equipper's Anomaly Mastery and Physical DMG. The latter stacking up to 2 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "baseStats": {
+              "anomalyMasteryRaw": 60
+            },
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.2
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "baseStats": {
+              "anomalyMasteryRaw": 69
+            },
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.23
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "baseStats": {
+              "anomalyMasteryRaw": 78
+            },
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.26
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "baseStats": {
+              "anomalyMasteryRaw": 87
+            },
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.29
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "baseStats": {
+              "anomalyMasteryRaw": 96
+            },
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "physical",
+                "value": 0.32
+              }
+            ]
+          }
+        ],
+        "maxStacks": 2,
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

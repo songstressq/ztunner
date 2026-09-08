@@ -1,0 +1,139 @@
+{
+  "modes": [
+    {
+      "id": "deadly_assault",
+      "label": "Deadly Assault",
+      "rooms": [
+        {
+          "id": "room_1",
+          "label": "Room 1",
+          "effects": [
+            {
+              "id": "game_mode_da_room1_effect_a",
+              "label": "ATK & CRIT DMG",
+              "description": "Increases ATK by 15% and CRIT DMG by 25%",
+              "shortDescription": "ATK +15%, CRIT DMG +25%",
+              "source": "gameMode",
+              "target": "team",
+              "flat": { "atkPercentRaw": 0.15, "critDmg": 0.25 }
+            },
+            {
+              "id": "game_mode_da_room1_effect_b",
+              "label": "Anomaly DMG (Stacks)",
+              "description": "Increases Anomaly DMG by 8% per stack, up to 4 stacks",
+              "shortDescription": "Anomaly DMG +8% per stack",
+              "source": "gameMode",
+              "target": "team",
+              "maxStacks": 4,
+              "perStack": { "anomalyDmgBonus": 0.08 }
+            }
+          ]
+        },
+        {
+          "id": "room_2",
+          "label": "Room 2",
+          "effects": [
+            {
+              "id": "game_mode_da_room2_effect_a",
+              "label": "Electric & EX Skill DMG",
+              "description": "Increases Electric DMG by 12% and EX Skill DMG by 18%",
+              "shortDescription": "Electric DMG +12%, EX Skill DMG +18%",
+              "source": "gameMode",
+              "target": "team",
+              "damageBonuses": [
+                { "type": "element", "element": "electric", "value": 0.12 },
+                { "type": "skillType", "skillType": "ex", "value": 0.18 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "room_3",
+          "label": "Room 3",
+          "effects": [
+            {
+              "id": "game_mode_da_room3_effect_a",
+              "label": "All RES Shred",
+              "description": "Reduces all elemental RES by 10%",
+              "shortDescription": "All RES -10%",
+              "source": "gameMode",
+              "target": "team",
+              "flat": {
+                "fireResShred": 0.1,
+                "iceResShred": 0.1,
+                "electricResShred": 0.1,
+                "physicalResShred": 0.1,
+                "etherResShred": 0.1,
+                "windResShred": 0.1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shiyu_defense",
+      "label": "Shiyu Defense",
+      "rooms": [
+        {
+          "id": "room_1",
+          "label": "Room 1",
+          "effects": [
+            {
+              "id": "game_mode_sd_room1_effect_a",
+              "label": "DEF & HP",
+              "description": "Increases DEF by 20% and HP by 15%",
+              "shortDescription": "DEF +20%, HP +15%",
+              "source": "gameMode",
+              "target": "team",
+              "flat": { "defPercent": 0.2, "hpPercent": 0.15 }
+            }
+          ]
+        },
+        {
+          "id": "room_2",
+          "label": "Room 2",
+          "effects": [
+            {
+              "id": "game_mode_sd_room2_effect_a",
+              "label": "Disorder DMG (Stacks)",
+              "description": "Increases Disorder DMG by 10% per stack, up to 3 stacks",
+              "shortDescription": "Disorder DMG +10% per stack",
+              "source": "gameMode",
+              "target": "team",
+              "maxStacks": 3,
+              "perStack": { "disorderDmgBonus": 0.1 }
+            },
+            {
+              "id": "game_mode_sd_room2_effect_b",
+              "label": "Fire & Ultimate DMG",
+              "description": "Increases Fire DMG by 15% and Ultimate DMG by 20%",
+              "shortDescription": "Fire DMG +15%, Ultimate DMG +20%",
+              "source": "gameMode",
+              "target": "team",
+              "damageBonuses": [
+                { "type": "element", "element": "fire", "value": 0.15 },
+                { "type": "skillType", "skillType": "ultimate", "value": 0.2 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "room_3",
+          "label": "Room 3",
+          "effects": [
+            {
+              "id": "game_mode_sd_room3_effect_a",
+              "label": "Ice DMG & PEN Ratio",
+              "description": "Increases Ice DMG by 10% and PEN Ratio by 12%",
+              "shortDescription": "Ice DMG +10%, PEN Ratio +12%",
+              "source": "gameMode",
+              "target": "team",
+              "flat": { "iceDmgBonus": 0.1, "penRatio": 0.12 }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

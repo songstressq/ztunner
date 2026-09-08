@@ -1,0 +1,180 @@
+{
+  "id": "ode_of_resurrected_wings",
+  "name": "Ode of Resurrected Wings",
+  "rarity": "S",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "ATK%",
+
+  "stats": {
+    "base": 743,
+    "advanced": 0.36
+  },
+
+  "ingameEffects": [
+    {
+      "id": "ode_of_resurrected_wings-paradise_lost-anomaly_proficiency",
+      "source": "wEngine",
+      "sourceId": "ode_of_resurrected_wings",
+      "label": "Paradise Lost (W-Engine Passive)",
+      "description": "Increases Anomaly Proficiency. When the equipper triggers a Refringe reaction, they gain increased Anomaly DMG, and all squad members gain increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "anomalyProficiency": 96 }
+          },
+          {
+            "level": 2,
+            "stats": { "anomalyProficiency": 105 }
+          },
+          {
+            "level": 3,
+            "stats": { "anomalyProficiency": 115 }
+          },
+          {
+            "level": 4,
+            "stats": { "anomalyProficiency": 125 }
+          },
+          {
+            "level": 5,
+            "stats": { "anomalyProficiency": 135 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    },
+
+    {
+      "id": "ode_of_resurrected_wings-paradise_lost-anomaly_dmg",
+      "source": "wEngine",
+      "sourceId": "ode_of_resurrected_wings",
+      "label": "Energetic Strike (W-Engine Passive)",
+      "description": "Increases Anomaly Proficiency. When the equipper triggers a Refringe reaction, they gain increased Anomaly DMG, and all squad members gain increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's Attribute Anomaly DMG for 30s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.2
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.23
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.26
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.29
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "anomalyDmgBonus",
+                "value": 0.32
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    },
+
+    {
+      "id": "ode_of_resurrected_wings-paradise_lost-dmg_bonus",
+      "source": "wEngine",
+      "sourceId": "ode_of_resurrected_wings",
+      "label": "Energetic Strike (W-Engine Passive)",
+      "description": "Increases Anomaly Proficiency. When the equipper triggers a Refringe reaction, they gain increased Anomaly DMG, and all squad members gain increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
+      "shortDescription": "All squad members' DMG is increased for 30s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.3
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.345
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.39
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.435
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.48
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

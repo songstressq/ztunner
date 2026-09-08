@@ -1,0 +1,1320 @@
+{
+  "id": "zhao",
+  "name": "Zhao",
+  "specialty": "Defense",
+  "faction": "Krampus Compliance Authority",
+  "attribute": "Ice",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Zhao",
+  "attributeIcon": "Ice",
+  "themeColor": "#F2AAAC",
+  "baseStats": {
+    "hp": 9117.4,
+    "atk": 690.66,
+    "def": 701.89
+  },
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 96,
+    "anomalyMastery": 93,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["HP"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "hpPercent": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "hpPercent": 0.06
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "hpPercent": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "hpPercent": 0.06
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "hpPercent": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "hpPercent": 0.06
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "hpPercent": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "zhao-core_1-ideal_colleague",
+      "source": "core",
+      "sourceId": "zhao-core",
+      "label": "Ideal Colleague (Core Passive)",
+      "description": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining 1.4% CRIT Rate for every 1,000 initial Max HP.",
+      "shortDescription": "Zhao's CRIT Rate is increased based on her initial HP.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1000,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 99999,
+            "perUnitBonus": 0.014
+          }
+        ],
+        "affectedStats": ["critRate"]
+      }
+    },
+    {
+      "id": "zhao-core_2-ideal_colleague",
+      "source": "core",
+      "sourceId": "zhao-core",
+      "label": "Ideal Colleague (Core Passive)",
+      "description": "When Zhao activates her Entry Skill, all Frostbite Points are consumed to activate Ether Veil: Wellspring. While Ether Veil: Wellspring is active, all squad members gain 5% Max HP for 40s. Re-activating Ether Veil: Wellspring ends the existing instance before applying a new Ether Veil: Wellspring.",
+      "shortDescription": "All squad members' Max HP is increased by 5% while Ether Veil: Wellspring is active.",
+      "target": "team",
+      "flat": {
+        "hpPercentRaw": 0.05
+      }
+    },
+    {
+      "id": "zhao-core_3-ideal_colleague",
+      "source": "core",
+      "sourceId": "zhao-core",
+      "label": "Ideal Colleague (Core Passive)",
+      "description": "When Zhao activates Ether Veil: Wellspring, all squad members' ATK increase by 1000 for 50s. Repeated triggers reset the duration.",
+      "shortDescription": "All squad members' ATK is increased by 1000 for 50s.",
+      "target": "team",
+      "flat": {
+        "atkFlatRaw": 1000
+      }
+    },
+    {
+      "id": "zhao-core-crystallization",
+      "source": "core",
+      "sourceId": "zhao-core",
+      "label": "Crystallization (Additional Ability)",
+      "description": "When another character in your squad is an Attack, Anomaly, or Support character: When Zhao is within any Ether Veil, the whole squad's DMG increases by 10%. If Zhao's initial Max HP exceeds 15,000, every additional 400 initial Max HP increases this DMG bonus by an additional 1%, up to a total maximum increase of 40%. This bonus reaches its maximum when Zhao's initial Max HP reaches 27,000.",
+      "shortDescription": "All squad members' DMG is increased based on Zhao's initial HP.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBasedDamageBonus",
+        "basedOn": "hp",
+        "threshold": 15000,
+        "baseBonus": 0.1,
+        "perUnit": 400,
+        "skillLevels": [
+          {
+            "level": 1,
+            "perUnitBonus": 0.01,
+            "maxBonus": 0.4
+          }
+        ],
+        "damageBonusType": "global"
+      }
+    },
+    {
+      "id": "zhao-mindscape_1-righteous_verdict",
+      "source": "mindscape",
+      "sourceId": "zhao-mindscape_1",
+      "label": "Righteous Verdict (Mindscape Cinema N°1)",
+      "description": "When Zhao switches out of being the active character, all squad members' DMG ignores 15% of the target's All-Attribute RES for 50s.",
+      "shortDescription": "The target's All-Attribute RES is reduced by 15% for 50s.",
+      "target": "team",
+      "perStack": {
+        "fireResShred": 0.15,
+        "iceResShred": 0.15,
+        "electricResShred": 0.15,
+        "physicalResShred": 0.15,
+        "etherResShred": 0.15,
+        "windResShred": 0.15
+      }
+    },
+    {
+      "id": "zhao-mindscape_2_1-krampus_senior",
+      "source": "mindscape",
+      "sourceId": "zhao-mindscape_2_1",
+      "label": "Krampus Senior (Mindscape Cinema N°2)",
+      "description": "When Zhao recovers HP, her ATK increases by 20%, and other squad members' ATK increases by 15% for 50s. Repeated triggers reset the duration.",
+      "shortDescription": "Zhao's ATK is increased by 20% for 50s.",
+      "target": "self",
+      "flat": {
+        "atkPercentRaw": 0.2
+      },
+      "linkedEffects": ["zhao-mindscape_2_2-krampus_senior"]
+    },
+    {
+      "id": "zhao-mindscape_2_2-krampus_senior",
+      "source": "mindscape",
+      "sourceId": "zhao-mindscape_2_2",
+      "label": "Krampus Senior (Mindscape Cinema N°2)",
+      "description": "When Zhao recovers HP, her ATK increases by 20%, and other squad members' ATK increases by 15% for 50s. Repeated triggers reset the duration.",
+      "shortDescription": "The remaining squad members' ATK is increased by 15% for 50s.",
+      "target": "team",
+      "flat": {
+        "atkPercentRaw": 0.15
+      },
+      "condition": {
+        "excludeOwner": true
+      }
+    },
+    {
+      "id": "zhao-mindscape_4-featherlight_footsteps",
+      "source": "mindscape",
+      "sourceId": "zhao-mindscape_4",
+      "label": "Featherlight Footsteps (Mindscape Cinema N°4)",
+      "description": "When Zhao activates an Ether Veil, she gains 250 Decibels. The CRIT DMG of her Ultimate, Chain Attack, and Basic Attack: Final Verdict increase by 40%.",
+      "shortDescription": "Zhao's CRIT DMG from Basic Attack: Final Verdict, Chain Attack: Temporary Alliance and Ultimate: Bunny Barrage is increased by 40%.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "critDmg",
+          "type": "exclusive",
+          "appliesTo": [
+            "zhao-basic_attack-final_verdict",
+            "zhao-chain_attack-temporary_alliance",
+            "zhao-ultimate-bunny_barrage"
+          ],
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "zhao-mindscape_6-no_value_has_its_own_value",
+      "source": "mindscape",
+      "sourceId": "zhao-mindscape_6",
+      "label": "No Value Has It's Own Value (Mindscape Cinema N°6)",
+      "description": "The CRIT Rate buff from Core Passive: Ideal Colleague increases to 125% of the original value. The extra DMG gained from charging during Basic Attack: Final Verdict increases to 140% of the original value, and accumulated charge time is no longer consumed when attacking.",
+      "shortDescription": "Zhao's CRIT Rate is further increased based on her initial HP. The additional damage from Basic Attack: Final Verdict is available in the damage calculator.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1000,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 99999,
+            "perUnitBonus": 0.0175
+          }
+        ],
+        "affectedStats": ["critRate"]
+      }
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "zhao-basic_attack-glacial_judgment",
+        "name": "Glacial Judgment (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunches up to five slashes forward, the first dealing Physical DMG, and the following four Ice DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [73.4, 66, 115.8, 185.6, 386.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [80.1, 72, 126.4, 202.5, 421.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [86.8, 78, 137, 219.4, 456.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [93.5, 84, 147.6, 236.3, 492]
+          },
+          {
+            "level": 5,
+            "multipliers": [100.2, 90, 158.2, 253.2, 527.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [106.9, 96, 168.8, 270.1, 562.4]
+          },
+          {
+            "level": 7,
+            "multipliers": [113.6, 102, 179.4, 287, 597.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [120.3, 108, 190, 303.9, 632.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [127, 114, 200.6, 320.8, 668]
+          },
+          {
+            "level": 10,
+            "multipliers": [133.7, 120, 211.2, 337.7, 703.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [140.4, 126, 221.8, 354.6, 738.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [147.1, 132, 232.4, 371.5, 773.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [153.8, 138, 243, 388.4, 808.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [160.5, 144, 253.6, 405.3, 844]
+          },
+          {
+            "level": 15,
+            "multipliers": [167.2, 150, 264.2, 422.2, 879.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [173.9, 156, 274.8, 439.1, 914.4]
+          }
+        ]
+      },
+      {
+        "id": "zhao-basic_attack-final_verdict",
+        "name": "Final Verdict (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nAfter getting ready, Zhao starts charging up, then launches a forward slash on release, dealing massive Ice DMG.\n\nWhile charging, Zhao accumulates up to 5s of charge time. When the /bFinishing Move//b of /bBasic Attack: Final Verdict//b, /bChain Attack//b, or /bAssist Follow-Up//b hits, the stored charge time is consumed to deal additional DMG. For every 1 second of charge time, Zhao deals a percentage of Max HP as additional DMG.\n\nWhen Zhao is in any /bEther Veil//b, if she gets switched out while charging, the charge can continue. If /bFrostbite Points//b are maxed out when the skill activates, all /bFrostbite Points//b are consumed to trigger /bEther Veil: Wellspring//b and a /bQuick Assist//b. If a squadmate is then switched in via /bQuick Assist//b, Zhao automatically follows up with /bBasic Attack: Final Verdict//b and begins charging. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%. While not the currently controlled character, the character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [69.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [76.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [82.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [88.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [95.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [101.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [108.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [114.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [120.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [127.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [133.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [140.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [146.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [152.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [159.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [165.7]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "zhao-dash_attack-bouncing_dash",
+        "name": "Bouncing Dash (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nSlashes forward, dealing Physical DMG and Ice DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [86.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [94.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [102.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [110]
+          },
+          {
+            "level": 5,
+            "multipliers": [117.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [125.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [133.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [141.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [149.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [157.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [165.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [173.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [181.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [189]
+          },
+          {
+            "level": 15,
+            "multipliers": [196.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [204.8]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "zhao-dodge_counter-swift_blink",
+        "name": "Swift Blink (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPerforms a falling slash ahead, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [338.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [369.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [400.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [431.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [462]
+          },
+          {
+            "level": 6,
+            "multipliers": [492.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [523.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [554.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [585.2]
+          },
+          {
+            "level": 10,
+            "multipliers": [616]
+          },
+          {
+            "level": 11,
+            "multipliers": [646.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [677.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [708.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [739.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [770]
+          },
+          {
+            "level": 16,
+            "multipliers": [800.8]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "zhao-entry_skill-burst_of_frost",
+        "name": "Burst of Frost (Entry Skill)",
+        "description": "When Zhao has maximum /bFrostbite Points//b, and is in combat, press [ASSIST] to activate:\n\nLaunches consecutive attacks forward, followed by a slash, dealing massive Ice DMG. Upon activating this skill, all /bFrostbite Points//b are consumed to activate /bEther Veil: Wellspring//b. Upon activating this skill, a /bQuick Assist//b is triggered. If a squadmate is then switched in via /bQuick Assist//b, Zhao automatically follows up with /bBasic Attack: Final Verdict//b and begins charging. Activating this skill is considered as activating a /bQuick Assist//b. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [680.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [742.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [804.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [866]
+          },
+          {
+            "level": 5,
+            "multipliers": [927.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [989.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [1051.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [1113.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [1175.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [1237.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [1299.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1361.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1423.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1485]
+          },
+          {
+            "level": 15,
+            "multipliers": [1546.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [1608.8]
+          }
+        ]
+      },
+      {
+        "id": "zhao-quick_assist-patch_the_gaps",
+        "name": "Patch the Gaps (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nLaunches a falling slash in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [176]
+          },
+          {
+            "level": 2,
+            "multipliers": [192]
+          },
+          {
+            "level": 3,
+            "multipliers": [208]
+          },
+          {
+            "level": 4,
+            "multipliers": [224]
+          },
+          {
+            "level": 5,
+            "multipliers": [240]
+          },
+          {
+            "level": 6,
+            "multipliers": [256]
+          },
+          {
+            "level": 7,
+            "multipliers": [272]
+          },
+          {
+            "level": 8,
+            "multipliers": [288]
+          },
+          {
+            "level": 9,
+            "multipliers": [304]
+          },
+          {
+            "level": 10,
+            "multipliers": [320]
+          },
+          {
+            "level": 11,
+            "multipliers": [336]
+          },
+          {
+            "level": 12,
+            "multipliers": [352]
+          },
+          {
+            "level": 13,
+            "multipliers": [368]
+          },
+          {
+            "level": 14,
+            "multipliers": [384]
+          },
+          {
+            "level": 15,
+            "multipliers": [400]
+          },
+          {
+            "level": 16,
+            "multipliers": [416]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "zhao-assist_follow_up-frostlight_reflection",
+        "name": "Frostlight Reflection (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nLaunch multiple slashes in front, dealing massive Ice DMG. Upon activating this skill, if /bFrostbite Points//b are maxed out, all /bFrostbite Points//b are consumed to activate /bEther Veil: Wellspring//b.\n\nUpon activating this skill while in any /bEther Veil//b, a /bQuick Assist//b is triggered. If a squadmate is then switched in via /bQuick Assist//b, Zhao automatically follows up with /bBasic Attack: Final Verdict//b and begins charging. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [366.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [399.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [432.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [466]
+          },
+          {
+            "level": 5,
+            "multipliers": [499.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [532.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [565.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [599.2]
+          },
+          {
+            "level": 9,
+            "multipliers": [632.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [665.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [699.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [732.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [765.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [799]
+          },
+          {
+            "level": 15,
+            "multipliers": [832.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [865.6]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "zhao-special_attack-shatterfrost_surge",
+        "name": "Shatterfrost Surge (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunches a forward slash, dealing Ice DMG. Upon activating this skill, consumes 5% of current HP to grant all squad members HP regeneration equal to a percentage of Zhao's Max HP per second for 5s. The HP-consuming effects of /bSpecial Attack: Shatterfrost Surge//b and /bEX Special Attack: Frostflow Tundra//b can trigger at most once every 30s.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [56.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [62.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [67.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [72.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [77.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [82.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [88.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [93.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [98.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [103.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [108.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [114.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [119.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [124.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [129.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [134.9]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "zhao-ex_special_attack-frostflow_tundra",
+        "name": "Frostflow Tundra (EX Special Attack)",
+        "description": "With enough energy, press [EX] to activate:\n\nLaunches multiple forward slashes, dealing massive Ice DMG. Upon activating this skill, consumes 5% of current HP to grant all squad members HP regeneration equal to a percentage of Zhao's Max HP per second for 5s. The HP-consuming effects of /bSpecial Attack: Shatterfrost Surge//b and /bEX Special Attack: Frostflow Tundra//b can trigger at most once every 30s.\n\nUpon activating this skill, gain 20 /bFrostbite Points//b. If /bFrostbite Points//b are maxed out, all /bFrostbite Points//b are consumed to activate /bEther Veil: Wellspring//b.\n\nUpon activating this skill while in any /bEther Veil//b, a /bQuick Assist//b is triggered. If a squadmate is then switched in via /bQuick Assist//b, Zhao automatically follows up with /bBasic Attack: Final Verdict//b and begins charging. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1210.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [1320.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [1431]
+          },
+          {
+            "level": 4,
+            "multipliers": [1541.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [1651.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [1761.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [1871.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1981.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [2091.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [2201.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [2311.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [2421.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [2532]
+          },
+          {
+            "level": 14,
+            "multipliers": [2642.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [2752.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [2862.3]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "zhao-chain_attack-temporary_alliance",
+        "name": "Temporary Alliance (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunches multiple slashes in front, dealing massive Ice DMG. After using this skill, gains 5 /bFrostbite Points//b. If /bFrostbite Points//b are maxed out, all /bFrostbite Points//b are consumed to activate /bEther Veil: Wellspring//b.\n\nUpon activating this skill while in any /bEther Veil//b, a /bQuick Assist//b is triggered. If a squadmate is then switched in via /bQuick Assist//b, Zhao automatically follows up with /bBasic Attack: Final Verdict//b and begins charging. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [770.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [840.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [911]
+          },
+          {
+            "level": 4,
+            "multipliers": [981.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [1051.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [1121.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [1191.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1261.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [1331.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1401.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [1471.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1541.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1612]
+          },
+          {
+            "level": 14,
+            "multipliers": [1682.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1752.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1822.3]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "zhao-ultimate-bunny_barrage",
+        "name": "Bunny Barrage (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunches consecutive attacks in front, followed by a falling slash, dealing massive Ice DMG. After using this skill, gains 20 /bFrostbite Points//b. If /bFrostbite Points//b are maxed out, all /bFrostbite Points//b are consumed to activate /bEther Veil: Wellspring//b.\n\nUpon activating this skill while in any /bEther Veil//b, a /bQuick Assist//b is triggered. If a squadmate is then switched in via /bQuick Assist//b, Zhao automatically follows up with /bBasic Attack: Final Verdict//b and begins charging. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [2187.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [2386.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [2585.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [2784]
+          },
+          {
+            "level": 5,
+            "multipliers": [2982.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [3181.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [3380.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [3579.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [3778.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [3977.4]
+          },
+          {
+            "level": 11,
+            "multipliers": [4176.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [4375.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [4574.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [4773]
+          },
+          {
+            "level": 15,
+            "multipliers": [4971.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [5170.8]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "zhao-basic_attack-final_verdict_charge",
+        "name": "Basic Attack: Final Verdict - Additional DMG (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nAfter getting ready, Zhao starts charging up, then launches a forward slash on release, dealing massive Ice DMG.\n\nWhile charging, Zhao accumulates up to 5s of charge time. When the /bFinishing Move//b of /bBasic Attack: Final Verdict//b, /bChain Attack//b, or /bAssist Follow-Up//b hits, the stored charge time is consumed to deal additional DMG. For every 1 second of charge time, Zhao deals X% of Max HP as additional DMG.\n\nWhen Zhao is in any /bEther Veil//b, if she gets switched out while charging, the charge can continue. If /bFrostbite Points//b are maxed out when the skill activates, all /bFrostbite Points//b are consumed to trigger /bEther Veil: Wellspring//b and a /bQuick Assist//b. If a squadmate is then switched in via /bQuick Assist//b, Zhao automatically follows up with /bBasic Attack: Final Verdict//b and begins charging. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%. While not the currently controlled character, the character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "hp",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [13]
+          },
+          {
+            "level": 2,
+            "multipliers": [14]
+          },
+          {
+            "level": 3,
+            "multipliers": [15]
+          },
+          {
+            "level": 4,
+            "multipliers": [16]
+          },
+          {
+            "level": 5,
+            "multipliers": [17]
+          },
+          {
+            "level": 6,
+            "multipliers": [18]
+          },
+          {
+            "level": 7,
+            "multipliers": [19]
+          },
+          {
+            "level": 8,
+            "multipliers": [20]
+          },
+          {
+            "level": 9,
+            "multipliers": [21]
+          },
+          {
+            "level": 10,
+            "multipliers": [22]
+          },
+          {
+            "level": 11,
+            "multipliers": [23]
+          },
+          {
+            "level": 12,
+            "multipliers": [24]
+          },
+          {
+            "level": 13,
+            "multipliers": [25]
+          },
+          {
+            "level": 14,
+            "multipliers": [26]
+          },
+          {
+            "level": 15,
+            "multipliers": [27]
+          },
+          {
+            "level": 16,
+            "multipliers": [28]
+          }
+        ]
+      },
+      {
+        "id": "zhao-mindscape-no_value_has_its_own_value",
+        "name": "No Value has It's Own Value - Additional DMG (Mindscape Cinema N°6)",
+        "description": "The CRIT Rate buff from /bCore Passive: Ideal Colleague//b increases to 125% of the original value. The extra DMG gained from charging during /bBasic Attack: Final Verdict//b increases to 140% of the original value, and accumulated charge time is no longer consumed when attacking.",
+        "skillType": "basic",
+        "statBase": "hp",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [18.2]
+          },
+          {
+            "level": 2,
+            "multipliers": [19.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [21]
+          },
+          {
+            "level": 4,
+            "multipliers": [22.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [23.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [25.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [26.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [28]
+          },
+          {
+            "level": 9,
+            "multipliers": [29.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [30.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [32.2]
+          },
+          {
+            "level": 12,
+            "multipliers": [33.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [35]
+          },
+          {
+            "level": 14,
+            "multipliers": [36.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [37.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [39.2]
+          }
+        ]
+      }
+    ]
+  }
+}

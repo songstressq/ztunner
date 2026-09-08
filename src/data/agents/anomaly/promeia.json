@@ -1,0 +1,1233 @@
+{
+  "id": "promeia",
+  "name": "Promeia",
+  "specialty": "Anomaly",
+  "faction": "Krampus Compliance Authority",
+  "attribute": "Ice",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Promeia",
+  "attributeIcon": "Ice",
+  "themeColor": "#8169FB",
+  "baseStats": {
+    "hp": 7788,
+    "atk": 797,
+    "def": 612
+  },
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 114,
+    "anomalyMastery": 112,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Proficiency", "Anomaly Mastery", "ATK"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "anomalyMastery": 12
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "anomalyMastery": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "promeia-core-thief_of_flames",
+      "source": "core",
+      "sourceId": "promeia-core",
+      "label": "Thief of Flames (Core Passive)",
+      "description": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's Abloom DMG by 0.35%. ...",
+      "shortDescription": "Promeia's Anomaly Proficiency is increased based on her initial Anomaly Mastery.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "anomalyMastery",
+        "threshold": 150,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 99999,
+            "perUnitBonus": 1.5
+          }
+        ],
+        "affectedStats": ["anomalyProficiency"]
+      }
+    },
+    {
+      "id": "promeia-mindscape_1-innocent_idealism",
+      "source": "mindscape",
+      "sourceId": "promeia-mindscape_1",
+      "label": "Innocent Idealism (Mindscape Cinema N°1)",
+      "description": "When Promeia uses Ultimate: Glaciating Impalement, she gains an additional effect: if Trial by Cold points are not at maximum, gain 1 point of Trial by Cold. This effect can trigger once after using Ultimate: Glaciating Impalement. When any squad member triggers Abloom on enemies with Presumption of Guilt, it ignores an additional 20% DEF.",
+      "shortDescription": "This mindscape cinema does not affect Promeia's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "promeia-mindscape_2-faltering_conviction",
+      "source": "mindscape",
+      "sourceId": "promeia-mindscape_2",
+      "label": "Faltering Conviction (Mindscape Cinema N°2)",
+      "description": "Promeia's Anomaly Proficiency increases by 40. The multiplier of Abloom triggered by consuming Trial by Cold increases by 120%.",
+      "shortDescription": "Promeia's Anomaly Proficiency is increased by 40.",
+      "target": "self",
+      "flat": {
+        "anomalyProficiency": 40
+      }
+    },
+    {
+      "id": "promeia-mindscape_4-ruthless_accusation",
+      "source": "mindscape",
+      "sourceId": "promeia-mindscape_4",
+      "label": "Ruthless Accusation (Mindscape Cinema N°4)",
+      "description": "When Promeia triggers Abloom, she restores 5 Corrosive Chill. This effect can trigger once every 0.5s.",
+      "shortDescription": "This mindscape cinema does not affect Promeia's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "promeia-mindscape_6-to_be_continued",
+      "source": "mindscape",
+      "sourceId": "promeia-mindscape_6",
+      "label": "To Be Continued (Mindscape Cinema N°6)",
+      "description": "When Promeia consumes Trial by Cold to trigger Abloom, it triggers an additional special Abloom effect, dealing Attribute Anomaly DMG of the corresponding attribute at a fixed 200% multiplier. 5 Corrosive Chill and 100 Decibels are also restored. This effect can trigger at most once every 15s. In addition, Attribute Anomaly DMG and Disorder DMG dealt by Promeia ignore 15% of enemies' All-Attribute RES.",
+      "shortDescription": "Promeia's Anomaly and Disorder DMG ignores 15% of the target's All-Attribute RES.",
+      "target": "self",
+      "flat": {
+        "iceResShred": 0.15,
+        "etherResShred": 0.15,
+        "fireResShred": 0.15,
+        "electricResShred": 0.15,
+        "physicalResShred": 0.15,
+        "windResShred": 0.15
+      },
+      "condition": {
+        "appliesToAnomalyOnly": true,
+        "appliesToDisorderOnly": true
+      }
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "promeia-basic_attack-sweeping_edge",
+        "name": "Sweeping Edge (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerforms up to five attacks against enemies ahead, dealing Ice DMG. After landing the fifth hit's downward attack, and with sufficient /bTrial by Cold//b, keep holding [SPECIAL] or [BASIC] to chain into /bEX Special Attack: Execution - Merciless Judgment//b.\n\nEnters the /bBound Absolution//b state after throwing the cape during the fourth hit.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          { "name": "1st-Hit DMG Multiplier", "damageType": "ice" },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [49.8, 103.2, 190.9, 204.7, 241.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [54.4, 112.6, 208.3, 223.4, 263.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [59, 122, 225.7, 242.1, 285.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [63.6, 131.4, 243.1, 260.8, 307.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [68.2, 140.8, 260.5, 279.5, 329.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [72.8, 150.2, 277.9, 298.2, 351.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [77.4, 159.6, 295.3, 316.9, 373.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [82, 169, 312.7, 335.6, 395.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [86.6, 178.4, 330.1, 354.3, 417.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [91.2, 187.8, 347.5, 373, 439.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [95.8, 197.2, 364.9, 391.7, 461.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [100.4, 206.6, 382.3, 410.4, 483.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [105, 216, 399.7, 429.1, 505.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [109.6, 225.4, 417.1, 447.8, 527.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [114.2, 234.8, 434.5, 466.5, 549.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [118.8, 244.2, 451.9, 485.2, 571.5]
+          }
+        ]
+      },
+      {
+        "id": "promeia-basic_attack-whirling_blade",
+        "name": "Whirling Blade (Basic Attack)",
+        "description": "Hold [BASIC] to activate:\n\nPromeia leaps into the air and attacks, throwing her cape beside the enemy and entering the /bBound Absolution//b state, dealing Ice DMG. Hitting enemies does not accumulate /bCorrosive Chill//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [175.5]
+          },
+          {
+            "level": 2,
+            "multipliers": [191.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [207.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [223.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [239.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [255.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [271.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [287.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [303.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [319.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [335.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [351.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [367.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [383.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [399.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [415.5]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "promeia-dash_attack-grim_reap",
+        "name": "Grim Reap (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nDelivers a quick attack forward, dealing Ice DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [56.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [61.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [66.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [71.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [77.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [82.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [87.5]
+          },
+          {
+            "level": 8,
+            "multipliers": [92.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [97.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [103.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [108.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [113.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [118.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [123.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [129.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [134.3]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "promeia-dodge_counter-soaring_bat",
+        "name": "Soaring Bat (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nUnleashes consecutive attacks against the target, dealing Ice DMG. After using this skill, it can be immediately followed up with the 5th hit of /bBasic Attack: Sweeping Edge//b. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [335.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [366.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [396.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [427.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [458.1]
+          },
+          {
+            "level": 6,
+            "multipliers": [488.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [519.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [549.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [580.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [611.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [641.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [672.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [702.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [733.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [764.1]
+          },
+          {
+            "level": 16,
+            "multipliers": [794.7]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "promeia-quick_assist-ambushing_strike",
+        "name": "Ambushing Strike (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nUnleashes consecutive attacks against the target, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [79.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [86.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [93.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [100.7]
+          },
+          {
+            "level": 5,
+            "multipliers": [107.9]
+          },
+          {
+            "level": 6,
+            "multipliers": [115.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [122.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [129.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [136.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [143.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [151.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [158.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [165.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [172.7]
+          },
+          {
+            "level": 15,
+            "multipliers": [179.9]
+          },
+          {
+            "level": 16,
+            "multipliers": [187.1]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "promeia-assist_follow_up-intercepting_strike",
+        "name": "Intercepting Strike (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleashes consecutive attacks against the target, dealing Ice DMG. After using this skill, it can be immediately followed up with the 5th hit of /bBasic Attack: Sweeping Edge//b. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [469]
+          },
+          {
+            "level": 2,
+            "multipliers": [511.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [554.4]
+          },
+          {
+            "level": 4,
+            "multipliers": [597.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [639.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [682.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [725.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [767.9]
+          },
+          {
+            "level": 9,
+            "multipliers": [810.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [853.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [896]
+          },
+          {
+            "level": 12,
+            "multipliers": [938.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [981.4]
+          },
+          {
+            "level": 14,
+            "multipliers": [1024.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1066.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [1109.5]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "promeia-special_attack-execution_cold_flash",
+        "name": "Execution - Cold Flash (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunches a flying blade attack, dealing Ice DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [127.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [139.5]
+          },
+          {
+            "level": 3,
+            "multipliers": [151.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [162.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [174.6]
+          },
+          {
+            "level": 6,
+            "multipliers": [186.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [198]
+          },
+          {
+            "level": 8,
+            "multipliers": [209.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [221.4]
+          },
+          {
+            "level": 10,
+            "multipliers": [233.1]
+          },
+          {
+            "level": 11,
+            "multipliers": [244.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [256.5]
+          },
+          {
+            "level": 13,
+            "multipliers": [268.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [279.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [291.6]
+          },
+          {
+            "level": 16,
+            "multipliers": [303.3]
+          }
+        ]
+      },
+      {
+        "id": "promeia-special_attack-execution_descending_frost",
+        "name": "Execution - Descending Frost (Special Attack)",
+        "description": "While under the /bAbsolute Order//b effect, press [BASIC] or [SPECIAL] while in the /bBound Absolution//b state to activate:\n\nLeaps toward the enemy, retrieving the cape while performing a descending attack that deals Ice DMG. After landing, if Promeia possesses /bTrial by Cold//b, keep holding [BASIC] or [SPECIAL] to chain into /bEX Special Attack: Execution - Merciless Judgment//b. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [383.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [418.7]
+          },
+          {
+            "level": 3,
+            "multipliers": [453.6]
+          },
+          {
+            "level": 4,
+            "multipliers": [488.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [523.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [558.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [593.2]
+          },
+          {
+            "level": 8,
+            "multipliers": [628.1]
+          },
+          {
+            "level": 9,
+            "multipliers": [663]
+          },
+          {
+            "level": 10,
+            "multipliers": [697.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [732.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [767.7]
+          },
+          {
+            "level": 13,
+            "multipliers": [802.6]
+          },
+          {
+            "level": 14,
+            "multipliers": [837.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [872.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [907.3]
+          }
+        ]
+      },
+      {
+        "id": "promeia-special_attack-execution_layered_frost",
+        "name": "Execution - Layered Frost (Special Attack)",
+        "description": "After triggering /bEX Special Attack: Execution - Shrouded in Shadow//b, press [BASIC] or [SPECIAL] to activate:\n\nQuickly launches a flurry of attacks, then leaps toward the enemy, retrieving the cape while performing a more powerful downward attack that deals Ice DMG. After landing, if Promeia possesses /bTrial by Cold//b, keep holding [BASIC] or [SPECIAL] to chain into /bEX Special Attack: Execution - Merciless Judgment//b. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Blade Slash Total DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [608.2, 12.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [663.5, 13.2]
+          },
+          {
+            "level": 3,
+            "multipliers": [718.8, 14.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [774.1, 15.4]
+          },
+          {
+            "level": 5,
+            "multipliers": [829.4, 16.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [884.7, 17.6]
+          },
+          {
+            "level": 7,
+            "multipliers": [940, 18.7]
+          },
+          {
+            "level": 8,
+            "multipliers": [995.3, 19.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [1050.6, 20.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [1105.9, 22]
+          },
+          {
+            "level": 11,
+            "multipliers": [1161.2, 23.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1216.5, 24.2]
+          },
+          {
+            "level": 13,
+            "multipliers": [1271.8, 25.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [1327.1, 26.4]
+          },
+          {
+            "level": 15,
+            "multipliers": [1382.4, 27.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1437.7, 28.6]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "promeia-ex_special_attack-execution_glacial_death",
+        "name": "Execution - Glacial Death (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nPerforms a flying blade attack, throwing her cape beside the enemy and entering the /bBound Absolution//b state, dealing Ice DMG. If attacked by an enemy shortly after using the move, automatically chains into /bEX Special Attack: Execution - Shrouded in Shadow//b. Upon use, Promeia gains the /bAbsolute Order//b effect. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Blade Throw Total DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [79.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [86.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [93.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [101.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [108.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [115.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [123.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [130.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [137.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [145]
+          },
+          {
+            "level": 11,
+            "multipliers": [152.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [159.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [166.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [174.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [181.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [188.8]
+          }
+        ]
+      },
+      {
+        "id": "promeia-ex_special_attack-execution_merciless_judgment",
+        "name": "Execution - Merciless Judgment (EX Special Attack)",
+        "description": "With enough /bTrial by Cold//b and after performing the final hit of /bBasic Attack: Sweeping Edge//b, /bSpecial Attack: Execution - Descending Frost//b, or /bSpecial Attack: Execution - Layered Frost//b, keep holding [BASIC] or [SPECIAL] after landing to activate:\n\nQuickly leaps back while unleashing a more powerful finishing move, dealing Ice DMG. Hitting enemies does not accumulate /bCorrosive Chill//b. After using this skill, hold [BASIC] or [SPECIAL], or press [BASIC] to immediately follow up with the 5th hit of /bBasic Attack: Sweeping Edge//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [512.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [558.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [605.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [652.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [698.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [745.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [791.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [838.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [885.1]
+          },
+          {
+            "level": 10,
+            "multipliers": [931.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [978.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [1024.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1071.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [1118.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [1164.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [1211.3]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "promeia-chain_attack-hanging_judgment",
+        "name": "Hanging Judgment (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nThrows flying blades and hangs upside down above the enemy, unleashing a flurry of attacks and ending with a finishing move, dealing massive Ice DMG.\n\nWhen the heavy attack hits an enemy afflicted with Ice Anomaly, Ether Anomaly, Electric Anomaly, Fire Anomaly, Physical Anomaly, or Wind Anomaly, it triggers /bAbloom//b once, dealing 100% Attribute Anomaly DMG of the corresponding attribute. After using this skill, it can be immediately followed up with the 5th hit of /bBasic Attack: Sweeping Edge//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [830.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [906.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [982]
+          },
+          {
+            "level": 4,
+            "multipliers": [1057.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [1133.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [1208.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [1284.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [1360]
+          },
+          {
+            "level": 9,
+            "multipliers": [1435.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [1511.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [1586.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [1662.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1738]
+          },
+          {
+            "level": 14,
+            "multipliers": [1813.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [1889.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [1964.8]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "promeia-ultimate-glaciating_impalement",
+        "name": "Glaciating Impalement (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunches a series of forward attacks, dealing massive Ice DMG. When the heavy attack hits an enemy afflicted with Ice Anomaly, Ether Anomaly, Electric Anomaly, Fire Anomaly, Physical Anomaly, or Wind Anomaly, it triggers /bAbloom//b once, dealing 250% Attribute Anomaly DMG of the corresponding attribute. After using this skill, it can be immediately followed up with the 5th hit of /bBasic Attack: Sweeping Edge//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1538.4]
+          },
+          {
+            "level": 2,
+            "multipliers": [1678.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [1818.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [1958.1]
+          },
+          {
+            "level": 5,
+            "multipliers": [2098]
+          },
+          {
+            "level": 6,
+            "multipliers": [2237.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [2377.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [2517.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [2657.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [2797.5]
+          },
+          {
+            "level": 11,
+            "multipliers": [2937.4]
+          },
+          {
+            "level": 12,
+            "multipliers": [3077.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [3217.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [3357.1]
+          },
+          {
+            "level": 15,
+            "multipliers": [3497]
+          },
+          {
+            "level": 16,
+            "multipliers": [3636.9]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": []
+  }
+}

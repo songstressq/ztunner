@@ -1,0 +1,1264 @@
+{
+  "id": "lighter",
+  "name": "Lighter",
+  "specialty": "Stun",
+  "faction": "Sons of Calydon",
+  "attribute": "Fire",
+  "rarity": "S",
+  "fullName": "",
+  "displayName": "Lighter",
+  "attributeIcon": "Fire",
+  "themeColor": "#CFAB82",
+  "baseStats": {
+    "hp": 8253.3,
+    "atk": 722.96,
+    "def": 612.6
+  },
+  "combatBase": {
+    "impact": 119,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 91,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Impact"]
+  },
+  "coreEnhancement": [
+    {
+      "level": 0,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 0
+      }
+    },
+    {
+      "level": 1,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 2,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 3,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 4,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    },
+    {
+      "level": 5,
+      "stats": {
+        "atkFlat": 0,
+        "impact": 6
+      }
+    },
+    {
+      "level": 6,
+      "stats": {
+        "atkFlat": 25,
+        "impact": 0
+      }
+    }
+  ],
+  "ingameEffects": [
+    {
+      "id": "lighter-core_1-accelerant",
+      "source": "core",
+      "sourceId": "lighter-core",
+      "label": "Accelerant (Core Passive)",
+      "description": "... In the Morale Burst state, when startup light punches or jab combos hit enemies, the target's Ice RES and Fire RES are reduced by 15%, lasting 30s. ...",
+      "shortDescription": "The target's Fire RES and Ice RES is reduced by 15% for 30s.",
+      "target": "team",
+      "flat": {
+        "fireResShred": 0.15,
+        "iceResShred": 0.15
+      }
+    },
+    {
+      "id": "lighter-core_2-accelerant",
+      "source": "core",
+      "sourceId": "lighter-core",
+      "label": "Accelerant (Core Passive)",
+      "description": "Lighter automatically gains Morale over time, at a rate of 2.9 points per second. For each point of Energy consumed by any squad member, Lighter recovers an additional 0.26 Morale, up to a maximum of 100. When Morale reaches 80, the next time Lighter switches into battle he immediately launches a Quick Assist. Once Morale is 80 or higher, executing the 5th hit of his Basic Attack puts Lighter in the Morale Burst state, enhancing the power of the startup light punch, jab combo, and the Finishing Move of the 5th hit of his Basic Attack. When a skill hits an enemy with its power increased, it will continuously consume Morale. With every 10 points of Morale consumed, Lighter's Impact increases by 2%, up to a maximum increase of 20%, and lasting 6s. ...",
+      "shortDescription": "Lighter's Impact is increased by 2% for 6s, stacking up to 10 times.",
+      "target": "self",
+      "perStack": {
+        "impactPercentRaw": 0.02
+      },
+      "maxStacks": 10
+    },
+    {
+      "id": "lighter-core-fighting_spirit",
+      "source": "core",
+      "sourceId": "lighter-core_2",
+      "label": "Fighting Spirit (Aditional Passive)",
+      "description": "When another character in your squad is an Attack character or shares the same Faction:\n\nWhile under the Morale Burst state, when the 5th hit of Lighter's Basic Attack hits an enemy, all squad members gain a stack of Elation, stacking up to 20 times and lasting 30s. Repeated triggers reset the duration. For each stack of Elation, an Agent's Ice DMG and Fire DMG increase by 1.25%. When obtaining Elation, if Lighter's Impact exceeds 170, every additional 10 points of Impact will increase the buff effect provided by each stack of Elation by an extra 0.25%. When any squad member launches a Chain Attack, it will refresh the duration of all squad members' Elation. Elation can increase the Ice DMG and Fire DMG of Agents by a maximum of 75%.",
+      "shortDescription": "All squad memmbers' Fire DMG and Ice DMG are increased based on Lighter's current Impact.",
+      "target": "team",
+      "useManualThresholds": true,
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "impact",
+        "threshold": 170,
+        "maxStat": 99999,
+        "baseBonus": 0.25,
+        "perUnit": 10,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 0.25,
+            "perUnitBonus": 0.25,
+            "impactThreshold": 170
+          },
+          {
+            "level": 2,
+            "maxBonus": 0.3,
+            "perUnitBonus": 0.3,
+            "impactThreshold": 180
+          },
+          {
+            "level": 3,
+            "maxBonus": 0.35,
+            "perUnitBonus": 0.35,
+            "impactThreshold": 190
+          },
+          {
+            "level": 4,
+            "maxBonus": 0.4,
+            "perUnitBonus": 0.4,
+            "impactThreshold": 200
+          },
+          {
+            "level": 5,
+            "maxBonus": 0.45,
+            "perUnitBonus": 0.45,
+            "impactThreshold": 210
+          },
+          {
+            "level": 6,
+            "maxBonus": 0.5,
+            "perUnitBonus": 0.5,
+            "impactThreshold": 220
+          },
+          {
+            "level": 7,
+            "maxBonus": 0.55,
+            "perUnitBonus": 0.55,
+            "impactThreshold": 230
+          },
+          {
+            "level": 8,
+            "maxBonus": 0.6,
+            "perUnitBonus": 0.6,
+            "impactThreshold": 240
+          },
+          {
+            "level": 9,
+            "maxBonus": 0.65,
+            "perUnitBonus": 0.65,
+            "impactThreshold": 250
+          },
+          {
+            "level": 10,
+            "maxBonus": 0.7,
+            "perUnitBonus": 0.7,
+            "impactThreshold": 260
+          },
+          {
+            "level": 11,
+            "maxBonus": 0.75,
+            "perUnitBonus": 0.75,
+            "impactThreshold": 270
+          }
+        ],
+        "affectedStats": ["attributeDmgBonus"]
+      },
+      "condition": {
+        "attributeDmgTypes": ["fire", "ice"]
+      }
+    },
+    {
+      "id": "lighter-mindscape_1_1-the_champion",
+      "source": "mindscape",
+      "sourceId": "lighter-mindscape_1",
+      "label": "The Champion (Mindscape Cinema N°1)",
+      "description": "Among the debuffs imposed by Core Passive: Accelerant, the Collapse effect increases Stun duration by 5s, while further reducing Ice RES and Fire RES by 10%. The more powerful Finishing Move that follows when Lighter's Morale is completely exhausted during a startup light punch or jab combo deals 30% increased DMG.",
+      "shortDescription": "The target's Fire RES and Ice RES is further reduced by 15%.",
+      "target": "team",
+      "flat": {
+        "fireResShred": 0.1,
+        "iceResShred": 0.1
+      }
+    },
+    {
+      "id": "lighter-mindscape_1_2-the_champion",
+      "source": "mindscape",
+      "sourceId": "lighter-mindscape_1",
+      "label": "The Champion (Mindscape Cinema N°1)",
+      "description": "Among the debuffs imposed by Core Passive: Accelerant, the Collapse effect increases Stun duration by 5s, while further reducing Ice RES and Fire RES by 10%. The more powerful Finishing Move that follows when Lighter's Morale is completely exhausted during a startup light punch or jab combo deals 30% increased DMG.",
+      "shortDescription": "Lighter's DMG from the Finishing Move of Basic Attack: L-Form Thundering Fist is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "lighter-basic_attack-l_form_thundering_fist",
+          "hitName": [
+            "5th Hit Finisher DMG Multiplier",
+            "5th Hit Finisher DMG Multiplier (Morale Burst)",
+            "5th Hit Powerful Finisher DMG Multiplier (Morale Burst)"
+          ],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lighter-mindscape_2-red_scarf",
+      "source": "mindscape",
+      "sourceId": "lighter-mindscape_2",
+      "label": "Red Scarf (Mindscape Cinema N°2)",
+      "description": "When applying Collapse via Core Passive: Accelerant to enemies, the target's Stun DMG Multiplier increases by 25%. The increase to Ice DMG and Fire DMG provided by Elation from Additional Ability: Fighting Spirit increases to 120% of the original.",
+      "shortDescription": "All squad memmbers' Fire DMG and Ice DMG are increased based on Lighter's current Impact.",
+      "target": "team",
+      "useManualThresholds": true,
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "impact",
+        "threshold": 170,
+        "maxStat": 99999,
+        "baseBonus": 0.3,
+        "perUnit": 10,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 0.3,
+            "perUnitBonus": 0.3,
+            "impactThreshold": 170
+          },
+          {
+            "level": 2,
+            "maxBonus": 0.36,
+            "perUnitBonus": 0.36,
+            "impactThreshold": 180
+          },
+          {
+            "level": 3,
+            "maxBonus": 0.42,
+            "perUnitBonus": 0.42,
+            "impactThreshold": 190
+          },
+          {
+            "level": 4,
+            "maxBonus": 0.48,
+            "perUnitBonus": 0.48,
+            "impactThreshold": 200
+          },
+          {
+            "level": 5,
+            "maxBonus": 0.54,
+            "perUnitBonus": 0.54,
+            "impactThreshold": 210
+          },
+          {
+            "level": 6,
+            "maxBonus": 0.6,
+            "perUnitBonus": 0.6,
+            "impactThreshold": 220
+          },
+          {
+            "level": 7,
+            "maxBonus": 0.66,
+            "perUnitBonus": 0.66,
+            "impactThreshold": 230
+          },
+          {
+            "level": 8,
+            "maxBonus": 0.72,
+            "perUnitBonus": 0.72,
+            "impactThreshold": 240
+          },
+          {
+            "level": 9,
+            "maxBonus": 0.78,
+            "perUnitBonus": 0.78,
+            "impactThreshold": 250
+          },
+          {
+            "level": 10,
+            "maxBonus": 0.84,
+            "perUnitBonus": 0.84,
+            "impactThreshold": 260
+          },
+          {
+            "level": 11,
+            "maxBonus": 0.9,
+            "perUnitBonus": 0.9,
+            "impactThreshold": 270
+          }
+        ],
+        "affectedStats": ["attributeDmgBonus"]
+      },
+      "condition": {
+        "attributeDmgTypes": ["fire", "ice"]
+      }
+    },
+    {
+      "id": "lighter-mindscape_4-sunglasses",
+      "source": "mindscape",
+      "sourceId": "lighter-mindscape_4",
+      "label": "Sunglasses (Mindscape Cinema N°4)",
+      "description": "When Lighter is off-field, the Energy Regen for the on-field character is increased by 10%. Upon entering the Morale Burstt state, Lighter restores 4 Energy for off-field characters. This effect can trigger once every 18s.",
+      "shortDescription": "The on-field agent's Energy Regen is increased by 10%.",
+      "target": "self",
+      "requiresManualTarget": true,
+      "flat": {
+        "energyRegenPercentRaw": 0.1
+      },
+      "condition": {
+        "applyToSelectedOnly": true
+      }
+    },
+    {
+      "id": "lighter-mindscape_6-survivor",
+      "source": "mindscape",
+      "sourceId": "lighter-mindscape_6",
+      "label": "Survivor (Mindscape Cinema N°6)",
+      "description": "Lighter's Morale recovery efficiency is increased to 200% of its original value. When Lighter lands a heavy strike on enemies during a Basic Attack, Dodge Counter, Special Attack, EX Special Attack, Quick Assist, Assist Follow-Up, Chain Attack, or Ultimate, it will trigger the Blazing Impact effect, dealing 250% of ATK as Fire DMG. This effect can trigger once every 8s on each enemy. If Lighter's Impact exceeds 170 points, each additional point will further increase the multiplier of Blazing Impact by 5%, up to a maximum increase of 500%. The more powerful Finishing Move that follows when Lighter's Morale is completely exhausted during a light punch or jab combo will trigger an additional activation of Blazing Impact when hitting an enemy, ignoring the effect's cooldown.",
+      "shortDescription": "This ability is available in the Damage Calculator.",
+      "infoOnly": true
+    }
+  ],
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "lighter-basic_attack-l_form_thundering_fist",
+        "name": "L-Form Thundering Fist (Basic Attack)",
+        "description": "Press or hold [BASIC] to activate:\n\nPerform up to five forward strikes, dealing Physical DMG and Fire DMG. During the 3rd hit of the /bBasic Attack//b, drag the stick/joystick, and repeatedly press or hold [BASIC] to unleash a series of melee follow-up attacks. Release the stick/joystick to follow up with the 4th hit of the /bBasic Attack//b.\n\nWhile performing the startup light punch in the 5th hit of the /bBasic Attack//b, drag the stick/joystick and repeatedly press or hold [BASIC] to keep alternating between the light punch and 4th hit of the /bBasic Attack//b. Release the stick/joystick to follow up with the subsequent jab combo.\n\nContinue repeatedly pressing or holding [BASIC] to extend the duration of the jab combo.\n\nWhen you stop pressing or holding [BASIC], or when the combo reaches its maximum duration, launches a /bFinishing Move//b forward. Lighter is invulnerable during the /bFinishing Move//b.\n\nDuring the 5th hit of the /bBasic Attack//b, Lighter takes 40% less DMG. While in the /bMorale Burst//b state, Anti-Interrupt Level is increased during the 5th hit of his /bBasic Attack//b, and the DMG reduction effect is increased to 80%.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Follow-Up 1st Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Follow-Up 2nd Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Follow-Up 3rd Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Follow-Up 4th Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Follow-Up 5th Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th Hit Startup DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th Hit Combo DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "5th Hit Finisher DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "5th Hit Startup DMG Multiplier (Morale Burst)",
+            "damageType": "fire"
+          },
+          {
+            "name": "5th Hit Combo DMG Multiplier (Morale Burst)",
+            "damageType": "fire"
+          },
+          {
+            "name": "5th Hit Finisher DMG Multiplier (Morale Burst)",
+            "damageType": "fire"
+          },
+          {
+            "name": "5th Hit Powerful Finisher DMG Multiplier (Morale Burst)",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              39.2, 48, 55.3, 86.9, 47.7, 58.1, 32.8, 89, 78.9, 163.6, 122.9,
+              104.6, 177.2, 364.3, 119.7, 435.4
+            ]
+          },
+          {
+            "level": 2,
+            "multipliers": [
+              42.8, 49.5, 60.4, 94.8, 52.1, 63.4, 35.8, 97.1, 86.1, 178.5,
+              134.1, 114.2, 193.4, 397.5, 130.6, 475
+            ]
+          },
+          {
+            "level": 3,
+            "multipliers": [
+              46.4, 51, 65.5, 102.7, 56.5, 68.7, 38.8, 105.2, 93.3, 193.4,
+              145.3, 123.8, 209.6, 430.7, 141.5, 514.6
+            ]
+          },
+          {
+            "level": 4,
+            "multipliers": [
+              50, 52.5, 70.6, 110.6, 60.9, 74, 41.8, 113.3, 100.5, 208.3, 156.5,
+              133.4, 225.8, 463.9, 152.4, 554.2
+            ]
+          },
+          {
+            "level": 5,
+            "multipliers": [
+              53.6, 54, 75.7, 118.5, 65.3, 79.3, 44.8, 121.4, 107.7, 223.2,
+              167.7, 143, 242, 497.1, 163.3, 593.8
+            ]
+          },
+          {
+            "level": 6,
+            "multipliers": [
+              57.2, 55.5, 80.8, 126.4, 69.7, 84.6, 47.8, 129.5, 114.9, 238.1,
+              178.9, 152.6, 258.2, 530.3, 174.2, 633.4
+            ]
+          },
+          {
+            "level": 7,
+            "multipliers": [
+              60.8, 57, 85.9, 134.3, 74.1, 89.9, 50.8, 137.6, 122.1, 253, 190.1,
+              162.2, 274.4, 563.5, 185.1, 673
+            ]
+          },
+          {
+            "level": 8,
+            "multipliers": [
+              64.4, 58.5, 91, 142.2, 78.5, 95.2, 53.8, 145.7, 129.3, 267.9,
+              201.3, 171.8, 290.6, 596.7, 196, 712.6
+            ]
+          },
+          {
+            "level": 9,
+            "multipliers": [
+              68, 60, 96.1, 150.1, 82.9, 100.5, 56.8, 153.8, 136.5, 282.8,
+              212.5, 181.4, 306.8, 629.9, 206.9, 752.2
+            ]
+          },
+          {
+            "level": 10,
+            "multipliers": [
+              71.6, 61.5, 101.2, 158, 87.3, 105.8, 59.8, 161.9, 143.7, 297.7,
+              223.7, 191, 323, 663.1, 217.8, 791.8
+            ]
+          },
+          {
+            "level": 11,
+            "multipliers": [
+              75.2, 63, 106.3, 165.9, 91.7, 111.1, 62.8, 170, 150.9, 312.6,
+              234.9, 200.6, 339.2, 696.3, 228.7, 831.4
+            ]
+          },
+          {
+            "level": 12,
+            "multipliers": [
+              78.8, 64.5, 111.4, 173.8, 96.1, 116.4, 65.8, 178.1, 158.1, 327.5,
+              246.1, 210.2, 355.4, 729.5, 239.6, 871
+            ]
+          },
+          {
+            "level": 13,
+            "multipliers": [
+              82.4, 66, 116.5, 181.7, 100.5, 121.7, 68.8, 186.2, 165.3, 342.4,
+              257.3, 219.8, 371.6, 762.7, 250.5, 910.6
+            ]
+          },
+          {
+            "level": 14,
+            "multipliers": [
+              86, 67.5, 121.6, 189.6, 104.9, 127, 71.8, 194.3, 172.5, 357.3,
+              268.5, 229.4, 387.8, 795.9, 261.4, 950.2
+            ]
+          },
+          {
+            "level": 15,
+            "multipliers": [
+              89.6, 69, 126.7, 197.5, 109.3, 132.3, 74.8, 202.4, 179.7, 372.2,
+              279.7, 239, 404, 829.1, 272.3, 989.8
+            ]
+          },
+          {
+            "level": 16,
+            "multipliers": [
+              93.2, 70.5, 131.8, 205.4, 113.7, 137.6, 77.8, 210.5, 186.9, 387.1,
+              290.9, 248.6, 420.2, 862.3, 283.2, 1029.4
+            ]
+          }
+        ]
+      }
+    ],
+    "dashAttacks": [
+      {
+        "id": "lighter-dash_attack-charging_slam",
+        "name": "Charging Slam (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nRapidly strikes enemies in front, dealing Physical DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [89.9]
+          },
+          {
+            "level": 2,
+            "multipliers": [98.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [106.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [114.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [122.7]
+          },
+          {
+            "level": 6,
+            "multipliers": [130.9]
+          },
+          {
+            "level": 7,
+            "multipliers": [139.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [147.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [155.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [163.7]
+          },
+          {
+            "level": 11,
+            "multipliers": [171.9]
+          },
+          {
+            "level": 12,
+            "multipliers": [180.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [188.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [196.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [204.7]
+          },
+          {
+            "level": 16,
+            "multipliers": [212.9]
+          }
+        ]
+      }
+    ],
+    "dodgeCounters": [
+      {
+        "id": "lighter-dodge_counter-blazing_flash",
+        "name": "Blazing Flash (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nStrike enemies in front, dealing Fire DMG. Character is invulnerable while using this skill. After using the skill, press or hold [BASIC] to immediately follow up with the 5th hit of the /bBasic Attack//b.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [186.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [203.3]
+          },
+          {
+            "level": 3,
+            "multipliers": [220.3]
+          },
+          {
+            "level": 4,
+            "multipliers": [237.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [254.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [271.3]
+          },
+          {
+            "level": 7,
+            "multipliers": [288.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [305.3]
+          },
+          {
+            "level": 9,
+            "multipliers": [322.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [339.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [356.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [373.3]
+          },
+          {
+            "level": 13,
+            "multipliers": [390.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [407.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [424.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [441.3]
+          }
+        ]
+      }
+    ],
+    "quickAssists": [
+      {
+        "id": "lighter-quick_assist-blazing_flash_guard",
+        "name": "Blazing Flash - Guard (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nStrike enemies in front, dealing Fire DMG. Character is invulnerable while using this skill. After using the skill, press or hold [BASIC] to immediately follow up with the 5th hit of the /bBasic Attack//b.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [69.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [76.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [82.5]
+          },
+          {
+            "level": 4,
+            "multipliers": [88.9]
+          },
+          {
+            "level": 5,
+            "multipliers": [95.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [101.7]
+          },
+          {
+            "level": 7,
+            "multipliers": [108.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [114.5]
+          },
+          {
+            "level": 9,
+            "multipliers": [120.9]
+          },
+          {
+            "level": 10,
+            "multipliers": [127.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [133.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [140.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [146.5]
+          },
+          {
+            "level": 14,
+            "multipliers": [152.9]
+          },
+          {
+            "level": 15,
+            "multipliers": [159.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [165.7]
+          }
+        ]
+      }
+    ],
+    "perfectAssists": null,
+    "assistFollowup": [
+      {
+        "id": "lighter-assist_follow_up-charging_slam_stab",
+        "name": "Charging Slam - Stab (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nStrike enemies in front, dealing Fire DMG. Character is invulnerable while using this skill. After using this skill, press or hold [BASIC] to immediately follow up with the 5th hit of the /bBasic Attack//b.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [219.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [239.8]
+          },
+          {
+            "level": 3,
+            "multipliers": [259.8]
+          },
+          {
+            "level": 4,
+            "multipliers": [279.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [299.8]
+          },
+          {
+            "level": 6,
+            "multipliers": [319.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [339.8]
+          },
+          {
+            "level": 8,
+            "multipliers": [359.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [379.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [399.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [419.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [439.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [459.8]
+          },
+          {
+            "level": 14,
+            "multipliers": [479.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [499.8]
+          },
+          {
+            "level": 16,
+            "multipliers": [519.8]
+          }
+        ]
+      }
+    ],
+    "specialAttacks": [
+      {
+        "id": "lighter-special_attack-v_form_sunrise_uppercut",
+        "name": "V-Form Sunrise Uppercut (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nStrikes enemies in front with an uppercut, dealing Fire DMG. Anti-Interrupt level is increased while using this skill.\n\nPress [SPECIAL] during a shuffle dodge to activate:\n\nStrike forward with a series of punches, dealing Fire DMG. This skill will not interrupt the combo count for /bBasic Attacks//b. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [36.3]
+          },
+          {
+            "level": 2,
+            "multipliers": [39.6]
+          },
+          {
+            "level": 3,
+            "multipliers": [42.9]
+          },
+          {
+            "level": 4,
+            "multipliers": [46.2]
+          },
+          {
+            "level": 5,
+            "multipliers": [49.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [52.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [56.1]
+          },
+          {
+            "level": 8,
+            "multipliers": [59.4]
+          },
+          {
+            "level": 9,
+            "multipliers": [62.7]
+          },
+          {
+            "level": 10,
+            "multipliers": [66]
+          },
+          {
+            "level": 11,
+            "multipliers": [69.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [72.6]
+          },
+          {
+            "level": 13,
+            "multipliers": [75.9]
+          },
+          {
+            "level": 14,
+            "multipliers": [79.2]
+          },
+          {
+            "level": 15,
+            "multipliers": [82.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [85.8]
+          }
+        ]
+      }
+    ],
+    "exSkills": [
+      {
+        "id": "lighter-ex_special_attack-v_form_sunrise_uppercut_full_distance",
+        "name": "V-Form Sunrise Uppercut - Full Distance (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nLeaps into the air with a powerful uppercut, striking enemies in front and dealing massive Fire DMG.\n\nPress /bEX Special Attack//b again during this skill to spend additional Energy to perform a powerful follow-up attack, dealing massive Fire DMG. Character is invulnerable while using this skill.\n\nAfter using this skill, press or hold [BASIC] to follow up with the 4th hit of the /bBasic Attack//b.\n\nWith enough Energy, press [EX] during the shuffle dodge to activate: Strike forward with a powerful punch combo, dealing massive Fire DMG. This skill will not interrupt the combo count for /bBasic Attacks//b. Character is invulnerable while using this skill.\n\nAfter using this skill, press or hold [BASIC] to immediately follow up with the 5th hit of the /bBasic Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Follow-Up DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [486.3, 292.7]
+          },
+          {
+            "level": 2,
+            "multipliers": [530.6, 319.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [574.9, 346.1]
+          },
+          {
+            "level": 4,
+            "multipliers": [619.2, 372.8]
+          },
+          {
+            "level": 5,
+            "multipliers": [663.5, 399.5]
+          },
+          {
+            "level": 6,
+            "multipliers": [707.8, 426.2]
+          },
+          {
+            "level": 7,
+            "multipliers": [752.1, 452.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [796.4, 479.6]
+          },
+          {
+            "level": 9,
+            "multipliers": [840.7, 506.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [885, 533]
+          },
+          {
+            "level": 11,
+            "multipliers": [929.3, 559.7]
+          },
+          {
+            "level": 12,
+            "multipliers": [973.6, 586.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [1017.9, 613.1]
+          },
+          {
+            "level": 14,
+            "multipliers": [1062.2, 639.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [1106.5, 666.5]
+          },
+          {
+            "level": 16,
+            "multipliers": [1150.8, 693.2]
+          }
+        ]
+      }
+    ],
+    "chainAttacks": [
+      {
+        "id": "lighter-chain_attack-v_form_scorching_sun",
+        "name": "V-Form Scorching Sun (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a powerful strike at enemies in front in a small area, dealing massive Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [712.1]
+          },
+          {
+            "level": 2,
+            "multipliers": [776.9]
+          },
+          {
+            "level": 3,
+            "multipliers": [841.7]
+          },
+          {
+            "level": 4,
+            "multipliers": [906.5]
+          },
+          {
+            "level": 5,
+            "multipliers": [971.3]
+          },
+          {
+            "level": 6,
+            "multipliers": [1036.1]
+          },
+          {
+            "level": 7,
+            "multipliers": [1100.9]
+          },
+          {
+            "level": 8,
+            "multipliers": [1165.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [1230.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [1295.3]
+          },
+          {
+            "level": 11,
+            "multipliers": [1360.1]
+          },
+          {
+            "level": 12,
+            "multipliers": [1424.9]
+          },
+          {
+            "level": 13,
+            "multipliers": [1489.7]
+          },
+          {
+            "level": 14,
+            "multipliers": [1554.5]
+          },
+          {
+            "level": 15,
+            "multipliers": [1619.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [1684.1]
+          }
+        ]
+      }
+    ],
+    "ultimate": [
+      {
+        "id": "lighter-ultimate-w_form_crowned_inferno",
+        "name": "W-Form Crowned Inferno (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a powerful strike in a large area around, dealing massive Fire DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [1508]
+          },
+          {
+            "level": 2,
+            "multipliers": [1645.1]
+          },
+          {
+            "level": 3,
+            "multipliers": [1782.2]
+          },
+          {
+            "level": 4,
+            "multipliers": [1919.3]
+          },
+          {
+            "level": 5,
+            "multipliers": [2056.4]
+          },
+          {
+            "level": 6,
+            "multipliers": [2193.5]
+          },
+          {
+            "level": 7,
+            "multipliers": [2330.6]
+          },
+          {
+            "level": 8,
+            "multipliers": [2467.7]
+          },
+          {
+            "level": 9,
+            "multipliers": [2604.8]
+          },
+          {
+            "level": 10,
+            "multipliers": [2741.9]
+          },
+          {
+            "level": 11,
+            "multipliers": [2879]
+          },
+          {
+            "level": 12,
+            "multipliers": [3016.1]
+          },
+          {
+            "level": 13,
+            "multipliers": [3153.2]
+          },
+          {
+            "level": 14,
+            "multipliers": [3290.3]
+          },
+          {
+            "level": 15,
+            "multipliers": [3427.4]
+          },
+          {
+            "level": 16,
+            "multipliers": [3564.5]
+          }
+        ]
+      }
+    ],
+    "mindscapeAbilities": [
+      {
+        "id": "lighter-mindscape-blazing_impact",
+        "name": "Survivor - Blazing Impact - Additional DMG (Mindscape Cinema N°6)",
+        "description": "Lighter's /bMorale//b recovery efficiency is increased to 200% of its original value.\n\nWhen Lighter lands a heavy strike on enemies during a /bBasic Attack//b, /bDodge Counter//b, /bSpecial Attack//b, /bEX Special Attack//b, /bQuick Assist//b, /bAssist Follow-Up//b, /bChain Attack//b, or /bUltimate//b, it will trigger the /bBlazing Impact//b effect, dealing 250% of ATK as Fire DMG.\n\nThis effect can trigger once every 8s on each enemy. If Lighter's Impact exceeds 170 points, each additional point will further increase the multiplier of /bBlazing Impact//b by 5%, up to a maximum increase of 500%.\n\nThe more powerful /bFinishing Move//b that follows when Lighter's /bMorale//b is completely exhausted during a light punch or jab combo will trigger an additional activation of /bBlazing Impact//b when hitting an enemy, ignoring the effect's cooldown.",
+        "skillType": "mindscape",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier with 170 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 180 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 190 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 200 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 210 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 220 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 230 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 240 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 250 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 260 Impact",
+            "damageType": "fire"
+          },
+          {
+            "name": "DMG Multiplier with 270 Impact",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [
+              250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
