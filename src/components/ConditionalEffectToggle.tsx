@@ -490,7 +490,7 @@ const ConditionalEffectToggle = ({
           {showOwnerIcon && effect.ownerAgentId && (
             <div className="ingame_toggle-agent_icon">
               <img
-                src={`/ztunner/resources/images/agents/icons/${effect.ownerAgentId}.png`}
+                src={`/resources/images/agents/icons/${effect.ownerAgentId}.png`}
                 alt={effect.ownerDisplayName || effect.ownerAgentId}
                 title={effect.ownerDisplayName}
               />
@@ -504,7 +504,7 @@ const ConditionalEffectToggle = ({
                 style={{ color: "#7EFFDB", backgroundColor: "#1a3a2a" }}
               >
                 <img
-                  src={`/ztunner/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
+                  src={`/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
                   alt={effect.condition.requiresSpecialty}
                 />
                 {effect.condition.requiresSpecialty}

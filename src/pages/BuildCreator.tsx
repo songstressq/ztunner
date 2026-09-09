@@ -577,7 +577,7 @@ export default function BuildCreator() {
               )}
               <div className="agent-card_identity_display-name">
                 <img
-                  src={`/ztunner/resources/images/icons/rarities/${selectedAgent.rarity}.png`}
+                  src={`/resources/images/icons/rarities/${selectedAgent.rarity}.png`}
                   alt={selectedAgent.rarity}
                 />
                 <span>{selectedAgent.displayName}</span>
@@ -586,19 +586,19 @@ export default function BuildCreator() {
             <div className="agent-card_traits">
               <div>
                 <img
-                  src={`/ztunner/resources/images/icons/factions/${selectedAgent.faction}.png`}
+                  src={`/resources/images/icons/factions/${selectedAgent.faction}.png`}
                 />
                 <span>{selectedAgent.faction}</span>
               </div>
               <div>
                 <img
-                  src={`/ztunner/resources/images/icons/specialties/${selectedAgent.specialty}.png`}
+                  src={`/resources/images/icons/specialties/${selectedAgent.specialty}.png`}
                 />
                 <span>{selectedAgent.specialty}</span>
               </div>
               <div>
                 <img
-                  src={`/ztunner/resources/images/icons/attributes/${selectedAgent.attributeIcon}.png`}
+                  src={`/resources/images/icons/attributes/${selectedAgent.attributeIcon}.png`}
                 />
                 <span>{selectedAgent.attributeIcon}</span>
               </div>
@@ -689,7 +689,7 @@ export default function BuildCreator() {
                   .map((a) => ({
                     id: a.id,
                     name: a.name,
-                    img: `/ztunner/resources/images/agents/icons/${a.id} (2).png`,
+                    img: `/resources/images/agents/icons/${a.id} (2).png`,
                   })),
               },
               {
@@ -699,7 +699,7 @@ export default function BuildCreator() {
                   .map((a) => ({
                     id: a.id,
                     name: a.name,
-                    img: `/ztunner/resources/images/agents/icons/${a.id} (2).png`,
+                    img: `/resources/images/agents/icons/${a.id} (2).png`,
                   })),
               },
               {
@@ -709,7 +709,7 @@ export default function BuildCreator() {
                   .map((a) => ({
                     id: a.id,
                     name: a.name,
-                    img: `/ztunner/resources/images/agents/icons/${a.id} (2).png`,
+                    img: `/resources/images/agents/icons/${a.id} (2).png`,
                   })),
               },
               {
@@ -719,7 +719,7 @@ export default function BuildCreator() {
                   .map((a) => ({
                     id: a.id,
                     name: a.name,
-                    img: `/ztunner/resources/images/agents/icons/${a.id} (2).png`,
+                    img: `/resources/images/agents/icons/${a.id} (2).png`,
                   })),
               },
               {
@@ -729,7 +729,7 @@ export default function BuildCreator() {
                   .map((a) => ({
                     id: a.id,
                     name: a.name,
-                    img: `/ztunner/resources/images/agents/icons/${a.id} (2).png`,
+                    img: `/resources/images/agents/icons/${a.id} (2).png`,
                   })),
               },
               {
@@ -739,7 +739,7 @@ export default function BuildCreator() {
                   .map((a) => ({
                     id: a.id,
                     name: a.name,
-                    img: `/ztunner/resources/images/agents/icons/${a.id} (2).png`,
+                    img: `/resources/images/agents/icons/${a.id} (2).png`,
                   })),
               },
             ]}
@@ -834,7 +834,7 @@ export default function BuildCreator() {
             <div
               className="agent-portrait-wrapper"
               style={{
-                backgroundImage: `url(/ztunner/resources/images/agents/fullbody/${
+                backgroundImage: `url(/resources/images/agents/fullbody/${
                   currentSkin?.img || selectedAgent.id + ".png"
                 })`,
               }}
@@ -1070,7 +1070,7 @@ export default function BuildCreator() {
                 <div className="w-engine-selector_summmary">
                   <div className="w-engine-selector_preview flex-center">
                     <img
-                      src={`/ztunner/resources/images/wengines/${selectedEngine.id}.png`}
+                      src={`/resources/images/wengines/${selectedEngine.id}.png`}
                       alt={selectedEngine.name}
                     />
                     <div className="shine-small"></div>
@@ -1126,7 +1126,7 @@ export default function BuildCreator() {
                   .map((w) => ({
                     id: w.id,
                     name: w.name,
-                    img: `/ztunner/resources/images/wengines/${w.id}.png`,
+                    img: `/resources/images/wengines/${w.id}.png`,
                   })),
               },
               {
@@ -1136,7 +1136,7 @@ export default function BuildCreator() {
                   .map((w) => ({
                     id: w.id,
                     name: w.name,
-                    img: `/ztunner/resources/images/wengines/${w.id}.png`,
+                    img: `/resources/images/wengines/${w.id}.png`,
                   })),
               },
               {
@@ -1146,7 +1146,7 @@ export default function BuildCreator() {
                   .map((w) => ({
                     id: w.id,
                     name: w.name,
-                    img: `/ztunner/resources/images/wengines/${w.id}.png`,
+                    img: `/resources/images/wengines/${w.id}.png`,
                   })),
               },
               {
@@ -1156,7 +1156,7 @@ export default function BuildCreator() {
                   .map((w) => ({
                     id: w.id,
                     name: w.name,
-                    img: `/ztunner/resources/images/wengines/${w.id}.png`,
+                    img: `/resources/images/wengines/${w.id}.png`,
                   })),
               },
               {
@@ -1166,7 +1166,7 @@ export default function BuildCreator() {
                   .map((w) => ({
                     id: w.id,
                     name: w.name,
-                    img: `/ztunner/resources/images/wengines/${w.id}.png`,
+                    img: `/resources/images/wengines/${w.id}.png`,
                   })),
               },
               {
@@ -1176,7 +1176,7 @@ export default function BuildCreator() {
                   .map((w) => ({
                     id: w.id,
                     name: w.name,
-                    img: `/ztunner/resources/images/wengines/${w.id}.png`,
+                    img: `/resources/images/wengines/${w.id}.png`,
                   })),
               },
             ]}
@@ -1215,7 +1215,7 @@ export default function BuildCreator() {
                   return (
                     <div className="active-sets_content_card" key={a.setId}>
                       <img
-                        src={`/ztunner/resources/images/sets/${a.setId}.png`}
+                        src={`/resources/images/sets/${a.setId}.png`}
                         alt={info?.name}
                       />
                       <div className="active-sets_content_card_info">
@@ -1280,7 +1280,7 @@ export default function BuildCreator() {
                     <div className="drive-discs-icon flex-center">
                       {disc.setId && (
                         <img
-                          src={`/ztunner/resources/images/sets/${disc.setId}-alt.png`}
+                          src={`/resources/images/sets/${disc.setId}-alt.png`}
                           alt={disc.setId}
                         />
                       )}
@@ -1661,7 +1661,7 @@ export default function BuildCreator() {
           options={discSets.map((s) => ({
             id: s.id,
             name: s.name,
-            img: `/ztunner/resources/images/sets/${s.id}.png`,
+            img: `/resources/images/sets/${s.id}.png`,
           }))}
           onClose={() => setActiveSetSlot(null)}
           onSelect={(id) => {
@@ -1733,7 +1733,7 @@ export default function BuildCreator() {
                           <div className="modal-disc_importer-card-icon">
                             {disk.setId && (
                               <img
-                                src={`/ztunner/resources/images/sets/${disk.setId}.png`}
+                                src={`/resources/images/sets/${disk.setId}.png`}
                                 alt={disk.setId}
                                 className="modal-disc_importer-card-png"
                               />

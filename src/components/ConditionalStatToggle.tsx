@@ -61,7 +61,7 @@ const ConditionalStatToggle = ({
           {showOwnerIcon && effect.ownerAgentId && (
             <div className="ingame_toggle-agent_icon">
               <img
-                src={`/ztunner/resources/images/agents/icons/${effect.ownerAgentId}.png`}
+                src={`/resources/images/agents/icons/${effect.ownerAgentId}.png`}
                 alt={effect.ownerDisplayName || effect.ownerAgentId}
                 title={effect.ownerDisplayName || effect.ownerAgentId}
               />

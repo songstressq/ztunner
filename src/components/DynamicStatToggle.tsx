@@ -61,7 +61,7 @@ const DynamicStatToggle = ({
           {showOwnerIcon && (ownerAgentId || effect.ownerAgentId) && (
             <div className="ingame_toggle-agent_icon">
               <img
-                src={`/ztunner/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`}
+                src={`/resources/images/agents/icons/${ownerAgentId || effect.ownerAgentId}.png`}
                 alt={
                   ownerDisplayName ||
                   effect.ownerDisplayName ||
@@ -104,7 +104,7 @@ const DynamicStatToggle = ({
                 }}
               >
                 <img
-                  src={`/ztunner/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
+                  src={`/resources/images/icons/specialties/${effect.condition.requiresSpecialty}.png`}
                   alt={effect.condition.requiresSpecialty}
                 />
                 {effect.condition.requiresSpecialty}
