@@ -9,11 +9,7 @@
   "displayName": "Rina",
   "attributeIcon": "Electric",
   "themeColor": "#E0DACC",
-  "baseStats": {
-    "hp": 8609.2,
-    "atk": 642.19,
-    "def": 600.59
-  },
+  "baseStats": { "hp": 8609.2, "atk": 642.19, "def": 600.59 },
   "combatBase": {
     "impact": 83,
     "critRate": 0.05,
@@ -37,55 +33,13 @@
     "stats": ["PEN Ratio"]
   },
   "coreEnhancement": [
-    {
-      "level": 0,
-      "stats": {
-        "atkFlat": 0,
-        "penRatio": 0
-      }
-    },
-    {
-      "level": 1,
-      "stats": {
-        "atkFlat": 0,
-        "penRatio": 0.048
-      }
-    },
-    {
-      "level": 2,
-      "stats": {
-        "atkFlat": 25,
-        "penRatio": 0
-      }
-    },
-    {
-      "level": 3,
-      "stats": {
-        "atkFlat": 0,
-        "penRatio": 0.048
-      }
-    },
-    {
-      "level": 4,
-      "stats": {
-        "atkFlat": 25,
-        "penRatio": 0
-      }
-    },
-    {
-      "level": 5,
-      "stats": {
-        "atkFlat": 0,
-        "penRatio": 0.048
-      }
-    },
-    {
-      "level": 6,
-      "stats": {
-        "atkFlat": 25,
-        "penRatio": 0
-      }
-    }
+    { "level": 0, "stats": { "atkFlat": 0, "penRatio": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "penRatio": 0.048 } },
+    { "level": 2, "stats": { "atkFlat": 25, "penRatio": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "penRatio": 0.048 } },
+    { "level": 4, "stats": { "atkFlat": 25, "penRatio": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "penRatio": 0.048 } },
+    { "level": 6, "stats": { "atkFlat": 25, "penRatio": 0 } }
   ],
   "ingameEffects": [
     {
@@ -106,9 +60,7 @@
         "baseBonus": 0.12,
         "affectedStats": ["penRatio"]
       },
-      "condition": {
-        "excludeOwner": true
-      }
+      "condition": { "excludeOwner": true }
     },
     {
       "id": "alexandrina_sebastiane-core-banquet_of_perfection",
@@ -119,11 +71,7 @@
       "shortDescription": "All squad members' Electric DMG is increased by 10%.",
       "target": "team",
       "damageBonuses": [
-        {
-          "type": "element",
-          "element": "electric",
-          "value": 0.1
-        }
+        { "type": "element", "element": "electric", "value": 0.1 }
       ]
     },
     {
@@ -134,9 +82,7 @@
       "description": "PEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
       "shortDescription": "Rina's PEN Ratio is increased by 1.6%.",
       "target": "self",
-      "flat": {
-        "penRatio": 0.016
-      }
+      "flat": { "penRatio": 0.016 }
     },
     {
       "id": "alexandrina_sebastiane-core_2-perfect_service",
@@ -192,9 +138,7 @@
         "baseBonus": 0.156,
         "affectedStats": ["penRatio"]
       },
-      "condition": {
-        "excludeOwner": true
-      }
+      "condition": { "excludeOwner": true }
     },
     {
       "id": "alexandrina_sebastiane-mindscape_2-masters_paragon",
@@ -204,12 +148,7 @@
       "description": "Upon entering combat or switching in, Rina's DMG increases by 15% for 12s. This effect can trigger once every 18s.",
       "shortDescription": "Rina's DMG is increased by 15% for 12s.",
       "target": "self",
-      "damageBonuses": [
-        {
-          "type": "global",
-          "value": 0.15
-        }
-      ]
+      "damageBonuses": [{ "type": "global", "value": 0.15 }]
     },
     {
       "id": "alexandrina_sebastiane-mindscape_4-needle_and_hammer",
@@ -219,9 +158,7 @@
       "description": "Rina's Energy Regen increases by 0.5/s when both Drusilla and Anastella are deployed. The effect ends when Drusilla or Anastella returns to Rina.",
       "shortDescription": "Rina's Energy Regen is increased by 0.5/s.",
       "target": "self",
-      "flat": {
-        "energyRegenRaw": 0.5
-      }
+      "flat": { "energyRegenRaw": 0.5 }
     },
     {
       "id": "alexandrina_sebastiane-mindscape_6-stormy_nights_fright",
@@ -232,11 +169,7 @@
       "shortDescription": "All squad members' Electric DMG is increased by 15% for 8s.",
       "target": "team",
       "damageBonuses": [
-        {
-          "type": "element",
-          "element": "electric",
-          "value": 0.15
-        }
+        { "type": "element", "element": "electric", "value": 0.15 }
       ]
     }
   ],
@@ -249,88 +182,28 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "3rd-Hit DMG Multiplier",
-            "damageType": "electric"
-          },
-          {
-            "name": "4th-Hit DMG Multiplier",
-            "damageType": "electric"
-          }
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "electric" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [44, 111.4, 117.1, 183.9]
-          },
-          {
-            "level": 2,
-            "multipliers": [48, 121.6, 127.8, 200.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [52, 131.8, 138.5, 217.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [56, 142, 149.2, 234.3]
-          },
-          {
-            "level": 5,
-            "multipliers": [60, 152.2, 159.9, 251.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [64, 162.4, 170.6, 267.9]
-          },
-          {
-            "level": 7,
-            "multipliers": [68, 172.6, 181.3, 284.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [72, 182.8, 192, 301.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [76, 193, 202.7, 318.3]
-          },
-          {
-            "level": 10,
-            "multipliers": [80, 203.2, 213.4, 335.1]
-          },
-          {
-            "level": 11,
-            "multipliers": [84, 213.4, 224.1, 351.9]
-          },
-          {
-            "level": 12,
-            "multipliers": [88, 223.6, 234.8, 368.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [92, 233.8, 245.5, 385.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [96, 244, 256.2, 402.3]
-          },
-          {
-            "level": 15,
-            "multipliers": [100, 254.2, 266.9, 419.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [104, 264.4, 277.6, 435.9]
-          }
+          { "level": 1, "multipliers": [44, 111.4, 117.1, 183.9] },
+          { "level": 2, "multipliers": [48, 121.6, 127.8, 200.7] },
+          { "level": 3, "multipliers": [52, 131.8, 138.5, 217.5] },
+          { "level": 4, "multipliers": [56, 142, 149.2, 234.3] },
+          { "level": 5, "multipliers": [60, 152.2, 159.9, 251.1] },
+          { "level": 6, "multipliers": [64, 162.4, 170.6, 267.9] },
+          { "level": 7, "multipliers": [68, 172.6, 181.3, 284.7] },
+          { "level": 8, "multipliers": [72, 182.8, 192, 301.5] },
+          { "level": 9, "multipliers": [76, 193, 202.7, 318.3] },
+          { "level": 10, "multipliers": [80, 203.2, 213.4, 335.1] },
+          { "level": 11, "multipliers": [84, 213.4, 224.1, 351.9] },
+          { "level": 12, "multipliers": [88, 223.6, 234.8, 368.7] },
+          { "level": 13, "multipliers": [92, 233.8, 245.5, 385.5] },
+          { "level": 14, "multipliers": [96, 244, 256.2, 402.3] },
+          { "level": 15, "multipliers": [100, 254.2, 266.9, 419.1] },
+          { "level": 16, "multipliers": [104, 264.4, 277.6, 435.9] }
         ]
       },
       {
@@ -339,77 +212,24 @@
         "description": "Hold [BASIC] or /bSpecial Attack//b to activate:\n\nCalls back /bDrusilla and Anastella//b to swing them around for a ranged attack, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [315.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [343.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [372.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [401.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [429.9]
-          },
-          {
-            "level": 6,
-            "multipliers": [458.6]
-          },
-          {
-            "level": 7,
-            "multipliers": [487.3]
-          },
-          {
-            "level": 8,
-            "multipliers": [516]
-          },
-          {
-            "level": 9,
-            "multipliers": [544.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [573.4]
-          },
-          {
-            "level": 11,
-            "multipliers": [602.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [630.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [659.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [688.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [716.9]
-          },
-          {
-            "level": 16,
-            "multipliers": [745.6]
-          }
+          { "level": 1, "multipliers": [315.1] },
+          { "level": 2, "multipliers": [343.8] },
+          { "level": 3, "multipliers": [372.5] },
+          { "level": 4, "multipliers": [401.2] },
+          { "level": 5, "multipliers": [429.9] },
+          { "level": 6, "multipliers": [458.6] },
+          { "level": 7, "multipliers": [487.3] },
+          { "level": 8, "multipliers": [516] },
+          { "level": 9, "multipliers": [544.7] },
+          { "level": 10, "multipliers": [573.4] },
+          { "level": 11, "multipliers": [602.1] },
+          { "level": 12, "multipliers": [630.8] },
+          { "level": 13, "multipliers": [659.5] },
+          { "level": 14, "multipliers": [688.2] },
+          { "level": 15, "multipliers": [716.9] },
+          { "level": 16, "multipliers": [745.6] }
         ]
       },
       {
@@ -419,84 +239,27 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "electric"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "electric"
-          },
-          {
-            "name": "3rd-Hit DMG Multiplier",
-            "damageType": "electric"
-          }
+          { "name": "1st-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "electric" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [52.5, 52.5, 52.5]
-          },
-          {
-            "level": 2,
-            "multipliers": [57.3, 57.3, 57.3]
-          },
-          {
-            "level": 3,
-            "multipliers": [62.1, 62.1, 62.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [66.9, 66.9, 66.9]
-          },
-          {
-            "level": 5,
-            "multipliers": [71.7, 71.7, 71.7]
-          },
-          {
-            "level": 6,
-            "multipliers": [76.5, 76.5, 76.5]
-          },
-          {
-            "level": 7,
-            "multipliers": [81.3, 81.3, 81.3]
-          },
-          {
-            "level": 8,
-            "multipliers": [86.1, 86.1, 86.1]
-          },
-          {
-            "level": 9,
-            "multipliers": [90.9, 90.9, 90.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [95.7, 95.7, 95.7]
-          },
-          {
-            "level": 11,
-            "multipliers": [100.5, 100.5, 100.5]
-          },
-          {
-            "level": 12,
-            "multipliers": [105.3, 105.3, 105.3]
-          },
-          {
-            "level": 13,
-            "multipliers": [110.1, 110.1, 110.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [114.9, 114.9, 114.9]
-          },
-          {
-            "level": 15,
-            "multipliers": [119.7, 119.7, 119.7]
-          },
-          {
-            "level": 16,
-            "multipliers": [124.5, 124.5, 124.5]
-          }
+          { "level": 1, "multipliers": [52.5, 52.5, 52.5] },
+          { "level": 2, "multipliers": [57.3, 57.3, 57.3] },
+          { "level": 3, "multipliers": [62.1, 62.1, 62.1] },
+          { "level": 4, "multipliers": [66.9, 66.9, 66.9] },
+          { "level": 5, "multipliers": [71.7, 71.7, 71.7] },
+          { "level": 6, "multipliers": [76.5, 76.5, 76.5] },
+          { "level": 7, "multipliers": [81.3, 81.3, 81.3] },
+          { "level": 8, "multipliers": [86.1, 86.1, 86.1] },
+          { "level": 9, "multipliers": [90.9, 90.9, 90.9] },
+          { "level": 10, "multipliers": [95.7, 95.7, 95.7] },
+          { "level": 11, "multipliers": [100.5, 100.5, 100.5] },
+          { "level": 12, "multipliers": [105.3, 105.3, 105.3] },
+          { "level": 13, "multipliers": [110.1, 110.1, 110.1] },
+          { "level": 14, "multipliers": [114.9, 114.9, 114.9] },
+          { "level": 15, "multipliers": [119.7, 119.7, 119.7] },
+          { "level": 16, "multipliers": [124.5, 124.5, 124.5] }
         ]
       },
       {
@@ -505,77 +268,24 @@
         "description": "When reaches 6 stacks, the next Basic Attack: Morning Cleanup performed by /bDrusilla//b or /bAnastella//b consumes all Fright stacks and is replaced with Basic Attack: Midnight Cleanup, dealing Electric DMG After using the skill, /bDrusilla and Anastella//b's exit timer resets.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [210]
-          },
-          {
-            "level": 2,
-            "multipliers": [229.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [248.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [267.3]
-          },
-          {
-            "level": 5,
-            "multipliers": [286.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [305.5]
-          },
-          {
-            "level": 7,
-            "multipliers": [324.6]
-          },
-          {
-            "level": 8,
-            "multipliers": [343.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [362.8]
-          },
-          {
-            "level": 10,
-            "multipliers": [381.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [401]
-          },
-          {
-            "level": 12,
-            "multipliers": [420.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [439.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [458.3]
-          },
-          {
-            "level": 15,
-            "multipliers": [477.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [496.5]
-          }
+          { "level": 1, "multipliers": [210] },
+          { "level": 2, "multipliers": [229.1] },
+          { "level": 3, "multipliers": [248.2] },
+          { "level": 4, "multipliers": [267.3] },
+          { "level": 5, "multipliers": [286.4] },
+          { "level": 6, "multipliers": [305.5] },
+          { "level": 7, "multipliers": [324.6] },
+          { "level": 8, "multipliers": [343.7] },
+          { "level": 9, "multipliers": [362.8] },
+          { "level": 10, "multipliers": [381.9] },
+          { "level": 11, "multipliers": [401] },
+          { "level": 12, "multipliers": [420.1] },
+          { "level": 13, "multipliers": [439.2] },
+          { "level": 14, "multipliers": [458.3] },
+          { "level": 15, "multipliers": [477.4] },
+          { "level": 16, "multipliers": [496.5] }
         ]
       }
     ],
@@ -586,77 +296,24 @@
         "description": "Press [BASIC] during a dodge to activate:\n\nOrder /bDrusilla and Anastella//b to execute a piercing attack, dealing Physical DMG.",
         "skillType": "dash",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [105]
-          },
-          {
-            "level": 2,
-            "multipliers": [114.6]
-          },
-          {
-            "level": 3,
-            "multipliers": [124.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [133.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [143.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [153]
-          },
-          {
-            "level": 7,
-            "multipliers": [162.6]
-          },
-          {
-            "level": 8,
-            "multipliers": [172.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [181.8]
-          },
-          {
-            "level": 10,
-            "multipliers": [191.4]
-          },
-          {
-            "level": 11,
-            "multipliers": [201]
-          },
-          {
-            "level": 12,
-            "multipliers": [210.6]
-          },
-          {
-            "level": 13,
-            "multipliers": [220.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [229.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [239.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [249]
-          }
+          { "level": 1, "multipliers": [105] },
+          { "level": 2, "multipliers": [114.6] },
+          { "level": 3, "multipliers": [124.2] },
+          { "level": 4, "multipliers": [133.8] },
+          { "level": 5, "multipliers": [143.4] },
+          { "level": 6, "multipliers": [153] },
+          { "level": 7, "multipliers": [162.6] },
+          { "level": 8, "multipliers": [172.2] },
+          { "level": 9, "multipliers": [181.8] },
+          { "level": 10, "multipliers": [191.4] },
+          { "level": 11, "multipliers": [201] },
+          { "level": 12, "multipliers": [210.6] },
+          { "level": 13, "multipliers": [220.2] },
+          { "level": 14, "multipliers": [229.8] },
+          { "level": 15, "multipliers": [239.4] },
+          { "level": 16, "multipliers": [249] }
         ]
       }
     ],
@@ -667,77 +324,24 @@
         "description": "Press [BASIC] during a [COUNTER] to activate:\n\nOrder /bDrusilla and Anastella//b to spin forward and trigger an explosion, dealing Electric DMG. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [227.6]
-          },
-          {
-            "level": 2,
-            "multipliers": [248.3]
-          },
-          {
-            "level": 3,
-            "multipliers": [269]
-          },
-          {
-            "level": 4,
-            "multipliers": [289.7]
-          },
-          {
-            "level": 5,
-            "multipliers": [310.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [331.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [351.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [372.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [393.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [413.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [434.6]
-          },
-          {
-            "level": 12,
-            "multipliers": [455.3]
-          },
-          {
-            "level": 13,
-            "multipliers": [476]
-          },
-          {
-            "level": 14,
-            "multipliers": [496.7]
-          },
-          {
-            "level": 15,
-            "multipliers": [517.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [538.1]
-          }
+          { "level": 1, "multipliers": [227.6] },
+          { "level": 2, "multipliers": [248.3] },
+          { "level": 3, "multipliers": [269] },
+          { "level": 4, "multipliers": [289.7] },
+          { "level": 5, "multipliers": [310.4] },
+          { "level": 6, "multipliers": [331.1] },
+          { "level": 7, "multipliers": [351.8] },
+          { "level": 8, "multipliers": [372.5] },
+          { "level": 9, "multipliers": [393.2] },
+          { "level": 10, "multipliers": [413.9] },
+          { "level": 11, "multipliers": [434.6] },
+          { "level": 12, "multipliers": [455.3] },
+          { "level": 13, "multipliers": [476] },
+          { "level": 14, "multipliers": [496.7] },
+          { "level": 15, "multipliers": [517.4] },
+          { "level": 16, "multipliers": [538.1] }
         ]
       }
     ],
@@ -748,77 +352,24 @@
         "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nOrder /bDrusilla and Anastella//b to spin forward and trigger an explosion, dealing Electric DMG. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [122.6]
-          },
-          {
-            "level": 2,
-            "multipliers": [133.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [145]
-          },
-          {
-            "level": 4,
-            "multipliers": [156.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [167.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [178.6]
-          },
-          {
-            "level": 7,
-            "multipliers": [189.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [201]
-          },
-          {
-            "level": 9,
-            "multipliers": [212.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [223.4]
-          },
-          {
-            "level": 11,
-            "multipliers": [234.6]
-          },
-          {
-            "level": 12,
-            "multipliers": [245.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [257]
-          },
-          {
-            "level": 14,
-            "multipliers": [268.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [279.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [290.6]
-          }
+          { "level": 1, "multipliers": [122.6] },
+          { "level": 2, "multipliers": [133.8] },
+          { "level": 3, "multipliers": [145] },
+          { "level": 4, "multipliers": [156.2] },
+          { "level": 5, "multipliers": [167.4] },
+          { "level": 6, "multipliers": [178.6] },
+          { "level": 7, "multipliers": [189.8] },
+          { "level": 8, "multipliers": [201] },
+          { "level": 9, "multipliers": [212.2] },
+          { "level": 10, "multipliers": [223.4] },
+          { "level": 11, "multipliers": [234.6] },
+          { "level": 12, "multipliers": [245.8] },
+          { "level": 13, "multipliers": [257] },
+          { "level": 14, "multipliers": [268.2] },
+          { "level": 15, "multipliers": [279.4] },
+          { "level": 16, "multipliers": [290.6] }
         ]
       }
     ],
@@ -830,77 +381,24 @@
         "description": "Press [BASIC] after an /bEvasive Assist//b to activate:\n\nOrder /bDrusilla and Anastella//b to push forward and generate an electrical vortex, dealing Electric DMG. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [349.4]
-          },
-          {
-            "level": 2,
-            "multipliers": [381.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [413]
-          },
-          {
-            "level": 4,
-            "multipliers": [444.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [476.6]
-          },
-          {
-            "level": 6,
-            "multipliers": [508.4]
-          },
-          {
-            "level": 7,
-            "multipliers": [540.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [572]
-          },
-          {
-            "level": 9,
-            "multipliers": [603.8]
-          },
-          {
-            "level": 10,
-            "multipliers": [635.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [667.4]
-          },
-          {
-            "level": 12,
-            "multipliers": [699.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [731]
-          },
-          {
-            "level": 14,
-            "multipliers": [762.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [794.6]
-          },
-          {
-            "level": 16,
-            "multipliers": [826.4]
-          }
+          { "level": 1, "multipliers": [349.4] },
+          { "level": 2, "multipliers": [381.2] },
+          { "level": 3, "multipliers": [413] },
+          { "level": 4, "multipliers": [444.8] },
+          { "level": 5, "multipliers": [476.6] },
+          { "level": 6, "multipliers": [508.4] },
+          { "level": 7, "multipliers": [540.2] },
+          { "level": 8, "multipliers": [572] },
+          { "level": 9, "multipliers": [603.8] },
+          { "level": 10, "multipliers": [635.6] },
+          { "level": 11, "multipliers": [667.4] },
+          { "level": 12, "multipliers": [699.2] },
+          { "level": 13, "multipliers": [731] },
+          { "level": 14, "multipliers": [762.8] },
+          { "level": 15, "multipliers": [794.6] },
+          { "level": 16, "multipliers": [826.4] }
         ]
       }
     ],
@@ -911,77 +409,24 @@
         "description": "Press [SPECIAL] to activate:\n\nOrder /bAnastella//b to execute a downward smash, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
         "skillType": "special",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [61.3]
-          },
-          {
-            "level": 2,
-            "multipliers": [66.9]
-          },
-          {
-            "level": 3,
-            "multipliers": [72.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [78.1]
-          },
-          {
-            "level": 5,
-            "multipliers": [83.7]
-          },
-          {
-            "level": 6,
-            "multipliers": [89.3]
-          },
-          {
-            "level": 7,
-            "multipliers": [94.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [100.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [106.1]
-          },
-          {
-            "level": 10,
-            "multipliers": [111.7]
-          },
-          {
-            "level": 11,
-            "multipliers": [117.3]
-          },
-          {
-            "level": 12,
-            "multipliers": [122.9]
-          },
-          {
-            "level": 13,
-            "multipliers": [128.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [134.1]
-          },
-          {
-            "level": 15,
-            "multipliers": [139.7]
-          },
-          {
-            "level": 16,
-            "multipliers": [145.3]
-          }
+          { "level": 1, "multipliers": [61.3] },
+          { "level": 2, "multipliers": [66.9] },
+          { "level": 3, "multipliers": [72.5] },
+          { "level": 4, "multipliers": [78.1] },
+          { "level": 5, "multipliers": [83.7] },
+          { "level": 6, "multipliers": [89.3] },
+          { "level": 7, "multipliers": [94.9] },
+          { "level": 8, "multipliers": [100.5] },
+          { "level": 9, "multipliers": [106.1] },
+          { "level": 10, "multipliers": [111.7] },
+          { "level": 11, "multipliers": [117.3] },
+          { "level": 12, "multipliers": [122.9] },
+          { "level": 13, "multipliers": [128.5] },
+          { "level": 14, "multipliers": [134.1] },
+          { "level": 15, "multipliers": [139.7] },
+          { "level": 16, "multipliers": [145.3] }
         ]
       }
     ],
@@ -992,77 +437,24 @@
         "description": "With enough Energy, press [EX] to activate:\n\nOrder /bDrusilla and Anastella//b to execute multiple downward smashes, dealing massive Electric DMG. Character is invulnerable while using this skill. A /bQuick Assist//b is triggered when this skill hits an enemy.",
         "skillType": "exSpecialAttack",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [546]
-          },
-          {
-            "level": 2,
-            "multipliers": [595.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [645.4]
-          },
-          {
-            "level": 4,
-            "multipliers": [695.1]
-          },
-          {
-            "level": 5,
-            "multipliers": [744.8]
-          },
-          {
-            "level": 6,
-            "multipliers": [794.5]
-          },
-          {
-            "level": 7,
-            "multipliers": [844.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [893.9]
-          },
-          {
-            "level": 9,
-            "multipliers": [943.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [993.3]
-          },
-          {
-            "level": 11,
-            "multipliers": [1043]
-          },
-          {
-            "level": 12,
-            "multipliers": [1092.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [1142.4]
-          },
-          {
-            "level": 14,
-            "multipliers": [1192.1]
-          },
-          {
-            "level": 15,
-            "multipliers": [1241.8]
-          },
-          {
-            "level": 16,
-            "multipliers": [1291.5]
-          }
+          { "level": 1, "multipliers": [546] },
+          { "level": 2, "multipliers": [595.7] },
+          { "level": 3, "multipliers": [645.4] },
+          { "level": 4, "multipliers": [695.1] },
+          { "level": 5, "multipliers": [744.8] },
+          { "level": 6, "multipliers": [794.5] },
+          { "level": 7, "multipliers": [844.2] },
+          { "level": 8, "multipliers": [893.9] },
+          { "level": 9, "multipliers": [943.6] },
+          { "level": 10, "multipliers": [993.3] },
+          { "level": 11, "multipliers": [1043] },
+          { "level": 12, "multipliers": [1092.7] },
+          { "level": 13, "multipliers": [1142.4] },
+          { "level": 14, "multipliers": [1192.1] },
+          { "level": 15, "multipliers": [1241.8] },
+          { "level": 16, "multipliers": [1291.5] }
         ]
       }
     ],
@@ -1073,77 +465,24 @@
         "description": "When a [CHAIN] is triggered, select the character to activate:\n\nOrder /bDrusilla and Anastella//b to push forward and generate a ball-shaped electrical field that deals massive Electric DMG.\n\nDuring this skill, /bDrusilla and Anastella//b are unable to perform /bBasic Attacks//b, /bDash Attacks//b, /bSpecial Attacks//b, and /bEX Special Attacks//b, but can be recalled to Rina's side through /bBasic Attack: Shoo the Fool//b. Character is invulnerable while using this skill. A /bQuick Assist//b is triggered when this skill hits an enemy.",
         "skillType": "chain",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1013]
-          },
-          {
-            "level": 2,
-            "multipliers": [1105.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [1197.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [1289.3]
-          },
-          {
-            "level": 5,
-            "multipliers": [1381.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [1473.5]
-          },
-          {
-            "level": 7,
-            "multipliers": [1565.6]
-          },
-          {
-            "level": 8,
-            "multipliers": [1657.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [1749.8]
-          },
-          {
-            "level": 10,
-            "multipliers": [1841.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [1934]
-          },
-          {
-            "level": 12,
-            "multipliers": [2026.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [2118.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [2210.3]
-          },
-          {
-            "level": 15,
-            "multipliers": [2302.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [2394.5]
-          }
+          { "level": 1, "multipliers": [1013] },
+          { "level": 2, "multipliers": [1105.1] },
+          { "level": 3, "multipliers": [1197.2] },
+          { "level": 4, "multipliers": [1289.3] },
+          { "level": 5, "multipliers": [1381.4] },
+          { "level": 6, "multipliers": [1473.5] },
+          { "level": 7, "multipliers": [1565.6] },
+          { "level": 8, "multipliers": [1657.7] },
+          { "level": 9, "multipliers": [1749.8] },
+          { "level": 10, "multipliers": [1841.9] },
+          { "level": 11, "multipliers": [1934] },
+          { "level": 12, "multipliers": [2026.1] },
+          { "level": 13, "multipliers": [2118.2] },
+          { "level": 14, "multipliers": [2210.3] },
+          { "level": 15, "multipliers": [2302.4] },
+          { "level": 16, "multipliers": [2394.5] }
         ]
       }
     ],
@@ -1154,77 +493,24 @@
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nOrder /bDrusilla and Anastella//b to spin forward, dealing massive Electric DMG.\n\nDuring this skill, /bDrusilla and Anastella//b are unable to respond to /bBasic Attack//b, /bDash Attack//b, /bSpecial Attack//b, or /bEX Special Attack//b commands, but can be recalled to Rina's side through /bBasic Attack: Shoo the Fool//b.\n\nUpon activating this skill, the other squad members recover 10 Energy. The next character to switch in recovers an additional 20 Energy. Character is invulnerable while using this skill. A /bQuick Assist//b is triggered when this skill hits an enemy.",
         "skillType": "ultimate",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [2116.7]
-          },
-          {
-            "level": 2,
-            "multipliers": [2309.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [2501.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [2694.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [2886.7]
-          },
-          {
-            "level": 6,
-            "multipliers": [3079.2]
-          },
-          {
-            "level": 7,
-            "multipliers": [3271.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [3464.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [3656.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [3849.2]
-          },
-          {
-            "level": 11,
-            "multipliers": [4041.7]
-          },
-          {
-            "level": 12,
-            "multipliers": [4234.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [4426.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [4619.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [4811.7]
-          },
-          {
-            "level": 16,
-            "multipliers": [5004.2]
-          }
+          { "level": 1, "multipliers": [2116.7] },
+          { "level": 2, "multipliers": [2309.2] },
+          { "level": 3, "multipliers": [2501.7] },
+          { "level": 4, "multipliers": [2694.2] },
+          { "level": 5, "multipliers": [2886.7] },
+          { "level": 6, "multipliers": [3079.2] },
+          { "level": 7, "multipliers": [3271.7] },
+          { "level": 8, "multipliers": [3464.2] },
+          { "level": 9, "multipliers": [3656.7] },
+          { "level": 10, "multipliers": [3849.2] },
+          { "level": 11, "multipliers": [4041.7] },
+          { "level": 12, "multipliers": [4234.2] },
+          { "level": 13, "multipliers": [4426.7] },
+          { "level": 14, "multipliers": [4619.2] },
+          { "level": 15, "multipliers": [4811.7] },
+          { "level": 16, "multipliers": [5004.2] }
         ]
       }
     ],

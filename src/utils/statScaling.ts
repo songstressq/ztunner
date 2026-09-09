@@ -247,7 +247,7 @@ function calculateConditionalBonus(
     : total;
 }
 
-function calculateCurrentStatBonus(
+export function calculateCurrentStatBonus(
   effect: any,
   currentStatValue: number,
 ): { bonusValue: number; maxReached: boolean } {

@@ -209,7 +209,9 @@ export function calculateDisorderDamage({
     Object.values(sourceBonuses.elements).reduce((a, b) => a + b, 0) +
     Object.values(sourceBonuses.skillTypes).reduce((a, b) => a + b, 0);
 
-  const buffMod = 1 + slotBonuses.disorderDmgBonus;
+  const typeBonus =
+    sourceBonuses.anomalyTypeDmg?.[def.anomalyType]?.disorderBonus || 0;
+  const buffMod = 1 + slotBonuses.disorderDmgBonus + typeBonus;
 
   const damageWithBonuses = damageWithBuffLevel * dmgMod * buffMod;
   const damageAfterStun = damageWithBonuses * (1 + stunMultiplier / 100);

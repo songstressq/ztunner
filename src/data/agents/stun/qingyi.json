@@ -9,11 +9,7 @@
   "displayName": "Qingyi",
   "attributeIcon": "Electric",
   "themeColor": "#53AAAD",
-  "baseStats": {
-    "hp": 8250.6,
-    "atk": 683.2,
-    "def": 612.6
-  },
+  "baseStats": { "hp": 8250.6, "atk": 683.2, "def": 612.6 },
   "combatBase": {
     "impact": 118,
     "critRate": 0.05,
@@ -32,60 +28,15 @@
       "wind": 0
     }
   },
-  "recommendedStats": {
-    "className": "stat-recommended",
-    "stats": ["Impact"]
-  },
+  "recommendedStats": { "className": "stat-recommended", "stats": ["Impact"] },
   "coreEnhancement": [
-    {
-      "level": 0,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 0
-      }
-    },
-    {
-      "level": 1,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 2,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    },
-    {
-      "level": 3,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 4,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    },
-    {
-      "level": 5,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 6,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    }
+    { "level": 0, "stats": { "atkFlat": 0, "impact": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 2, "stats": { "atkFlat": 25, "impact": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 4, "stats": { "atkFlat": 25, "impact": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 6, "stats": { "atkFlat": 25, "impact": 0 } }
   ],
   "ingameEffects": [
     {
@@ -131,9 +82,7 @@
       "description": "When Qingyi enters combat, Flash Connect Voltage is instantly restored to its maximum, and the accumulation rate is increased by 30%. When using her Basic Attack: Enchanted Moonlit Blossoms, if Flash Connect Voltage is at its maximum, the attack will reduce the DEF of the enemy it hits by 15%, and Qingyi's CRIT Rate against that enemy will increase by 20% for 15s.",
       "shortDescription": "Qingyi's CRIT Rate is increased by 20% for 15s.",
       "target": "self",
-      "flat": {
-        "critRate": 0.2
-      }
+      "flat": { "critRate": 0.2 }
     },
     {
       "id": "qingyi-mindscape_1_2-insulation_breakdown",
@@ -141,11 +90,9 @@
       "sourceId": "qingyi-mindscape_1",
       "label": "Insulation Breakdown (Mindscape Cinema N°1)",
       "description": "When Qingyi enters combat, Flash Connect Voltage is instantly restored to its maximum, and the accumulation rate is increased by 30%. When using her Basic Attack: Enchanted Moonlit Blossoms, if Flash Connect Voltage is at its maximum, the attack will reduce the DEF of the enemy it hits by 15%, and Qingyi's CRIT Rate against that enemy will increase by 20% for 15s.",
-      "shortDescription": "The target's DEF is reduced by 15%.",
+      "shortDescription": "The target's DEF is reduced by 15% for 15s.",
       "target": "self",
-      "flat": {
-        "defShred": 0.15
-      }
+      "flat": { "defShred": 0.15 }
     },
     {
       "id": "qingyi-mindscape_2-minimal_effort_maximum_impact",
@@ -209,26 +156,11 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "electric"
-          },
-          {
-            "name": "1st Hit DMG Multiplier (ALT)",
-            "damageType": "electric"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "electric"
-          },
-          {
-            "name": "3rd Hit DMG Multiplier",
-            "damageType": "electric"
-          },
-          {
-            "name": "4th-Hit DMG Multiplier",
-            "damageType": "electric"
-          },
+          { "name": "1st-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "1st Hit DMG Multiplier (ALT)", "damageType": "electric" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "3rd Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "electric" },
           {
             "name": "4th Hit DMG Multiplier (Enhanced)",
             "damageType": "electric"
@@ -251,30 +183,15 @@
             "level": 4,
             "multipliers": [60.1, 140.6, 155.4, 22.4, 135.5, 298.6]
           },
-          {
-            "level": 5,
-            "multipliers": [64.4, 150.7, 166.5, 24, 145.2, 320]
-          },
+          { "level": 5, "multipliers": [64.4, 150.7, 166.5, 24, 145.2, 320] },
           {
             "level": 6,
             "multipliers": [68.7, 160.8, 177.6, 25.6, 154.9, 341.4]
           },
-          {
-            "level": 7,
-            "multipliers": [73, 170.9, 188.7, 27.2, 164.6, 362.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [77.3, 181, 199.8, 28.8, 174.3, 384.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [81.6, 191.1, 210.9, 30.4, 184, 405.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [85.9, 201.2, 222, 32, 193.7, 427]
-          },
+          { "level": 7, "multipliers": [73, 170.9, 188.7, 27.2, 164.6, 362.8] },
+          { "level": 8, "multipliers": [77.3, 181, 199.8, 28.8, 174.3, 384.2] },
+          { "level": 9, "multipliers": [81.6, 191.1, 210.9, 30.4, 184, 405.6] },
+          { "level": 10, "multipliers": [85.9, 201.2, 222, 32, 193.7, 427] },
           {
             "level": 11,
             "multipliers": [90.2, 211.3, 233.1, 33.6, 203.4, 448.4]
@@ -291,10 +208,7 @@
             "level": 14,
             "multipliers": [103.1, 241.6, 266.4, 38.4, 232.5, 512.6]
           },
-          {
-            "level": 15,
-            "multipliers": [107.4, 251.7, 277.5, 40, 242.2, 534]
-          },
+          { "level": 15, "multipliers": [107.4, 251.7, 277.5, 40, 242.2, 534] },
           {
             "level": 16,
             "multipliers": [111.7, 261.8, 288.6, 41.6, 251.9, 555.4]
@@ -307,77 +221,24 @@
         "description": "Press [BASIC] to activate:\n\nLaunches a forward rush attack, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [85.6]
-          },
-          {
-            "level": 2,
-            "multipliers": [93.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [101.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [109]
-          },
-          {
-            "level": 5,
-            "multipliers": [116.8]
-          },
-          {
-            "level": 6,
-            "multipliers": [124.6]
-          },
-          {
-            "level": 7,
-            "multipliers": [132.4]
-          },
-          {
-            "level": 8,
-            "multipliers": [140.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [148]
-          },
-          {
-            "level": 10,
-            "multipliers": [155.8]
-          },
-          {
-            "level": 11,
-            "multipliers": [163.6]
-          },
-          {
-            "level": 12,
-            "multipliers": [171.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [179.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [187]
-          },
-          {
-            "level": 15,
-            "multipliers": [194.8]
-          },
-          {
-            "level": 16,
-            "multipliers": [202.6]
-          }
+          { "level": 1, "multipliers": [85.6] },
+          { "level": 2, "multipliers": [93.4] },
+          { "level": 3, "multipliers": [101.2] },
+          { "level": 4, "multipliers": [109] },
+          { "level": 5, "multipliers": [116.8] },
+          { "level": 6, "multipliers": [124.6] },
+          { "level": 7, "multipliers": [132.4] },
+          { "level": 8, "multipliers": [140.2] },
+          { "level": 9, "multipliers": [148] },
+          { "level": 10, "multipliers": [155.8] },
+          { "level": 11, "multipliers": [163.6] },
+          { "level": 12, "multipliers": [171.4] },
+          { "level": 13, "multipliers": [179.2] },
+          { "level": 14, "multipliers": [187] },
+          { "level": 15, "multipliers": [194.8] },
+          { "level": 16, "multipliers": [202.6] }
         ]
       },
       {
@@ -387,80 +248,26 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "Rush DMG Multiplier",
-            "damageType": "electric"
-          },
-          {
-            "name": "Finishing Move DMG Multiplier",
-            "damageType": "electric"
-          }
+          { "name": "Rush DMG Multiplier", "damageType": "electric" },
+          { "name": "Finishing Move DMG Multiplier", "damageType": "electric" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [448.7, 394.4]
-          },
-          {
-            "level": 2,
-            "multipliers": [489.5, 430.3]
-          },
-          {
-            "level": 3,
-            "multipliers": [530.3, 466.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [571.1, 502.1]
-          },
-          {
-            "level": 5,
-            "multipliers": [611.9, 538]
-          },
-          {
-            "level": 6,
-            "multipliers": [652.7, 573.9]
-          },
-          {
-            "level": 7,
-            "multipliers": [693.5, 609.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [734.3, 645.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [775.1, 681.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [815.9, 717.5]
-          },
-          {
-            "level": 11,
-            "multipliers": [856.7, 753.4]
-          },
-          {
-            "level": 12,
-            "multipliers": [897.5, 789.3]
-          },
-          {
-            "level": 13,
-            "multipliers": [938.3, 825.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [979.1, 861.1]
-          },
-          {
-            "level": 15,
-            "multipliers": [1019.9, 897]
-          },
-          {
-            "level": 16,
-            "multipliers": [1060.7, 932.9]
-          }
+          { "level": 1, "multipliers": [448.7, 394.4] },
+          { "level": 2, "multipliers": [489.5, 430.3] },
+          { "level": 3, "multipliers": [530.3, 466.2] },
+          { "level": 4, "multipliers": [571.1, 502.1] },
+          { "level": 5, "multipliers": [611.9, 538] },
+          { "level": 6, "multipliers": [652.7, 573.9] },
+          { "level": 7, "multipliers": [693.5, 609.8] },
+          { "level": 8, "multipliers": [734.3, 645.7] },
+          { "level": 9, "multipliers": [775.1, 681.6] },
+          { "level": 10, "multipliers": [815.9, 717.5] },
+          { "level": 11, "multipliers": [856.7, 753.4] },
+          { "level": 12, "multipliers": [897.5, 789.3] },
+          { "level": 13, "multipliers": [938.3, 825.2] },
+          { "level": 14, "multipliers": [979.1, 861.1] },
+          { "level": 15, "multipliers": [1019.9, 897] },
+          { "level": 16, "multipliers": [1060.7, 932.9] }
         ]
       }
     ],
@@ -471,77 +278,24 @@
         "description": "Press [BASIC] during a Dodge to activate:\n\nRush forward and then launch an upward attack, dealing Physical DMG.",
         "skillType": "dash",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [49.5]
-          },
-          {
-            "level": 2,
-            "multipliers": [54]
-          },
-          {
-            "level": 3,
-            "multipliers": [58.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [63]
-          },
-          {
-            "level": 5,
-            "multipliers": [67.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [72]
-          },
-          {
-            "level": 7,
-            "multipliers": [76.5]
-          },
-          {
-            "level": 8,
-            "multipliers": [81]
-          },
-          {
-            "level": 9,
-            "multipliers": [85.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [90]
-          },
-          {
-            "level": 11,
-            "multipliers": [94.5]
-          },
-          {
-            "level": 12,
-            "multipliers": [99]
-          },
-          {
-            "level": 13,
-            "multipliers": [103.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [108]
-          },
-          {
-            "level": 15,
-            "multipliers": [112.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [117]
-          }
+          { "level": 1, "multipliers": [49.5] },
+          { "level": 2, "multipliers": [54] },
+          { "level": 3, "multipliers": [58.5] },
+          { "level": 4, "multipliers": [63] },
+          { "level": 5, "multipliers": [67.5] },
+          { "level": 6, "multipliers": [72] },
+          { "level": 7, "multipliers": [76.5] },
+          { "level": 8, "multipliers": [81] },
+          { "level": 9, "multipliers": [85.5] },
+          { "level": 10, "multipliers": [90] },
+          { "level": 11, "multipliers": [94.5] },
+          { "level": 12, "multipliers": [99] },
+          { "level": 13, "multipliers": [103.5] },
+          { "level": 14, "multipliers": [108] },
+          { "level": 15, "multipliers": [112.5] },
+          { "level": 16, "multipliers": [117] }
         ]
       }
     ],
@@ -552,77 +306,24 @@
         "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLeap into the air and then perform a downward attack, dealing Electric DMG. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [284]
-          },
-          {
-            "level": 2,
-            "multipliers": [309.9]
-          },
-          {
-            "level": 3,
-            "multipliers": [335.8]
-          },
-          {
-            "level": 4,
-            "multipliers": [361.7]
-          },
-          {
-            "level": 5,
-            "multipliers": [387.6]
-          },
-          {
-            "level": 6,
-            "multipliers": [413.5]
-          },
-          {
-            "level": 7,
-            "multipliers": [439.4]
-          },
-          {
-            "level": 8,
-            "multipliers": [465.3]
-          },
-          {
-            "level": 9,
-            "multipliers": [491.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [517.1]
-          },
-          {
-            "level": 11,
-            "multipliers": [543]
-          },
-          {
-            "level": 12,
-            "multipliers": [568.9]
-          },
-          {
-            "level": 13,
-            "multipliers": [594.8]
-          },
-          {
-            "level": 14,
-            "multipliers": [620.7]
-          },
-          {
-            "level": 15,
-            "multipliers": [646.6]
-          },
-          {
-            "level": 16,
-            "multipliers": [672.5]
-          }
+          { "level": 1, "multipliers": [284] },
+          { "level": 2, "multipliers": [309.9] },
+          { "level": 3, "multipliers": [335.8] },
+          { "level": 4, "multipliers": [361.7] },
+          { "level": 5, "multipliers": [387.6] },
+          { "level": 6, "multipliers": [413.5] },
+          { "level": 7, "multipliers": [439.4] },
+          { "level": 8, "multipliers": [465.3] },
+          { "level": 9, "multipliers": [491.2] },
+          { "level": 10, "multipliers": [517.1] },
+          { "level": 11, "multipliers": [543] },
+          { "level": 12, "multipliers": [568.9] },
+          { "level": 13, "multipliers": [594.8] },
+          { "level": 14, "multipliers": [620.7] },
+          { "level": 15, "multipliers": [646.6] },
+          { "level": 16, "multipliers": [672.5] }
         ]
       }
     ],
@@ -633,77 +334,24 @@
         "description": "When the onfield character is launched, press [ASSIST] to activate:\n\nLeap into the air and perform a downward attack, dealing Electric DMG. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [133.9]
-          },
-          {
-            "level": 2,
-            "multipliers": [146.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [158.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [170.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [182.7]
-          },
-          {
-            "level": 6,
-            "multipliers": [194.9]
-          },
-          {
-            "level": 7,
-            "multipliers": [207.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [219.3]
-          },
-          {
-            "level": 9,
-            "multipliers": [231.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [243.7]
-          },
-          {
-            "level": 11,
-            "multipliers": [255.9]
-          },
-          {
-            "level": 12,
-            "multipliers": [268.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [280.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [292.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [304.7]
-          },
-          {
-            "level": 16,
-            "multipliers": [316.9]
-          }
+          { "level": 1, "multipliers": [133.9] },
+          { "level": 2, "multipliers": [146.1] },
+          { "level": 3, "multipliers": [158.3] },
+          { "level": 4, "multipliers": [170.5] },
+          { "level": 5, "multipliers": [182.7] },
+          { "level": 6, "multipliers": [194.9] },
+          { "level": 7, "multipliers": [207.1] },
+          { "level": 8, "multipliers": [219.3] },
+          { "level": 9, "multipliers": [231.5] },
+          { "level": 10, "multipliers": [243.7] },
+          { "level": 11, "multipliers": [255.9] },
+          { "level": 12, "multipliers": [268.1] },
+          { "level": 13, "multipliers": [280.3] },
+          { "level": 14, "multipliers": [292.5] },
+          { "level": 15, "multipliers": [304.7] },
+          { "level": 16, "multipliers": [316.9] }
         ]
       }
     ],
@@ -715,77 +363,24 @@
         "description": "Press [BASIC] after a [PERFECT] to activate:\n\nRush forward with an attack and inject electrical energy into the ground, then pull back to trigger an explosion, dealing Electric DMG. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [376.4]
-          },
-          {
-            "level": 2,
-            "multipliers": [410.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [445]
-          },
-          {
-            "level": 4,
-            "multipliers": [479.3]
-          },
-          {
-            "level": 5,
-            "multipliers": [513.6]
-          },
-          {
-            "level": 6,
-            "multipliers": [547.9]
-          },
-          {
-            "level": 7,
-            "multipliers": [582.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [616.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [650.8]
-          },
-          {
-            "level": 10,
-            "multipliers": [685.1]
-          },
-          {
-            "level": 11,
-            "multipliers": [719.4]
-          },
-          {
-            "level": 12,
-            "multipliers": [753.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [788]
-          },
-          {
-            "level": 14,
-            "multipliers": [822.3]
-          },
-          {
-            "level": 15,
-            "multipliers": [856.6]
-          },
-          {
-            "level": 16,
-            "multipliers": [890.9]
-          }
+          { "level": 1, "multipliers": [376.4] },
+          { "level": 2, "multipliers": [410.7] },
+          { "level": 3, "multipliers": [445] },
+          { "level": 4, "multipliers": [479.3] },
+          { "level": 5, "multipliers": [513.6] },
+          { "level": 6, "multipliers": [547.9] },
+          { "level": 7, "multipliers": [582.2] },
+          { "level": 8, "multipliers": [616.5] },
+          { "level": 9, "multipliers": [650.8] },
+          { "level": 10, "multipliers": [685.1] },
+          { "level": 11, "multipliers": [719.4] },
+          { "level": 12, "multipliers": [753.7] },
+          { "level": 13, "multipliers": [788] },
+          { "level": 14, "multipliers": [822.3] },
+          { "level": 15, "multipliers": [856.6] },
+          { "level": 16, "multipliers": [890.9] }
         ]
       }
     ],
@@ -796,77 +391,24 @@
         "description": "Press [SPECIAL] to activate:\n\nQuickly swings upward, followed by a downward smash, dealing Electric DMG. Anti-interrupt level is increased while using this skill.",
         "skillType": "special",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [62.4]
-          },
-          {
-            "level": 2,
-            "multipliers": [68.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [73.8]
-          },
-          {
-            "level": 4,
-            "multipliers": [79.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [85.2]
-          },
-          {
-            "level": 6,
-            "multipliers": [90.9]
-          },
-          {
-            "level": 7,
-            "multipliers": [96.6]
-          },
-          {
-            "level": 8,
-            "multipliers": [102.3]
-          },
-          {
-            "level": 9,
-            "multipliers": [108]
-          },
-          {
-            "level": 10,
-            "multipliers": [113.7]
-          },
-          {
-            "level": 11,
-            "multipliers": [119.4]
-          },
-          {
-            "level": 12,
-            "multipliers": [125.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [130.8]
-          },
-          {
-            "level": 14,
-            "multipliers": [136.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [142.2]
-          },
-          {
-            "level": 16,
-            "multipliers": [147.9]
-          }
+          { "level": 1, "multipliers": [62.4] },
+          { "level": 2, "multipliers": [68.1] },
+          { "level": 3, "multipliers": [73.8] },
+          { "level": 4, "multipliers": [79.5] },
+          { "level": 5, "multipliers": [85.2] },
+          { "level": 6, "multipliers": [90.9] },
+          { "level": 7, "multipliers": [96.6] },
+          { "level": 8, "multipliers": [102.3] },
+          { "level": 9, "multipliers": [108] },
+          { "level": 10, "multipliers": [113.7] },
+          { "level": 11, "multipliers": [119.4] },
+          { "level": 12, "multipliers": [125.1] },
+          { "level": 13, "multipliers": [130.8] },
+          { "level": 14, "multipliers": [136.5] },
+          { "level": 15, "multipliers": [142.2] },
+          { "level": 16, "multipliers": [147.9] }
         ]
       }
     ],
@@ -877,77 +419,24 @@
         "description": "When Qingyi has enough energy, press [EX] to activate:\n\nQuickly swings upward and leaps into the air, turning around to launch a series of attacks, then follows up with a powerful downward smash, dealing massive Electric DMG.\n\nHold [EX] to consume additional energy to increase the number of hits of the series of attacks. Character is invulnerable while using this skill. After executing the move, you can directly follow up with the 3rd-hit of a /bBasic Attack//b.",
         "skillType": "ex",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [602.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [657.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [712.6]
-          },
-          {
-            "level": 4,
-            "multipliers": [767.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [822.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [877.3]
-          },
-          {
-            "level": 7,
-            "multipliers": [932.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [987.1]
-          },
-          {
-            "level": 9,
-            "multipliers": [1042]
-          },
-          {
-            "level": 10,
-            "multipliers": [1096.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [1151.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [1206.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [1261.6]
-          },
-          {
-            "level": 14,
-            "multipliers": [1316.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [1371.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [1426.3]
-          }
+          { "level": 1, "multipliers": [602.8] },
+          { "level": 2, "multipliers": [657.7] },
+          { "level": 3, "multipliers": [712.6] },
+          { "level": 4, "multipliers": [767.5] },
+          { "level": 5, "multipliers": [822.4] },
+          { "level": 6, "multipliers": [877.3] },
+          { "level": 7, "multipliers": [932.2] },
+          { "level": 8, "multipliers": [987.1] },
+          { "level": 9, "multipliers": [1042] },
+          { "level": 10, "multipliers": [1096.9] },
+          { "level": 11, "multipliers": [1151.8] },
+          { "level": 12, "multipliers": [1206.7] },
+          { "level": 13, "multipliers": [1261.6] },
+          { "level": 14, "multipliers": [1316.5] },
+          { "level": 15, "multipliers": [1371.4] },
+          { "level": 16, "multipliers": [1426.3] }
         ]
       }
     ],
@@ -958,77 +447,24 @@
         "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunch a series of powerful strikes over a large area in front, dealing massive Electric DMG.\n\nWhen this attack hits an enemy, the skill's DMG increases by 3% for every stack of /bSubjugation//b in /bCore Passive: Eternal Seasons//b the target has. Character is invulnerable while using this skill.",
         "skillType": "chain",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [647.9]
-          },
-          {
-            "level": 2,
-            "multipliers": [706.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [765.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [824.6]
-          },
-          {
-            "level": 5,
-            "multipliers": [883.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [942.4]
-          },
-          {
-            "level": 7,
-            "multipliers": [1001.3]
-          },
-          {
-            "level": 8,
-            "multipliers": [1060.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [1119.1]
-          },
-          {
-            "level": 10,
-            "multipliers": [1178]
-          },
-          {
-            "level": 11,
-            "multipliers": [1236.9]
-          },
-          {
-            "level": 12,
-            "multipliers": [1295.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [1354.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [1413.6]
-          },
-          {
-            "level": 15,
-            "multipliers": [1472.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [1531.4]
-          }
+          { "level": 1, "multipliers": [647.9] },
+          { "level": 2, "multipliers": [706.8] },
+          { "level": 3, "multipliers": [765.7] },
+          { "level": 4, "multipliers": [824.6] },
+          { "level": 5, "multipliers": [883.5] },
+          { "level": 6, "multipliers": [942.4] },
+          { "level": 7, "multipliers": [1001.3] },
+          { "level": 8, "multipliers": [1060.2] },
+          { "level": 9, "multipliers": [1119.1] },
+          { "level": 10, "multipliers": [1178] },
+          { "level": 11, "multipliers": [1236.9] },
+          { "level": 12, "multipliers": [1295.8] },
+          { "level": 13, "multipliers": [1354.7] },
+          { "level": 14, "multipliers": [1413.6] },
+          { "level": 15, "multipliers": [1472.5] },
+          { "level": 16, "multipliers": [1531.4] }
         ]
       }
     ],
@@ -1039,77 +475,24 @@
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunch a series of powerful strikes over a large area in front, followed by a /bFinishing Move//b, dealing massive Electric DMG. Character is invulnerable while using this skill.",
         "skillType": "ultimate",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "electric"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1670.7]
-          },
-          {
-            "level": 2,
-            "multipliers": [1822.6]
-          },
-          {
-            "level": 3,
-            "multipliers": [1974.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [2126.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [2278.3]
-          },
-          {
-            "level": 6,
-            "multipliers": [2430.2]
-          },
-          {
-            "level": 7,
-            "multipliers": [2582.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [2734]
-          },
-          {
-            "level": 9,
-            "multipliers": [2885.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [3037.8]
-          },
-          {
-            "level": 11,
-            "multipliers": [3189.7]
-          },
-          {
-            "level": 12,
-            "multipliers": [3341.6]
-          },
-          {
-            "level": 13,
-            "multipliers": [3493.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [3645.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [3797.3]
-          },
-          {
-            "level": 16,
-            "multipliers": [3949.2]
-          }
+          { "level": 1, "multipliers": [1670.7] },
+          { "level": 2, "multipliers": [1822.6] },
+          { "level": 3, "multipliers": [1974.5] },
+          { "level": 4, "multipliers": [2126.4] },
+          { "level": 5, "multipliers": [2278.3] },
+          { "level": 6, "multipliers": [2430.2] },
+          { "level": 7, "multipliers": [2582.1] },
+          { "level": 8, "multipliers": [2734] },
+          { "level": 9, "multipliers": [2885.9] },
+          { "level": 10, "multipliers": [3037.8] },
+          { "level": 11, "multipliers": [3189.7] },
+          { "level": 12, "multipliers": [3341.6] },
+          { "level": 13, "multipliers": [3493.5] },
+          { "level": 14, "multipliers": [3645.4] },
+          { "level": 15, "multipliers": [3797.3] },
+          { "level": 16, "multipliers": [3949.2] }
         ]
       }
     ],

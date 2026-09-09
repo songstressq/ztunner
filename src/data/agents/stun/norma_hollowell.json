@@ -9,11 +9,7 @@
   "displayName": "Norma",
   "attributeIcon": "Fire",
   "themeColor": "#5695D2",
-  "baseStats": {
-    "hp": 7800,
-    "atk": 687.41,
-    "def": 582.47
-  },
+  "baseStats": { "hp": 7800, "atk": 687.41, "def": 582.47 },
   "combatBase": {
     "impact": 106,
     "critRate": 0.05,
@@ -37,55 +33,13 @@
     "stats": ["CRIT Rate", "CRIT DMG", "Energy Regen"]
   },
   "coreEnhancement": [
-    {
-      "level": 0,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 1,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 2,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 3,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 4,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 5,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 6,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    }
+    { "level": 0, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 2, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 4, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 6, "stats": { "atkFlat": 25, "critRate": 0 } }
   ],
   "ingameEffects": [
     {
@@ -104,11 +58,7 @@
         "baseBonus": 0,
         "perUnit": 1,
         "skillLevels": [
-          {
-            "level": 1,
-            "maxBonus": 0.85,
-            "perUnitBonus": 0.017
-          }
+          { "level": 1, "maxBonus": 0.85, "perUnitBonus": 0.017 }
         ],
         "affectedStats": ["critDmg"]
       }
@@ -139,9 +89,7 @@
       "description": "... While En-nah Barrage is active, Norma's ATK increases by 44. This effect scales with character level, increasing by 14 per level, up to a maximum increase of 870. ...",
       "shortDescription": "Norma's ATK is increased by 870 while En-nah Barrage is active.",
       "target": "self",
-      "flat": {
-        "atkFlatRaw": 870
-      }
+      "flat": { "atkFlatRaw": 870 }
     },
     {
       "id": "norma_hollowell-core_2-advantage_in_numbers",
@@ -151,12 +99,7 @@
       "description": "... While En-Nah Barrage is active, DMG dealt by all squad members increases by 20%. ...",
       "shortDescription": "All squad members' DMG is increased by 20% while En-nah Barrage is active.",
       "target": "team",
-      "damageBonuses": [
-        {
-          "type": "global",
-          "value": 0.2
-        }
-      ]
+      "damageBonuses": [{ "type": "global", "value": 0.2 }]
     },
     {
       "id": "norma_holowell-mindscape_1-visionary_extremism",
@@ -229,88 +172,28 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "fire"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "fire"
-          },
-          {
-            "name": "3rd-Hit DMG Multiplier",
-            "damageType": "fire"
-          },
-          {
-            "name": "4th-Hit DMG Multiplier",
-            "damageType": "fire"
-          }
+          { "name": "1st-Hit DMG Multiplier", "damageType": "fire" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "fire" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "fire" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "fire" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [26.1, 37.8, 73.3, 140.9]
-          },
-          {
-            "level": 2,
-            "multipliers": [28.5, 41.3, 80, 153.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [30.9, 44.8, 86.7, 166.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [33.3, 48.3, 93.4, 179.6]
-          },
-          {
-            "level": 5,
-            "multipliers": [35.7, 51.8, 100.1, 192.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [38.1, 55.3, 106.8, 205.4]
-          },
-          {
-            "level": 7,
-            "multipliers": [40.5, 58.8, 113.5, 218.3]
-          },
-          {
-            "level": 8,
-            "multipliers": [42.9, 62.3, 120.2, 231.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [45.3, 65.8, 126.9, 244.1]
-          },
-          {
-            "level": 10,
-            "multipliers": [47.7, 69.3, 133.6, 257]
-          },
-          {
-            "level": 11,
-            "multipliers": [50.1, 72.8, 140.3, 269.9]
-          },
-          {
-            "level": 12,
-            "multipliers": [52.5, 76.3, 147, 282.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [54.9, 79.8, 153.7, 295.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [57.3, 83.3, 160.4, 308.6]
-          },
-          {
-            "level": 15,
-            "multipliers": [59.7, 86.8, 167.1, 321.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [62.1, 90.3, 173.8, 334.4]
-          }
+          { "level": 1, "multipliers": [26.1, 37.8, 73.3, 140.9] },
+          { "level": 2, "multipliers": [28.5, 41.3, 80, 153.8] },
+          { "level": 3, "multipliers": [30.9, 44.8, 86.7, 166.7] },
+          { "level": 4, "multipliers": [33.3, 48.3, 93.4, 179.6] },
+          { "level": 5, "multipliers": [35.7, 51.8, 100.1, 192.5] },
+          { "level": 6, "multipliers": [38.1, 55.3, 106.8, 205.4] },
+          { "level": 7, "multipliers": [40.5, 58.8, 113.5, 218.3] },
+          { "level": 8, "multipliers": [42.9, 62.3, 120.2, 231.2] },
+          { "level": 9, "multipliers": [45.3, 65.8, 126.9, 244.1] },
+          { "level": 10, "multipliers": [47.7, 69.3, 133.6, 257] },
+          { "level": 11, "multipliers": [50.1, 72.8, 140.3, 269.9] },
+          { "level": 12, "multipliers": [52.5, 76.3, 147, 282.8] },
+          { "level": 13, "multipliers": [54.9, 79.8, 153.7, 295.7] },
+          { "level": 14, "multipliers": [57.3, 83.3, 160.4, 308.6] },
+          { "level": 15, "multipliers": [59.7, 86.8, 167.1, 321.5] },
+          { "level": 16, "multipliers": [62.1, 90.3, 173.8, 334.4] }
         ]
       },
       {
@@ -319,77 +202,24 @@
         "description": "When Norma is the active character and is in combat, she gains 1.5% /bPreheated Chamber//b per second.\n\nWhen /bTop Hat Companion//b is on her head, hold [BASIC] to activate: After firing, Norma throws out /bTop Hat Companion//b, ordering it to unleash a round of aerial fire, dealing Fire DMG and storing the current /bPreheated Chamber//b. When the skill hits an enemy, it triggers the previous character's /bQuick Assist//b. This effect can trigger once every 5s.\n\nOnce /bTop Hat Companion//b has been thrown out, it will accumulate and retain /bPreheated Chamber//b at the same speed on behalf of Norma. Norma does not need to stay on the field during this period. After Norma retrieves the /bTop Hat Companion//b, she immediately gains the stored /bPreheated Chamber//b.\n\nWhen holding [BASIC], the /bTop Hat Companion//b will accelerate toward Norma. If retrieving the /bTop Hat Companion//b would raise /bPreheated Chamber//b to 80% or higher, the /bTop Hat Companion//b will automatically accelerate toward Norma. When Norma switches from on field to off field while in combat, if /bPreheated Chamber//b is not full, /bTop Hat Companion//b automatically enters the battlefield. Anti-Interrupt level is increased while using this skill.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [56.9]
-          },
-          {
-            "level": 2,
-            "multipliers": [62.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [67.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [72.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [77.7]
-          },
-          {
-            "level": 6,
-            "multipliers": [82.9]
-          },
-          {
-            "level": 7,
-            "multipliers": [88.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [93.3]
-          },
-          {
-            "level": 9,
-            "multipliers": [98.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [103.7]
-          },
-          {
-            "level": 11,
-            "multipliers": [108.9]
-          },
-          {
-            "level": 12,
-            "multipliers": [114.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [119.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [124.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [129.7]
-          },
-          {
-            "level": 16,
-            "multipliers": [134.9]
-          }
+          { "level": 1, "multipliers": [56.9] },
+          { "level": 2, "multipliers": [62.1] },
+          { "level": 3, "multipliers": [67.3] },
+          { "level": 4, "multipliers": [72.5] },
+          { "level": 5, "multipliers": [77.7] },
+          { "level": 6, "multipliers": [82.9] },
+          { "level": 7, "multipliers": [88.1] },
+          { "level": 8, "multipliers": [93.3] },
+          { "level": 9, "multipliers": [98.5] },
+          { "level": 10, "multipliers": [103.7] },
+          { "level": 11, "multipliers": [108.9] },
+          { "level": 12, "multipliers": [114.1] },
+          { "level": 13, "multipliers": [119.3] },
+          { "level": 14, "multipliers": [124.5] },
+          { "level": 15, "multipliers": [129.7] },
+          { "level": 16, "multipliers": [134.9] }
         ]
       }
     ],
@@ -400,77 +230,24 @@
         "description": "Press [BASIC] during a dodge to activate:\n\nSpins while firing at nearby enemies, dealing Fire DMG.",
         "skillType": "dash",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [82.3]
-          },
-          {
-            "level": 2,
-            "multipliers": [89.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [97.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [104.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [112.3]
-          },
-          {
-            "level": 6,
-            "multipliers": [119.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [127.3]
-          },
-          {
-            "level": 8,
-            "multipliers": [134.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [142.3]
-          },
-          {
-            "level": 10,
-            "multipliers": [149.8]
-          },
-          {
-            "level": 11,
-            "multipliers": [157.3]
-          },
-          {
-            "level": 12,
-            "multipliers": [164.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [172.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [179.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [187.3]
-          },
-          {
-            "level": 16,
-            "multipliers": [194.8]
-          }
+          { "level": 1, "multipliers": [82.3] },
+          { "level": 2, "multipliers": [89.8] },
+          { "level": 3, "multipliers": [97.3] },
+          { "level": 4, "multipliers": [104.8] },
+          { "level": 5, "multipliers": [112.3] },
+          { "level": 6, "multipliers": [119.8] },
+          { "level": 7, "multipliers": [127.3] },
+          { "level": 8, "multipliers": [134.8] },
+          { "level": 9, "multipliers": [142.3] },
+          { "level": 10, "multipliers": [149.8] },
+          { "level": 11, "multipliers": [157.3] },
+          { "level": 12, "multipliers": [164.8] },
+          { "level": 13, "multipliers": [172.3] },
+          { "level": 14, "multipliers": [179.8] },
+          { "level": 15, "multipliers": [187.3] },
+          { "level": 16, "multipliers": [194.8] }
         ]
       }
     ],
@@ -481,77 +258,24 @@
         "description": "Press [BASIC] during a [COUNTER] to activate:\n\nCommands the Rumble Drill to continuously drill the target, dealing Fire DMG. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [313.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [341.6]
-          },
-          {
-            "level": 3,
-            "multipliers": [370.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [398.6]
-          },
-          {
-            "level": 5,
-            "multipliers": [427.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [455.6]
-          },
-          {
-            "level": 7,
-            "multipliers": [484.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [512.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [541.1]
-          },
-          {
-            "level": 10,
-            "multipliers": [569.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [598.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [626.6]
-          },
-          {
-            "level": 13,
-            "multipliers": [655.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [683.6]
-          },
-          {
-            "level": 15,
-            "multipliers": [712.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [740.6]
-          }
+          { "level": 1, "multipliers": [313.1] },
+          { "level": 2, "multipliers": [341.6] },
+          { "level": 3, "multipliers": [370.1] },
+          { "level": 4, "multipliers": [398.6] },
+          { "level": 5, "multipliers": [427.1] },
+          { "level": 6, "multipliers": [455.6] },
+          { "level": 7, "multipliers": [484.1] },
+          { "level": 8, "multipliers": [512.6] },
+          { "level": 9, "multipliers": [541.1] },
+          { "level": 10, "multipliers": [569.6] },
+          { "level": 11, "multipliers": [598.1] },
+          { "level": 12, "multipliers": [626.6] },
+          { "level": 13, "multipliers": [655.1] },
+          { "level": 14, "multipliers": [683.6] },
+          { "level": 15, "multipliers": [712.1] },
+          { "level": 16, "multipliers": [740.6] }
         ]
       }
     ],
@@ -562,77 +286,24 @@
         "description": "When the active character is launched, press [ASSIST] to activate:\n\nCommands the Rumble Drill to continuously attack the target, dealing Fire DMG. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [70.5]
-          },
-          {
-            "level": 2,
-            "multipliers": [77]
-          },
-          {
-            "level": 3,
-            "multipliers": [83.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [90]
-          },
-          {
-            "level": 5,
-            "multipliers": [96.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [103]
-          },
-          {
-            "level": 7,
-            "multipliers": [109.5]
-          },
-          {
-            "level": 8,
-            "multipliers": [116]
-          },
-          {
-            "level": 9,
-            "multipliers": [122.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [129]
-          },
-          {
-            "level": 11,
-            "multipliers": [135.5]
-          },
-          {
-            "level": 12,
-            "multipliers": [142]
-          },
-          {
-            "level": 13,
-            "multipliers": [148.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [155]
-          },
-          {
-            "level": 15,
-            "multipliers": [161.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [168]
-          }
+          { "level": 1, "multipliers": [70.5] },
+          { "level": 2, "multipliers": [77] },
+          { "level": 3, "multipliers": [83.5] },
+          { "level": 4, "multipliers": [90] },
+          { "level": 5, "multipliers": [96.5] },
+          { "level": 6, "multipliers": [103] },
+          { "level": 7, "multipliers": [109.5] },
+          { "level": 8, "multipliers": [116] },
+          { "level": 9, "multipliers": [122.5] },
+          { "level": 10, "multipliers": [129] },
+          { "level": 11, "multipliers": [135.5] },
+          { "level": 12, "multipliers": [142] },
+          { "level": 13, "multipliers": [148.5] },
+          { "level": 14, "multipliers": [155] },
+          { "level": 15, "multipliers": [161.5] },
+          { "level": 16, "multipliers": [168] }
         ]
       }
     ],
@@ -644,77 +315,24 @@
         "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleashes a series of attacks, dealing Fire DMG. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [450.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [491.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [532.8]
-          },
-          {
-            "level": 4,
-            "multipliers": [573.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [614.8]
-          },
-          {
-            "level": 6,
-            "multipliers": [655.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [696.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [737.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [778.8]
-          },
-          {
-            "level": 10,
-            "multipliers": [819.8]
-          },
-          {
-            "level": 11,
-            "multipliers": [860.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [901.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [942.8]
-          },
-          {
-            "level": 14,
-            "multipliers": [983.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [1024.8]
-          },
-          {
-            "level": 16,
-            "multipliers": [1065.8]
-          }
+          { "level": 1, "multipliers": [450.8] },
+          { "level": 2, "multipliers": [491.8] },
+          { "level": 3, "multipliers": [532.8] },
+          { "level": 4, "multipliers": [573.8] },
+          { "level": 5, "multipliers": [614.8] },
+          { "level": 6, "multipliers": [655.8] },
+          { "level": 7, "multipliers": [696.8] },
+          { "level": 8, "multipliers": [737.8] },
+          { "level": 9, "multipliers": [778.8] },
+          { "level": 10, "multipliers": [819.8] },
+          { "level": 11, "multipliers": [860.8] },
+          { "level": 12, "multipliers": [901.8] },
+          { "level": 13, "multipliers": [942.8] },
+          { "level": 14, "multipliers": [983.8] },
+          { "level": 15, "multipliers": [1024.8] },
+          { "level": 16, "multipliers": [1065.8] }
         ]
       }
     ],
@@ -725,77 +343,24 @@
         "description": "Press [SPECIAL] to activate:\n\nBombards enemies, dealing Fire DMG.",
         "skillType": "special",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [15]
-          },
-          {
-            "level": 2,
-            "multipliers": [16.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [17.8]
-          },
-          {
-            "level": 4,
-            "multipliers": [19.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [20.6]
-          },
-          {
-            "level": 6,
-            "multipliers": [22]
-          },
-          {
-            "level": 7,
-            "multipliers": [23.4]
-          },
-          {
-            "level": 8,
-            "multipliers": [24.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [26.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [27.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [29]
-          },
-          {
-            "level": 12,
-            "multipliers": [30.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [31.8]
-          },
-          {
-            "level": 14,
-            "multipliers": [33.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [34.6]
-          },
-          {
-            "level": 16,
-            "multipliers": [36]
-          }
+          { "level": 1, "multipliers": [15] },
+          { "level": 2, "multipliers": [16.4] },
+          { "level": 3, "multipliers": [17.8] },
+          { "level": 4, "multipliers": [19.2] },
+          { "level": 5, "multipliers": [20.6] },
+          { "level": 6, "multipliers": [22] },
+          { "level": 7, "multipliers": [23.4] },
+          { "level": 8, "multipliers": [24.8] },
+          { "level": 9, "multipliers": [26.2] },
+          { "level": 10, "multipliers": [27.6] },
+          { "level": 11, "multipliers": [29] },
+          { "level": 12, "multipliers": [30.4] },
+          { "level": 13, "multipliers": [31.8] },
+          { "level": 14, "multipliers": [33.2] },
+          { "level": 15, "multipliers": [34.6] },
+          { "level": 16, "multipliers": [36] }
         ]
       },
       {
@@ -804,77 +369,24 @@
         "description": "During battle, /bPreheated Chamber//b automatically attacks enemies, dealing Fire DMG.",
         "skillType": "special",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [195]
-          },
-          {
-            "level": 2,
-            "multipliers": [212.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [230.6]
-          },
-          {
-            "level": 4,
-            "multipliers": [248.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [266.2]
-          },
-          {
-            "level": 6,
-            "multipliers": [284]
-          },
-          {
-            "level": 7,
-            "multipliers": [301.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [319.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [337.4]
-          },
-          {
-            "level": 10,
-            "multipliers": [355.2]
-          },
-          {
-            "level": 11,
-            "multipliers": [373]
-          },
-          {
-            "level": 12,
-            "multipliers": [390.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [408.6]
-          },
-          {
-            "level": 14,
-            "multipliers": [426.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [444.2]
-          },
-          {
-            "level": 16,
-            "multipliers": [462]
-          }
+          { "level": 1, "multipliers": [195] },
+          { "level": 2, "multipliers": [212.8] },
+          { "level": 3, "multipliers": [230.6] },
+          { "level": 4, "multipliers": [248.4] },
+          { "level": 5, "multipliers": [266.2] },
+          { "level": 6, "multipliers": [284] },
+          { "level": 7, "multipliers": [301.8] },
+          { "level": 8, "multipliers": [319.6] },
+          { "level": 9, "multipliers": [337.4] },
+          { "level": 10, "multipliers": [355.2] },
+          { "level": 11, "multipliers": [373] },
+          { "level": 12, "multipliers": [390.8] },
+          { "level": 13, "multipliers": [408.6] },
+          { "level": 14, "multipliers": [426.4] },
+          { "level": 15, "multipliers": [444.2] },
+          { "level": 16, "multipliers": [462] }
         ]
       }
     ],
@@ -886,10 +398,7 @@
         "skillType": "ex",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "Shot DMG Multiplier",
-            "damageType": "fire"
-          },
+          { "name": "Shot DMG Multiplier", "damageType": "fire" },
           {
             "name": "Armor-Piercing Warhead DMG Multiplier",
             "damageType": "fire"
@@ -936,22 +445,13 @@
             "level": 6,
             "multipliers": [298.9, 448, 496.9, 190.1, 285.4, 315.2]
           },
-          {
-            "level": 7,
-            "multipliers": [317.6, 476, 528, 202, 303.3, 334.9]
-          },
+          { "level": 7, "multipliers": [317.6, 476, 528, 202, 303.3, 334.9] },
           {
             "level": 8,
             "multipliers": [336.3, 504, 559.1, 213.9, 321.2, 354.6]
           },
-          {
-            "level": 9,
-            "multipliers": [355, 532, 590.2, 225.8, 339.1, 374.3]
-          },
-          {
-            "level": 10,
-            "multipliers": [373.7, 560, 621.3, 237.7, 357, 394]
-          },
+          { "level": 9, "multipliers": [355, 532, 590.2, 225.8, 339.1, 374.3] },
+          { "level": 10, "multipliers": [373.7, 560, 621.3, 237.7, 357, 394] },
           {
             "level": 11,
             "multipliers": [392.4, 588, 652.4, 249.6, 374.9, 413.7]
@@ -995,70 +495,22 @@
           }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [82.8, 92.3]
-          },
-          {
-            "level": 2,
-            "multipliers": [90.4, 100.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [98, 109.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [105.6, 117.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [113.2, 125.9]
-          },
-          {
-            "level": 6,
-            "multipliers": [120.8, 134.3]
-          },
-          {
-            "level": 7,
-            "multipliers": [128.4, 142.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [136, 151.1]
-          },
-          {
-            "level": 9,
-            "multipliers": [143.6, 159.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [151.2, 167.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [158.8, 176.3]
-          },
-          {
-            "level": 12,
-            "multipliers": [166.4, 184.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [174, 193.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [181.6, 201.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [189.2, 209.9]
-          },
-          {
-            "level": 16,
-            "multipliers": [196.8, 218.3]
-          }
+          { "level": 1, "multipliers": [82.8, 92.3] },
+          { "level": 2, "multipliers": [90.4, 100.7] },
+          { "level": 3, "multipliers": [98, 109.1] },
+          { "level": 4, "multipliers": [105.6, 117.5] },
+          { "level": 5, "multipliers": [113.2, 125.9] },
+          { "level": 6, "multipliers": [120.8, 134.3] },
+          { "level": 7, "multipliers": [128.4, 142.7] },
+          { "level": 8, "multipliers": [136, 151.1] },
+          { "level": 9, "multipliers": [143.6, 159.5] },
+          { "level": 10, "multipliers": [151.2, 167.9] },
+          { "level": 11, "multipliers": [158.8, 176.3] },
+          { "level": 12, "multipliers": [166.4, 184.7] },
+          { "level": 13, "multipliers": [174, 193.1] },
+          { "level": 14, "multipliers": [181.6, 201.5] },
+          { "level": 15, "multipliers": [189.2, 209.9] },
+          { "level": 16, "multipliers": [196.8, 218.3] }
         ]
       }
     ],
@@ -1069,77 +521,24 @@
         "description": "When a [CHAIN] is triggered, select the character to activate:\n\nCommands a swarm of Rumble Drills to deal multiple hits, dealing massive Fire DMG. Character is invulnerable while using this skill.",
         "skillType": "chain",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [752.7]
-          },
-          {
-            "level": 2,
-            "multipliers": [821.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [889.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [958.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [1026.7]
-          },
-          {
-            "level": 6,
-            "multipliers": [1095.2]
-          },
-          {
-            "level": 7,
-            "multipliers": [1163.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [1232.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [1300.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [1369.2]
-          },
-          {
-            "level": 11,
-            "multipliers": [1437.7]
-          },
-          {
-            "level": 12,
-            "multipliers": [1506.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [1574.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [1643.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [1711.7]
-          },
-          {
-            "level": 16,
-            "multipliers": [1780.2]
-          }
+          { "level": 1, "multipliers": [752.7] },
+          { "level": 2, "multipliers": [821.2] },
+          { "level": 3, "multipliers": [889.7] },
+          { "level": 4, "multipliers": [958.2] },
+          { "level": 5, "multipliers": [1026.7] },
+          { "level": 6, "multipliers": [1095.2] },
+          { "level": 7, "multipliers": [1163.7] },
+          { "level": 8, "multipliers": [1232.2] },
+          { "level": 9, "multipliers": [1300.7] },
+          { "level": 10, "multipliers": [1369.2] },
+          { "level": 11, "multipliers": [1437.7] },
+          { "level": 12, "multipliers": [1506.2] },
+          { "level": 13, "multipliers": [1574.7] },
+          { "level": 14, "multipliers": [1643.2] },
+          { "level": 15, "multipliers": [1711.7] },
+          { "level": 16, "multipliers": [1780.2] }
         ]
       }
     ],
@@ -1150,77 +549,24 @@
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nCalls in tactical artillery to bombard enemies ahead, dealing massive Fire DMG. Upon activation, immediately gains 30% /bEn-nah Turret//b. Character is invulnerable while using this skill.",
         "skillType": "ultimate",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1936.5]
-          },
-          {
-            "level": 2,
-            "multipliers": [2112.6]
-          },
-          {
-            "level": 3,
-            "multipliers": [2288.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [2464.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [2640.9]
-          },
-          {
-            "level": 6,
-            "multipliers": [2817]
-          },
-          {
-            "level": 7,
-            "multipliers": [2993.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [3169.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [3345.3]
-          },
-          {
-            "level": 10,
-            "multipliers": [3521.4]
-          },
-          {
-            "level": 11,
-            "multipliers": [3697.5]
-          },
-          {
-            "level": 12,
-            "multipliers": [3873.6]
-          },
-          {
-            "level": 13,
-            "multipliers": [4049.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [4225.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [4401.9]
-          },
-          {
-            "level": 16,
-            "multipliers": [4578]
-          }
+          { "level": 1, "multipliers": [1936.5] },
+          { "level": 2, "multipliers": [2112.6] },
+          { "level": 3, "multipliers": [2288.7] },
+          { "level": 4, "multipliers": [2464.8] },
+          { "level": 5, "multipliers": [2640.9] },
+          { "level": 6, "multipliers": [2817] },
+          { "level": 7, "multipliers": [2993.1] },
+          { "level": 8, "multipliers": [3169.2] },
+          { "level": 9, "multipliers": [3345.3] },
+          { "level": 10, "multipliers": [3521.4] },
+          { "level": 11, "multipliers": [3697.5] },
+          { "level": 12, "multipliers": [3873.6] },
+          { "level": 13, "multipliers": [4049.7] },
+          { "level": 14, "multipliers": [4225.8] },
+          { "level": 15, "multipliers": [4401.9] },
+          { "level": 16, "multipliers": [4578] }
         ]
       }
     ],
@@ -1231,18 +577,8 @@
         "description": "After any squad member Stuns an enemy, Norma will continuously summon missiles to bombard random enemies on the field for 6s.\n\nA missile is launched every 0.75s, dealing Fire DMG equal to 200% of Norma's ATK to enemies within the area. This DMG is considered /bUltimate//b DMG. Repeated triggers reset the duration.\n\nThis effect can trigger once every 30s. The Daze inflicted by /bArmor-Piercing Warhead//b increases by 30%, and the DMG dealt by /bHigh-Explosive Warhead//b increases by 30%.",
         "skillType": "ultimate",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "Missile DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
-        "levels": [
-          {
-            "level": 1,
-            "multipliers": [200]
-          }
-        ]
+        "hits": [{ "name": "Missile DMG Multiplier", "damageType": "fire" }],
+        "levels": [{ "level": 1, "multipliers": [200] }]
       }
     ]
   }

@@ -82,13 +82,13 @@ const MindscapeSelector = ({
       if (!group.allEffectIds.includes(effect.id)) {
         group.allEffectIds.push(effect.id);
       }
-      if (effect.linkedEffects && Array.isArray(effect.linkedEffects)) {
+      /*if (effect.linkedEffects && Array.isArray(effect.linkedEffects)) {
         for (const linkedId of effect.linkedEffects) {
           if (!group.allEffectIds.includes(linkedId)) {
             group.allEffectIds.push(linkedId);
           }
         }
-      }
+      }*/
     }
 
     return Array.from(groups.entries())

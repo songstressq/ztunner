@@ -770,7 +770,71 @@
 
 /* #endregion SLOT REFERENCE TOGGLES */
 
-/* #endregion */
+/* #region CONDITIONAL STAT TOGGLES */
+.ingame_toggle-conditional_stat_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ingame_toggle-conditional_stat_subheader {
+  display: flex;
+  align-items: center;
+}
+
+.conditional-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: calc(var(--switch-60px) / 1.666);
+  height: calc(var(--switch-34px) / 1.7);
+  flex-shrink: 0;
+}
+
+.conditional-toggle-input {
+  display: none;
+}
+
+.conditional-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--switch-60px) / 1.666);
+  height: calc(var(--switch-34px) / 1.7);
+  border-radius: calc(var(--switch-34px) / 3.4);
+  background-color: #ccc;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.conditional-toggle-label::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--switch-34px) / 11.33);
+  left: calc(var(--switch-34px) / 11.33);
+  width: calc(var(--switch-34px) / 2.75);
+  height: calc(var(--switch-34px) / 2.75);
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.conditional-toggle-input:checked + .conditional-toggle-label::before {
+  transform: translateX(
+    calc(
+      (var(--switch-60px) / 1.666) - (var(--switch-34px) / 2.43) -
+        (var(--switch-34px) / 5.66)
+    )
+  );
+}
+
+.conditional-toggle-input:disabled + .conditional-toggle-label {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* #endregion CONDITIONAL STAT TOGGLES */
 
 /* #region MAIN /// SKILL CALCULATOR */
 

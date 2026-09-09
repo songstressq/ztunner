@@ -1,5 +1,6 @@
 import type { IngameEffect, DamageBonus } from "@/types/IngameEffect";
 import type { UnifiedStats } from "@/types/Agent";
+import { calculateCurrentStatBonus } from "./statScaling";
 
 export interface BonusSource {
   id: string;
@@ -68,13 +69,7 @@ export interface CollectedBonuses {
       total: number;
       sources: BonusSource[];
     };
-    statBonuses: Record<
-      string,
-      {
-        total: number;
-        sources: BonusSource[];
-      }
-    >;
+    statBonuses: Record<string, { total: number; sources: BonusSource[] }>;
   };
 }
 
@@ -88,25 +83,16 @@ function getEffectOwner(
       ownerDisplayName: effect.ownerDisplayName || effect.ownerAgentId,
     };
   }
-
   if (effect.target === "self" && currentAgentId) {
-    return {
-      ownerAgentId: currentAgentId,
-      ownerDisplayName: currentAgentId,
-    };
+    return { ownerAgentId: currentAgentId, ownerDisplayName: currentAgentId };
   }
-
   if (effect.sourceId) {
     const agentMatch = effect.sourceId.match(/^([a-zA-Z]+)-/);
     if (agentMatch) {
       const agentId = agentMatch[1];
-      return {
-        ownerAgentId: agentId,
-        ownerDisplayName: agentId,
-      };
+      return { ownerAgentId: agentId, ownerDisplayName: agentId };
     }
   }
-
   return {};
 }
 
@@ -121,7 +107,6 @@ function calculateConditionalBonus(
   ) {
     return 0;
   }
-
   const {
     basedOn,
     maxStat = Infinity,
@@ -135,16 +120,13 @@ function calculateConditionalBonus(
     const currentLevel =
       skillLevels.find((l: any) => l.level === skillLevel) || skillLevels[0];
     if (!currentLevel) return baseBonus;
-
     const levelBaseBonus =
       currentLevel.baseBonus !== undefined ? currentLevel.baseBonus : baseBonus;
     const perUnitBonus = currentLevel.perUnitBonus || 0;
-
     let excessStat = Math.max(0, initialStat - threshold);
     if (maxStat !== Infinity) {
       excessStat = Math.min(excessStat, maxStat);
     }
-
     const units = Math.floor(excessStat / perUnit);
     const fromStat = units * perUnitBonus;
     const total = levelBaseBonus + fromStat;
@@ -159,11 +141,9 @@ function calculateConditionalBonus(
   if (maxStat !== Infinity) {
     excessStat = Math.min(excessStat, maxStat);
   }
-
   const units = Math.floor(excessStat / perUnit);
   const fromStat = units * (effect.conditional.perUnitBonus || 0);
   const total = baseBonus + fromStat;
-
   return effect.conditional.maxBonus !== undefined
     ? Math.min(total, effect.conditional.maxBonus)
     : total;
@@ -239,7 +219,6 @@ export function collectDamageBonuses(
   for (const effect of effects) {
     const isActive = activeEffects[effect.id]?.enabled;
     if (!isActive) continue;
-
     const stacks = activeEffects[effect.id]?.stacks || 1;
     const owner = getEffectOwner(effect, currentAgentId);
 
@@ -257,6 +236,7 @@ export function collectDamageBonuses(
       effectInitialStats = teamEffects[effect.id].ownerInitialStats;
     }
 
+    // ---- INITIAL STAT BASED DAMAGE BONUS ----
     if (effect.conditional?.type === "initialStatBasedDamageBonus") {
       const basedOn = effect.conditional.basedOn;
       const initialValue =
@@ -266,12 +246,10 @@ export function collectDamageBonuses(
         initialValue,
         skillLevels[effect.id] || 1,
       );
-
       const damageBonus: DamageBonus = {
         type: effect.conditional.damageBonusType || "global",
         value: conditionalBonus,
       };
-
       if (damageBonus.type === "exclusive") {
         if (effect.conditional.damageBonusSkillId) {
           damageBonus.appliesTo = [effect.conditional.damageBonusSkillId];
@@ -279,20 +257,16 @@ export function collectDamageBonuses(
           damageBonus.appliesTo = effect.conditional.damageBonusAppliesTo;
         }
       }
-
       if (effect.conditional.damageBonusElement) {
         damageBonus.element = effect.conditional.damageBonusElement;
       }
-
       if (effect.conditional.damageBonusSkillType) {
         damageBonus.skillType = effect.conditional.damageBonusSkillType;
       }
-
       if (effect.conditional.damageBonusAnomalyType) {
         (damageBonus as any).anomalyType =
           effect.conditional.damageBonusAnomalyType;
       }
-
       processDamageBonus(
         effect,
         damageBonus,
@@ -303,12 +277,88 @@ export function collectDamageBonuses(
       );
     }
 
+    // ---- DAMAGE BONUSES (con soporte para currentStatBased) ----
+    // Determinar qué bonos procesar: top-level o los que están dentro de conditional
+    let damageBonusesToProcess: DamageBonus[] = [];
+
     if (effect.damageBonuses) {
-      for (const bonus of effect.damageBonuses) {
-        const totalValue = (bonus.value || 0) * stacks;
+      damageBonusesToProcess = effect.damageBonuses;
+    } else if (
+      effect.conditional?.type === "currentStatBased" &&
+      effect.conditional.damageBonuses
+    ) {
+      // Si es currentStatBased y tiene damageBonuses dentro de conditional, usarlos
+      damageBonusesToProcess = effect.conditional.damageBonuses;
+    }
+
+    if (damageBonusesToProcess.length > 0) {
+      // Calcular multiplicador dinámico si es currentStatBased
+      let dynamicMultiplier = 1;
+      if (effect.conditional?.type === "currentStatBased") {
+        const state = activeEffects[effect.id];
+        if (state?.enabled) {
+          const basedOn = effect.conditional.basedOn;
+          let currentStatValue = 0;
+          if (unifiedStats) {
+            switch (basedOn) {
+              case "hp":
+                currentStatValue = unifiedStats.hp;
+                break;
+              case "atk":
+                currentStatValue = unifiedStats.atk;
+                break;
+              case "def":
+                currentStatValue = unifiedStats.def;
+                break;
+              case "critRate":
+                currentStatValue = unifiedStats.critRate * 100;
+                break;
+              case "anomalyMastery":
+                currentStatValue = unifiedStats.anomalyMastery;
+                break;
+              case "anomalyProficiency":
+                currentStatValue = unifiedStats.anomalyProficiency;
+                break;
+              case "impact":
+                currentStatValue = unifiedStats.impact;
+                break;
+              case "energyRegen":
+                currentStatValue = unifiedStats.energyRegen;
+                break;
+              case "penRatio":
+                currentStatValue = unifiedStats.penRatio * 100;
+                break;
+              default:
+                currentStatValue = 0;
+            }
+          }
+
+          // 🔥 LOG DE DEBUG
+          console.log(
+            `[DEBUG] Efecto ${effect.id}: basedOn=${basedOn}, currentStatValue=${currentStatValue}`,
+          );
+          console.log(`[DEBUG] Conditional:`, effect.conditional);
+
+          const result = calculateCurrentStatBonus(effect, currentStatValue);
+          dynamicMultiplier = result.bonusValue;
+
+          console.log(`[DEBUG] dynamicMultiplier = ${dynamicMultiplier}`);
+        }
+      }
+
+      for (const bonus of damageBonusesToProcess) {
+        // Aplicar el multiplicador dinámico al valor del bono
+        const totalValue = (bonus.value || 0) * stacks * dynamicMultiplier;
+
+        // 🔥 LOG DE DEBUG
+        console.log(
+          `[DEBUG] Bonus: type=${bonus.type}, value=${bonus.value}, stacks=${stacks}, dynamicMultiplier=${dynamicMultiplier}, totalValue=${totalValue}`,
+        );
+
+        if (totalValue === 0) continue;
+
         const sourceType = effect.source || "unknown";
         const sourceId = effect.sourceId || effect.id;
-
         const baseSource: BonusSource = {
           id: effect.id,
           name: effect.label,
@@ -321,6 +371,7 @@ export function collectDamageBonuses(
           ownerDisplayName: owner.ownerDisplayName,
         };
 
+        // Procesar según el tipo de bono
         switch (bonus.type) {
           case "global":
             bonuses.global += totalValue;
@@ -331,10 +382,8 @@ export function collectDamageBonuses(
               type: "global",
             });
             break;
-
           case "element":
             if (bonus.element) {
-              const totalValue = (bonus.value || 0) * stacks;
               bonuses.elements[bonus.element] =
                 (bonuses.elements[bonus.element] || 0) + totalValue;
               bonuses.sources.push({
@@ -347,27 +396,20 @@ export function collectDamageBonuses(
                 totalValue;
             }
             break;
-
           case "skillType":
             if (bonus.skillType) {
               bonuses.skillTypes[bonus.skillType] =
                 (bonuses.skillTypes[bonus.skillType] || 0) + totalValue;
-              bonuses.breakdown.dmgMod.skillTypes[bonus.skillType] =
-                (bonuses.breakdown.dmgMod.skillTypes[bonus.skillType] || 0) +
-                totalValue;
               bonuses.sources.push({
                 ...baseSource,
                 type: "skillType",
                 skillType: bonus.skillType,
               });
-              bonuses.breakdown.dmgMod.sources.push({
-                ...baseSource,
-                type: "skillType",
-                skillType: bonus.skillType,
-              });
+              bonuses.breakdown.dmgMod.skillTypes[bonus.skillType] =
+                (bonuses.breakdown.dmgMod.skillTypes[bonus.skillType] || 0) +
+                totalValue;
             }
             break;
-
           case "exclusive":
             if (bonus.appliesTo) {
               if (bonus.exclusiveType === "sheerDmg") {
@@ -413,14 +455,14 @@ export function collectDamageBonuses(
                 for (const skillId of bonus.appliesTo) {
                   bonuses.exclusive[skillId] =
                     (bonuses.exclusive[skillId] || 0) + totalValue;
-                  bonuses.breakdown.dmgMod.exclusive[skillId] =
-                    (bonuses.breakdown.dmgMod.exclusive[skillId] || 0) +
-                    totalValue;
                   bonuses.sources.push({
                     ...baseSource,
                     type: "exclusive",
                     skillId,
                   });
+                  bonuses.breakdown.dmgMod.exclusive[skillId] =
+                    (bonuses.breakdown.dmgMod.exclusive[skillId] || 0) +
+                    totalValue;
                   bonuses.breakdown.dmgMod.sources.push({
                     ...baseSource,
                     type: "exclusive",
@@ -430,7 +472,6 @@ export function collectDamageBonuses(
               }
             }
             break;
-
           case "sheerDmg":
             bonuses.sheerDmgBonus += totalValue;
             bonuses.breakdown.sheerMod.general += totalValue;
@@ -440,7 +481,6 @@ export function collectDamageBonuses(
               type: "sheerDmg",
             });
             break;
-
           case "elementSheerDmg":
             if (bonus.element) {
               bonuses.elementSheerDmgBonus[bonus.element] =
@@ -460,7 +500,6 @@ export function collectDamageBonuses(
               });
             }
             break;
-
           case "elementExclusive":
             if (bonus.appliesTo && bonus.element) {
               for (const skillId of bonus.appliesTo) {
@@ -485,7 +524,6 @@ export function collectDamageBonuses(
               }
             }
             break;
-
           case "hitExclusive":
             if (bonus.skillId) {
               const hitsToApply = bonus.hitName
@@ -502,13 +540,12 @@ export function collectDamageBonuses(
                   ...baseSource,
                   type: "hitExclusive",
                   skillId: bonus.skillId,
-                  hitName: hitName,
+                  hitName,
                 });
               }
             }
             break;
-
-          case "hitStatExclusive":
+          case "hitStatExclusive": {
             let statSkillIds: string[] = [];
             if (bonus.skillId) {
               statSkillIds = [bonus.skillId];
@@ -516,7 +553,6 @@ export function collectDamageBonuses(
               statSkillIds = bonus.appliesTo;
             }
             if (statSkillIds.length === 0 || !bonus.stat) break;
-
             const statHitsToApply = bonus.hitName
               ? [bonus.hitName]
               : bonus.hitNames || [];
@@ -542,7 +578,7 @@ export function collectDamageBonuses(
               }
             }
             break;
-
+          }
           case "skillTypeElemental":
             if (bonus.element && bonus.skillType) {
               if (!bonuses.skillTypeElemental) {
@@ -568,7 +604,6 @@ export function collectDamageBonuses(
               });
             }
             break;
-
           case "skillTypeStat":
             if (bonus.skillType && bonus.stat) {
               if (!bonuses.skillTypeStats) {
@@ -580,7 +615,6 @@ export function collectDamageBonuses(
               bonuses.skillTypeStats[bonus.skillType][bonus.stat] =
                 (bonuses.skillTypeStats[bonus.skillType][bonus.stat] || 0) +
                 totalValue;
-
               if (bonus.stat === "defShred") {
                 if (!bonuses._defShredBySkillType) {
                   bonuses._defShredBySkillType = {};
@@ -590,7 +624,6 @@ export function collectDamageBonuses(
                 }
                 bonuses._defShredBySkillType[bonus.skillType] += totalValue;
               }
-
               bonuses.sources.push({
                 ...baseSource,
                 type: "skillTypeStat",
@@ -599,7 +632,6 @@ export function collectDamageBonuses(
               });
             }
             break;
-
           case "skillTypeElementalSheer":
             if (bonus.element && bonus.skillType) {
               if (!bonuses.skillTypeElementalSheer) {
@@ -620,7 +652,6 @@ export function collectDamageBonuses(
               });
             }
             break;
-
           case "critDamageElementalBonus":
             if (bonus.element) {
               if (!bonuses.critDamageElementalBonus) {
@@ -636,19 +667,22 @@ export function collectDamageBonuses(
               });
             }
             break;
-
           case "assaultCritDmgBonus":
             bonuses.assaultCritDmgTotal =
               (bonuses.assaultCritDmgTotal || 0) + totalValue;
+            break;
+          default:
             break;
         }
       }
     }
 
+    // ---- FLAT SHEER DMG ----
     if (effect.flat?.sheerDmgFlat) {
       bonuses.sheerDmgFlat += effect.flat.sheerDmgFlat * stacks;
     }
 
+    // ---- DYNAMIC STAT BONUSES ----
     if (effect.dynamicStatBonuses && unifiedStats) {
       for (const dynamicBonus of effect.dynamicStatBonuses) {
         const baseStatValue = (unifiedStats[dynamicBonus.stat] as number) || 0;
@@ -679,6 +713,7 @@ export function collectDamageBonuses(
       }
     }
 
+    // ---- SKILL LEVEL BASED ----
     if (
       effect.conditional?.type === "skillLevelBased" &&
       effect.conditional.skillBonusTable
@@ -693,13 +728,11 @@ export function collectDamageBonuses(
           effect.conditional.skillBonusTable.length - 1
         ] ||
         effect.conditional.skillBonusTable[0];
-
       if (levelData?.damageBonuses) {
         for (const bonus of levelData.damageBonuses) {
           const totalValue = bonus.value * stacks;
           const sourceType = effect.source || "unknown";
           const sourceId = effect.sourceId || effect.id;
-
           const baseSource: BonusSource = {
             id: effect.id,
             name: effect.label,
@@ -711,7 +744,6 @@ export function collectDamageBonuses(
             ownerAgentId: owner.ownerAgentId,
             ownerDisplayName: owner.ownerDisplayName,
           };
-
           switch (bonus.type) {
             case "global":
               bonuses.global += totalValue;
@@ -785,24 +817,25 @@ export function collectDamageBonuses(
                 }
               }
               break;
+            default:
+              break;
           }
         }
       }
     }
 
+    // ---- W-ENGINE OVERCLOCK ----
     if (effect.wEngineOverclock) {
       const overclockLevel = overclockLevels[effect.id] || 1;
       const currentLevel =
         effect.wEngineOverclock.levels.find(
           (l) => l.level === overclockLevel,
         ) || effect.wEngineOverclock.levels[0];
-
       if (currentLevel?.damageBonuses) {
         for (const bonus of currentLevel.damageBonuses) {
           const totalValue = bonus.value * stacks;
           const sourceType = effect.source || "wEngine";
           const sourceId = effect.sourceId || effect.id;
-
           const baseSource: BonusSource = {
             id: effect.id,
             name: effect.label,
@@ -814,7 +847,6 @@ export function collectDamageBonuses(
             ownerAgentId: owner.ownerAgentId,
             ownerDisplayName: owner.ownerDisplayName,
           };
-
           switch (bonus.type) {
             case "global":
               bonuses.global += totalValue;
@@ -825,10 +857,8 @@ export function collectDamageBonuses(
                 type: "global",
               });
               break;
-
             case "element":
               if (bonus.element) {
-                const totalValue = bonus.value * stacks;
                 bonuses.elements[bonus.element] =
                   (bonuses.elements[bonus.element] || 0) + totalValue;
                 bonuses.sources.push({
@@ -841,7 +871,6 @@ export function collectDamageBonuses(
                   totalValue;
               }
               break;
-
             case "skillType":
               if (bonus.skillType) {
                 bonuses.skillTypes[bonus.skillType] =
@@ -861,13 +890,11 @@ export function collectDamageBonuses(
                 });
               }
               break;
-
             case "skillTypeElemental":
               if (bonus.element && bonus.skillType) {
                 if (!bonuses.skillTypeElemental) {
                   bonuses.skillTypeElemental = {};
                 }
-
                 if (!bonuses.skillTypeElemental[bonus.skillType]) {
                   bonuses.skillTypeElemental[bonus.skillType] = {
                     fire: 0,
@@ -878,10 +905,8 @@ export function collectDamageBonuses(
                     aftershock: 0,
                   };
                 }
-
                 bonuses.skillTypeElemental[bonus.skillType][bonus.element] +=
                   totalValue;
-
                 bonuses.sources.push({
                   ...baseSource,
                   type: "skillTypeElemental",
@@ -890,7 +915,6 @@ export function collectDamageBonuses(
                 });
               }
               break;
-
             case "skillTypeStat":
               if (bonus.skillType && bonus.stat) {
                 if (!bonuses.skillTypeStats) {
@@ -902,7 +926,6 @@ export function collectDamageBonuses(
                 bonuses.skillTypeStats[bonus.skillType][bonus.stat] =
                   (bonuses.skillTypeStats[bonus.skillType][bonus.stat] || 0) +
                   totalValue;
-
                 if (bonus.stat === "defShred") {
                   if (!bonuses._defShredBySkillType) {
                     bonuses._defShredBySkillType = {};
@@ -912,7 +935,6 @@ export function collectDamageBonuses(
                   }
                   bonuses._defShredBySkillType[bonus.skillType] += totalValue;
                 }
-
                 bonuses.sources.push({
                   ...baseSource,
                   type: "skillTypeStat",
@@ -921,7 +943,6 @@ export function collectDamageBonuses(
                 });
               }
               break;
-
             case "exclusive":
               if (bonus.appliesTo) {
                 if (bonus.exclusiveType === "sheerDmg") {
@@ -953,13 +974,11 @@ export function collectDamageBonuses(
                 }
               }
               break;
-
             case "sheerDmg":
               bonuses.sheerDmgBonus += totalValue;
               bonuses.breakdown.sheerMod.general += totalValue;
               bonuses.sources.push({ ...baseSource, type: "sheerDmg" });
               break;
-
             case "elementSheerDmg":
               if (bonus.element) {
                 bonuses.elementSheerDmgBonus[bonus.element] += totalValue;
@@ -972,7 +991,6 @@ export function collectDamageBonuses(
                 });
               }
               break;
-
             case "skillTypeElementalSheer":
               if (bonus.element && bonus.skillType) {
                 if (!bonuses.skillTypeElementalSheer) {
@@ -995,7 +1013,6 @@ export function collectDamageBonuses(
                 });
               }
               break;
-
             case "critDamageElementalBonus":
               if (bonus.element) {
                 if (!bonuses.critDamageElementalBonus) {
@@ -1011,11 +1028,14 @@ export function collectDamageBonuses(
                 });
               }
               break;
+            default:
+              break;
           }
         }
       }
     }
 
+    // ---- EXCLUSIVE STAT BONUSES ----
     if (effect.exclusiveStatBonuses) {
       for (const statBonus of effect.exclusiveStatBonuses) {
         const totalValue = statBonus.value * stacks;
@@ -1029,10 +1049,8 @@ export function collectDamageBonuses(
               sources: [],
             };
           }
-
           bonuses.statBonuses[skillId][statBonus.stat] =
             (bonuses.statBonuses[skillId][statBonus.stat] || 0) + totalValue;
-
           const statSource: BonusSource = {
             id: effect.id,
             name: effect.label,
@@ -1046,7 +1064,6 @@ export function collectDamageBonuses(
             ownerAgentId: owner.ownerAgentId,
             ownerDisplayName: owner.ownerDisplayName,
           };
-
           bonuses.sources.push(statSource);
           bonuses.breakdown.statBonuses[skillId].sources.push(statSource);
           bonuses.breakdown.statBonuses[skillId].total += totalValue;
@@ -1055,11 +1072,11 @@ export function collectDamageBonuses(
     }
   }
 
+  // ---- CALCULAR TOTALES ----
   bonuses.breakdown.dmgMod.total =
     bonuses.global +
     Object.values(bonuses.elements).reduce((a, b) => a + b, 0) +
     Object.values(bonuses.skillTypes).reduce((a, b) => a + b, 0);
-
   bonuses.breakdown.sheerMod.total =
     bonuses.sheerDmgBonus +
     Object.values(bonuses.elementSheerDmgBonus).reduce((a, b) => a + b, 0);
@@ -1078,7 +1095,6 @@ function processDamageBonus(
   const totalValue = value * stacks;
   const sourceType = effect.source || "unknown";
   const sourceId = effect.sourceId || effect.id;
-
   const baseSource: BonusSource = {
     id: effect.id,
     name: effect.label,
@@ -1098,7 +1114,6 @@ function processDamageBonus(
       bonuses.sources.push({ ...baseSource, type: "global" });
       bonuses.breakdown.dmgMod.sources.push({ ...baseSource, type: "global" });
       break;
-
     case "element":
       if (bonus.element) {
         bonuses.elements[bonus.element] =
@@ -1112,7 +1127,6 @@ function processDamageBonus(
           (bonuses.breakdown.dmgMod.elements[bonus.element] || 0) + totalValue;
       }
       break;
-
     case "skillType":
       if (bonus.skillType) {
         bonuses.skillTypes[bonus.skillType] =
@@ -1127,17 +1141,12 @@ function processDamageBonus(
           totalValue;
       }
       break;
-
     case "exclusive":
       if (bonus.appliesTo) {
         for (const skillId of bonus.appliesTo) {
           bonuses.exclusive[skillId] =
             (bonuses.exclusive[skillId] || 0) + totalValue;
-          bonuses.sources.push({
-            ...baseSource,
-            type: "exclusive",
-            skillId,
-          });
+          bonuses.sources.push({ ...baseSource, type: "exclusive", skillId });
           bonuses.breakdown.dmgMod.exclusive[skillId] =
             (bonuses.breakdown.dmgMod.exclusive[skillId] || 0) + totalValue;
           bonuses.breakdown.dmgMod.sources.push({
@@ -1148,7 +1157,7 @@ function processDamageBonus(
         }
       }
       break;
-
     default:
+      break;
   }
 }

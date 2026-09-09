@@ -9,11 +9,7 @@
   "displayName": "Ju Fufu",
   "attributeIcon": "Fire",
   "themeColor": "#F5BB64",
-  "baseStats": {
-    "hp": 8250.6,
-    "atk": 690.66,
-    "def": 597.59
-  },
+  "baseStats": { "hp": 8250.6, "atk": 690.66, "def": 597.59 },
   "combatBase": {
     "impact": 118,
     "critRate": 0.05,
@@ -37,55 +33,13 @@
     "stats": ["ATK", "CRIT Rate", "CRIT DMG"]
   },
   "coreEnhancement": [
-    {
-      "level": 0,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 1,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 2,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 3,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 4,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 5,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 6,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    }
+    { "level": 0, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 2, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 4, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 6, "stats": { "atkFlat": 25, "critRate": 0 } }
   ],
   "ingameEffects": [
     {
@@ -104,13 +58,7 @@
         "baseBonus": 0.2,
         "perUnit": 100,
         "perUnitBonus": 5,
-        "skillLevels": [
-          {
-            "level": 1,
-            "maxBonus": 0.5,
-            "perUnitBonus": 5
-          }
-        ],
+        "skillLevels": [{ "level": 1, "maxBonus": 0.5, "perUnitBonus": 5 }],
         "affectedStats": ["critDmg"]
       }
     },
@@ -120,19 +68,11 @@
       "sourceId": "ju_fufu-core",
       "label": "Fu-rocious Might (Core Passive)",
       "description": "... While in the Tiger's Roar state, character Chain Attack/Ultimate DMG increases by 20%/40%. The Tiger's Roar state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the Tiger's Roar state, Impact increases by 50.",
-      "shortDescription": "All squad members' DMG from Chain Attacks is increased by 20% and DMG from Ultimates is increased by 40%.",
+      "shortDescription": "All squad members' DMG from Chain Attacks is increased by 20%, and DMG from Ultimates is increased by 40%.",
       "target": "team",
       "damageBonuses": [
-        {
-          "type": "skillType",
-          "skillType": "chain",
-          "value": 0.2
-        },
-        {
-          "type": "skillType",
-          "skillType": "ultimate",
-          "value": 0.4
-        }
+        { "type": "skillType", "skillType": "chain", "value": 0.2 },
+        { "type": "skillType", "skillType": "ultimate", "value": 0.4 }
       ]
     },
     {
@@ -143,9 +83,7 @@
       "description": "... While in the Tiger's Roar state, character Chain Attack/Ultimate DMG increases by 20%/40%. The Tiger's Roar state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the Tiger's Roar state, Impact increases by 50.",
       "shortDescription": "Ju Fufu's Impact is increased by 50.",
       "target": "self",
-      "flat": {
-        "impactFlatRaw": 50
-      }
+      "flat": { "impactFlatRaw": 50 }
     },
     {
       "id": "ju_fufu-mindscape_1-super_scary_little_tiger",
@@ -155,9 +93,7 @@
       "description": "Upon entering combat, Ju Fufu's CRIT Rate increases by 12%, and she immediately gains 100 Might. When Ju Fufu's Chain Attack hits an enemy, when the target is Stunned, the target's Stun DMG Multiplier increases by 35%, lasting for 30s.",
       "shortDescription": "Ju Fufus's CRIT Rate is increased by 12%.",
       "target": "self",
-      "flat": {
-        "critRate": 0.12
-      }
+      "flat": { "critRate": 0.12 }
     },
     {
       "id": "ju_fufu-mindscape_2-almighty_qingming_warrior",
@@ -167,9 +103,7 @@
       "description": "While in the Tiger's Roar state, character CRIT DMG increases by an additional 22%. Whenever any character activates an Ultimate, Ju Fufu gains 3 points of Momentum.",
       "shortDescription": "All squad members' CRIT DMG is increased by 22%.",
       "target": "team",
-      "flat": {
-        "critDmg": 0.22
-      }
+      "flat": { "critDmg": 0.22 }
     },
     {
       "id": "ju_fufu-mindscape_4-monster_slaying_tiger_mystic",
@@ -179,9 +113,7 @@
       "description": "While Ju Fufu is in the Tiger's Roar state, her CRIT DMG increases by 35%.",
       "shortDescription": "Ju Fufus's CRIT DMG is increased by 35%.",
       "target": "self",
-      "flat": {
-        "critDmg": 0.35
-      }
+      "flat": { "critDmg": 0.35 }
     },
     {
       "id": "ju_fufu-mindscape_6-roar_of_my_inner_tiger",
@@ -192,11 +124,7 @@
       "shortDescription": "Ju Fufus's Chain Attack DMG increases by 30%. Momentum's additional DMG is available in the Damage Calculator.",
       "target": "self",
       "damageBonuses": [
-        {
-          "type": "skillType",
-          "skillType": "chain",
-          "value": 0.3
-        }
+        { "type": "skillType", "skillType": "chain", "value": 0.3 }
       ]
     }
   ],
@@ -209,88 +137,28 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "3rd-Hit DMG Multiplier",
-            "damageType": "fire"
-          },
-          {
-            "name": "4th-Hit DMG Multiplier",
-            "damageType": "fire"
-          }
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "fire" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "fire" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [42.5, 45.2, 31.5, 218.4]
-          },
-          {
-            "level": 2,
-            "multipliers": [46.4, 49.4, 34.4, 238.3]
-          },
-          {
-            "level": 3,
-            "multipliers": [50.3, 53.6, 37.3, 258.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [54.2, 57.8, 40.2, 278.1]
-          },
-          {
-            "level": 5,
-            "multipliers": [58.1, 62, 43.1, 298]
-          },
-          {
-            "level": 6,
-            "multipliers": [62, 66.2, 46, 317.9]
-          },
-          {
-            "level": 7,
-            "multipliers": [65.9, 70.4, 48.9, 337.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [69.8, 74.6, 51.8, 357.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [73.7, 78.8, 54.7, 377.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [77.6, 83, 57.6, 397.5]
-          },
-          {
-            "level": 11,
-            "multipliers": [81.5, 87.2, 60.5, 417.4]
-          },
-          {
-            "level": 12,
-            "multipliers": [85.4, 91.4, 63.4, 437.3]
-          },
-          {
-            "level": 13,
-            "multipliers": [89.3, 95.6, 66.3, 457.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [93.2, 99.8, 69.2, 477.1]
-          },
-          {
-            "level": 15,
-            "multipliers": [97.1, 104, 72.1, 497]
-          },
-          {
-            "level": 16,
-            "multipliers": [101, 108.2, 75, 516.9]
-          }
+          { "level": 1, "multipliers": [42.5, 45.2, 31.5, 218.4] },
+          { "level": 2, "multipliers": [46.4, 49.4, 34.4, 238.3] },
+          { "level": 3, "multipliers": [50.3, 53.6, 37.3, 258.2] },
+          { "level": 4, "multipliers": [54.2, 57.8, 40.2, 278.1] },
+          { "level": 5, "multipliers": [58.1, 62, 43.1, 298] },
+          { "level": 6, "multipliers": [62, 66.2, 46, 317.9] },
+          { "level": 7, "multipliers": [65.9, 70.4, 48.9, 337.8] },
+          { "level": 8, "multipliers": [69.8, 74.6, 51.8, 357.7] },
+          { "level": 9, "multipliers": [73.7, 78.8, 54.7, 377.6] },
+          { "level": 10, "multipliers": [77.6, 83, 57.6, 397.5] },
+          { "level": 11, "multipliers": [81.5, 87.2, 60.5, 417.4] },
+          { "level": 12, "multipliers": [85.4, 91.4, 63.4, 437.3] },
+          { "level": 13, "multipliers": [89.3, 95.6, 66.3, 457.2] },
+          { "level": 14, "multipliers": [93.2, 99.8, 69.2, 477.1] },
+          { "level": 15, "multipliers": [97.1, 104, 72.1, 497] },
+          { "level": 16, "multipliers": [101, 108.2, 75, 516.9] }
         ]
       },
       {
@@ -299,77 +167,24 @@
         "description": "During combat, /bHu Wei//b will automatically attack enemies, dealing Fire DMG. Upon hitting an enemy, gain 20 points of /bMight//b, triggering up to once per use of a skill. The maximum for /bMight//b is 200.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [92.4]
-          },
-          {
-            "level": 2,
-            "multipliers": [100.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [109.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [117.6]
-          },
-          {
-            "level": 5,
-            "multipliers": [126]
-          },
-          {
-            "level": 6,
-            "multipliers": [134.4]
-          },
-          {
-            "level": 7,
-            "multipliers": [142.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [151.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [159.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [168]
-          },
-          {
-            "level": 11,
-            "multipliers": [176.4]
-          },
-          {
-            "level": 12,
-            "multipliers": [184.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [193.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [201.6]
-          },
-          {
-            "level": 15,
-            "multipliers": [210]
-          },
-          {
-            "level": 16,
-            "multipliers": [218.4]
-          }
+          { "level": 1, "multipliers": [92.4] },
+          { "level": 2, "multipliers": [100.8] },
+          { "level": 3, "multipliers": [109.2] },
+          { "level": 4, "multipliers": [117.6] },
+          { "level": 5, "multipliers": [126] },
+          { "level": 6, "multipliers": [134.4] },
+          { "level": 7, "multipliers": [142.8] },
+          { "level": 8, "multipliers": [151.2] },
+          { "level": 9, "multipliers": [159.6] },
+          { "level": 10, "multipliers": [168] },
+          { "level": 11, "multipliers": [176.4] },
+          { "level": 12, "multipliers": [184.8] },
+          { "level": 13, "multipliers": [193.2] },
+          { "level": 14, "multipliers": [201.6] },
+          { "level": 15, "multipliers": [210] },
+          { "level": 16, "multipliers": [218.4] }
         ]
       }
     ],
@@ -380,77 +195,24 @@
         "description": "Press [BASIC] during a dodge to activate:\n\nPerform a quick slash forward, dealing Physical DMG.",
         "skillType": "dash",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [36.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [40.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [43.6]
-          },
-          {
-            "level": 4,
-            "multipliers": [47]
-          },
-          {
-            "level": 5,
-            "multipliers": [50.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [53.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [57.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [60.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [64]
-          },
-          {
-            "level": 10,
-            "multipliers": [67.4]
-          },
-          {
-            "level": 11,
-            "multipliers": [70.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [74.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [77.6]
-          },
-          {
-            "level": 14,
-            "multipliers": [81]
-          },
-          {
-            "level": 15,
-            "multipliers": [84.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [87.8]
-          }
+          { "level": 1, "multipliers": [36.8] },
+          { "level": 2, "multipliers": [40.2] },
+          { "level": 3, "multipliers": [43.6] },
+          { "level": 4, "multipliers": [47] },
+          { "level": 5, "multipliers": [50.4] },
+          { "level": 6, "multipliers": [53.8] },
+          { "level": 7, "multipliers": [57.2] },
+          { "level": 8, "multipliers": [60.6] },
+          { "level": 9, "multipliers": [64] },
+          { "level": 10, "multipliers": [67.4] },
+          { "level": 11, "multipliers": [70.8] },
+          { "level": 12, "multipliers": [74.2] },
+          { "level": 13, "multipliers": [77.6] },
+          { "level": 14, "multipliers": [81] },
+          { "level": 15, "multipliers": [84.4] },
+          { "level": 16, "multipliers": [87.8] }
         ]
       },
       {
@@ -460,84 +222,27 @@
         "skillType": "dash",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          },
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
+          { "name": "DMG Multiplier", "damageType": "physical" },
+          { "name": "DMG Multiplier", "damageType": "fire" },
+          { "name": "DMG Multiplier", "damageType": "fire" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [18.4, 19.2, 92.4]
-          },
-          {
-            "level": 2,
-            "multipliers": [20.1, 21, 100.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [21.8, 22.8, 109.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [23.5, 24.6, 117.6]
-          },
-          {
-            "level": 5,
-            "multipliers": [25.2, 26.4, 126]
-          },
-          {
-            "level": 6,
-            "multipliers": [26.9, 28.2, 134.4]
-          },
-          {
-            "level": 7,
-            "multipliers": [28.6, 30, 142.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [30.3, 31.8, 151.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [32, 33.6, 159.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [33.7, 35.4, 168]
-          },
-          {
-            "level": 11,
-            "multipliers": [35.4, 37.2, 176.4]
-          },
-          {
-            "level": 12,
-            "multipliers": [37.1, 39, 184.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [38.8, 40.8, 193.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [40.5, 42.6, 201.6]
-          },
-          {
-            "level": 15,
-            "multipliers": [42.2, 44.4, 210]
-          },
-          {
-            "level": 16,
-            "multipliers": [43.9, 46.2, 218.4]
-          }
+          { "level": 1, "multipliers": [18.4, 19.2, 92.4] },
+          { "level": 2, "multipliers": [20.1, 21, 100.8] },
+          { "level": 3, "multipliers": [21.8, 22.8, 109.2] },
+          { "level": 4, "multipliers": [23.5, 24.6, 117.6] },
+          { "level": 5, "multipliers": [25.2, 26.4, 126] },
+          { "level": 6, "multipliers": [26.9, 28.2, 134.4] },
+          { "level": 7, "multipliers": [28.6, 30, 142.8] },
+          { "level": 8, "multipliers": [30.3, 31.8, 151.2] },
+          { "level": 9, "multipliers": [32, 33.6, 159.6] },
+          { "level": 10, "multipliers": [33.7, 35.4, 168] },
+          { "level": 11, "multipliers": [35.4, 37.2, 176.4] },
+          { "level": 12, "multipliers": [37.1, 39, 184.8] },
+          { "level": 13, "multipliers": [38.8, 40.8, 193.2] },
+          { "level": 14, "multipliers": [40.5, 42.6, 201.6] },
+          { "level": 15, "multipliers": [42.2, 44.4, 210] },
+          { "level": 16, "multipliers": [43.9, 46.2, 218.4] }
         ]
       }
     ],
@@ -548,77 +253,24 @@
         "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPerform multiple slashes on enemies ahead, dealing Fire DMG. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [207.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [226.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [245.6]
-          },
-          {
-            "level": 4,
-            "multipliers": [264.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [283.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [302.3]
-          },
-          {
-            "level": 7,
-            "multipliers": [321.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [340.1]
-          },
-          {
-            "level": 9,
-            "multipliers": [359]
-          },
-          {
-            "level": 10,
-            "multipliers": [377.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [396.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [415.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [434.6]
-          },
-          {
-            "level": 14,
-            "multipliers": [453.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [472.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [491.3]
-          }
+          { "level": 1, "multipliers": [207.8] },
+          { "level": 2, "multipliers": [226.7] },
+          { "level": 3, "multipliers": [245.6] },
+          { "level": 4, "multipliers": [264.5] },
+          { "level": 5, "multipliers": [283.4] },
+          { "level": 6, "multipliers": [302.3] },
+          { "level": 7, "multipliers": [321.2] },
+          { "level": 8, "multipliers": [340.1] },
+          { "level": 9, "multipliers": [359] },
+          { "level": 10, "multipliers": [377.9] },
+          { "level": 11, "multipliers": [396.8] },
+          { "level": 12, "multipliers": [415.7] },
+          { "level": 13, "multipliers": [434.6] },
+          { "level": 14, "multipliers": [453.5] },
+          { "level": 15, "multipliers": [472.4] },
+          { "level": 16, "multipliers": [491.3] }
         ]
       }
     ],
@@ -629,77 +281,24 @@
         "description": "When the active character is launched, press [ASSIST] to activate:\n\nSlashes enemies in front, dealing Fire DMG. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [75.3]
-          },
-          {
-            "level": 2,
-            "multipliers": [82.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [89.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [96]
-          },
-          {
-            "level": 5,
-            "multipliers": [102.9]
-          },
-          {
-            "level": 6,
-            "multipliers": [109.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [116.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [123.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [130.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [137.4]
-          },
-          {
-            "level": 11,
-            "multipliers": [144.3]
-          },
-          {
-            "level": 12,
-            "multipliers": [151.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [158.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [165]
-          },
-          {
-            "level": 15,
-            "multipliers": [171.9]
-          },
-          {
-            "level": 16,
-            "multipliers": [178.8]
-          }
+          { "level": 1, "multipliers": [75.3] },
+          { "level": 2, "multipliers": [82.2] },
+          { "level": 3, "multipliers": [89.1] },
+          { "level": 4, "multipliers": [96] },
+          { "level": 5, "multipliers": [102.9] },
+          { "level": 6, "multipliers": [109.8] },
+          { "level": 7, "multipliers": [116.7] },
+          { "level": 8, "multipliers": [123.6] },
+          { "level": 9, "multipliers": [130.5] },
+          { "level": 10, "multipliers": [137.4] },
+          { "level": 11, "multipliers": [144.3] },
+          { "level": 12, "multipliers": [151.2] },
+          { "level": 13, "multipliers": [158.1] },
+          { "level": 14, "multipliers": [165] },
+          { "level": 15, "multipliers": [171.9] },
+          { "level": 16, "multipliers": [178.8] }
         ]
       }
     ],
@@ -711,77 +310,24 @@
         "description": "Press [BASIC] after a [PERFECT] to activate:\n\nSlash forward at enemies, then use /bHu Wei//b to follow up with a downward attack, dealing Fire DMG. Gain 1 point of /bMomentum//b upon activation at most once every 10s. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [407.2]
-          },
-          {
-            "level": 2,
-            "multipliers": [444.3]
-          },
-          {
-            "level": 3,
-            "multipliers": [481.4]
-          },
-          {
-            "level": 4,
-            "multipliers": [518.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [555.6]
-          },
-          {
-            "level": 6,
-            "multipliers": [592.7]
-          },
-          {
-            "level": 7,
-            "multipliers": [629.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [666.9]
-          },
-          {
-            "level": 9,
-            "multipliers": [704]
-          },
-          {
-            "level": 10,
-            "multipliers": [741.1]
-          },
-          {
-            "level": 11,
-            "multipliers": [778.2]
-          },
-          {
-            "level": 12,
-            "multipliers": [815.3]
-          },
-          {
-            "level": 13,
-            "multipliers": [852.4]
-          },
-          {
-            "level": 14,
-            "multipliers": [889.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [926.6]
-          },
-          {
-            "level": 16,
-            "multipliers": [963.7]
-          }
+          { "level": 1, "multipliers": [407.2] },
+          { "level": 2, "multipliers": [444.3] },
+          { "level": 3, "multipliers": [481.4] },
+          { "level": 4, "multipliers": [518.5] },
+          { "level": 5, "multipliers": [555.6] },
+          { "level": 6, "multipliers": [592.7] },
+          { "level": 7, "multipliers": [629.8] },
+          { "level": 8, "multipliers": [666.9] },
+          { "level": 9, "multipliers": [704] },
+          { "level": 10, "multipliers": [741.1] },
+          { "level": 11, "multipliers": [778.2] },
+          { "level": 12, "multipliers": [815.3] },
+          { "level": 13, "multipliers": [852.4] },
+          { "level": 14, "multipliers": [889.5] },
+          { "level": 15, "multipliers": [926.6] },
+          { "level": 16, "multipliers": [963.7] }
         ]
       }
     ],
@@ -792,77 +338,24 @@
         "description": "Press [SPECIAL] to activate:\n\nPerform a spinning slash forward, followed by a falling slash, dealing Fire DMG. Anti-Interrupt level is increased while using this skill.",
         "skillType": "special",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [66.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [72.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [78.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [84.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [90.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [96.6]
-          },
-          {
-            "level": 7,
-            "multipliers": [102.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [108.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [114.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [121]
-          },
-          {
-            "level": 11,
-            "multipliers": [127.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [133.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [139.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [145.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [151.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [157.6]
-          }
+          { "level": 1, "multipliers": [66.1] },
+          { "level": 2, "multipliers": [72.2] },
+          { "level": 3, "multipliers": [78.3] },
+          { "level": 4, "multipliers": [84.4] },
+          { "level": 5, "multipliers": [90.5] },
+          { "level": 6, "multipliers": [96.6] },
+          { "level": 7, "multipliers": [102.7] },
+          { "level": 8, "multipliers": [108.8] },
+          { "level": 9, "multipliers": [114.9] },
+          { "level": 10, "multipliers": [121] },
+          { "level": 11, "multipliers": [127.1] },
+          { "level": 12, "multipliers": [133.2] },
+          { "level": 13, "multipliers": [139.3] },
+          { "level": 14, "multipliers": [145.4] },
+          { "level": 15, "multipliers": [151.5] },
+          { "level": 16, "multipliers": [157.6] }
         ]
       }
     ],
@@ -873,77 +366,24 @@
         "description": "With enough Energy, press [EX] to activate:\n\nSwing /bHu Wei//b forward for a powerful strike, dealing massive Fire DMG. Upon activation, gain 3 points of /bMomentum//b and 80 points of /bMight//b. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [526.5]
-          },
-          {
-            "level": 2,
-            "multipliers": [574.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [622.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [670.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [718.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [766]
-          },
-          {
-            "level": 7,
-            "multipliers": [813.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [861.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [909.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [957.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [1005.5]
-          },
-          {
-            "level": 12,
-            "multipliers": [1053.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [1101.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [1149.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [1197.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [1245]
-          }
+          { "level": 1, "multipliers": [526.5] },
+          { "level": 2, "multipliers": [574.4] },
+          { "level": 3, "multipliers": [622.3] },
+          { "level": 4, "multipliers": [670.2] },
+          { "level": 5, "multipliers": [718.1] },
+          { "level": 6, "multipliers": [766] },
+          { "level": 7, "multipliers": [813.9] },
+          { "level": 8, "multipliers": [861.8] },
+          { "level": 9, "multipliers": [909.7] },
+          { "level": 10, "multipliers": [957.6] },
+          { "level": 11, "multipliers": [1005.5] },
+          { "level": 12, "multipliers": [1053.4] },
+          { "level": 13, "multipliers": [1101.3] },
+          { "level": 14, "multipliers": [1149.2] },
+          { "level": 15, "multipliers": [1197.1] },
+          { "level": 16, "multipliers": [1245] }
         ]
       }
     ],
@@ -954,77 +394,24 @@
         "description": "When a [CHAIN] is triggered, select the character to activate:\n\nSwing /bHu Wei//b to deliver a powerful strike to enemies in a small area ahead, dealing massive Fire DMG. Character is invulnerable while using this skill.",
         "skillType": "chain",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [668.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [728.9]
-          },
-          {
-            "level": 3,
-            "multipliers": [789.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [850.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [911.3]
-          },
-          {
-            "level": 6,
-            "multipliers": [972.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [1032.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [1093.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [1154.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [1215.3]
-          },
-          {
-            "level": 11,
-            "multipliers": [1276.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [1336.9]
-          },
-          {
-            "level": 13,
-            "multipliers": [1397.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [1458.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [1519.3]
-          },
-          {
-            "level": 16,
-            "multipliers": [1580.1]
-          }
+          { "level": 1, "multipliers": [668.1] },
+          { "level": 2, "multipliers": [728.9] },
+          { "level": 3, "multipliers": [789.7] },
+          { "level": 4, "multipliers": [850.5] },
+          { "level": 5, "multipliers": [911.3] },
+          { "level": 6, "multipliers": [972.1] },
+          { "level": 7, "multipliers": [1032.9] },
+          { "level": 8, "multipliers": [1093.7] },
+          { "level": 9, "multipliers": [1154.5] },
+          { "level": 10, "multipliers": [1215.3] },
+          { "level": 11, "multipliers": [1276.1] },
+          { "level": 12, "multipliers": [1336.9] },
+          { "level": 13, "multipliers": [1397.7] },
+          { "level": 14, "multipliers": [1458.5] },
+          { "level": 15, "multipliers": [1519.3] },
+          { "level": 16, "multipliers": [1580.1] }
         ]
       },
       {
@@ -1041,70 +428,22 @@
           }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [354.5]
-          },
-          {
-            "level": 2,
-            "multipliers": [386.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [419.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [451.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [483.7]
-          },
-          {
-            "level": 6,
-            "multipliers": [516]
-          },
-          {
-            "level": 7,
-            "multipliers": [548.3]
-          },
-          {
-            "level": 8,
-            "multipliers": [580.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [612.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [645.2]
-          },
-          {
-            "level": 11,
-            "multipliers": [677.5]
-          },
-          {
-            "level": 12,
-            "multipliers": [709.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [742.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [774.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [806.7]
-          },
-          {
-            "level": 16,
-            "multipliers": [839]
-          }
+          { "level": 1, "multipliers": [354.5] },
+          { "level": 2, "multipliers": [386.8] },
+          { "level": 3, "multipliers": [419.1] },
+          { "level": 4, "multipliers": [451.4] },
+          { "level": 5, "multipliers": [483.7] },
+          { "level": 6, "multipliers": [516] },
+          { "level": 7, "multipliers": [548.3] },
+          { "level": 8, "multipliers": [580.6] },
+          { "level": 9, "multipliers": [612.9] },
+          { "level": 10, "multipliers": [645.2] },
+          { "level": 11, "multipliers": [677.5] },
+          { "level": 12, "multipliers": [709.8] },
+          { "level": 13, "multipliers": [742.1] },
+          { "level": 14, "multipliers": [774.4] },
+          { "level": 15, "multipliers": [806.7] },
+          { "level": 16, "multipliers": [839] }
         ]
       }
     ],
@@ -1115,77 +454,24 @@
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nPerform two downward attacks with /bHu Wei//b, dealing massive Fire DMG. Upon activation, gain 6 points of /bMomentum//b and 100 points of /bMight//b. Character is invulnerable while using this skill.",
         "skillType": "ultimate",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "fire"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1663.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [1815.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [1966.4]
-          },
-          {
-            "level": 4,
-            "multipliers": [2117.7]
-          },
-          {
-            "level": 5,
-            "multipliers": [2269]
-          },
-          {
-            "level": 6,
-            "multipliers": [2420.3]
-          },
-          {
-            "level": 7,
-            "multipliers": [2571.6]
-          },
-          {
-            "level": 8,
-            "multipliers": [2722.9]
-          },
-          {
-            "level": 9,
-            "multipliers": [2874.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [3025.5]
-          },
-          {
-            "level": 11,
-            "multipliers": [3176.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [3328.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [3479.4]
-          },
-          {
-            "level": 14,
-            "multipliers": [3630.7]
-          },
-          {
-            "level": 15,
-            "multipliers": [3782]
-          },
-          {
-            "level": 16,
-            "multipliers": [3933.3]
-          }
+          { "level": 1, "multipliers": [1663.8] },
+          { "level": 2, "multipliers": [1815.1] },
+          { "level": 3, "multipliers": [1966.4] },
+          { "level": 4, "multipliers": [2117.7] },
+          { "level": 5, "multipliers": [2269] },
+          { "level": 6, "multipliers": [2420.3] },
+          { "level": 7, "multipliers": [2571.6] },
+          { "level": 8, "multipliers": [2722.9] },
+          { "level": 9, "multipliers": [2874.2] },
+          { "level": 10, "multipliers": [3025.5] },
+          { "level": 11, "multipliers": [3176.8] },
+          { "level": 12, "multipliers": [3328.1] },
+          { "level": 13, "multipliers": [3479.4] },
+          { "level": 14, "multipliers": [3630.7] },
+          { "level": 15, "multipliers": [3782] },
+          { "level": 16, "multipliers": [3933.3] }
         ]
       }
     ],
@@ -1197,21 +483,10 @@
         "skillType": "chain",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1 Popcorn",
-            "damageType": "fire"
-          },
-          {
-            "name": "3 Popcorns",
-            "damageType": "fire"
-          }
+          { "name": "1 Popcorn", "damageType": "fire" },
+          { "name": "3 Popcorns", "damageType": "fire" }
         ],
-        "levels": [
-          {
-            "level": 1,
-            "multipliers": [160, 480]
-          }
-        ]
+        "levels": [{ "level": 1, "multipliers": [160, 480] }]
       }
     ]
   }

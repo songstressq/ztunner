@@ -50,7 +50,7 @@ const SeedVanguardSelector = ({
             </div>
           </div>
           <InfoTooltip
-            content="Select which Attack agent is Seed's Vanguard. Both receive ATK +1000 and CRIT DMG +30%."
+            content="The Attack teammate with the highest initial ATK is considered Seed's Vanguard. When the Vanguard unleashes an EX Special Attack, Seed gains Onslaught status, increasing Seed's ATK by 1000 and CRIT DMG by 30%. When Seed unleashes an EX Special Attack, the Vanguard gains Direct Strike status, increasing the Vanguard's ATK by 1000 and CRIT DMG by 30%. ..."
             theme={theme}
           />
         </div>
@@ -58,8 +58,8 @@ const SeedVanguardSelector = ({
         {/* 2° SECCIÓN - DESCRIPCIÓN */}
         <div className="ingame_toggle-description_section">
           <p>
-            Select an Attack agent as Vanguard. Both Seed and the Vanguard gain
-            ATK +1000 and CRIT DMG +30%.
+            Seed's and her Vanguard's ATK are increased by 1000, and their CRIT
+            DMG is increased by 30%.
           </p>
         </div>
 

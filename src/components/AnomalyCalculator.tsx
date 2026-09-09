@@ -1307,7 +1307,7 @@ export default function AnomalyCalculator({
       options.push({
         value: `current:${currentAttribute}`,
         label: `Slot ${currentSlotIndex + 1}: ${currentAgentName} (${definition.anomalyType.toUpperCase()})`,
-        disabled: !hasSpecialAttribute,
+        disabled: true,
       });
     }
 

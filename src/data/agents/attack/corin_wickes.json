@@ -48,7 +48,7 @@
       "sourceId": "corin_wickes-core",
       "label": "Hyperfocus (Core Passive)",
       "description": "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by 37.5%.",
-      "shortDescription": "Increases Corin's DMG from continuous extended slashes by 37.5%.",
+      "shortDescription": "Corin's DMG from continuous extended slashes is increased by 37.5%.",
       "target": "self",
       "damageBonuses": [
         {
@@ -107,7 +107,7 @@
       "sourceId": "corin_wickes-core",
       "label": "Cleanup Assistance (Aditional Ability)",
       "description": "When another character in your squad shares the same Attribute or Faction:\n\nCorin deals 35% more DMG to Stunned enemies.",
-      "shortDescription": "Increases Corin's DMG by 35% against stunned enemies.",
+      "shortDescription": "Corin's DMG is increased by 35% against stunned enemies.",
       "target": "self",
       "damageBonuses": [{ "type": "global", "value": 0.35 }]
     },
@@ -117,7 +117,7 @@
       "sourceId": "corin_wickes-mindscape_1",
       "label": "Open Trauma (Mindscape Cinema N°1)",
       "description": "When Corin's Chain Attack or Ultimate hits an enemy, her DMG against the target increases by 12% for 15s.",
-      "shortDescription": "Increases Corin's DMG by 12% for 15s.",
+      "shortDescription": "Corin's DMG is increased by 12% for 15s.",
       "target": "self",
       "damageBonuses": [{ "type": "global", "value": 0.12 }]
     },
@@ -127,7 +127,7 @@
       "sourceId": "corin_wickes-mindscape_2",
       "label": "Atomic Smash (Mindscape Cinema N°2)",
       "description": "When Corin's EX Special Attack, Chain Attack or Ultimate hits an enemy, the target's Physical RES is reduced by 0.5%, stacking up to 20 times and lasting 5s. The duration of each stack is calculated separately.",
-      "shortDescription": "Corin ignores 0.5% of the target's Physical RES for 5s, stacking up to 20 times.",
+      "shortDescription": "Corin's DMG ignores 0.5% of the target's Physical RES for 5s, stacking up to 20 times.",
       "target": "self",
       "flat": { "physicalResShred": 0.005 },
       "maxStacks": 20

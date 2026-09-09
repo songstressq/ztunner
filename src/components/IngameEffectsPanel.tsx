@@ -873,6 +873,7 @@ const IngameEffectsPanel = ({
                   }}
                   showOwnerIcon={true}
                   disabled={false}
+                  theme={agent.themeColor}
                 />
               );
             }

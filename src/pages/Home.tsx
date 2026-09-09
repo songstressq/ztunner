@@ -165,6 +165,27 @@ const Home = () => {
                 style={{ backgroundColor: dominantTheme }}
               />
               <div className="home_content_changelog_item">
+                <span>v1.0.1 — Minor Fixes &amp; Updates</span>
+
+                <h4>● Minor UI fixes and agent-related updates.</h4>
+
+                <p>
+                  Fixed Alice's Sage at the Sword's Tip (Mindscape Cinema N°2)
+                  in-game effect.
+                  <br />
+                  Fixed Aria's Fantastical Beat (Mindscape Cinema N°2) in-game
+                  effect.
+                  <br />
+                  Fixed Anton's Brothers in Arms! (Core Passive) in-game effect.
+                  <br />
+                  Fixed Seed's Flower Chain Protocol (Core Passive) in-game
+                  effect.
+                  <br />
+                  Fixed Jane's Crime Counsel (Mindscape Cinema N°1) in-game
+                  effect.
+                </p>
+              </div>
+              <div className="home_content_changelog_item">
                 <span>v1.0.0 — Initial Release</span>
 
                 <h4>● Added ZZZ Damage Calculator </h4>
@@ -246,7 +267,7 @@ const Home = () => {
                     <span>0%</span>
                   </div>{" "}
                 </div>{" "}
-                <div className="home_content-features_card">
+                {/*<div className="home_content-features_card">
                   <h3>🅾 Low-Spec Mode</h3>
                   <p>
                     Optimize Z-Tunner for better performance on lower-spec and
@@ -257,7 +278,7 @@ const Home = () => {
                     {renderProgressBar(25)}
                     <span>25%</span>
                   </div>{" "}
-                </div>{" "}
+                </div>{" "}*/}
               </div>
             </div>
           </div>

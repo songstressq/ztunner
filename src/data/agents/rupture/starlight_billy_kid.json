@@ -9,11 +9,7 @@
   "displayName": "Billy",
   "attributeIcon": "Physical",
   "themeColor": "#C5564B",
-  "baseStats": {
-    "hp": 8497,
-    "atk": 784.91,
-    "def": 446
-  },
+  "baseStats": { "hp": 8497, "atk": 784.91, "def": 446 },
   "combatBase": {
     "impact": 95,
     "critRate": 0.05,
@@ -37,55 +33,13 @@
     "stats": ["CRIT Rate", "CRIT DMG", "HP", "Sheer Force"]
   },
   "coreEnhancement": [
-    {
-      "level": 0,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 1,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 2,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 3,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 4,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    },
-    {
-      "level": 5,
-      "stats": {
-        "atkFlat": 0,
-        "critRate": 0.048
-      }
-    },
-    {
-      "level": 6,
-      "stats": {
-        "atkFlat": 25,
-        "critRate": 0
-      }
-    }
+    { "level": 0, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 2, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 4, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 6, "stats": { "atkFlat": 25, "critRate": 0 } }
   ],
   "ingameEffects": [
     {
@@ -96,9 +50,7 @@
       "description": "... When his HP is greater than 25%, press Special Attack to consume HP and activate Special Attack: Drive Suppression. While in combat, each use of this skill increases his CRIT DMG by 45% for 45s. Repeated triggers refresh the duration. ...",
       "shortDescription": "Starlight - Billy Kid's CRIT DMG increased by 45% for 45s.",
       "target": "self",
-      "flat": {
-        "critDmg": 0.45
-      }
+      "flat": { "critDmg": 0.45 }
     },
     {
       "id": "starlight_billy_kid-core-blazing_starlight",
@@ -110,21 +62,9 @@
       "target": "self",
       "maxStacks": 2,
       "damageBonuses": [
-        {
-          "type": "skillType",
-          "skillType": "chain",
-          "value": 0.2
-        },
-        {
-          "type": "skillType",
-          "skillType": "ultimate",
-          "value": 0.2
-        },
-        {
-          "type": "skillType",
-          "skillType": "ex",
-          "value": 0.2
-        },
+        { "type": "skillType", "skillType": "chain", "value": 0.2 },
+        { "type": "skillType", "skillType": "ultimate", "value": 0.2 },
+        { "type": "skillType", "skillType": "ex", "value": 0.2 },
         {
           "type": "exclusive",
           "appliesTo": [
@@ -142,9 +82,7 @@
       "description": "Core Passive: Knight's Resolve restores an additional 60 Adrenaline upon entering the battlefield. Hitting an enemy with an EX Special Attack causes Starlight - Billy's DMG to ignore 18% Physical RES for 45s. Repeated triggers refresh the duration.",
       "shortDescription": "Starlight - Billy Kid's DMG ignores 18% of the target's Physical RES for 45s.",
       "target": "self",
-      "flat": {
-        "physicalResShred": 0.18
-      }
+      "flat": { "physicalResShred": 0.18 }
     },
     {
       "id": "starlight_billy_kid-mindscape_2_1-wasteland_automaton",
@@ -164,8 +102,7 @@
           ],
           "value": 0.5
         }
-      ],
-      "linkedEffects": ["starlight_billy_kid-mindscape_2_2-wasteland_automaton"]
+      ]
     },
     {
       "id": "starlight_billy_kid-mindscape_2_2-wasteland_automaton",
@@ -192,9 +129,7 @@
       "description": "While in combat, each use of Special Attack: Drive Suppression increases Starlight - Billy's CRIT DMG by 8%, stacking up to 2 times, and lasting 45s. Repeated triggers reset the duration. If HP is below 35% and Starlight - Billy is not the active character, he continuously recovers HP, up to 35%.",
       "shortDescription": "Starlight - Billy Kid's CRIT DMG is increased by 8% for 45s, stacking up to 2 times.",
       "target": "self",
-      "flat": {
-        "critDmg": 0.08
-      },
+      "flat": { "critDmg": 0.08 },
       "maxStacks": 2
     },
     {
@@ -227,88 +162,28 @@
         "skillType": "basicAttack",
         "statBase": "sheerForce",
         "hits": [
-          {
-            "name": "1st Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "2nd Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "3rd Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "4th Hit DMG Multiplier",
-            "damageType": "physical"
-          }
+          { "name": "1st Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "4th Hit DMG Multiplier", "damageType": "physical" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [50.3, 68, 54.5, 206]
-          },
-          {
-            "level": 2,
-            "multipliers": [54.9, 74.2, 59.5, 224.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [59.5, 80.4, 64.5, 243.6]
-          },
-          {
-            "level": 4,
-            "multipliers": [64.1, 86.6, 69.5, 262.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [68.7, 92.8, 74.5, 281.2]
-          },
-          {
-            "level": 6,
-            "multipliers": [73.3, 99, 79.5, 300]
-          },
-          {
-            "level": 7,
-            "multipliers": [77.9, 105.2, 84.5, 318.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [82.5, 111.4, 89.5, 337.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [87.1, 117.6, 94.5, 356.4]
-          },
-          {
-            "level": 10,
-            "multipliers": [91.7, 123.8, 99.5, 375.2]
-          },
-          {
-            "level": 11,
-            "multipliers": [96.3, 130, 104.5, 394]
-          },
-          {
-            "level": 12,
-            "multipliers": [100.9, 136.2, 109.5, 412.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [105.5, 142.4, 114.5, 431.6]
-          },
-          {
-            "level": 14,
-            "multipliers": [110.1, 148.6, 119.5, 450.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [114.7, 154.8, 124.5, 469.2]
-          },
-          {
-            "level": 16,
-            "multipliers": [119.3, 161, 129.5, 488]
-          }
+          { "level": 1, "multipliers": [50.3, 68, 54.5, 206] },
+          { "level": 2, "multipliers": [54.9, 74.2, 59.5, 224.8] },
+          { "level": 3, "multipliers": [59.5, 80.4, 64.5, 243.6] },
+          { "level": 4, "multipliers": [64.1, 86.6, 69.5, 262.4] },
+          { "level": 5, "multipliers": [68.7, 92.8, 74.5, 281.2] },
+          { "level": 6, "multipliers": [73.3, 99, 79.5, 300] },
+          { "level": 7, "multipliers": [77.9, 105.2, 84.5, 318.8] },
+          { "level": 8, "multipliers": [82.5, 111.4, 89.5, 337.6] },
+          { "level": 9, "multipliers": [87.1, 117.6, 94.5, 356.4] },
+          { "level": 10, "multipliers": [91.7, 123.8, 99.5, 375.2] },
+          { "level": 11, "multipliers": [96.3, 130, 104.5, 394] },
+          { "level": 12, "multipliers": [100.9, 136.2, 109.5, 412.8] },
+          { "level": 13, "multipliers": [105.5, 142.4, 114.5, 431.6] },
+          { "level": 14, "multipliers": [110.1, 148.6, 119.5, 450.4] },
+          { "level": 15, "multipliers": [114.7, 154.8, 124.5, 469.2] },
+          { "level": 16, "multipliers": [119.3, 161, 129.5, 488] }
         ]
       },
       {
@@ -317,77 +192,24 @@
         "description": "With enough /bDetermination//b, hold [BASIC] to activate:\n\nCharges forward on the motorcycle, then fires a laser beam, dealing massive Physical DMG. Character is invulnerable while using this skill.",
         "skillType": "basic",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1043.2]
-          },
-          {
-            "level": 2,
-            "multipliers": [1138.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [1233]
-          },
-          {
-            "level": 4,
-            "multipliers": [1327.9]
-          },
-          {
-            "level": 5,
-            "multipliers": [1422.8]
-          },
-          {
-            "level": 6,
-            "multipliers": [1517.7]
-          },
-          {
-            "level": 7,
-            "multipliers": [1612.6]
-          },
-          {
-            "level": 8,
-            "multipliers": [1707.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [1802.4]
-          },
-          {
-            "level": 10,
-            "multipliers": [1897.3]
-          },
-          {
-            "level": 11,
-            "multipliers": [1992.2]
-          },
-          {
-            "level": 12,
-            "multipliers": [2087.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [2182]
-          },
-          {
-            "level": 14,
-            "multipliers": [2276.9]
-          },
-          {
-            "level": 15,
-            "multipliers": [2371.8]
-          },
-          {
-            "level": 16,
-            "multipliers": [2466.7]
-          }
+          { "level": 1, "multipliers": [1043.2] },
+          { "level": 2, "multipliers": [1138.1] },
+          { "level": 3, "multipliers": [1233] },
+          { "level": 4, "multipliers": [1327.9] },
+          { "level": 5, "multipliers": [1422.8] },
+          { "level": 6, "multipliers": [1517.7] },
+          { "level": 7, "multipliers": [1612.6] },
+          { "level": 8, "multipliers": [1707.5] },
+          { "level": 9, "multipliers": [1802.4] },
+          { "level": 10, "multipliers": [1897.3] },
+          { "level": 11, "multipliers": [1992.2] },
+          { "level": 12, "multipliers": [2087.1] },
+          { "level": 13, "multipliers": [2182] },
+          { "level": 14, "multipliers": [2276.9] },
+          { "level": 15, "multipliers": [2371.8] },
+          { "level": 16, "multipliers": [2466.7] }
         ]
       }
     ],
@@ -398,77 +220,24 @@
         "description": "Press [BASIC] during a dodge to activate:\n\nPerforms a quick forward slash, dealing Physical DMG.",
         "skillType": "dash",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [45.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [49.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [53.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [57.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [61.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [65.6]
-          },
-          {
-            "level": 7,
-            "multipliers": [69.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [73.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [77.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [82]
-          },
-          {
-            "level": 11,
-            "multipliers": [86.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [90.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [94.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [98.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [102.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [106.6]
-          }
+          { "level": 1, "multipliers": [45.1] },
+          { "level": 2, "multipliers": [49.2] },
+          { "level": 3, "multipliers": [53.3] },
+          { "level": 4, "multipliers": [57.4] },
+          { "level": 5, "multipliers": [61.5] },
+          { "level": 6, "multipliers": [65.6] },
+          { "level": 7, "multipliers": [69.7] },
+          { "level": 8, "multipliers": [73.8] },
+          { "level": 9, "multipliers": [77.9] },
+          { "level": 10, "multipliers": [82] },
+          { "level": 11, "multipliers": [86.1] },
+          { "level": 12, "multipliers": [90.2] },
+          { "level": 13, "multipliers": [94.3] },
+          { "level": 14, "multipliers": [98.4] },
+          { "level": 15, "multipliers": [102.5] },
+          { "level": 16, "multipliers": [106.6] }
         ]
       }
     ],
@@ -479,12 +248,7 @@
         "description": "Press Basic Attack during a Perfect Dodge to activate:\n\nFires a blast from his arm cannon, dealing Physical DMG. If this skill is triggered via a /bPerfect Dodge//b, hitting an enemy restores 10% of Max HP, and it can be chained into the 4th hit of /bBasic Attack: Knight's Technique//b. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
           { "level": 1, "multipliers": [119.5] },
           { "level": 2, "multipliers": [130.4] },
@@ -510,77 +274,24 @@
         "description": "During /bDodge: Through the Galaxy//b, trigger a /bPerfect Dodge//b to activate:\n\nSpins with the bike to deal Physical DMG to surrounding enemies. After using this skill, it automatically chains into /bEX Special Attack: Cool Wheelie//b. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [198.7]
-          },
-          {
-            "level": 2,
-            "multipliers": [216.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [234.9]
-          },
-          {
-            "level": 4,
-            "multipliers": [253]
-          },
-          {
-            "level": 5,
-            "multipliers": [271.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [289.2]
-          },
-          {
-            "level": 7,
-            "multipliers": [307.3]
-          },
-          {
-            "level": 8,
-            "multipliers": [325.4]
-          },
-          {
-            "level": 9,
-            "multipliers": [343.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [361.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [379.7]
-          },
-          {
-            "level": 12,
-            "multipliers": [397.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [415.9]
-          },
-          {
-            "level": 14,
-            "multipliers": [434]
-          },
-          {
-            "level": 15,
-            "multipliers": [452.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [470.2]
-          }
+          { "level": 1, "multipliers": [198.7] },
+          { "level": 2, "multipliers": [216.8] },
+          { "level": 3, "multipliers": [234.9] },
+          { "level": 4, "multipliers": [253] },
+          { "level": 5, "multipliers": [271.1] },
+          { "level": 6, "multipliers": [289.2] },
+          { "level": 7, "multipliers": [307.3] },
+          { "level": 8, "multipliers": [325.4] },
+          { "level": 9, "multipliers": [343.5] },
+          { "level": 10, "multipliers": [361.6] },
+          { "level": 11, "multipliers": [379.7] },
+          { "level": 12, "multipliers": [397.8] },
+          { "level": 13, "multipliers": [415.9] },
+          { "level": 14, "multipliers": [434] },
+          { "level": 15, "multipliers": [452.1] },
+          { "level": 16, "multipliers": [470.2] }
         ]
       }
     ],
@@ -591,77 +302,24 @@
         "description": "When the active character is launched, press [ASSIST] to activate:\n\nFires a blast from his arm cannon ahead, dealing Physical DMG. When HP is above 25%, this skill is replaced with /bSpecial Attack: Drive Suppression//b. This effect can trigger once every 5s. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [92]
-          },
-          {
-            "level": 2,
-            "multipliers": [100.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [108.8]
-          },
-          {
-            "level": 4,
-            "multipliers": [117.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [125.6]
-          },
-          {
-            "level": 6,
-            "multipliers": [134]
-          },
-          {
-            "level": 7,
-            "multipliers": [142.4]
-          },
-          {
-            "level": 8,
-            "multipliers": [150.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [159.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [167.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [176]
-          },
-          {
-            "level": 12,
-            "multipliers": [184.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [192.8]
-          },
-          {
-            "level": 14,
-            "multipliers": [201.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [209.6]
-          },
-          {
-            "level": 16,
-            "multipliers": [218]
-          }
+          { "level": 1, "multipliers": [92] },
+          { "level": 2, "multipliers": [100.4] },
+          { "level": 3, "multipliers": [108.8] },
+          { "level": 4, "multipliers": [117.2] },
+          { "level": 5, "multipliers": [125.6] },
+          { "level": 6, "multipliers": [134] },
+          { "level": 7, "multipliers": [142.4] },
+          { "level": 8, "multipliers": [150.8] },
+          { "level": 9, "multipliers": [159.2] },
+          { "level": 10, "multipliers": [167.6] },
+          { "level": 11, "multipliers": [176] },
+          { "level": 12, "multipliers": [184.4] },
+          { "level": 13, "multipliers": [192.8] },
+          { "level": 14, "multipliers": [201.2] },
+          { "level": 15, "multipliers": [209.6] },
+          { "level": 16, "multipliers": [218] }
         ]
       }
     ],
@@ -673,77 +331,24 @@
         "description": "Press [BASIC] after a [PERFECT] to activate:\n\nKicks the motorcycle at the target, dealing massive Physical DMG. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [229.6]
-          },
-          {
-            "level": 2,
-            "multipliers": [250.5]
-          },
-          {
-            "level": 3,
-            "multipliers": [271.4]
-          },
-          {
-            "level": 4,
-            "multipliers": [292.3]
-          },
-          {
-            "level": 5,
-            "multipliers": [313.2]
-          },
-          {
-            "level": 6,
-            "multipliers": [334.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [355]
-          },
-          {
-            "level": 8,
-            "multipliers": [375.9]
-          },
-          {
-            "level": 9,
-            "multipliers": [396.8]
-          },
-          {
-            "level": 10,
-            "multipliers": [417.7]
-          },
-          {
-            "level": 11,
-            "multipliers": [438.6]
-          },
-          {
-            "level": 12,
-            "multipliers": [459.5]
-          },
-          {
-            "level": 13,
-            "multipliers": [480.4]
-          },
-          {
-            "level": 14,
-            "multipliers": [501.3]
-          },
-          {
-            "level": 15,
-            "multipliers": [522.2]
-          },
-          {
-            "level": 16,
-            "multipliers": [543.1]
-          }
+          { "level": 1, "multipliers": [229.6] },
+          { "level": 2, "multipliers": [250.5] },
+          { "level": 3, "multipliers": [271.4] },
+          { "level": 4, "multipliers": [292.3] },
+          { "level": 5, "multipliers": [313.2] },
+          { "level": 6, "multipliers": [334.1] },
+          { "level": 7, "multipliers": [355] },
+          { "level": 8, "multipliers": [375.9] },
+          { "level": 9, "multipliers": [396.8] },
+          { "level": 10, "multipliers": [417.7] },
+          { "level": 11, "multipliers": [438.6] },
+          { "level": 12, "multipliers": [459.5] },
+          { "level": 13, "multipliers": [480.4] },
+          { "level": 14, "multipliers": [501.3] },
+          { "level": 15, "multipliers": [522.2] },
+          { "level": 16, "multipliers": [543.1] }
         ]
       }
     ],
@@ -754,77 +359,24 @@
         "description": "When HP is above 25%, press [SPECIAL] to activate:\n\nConsumes HP equal to 16% of Max HP to summon a motorcycle and swiftly crash into enemies, continuously dealing Physical DMG. If attacked by an enemy as the active character shortly upon activating this skill, triggers a block, negating the attack and restoring 5 /bDetermination//b.\n\nAfter triggering a block, immediately chains into /bEX Special Attack: Cool Wheelie//b. After the skill continues for a while, it automatically chains into /bEX Special Attack: Cool Wheelie//b. Anti-Interrupt level is increased while using this skill.",
         "skillType": "special",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [52]
-          },
-          {
-            "level": 2,
-            "multipliers": [56.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [61.6]
-          },
-          {
-            "level": 4,
-            "multipliers": [66.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [71.2]
-          },
-          {
-            "level": 6,
-            "multipliers": [76]
-          },
-          {
-            "level": 7,
-            "multipliers": [80.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [85.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [90.4]
-          },
-          {
-            "level": 10,
-            "multipliers": [95.2]
-          },
-          {
-            "level": 11,
-            "multipliers": [100]
-          },
-          {
-            "level": 12,
-            "multipliers": [104.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [109.6]
-          },
-          {
-            "level": 14,
-            "multipliers": [114.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [119.2]
-          },
-          {
-            "level": 16,
-            "multipliers": [124]
-          }
+          { "level": 1, "multipliers": [52] },
+          { "level": 2, "multipliers": [56.8] },
+          { "level": 3, "multipliers": [61.6] },
+          { "level": 4, "multipliers": [66.4] },
+          { "level": 5, "multipliers": [71.2] },
+          { "level": 6, "multipliers": [76] },
+          { "level": 7, "multipliers": [80.8] },
+          { "level": 8, "multipliers": [85.6] },
+          { "level": 9, "multipliers": [90.4] },
+          { "level": 10, "multipliers": [95.2] },
+          { "level": 11, "multipliers": [100] },
+          { "level": 12, "multipliers": [104.8] },
+          { "level": 13, "multipliers": [109.6] },
+          { "level": 14, "multipliers": [114.4] },
+          { "level": 15, "multipliers": [119.2] },
+          { "level": 16, "multipliers": [124] }
         ]
       },
       {
@@ -833,77 +385,24 @@
         "description": "Triggers automatically when /bDodge: Through the Galaxy//b is interrupted:\n\nKicks his motorcycle at enemies, dealing Physical DMG. After using this skill, it can be chained into /bDodge Counter: Duel King//b. Anti-Interrupt level is increased while using this skill.",
         "skillType": "special",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [72.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [78.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [85.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [91.9]
-          },
-          {
-            "level": 5,
-            "multipliers": [98.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [105.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [111.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [118.3]
-          },
-          {
-            "level": 9,
-            "multipliers": [124.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [131.5]
-          },
-          {
-            "level": 11,
-            "multipliers": [138.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [144.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [151.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [157.9]
-          },
-          {
-            "level": 15,
-            "multipliers": [164.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [171.1]
-          }
+          { "level": 1, "multipliers": [72.1] },
+          { "level": 2, "multipliers": [78.7] },
+          { "level": 3, "multipliers": [85.3] },
+          { "level": 4, "multipliers": [91.9] },
+          { "level": 5, "multipliers": [98.5] },
+          { "level": 6, "multipliers": [105.1] },
+          { "level": 7, "multipliers": [111.7] },
+          { "level": 8, "multipliers": [118.3] },
+          { "level": 9, "multipliers": [124.9] },
+          { "level": 10, "multipliers": [131.5] },
+          { "level": 11, "multipliers": [138.1] },
+          { "level": 12, "multipliers": [144.7] },
+          { "level": 13, "multipliers": [151.3] },
+          { "level": 14, "multipliers": [157.9] },
+          { "level": 15, "multipliers": [164.5] },
+          { "level": 16, "multipliers": [171.1] }
         ]
       }
     ],
@@ -914,77 +413,24 @@
         "description": "Triggers automatically when /bSpecial Attack: Drive Suppression//b reaches its maximum duration or a block is triggered:\n\nLifts the motorcycle to attack enemies, dealing Physical DMG. On hit, restores an additional 8 /bDetermination//b. After using this skill, with enough Adrenaline, press or hold [EX] to chain into /bEX Special Attack: Rocking Footwork//b. After the skill animation ends, automatically chains into /bSpecial Attack: Run Wild//b. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [389.7]
-          },
-          {
-            "level": 2,
-            "multipliers": [425.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [460.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [496.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [531.7]
-          },
-          {
-            "level": 6,
-            "multipliers": [567.2]
-          },
-          {
-            "level": 7,
-            "multipliers": [602.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [638.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [673.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [709.2]
-          },
-          {
-            "level": 11,
-            "multipliers": [744.7]
-          },
-          {
-            "level": 12,
-            "multipliers": [780.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [815.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [851.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [886.7]
-          },
-          {
-            "level": 16,
-            "multipliers": [922.2]
-          }
+          { "level": 1, "multipliers": [389.7] },
+          { "level": 2, "multipliers": [425.2] },
+          { "level": 3, "multipliers": [460.7] },
+          { "level": 4, "multipliers": [496.2] },
+          { "level": 5, "multipliers": [531.7] },
+          { "level": 6, "multipliers": [567.2] },
+          { "level": 7, "multipliers": [602.7] },
+          { "level": 8, "multipliers": [638.2] },
+          { "level": 9, "multipliers": [673.7] },
+          { "level": 10, "multipliers": [709.2] },
+          { "level": 11, "multipliers": [744.7] },
+          { "level": 12, "multipliers": [780.2] },
+          { "level": 13, "multipliers": [815.7] },
+          { "level": 14, "multipliers": [851.2] },
+          { "level": 15, "multipliers": [886.7] },
+          { "level": 16, "multipliers": [922.2] }
         ]
       },
       {
@@ -993,77 +439,24 @@
         "description": "With enough Adrenaline, hold [EX] to activate:\n\nSlams down with the motorcycle, dealing Physical DMG. Restores 30% of Max HP upon activating this skill. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [929.9]
-          },
-          {
-            "level": 2,
-            "multipliers": [1014.5]
-          },
-          {
-            "level": 3,
-            "multipliers": [1099.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [1183.7]
-          },
-          {
-            "level": 5,
-            "multipliers": [1268.3]
-          },
-          {
-            "level": 6,
-            "multipliers": [1352.9]
-          },
-          {
-            "level": 7,
-            "multipliers": [1437.5]
-          },
-          {
-            "level": 8,
-            "multipliers": [1522.1]
-          },
-          {
-            "level": 9,
-            "multipliers": [1606.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [1691.3]
-          },
-          {
-            "level": 11,
-            "multipliers": [1775.9]
-          },
-          {
-            "level": 12,
-            "multipliers": [1860.5]
-          },
-          {
-            "level": 13,
-            "multipliers": [1945.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [2029.7]
-          },
-          {
-            "level": 15,
-            "multipliers": [2114.3]
-          },
-          {
-            "level": 16,
-            "multipliers": [2198.9]
-          }
+          { "level": 1, "multipliers": [929.9] },
+          { "level": 2, "multipliers": [1014.5] },
+          { "level": 3, "multipliers": [1099.1] },
+          { "level": 4, "multipliers": [1183.7] },
+          { "level": 5, "multipliers": [1268.3] },
+          { "level": 6, "multipliers": [1352.9] },
+          { "level": 7, "multipliers": [1437.5] },
+          { "level": 8, "multipliers": [1522.1] },
+          { "level": 9, "multipliers": [1606.7] },
+          { "level": 10, "multipliers": [1691.3] },
+          { "level": 11, "multipliers": [1775.9] },
+          { "level": 12, "multipliers": [1860.5] },
+          { "level": 13, "multipliers": [1945.1] },
+          { "level": 14, "multipliers": [2029.7] },
+          { "level": 15, "multipliers": [2114.3] },
+          { "level": 16, "multipliers": [2198.9] }
         ]
       },
       {
@@ -1072,77 +465,24 @@
         "description": "After activating /bEX Special Attack: Cool Wheelie//b and with enough Adrenaline, press or hold [EX] to activate:\n\nUses the motorcycle and hand cannon for a combined attack, dealing Physical DMG. Upon activating this skill, restore 15% of Max HP. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [959]
-          },
-          {
-            "level": 2,
-            "multipliers": [1046.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [1133.4]
-          },
-          {
-            "level": 4,
-            "multipliers": [1220.6]
-          },
-          {
-            "level": 5,
-            "multipliers": [1307.8]
-          },
-          {
-            "level": 6,
-            "multipliers": [1395]
-          },
-          {
-            "level": 7,
-            "multipliers": [1482.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [1569.4]
-          },
-          {
-            "level": 9,
-            "multipliers": [1656.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [1743.8]
-          },
-          {
-            "level": 11,
-            "multipliers": [1831]
-          },
-          {
-            "level": 12,
-            "multipliers": [1918.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [2005.4]
-          },
-          {
-            "level": 14,
-            "multipliers": [2092.6]
-          },
-          {
-            "level": 15,
-            "multipliers": [2179.8]
-          },
-          {
-            "level": 16,
-            "multipliers": [2267]
-          }
+          { "level": 1, "multipliers": [959] },
+          { "level": 2, "multipliers": [1046.2] },
+          { "level": 3, "multipliers": [1133.4] },
+          { "level": 4, "multipliers": [1220.6] },
+          { "level": 5, "multipliers": [1307.8] },
+          { "level": 6, "multipliers": [1395] },
+          { "level": 7, "multipliers": [1482.2] },
+          { "level": 8, "multipliers": [1569.4] },
+          { "level": 9, "multipliers": [1656.6] },
+          { "level": 10, "multipliers": [1743.8] },
+          { "level": 11, "multipliers": [1831] },
+          { "level": 12, "multipliers": [1918.2] },
+          { "level": 13, "multipliers": [2005.4] },
+          { "level": 14, "multipliers": [2092.6] },
+          { "level": 15, "multipliers": [2179.8] },
+          { "level": 16, "multipliers": [2267] }
         ]
       }
     ],
@@ -1153,77 +493,24 @@
         "description": "When a [CHAIN] is triggered, select the character to activate:\n\nLaunches a series of attacks forward, dealing massive Physical DMG. Upon activating this skill, gains 15 /bDetermination//b. Character is invulnerable while using this skill.",
         "skillType": "chain",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [662.9]
-          },
-          {
-            "level": 2,
-            "multipliers": [723.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [783.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [843.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [904.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [964.4]
-          },
-          {
-            "level": 7,
-            "multipliers": [1024.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [1085]
-          },
-          {
-            "level": 9,
-            "multipliers": [1145.3]
-          },
-          {
-            "level": 10,
-            "multipliers": [1205.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [1265.9]
-          },
-          {
-            "level": 12,
-            "multipliers": [1326.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [1386.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [1446.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [1507.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [1567.4]
-          }
+          { "level": 1, "multipliers": [662.9] },
+          { "level": 2, "multipliers": [723.2] },
+          { "level": 3, "multipliers": [783.5] },
+          { "level": 4, "multipliers": [843.8] },
+          { "level": 5, "multipliers": [904.1] },
+          { "level": 6, "multipliers": [964.4] },
+          { "level": 7, "multipliers": [1024.7] },
+          { "level": 8, "multipliers": [1085] },
+          { "level": 9, "multipliers": [1145.3] },
+          { "level": 10, "multipliers": [1205.6] },
+          { "level": 11, "multipliers": [1265.9] },
+          { "level": 12, "multipliers": [1326.2] },
+          { "level": 13, "multipliers": [1386.5] },
+          { "level": 14, "multipliers": [1446.8] },
+          { "level": 15, "multipliers": [1507.1] },
+          { "level": 16, "multipliers": [1567.4] }
         ]
       }
     ],
@@ -1234,77 +521,24 @@
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLeaps into the air and delivers a flying kick at the target, dealing massive Physical DMG. Character is invulnerable while using this skill.",
         "skillType": "ultimate",
         "statBase": "sheerForce",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1592.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [1736.9]
-          },
-          {
-            "level": 3,
-            "multipliers": [1881.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [2026.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [2171.3]
-          },
-          {
-            "level": 6,
-            "multipliers": [2316.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [2460.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [2605.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [2750.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [2895.3]
-          },
-          {
-            "level": 11,
-            "multipliers": [3040.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [3184.9]
-          },
-          {
-            "level": 13,
-            "multipliers": [3329.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [3474.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [3619.3]
-          },
-          {
-            "level": 16,
-            "multipliers": [3764.1]
-          }
+          { "level": 1, "multipliers": [1592.1] },
+          { "level": 2, "multipliers": [1736.9] },
+          { "level": 3, "multipliers": [1881.7] },
+          { "level": 4, "multipliers": [2026.5] },
+          { "level": 5, "multipliers": [2171.3] },
+          { "level": 6, "multipliers": [2316.1] },
+          { "level": 7, "multipliers": [2460.9] },
+          { "level": 8, "multipliers": [2605.7] },
+          { "level": 9, "multipliers": [2750.5] },
+          { "level": 10, "multipliers": [2895.3] },
+          { "level": 11, "multipliers": [3040.1] },
+          { "level": 12, "multipliers": [3184.9] },
+          { "level": 13, "multipliers": [3329.7] },
+          { "level": 14, "multipliers": [3474.5] },
+          { "level": 15, "multipliers": [3619.3] },
+          { "level": 16, "multipliers": [3764.1] }
         ]
       }
     ],
@@ -1316,25 +550,11 @@
         "skillType": "mindscape",
         "statBase": "sheerForce",
         "hits": [
-          {
-            "name": "1 Stack",
-            "damageType": "physical"
-          },
-          {
-            "name": "2 Stacks",
-            "damageType": "physical"
-          },
-          {
-            "name": "6 Stacks",
-            "damageType": "physical"
-          }
+          { "name": "1 Stack", "damageType": "physical" },
+          { "name": "2 Stacks", "damageType": "physical" },
+          { "name": "6 Stacks", "damageType": "physical" }
         ],
-        "levels": [
-          {
-            "level": 1,
-            "multipliers": [100, 200, 600]
-          }
-        ]
+        "levels": [{ "level": 1, "multipliers": [100, 200, 600] }]
       }
     ]
   }

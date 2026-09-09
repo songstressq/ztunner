@@ -9,11 +9,7 @@
   "displayName": "Lycaon",
   "attributeIcon": "Ice",
   "themeColor": "#E8E9D6",
-  "baseStats": {
-    "hp": 8416.3,
-    "atk": 653.59,
-    "def": 606.6
-  },
+  "baseStats": { "hp": 8416.3, "atk": 653.59, "def": 606.6 },
   "combatBase": {
     "impact": 119,
     "critRate": 0.05,
@@ -32,60 +28,15 @@
       "wind": 0
     }
   },
-  "recommendedStats": {
-    "className": "stat-recommended",
-    "stats": ["Impact"]
-  },
+  "recommendedStats": { "className": "stat-recommended", "stats": ["Impact"] },
   "coreEnhancement": [
-    {
-      "level": 0,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 0
-      }
-    },
-    {
-      "level": 1,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 2,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    },
-    {
-      "level": 3,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 4,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    },
-    {
-      "level": 5,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 6,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    }
+    { "level": 0, "stats": { "atkFlat": 0, "impact": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 2, "stats": { "atkFlat": 25, "impact": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 4, "stats": { "atkFlat": 25, "impact": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 6, "stats": { "atkFlat": 25, "impact": 0 } }
   ],
   "ingameEffects": [
     {
@@ -96,9 +47,7 @@
       "description": "When Lycaon charges his Basic Attack to completion, the attack deals 80% increased Daze. When EX Special Attack: Thrill of the Hunt or Assist Follow-Up: Vengeful Counterattack hits an enemy, the target's Ice DMG RES decreases by 25% for 30s.",
       "shortDescription": "The target's Ice RES is reduced by 25% for 30s.",
       "target": "team",
-      "flat": {
-        "iceResShred": 0.25
-      }
+      "flat": { "iceResShred": 0.25 }
     },
     {
       "id": "lycaon-mindscape_1-full_moon_momentum",
@@ -135,12 +84,7 @@
       "description": "When a charged attack hits an enemy, the target suffers 10% increased DMG from Lycaon, stacking up to 5 times and lasting 12s. Only one stack can be gained per skill use, and repeated triggers reset the duration.",
       "shortDescription": "Lycaon's DMG is increased by 10% for 12s, stacking up to 5 times.",
       "target": "self",
-      "damageBonuses": [
-        {
-          "type": "global",
-          "value": 0.1
-        }
-      ],
+      "damageBonuses": [{ "type": "global", "value": 0.1 }],
       "maxStacks": 5
     }
   ],
@@ -153,30 +97,12 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "3rd-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "4th-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "5th-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "1st-Hit Attack DMG Multiplier",
-            "damageType": "ice"
-          },
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "5th-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "1st-Hit Attack DMG Multiplier", "damageType": "ice" },
           {
             "name": "2nd-Hit Charged Attack DMG Multiplier",
             "damageType": "ice"
@@ -320,77 +246,24 @@
         "description": "Press [BASIC] during a dodge to activate:\n\nSlides forward, launching a series of strikes in front, dealing Physical DMG.",
         "skillType": "dash",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [47.3]
-          },
-          {
-            "level": 2,
-            "multipliers": [51.6]
-          },
-          {
-            "level": 3,
-            "multipliers": [55.9]
-          },
-          {
-            "level": 4,
-            "multipliers": [60.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [64.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [68.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [73.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [77.4]
-          },
-          {
-            "level": 9,
-            "multipliers": [81.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [86]
-          },
-          {
-            "level": 11,
-            "multipliers": [90.3]
-          },
-          {
-            "level": 12,
-            "multipliers": [94.6]
-          },
-          {
-            "level": 13,
-            "multipliers": [98.9]
-          },
-          {
-            "level": 14,
-            "multipliers": [103.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [107.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [111.8]
-          }
+          { "level": 1, "multipliers": [47.3] },
+          { "level": 2, "multipliers": [51.6] },
+          { "level": 3, "multipliers": [55.9] },
+          { "level": 4, "multipliers": [60.2] },
+          { "level": 5, "multipliers": [64.5] },
+          { "level": 6, "multipliers": [68.8] },
+          { "level": 7, "multipliers": [73.1] },
+          { "level": 8, "multipliers": [77.4] },
+          { "level": 9, "multipliers": [81.7] },
+          { "level": 10, "multipliers": [86] },
+          { "level": 11, "multipliers": [90.3] },
+          { "level": 12, "multipliers": [94.6] },
+          { "level": 13, "multipliers": [98.9] },
+          { "level": 14, "multipliers": [103.2] },
+          { "level": 15, "multipliers": [107.5] },
+          { "level": 16, "multipliers": [111.8] }
         ]
       }
     ],
@@ -401,77 +274,24 @@
         "description": "Press [BASIC] during a [COUNTER] to activate:\n\nStrikes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ice"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ice" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [187]
-          },
-          {
-            "level": 2,
-            "multipliers": [204]
-          },
-          {
-            "level": 3,
-            "multipliers": [221]
-          },
-          {
-            "level": 4,
-            "multipliers": [238]
-          },
-          {
-            "level": 5,
-            "multipliers": [255]
-          },
-          {
-            "level": 6,
-            "multipliers": [272]
-          },
-          {
-            "level": 7,
-            "multipliers": [289]
-          },
-          {
-            "level": 8,
-            "multipliers": [306]
-          },
-          {
-            "level": 9,
-            "multipliers": [323]
-          },
-          {
-            "level": 10,
-            "multipliers": [340]
-          },
-          {
-            "level": 11,
-            "multipliers": [357]
-          },
-          {
-            "level": 12,
-            "multipliers": [374]
-          },
-          {
-            "level": 13,
-            "multipliers": [391]
-          },
-          {
-            "level": 14,
-            "multipliers": [408]
-          },
-          {
-            "level": 15,
-            "multipliers": [425]
-          },
-          {
-            "level": 16,
-            "multipliers": [442]
-          }
+          { "level": 1, "multipliers": [187] },
+          { "level": 2, "multipliers": [204] },
+          { "level": 3, "multipliers": [221] },
+          { "level": 4, "multipliers": [238] },
+          { "level": 5, "multipliers": [255] },
+          { "level": 6, "multipliers": [272] },
+          { "level": 7, "multipliers": [289] },
+          { "level": 8, "multipliers": [306] },
+          { "level": 9, "multipliers": [323] },
+          { "level": 10, "multipliers": [340] },
+          { "level": 11, "multipliers": [357] },
+          { "level": 12, "multipliers": [374] },
+          { "level": 13, "multipliers": [391] },
+          { "level": 14, "multipliers": [408] },
+          { "level": 15, "multipliers": [425] },
+          { "level": 16, "multipliers": [442] }
         ]
       }
     ],
@@ -482,77 +302,24 @@
         "description": "When the active character is launched, press [ASSIST] to activate:\n\nStrikes enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ice"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ice" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [63.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [68.9]
-          },
-          {
-            "level": 3,
-            "multipliers": [74.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [80.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [86.3]
-          },
-          {
-            "level": 6,
-            "multipliers": [92.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [97.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [103.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [109.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [115.3]
-          },
-          {
-            "level": 11,
-            "multipliers": [121.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [126.9]
-          },
-          {
-            "level": 13,
-            "multipliers": [132.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [138.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [144.3]
-          },
-          {
-            "level": 16,
-            "multipliers": [150.1]
-          }
+          { "level": 1, "multipliers": [63.1] },
+          { "level": 2, "multipliers": [68.9] },
+          { "level": 3, "multipliers": [74.7] },
+          { "level": 4, "multipliers": [80.5] },
+          { "level": 5, "multipliers": [86.3] },
+          { "level": 6, "multipliers": [92.1] },
+          { "level": 7, "multipliers": [97.9] },
+          { "level": 8, "multipliers": [103.7] },
+          { "level": 9, "multipliers": [109.5] },
+          { "level": 10, "multipliers": [115.3] },
+          { "level": 11, "multipliers": [121.1] },
+          { "level": 12, "multipliers": [126.9] },
+          { "level": 13, "multipliers": [132.7] },
+          { "level": 14, "multipliers": [138.5] },
+          { "level": 15, "multipliers": [144.3] },
+          { "level": 16, "multipliers": [150.1] }
         ]
       }
     ],
@@ -564,77 +331,24 @@
         "description": "Press [BASIC] after a [PERFECT] to activate:\n\nCreates an icicle in front, which strikes all enemies within range, dealing Ice DMG. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ice"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ice" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [288.3]
-          },
-          {
-            "level": 2,
-            "multipliers": [314.6]
-          },
-          {
-            "level": 3,
-            "multipliers": [340.9]
-          },
-          {
-            "level": 4,
-            "multipliers": [367.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [393.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [419.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [446.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [472.4]
-          },
-          {
-            "level": 9,
-            "multipliers": [498.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [525]
-          },
-          {
-            "level": 11,
-            "multipliers": [551.3]
-          },
-          {
-            "level": 12,
-            "multipliers": [577.6]
-          },
-          {
-            "level": 13,
-            "multipliers": [603.9]
-          },
-          {
-            "level": 14,
-            "multipliers": [630.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [656.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [682.8]
-          }
+          { "level": 1, "multipliers": [288.3] },
+          { "level": 2, "multipliers": [314.6] },
+          { "level": 3, "multipliers": [340.9] },
+          { "level": 4, "multipliers": [367.2] },
+          { "level": 5, "multipliers": [393.5] },
+          { "level": 6, "multipliers": [419.8] },
+          { "level": 7, "multipliers": [446.1] },
+          { "level": 8, "multipliers": [472.4] },
+          { "level": 9, "multipliers": [498.7] },
+          { "level": 10, "multipliers": [525] },
+          { "level": 11, "multipliers": [551.3] },
+          { "level": 12, "multipliers": [577.6] },
+          { "level": 13, "multipliers": [603.9] },
+          { "level": 14, "multipliers": [630.2] },
+          { "level": 15, "multipliers": [656.5] },
+          { "level": 16, "multipliers": [682.8] }
         ]
       }
     ],
@@ -646,80 +360,26 @@
         "skillType": "special",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ice"
-          },
-          {
-            "name": "Charged Attack DMG Multiplier",
-            "damageType": "ice"
-          }
+          { "name": "DMG Multiplier", "damageType": "ice" },
+          { "name": "Charged Attack DMG Multiplier", "damageType": "ice" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [77.1, 133.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [84.2, 145.3]
-          },
-          {
-            "level": 3,
-            "multipliers": [91.3, 157.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [98.4, 169.7]
-          },
-          {
-            "level": 5,
-            "multipliers": [105.5, 181.9]
-          },
-          {
-            "level": 6,
-            "multipliers": [112.6, 194.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [119.7, 206.3]
-          },
-          {
-            "level": 8,
-            "multipliers": [126.8, 218.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [133.9, 230.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [141, 242.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [148.1, 255.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [155.2, 267.3]
-          },
-          {
-            "level": 13,
-            "multipliers": [162.3, 279.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [169.4, 291.7]
-          },
-          {
-            "level": 15,
-            "multipliers": [176.5, 303.9]
-          },
-          {
-            "level": 16,
-            "multipliers": [183.6, 316.1]
-          }
+          { "level": 1, "multipliers": [77.1, 133.1] },
+          { "level": 2, "multipliers": [84.2, 145.3] },
+          { "level": 3, "multipliers": [91.3, 157.5] },
+          { "level": 4, "multipliers": [98.4, 169.7] },
+          { "level": 5, "multipliers": [105.5, 181.9] },
+          { "level": 6, "multipliers": [112.6, 194.1] },
+          { "level": 7, "multipliers": [119.7, 206.3] },
+          { "level": 8, "multipliers": [126.8, 218.5] },
+          { "level": 9, "multipliers": [133.9, 230.7] },
+          { "level": 10, "multipliers": [141, 242.9] },
+          { "level": 11, "multipliers": [148.1, 255.1] },
+          { "level": 12, "multipliers": [155.2, 267.3] },
+          { "level": 13, "multipliers": [162.3, 279.5] },
+          { "level": 14, "multipliers": [169.4, 291.7] },
+          { "level": 15, "multipliers": [176.5, 303.9] },
+          { "level": 16, "multipliers": [183.6, 316.1] }
         ]
       }
     ],
@@ -731,80 +391,26 @@
         "skillType": "ex",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ice"
-          },
-          {
-            "name": "Charged Attack DMG Multiplier",
-            "damageType": "ice"
-          }
+          { "name": "DMG Multiplier", "damageType": "ice" },
+          { "name": "Charged Attack DMG Multiplier", "damageType": "ice" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [534.3, 789.5]
-          },
-          {
-            "level": 2,
-            "multipliers": [583, 861.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [631.7, 933.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [680.4, 1005.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [729.1, 1077.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [777.8, 1149]
-          },
-          {
-            "level": 7,
-            "multipliers": [826.5, 1220.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [875.2, 1292.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [923.9, 1364.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [972.6, 1436.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [1021.3, 1508.5]
-          },
-          {
-            "level": 12,
-            "multipliers": [1070, 1580.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [1118.7, 1652.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [1167.4, 1724.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [1216.1, 1796.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [1264.8, 1868]
-          }
+          { "level": 1, "multipliers": [534.3, 789.5] },
+          { "level": 2, "multipliers": [583, 861.4] },
+          { "level": 3, "multipliers": [631.7, 933.3] },
+          { "level": 4, "multipliers": [680.4, 1005.2] },
+          { "level": 5, "multipliers": [729.1, 1077.1] },
+          { "level": 6, "multipliers": [777.8, 1149] },
+          { "level": 7, "multipliers": [826.5, 1220.9] },
+          { "level": 8, "multipliers": [875.2, 1292.8] },
+          { "level": 9, "multipliers": [923.9, 1364.7] },
+          { "level": 10, "multipliers": [972.6, 1436.6] },
+          { "level": 11, "multipliers": [1021.3, 1508.5] },
+          { "level": 12, "multipliers": [1070, 1580.4] },
+          { "level": 13, "multipliers": [1118.7, 1652.3] },
+          { "level": 14, "multipliers": [1167.4, 1724.2] },
+          { "level": 15, "multipliers": [1216.1, 1796.1] },
+          { "level": 16, "multipliers": [1264.8, 1868] }
         ]
       }
     ],
@@ -815,77 +421,24 @@
         "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a series of powerful strikes at enemies in a small area in front, dealing massive Ice DMG. Character is invulnerable while using this skill.",
         "skillType": "chain",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ice"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ice" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [637.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [695.8]
-          },
-          {
-            "level": 3,
-            "multipliers": [753.8]
-          },
-          {
-            "level": 4,
-            "multipliers": [811.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [869.8]
-          },
-          {
-            "level": 6,
-            "multipliers": [927.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [985.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [1043.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [1101.8]
-          },
-          {
-            "level": 10,
-            "multipliers": [1159.8]
-          },
-          {
-            "level": 11,
-            "multipliers": [1217.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [1275.8]
-          },
-          {
-            "level": 13,
-            "multipliers": [1333.8]
-          },
-          {
-            "level": 14,
-            "multipliers": [1391.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [1449.8]
-          },
-          {
-            "level": 16,
-            "multipliers": [1507.8]
-          }
+          { "level": 1, "multipliers": [637.8] },
+          { "level": 2, "multipliers": [695.8] },
+          { "level": 3, "multipliers": [753.8] },
+          { "level": 4, "multipliers": [811.8] },
+          { "level": 5, "multipliers": [869.8] },
+          { "level": 6, "multipliers": [927.8] },
+          { "level": 7, "multipliers": [985.8] },
+          { "level": 8, "multipliers": [1043.8] },
+          { "level": 9, "multipliers": [1101.8] },
+          { "level": 10, "multipliers": [1159.8] },
+          { "level": 11, "multipliers": [1217.8] },
+          { "level": 12, "multipliers": [1275.8] },
+          { "level": 13, "multipliers": [1333.8] },
+          { "level": 14, "multipliers": [1391.8] },
+          { "level": 15, "multipliers": [1449.8] },
+          { "level": 16, "multipliers": [1507.8] }
         ]
       }
     ],
@@ -896,77 +449,24 @@
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes multiple powerful strikes at enemies in a large area, dealing massive Ice DMG. Character is invulnerable while using this skill.",
         "skillType": "ultimate",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ice"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ice" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1694.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [1848.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [2002.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [2156.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [2310.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [2464.6]
-          },
-          {
-            "level": 7,
-            "multipliers": [2618.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [2772.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [2926.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [3081]
-          },
-          {
-            "level": 11,
-            "multipliers": [3235.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [3389.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [3543.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [3697.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [3851.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [4005.6]
-          }
+          { "level": 1, "multipliers": [1694.1] },
+          { "level": 2, "multipliers": [1848.2] },
+          { "level": 3, "multipliers": [2002.3] },
+          { "level": 4, "multipliers": [2156.4] },
+          { "level": 5, "multipliers": [2310.5] },
+          { "level": 6, "multipliers": [2464.6] },
+          { "level": 7, "multipliers": [2618.7] },
+          { "level": 8, "multipliers": [2772.8] },
+          { "level": 9, "multipliers": [2926.9] },
+          { "level": 10, "multipliers": [3081] },
+          { "level": 11, "multipliers": [3235.1] },
+          { "level": 12, "multipliers": [3389.2] },
+          { "level": 13, "multipliers": [3543.3] },
+          { "level": 14, "multipliers": [3697.4] },
+          { "level": 15, "multipliers": [3851.5] },
+          { "level": 16, "multipliers": [4005.6] }
         ]
       }
     ],

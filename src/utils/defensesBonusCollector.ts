@@ -113,7 +113,6 @@ export function collectDefenseBonuses(
       ownerDisplayName: owner.ownerDisplayName,
     };
     result.sources.push(source);
-
     switch (type) {
       case "defShred":
         result.totalDefShred += value;
@@ -150,6 +149,8 @@ export function collectDefenseBonuses(
     const state = activeEffects[effect.id];
     if (!state?.enabled) continue;
     const stacks = state.stacks || 1;
+    const skillLevel = state.skillLevel || 1;
+
     const resKeys = [
       "fireResShred",
       "iceResShred",
@@ -158,11 +159,14 @@ export function collectDefenseBonuses(
       "etherResShred",
       "windResShred",
     ];
+
     const getResValues = (source: any): number[] => {
       return resKeys.map((k) => (source?.[k] ?? 0) * stacks);
     };
 
+    // ---- FLAT ----
     if (effect.flat) {
+      // ... (código existente, sin cambios)
       const flatValues = getResValues(effect.flat);
       const allSame =
         flatValues.every((v) => v === flatValues[0]) && flatValues[0] > 0;
@@ -190,7 +194,9 @@ export function collectDefenseBonuses(
       }
     }
 
+    // ---- PER STACK ----
     if (effect.perStack) {
+      // ... (código existente, sin cambios)
       const perStackValues = getResValues(effect.perStack);
       const allSame =
         perStackValues.every((v) => v === perStackValues[0]) &&
@@ -206,7 +212,6 @@ export function collectDefenseBonuses(
           }
         });
       }
-
       if (effect.perStack.defShred) {
         addSource(
           effect.perStack.defShred * stacks,
@@ -217,7 +222,30 @@ export function collectDefenseBonuses(
       }
     }
 
+    // ---- ✨ NUEVO: BASE STATS ----
+    if (effect.baseStats && effect.baseStats.defShred) {
+      addSource(effect.baseStats.defShred * stacks, "defShred", effect, stacks);
+    }
+
+    // ---- ✨ NUEVO: CONDITIONAL STATS ----
+    if (effect.conditionalStats) {
+      const conditionalState = activeEffects[`${effect.id}_conditional`];
+      if (conditionalState?.enabled) {
+        const conditionalStats = effect.conditionalStats.stats || {};
+        if (conditionalStats.defShred) {
+          addSource(
+            conditionalStats.defShred * stacks,
+            "defShred",
+            effect,
+            stacks,
+          );
+        }
+      }
+    }
+
+    // ---- W-ENGINE OVERCLOCK ----
     if (effect.wEngineOverclock) {
+      // ... (código existente, sin cambios)
       const ocLevel = overclockLevels[effect.id] || 1;
       const currentLevel =
         effect.wEngineOverclock.levels.find((l: any) => l.level === ocLevel) ||
@@ -248,7 +276,9 @@ export function collectDefenseBonuses(
       }
     }
 
+    // ---- EXCLUSIVE STAT BONUSES ----
     if (effect.exclusiveStatBonuses) {
+      // ... (código existente, sin cambios)
       for (const bonus of effect.exclusiveStatBonuses) {
         const value = bonus.value * stacks;
         if (value === 0) continue;
@@ -265,6 +295,7 @@ export function collectDefenseBonuses(
     }
   }
 
+  // Limpiar entradas vacías de resShreds
   Object.keys(result.resShreds).forEach((el) => {
     if (result.resShreds[el].sources.length === 0) {
       delete result.resShreds[el];

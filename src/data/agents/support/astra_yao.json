@@ -10,20 +10,10 @@
   "attributeIcon": "Ether",
   "themeColor": "#E3686A",
   "skins": [
-    {
-      "id": "default",
-      "img": "astra.png"
-    },
-    {
-      "id": "trails_of_ink",
-      "img": "astra_yao-chandelier.png"
-    }
+    { "id": "default", "img": "astra.png" },
+    { "id": "trails_of_ink", "img": "astra_yao-chandelier.png" }
   ],
-  "baseStats": {
-    "hp": 8609.2,
-    "atk": 640.77,
-    "def": 600.59
-  },
+  "baseStats": { "hp": 8609.2, "atk": 640.77, "def": 600.59 },
   "combatBase": {
     "impact": 83,
     "critRate": 0.05,
@@ -47,55 +37,13 @@
     "stats": ["ATK", "Energy Regen"]
   },
   "coreEnhancement": [
-    {
-      "level": 0,
-      "stats": {
-        "atkFlat": 0,
-        "energyRegenFlat": 0
-      }
-    },
-    {
-      "level": 1,
-      "stats": {
-        "atkFlat": 0,
-        "energyRegenFlat": 0.12
-      }
-    },
-    {
-      "level": 2,
-      "stats": {
-        "atkFlat": 25,
-        "energyRegenFlat": 0
-      }
-    },
-    {
-      "level": 3,
-      "stats": {
-        "atkFlat": 0,
-        "energyRegenFlat": 0.12
-      }
-    },
-    {
-      "level": 4,
-      "stats": {
-        "atkFlat": 25,
-        "energyRegenFlat": 0
-      }
-    },
-    {
-      "level": 5,
-      "stats": {
-        "atkFlat": 0,
-        "energyRegenFlat": 0.12
-      }
-    },
-    {
-      "level": 6,
-      "stats": {
-        "atkFlat": 25,
-        "energyRegenFlat": 0
-      }
-    }
+    { "level": 0, "stats": { "atkFlat": 0, "energyRegenFlat": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "energyRegenFlat": 0.12 } },
+    { "level": 2, "stats": { "atkFlat": 25, "energyRegenFlat": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "energyRegenFlat": 0.12 } },
+    { "level": 4, "stats": { "atkFlat": 25, "energyRegenFlat": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "energyRegenFlat": 0.12 } },
+    { "level": 6, "stats": { "atkFlat": 25, "energyRegenFlat": 0 } }
   ],
   "ingameEffects": [
     {
@@ -112,162 +60,82 @@
           {
             "level": 1,
             "critDmg": 0.085,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.09
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.09 }]
           },
           {
             "level": 2,
             "critDmg": 0.1,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.1
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.1 }]
           },
           {
             "level": 3,
             "critDmg": 0.115,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.11
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.11 }]
           },
           {
             "level": 4,
             "critDmg": 0.13,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.12
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.12 }]
           },
           {
             "level": 5,
             "critDmg": 0.145,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.13
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.13 }]
           },
           {
             "level": 6,
             "critDmg": 0.16,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.14
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.14 }]
           },
           {
             "level": 7,
             "critDmg": 0.175,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.15
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.15 }]
           },
           {
             "level": 8,
             "critDmg": 0.19,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.16
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.16 }]
           },
           {
             "level": 9,
             "critDmg": 0.205,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.17
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.17 }]
           },
           {
             "level": 10,
             "critDmg": 0.22,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.18
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.18 }]
           },
           {
             "level": 11,
             "critDmg": 0.235,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.19
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.19 }]
           },
           {
             "level": 12,
             "critDmg": 0.25,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.2
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.2 }]
           },
           {
             "level": 13,
             "critDmg": 0.265,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.21
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.21 }]
           },
           {
             "level": 14,
             "critDmg": 0.28,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.22
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.22 }]
           },
           {
             "level": 15,
             "critDmg": 0.295,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.23
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.23 }]
           },
           {
             "level": 16,
             "critDmg": 0.31,
-            "damageBonuses": [
-              {
-                "type": "global",
-                "value": 0.24
-              }
-            ]
+            "damageBonuses": [{ "type": "global", "value": 0.24 }]
           }
         ],
         "affectedStats": ["critDmg"]
@@ -287,17 +155,10 @@
         "maxStat": 3429,
         "baseBonus": 0,
         "perUnit": 1,
-        "skillLevels": [
-          {
-            "level": 1,
-            "maxBonus": 1200,
-            "perUnitBonus": 0.35
-          }
-        ],
-        "affectedStats": ["atkFlat"]
+        "skillLevels": [{ "level": 1, "maxBonus": 1200, "perUnitBonus": 0.35 }],
+        "affectedStats": ["atkFlatRaw"]
       }
     },
-
     {
       "id": "astra_yao-mindscape_1-12_tone_equal_temperament",
       "source": "mindscape",
@@ -331,13 +192,7 @@
         "baseBonus": 0,
         "perUnit": 1,
         "perUnitBonus": 0.54,
-        "skillLevels": [
-          {
-            "level": 1,
-            "maxBonus": 1600,
-            "perUnitBonus": 0.54
-          }
-        ],
+        "skillLevels": [{ "level": 1, "maxBonus": 1600, "perUnitBonus": 0.54 }],
         "affectedStats": ["atkFlatRaw"]
       }
     },
@@ -369,88 +224,28 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "3rd Hit Min DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "3rd Hit Max DMG Multiplier",
-            "damageType": "ether"
-          }
+          { "name": "1st-Hit DMG Multiplier", "damageType": "ether" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "ether" },
+          { "name": "3rd Hit Min DMG Multiplier", "damageType": "ether" },
+          { "name": "3rd Hit Max DMG Multiplier", "damageType": "ether" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [43.8, 59.1, 120.9, 270.7]
-          },
-          {
-            "level": 2,
-            "multipliers": [47.8, 64.5, 131.9, 295.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [51.8, 69.9, 142.9, 320.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [55.8, 75.3, 153.9, 344.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [59.8, 80.7, 164.9, 369.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [63.8, 86.1, 175.9, 394.2]
-          },
-          {
-            "level": 7,
-            "multipliers": [67.8, 91.5, 186.9, 418.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [71.8, 96.9, 197.9, 443.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [75.8, 102.3, 208.9, 468.3]
-          },
-          {
-            "level": 10,
-            "multipliers": [79.8, 107.7, 219.9, 493]
-          },
-          {
-            "level": 11,
-            "multipliers": [83.8, 113.1, 230.9, 517.7]
-          },
-          {
-            "level": 12,
-            "multipliers": [87.8, 118.5, 241.9, 542.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [91.8, 123.9, 252.9, 567.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [95.8, 129.3, 263.9, 591.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [99.8, 134.7, 274.9, 616.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [103.8, 140.1, 285.9, 641.2]
-          }
+          { "level": 1, "multipliers": [43.8, 59.1, 120.9, 270.7] },
+          { "level": 2, "multipliers": [47.8, 64.5, 131.9, 295.4] },
+          { "level": 3, "multipliers": [51.8, 69.9, 142.9, 320.1] },
+          { "level": 4, "multipliers": [55.8, 75.3, 153.9, 344.8] },
+          { "level": 5, "multipliers": [59.8, 80.7, 164.9, 369.5] },
+          { "level": 6, "multipliers": [63.8, 86.1, 175.9, 394.2] },
+          { "level": 7, "multipliers": [67.8, 91.5, 186.9, 418.9] },
+          { "level": 8, "multipliers": [71.8, 96.9, 197.9, 443.6] },
+          { "level": 9, "multipliers": [75.8, 102.3, 208.9, 468.3] },
+          { "level": 10, "multipliers": [79.8, 107.7, 219.9, 493] },
+          { "level": 11, "multipliers": [83.8, 113.1, 230.9, 517.7] },
+          { "level": 12, "multipliers": [87.8, 118.5, 241.9, 542.4] },
+          { "level": 13, "multipliers": [91.8, 123.9, 252.9, 567.1] },
+          { "level": 14, "multipliers": [95.8, 129.3, 263.9, 591.8] },
+          { "level": 15, "multipliers": [99.8, 134.7, 274.9, 616.5] },
+          { "level": 16, "multipliers": [103.8, 140.1, 285.9, 641.2] }
         ]
       },
       {
@@ -460,92 +255,29 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "3rd Hit DMG Multiplier x2",
-            "damageType": "ether"
-          },
-          {
-            "name": "4th-Hit DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "5th Hit DMG Multiplier x2",
-            "damageType": "ether"
-          }
+          { "name": "1st-Hit DMG Multiplier", "damageType": "ether" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "ether" },
+          { "name": "3rd Hit DMG Multiplier x2", "damageType": "ether" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "ether" },
+          { "name": "5th Hit DMG Multiplier x2", "damageType": "ether" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [55, 55, 55, 55, 55]
-          },
-          {
-            "level": 2,
-            "multipliers": [60, 60, 60, 60, 60]
-          },
-          {
-            "level": 3,
-            "multipliers": [65, 65, 65, 65, 65]
-          },
-          {
-            "level": 4,
-            "multipliers": [70, 70, 70, 70, 70]
-          },
-          {
-            "level": 5,
-            "multipliers": [75, 75, 75, 75, 75]
-          },
-          {
-            "level": 6,
-            "multipliers": [80, 80, 80, 80, 80]
-          },
-          {
-            "level": 7,
-            "multipliers": [85, 85, 85, 85, 85]
-          },
-          {
-            "level": 8,
-            "multipliers": [90, 90, 90, 90, 90]
-          },
-          {
-            "level": 9,
-            "multipliers": [95, 95, 95, 95, 95]
-          },
-          {
-            "level": 10,
-            "multipliers": [100, 100, 100, 100, 100]
-          },
-          {
-            "level": 11,
-            "multipliers": [105, 105, 105, 105, 105]
-          },
-          {
-            "level": 12,
-            "multipliers": [110, 110, 110, 110, 110]
-          },
-          {
-            "level": 13,
-            "multipliers": [115, 115, 115, 115, 115]
-          },
-          {
-            "level": 14,
-            "multipliers": [120, 120, 120, 120, 120]
-          },
-          {
-            "level": 15,
-            "multipliers": [125, 125, 125, 125, 125]
-          },
-          {
-            "level": 16,
-            "multipliers": [130, 130, 130, 130, 130]
-          }
+          { "level": 1, "multipliers": [55, 55, 55, 55, 55] },
+          { "level": 2, "multipliers": [60, 60, 60, 60, 60] },
+          { "level": 3, "multipliers": [65, 65, 65, 65, 65] },
+          { "level": 4, "multipliers": [70, 70, 70, 70, 70] },
+          { "level": 5, "multipliers": [75, 75, 75, 75, 75] },
+          { "level": 6, "multipliers": [80, 80, 80, 80, 80] },
+          { "level": 7, "multipliers": [85, 85, 85, 85, 85] },
+          { "level": 8, "multipliers": [90, 90, 90, 90, 90] },
+          { "level": 9, "multipliers": [95, 95, 95, 95, 95] },
+          { "level": 10, "multipliers": [100, 100, 100, 100, 100] },
+          { "level": 11, "multipliers": [105, 105, 105, 105, 105] },
+          { "level": 12, "multipliers": [110, 110, 110, 110, 110] },
+          { "level": 13, "multipliers": [115, 115, 115, 115, 115] },
+          { "level": 14, "multipliers": [120, 120, 120, 120, 120] },
+          { "level": 15, "multipliers": [125, 125, 125, 125, 125] },
+          { "level": 16, "multipliers": [130, 130, 130, 130, 130] }
         ]
       },
       {
@@ -554,77 +286,24 @@
         "description": "While in the /bIdyllic Cadenza//b state, press [BASIC] during a [COUNTER] to activate:\n\nLaunch multiple /bTremolo//b attacks at enemies in front, dealing massive Ether DMG. A /bQuick Assist//b will be triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier x4",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier x4", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [55]
-          },
-          {
-            "level": 2,
-            "multipliers": [60]
-          },
-          {
-            "level": 3,
-            "multipliers": [65]
-          },
-          {
-            "level": 4,
-            "multipliers": [70]
-          },
-          {
-            "level": 5,
-            "multipliers": [75]
-          },
-          {
-            "level": 6,
-            "multipliers": [80]
-          },
-          {
-            "level": 7,
-            "multipliers": [85]
-          },
-          {
-            "level": 8,
-            "multipliers": [90]
-          },
-          {
-            "level": 9,
-            "multipliers": [95]
-          },
-          {
-            "level": 10,
-            "multipliers": [100]
-          },
-          {
-            "level": 11,
-            "multipliers": [105]
-          },
-          {
-            "level": 12,
-            "multipliers": [110]
-          },
-          {
-            "level": 13,
-            "multipliers": [115]
-          },
-          {
-            "level": 14,
-            "multipliers": [120]
-          },
-          {
-            "level": 15,
-            "multipliers": [125]
-          },
-          {
-            "level": 16,
-            "multipliers": [130]
-          }
+          { "level": 1, "multipliers": [55] },
+          { "level": 2, "multipliers": [60] },
+          { "level": 3, "multipliers": [65] },
+          { "level": 4, "multipliers": [70] },
+          { "level": 5, "multipliers": [75] },
+          { "level": 6, "multipliers": [80] },
+          { "level": 7, "multipliers": [85] },
+          { "level": 8, "multipliers": [90] },
+          { "level": 9, "multipliers": [95] },
+          { "level": 10, "multipliers": [100] },
+          { "level": 11, "multipliers": [105] },
+          { "level": 12, "multipliers": [110] },
+          { "level": 13, "multipliers": [115] },
+          { "level": 14, "multipliers": [120] },
+          { "level": 15, "multipliers": [125] },
+          { "level": 16, "multipliers": [130] }
         ]
       },
       {
@@ -633,77 +312,24 @@
         "description": "While in the /bIdyllic Cadenza//b state, hold [BASIC] to activate:\n\nRelease /bTremolo//b forward to attack, dealing Ether DMG and exit the /bIdyllic Cadenza//b state.\n\nUpon activation of the skill, it grants the buff from /bCore Passive: Graceful Andante//b.\n\nWith enough Energy, consumes Energy to follow up with 1 /bTremolo//b and 3 /bTone Clusters//b. This /bTremolo//b attack released is considered an /bEX Special Attack//b.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [55]
-          },
-          {
-            "level": 2,
-            "multipliers": [60]
-          },
-          {
-            "level": 3,
-            "multipliers": [65]
-          },
-          {
-            "level": 4,
-            "multipliers": [70]
-          },
-          {
-            "level": 5,
-            "multipliers": [75]
-          },
-          {
-            "level": 6,
-            "multipliers": [80]
-          },
-          {
-            "level": 7,
-            "multipliers": [85]
-          },
-          {
-            "level": 8,
-            "multipliers": [90]
-          },
-          {
-            "level": 9,
-            "multipliers": [95]
-          },
-          {
-            "level": 10,
-            "multipliers": [100]
-          },
-          {
-            "level": 11,
-            "multipliers": [105]
-          },
-          {
-            "level": 12,
-            "multipliers": [110]
-          },
-          {
-            "level": 13,
-            "multipliers": [115]
-          },
-          {
-            "level": 14,
-            "multipliers": [120]
-          },
-          {
-            "level": 15,
-            "multipliers": [125]
-          },
-          {
-            "level": 16,
-            "multipliers": [130]
-          }
+          { "level": 1, "multipliers": [55] },
+          { "level": 2, "multipliers": [60] },
+          { "level": 3, "multipliers": [65] },
+          { "level": 4, "multipliers": [70] },
+          { "level": 5, "multipliers": [75] },
+          { "level": 6, "multipliers": [80] },
+          { "level": 7, "multipliers": [85] },
+          { "level": 8, "multipliers": [90] },
+          { "level": 9, "multipliers": [95] },
+          { "level": 10, "multipliers": [100] },
+          { "level": 11, "multipliers": [105] },
+          { "level": 12, "multipliers": [110] },
+          { "level": 13, "multipliers": [115] },
+          { "level": 14, "multipliers": [120] },
+          { "level": 15, "multipliers": [125] },
+          { "level": 16, "multipliers": [130] }
         ]
       }
     ],
@@ -714,77 +340,24 @@
         "description": "Press [BASIC] during a dodge to activate:\n\nAttack ahead, dealing Ether DMG. When triggered, dragging the joystick allows movement in the corresponding direction.",
         "skillType": "dash",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [80.7]
-          },
-          {
-            "level": 2,
-            "multipliers": [88.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [95.5]
-          },
-          {
-            "level": 4,
-            "multipliers": [102.9]
-          },
-          {
-            "level": 5,
-            "multipliers": [110.3]
-          },
-          {
-            "level": 6,
-            "multipliers": [117.7]
-          },
-          {
-            "level": 7,
-            "multipliers": [125.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [132.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [139.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [147.3]
-          },
-          {
-            "level": 11,
-            "multipliers": [154.7]
-          },
-          {
-            "level": 12,
-            "multipliers": [162.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [169.5]
-          },
-          {
-            "level": 14,
-            "multipliers": [176.9]
-          },
-          {
-            "level": 15,
-            "multipliers": [184.3]
-          },
-          {
-            "level": 16,
-            "multipliers": [191.7]
-          }
+          { "level": 1, "multipliers": [80.7] },
+          { "level": 2, "multipliers": [88.1] },
+          { "level": 3, "multipliers": [95.5] },
+          { "level": 4, "multipliers": [102.9] },
+          { "level": 5, "multipliers": [110.3] },
+          { "level": 6, "multipliers": [117.7] },
+          { "level": 7, "multipliers": [125.1] },
+          { "level": 8, "multipliers": [132.5] },
+          { "level": 9, "multipliers": [139.9] },
+          { "level": 10, "multipliers": [147.3] },
+          { "level": 11, "multipliers": [154.7] },
+          { "level": 12, "multipliers": [162.1] },
+          { "level": 13, "multipliers": [169.5] },
+          { "level": 14, "multipliers": [176.9] },
+          { "level": 15, "multipliers": [184.3] },
+          { "level": 16, "multipliers": [191.7] }
         ]
       }
     ],
@@ -795,77 +368,24 @@
         "description": "Press [BASIC] during a [COUNTER] to activate:\n\nAttack enemies in front, dealing Ether DMG. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [110]
-          },
-          {
-            "level": 2,
-            "multipliers": [120]
-          },
-          {
-            "level": 3,
-            "multipliers": [130]
-          },
-          {
-            "level": 4,
-            "multipliers": [140]
-          },
-          {
-            "level": 5,
-            "multipliers": [150]
-          },
-          {
-            "level": 6,
-            "multipliers": [160]
-          },
-          {
-            "level": 7,
-            "multipliers": [170]
-          },
-          {
-            "level": 8,
-            "multipliers": [180]
-          },
-          {
-            "level": 9,
-            "multipliers": [190]
-          },
-          {
-            "level": 10,
-            "multipliers": [200]
-          },
-          {
-            "level": 11,
-            "multipliers": [210]
-          },
-          {
-            "level": 12,
-            "multipliers": [220]
-          },
-          {
-            "level": 13,
-            "multipliers": [230]
-          },
-          {
-            "level": 14,
-            "multipliers": [240]
-          },
-          {
-            "level": 15,
-            "multipliers": [250]
-          },
-          {
-            "level": 16,
-            "multipliers": [260]
-          }
+          { "level": 1, "multipliers": [110] },
+          { "level": 2, "multipliers": [120] },
+          { "level": 3, "multipliers": [130] },
+          { "level": 4, "multipliers": [140] },
+          { "level": 5, "multipliers": [150] },
+          { "level": 6, "multipliers": [160] },
+          { "level": 7, "multipliers": [170] },
+          { "level": 8, "multipliers": [180] },
+          { "level": 9, "multipliers": [190] },
+          { "level": 10, "multipliers": [200] },
+          { "level": 11, "multipliers": [210] },
+          { "level": 12, "multipliers": [220] },
+          { "level": 13, "multipliers": [230] },
+          { "level": 14, "multipliers": [240] },
+          { "level": 15, "multipliers": [250] },
+          { "level": 16, "multipliers": [260] }
         ]
       }
     ],
@@ -876,77 +396,24 @@
         "description": "When the active character is launched, press [ASSIST] to activate:\n\nAttack enemies in front, dealing Ether DMG. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [55]
-          },
-          {
-            "level": 2,
-            "multipliers": [60]
-          },
-          {
-            "level": 3,
-            "multipliers": [65]
-          },
-          {
-            "level": 4,
-            "multipliers": [70]
-          },
-          {
-            "level": 5,
-            "multipliers": [75]
-          },
-          {
-            "level": 6,
-            "multipliers": [80]
-          },
-          {
-            "level": 7,
-            "multipliers": [85]
-          },
-          {
-            "level": 8,
-            "multipliers": [90]
-          },
-          {
-            "level": 9,
-            "multipliers": [95]
-          },
-          {
-            "level": 10,
-            "multipliers": [100]
-          },
-          {
-            "level": 11,
-            "multipliers": [105]
-          },
-          {
-            "level": 12,
-            "multipliers": [110]
-          },
-          {
-            "level": 13,
-            "multipliers": [115]
-          },
-          {
-            "level": 14,
-            "multipliers": [120]
-          },
-          {
-            "level": 15,
-            "multipliers": [125]
-          },
-          {
-            "level": 16,
-            "multipliers": [130]
-          }
+          { "level": 1, "multipliers": [55] },
+          { "level": 2, "multipliers": [60] },
+          { "level": 3, "multipliers": [65] },
+          { "level": 4, "multipliers": [70] },
+          { "level": 5, "multipliers": [75] },
+          { "level": 6, "multipliers": [80] },
+          { "level": 7, "multipliers": [85] },
+          { "level": 8, "multipliers": [90] },
+          { "level": 9, "multipliers": [95] },
+          { "level": 10, "multipliers": [100] },
+          { "level": 11, "multipliers": [105] },
+          { "level": 12, "multipliers": [110] },
+          { "level": 13, "multipliers": [115] },
+          { "level": 14, "multipliers": [120] },
+          { "level": 15, "multipliers": [125] },
+          { "level": 16, "multipliers": [130] }
         ]
       }
     ],
@@ -958,77 +425,24 @@
         "description": "Press [BASIC] after an /bEvasive Assist//b to activate:\n\nRelease an energy beam forward, dealing Ether DMG. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [304.6]
-          },
-          {
-            "level": 2,
-            "multipliers": [332.3]
-          },
-          {
-            "level": 3,
-            "multipliers": [360]
-          },
-          {
-            "level": 4,
-            "multipliers": [387.7]
-          },
-          {
-            "level": 5,
-            "multipliers": [415.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [443.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [470.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [498.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [526.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [553.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [581.6]
-          },
-          {
-            "level": 12,
-            "multipliers": [609.3]
-          },
-          {
-            "level": 13,
-            "multipliers": [637]
-          },
-          {
-            "level": 14,
-            "multipliers": [664.7]
-          },
-          {
-            "level": 15,
-            "multipliers": [692.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [720.1]
-          }
+          { "level": 1, "multipliers": [304.6] },
+          { "level": 2, "multipliers": [332.3] },
+          { "level": 3, "multipliers": [360] },
+          { "level": 4, "multipliers": [387.7] },
+          { "level": 5, "multipliers": [415.4] },
+          { "level": 6, "multipliers": [443.1] },
+          { "level": 7, "multipliers": [470.8] },
+          { "level": 8, "multipliers": [498.5] },
+          { "level": 9, "multipliers": [526.2] },
+          { "level": 10, "multipliers": [553.9] },
+          { "level": 11, "multipliers": [581.6] },
+          { "level": 12, "multipliers": [609.3] },
+          { "level": 13, "multipliers": [637] },
+          { "level": 14, "multipliers": [664.7] },
+          { "level": 15, "multipliers": [692.4] },
+          { "level": 16, "multipliers": [720.1] }
         ]
       }
     ],
@@ -1040,80 +454,26 @@
         "skillType": "special",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "Minimum DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "Maximum DMG Multiplier x4",
-            "damageType": "ether"
-          }
+          { "name": "Minimum DMG Multiplier", "damageType": "ether" },
+          { "name": "Maximum DMG Multiplier x4", "damageType": "ether" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [55, 55]
-          },
-          {
-            "level": 2,
-            "multipliers": [59, 59]
-          },
-          {
-            "level": 3,
-            "multipliers": [63, 63]
-          },
-          {
-            "level": 4,
-            "multipliers": [67, 67]
-          },
-          {
-            "level": 5,
-            "multipliers": [71, 71]
-          },
-          {
-            "level": 6,
-            "multipliers": [75, 75]
-          },
-          {
-            "level": 7,
-            "multipliers": [79, 79]
-          },
-          {
-            "level": 8,
-            "multipliers": [83, 83]
-          },
-          {
-            "level": 9,
-            "multipliers": [87, 87]
-          },
-          {
-            "level": 10,
-            "multipliers": [91, 91]
-          },
-          {
-            "level": 11,
-            "multipliers": [95, 95]
-          },
-          {
-            "level": 12,
-            "multipliers": [99, 99]
-          },
-          {
-            "level": 13,
-            "multipliers": [103, 103]
-          },
-          {
-            "level": 14,
-            "multipliers": [107, 107]
-          },
-          {
-            "level": 15,
-            "multipliers": [111, 111]
-          },
-          {
-            "level": 16,
-            "multipliers": [115, 115]
-          }
+          { "level": 1, "multipliers": [55, 55] },
+          { "level": 2, "multipliers": [59, 59] },
+          { "level": 3, "multipliers": [63, 63] },
+          { "level": 4, "multipliers": [67, 67] },
+          { "level": 5, "multipliers": [71, 71] },
+          { "level": 6, "multipliers": [75, 75] },
+          { "level": 7, "multipliers": [79, 79] },
+          { "level": 8, "multipliers": [83, 83] },
+          { "level": 9, "multipliers": [87, 87] },
+          { "level": 10, "multipliers": [91, 91] },
+          { "level": 11, "multipliers": [95, 95] },
+          { "level": 12, "multipliers": [99, 99] },
+          { "level": 13, "multipliers": [103, 103] },
+          { "level": 14, "multipliers": [107, 107] },
+          { "level": 15, "multipliers": [111, 111] },
+          { "level": 16, "multipliers": [115, 115] }
         ]
       },
       {
@@ -1123,80 +483,29 @@
         "skillType": "ex",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "Follow-Up Tremolo DMG Multiplier",
-            "damageType": "ether"
-          },
+          { "name": "Follow-Up Tremolo DMG Multiplier", "damageType": "ether" },
           {
             "name": "Follow-Up Tone Cluster DMG Multiplier x3",
             "damageType": "ether"
           }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [46, 24]
-          },
-          {
-            "level": 2,
-            "multipliers": [50.2, 26.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [54.4, 28.4]
-          },
-          {
-            "level": 4,
-            "multipliers": [58.6, 30.6]
-          },
-          {
-            "level": 5,
-            "multipliers": [62.8, 32.8]
-          },
-          {
-            "level": 6,
-            "multipliers": [67, 35]
-          },
-          {
-            "level": 7,
-            "multipliers": [71.2, 37.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [75.4, 39.4]
-          },
-          {
-            "level": 9,
-            "multipliers": [79.6, 41.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [83.8, 43.8]
-          },
-          {
-            "level": 11,
-            "multipliers": [88, 46]
-          },
-          {
-            "level": 12,
-            "multipliers": [92.2, 48.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [96.4, 50.4]
-          },
-          {
-            "level": 14,
-            "multipliers": [100.6, 52.6]
-          },
-          {
-            "level": 15,
-            "multipliers": [104.8, 54.8]
-          },
-          {
-            "level": 16,
-            "multipliers": [109, 57]
-          }
+          { "level": 1, "multipliers": [46, 24] },
+          { "level": 2, "multipliers": [50.2, 26.2] },
+          { "level": 3, "multipliers": [54.4, 28.4] },
+          { "level": 4, "multipliers": [58.6, 30.6] },
+          { "level": 5, "multipliers": [62.8, 32.8] },
+          { "level": 6, "multipliers": [67, 35] },
+          { "level": 7, "multipliers": [71.2, 37.2] },
+          { "level": 8, "multipliers": [75.4, 39.4] },
+          { "level": 9, "multipliers": [79.6, 41.6] },
+          { "level": 10, "multipliers": [83.8, 43.8] },
+          { "level": 11, "multipliers": [88, 46] },
+          { "level": 12, "multipliers": [92.2, 48.2] },
+          { "level": 13, "multipliers": [96.4, 50.4] },
+          { "level": 14, "multipliers": [100.6, 52.6] },
+          { "level": 15, "multipliers": [104.8, 54.8] },
+          { "level": 16, "multipliers": [109, 57] }
         ]
       }
     ],
@@ -1208,77 +517,24 @@
         "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUse song to channel energy into a blast, dealing massive Ether DMG. Character is invulnerable while using this skill. After the skill, Astra Yao enters the /bIdyllic Cadenza//b state.",
         "skillType": "chain",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [671.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [732.9]
-          },
-          {
-            "level": 3,
-            "multipliers": [794]
-          },
-          {
-            "level": 4,
-            "multipliers": [855.1]
-          },
-          {
-            "level": 5,
-            "multipliers": [916.2]
-          },
-          {
-            "level": 6,
-            "multipliers": [977.3]
-          },
-          {
-            "level": 7,
-            "multipliers": [1038.4]
-          },
-          {
-            "level": 8,
-            "multipliers": [1099.5]
-          },
-          {
-            "level": 9,
-            "multipliers": [1160.6]
-          },
-          {
-            "level": 10,
-            "multipliers": [1221.7]
-          },
-          {
-            "level": 11,
-            "multipliers": [1282.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [1343.9]
-          },
-          {
-            "level": 13,
-            "multipliers": [1405]
-          },
-          {
-            "level": 14,
-            "multipliers": [1466.1]
-          },
-          {
-            "level": 15,
-            "multipliers": [1527.2]
-          },
-          {
-            "level": 16,
-            "multipliers": [1588.3]
-          }
+          { "level": 1, "multipliers": [671.8] },
+          { "level": 2, "multipliers": [732.9] },
+          { "level": 3, "multipliers": [794] },
+          { "level": 4, "multipliers": [855.1] },
+          { "level": 5, "multipliers": [916.2] },
+          { "level": 6, "multipliers": [977.3] },
+          { "level": 7, "multipliers": [1038.4] },
+          { "level": 8, "multipliers": [1099.5] },
+          { "level": 9, "multipliers": [1160.6] },
+          { "level": 10, "multipliers": [1221.7] },
+          { "level": 11, "multipliers": [1282.8] },
+          { "level": 12, "multipliers": [1343.9] },
+          { "level": 13, "multipliers": [1405] },
+          { "level": 14, "multipliers": [1466.1] },
+          { "level": 15, "multipliers": [1527.2] },
+          { "level": 16, "multipliers": [1588.3] }
         ]
       }
     ],
@@ -1289,77 +545,24 @@
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUse song to channel energy into a blast, dealing massive Ether DMG, and restoring HP to all squad members. Character is invulnerable while using this skill. After the skill, Astra Yao enters the /bIdyllic Cadenza//b state. After the skill, the next two /bQuick Assist//bs will be replaced by /bChain Attacks//b.",
         "skillType": "ultimate",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "Ultimate",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "Ultimate", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1959.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [2138]
-          },
-          {
-            "level": 3,
-            "multipliers": [2316.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [2494.4]
-          },
-          {
-            "level": 5,
-            "multipliers": [2672.6]
-          },
-          {
-            "level": 6,
-            "multipliers": [2850.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [3029]
-          },
-          {
-            "level": 8,
-            "multipliers": [3207.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [3385.4]
-          },
-          {
-            "level": 10,
-            "multipliers": [3563.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [3741.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [3920]
-          },
-          {
-            "level": 13,
-            "multipliers": [4098.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [4276.4]
-          },
-          {
-            "level": 15,
-            "multipliers": [4454.6]
-          },
-          {
-            "level": 16,
-            "multipliers": [4632.8]
-          }
+          { "level": 1, "multipliers": [1959.8] },
+          { "level": 2, "multipliers": [2138] },
+          { "level": 3, "multipliers": [2316.2] },
+          { "level": 4, "multipliers": [2494.4] },
+          { "level": 5, "multipliers": [2672.6] },
+          { "level": 6, "multipliers": [2850.8] },
+          { "level": 7, "multipliers": [3029] },
+          { "level": 8, "multipliers": [3207.2] },
+          { "level": 9, "multipliers": [3385.4] },
+          { "level": 10, "multipliers": [3563.6] },
+          { "level": 11, "multipliers": [3741.8] },
+          { "level": 12, "multipliers": [3920] },
+          { "level": 13, "multipliers": [4098.2] },
+          { "level": 14, "multipliers": [4276.4] },
+          { "level": 15, "multipliers": [4454.6] },
+          { "level": 16, "multipliers": [4632.8] }
         ]
       }
     ],
@@ -1370,17 +573,8 @@
         "description": "After activating a /bChain Attack//b or /bUltimate//b, within 15s, Astra Yao can trigger a /bQuick Assist//b even if she does not have /bChords//b. When the attack hits an enemy, the interval for triggering a /bQuick Assist//b is reduced to 1s.\n\nWhile in the /bIdyllic Cadenza//b state, when other squad members enter the field via a /bQuick Assist//b, they will receive different buffs based on their specialty, and this effect can be triggered once every 3s for the entire squad.\n\nAttack: The next /bQuick Assist//b heavy attack on an enemy will deal extra DMG equal to 300% of Astra Yao's ATK.\n\nAnomaly: The next /bQuick Assist//b will have 50% increased Anomaly Buildup;\n\n Stun: The next /bQuick Assist//b will inflict 50% increased Daze.",
         "skillType": "quickAssist",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier for ATK Agents"
-          }
-        ],
-        "levels": [
-          {
-            "level": 1,
-            "multipliers": [300]
-          }
-        ]
+        "hits": [{ "name": "DMG Multiplier for ATK Agents" }],
+        "levels": [{ "level": 1, "multipliers": [300] }]
       },
       {
         "id": "astra_yao-mindscape-interlude",
@@ -1389,92 +583,29 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "3rd Hit DMG Multiplier x2",
-            "damageType": "ether"
-          },
-          {
-            "name": "4th-Hit DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "5th Hit DMG Multiplier x2",
-            "damageType": "ether"
-          }
+          { "name": "1st-Hit DMG Multiplier", "damageType": "ether" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "ether" },
+          { "name": "3rd Hit DMG Multiplier x2", "damageType": "ether" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "ether" },
+          { "name": "5th Hit DMG Multiplier x2", "damageType": "ether" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [110, 110, 110, 110, 110]
-          },
-          {
-            "level": 2,
-            "multipliers": [120, 120, 120, 120, 120]
-          },
-          {
-            "level": 3,
-            "multipliers": [130, 130, 130, 130, 130]
-          },
-          {
-            "level": 4,
-            "multipliers": [140, 140, 140, 140, 140]
-          },
-          {
-            "level": 5,
-            "multipliers": [150, 150, 150, 150, 150]
-          },
-          {
-            "level": 6,
-            "multipliers": [160, 160, 160, 160, 160]
-          },
-          {
-            "level": 7,
-            "multipliers": [170, 170, 170, 170, 170]
-          },
-          {
-            "level": 8,
-            "multipliers": [180, 180, 180, 180, 180]
-          },
-          {
-            "level": 9,
-            "multipliers": [190, 190, 190, 190, 190]
-          },
-          {
-            "level": 10,
-            "multipliers": [200, 200, 200, 200, 200]
-          },
-          {
-            "level": 11,
-            "multipliers": [210, 210, 210, 210, 210]
-          },
-          {
-            "level": 12,
-            "multipliers": [220, 220, 220, 220, 220]
-          },
-          {
-            "level": 13,
-            "multipliers": [230, 230, 230, 230, 230]
-          },
-          {
-            "level": 14,
-            "multipliers": [240, 240, 240, 240, 240]
-          },
-          {
-            "level": 15,
-            "multipliers": [250, 250, 250, 250, 250]
-          },
-          {
-            "level": 16,
-            "multipliers": [260, 260, 260, 260, 260]
-          }
+          { "level": 1, "multipliers": [110, 110, 110, 110, 110] },
+          { "level": 2, "multipliers": [120, 120, 120, 120, 120] },
+          { "level": 3, "multipliers": [130, 130, 130, 130, 130] },
+          { "level": 4, "multipliers": [140, 140, 140, 140, 140] },
+          { "level": 5, "multipliers": [150, 150, 150, 150, 150] },
+          { "level": 6, "multipliers": [160, 160, 160, 160, 160] },
+          { "level": 7, "multipliers": [170, 170, 170, 170, 170] },
+          { "level": 8, "multipliers": [180, 180, 180, 180, 180] },
+          { "level": 9, "multipliers": [190, 190, 190, 190, 190] },
+          { "level": 10, "multipliers": [200, 200, 200, 200, 200] },
+          { "level": 11, "multipliers": [210, 210, 210, 210, 210] },
+          { "level": 12, "multipliers": [220, 220, 220, 220, 220] },
+          { "level": 13, "multipliers": [230, 230, 230, 230, 230] },
+          { "level": 14, "multipliers": [240, 240, 240, 240, 240] },
+          { "level": 15, "multipliers": [250, 250, 250, 250, 250] },
+          { "level": 16, "multipliers": [260, 260, 260, 260, 260] }
         ]
       },
       {
@@ -1483,77 +614,24 @@
         "description": "While in the /bIdyllic Cadenza//b state, press [BASIC] during a [COUNTER] to activate:\n\nLaunch multiple /bTremolo//b attacks at enemies in front, dealing massive Ether DMG. A /bQuick Assist//b will be triggered when this skill hits an enemy. Character is invulnerable while using this skill.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier x4",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier x4", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [110]
-          },
-          {
-            "level": 2,
-            "multipliers": [120]
-          },
-          {
-            "level": 3,
-            "multipliers": [130]
-          },
-          {
-            "level": 4,
-            "multipliers": [140]
-          },
-          {
-            "level": 5,
-            "multipliers": [150]
-          },
-          {
-            "level": 6,
-            "multipliers": [160]
-          },
-          {
-            "level": 7,
-            "multipliers": [170]
-          },
-          {
-            "level": 8,
-            "multipliers": [180]
-          },
-          {
-            "level": 9,
-            "multipliers": [190]
-          },
-          {
-            "level": 10,
-            "multipliers": [200]
-          },
-          {
-            "level": 11,
-            "multipliers": [210]
-          },
-          {
-            "level": 12,
-            "multipliers": [220]
-          },
-          {
-            "level": 13,
-            "multipliers": [230]
-          },
-          {
-            "level": 14,
-            "multipliers": [240]
-          },
-          {
-            "level": 15,
-            "multipliers": [250]
-          },
-          {
-            "level": 16,
-            "multipliers": [260]
-          }
+          { "level": 1, "multipliers": [110] },
+          { "level": 2, "multipliers": [120] },
+          { "level": 3, "multipliers": [130] },
+          { "level": 4, "multipliers": [140] },
+          { "level": 5, "multipliers": [150] },
+          { "level": 6, "multipliers": [160] },
+          { "level": 7, "multipliers": [170] },
+          { "level": 8, "multipliers": [180] },
+          { "level": 9, "multipliers": [190] },
+          { "level": 10, "multipliers": [200] },
+          { "level": 11, "multipliers": [210] },
+          { "level": 12, "multipliers": [220] },
+          { "level": 13, "multipliers": [230] },
+          { "level": 14, "multipliers": [240] },
+          { "level": 15, "multipliers": [250] },
+          { "level": 16, "multipliers": [260] }
         ]
       },
       {
@@ -1562,77 +640,24 @@
         "description": "While in the /bIdyllic Cadenza//b state, hold [BASIC] to activate:\n\nRelease /bTremolo//b forward to attack, dealing Ether DMG and exit the /bIdyllic Cadenza//b state. Upon activation of the skill, it grants the buff from /bCore Passive: Graceful Andante//b.\n\nWith enough Energy, consumes Energy to follow up with 1 /bTremolo//b and 3 /bTone Clusters//b. This /bTremolo//b attack released is considered an /bEX Special Attack//b.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "ether"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "ether" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [110]
-          },
-          {
-            "level": 2,
-            "multipliers": [120]
-          },
-          {
-            "level": 3,
-            "multipliers": [130]
-          },
-          {
-            "level": 4,
-            "multipliers": [140]
-          },
-          {
-            "level": 5,
-            "multipliers": [150]
-          },
-          {
-            "level": 6,
-            "multipliers": [160]
-          },
-          {
-            "level": 7,
-            "multipliers": [170]
-          },
-          {
-            "level": 8,
-            "multipliers": [180]
-          },
-          {
-            "level": 9,
-            "multipliers": [190]
-          },
-          {
-            "level": 10,
-            "multipliers": [200]
-          },
-          {
-            "level": 11,
-            "multipliers": [210]
-          },
-          {
-            "level": 12,
-            "multipliers": [220]
-          },
-          {
-            "level": 13,
-            "multipliers": [230]
-          },
-          {
-            "level": 14,
-            "multipliers": [240]
-          },
-          {
-            "level": 15,
-            "multipliers": [250]
-          },
-          {
-            "level": 16,
-            "multipliers": [260]
-          }
+          { "level": 1, "multipliers": [110] },
+          { "level": 2, "multipliers": [120] },
+          { "level": 3, "multipliers": [130] },
+          { "level": 4, "multipliers": [140] },
+          { "level": 5, "multipliers": [150] },
+          { "level": 6, "multipliers": [160] },
+          { "level": 7, "multipliers": [170] },
+          { "level": 8, "multipliers": [180] },
+          { "level": 9, "multipliers": [190] },
+          { "level": 10, "multipliers": [200] },
+          { "level": 11, "multipliers": [210] },
+          { "level": 12, "multipliers": [220] },
+          { "level": 13, "multipliers": [230] },
+          { "level": 14, "multipliers": [240] },
+          { "level": 15, "multipliers": [250] },
+          { "level": 16, "multipliers": [260] }
         ]
       },
       {
@@ -1642,80 +667,26 @@
         "skillType": "special",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "Minimum DMG Multiplier",
-            "damageType": "ether"
-          },
-          {
-            "name": "Maximum DMG Multiplier x4",
-            "damageType": "ether"
-          }
+          { "name": "Minimum DMG Multiplier", "damageType": "ether" },
+          { "name": "Maximum DMG Multiplier x4", "damageType": "ether" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [110, 110]
-          },
-          {
-            "level": 2,
-            "multipliers": [118, 118]
-          },
-          {
-            "level": 3,
-            "multipliers": [126, 126]
-          },
-          {
-            "level": 4,
-            "multipliers": [134, 134]
-          },
-          {
-            "level": 5,
-            "multipliers": [142, 142]
-          },
-          {
-            "level": 6,
-            "multipliers": [150, 150]
-          },
-          {
-            "level": 7,
-            "multipliers": [158, 158]
-          },
-          {
-            "level": 8,
-            "multipliers": [166, 166]
-          },
-          {
-            "level": 9,
-            "multipliers": [174, 174]
-          },
-          {
-            "level": 10,
-            "multipliers": [182, 182]
-          },
-          {
-            "level": 11,
-            "multipliers": [190, 190]
-          },
-          {
-            "level": 12,
-            "multipliers": [198, 198]
-          },
-          {
-            "level": 13,
-            "multipliers": [206, 206]
-          },
-          {
-            "level": 14,
-            "multipliers": [214, 214]
-          },
-          {
-            "level": 15,
-            "multipliers": [222, 222]
-          },
-          {
-            "level": 16,
-            "multipliers": [230, 230]
-          }
+          { "level": 1, "multipliers": [110, 110] },
+          { "level": 2, "multipliers": [118, 118] },
+          { "level": 3, "multipliers": [126, 126] },
+          { "level": 4, "multipliers": [134, 134] },
+          { "level": 5, "multipliers": [142, 142] },
+          { "level": 6, "multipliers": [150, 150] },
+          { "level": 7, "multipliers": [158, 158] },
+          { "level": 8, "multipliers": [166, 166] },
+          { "level": 9, "multipliers": [174, 174] },
+          { "level": 10, "multipliers": [182, 182] },
+          { "level": 11, "multipliers": [190, 190] },
+          { "level": 12, "multipliers": [198, 198] },
+          { "level": 13, "multipliers": [206, 206] },
+          { "level": 14, "multipliers": [214, 214] },
+          { "level": 15, "multipliers": [222, 222] },
+          { "level": 16, "multipliers": [230, 230] }
         ]
       },
       {
@@ -1725,80 +696,29 @@
         "skillType": "ex",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "Follow-Up Tremolo DMG Multiplier",
-            "damageType": "ether"
-          },
+          { "name": "Follow-Up Tremolo DMG Multiplier", "damageType": "ether" },
           {
             "name": "Follow-Up Tone Cluster DMG Multiplier x3",
             "damageType": "ether"
           }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [92, 48]
-          },
-          {
-            "level": 2,
-            "multipliers": [100.4, 52.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [108.8, 56.8]
-          },
-          {
-            "level": 4,
-            "multipliers": [117.2, 61.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [125.6, 65.6]
-          },
-          {
-            "level": 6,
-            "multipliers": [134, 70]
-          },
-          {
-            "level": 7,
-            "multipliers": [142.4, 74.4]
-          },
-          {
-            "level": 8,
-            "multipliers": [150.8, 78.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [159.2, 83.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [167.6, 87.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [176, 92]
-          },
-          {
-            "level": 12,
-            "multipliers": [184.4, 96.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [192.8, 100.8]
-          },
-          {
-            "level": 14,
-            "multipliers": [201.2, 105.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [209.6, 109.6]
-          },
-          {
-            "level": 16,
-            "multipliers": [218, 114]
-          }
+          { "level": 1, "multipliers": [92, 48] },
+          { "level": 2, "multipliers": [100.4, 52.4] },
+          { "level": 3, "multipliers": [108.8, 56.8] },
+          { "level": 4, "multipliers": [117.2, 61.2] },
+          { "level": 5, "multipliers": [125.6, 65.6] },
+          { "level": 6, "multipliers": [134, 70] },
+          { "level": 7, "multipliers": [142.4, 74.4] },
+          { "level": 8, "multipliers": [150.8, 78.8] },
+          { "level": 9, "multipliers": [159.2, 83.2] },
+          { "level": 10, "multipliers": [167.6, 87.6] },
+          { "level": 11, "multipliers": [176, 92] },
+          { "level": 12, "multipliers": [184.4, 96.4] },
+          { "level": 13, "multipliers": [192.8, 100.8] },
+          { "level": 14, "multipliers": [201.2, 105.2] },
+          { "level": 15, "multipliers": [209.6, 109.6] },
+          { "level": 16, "multipliers": [218, 114] }
         ]
       }
     ]

@@ -9,11 +9,7 @@
   "displayName": "Pulchra",
   "attributeIcon": "Physical",
   "themeColor": "#E7CE88",
-  "baseStats": {
-    "hp": 7612.8,
-    "atk": 590.83,
-    "def": 606.6
-  },
+  "baseStats": { "hp": 7612.8, "atk": 590.83, "def": 606.6 },
   "combatBase": {
     "impact": 118,
     "critRate": 0.05,
@@ -37,55 +33,13 @@
     "stats": ["Impact", "CRIT Rate", "CRIT DMG"]
   },
   "coreEnhancement": [
-    {
-      "level": 0,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 0
-      }
-    },
-    {
-      "level": 1,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 2,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    },
-    {
-      "level": 3,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 4,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    },
-    {
-      "level": 5,
-      "stats": {
-        "atkFlat": 0,
-        "impact": 6
-      }
-    },
-    {
-      "level": 6,
-      "stats": {
-        "atkFlat": 25,
-        "impact": 0
-      }
-    }
+    { "level": 0, "stats": { "atkFlat": 0, "impact": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 2, "stats": { "atkFlat": 25, "impact": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 4, "stats": { "atkFlat": 25, "impact": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "impact": 6 } },
+    { "level": 6, "stats": { "atkFlat": 25, "impact": 0 } }
   ],
   "ingameEffects": [
     {
@@ -93,15 +47,11 @@
       "source": "core",
       "sourceId": "pulchra-core",
       "label": "Business Partner (Additional Ability)",
-      "description": "When another character in your squad is an Attack or Rupture character or shares the same Faction: When Pulchra hits enemies with Special Attack: Rending Claw - Nightmare Shadow, EX Special Attack: Rending Claw - Flashstep, Assist Follow-Up: Independent Pricing, Chain Attack: Hey, Didn't Expect That, Right?, or Ultimate: Oh, Time to Play?, it applies the Binding Trap effect for 15s. After applying Binding Trap, all units' Aftershock DMG against the target is increased by 30%.",
+      "description": "When another character in your squad is an Attack or Rupture character or shares the same Faction:\n\nWhen Pulchra hits enemies with Special Attack: Rending Claw - Nightmare Shadow, EX Special Attack: Rending Claw - Flashstep, Assist Follow-Up: Independent Pricing, Chain Attack: Hey, Didn't Expect That, Right?, or Ultimate: Oh, Time to Play?, it applies the Binding Trap effect for 15s. After applying Binding Trap, all units' Aftershock DMG against the target is increased by 30%.",
       "shortDescription": "All squad members' DMG from Aftershocks is increased by 30%.",
       "target": "team",
       "damageBonuses": [
-        {
-          "type": "element",
-          "element": "aftershock",
-          "value": 0.3
-        }
+        { "type": "element", "element": "aftershock", "value": 0.3 }
       ]
     },
     {
@@ -112,9 +62,7 @@
       "description": "When dealing DMG to enemies affected by Binding Trap, increase own CRIT Rate by 10%.",
       "shortDescription": "Pulchra's CRIT Rate is increased by 10%.",
       "target": "self",
-      "flat": {
-        "critRate": 0.1
-      }
+      "flat": { "critRate": 0.1 }
     },
     {
       "id": "pulchra-mindscape_2-opportunistic",
@@ -124,9 +72,7 @@
       "description": "While in the Hunter's Gait state from Core Passive: Hunter's Instinct, Pulchra's ATK is increased by an additional 10%.",
       "shortDescription": "Pulchra's ATK is increased by 10%.",
       "target": "self",
-      "flat": {
-        "atkPercentRaw": 0.1
-      }
+      "flat": { "atkPercentRaw": 0.1 }
     },
     {
       "id": "pulchra-mindscape_4-joy_of_the_hunt",
@@ -161,12 +107,7 @@
       "description": "Special Attack: Rending Claw - Nightmare Shadow's DMG is increased by 15%, and the number of times the repeated attack can trigger is increased by 2. Additional Ability: Business Partner's Binding Trap effect now also applies to all damage types, not just Aftershock DMG.",
       "shortDescription": "All squad members' DMG is increased by 30%.",
       "target": "team",
-      "damageBonuses": [
-        {
-          "type": "global",
-          "value": 0.3
-        }
-      ]
+      "damageBonuses": [{ "type": "global", "value": 0.3 }]
     }
   ],
   "skills": {
@@ -178,84 +119,27 @@
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
-          {
-            "name": "1st-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "2nd-Hit DMG Multiplier",
-            "damageType": "physical"
-          },
-          {
-            "name": "3rd-Hit DMG Multiplier",
-            "damageType": "physical"
-          }
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "physical" }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [35.7, 94.1, 167.6]
-          },
-          {
-            "level": 2,
-            "multipliers": [39, 102.7, 182.9]
-          },
-          {
-            "level": 3,
-            "multipliers": [42.3, 111.3, 198.2]
-          },
-          {
-            "level": 4,
-            "multipliers": [45.6, 119.9, 213.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [48.9, 128.5, 228.8]
-          },
-          {
-            "level": 6,
-            "multipliers": [52.2, 137.1, 244.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [55.5, 145.7, 259.4]
-          },
-          {
-            "level": 8,
-            "multipliers": [58.8, 154.3, 274.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [62.1, 162.9, 290]
-          },
-          {
-            "level": 10,
-            "multipliers": [65.4, 171.5, 305.3]
-          },
-          {
-            "level": 11,
-            "multipliers": [68.7, 180.1, 320.6]
-          },
-          {
-            "level": 12,
-            "multipliers": [72, 188.7, 335.9]
-          },
-          {
-            "level": 13,
-            "multipliers": [75.3, 197.3, 351.2]
-          },
-          {
-            "level": 14,
-            "multipliers": [78.6, 205.9, 366.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [81.9, 214.5, 381.8]
-          },
-          {
-            "level": 16,
-            "multipliers": [85.2, 223.1, 397.1]
-          }
+          { "level": 1, "multipliers": [35.7, 94.1, 167.6] },
+          { "level": 2, "multipliers": [39, 102.7, 182.9] },
+          { "level": 3, "multipliers": [42.3, 111.3, 198.2] },
+          { "level": 4, "multipliers": [45.6, 119.9, 213.5] },
+          { "level": 5, "multipliers": [48.9, 128.5, 228.8] },
+          { "level": 6, "multipliers": [52.2, 137.1, 244.1] },
+          { "level": 7, "multipliers": [55.5, 145.7, 259.4] },
+          { "level": 8, "multipliers": [58.8, 154.3, 274.7] },
+          { "level": 9, "multipliers": [62.1, 162.9, 290] },
+          { "level": 10, "multipliers": [65.4, 171.5, 305.3] },
+          { "level": 11, "multipliers": [68.7, 180.1, 320.6] },
+          { "level": 12, "multipliers": [72, 188.7, 335.9] },
+          { "level": 13, "multipliers": [75.3, 197.3, 351.2] },
+          { "level": 14, "multipliers": [78.6, 205.9, 366.5] },
+          { "level": 15, "multipliers": [81.9, 214.5, 381.8] },
+          { "level": 16, "multipliers": [85.2, 223.1, 397.1] }
         ]
       },
       {
@@ -264,77 +148,24 @@
         "description": "Hold [BASIC] to activate:\n\nLeap forward and unleash a series of slashes, dealing Physical DMG.",
         "skillType": "basic",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [135]
-          },
-          {
-            "level": 2,
-            "multipliers": [147.3]
-          },
-          {
-            "level": 3,
-            "multipliers": [159.6]
-          },
-          {
-            "level": 4,
-            "multipliers": [171.9]
-          },
-          {
-            "level": 5,
-            "multipliers": [184.2]
-          },
-          {
-            "level": 6,
-            "multipliers": [196.5]
-          },
-          {
-            "level": 7,
-            "multipliers": [208.8]
-          },
-          {
-            "level": 8,
-            "multipliers": [221.1]
-          },
-          {
-            "level": 9,
-            "multipliers": [233.4]
-          },
-          {
-            "level": 10,
-            "multipliers": [245.7]
-          },
-          {
-            "level": 11,
-            "multipliers": [258]
-          },
-          {
-            "level": 12,
-            "multipliers": [270.3]
-          },
-          {
-            "level": 13,
-            "multipliers": [282.6]
-          },
-          {
-            "level": 14,
-            "multipliers": [294.9]
-          },
-          {
-            "level": 15,
-            "multipliers": [307.2]
-          },
-          {
-            "level": 16,
-            "multipliers": [319.5]
-          }
+          { "level": 1, "multipliers": [135] },
+          { "level": 2, "multipliers": [147.3] },
+          { "level": 3, "multipliers": [159.6] },
+          { "level": 4, "multipliers": [171.9] },
+          { "level": 5, "multipliers": [184.2] },
+          { "level": 6, "multipliers": [196.5] },
+          { "level": 7, "multipliers": [208.8] },
+          { "level": 8, "multipliers": [221.1] },
+          { "level": 9, "multipliers": [233.4] },
+          { "level": 10, "multipliers": [245.7] },
+          { "level": 11, "multipliers": [258] },
+          { "level": 12, "multipliers": [270.3] },
+          { "level": 13, "multipliers": [282.6] },
+          { "level": 14, "multipliers": [294.9] },
+          { "level": 15, "multipliers": [307.2] },
+          { "level": 16, "multipliers": [319.5] }
         ]
       }
     ],
@@ -345,77 +176,24 @@
         "description": "Press [BASIC] during a dodge to activate:\n\nDash forward and slash, dealing Physical DMG.",
         "skillType": "dash",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [48.3]
-          },
-          {
-            "level": 2,
-            "multipliers": [52.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [57.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [61.5]
-          },
-          {
-            "level": 5,
-            "multipliers": [65.9]
-          },
-          {
-            "level": 6,
-            "multipliers": [70.3]
-          },
-          {
-            "level": 7,
-            "multipliers": [74.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [79.1]
-          },
-          {
-            "level": 9,
-            "multipliers": [83.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [87.9]
-          },
-          {
-            "level": 11,
-            "multipliers": [92.3]
-          },
-          {
-            "level": 12,
-            "multipliers": [96.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [101.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [105.5]
-          },
-          {
-            "level": 15,
-            "multipliers": [109.9]
-          },
-          {
-            "level": 16,
-            "multipliers": [114.3]
-          }
+          { "level": 1, "multipliers": [48.3] },
+          { "level": 2, "multipliers": [52.7] },
+          { "level": 3, "multipliers": [57.1] },
+          { "level": 4, "multipliers": [61.5] },
+          { "level": 5, "multipliers": [65.9] },
+          { "level": 6, "multipliers": [70.3] },
+          { "level": 7, "multipliers": [74.7] },
+          { "level": 8, "multipliers": [79.1] },
+          { "level": 9, "multipliers": [83.5] },
+          { "level": 10, "multipliers": [87.9] },
+          { "level": 11, "multipliers": [92.3] },
+          { "level": 12, "multipliers": [96.7] },
+          { "level": 13, "multipliers": [101.1] },
+          { "level": 14, "multipliers": [105.5] },
+          { "level": 15, "multipliers": [109.9] },
+          { "level": 16, "multipliers": [114.3] }
         ]
       }
     ],
@@ -426,77 +204,24 @@
         "description": "Press [BASIC] during a [COUNTER] to activate:\n\nThrust at enemies in front, then follow up with a swift slash, dealing Physical DMG. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [201.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [220.2]
-          },
-          {
-            "level": 3,
-            "multipliers": [238.6]
-          },
-          {
-            "level": 4,
-            "multipliers": [257]
-          },
-          {
-            "level": 5,
-            "multipliers": [275.4]
-          },
-          {
-            "level": 6,
-            "multipliers": [293.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [312.2]
-          },
-          {
-            "level": 8,
-            "multipliers": [330.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [349]
-          },
-          {
-            "level": 10,
-            "multipliers": [367.4]
-          },
-          {
-            "level": 11,
-            "multipliers": [385.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [404.2]
-          },
-          {
-            "level": 13,
-            "multipliers": [422.6]
-          },
-          {
-            "level": 14,
-            "multipliers": [441]
-          },
-          {
-            "level": 15,
-            "multipliers": [459.4]
-          },
-          {
-            "level": 16,
-            "multipliers": [477.8]
-          }
+          { "level": 1, "multipliers": [201.8] },
+          { "level": 2, "multipliers": [220.2] },
+          { "level": 3, "multipliers": [238.6] },
+          { "level": 4, "multipliers": [257] },
+          { "level": 5, "multipliers": [275.4] },
+          { "level": 6, "multipliers": [293.8] },
+          { "level": 7, "multipliers": [312.2] },
+          { "level": 8, "multipliers": [330.6] },
+          { "level": 9, "multipliers": [349] },
+          { "level": 10, "multipliers": [367.4] },
+          { "level": 11, "multipliers": [385.8] },
+          { "level": 12, "multipliers": [404.2] },
+          { "level": 13, "multipliers": [422.6] },
+          { "level": 14, "multipliers": [441] },
+          { "level": 15, "multipliers": [459.4] },
+          { "level": 16, "multipliers": [477.8] }
         ]
       }
     ],
@@ -507,77 +232,24 @@
         "description": "When the active character is launched, press [ASSIST] to activate:\n\nThrust at enemies in front, followed by rapid slashes, dealing Physical DMG. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [78.3]
-          },
-          {
-            "level": 2,
-            "multipliers": [85.5]
-          },
-          {
-            "level": 3,
-            "multipliers": [92.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [99.9]
-          },
-          {
-            "level": 5,
-            "multipliers": [107.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [114.3]
-          },
-          {
-            "level": 7,
-            "multipliers": [121.5]
-          },
-          {
-            "level": 8,
-            "multipliers": [128.7]
-          },
-          {
-            "level": 9,
-            "multipliers": [135.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [143.1]
-          },
-          {
-            "level": 11,
-            "multipliers": [150.3]
-          },
-          {
-            "level": 12,
-            "multipliers": [157.5]
-          },
-          {
-            "level": 13,
-            "multipliers": [164.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [171.9]
-          },
-          {
-            "level": 15,
-            "multipliers": [179.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [186.3]
-          }
+          { "level": 1, "multipliers": [78.3] },
+          { "level": 2, "multipliers": [85.5] },
+          { "level": 3, "multipliers": [92.7] },
+          { "level": 4, "multipliers": [99.9] },
+          { "level": 5, "multipliers": [107.1] },
+          { "level": 6, "multipliers": [114.3] },
+          { "level": 7, "multipliers": [121.5] },
+          { "level": 8, "multipliers": [128.7] },
+          { "level": 9, "multipliers": [135.9] },
+          { "level": 10, "multipliers": [143.1] },
+          { "level": 11, "multipliers": [150.3] },
+          { "level": 12, "multipliers": [157.5] },
+          { "level": 13, "multipliers": [164.7] },
+          { "level": 14, "multipliers": [171.9] },
+          { "level": 15, "multipliers": [179.1] },
+          { "level": 16, "multipliers": [186.3] }
         ]
       }
     ],
@@ -589,77 +261,24 @@
         "description": "Press [BASIC] after an /bEvasive Assist//b to activate:\n\nLeap forward into the air and fire, dealing Physical DMG. Upon activating this skill, consume 1 Assist Point to enter the /bHunter's Gait//b state. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [307.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [335.1]
-          },
-          {
-            "level": 3,
-            "multipliers": [363.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [391.1]
-          },
-          {
-            "level": 5,
-            "multipliers": [419.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [447.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [475.1]
-          },
-          {
-            "level": 8,
-            "multipliers": [503.1]
-          },
-          {
-            "level": 9,
-            "multipliers": [531.1]
-          },
-          {
-            "level": 10,
-            "multipliers": [559.1]
-          },
-          {
-            "level": 11,
-            "multipliers": [587.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [615.1]
-          },
-          {
-            "level": 13,
-            "multipliers": [643.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [671.1]
-          },
-          {
-            "level": 15,
-            "multipliers": [699.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [727.1]
-          }
+          { "level": 1, "multipliers": [307.1] },
+          { "level": 2, "multipliers": [335.1] },
+          { "level": 3, "multipliers": [363.1] },
+          { "level": 4, "multipliers": [391.1] },
+          { "level": 5, "multipliers": [419.1] },
+          { "level": 6, "multipliers": [447.1] },
+          { "level": 7, "multipliers": [475.1] },
+          { "level": 8, "multipliers": [503.1] },
+          { "level": 9, "multipliers": [531.1] },
+          { "level": 10, "multipliers": [559.1] },
+          { "level": 11, "multipliers": [587.1] },
+          { "level": 12, "multipliers": [615.1] },
+          { "level": 13, "multipliers": [643.1] },
+          { "level": 14, "multipliers": [671.1] },
+          { "level": 15, "multipliers": [699.1] },
+          { "level": 16, "multipliers": [727.1] }
         ]
       }
     ],
@@ -670,77 +289,24 @@
         "description": "Press [SPECIAL] to activate:\n\nPerform a rapid back-and-forth piercing attack, dealing Physical DMG. Anti-Interrupt level is increased while using this skill.",
         "skillType": "special",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [25.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [27.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [29.7]
-          },
-          {
-            "level": 4,
-            "multipliers": [32]
-          },
-          {
-            "level": 5,
-            "multipliers": [34.3]
-          },
-          {
-            "level": 6,
-            "multipliers": [36.6]
-          },
-          {
-            "level": 7,
-            "multipliers": [38.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [41.2]
-          },
-          {
-            "level": 9,
-            "multipliers": [43.5]
-          },
-          {
-            "level": 10,
-            "multipliers": [45.8]
-          },
-          {
-            "level": 11,
-            "multipliers": [48.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [50.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [52.7]
-          },
-          {
-            "level": 14,
-            "multipliers": [55]
-          },
-          {
-            "level": 15,
-            "multipliers": [57.3]
-          },
-          {
-            "level": 16,
-            "multipliers": [59.6]
-          }
+          { "level": 1, "multipliers": [25.1] },
+          { "level": 2, "multipliers": [27.4] },
+          { "level": 3, "multipliers": [29.7] },
+          { "level": 4, "multipliers": [32] },
+          { "level": 5, "multipliers": [34.3] },
+          { "level": 6, "multipliers": [36.6] },
+          { "level": 7, "multipliers": [38.9] },
+          { "level": 8, "multipliers": [41.2] },
+          { "level": 9, "multipliers": [43.5] },
+          { "level": 10, "multipliers": [45.8] },
+          { "level": 11, "multipliers": [48.1] },
+          { "level": 12, "multipliers": [50.4] },
+          { "level": 13, "multipliers": [52.7] },
+          { "level": 14, "multipliers": [55] },
+          { "level": 15, "multipliers": [57.3] },
+          { "level": 16, "multipliers": [59.6] }
         ]
       },
       {
@@ -762,70 +328,22 @@
           }
         ],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [46.3, 53.5]
-          },
-          {
-            "level": 2,
-            "multipliers": [50.6, 58.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [54.9, 63.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [59.2, 68.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [63.5, 73.1]
-          },
-          {
-            "level": 6,
-            "multipliers": [67.8, 78]
-          },
-          {
-            "level": 7,
-            "multipliers": [72.1, 82.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [76.4, 87.8]
-          },
-          {
-            "level": 9,
-            "multipliers": [80.7, 92.7]
-          },
-          {
-            "level": 10,
-            "multipliers": [85, 97.6]
-          },
-          {
-            "level": 11,
-            "multipliers": [89.3, 102.5]
-          },
-          {
-            "level": 12,
-            "multipliers": [93.6, 107.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [97.9, 112.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [102.2, 117.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [106.5, 122.1]
-          },
-          {
-            "level": 16,
-            "multipliers": [110.8, 127]
-          }
+          { "level": 1, "multipliers": [46.3, 53.5] },
+          { "level": 2, "multipliers": [50.6, 58.4] },
+          { "level": 3, "multipliers": [54.9, 63.3] },
+          { "level": 4, "multipliers": [59.2, 68.2] },
+          { "level": 5, "multipliers": [63.5, 73.1] },
+          { "level": 6, "multipliers": [67.8, 78] },
+          { "level": 7, "multipliers": [72.1, 82.9] },
+          { "level": 8, "multipliers": [76.4, 87.8] },
+          { "level": 9, "multipliers": [80.7, 92.7] },
+          { "level": 10, "multipliers": [85, 97.6] },
+          { "level": 11, "multipliers": [89.3, 102.5] },
+          { "level": 12, "multipliers": [93.6, 107.4] },
+          { "level": 13, "multipliers": [97.9, 112.3] },
+          { "level": 14, "multipliers": [102.2, 117.2] },
+          { "level": 15, "multipliers": [106.5, 122.1] },
+          { "level": 16, "multipliers": [110.8, 127] }
         ]
       }
     ],
@@ -836,77 +354,24 @@
         "description": "With enough Energy, press [EX] to activate:\n\nPierce back and forth times, dealing massive Physical DMG. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [347.7]
-          },
-          {
-            "level": 2,
-            "multipliers": [379.4]
-          },
-          {
-            "level": 3,
-            "multipliers": [411.1]
-          },
-          {
-            "level": 4,
-            "multipliers": [442.8]
-          },
-          {
-            "level": 5,
-            "multipliers": [474.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [506.2]
-          },
-          {
-            "level": 7,
-            "multipliers": [537.9]
-          },
-          {
-            "level": 8,
-            "multipliers": [569.6]
-          },
-          {
-            "level": 9,
-            "multipliers": [601.3]
-          },
-          {
-            "level": 10,
-            "multipliers": [633]
-          },
-          {
-            "level": 11,
-            "multipliers": [664.7]
-          },
-          {
-            "level": 12,
-            "multipliers": [696.4]
-          },
-          {
-            "level": 13,
-            "multipliers": [728.1]
-          },
-          {
-            "level": 14,
-            "multipliers": [759.8]
-          },
-          {
-            "level": 15,
-            "multipliers": [791.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [823.2]
-          }
+          { "level": 1, "multipliers": [347.7] },
+          { "level": 2, "multipliers": [379.4] },
+          { "level": 3, "multipliers": [411.1] },
+          { "level": 4, "multipliers": [442.8] },
+          { "level": 5, "multipliers": [474.5] },
+          { "level": 6, "multipliers": [506.2] },
+          { "level": 7, "multipliers": [537.9] },
+          { "level": 8, "multipliers": [569.6] },
+          { "level": 9, "multipliers": [601.3] },
+          { "level": 10, "multipliers": [633] },
+          { "level": 11, "multipliers": [664.7] },
+          { "level": 12, "multipliers": [696.4] },
+          { "level": 13, "multipliers": [728.1] },
+          { "level": 14, "multipliers": [759.8] },
+          { "level": 15, "multipliers": [791.5] },
+          { "level": 16, "multipliers": [823.2] }
         ]
       }
     ],
@@ -917,77 +382,24 @@
         "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes a charged shot forward, dealing massive Physical DMG. Character is invulnerable while using this skill.",
         "skillType": "chain",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [534.1]
-          },
-          {
-            "level": 2,
-            "multipliers": [582.7]
-          },
-          {
-            "level": 3,
-            "multipliers": [631.3]
-          },
-          {
-            "level": 4,
-            "multipliers": [679.9]
-          },
-          {
-            "level": 5,
-            "multipliers": [728.5]
-          },
-          {
-            "level": 6,
-            "multipliers": [777.1]
-          },
-          {
-            "level": 7,
-            "multipliers": [825.7]
-          },
-          {
-            "level": 8,
-            "multipliers": [874.3]
-          },
-          {
-            "level": 9,
-            "multipliers": [922.9]
-          },
-          {
-            "level": 10,
-            "multipliers": [971.5]
-          },
-          {
-            "level": 11,
-            "multipliers": [1020.1]
-          },
-          {
-            "level": 12,
-            "multipliers": [1068.7]
-          },
-          {
-            "level": 13,
-            "multipliers": [1117.3]
-          },
-          {
-            "level": 14,
-            "multipliers": [1165.9]
-          },
-          {
-            "level": 15,
-            "multipliers": [1214.5]
-          },
-          {
-            "level": 16,
-            "multipliers": [1263.1]
-          }
+          { "level": 1, "multipliers": [534.1] },
+          { "level": 2, "multipliers": [582.7] },
+          { "level": 3, "multipliers": [631.3] },
+          { "level": 4, "multipliers": [679.9] },
+          { "level": 5, "multipliers": [728.5] },
+          { "level": 6, "multipliers": [777.1] },
+          { "level": 7, "multipliers": [825.7] },
+          { "level": 8, "multipliers": [874.3] },
+          { "level": 9, "multipliers": [922.9] },
+          { "level": 10, "multipliers": [971.5] },
+          { "level": 11, "multipliers": [1020.1] },
+          { "level": 12, "multipliers": [1068.7] },
+          { "level": 13, "multipliers": [1117.3] },
+          { "level": 14, "multipliers": [1165.9] },
+          { "level": 15, "multipliers": [1214.5] },
+          { "level": 16, "multipliers": [1263.1] }
         ]
       }
     ],
@@ -998,77 +410,24 @@
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleash a powerful shot at enemies in a large area ahead, dealing massive Physical DMG. Character is invulnerable while using this skill.",
         "skillType": "ultimate",
         "statBase": "atk",
-        "hits": [
-          {
-            "name": "DMG Multiplier",
-            "damageType": "physical"
-          }
-        ],
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
         "levels": [
-          {
-            "level": 1,
-            "multipliers": [1393.8]
-          },
-          {
-            "level": 2,
-            "multipliers": [1520.6]
-          },
-          {
-            "level": 3,
-            "multipliers": [1647.4]
-          },
-          {
-            "level": 4,
-            "multipliers": [1774.2]
-          },
-          {
-            "level": 5,
-            "multipliers": [1901]
-          },
-          {
-            "level": 6,
-            "multipliers": [2027.8]
-          },
-          {
-            "level": 7,
-            "multipliers": [2154.6]
-          },
-          {
-            "level": 8,
-            "multipliers": [2281.4]
-          },
-          {
-            "level": 9,
-            "multipliers": [2408.2]
-          },
-          {
-            "level": 10,
-            "multipliers": [2535]
-          },
-          {
-            "level": 11,
-            "multipliers": [2661.8]
-          },
-          {
-            "level": 12,
-            "multipliers": [2788.6]
-          },
-          {
-            "level": 13,
-            "multipliers": [2915.4]
-          },
-          {
-            "level": 14,
-            "multipliers": [3042.2]
-          },
-          {
-            "level": 15,
-            "multipliers": [3169]
-          },
-          {
-            "level": 16,
-            "multipliers": [3295.8]
-          }
+          { "level": 1, "multipliers": [1393.8] },
+          { "level": 2, "multipliers": [1520.6] },
+          { "level": 3, "multipliers": [1647.4] },
+          { "level": 4, "multipliers": [1774.2] },
+          { "level": 5, "multipliers": [1901] },
+          { "level": 6, "multipliers": [2027.8] },
+          { "level": 7, "multipliers": [2154.6] },
+          { "level": 8, "multipliers": [2281.4] },
+          { "level": 9, "multipliers": [2408.2] },
+          { "level": 10, "multipliers": [2535] },
+          { "level": 11, "multipliers": [2661.8] },
+          { "level": 12, "multipliers": [2788.6] },
+          { "level": 13, "multipliers": [2915.4] },
+          { "level": 14, "multipliers": [3042.2] },
+          { "level": 15, "multipliers": [3169] },
+          { "level": 16, "multipliers": [3295.8] }
         ]
       }
     ],
