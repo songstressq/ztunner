@@ -115,17 +115,14 @@ const IngameEffectsPanel = ({
   const infoOnlyEffects = effects.filter((e) => (e as any).infoOnly);
 
   const sortedInteractiveEffects = [...interactiveEffects].sort((a, b) => {
-    // Determinar si el efecto pertenece al agente del slot actual
     const aIsOwner =
       a.ownerAgentId === agent.id || a.ownerAgentId === undefined;
     const bIsOwner =
       b.ownerAgentId === agent.id || b.ownerAgentId === undefined;
 
-    // Si uno es del agente y el otro no, el del agente va primero
     if (aIsOwner && !bIsOwner) return -1;
     if (!aIsOwner && bIsOwner) return 1;
 
-    // Si ambos son del mismo grupo (ambos del agente o ambos de otro), ordenar por fuente
     const order: Record<string, number> = {
       unknown: 0,
       core: 1,

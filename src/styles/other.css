@@ -132,7 +132,7 @@
   padding: var(--padding-7_5px);
   margin: 0 auto;
   text-align: center;
-  font-size: var(--text-17_4px);
+  font-size: var(--text-17_6px) !important;
   width: fit-content;
   max-width: 100%;
   border-radius: 15px;

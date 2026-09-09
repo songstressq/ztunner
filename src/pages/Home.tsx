@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import "../styles/other.css";
 import TypingAnimation from "../components/TypingAnimation";
 import { useSession } from "@/context/SessionContext";
-import { agents } from "@/data/agents"; // 👈 Importar agents
+import { agents } from "@/data/agents";
 
 const Home = () => {
   const { homeSession } = useSession();
@@ -12,18 +12,15 @@ const Home = () => {
   const [typingComplete, setTypingComplete] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  // Obtener el agente que coincide con dominantTheme
   const dominantAgent = useMemo(() => {
     return agents.find((a) => a.themeColor === dominantTheme) || null;
   }, [dominantTheme]);
 
-  // Construir la ruta de la imagen
   const imageUrl = useMemo(() => {
     if (dominantAgent && !imageError) {
       return `/ztunner/resources/images/agents/mindscape/${dominantAgent.id}_mindscape.png`;
     }
-    // Fallback: imagen por defecto (puedes usar una imagen genérica)
-    return ""; // o "/ztunner/resources/images/agents/mindscape/default_mindscape.png"
+    return "";
   }, [dominantAgent, imageError]);
 
   const shouldShowImage = !!imageUrl && !imageError;
@@ -40,7 +37,6 @@ const Home = () => {
     backgroundImage: `linear-gradient(to right bottom, ${dominantTheme}11, ${dominantTheme}22, ${dominantTheme}55, ${dominantTheme}22, ${dominantTheme}11)`,
   };
 
-  // Render de la barra de progreso
   const renderProgressBar = (
     percentage: number,
     color: string = dominantTheme,
@@ -146,8 +142,8 @@ const Home = () => {
               style={{ marginBottom: "var(--padding-5px)" }}
             >
               🚨 I'm still setting up this page, so if u happen to be here
-              early, don't mind any slow-loading or temporarily disabled
-              sections for now! 😫
+              early, don't mind any temporarily disabled sections for now. I'll
+              work on them soon! 😫
             </div>
             <div className="important_notice-msg">
               🚨 Both Claret and the new Armorer Specialty will be added once I
@@ -186,7 +182,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="home_content_changelog_item">
-                <span>v1.0.0 — Initial Release</span>
+                <span>v1.0.1 — Initial Release</span>
 
                 <h4>● Added ZZZ Damage Calculator </h4>
                 <p>
@@ -413,13 +409,13 @@ const Home = () => {
               <div className="social-footer-content">
                 <div className="social-footer-left">
                   <span className="social-copyright">© 2026 Z-TUNNER</span>
-                  <span className="social-version">v1.0.0</span>
+                  <span className="social-version">v1.0.1</span>
                 </div>
 
                 <div className="social-links">
                   {/* Discord */}
                   <a
-                    href="https://discord.gg/tu-invite"
+                    href="https://discord.gg/2kJsGCzwE"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="manager-social-link"
@@ -437,7 +433,7 @@ const Home = () => {
                     <span>Discord</span>
                   </a>
 
-                  {/* Cafecito / Donaciones */}
+                  {/* Cafecito / Donaciones 
                   <a
                     href="https://cafecito.app/tuusuario"
                     target="_blank"
@@ -445,9 +441,9 @@ const Home = () => {
                     className="manager-social-link donation"
                     title="Buy me a coffee"
                   >
-                    <span className="donation-icon">☕</span>
+                    <span className="donation-icon"><svg   className="social-icon"   viewBox="0 0 24 24"   width="20"   height="20"   fill="currentColor" >   <path d="M18 8H5v6a5 5 0 0 0 5 5h3a5 5 0 0 0 5-5v-1h1a4 4 0 0 0 0-8h-1V4H5v2h13v2zm0 2h1a2 2 0 0 1 0 4h-1v-4zM8 21h10v-2H8v2z" /> </svg></span>
                     <span>Cafecito</span>
-                  </a>
+                  </a>*/}
 
                   {/* Ko-fi (alternativa) */}
                   <a
@@ -457,8 +453,17 @@ const Home = () => {
                     className="manager-social-link donation"
                     title="Support me on Ko-fi"
                   >
-                    <span>🎁</span>
-                    <span>Donate</span>
+                    <svg
+                      className="social-icon"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                    >
+                      {" "}
+                      <path d="M18 8H5v6a5 5 0 0 0 5 5h3a5 5 0 0 0 5-5v-1h1a4 4 0 0 0 0-8h-1V4H5v2h13v2zm0 2h1a2 2 0 0 1 0 4h-1v-4zM8 21h10v-2H8v2z" />{" "}
+                    </svg>
+                    <span>Buy Me a Coffee</span>
                   </a>
                 </div>
               </div>

@@ -95,7 +95,7 @@ const ConditionalEffectToggle = ({
       threshold = 0,
       maxBonus = Infinity,
       perUnitBonus = 0,
-      damageBonuses, // <-- NUEVO: leer damageBonuses del condicional
+      damageBonuses,
     } = effect.conditional;
 
     const statsToUse = ownerStats || unifiedStats;
@@ -159,22 +159,18 @@ const ConditionalEffectToggle = ({
     let total = fromBase + fromStat;
     const maxReached = fromStat >= maxBonus;
 
-    // ✨ NUEVO: Si el efecto tiene damageBonuses, calcular el bono de daño
     let damageBonusTotal = 0;
     let damageBonusType = "global";
     if (damageBonuses && damageBonuses.length > 0) {
-      // Usamos el primer bono (normalmente global o element)
       const firstBonus = damageBonuses[0];
       damageBonusType = firstBonus.type || "global";
-      // total es el valor del bono (ej. 0.114)
       damageBonusTotal = total * (firstBonus.value || 1);
     }
 
-    // Retornamos el objeto con toda la info, incluyendo el bono de daño
     return {
-      total: damageBonusTotal || total, // Si hay damageBonuses, usamos damageBonusTotal
+      total: damageBonusTotal || total,
       fromBase: damageBonuses ? 0 : fromBase,
-      fromStat: damageBonuses ? total : fromStat, // Guardamos el valor original como "fromStat"
+      fromStat: damageBonuses ? total : fromStat,
       maxReached: maxReached,
       statUsed: currentStatValue,
       excessStat: excess,
@@ -182,11 +178,9 @@ const ConditionalEffectToggle = ({
       basedOn,
       maxPossible: maxBonus,
       perUnitBonusDisplay: perUnitBonus * 100,
-      // ✨ Nuevos campos para damageBonus
       isDamageBonus: !!damageBonuses,
       damageBonusType: damageBonusType,
       damageBonusValue: damageBonusTotal,
-      // Guardamos el valor bruto para mostrar "From Anomaly Proficiency (114 × 0.001): +11.4%"
       rawFromStat: total,
     };
   };
@@ -410,7 +404,6 @@ const ConditionalEffectToggle = ({
       "etherResShred",
       "defShred",
     ];
-    // Si el stat contiene "Percent" o "Bonus" o "ResShred", es porcentual
     return (
       percentageStats.some((s) => stat === s) ||
       stat.includes("Percent") ||
@@ -852,7 +845,6 @@ const ConditionalEffectToggle = ({
                 {effect.conditional?.type === "currentStatBased" && (
                   <>
                     {!bonus.isDamageBonus ? (
-                      // Sin damageBonuses: stats normales
                       <>
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
@@ -925,7 +917,6 @@ const ConditionalEffectToggle = ({
                         </div>
                       </>
                     ) : (
-                      // Con damageBonuses: bono de daño
                       <>
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">

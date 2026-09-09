@@ -119,7 +119,6 @@ export default function LuminizeCalculator({
     const anomalyResult = slotAnomalyResults[luminizeSourceSlot]?.anomalyResult;
     if (!anomalyResult) return null;
 
-    // 🔥 Quitar el DMG% del realDamage usando dmgMod
     let sourceAnomalyDamage = 0;
     if (anomalyResult.dmgMod && anomalyResult.dmgMod > 0) {
       sourceAnomalyDamage =

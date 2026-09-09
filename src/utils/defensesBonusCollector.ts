@@ -166,7 +166,6 @@ export function collectDefenseBonuses(
 
     // ---- FLAT ----
     if (effect.flat) {
-      // ... (código existente, sin cambios)
       const flatValues = getResValues(effect.flat);
       const allSame =
         flatValues.every((v) => v === flatValues[0]) && flatValues[0] > 0;
@@ -196,7 +195,6 @@ export function collectDefenseBonuses(
 
     // ---- PER STACK ----
     if (effect.perStack) {
-      // ... (código existente, sin cambios)
       const perStackValues = getResValues(effect.perStack);
       const allSame =
         perStackValues.every((v) => v === perStackValues[0]) &&
@@ -245,7 +243,6 @@ export function collectDefenseBonuses(
 
     // ---- W-ENGINE OVERCLOCK ----
     if (effect.wEngineOverclock) {
-      // ... (código existente, sin cambios)
       const ocLevel = overclockLevels[effect.id] || 1;
       const currentLevel =
         effect.wEngineOverclock.levels.find((l: any) => l.level === ocLevel) ||
@@ -278,7 +275,6 @@ export function collectDefenseBonuses(
 
     // ---- EXCLUSIVE STAT BONUSES ----
     if (effect.exclusiveStatBonuses) {
-      // ... (código existente, sin cambios)
       for (const bonus of effect.exclusiveStatBonuses) {
         const value = bonus.value * stacks;
         if (value === 0) continue;
@@ -295,7 +291,6 @@ export function collectDefenseBonuses(
     }
   }
 
-  // Limpiar entradas vacías de resShreds
   Object.keys(result.resShreds).forEach((el) => {
     if (result.resShreds[el].sources.length === 0) {
       delete result.resShreds[el];

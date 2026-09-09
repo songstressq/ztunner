@@ -979,13 +979,13 @@ const BuildManager = () => {
             <div className="social-footer-content">
               <div className="social-footer-left">
                 <span className="social-copyright">© 2026 Z-TUNNER</span>
-                <span className="social-version">v1.0.0</span>
+                <span className="social-version">v1.0.1</span>
               </div>
 
               <div className="social-links">
                 {/* Discord */}
                 <a
-                  href="https://discord.gg/tu-invite"
+                  href="https://discord.gg/2kJsGCzwE"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="manager-social-link"
@@ -1003,7 +1003,7 @@ const BuildManager = () => {
                   <span>Discord</span>
                 </a>
 
-                {/* Cafecito / Donaciones */}
+                {/* Cafecito / Donaciones
                 <a
                   href="https://cafecito.app/tuusuario"
                   target="_blank"
@@ -1011,9 +1011,9 @@ const BuildManager = () => {
                   className="manager-social-link donation"
                   title="Buy me a coffee"
                 >
-                  <span className="donation-icon">☕</span>
+                  <span className="donation-icon"><svg   className="social-icon"   viewBox="0 0 24 24"   width="20"   height="20"   fill="currentColor" >   <path d="M18 8H5v6a5 5 0 0 0 5 5h3a5 5 0 0 0 5-5v-1h1a4 4 0 0 0 0-8h-1V4H5v2h13v2zm0 2h1a2 2 0 0 1 0 4h-1v-4zM8 21h10v-2H8v2z" /> </svg></span>
                   <span>Cafecito</span>
-                </a>
+                </a>*/}
 
                 {/* Ko-fi (alternativa) */}
                 <a
@@ -1023,8 +1023,17 @@ const BuildManager = () => {
                   className="manager-social-link donation"
                   title="Support me on Ko-fi"
                 >
-                  <span>🎁</span>
-                  <span>Donate</span>
+                  <svg
+                    className="social-icon"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                  >
+                    {" "}
+                    <path d="M18 8H5v6a5 5 0 0 0 5 5h3a5 5 0 0 0 5-5v-1h1a4 4 0 0 0 0-8h-1V4H5v2h13v2zm0 2h1a2 2 0 0 1 0 4h-1v-4zM8 21h10v-2H8v2z" />{" "}
+                  </svg>
+                  <span>Buy Me a Coffee</span>
                 </a>
               </div>
             </div>

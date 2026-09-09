@@ -278,7 +278,6 @@ export function collectDamageBonuses(
     }
 
     // ---- DAMAGE BONUSES (con soporte para currentStatBased) ----
-    // Determinar qué bonos procesar: top-level o los que están dentro de conditional
     let damageBonusesToProcess: DamageBonus[] = [];
 
     if (effect.damageBonuses) {
@@ -287,12 +286,10 @@ export function collectDamageBonuses(
       effect.conditional?.type === "currentStatBased" &&
       effect.conditional.damageBonuses
     ) {
-      // Si es currentStatBased y tiene damageBonuses dentro de conditional, usarlos
       damageBonusesToProcess = effect.conditional.damageBonuses;
     }
 
     if (damageBonusesToProcess.length > 0) {
-      // Calcular multiplicador dinámico si es currentStatBased
       let dynamicMultiplier = 1;
       if (effect.conditional?.type === "currentStatBased") {
         const state = activeEffects[effect.id];
@@ -333,27 +330,13 @@ export function collectDamageBonuses(
             }
           }
 
-          // 🔥 LOG DE DEBUG
-          console.log(
-            `[DEBUG] Efecto ${effect.id}: basedOn=${basedOn}, currentStatValue=${currentStatValue}`,
-          );
-          console.log(`[DEBUG] Conditional:`, effect.conditional);
-
           const result = calculateCurrentStatBonus(effect, currentStatValue);
           dynamicMultiplier = result.bonusValue;
-
-          console.log(`[DEBUG] dynamicMultiplier = ${dynamicMultiplier}`);
         }
       }
 
       for (const bonus of damageBonusesToProcess) {
-        // Aplicar el multiplicador dinámico al valor del bono
         const totalValue = (bonus.value || 0) * stacks * dynamicMultiplier;
-
-        // 🔥 LOG DE DEBUG
-        console.log(
-          `[DEBUG] Bonus: type=${bonus.type}, value=${bonus.value}, stacks=${stacks}, dynamicMultiplier=${dynamicMultiplier}, totalValue=${totalValue}`,
-        );
 
         if (totalValue === 0) continue;
 
@@ -371,7 +354,6 @@ export function collectDamageBonuses(
           ownerDisplayName: owner.ownerDisplayName,
         };
 
-        // Procesar según el tipo de bono
         switch (bonus.type) {
           case "global":
             bonuses.global += totalValue;
