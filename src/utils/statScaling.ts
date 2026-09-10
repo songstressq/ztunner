@@ -664,7 +664,19 @@ export function calculateUnifiedStats(
 
     if (effect.condition?.requiresSpecialty) {
       const isOwner = effect.ownerAgentId === agent.id;
-      if (effect.target === "team" && !isOwner) {
+      const isGameModeEffect =
+        effect.source === "gameMode" || effect.ownerAgentId === "gameMode";
+
+      if (isGameModeEffect) {
+        // Los gameMode SÍ se filtran por especialidad siempre, sin bypass.
+        if (
+          agent.specialty.toLowerCase().trim() !==
+          effect.condition.requiresSpecialty.toLowerCase().trim()
+        ) {
+          continue;
+        }
+      } else if (effect.target === "team" && !isOwner) {
+        // Team effect de otro agente: aplica a todo el equipo (comportamiento original).
       } else if (agent.specialty !== effect.condition.requiresSpecialty) {
         continue;
       }

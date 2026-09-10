@@ -146,9 +146,10 @@ const Home = () => {
               work on them soon! 😫
             </div>
             <div className="important_notice-msg">
-              🚨 Both Claret and the new Armorer Specialty will be added once I
-              figure out the Laceration DMG math after the patch update (if i
-              win her 50/50 it'll be sooner 😝).
+              🚨 After compromising my bank account, Claret is finally home. The
+              full Laceration DMG formula is also ready, so I'll be adding it
+              over the next few days. The Maim DMG Calculator may take a little
+              while, though. 😝
             </div>
           </div>
         </div>
@@ -230,6 +231,17 @@ const Home = () => {
               />
               <div className="home_content-features_grid">
                 <div className="home_content-features_card">
+                  <h3>🅾 Laceration DMG & Maim DMG Calculator</h3>
+                  <p>
+                    Implement Armorer's exclusive mechanics in the Damage
+                    Calculator, including support for Laceration and Sharp DMG.
+                  </p>
+                  <div className="home_content-progress_bar">
+                    {renderProgressBar(40)}
+                    <span>40%</span>
+                  </div>{" "}
+                </div>{" "}
+                <div className="home_content-features_card">
                   <h3>🅾 Drive Disc Inventory</h3>
                   <p>
                     Create and name drive discs for easier organization and
@@ -250,17 +262,6 @@ const Home = () => {
                   <div className="home_content-progress_bar">
                     {renderProgressBar(5)}
                     <span>5%</span>
-                  </div>{" "}
-                </div>{" "}
-                <div className="home_content-features_card">
-                  <h3>🅾 Abloom DMG</h3>
-                  <p>
-                    Implement Abloom DMG calculations in the Damage Calculator,
-                    including support for its unique mechanics and effects.
-                  </p>
-                  <div className="home_content-progress_bar">
-                    {renderProgressBar(0)}
-                    <span>0%</span>
                   </div>{" "}
                 </div>{" "}
                 {/*<div className="home_content-features_card">

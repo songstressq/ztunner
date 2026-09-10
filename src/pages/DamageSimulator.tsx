@@ -29,6 +29,7 @@ import { collectIngameEffects } from "@/utils/collectIngameEffects";
 import GameModeTogglePanel from "@/components/GameModeTogglePanel";
 import SkillsProfileModal from "@/components/SkillsProfileModal";
 import CustomPrompt from "@/components/CustomPrompt";
+import gameModesData from "@/data/gameModes.json";
 
 const DamageSimulator = () => {
   const [builds, setBuilds] = useState<SavedBuild[]>([]);
@@ -150,18 +151,56 @@ const DamageSimulator = () => {
   };
 
   useEffect(() => {
-    const currentGameModeEffect = Object.keys(homeSession.teamEffects).find(
-      (id) =>
-        id.startsWith("game_mode_") && homeSession.teamEffects[id]?.enabled,
-    );
+    // ─────────────────────────────────────────────────────────────
+    // 1) Construir el set de IDs válidos según el gameModes.json actual
+    //    (rooms + buffs, para no purgar los buffs por error)
+    // ─────────────────────────────────────────────────────────────
+    const validGameModeIds = new Set<string>();
+    const modes = (gameModesData as any).modes || [];
+    modes.forEach((mode: any) => {
+      (mode.rooms || []).forEach((room: any) => {
+        (room.effects || []).forEach((eff: any) =>
+          validGameModeIds.add(eff.id),
+        );
+      });
+      (mode.buffs || []).forEach((buff: any) => {
+        (buff.effects || []).forEach((eff: any) =>
+          validGameModeIds.add(eff.id),
+        );
+      });
+    });
 
-    if (!gameModeEffectId && currentGameModeEffect) {
-      handleTeamEffectToggle(currentGameModeEffect, false, 1, 0, "gameMode");
-    } else if (gameModeEffectId && currentGameModeEffect !== gameModeEffectId) {
-      if (currentGameModeEffect) {
-        handleTeamEffectToggle(currentGameModeEffect, false, 1, 0, "gameMode");
+    // ─────────────────────────────────────────────────────────────
+    // 2) Purga huérfanos: cualquier game_mode_* activo que ya no
+    //    exista en el JSON se desactiva (evita basura en localStorage)
+    // ─────────────────────────────────────────────────────────────
+    Object.keys(homeSession.teamEffects).forEach((effectId) => {
+      const state = homeSession.teamEffects[effectId];
+      if (
+        state?.enabled &&
+        state.ownerAgentId === "gameMode" &&
+        !validGameModeIds.has(effectId)
+      ) {
+        handleTeamEffectToggle(effectId, false, 1, 0, "gameMode");
       }
-      handleTeamEffectToggle(gameModeEffectId, true, 1, 0, "gameMode");
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 3) Asegurar que el efecto primario (seleccionado desde los
+    //    rooms) siga activo. NO tocamos los buffs aquí: viven en
+    //    paralelo y el panel los gestiona por su cuenta.
+    // ─────────────────────────────────────────────────────────────
+    if (gameModeEffectId && validGameModeIds.has(gameModeEffectId)) {
+      const state = homeSession.teamEffects[gameModeEffectId];
+      if (!state?.enabled) {
+        handleTeamEffectToggle(
+          gameModeEffectId,
+          true,
+          state?.stacks ?? 1,
+          0,
+          "gameMode",
+        );
+      }
     }
   }, [gameModeEffectId, homeSession.teamEffects]);
 

@@ -114,6 +114,7 @@ interface HomeSession {
   gameModeEffectId: string | null;
   gameModeCurrentModeId: string;
   gameModeCurrentRoomId: string;
+  gameModeCurrentBuffId: string;
   skillProfiles: Record<
     string,
     {
@@ -158,6 +159,7 @@ const defaultHomeSession: HomeSession = {
   gameModeEffectId: null,
   gameModeCurrentModeId: "deadly_assault",
   gameModeCurrentRoomId: "room_1",
+  gameModeCurrentBuffId: "",
   skillProfiles: {},
   showGameModePanel: false,
   dominantTheme: "#AFAFAF",

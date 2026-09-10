@@ -128,6 +128,7 @@
 
 .slot-agent_card-wrapper {
   padding-bottom: 0;
+  display: none;
 }
 
 .slot-agent_card-block img {
@@ -3595,11 +3596,9 @@ body.sidebar-open .carousel-dots-wrapper {
 
 /* #region ===== GAME MODE LAYOUT ===== */
 .game_mode-main_wrapper {
-  /*border-radius: 12px;*/
   overflow: hidden;
   height: 100%;
   background-color: color-mix(in srgb, var(--dominant-theme) 75%, transparent);
-  /*border: 1px solid #888;*/
   padding: var(--padding-8px);
 }
 
@@ -3625,12 +3624,19 @@ body.sidebar-open .carousel-dots-wrapper {
   margin-top: var(--padding-2_5px);
 }
 
+/* Grid base: modo + rooms */
 .game_mode-main_grid {
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: var(--padding-12px);
   align-items: stretch;
   min-height: var(--icon-250px);
+  margin-bottom: var(--padding-5px);
+}
+
+/* Grid cuando Deadly Assault tiene buffs: modo + rooms + buffs */
+.game_mode-main_grid.game_mode-main_grid--with-buffs {
+  grid-template-columns: 1fr 2fr 2fr;
 }
 
 .game_mode-main_grid-left_column {
@@ -3638,6 +3644,14 @@ body.sidebar-open .carousel-dots-wrapper {
   flex-direction: column;
   gap: var(--padding-10px);
   height: 100%;
+}
+
+.game_mode-main_grid-right_column,
+.game_mode-main_grid-buffs_column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-12px);
+  min-width: 0;
 }
 
 .game_mode-button_wrapper {
@@ -3711,7 +3725,6 @@ body.sidebar-open .carousel-dots-wrapper {
   cursor: pointer;
   filter: brightness(1.1);
 }
-
 .game_mode-button.active:hover {
   cursor: default;
   filter: none;
@@ -3724,7 +3737,6 @@ body.sidebar-open .carousel-dots-wrapper {
   flex-shrink: 0;
   margin-right: var(--padding-7_5px);
 }
-
 .game_mode-button.active .game_mode-button_icon {
   width: var(--switch-54px);
   height: var(--switch-54px);
@@ -3739,17 +3751,10 @@ body.sidebar-open .carousel-dots-wrapper {
   text-align: left;
   line-height: 1.35;
 }
-
 .game_mode-button_word {
   display: block;
   white-space: nowrap;
   font-size: inherit;
-}
-
-.game_mode-main_grid-right_column {
-  display: flex;
-  flex-direction: column;
-  gap: var(--padding-12px);
 }
 
 .game_mode-button_wrapper-rooms {
@@ -3765,7 +3770,6 @@ body.sidebar-open .carousel-dots-wrapper {
 .game_mode-rooms_row {
   display: flex;
   gap: var(--padding-10px);
-
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -3778,7 +3782,6 @@ body.sidebar-open .carousel-dots-wrapper {
   height: 100%;
   width: 100%;
   padding: var(--padding-7_5px);
-  display: flex;
 }
 
 .game_mode-room_button {
@@ -3806,9 +3809,7 @@ body.sidebar-open .carousel-dots-wrapper {
     var(--dominant-theme) 22,
     var(--dominant-theme) 11
   );
-  border: 2px solid;
-  border: 2px solid;
-  border-color: gray;
+  border: 2px solid gray;
   outline: none;
   box-shadow:
     inset 0 0 10px color-mix(in srgb, gray 30%, transparent),
@@ -3839,13 +3840,21 @@ body.sidebar-open .carousel-dots-wrapper {
   display: flex;
   flex-direction: column;
 }
-
 .game_mode-ingame_toggles_wrapper .ingame_toggle-main_container:last-child {
-  margin-bottom: 0 !important; /* si es necesario para anular el margin por defecto */
+  margin-bottom: 0 !important;
 }
 
+/* Responsive: apilar buffs debajo de rooms en pantallas pequeñas */
+@media (max-width: 1200px) {
+  .game_mode-main_grid.game_mode-main_grid--with-buffs {
+    grid-template-columns: 1fr 4fr;
+  }
+  .game_mode-main_grid.game_mode-main_grid--with-buffs
+    .game_mode-main_grid-buffs_column {
+    grid-column: 2 / 3;
+  }
+}
 /* #endregion ===== GAME MODE LAYOUT ===== */
-
 /* #region SKILL MODAL */
 
 .skill_modal-content_wrapper {

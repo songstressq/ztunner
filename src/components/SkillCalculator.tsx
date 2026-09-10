@@ -583,14 +583,33 @@ export default function SkillCalculator({
 
   Object.keys(allActiveEffects).forEach((effectId) => {
     if (seenIds.has(effectId)) return;
-    const effect = ingameEffectsRegistry[effectId];
+    const effect = ingameEffectsRegistry[effectId] as any;
     if (effect && allActiveEffects[effectId]?.enabled) {
+      // ── Filtro de especialidad (mismo criterio que en statScaling.ts) ──
+      const requiredSpecialty =
+        effect.condition?.requiresSpecialty ?? effect.requiresSpecialty;
+      if (requiredSpecialty) {
+        const isOwner = effect.ownerAgentId === agent.id;
+        const isGameModeEffect =
+          effect.source === "gameMode" || effect.ownerAgentId === "gameMode";
+
+        if (isGameModeEffect) {
+          if (
+            agent.specialty.toLowerCase().trim() !==
+            requiredSpecialty.toLowerCase().trim()
+          ) {
+            return; // este agente no cumple → no entra a allEffects
+          }
+        } else if (effect.target === "team" && !isOwner) {
+          // efecto de equipo de otro agente: aplica a todos (comportamiento original)
+        } else if (agent.specialty !== requiredSpecialty) {
+          return;
+        }
+      }
+
       const teamEffect = teamEffects?.[effectId];
       if (teamEffect) {
-        allEffects.push({
-          ...effect,
-          ownerAgentId: teamEffect.ownerAgentId,
-        });
+        allEffects.push({ ...effect, ownerAgentId: teamEffect.ownerAgentId });
       } else {
         allEffects.push(effect);
       }

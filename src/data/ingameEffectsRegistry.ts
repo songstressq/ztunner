@@ -50,32 +50,36 @@ function registerGameModeEffects() {
   const data = gameModesData as any;
   if (!data.modes) return;
 
+  const registerEffects = (effects: any[] | undefined) => {
+    if (!effects) return;
+    for (const effect of effects) {
+      ingameEffectsRegistry[effect.id] = {
+        ...effect,
+        source: "gameMode",
+        sourced: effect.id,
+        target: "team",
+        ownerAgentId: undefined,
+        ownerDisplayName: undefined,
+      };
+    }
+  };
+
   for (const mode of data.modes) {
+    // Rooms (efecto primario)
     if (mode.rooms) {
       for (const room of mode.rooms) {
-        if (!room.effects) continue;
-        for (const effect of room.effects) {
-          ingameEffectsRegistry[effect.id] = {
-            ...effect,
-            source: "gameMode",
-            sourceId: effect.id,
-            target: "team",
-            ownerAgentId: undefined,
-            ownerDisplayName: undefined,
-          };
-        }
+        registerEffects(room.effects);
       }
-    } else if (mode.effects) {
-      for (const effect of mode.effects) {
-        ingameEffectsRegistry[effect.id] = {
-          ...effect,
-          source: "gameMode",
-          sourceId: effect.id,
-          target: "team",
-          ownerAgentId: undefined,
-          ownerDisplayName: undefined,
-        };
+    }
+    // Buffs (sección extra de Deadly Assault)
+    if (mode.buffs) {
+      for (const buff of mode.buffs) {
+        registerEffects(buff.effects);
       }
+    }
+    // Fallback legacy (modo con effects directos sin rooms)
+    if (mode.effects) {
+      registerEffects(mode.effects);
     }
   }
 }
