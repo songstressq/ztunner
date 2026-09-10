@@ -6,26 +6,27 @@
       "rooms": [
         {
           "id": "room_1",
-          "label": "Room 1",
+          "label": "Room 1: Dead End Butcher",
           "effects": [
             {
               "id": "game_mode_da_room1_effect_a",
-              "label": "ATK & CRIT DMG",
-              "description": "Increases ATK by 15% and CRIT DMG by 25%",
-              "shortDescription": "ATK +15%, CRIT DMG +25%",
+              "label": "Dead End Butcher - CRIT DMG",
+              "description": "When not in a Stunned state, Boss enemies gain 1 stack of All or Nothing every 6s, stacking up to 3 stacks. Each stach of All or Nothing increases the DMG dealt by the Boss enemy by 10%. When an Agent's attack hits an enemy, for each stack of All or Nothing the target has, CRIT DMG from the Agent's attacks increases by 25% and Attribute Anomaly DMG decreases by 15%. When an enemy enters a Stunned state, they gain 1 stack of All or Nothing. All or Nothing stacks will be reset when the enemy recovers from being Stunned.",
+              "shortDescription": "The Agent's CRIT DMG is increased by 25%, stacking up to 3 times.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "atkPercentRaw": 0.15, "critDmg": 0.25 }
+              "flat": { "critDmg": 0.25 },
+              "maxStacks": 3
             },
             {
               "id": "game_mode_da_room1_effect_b",
-              "label": "Anomaly DMG (Stacks)",
-              "description": "Increases Anomaly DMG by 8% per stack, up to 4 stacks",
-              "shortDescription": "Anomaly DMG +8% per stack",
+              "label": "Dead End Butcher - Anomaly DMG",
+              "description": "When not in a Stunned state, Boss enemies gain 1 stack of All or Nothing every 6s, stacking up to 3 stacks. Each stach of All or Nothing increases the DMG dealt by the Boss enemy by 10%. When an Agent's attack hits an enemy, for each stack of All or Nothing the target has, CRIT DMG from the Agent's attacks increases by 25% and Attribute Anomaly DMG decreases by 15%. When an enemy enters a Stunned state, they gain 1 stack of All or Nothing. All or Nothing stacks will be reset when the enemy recovers from being Stunned.",
+              "shortDescription": "The Agent's DMG from Attribute Anomalies is decreased by 15%, stacking up to 3 times.",
               "source": "gameMode",
               "target": "team",
-              "maxStacks": 4,
-              "perStack": { "anomalyDmgBonus": 0.08 }
+              "perStack": { "anomalyDmgBonus": -0.15 },
+              "maxStacks": 3
             }
           ]
         },
