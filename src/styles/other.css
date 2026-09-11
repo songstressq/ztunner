@@ -341,7 +341,7 @@
 
 .home_content-patch_main_grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: var(--padding-10px);
 }
 
@@ -360,6 +360,11 @@
     border-color 0.2s ease;
 }
 
+.more_space {
+  grid-template-columns: 1fr 1fr 1fr 1fr !important;
+  grid-template-rows: auto 1fr !important;
+}
+
 .home_content-single_card h4 {
   grid-column: 1 / 3;
   grid-row: 1;
@@ -368,6 +373,11 @@
   text-transform: uppercase;
   text-align: center;
   margin: 0;
+}
+
+.space_more {
+  grid-column: 1 / 5 !important;
+  grid-row: 1;
 }
 
 .home_content-card_section {
@@ -395,38 +405,53 @@
 
 /* Remielle */
 .remielle_img {
-  border: 2px solid color-mix(in srgb, #fedbf3 70%, white);
+  border: 2px solid color-mix(in srgb, #d3557b 70%, white);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 0 12px color-mix(in srgb, #fedbf3 35%, transparent);
-  background: color-mix(in srgb, #fedbf3 20%, transparent);
+    0 0 12px color-mix(in srgb, #d3557b 35%, transparent);
+  background: color-mix(in srgb, #d3557b 20%, transparent);
 }
 .remielle_icons {
-  border: 1px solid color-mix(in srgb, #fedbf3 70%, white);
+  border: 1px solid color-mix(in srgb, #d3557b 70%, white);
 }
 .remielle_name {
-  color: #fedbf3;
+  color: #d3557b;
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.1),
-    0 0 6px color-mix(in srgb, #fedbf3 35%, transparent);
+    0 0 6px color-mix(in srgb, #d3557b 35%, transparent);
+}
+
+.normal_img {
+  border: 2px solid color-mix(in srgb, #b4b4b4 70%, white);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 12px color-mix(in srgb, #b4b4b4 35%, transparent);
+  background: color-mix(in srgb, #b4b4b4 20%, transparent);
+}
+
+.normal_name {
+  color: #b4b4b4;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 0 6px color-mix(in srgb, #b4b4b4 35%, transparent);
 }
 
 /* Sigrid */
 .sigrid_img {
-  border: 2px solid color-mix(in srgb, #b6dcf4 70%, white);
+  border: 2px solid color-mix(in srgb, #4bd9c8 70%, white);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 0 12px color-mix(in srgb, #b6dcf4 35%, transparent);
-  background: color-mix(in srgb, #b6dcf4 20%, transparent);
+    0 0 12px color-mix(in srgb, #4bd9c8 35%, transparent);
+  background: color-mix(in srgb, #4bd9c8 20%, transparent);
 }
 .sigrid_icons {
-  border: 1px solid color-mix(in srgb, #b6dcf4 70%, white);
+  border: 1px solid color-mix(in srgb, #4bd9c8 70%, white);
 }
 .sigrid_name {
-  color: #b6dcf4;
+  color: #4bd9c8;
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.1),
-    0 0 6px color-mix(in srgb, #b6dcf4 35%, transparent);
+    0 0 6px color-mix(in srgb, #4bd9c8 35%, transparent);
 }
 
 /* Thorned Rose */

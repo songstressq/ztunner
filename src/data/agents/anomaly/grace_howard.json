@@ -61,7 +61,7 @@
       "sourceId": "grace_howard-mindscape_1",
       "label": "Recharge Chamber (Mindscape Cinema N°1)",
       "description": "When the 4th hit of Grace's Basic Attack hits an enemy, all squad members gain 0.25 Energy. Within the same move, this effect can grant a max of 2 Energy to all squad members.",
-      "shortDescription": "This mindscape cinema does not affect Grace's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Grace's stats.",
       "infoOnly": true
     },
     {
@@ -80,7 +80,7 @@
       "sourceId": "grace_howard-mindscape_4",
       "label": "Burst Capacitor (Mindscape Cinema N°4)",
       "description": "When Grace uses her EX Special Attack, she gains 6 stacks of Charge (max 6 stacks). When her Basic Attack: High-Pressure Spike or Dash Attack: Quick Inspection hits an enemy, 1 stack of Charge is consumed, increasing her Energy Generation Rate of the attack by 20%.",
-      "shortDescription": "This mindscape cinema does not affect Grace's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Grace's stats.",
       "infoOnly": true
     },
     {

@@ -76,7 +76,7 @@
       "sourceId": "asaba_harumasa-mindscape_1",
       "label": "High Spirit (Mindscape Cinema N°1)",
       "description": "The maximum stack limit of Electro Prison from Basic Attack: Ha-Oto no Ya increases to 14 stacks. When an Electro Quiver is triggered, 2 consecutive Ha-Oto no Ya will be fired at the target.",
-      "shortDescription": "This mindscape cinema does not affect Harumasa's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Harumasa's stats.",
       "infoOnly": true
     },
     {
@@ -101,7 +101,7 @@
       "sourceId": "asaba_harumasa-mindscape_4",
       "label": "Occasionally Motivated (Mindscape Cinema N°4)",
       "description": "Electro Prison now lasts for 20s. When Dash Attack: Hiten no Tsuru - Slash hits enemies, Harumasa gains 30 Decibels once per use of this skill. Upon activating an Ultimate, apply the maximum stacks of Electro Prison to all on-field enemies.",
-      "shortDescription": "This mindscape cinema does not affect Harumasa's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Harumasa's stats.",
       "infoOnly": true
     },
     {

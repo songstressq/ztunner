@@ -45,7 +45,7 @@
       "sourceId": "anby_demara-mindscape_1",
       "label": "Rapid Charge Mode (Mindscape Cinema N°1)",
       "description": "When the 4th-hit of Anby's Basic Attack hits an enemy, her Energy Generation Rate is increased by 12% for 30s.",
-      "shortDescription": "This mindscape cinema does not affect Anby's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Anby's stats.",
       "infoOnly": true
     },
     {
@@ -70,7 +70,7 @@
       "sourceId": "anby_demara-mindscape_4",
       "label": "Conducting Charge (Mindscape Cinema N°4)",
       "description": "When Anby launches a Chain Attack or uses her Ultimate, off-field Electric characters recover 3 Energy. For every 12% of Anby's Energy Generation Rate, recover an additional 2 Energy, up to a maximum of 6 additional Energy.",
-      "shortDescription": "This mindscape cinema does not affect Anby's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Anby's stats.",
       "infoOnly": true
     },
     {

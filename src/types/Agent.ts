@@ -25,6 +25,8 @@ export interface CombatBaseStats {
   penRatio: number;
   pen: number;
   energyRegen: number;
+  lacerationDmg?: number; // ⭐ Armorer
+  sharpDmgBonus?: number; // ⭐ Armorer
 
   attributeDmgBonus: AttributeBonus;
 }
@@ -172,4 +174,7 @@ export interface UnifiedStats {
 
   _refringeCoefficient?: number;
   _luminizeMultiplierBonus?: number;
+
+  lacerationDmg: number; // ⭐ Armorer
+  sharpDmgBonus: number; // ⭐ Armorer
 }

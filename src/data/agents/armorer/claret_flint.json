@@ -1,0 +1,754 @@
+{
+  "id": "claret",
+  "name": "Claret Flint",
+  "specialty": "Armorer",
+  "faction": "Flint Workshop",
+  "attribute": "Electric",
+  "rarity": "S",
+
+  "fullName": "Claret Flint",
+  "displayName": "Claret",
+  "attributeIcon": "Electric",
+
+  "themeColor": "#d3557b",
+
+  "baseStats": {
+    "hp": 5651,
+    "atk": 626,
+    "def": 441
+  },
+
+  "combatBase": {
+    "impact": 93,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 79,
+    "anomalyMastery": 80,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 0,
+    "lacerationDmg": 1.5,
+
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "DEF", "PEN Ratio", "CRIT DMG"]
+  },
+
+  "coreEnhancement": [
+    { "level": 0, "stats": { "critRate": 0 } },
+    { "level": 1, "stats": { "critRate": 0.048 } },
+    { "level": 2, "stats": { "critRate": 0.048 } },
+    { "level": 3, "stats": { "critRate": 0.048 } },
+    { "level": 4, "stats": { "critRate": 0.048 } },
+    { "level": 5, "stats": { "critRate": 0.048 } },
+    { "level": 6, "stats": { "critRate": 0.048 } }
+  ],
+
+  "ingameEffects": [
+    {
+      "id": "claret_flint-core-banquet_of_pale_blood_1",
+      "source": "core",
+      "sourceId": "claret_flint-core",
+      "label": "Banquet of Pale Blood (Core Passive)",
+      "description": "... While Claret is in the Crimson Inscription state, or while using a Chain Attack, Ultimate, Counter Assist, or Assist Follow-Up, CRIT Rate increases by 30% and Gash Buildup Rate increases by 50%. Triggering a Perfect Dodge during Basic Attack: Bloodbloom Oath - Starforging or Basic Attack: Bloodbloom Oath - Subduing Axe increases DMG dealt for the remainder of the skill by 15%.",
+      "shortDescription": "Claret's CRIT Rate is increased by 30%.",
+      "target": "self",
+      "flat": { "critRate": 0.3 }
+    },
+    {
+      "id": "claret_flint-core-banquet_of_pale_blood_2",
+      "source": "core",
+      "sourceId": "claret_flint-core",
+      "label": "Banquet of Pale Blood (Core Passive)",
+      "description": "... While Claret is in the Crimson Inscription state, or while using a Chain Attack, Ultimate, Counter Assist, or Assist Follow-Up, CRIT Rate increases by 30% and Gash Buildup Rate increases by 50%. Triggering a Perfect Dodge during Basic Attack: Bloodbloom Oath - Starforging or Basic Attack: Bloodbloom Oath - Subduing Axe increases DMG dealt for the remainder of the skill by 15%.",
+      "shortDescription": "Claret's DMG from Basic Attack: Bloodbloom Oath - Starforging or Basic Attack: Bloodbloom Oath - Subduing Axe is increased by 15%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "claret_flint-basic_attack-bloodbloom_oath_starforging",
+            "claret_flint-basic_attack-bloodbloom_oath_subduing_axe"
+          ],
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "claret_flint-core-bloodline_legacy",
+      "source": "core",
+      "sourceId": "claret_flint-core",
+      "label": "Bloodline Legacy (Additional Ability)",
+      "description": "... When Claret or another squad member triggers Maim, all Armorer Agents in the squad enter Remnant Edge. While in the Remnant Edge state, Laceration DMG is increased by 25%, lasting 40s. Triggering Remnant Edge again refreshes its duration.",
+      "shortDescription": "Armorers' Laceration DMG is increased by 25% for 40s.",
+      "target": "team",
+      "flat": { "lacerationDmg": 0.25 },
+      "requiresSpecialty": "Armorer"
+    },
+    {
+      "id": "claret_flint-mindscape_1-bloodstained_chronicle",
+      "source": "mindscape",
+      "sourceId": "claret_flint-mindscape_1",
+      "label": "Bloodstained Chronicle (Mindscape Cinema N°1)",
+      "description": "When Claret's attacks hit enemies and trigger Laceration, Gash Buildup Rate increases by 20%. The DMG Multiplier of Maim triggered by Claret increases to 130% of its original value.",
+      "shortDescription": "This Mindscape Cinema will be available once Armorer's Maim DMG Calculator is finished.",
+      "infoOnly": true
+    },
+    {
+      "id": "claret_flint-mindscape_2-crown_of_inherited_flame",
+      "source": "mindscape",
+      "sourceId": "claret_flint-mindscape_2",
+      "label": "Crown of Inherited Flame (Mindscape Cinema N°2)",
+      "description": "The maximum duration of Crimson Inscription is extended by 2s. While Claret is in the Crimson Inscription state, or while using a Chain Attack, Ultimate, Counter Assist, or Assist Follow-Up, attacks ignore 18% of the target's Electric RES.",
+      "shortDescription": "Claret's DMG ignores 18% of the target's Electric RES.",
+      "target": "self",
+      "flat": { "electricResShred": 0.18 }
+    },
+    {
+      "id": "claret_flint-mindscape_4-crimson_moon_wanderer",
+      "source": "mindscape",
+      "sourceId": "claret_flint-mindscape_4",
+      "label": "Crimson Moon Wanderer (Mindscape Cinema N°4)",
+      "description": "During the 3rd hit of Basic Attack: Bloodbloom Oath - Starforging, the time by which the consecutive slashes can be extended is increased. DMG dealt by Basic Attack: Bloodbloom Oath - Starforging's 3rd hit, Chain Attack: Bloodbloom Oath - Resonant Blood Pact, and Ultimate: Bloodbloom Oath - Trial After Trial increases by 20%.",
+      "shortDescription": "Claret's DMG from Basic Attack: Bloodbloom Oath - Starforging's 3rd hit, Chain Attack: Bloodbloom Oath - Resonant Blood Pact, and Ultimate: Bloodbloom Oath - Trial After Trial is increased by 20%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "claret_flint-basic_attack-bloodbloom_oath_starforging",
+          "hitName": "3rd Hit Consecutive Slashes DMG Multiplier",
+          "value": 0.2
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "claret_flint-basic_attack-bloodbloom_oath_starforging",
+          "hitName": "3rd Hit Downward Strike DMG Multiplier",
+          "value": 0.2
+        },
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "claret_flint-chain_attack-bloodbloom_oath_resonant_blood_pact",
+            "claret_flint-ultimate-bloodbloom_oath_trial_after_trial"
+          ],
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "claret_flint-mindscape_6-warm_nights_dream",
+      "source": "mindscape",
+      "sourceId": "claret_flint-mindscape_6",
+      "label": "Warm Night's Dream (Mindscape Cinema N°6)",
+      "description": "When the heavy attacks of Chain Attack: Bloodbloom Oath - Resonant Blood Pact and Ultimate: Bloodbloom Oath - Trial After Trial hit an enemy, Claret directly triggers 1 instance of single-target Maim without consuming Gash.",
+      "shortDescription": "This Mindscape Cinema will be available once Armorer's Maim DMG Calculator is finished.",
+      "infoOnly": true
+    }
+  ],
+
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "claret_flint-basic_attack-bloodforging_four_forms",
+        "name": "Bloodforging Four Forms (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerforms up to four strikes forward, dealing Electric DMG.",
+        "skillType": "basic",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "4rd-Hit DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [54.4, 67.2, 95.2, 289.5] },
+          { "level": 2, "multipliers": [59.4, 73.4, 103.9, 315.9] },
+          { "level": 3, "multipliers": [64.4, 79.6, 112.6, 342.3] },
+          { "level": 4, "multipliers": [69.4, 85.8, 121.3, 368.7] },
+          { "level": 5, "multipliers": [74.4, 92.0, 130.0, 395.1] },
+          { "level": 6, "multipliers": [79.4, 98.2, 138.7, 421.5] },
+          { "level": 7, "multipliers": [84.4, 104.4, 147.4, 447.9] },
+          { "level": 8, "multipliers": [89.4, 110.6, 156.1, 474.3] },
+          { "level": 9, "multipliers": [94.4, 116.8, 164.8, 500.7] },
+          { "level": 10, "multipliers": [99.4, 123.0, 173.5, 527.1] },
+          { "level": 11, "multipliers": [104.4, 129.2, 182.2, 553.5] },
+          { "level": 12, "multipliers": [109.4, 135.4, 190.9, 579.9] },
+          { "level": 13, "multipliers": [114.4, 141.6, 199.6, 606.3] },
+          { "level": 14, "multipliers": [119.4, 147.8, 208.3, 632.7] },
+          { "level": 15, "multipliers": [124.4, 154.0, 217.0, 659.1] },
+          { "level": 16, "multipliers": [129.4, 160.2, 225.7, 685.5] }
+        ]
+      },
+
+      {
+        "id": "claret_flint-basic_attack-bloodbloom_oath_starforging",
+        "name": "Bloodbloom Oath - Starforging (Basic Attack)",
+        "description": "Press [BASIC] while in the /bCrimson Inscription//b state to activate:\n\nPerforms up to three slashes forward with the /bBlood Axe//b, dealing Electric DMG. When the second attack is launched, Claret leaps backward and throws the /bBlood Axe//b. A /bPerfect Dodge//b can be triggered during the retreat.\n\nWhen the third attack is launched, Claret performs a series of slashes before leaping up and performing a downward smash. During the repeated slashes, Anti-Interrupt Level is increased, and DMG taken is reduced by 40%. Repeatedly press or hold [BASIC] to extend the duration of the repeated slashes. Stop pressing or release [BASIC] to make Claret immediately leap up and perform a downward smash. A /bPerfect Dodge//b can be triggered while leaping.\n\nAfter successfully triggering a /bPerfect Dodge//b, press or hold [BASIC] to follow up with the 3rd hit of /bBasic Attack: Bloodbloom Oath - Starforging//b. /bCrimson Inscription//b will not end during this skill.",
+        "skillType": "basic",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd Hit Consecutive Slashes DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "3rd Hit Downward Strike DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [107.7, 287.4, 177.3, 177.3] },
+          { "level": 2, "multipliers": [117.5, 313.6, 193.5, 193.5] },
+          { "level": 3, "multipliers": [127.3, 339.8, 209.7, 209.7] },
+          { "level": 4, "multipliers": [137.1, 366.0, 225.9, 225.9] },
+          { "level": 5, "multipliers": [146.9, 392.2, 242.1, 242.1] },
+          { "level": 6, "multipliers": [156.7, 418.4, 258.3, 258.3] },
+          { "level": 7, "multipliers": [166.5, 444.6, 274.5, 274.5] },
+          { "level": 8, "multipliers": [176.3, 470.8, 290.7, 290.7] },
+          { "level": 9, "multipliers": [186.1, 497.0, 306.9, 306.9] },
+          { "level": 10, "multipliers": [195.9, 523.2, 323.1, 323.1] },
+          { "level": 11, "multipliers": [205.7, 549.4, 339.3, 339.3] },
+          { "level": 12, "multipliers": [215.5, 575.6, 355.5, 355.5] },
+          { "level": 13, "multipliers": [225.3, 601.8, 371.7, 371.7] },
+          { "level": 14, "multipliers": [235.1, 628.0, 387.9, 387.9] },
+          { "level": 15, "multipliers": [244.9, 654.2, 404.1, 404.1] },
+          { "level": 16, "multipliers": [254.7, 680.4, 420.3, 420.3] }
+        ]
+      },
+
+      {
+        "id": "claret_flint-basic_attack-bloodbloom_oath_subduing_axe",
+        "name": "Bloodbloom Oath - Subduing Axe (Basic Attack)",
+        "description": "While in the /bCrimson Inscription//b state, after launching /bSpecial Attack: Bloodbloom Oath - Cleaving Gold and Iron//b or /bSpecial Attack: Bloodbloom Oath - Blood Burial Assault//b to trigger /bMaim//b, press or hold [BASIC] to activate:\n\nSpins and leaps into the air with the /bBlood Axe//b, then slams down and slashes the target enemy, dealing Electric DMG. A /bPerfect Dodge//b can be triggered while leaping. After using the skill, press or hold [BASIC] to chain into the 3rd hit of /bBasic Attack: Bloodbloom Oath - Starforging//b. /bCrimson Inscription//b will not end during this skill.",
+        "skillType": "basic",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [328.0] },
+          { "level": 2, "multipliers": [357.9] },
+          { "level": 3, "multipliers": [387.8] },
+          { "level": 4, "multipliers": [417.7] },
+          { "level": 5, "multipliers": [447.6] },
+          { "level": 6, "multipliers": [477.5] },
+          { "level": 7, "multipliers": [507.4] },
+          { "level": 8, "multipliers": [537.3] },
+          { "level": 9, "multipliers": [567.2] },
+          { "level": 10, "multipliers": [597.1] },
+          { "level": 11, "multipliers": [627.0] },
+          { "level": 12, "multipliers": [656.9] },
+          { "level": 13, "multipliers": [686.8] },
+          { "level": 14, "multipliers": [716.7] },
+          { "level": 15, "multipliers": [746.6] },
+          { "level": 16, "multipliers": [776.5] }
+        ]
+      }
+    ],
+
+    "dashAttacks": [
+      {
+        "id": "claret_flint-dash_attack-tempering",
+        "name": "Tempering (Dash Attack)",
+        "description": "While not in the /bCrimson Inscription//b state, press [BASIC] during a /bDodge//b to activate:\n\nPerforms a forward hammer strike, dealing Electric DMG.",
+        "skillType": "dash",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [52.9] },
+          { "level": 2, "multipliers": [57.8] },
+          { "level": 3, "multipliers": [62.7] },
+          { "level": 4, "multipliers": [67.6] },
+          { "level": 5, "multipliers": [72.5] },
+          { "level": 6, "multipliers": [77.4] },
+          { "level": 7, "multipliers": [82.3] },
+          { "level": 8, "multipliers": [87.2] },
+          { "level": 9, "multipliers": [92.1] },
+          { "level": 10, "multipliers": [97.0] },
+          { "level": 11, "multipliers": [101.9] },
+          { "level": 12, "multipliers": [106.8] },
+          { "level": 13, "multipliers": [111.7] },
+          { "level": 14, "multipliers": [116.6] },
+          { "level": 15, "multipliers": [121.5] },
+          { "level": 16, "multipliers": [126.4] }
+        ]
+      }
+    ],
+
+    "dodgeCounters": [
+      {
+        "id": "claret_flint-dodge_counter-returning_edge",
+        "name": "Returning Edge (Dodge Counter)",
+        "description": "Press [BASIC] during a /bPerfect Dodge//b to activate:\n\nUses the hammer handle to deliver a powerful forward counterattack, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [272.5] },
+          { "level": 2, "multipliers": [297.3] },
+          { "level": 3, "multipliers": [322.1] },
+          { "level": 4, "multipliers": [346.9] },
+          { "level": 5, "multipliers": [371.7] },
+          { "level": 6, "multipliers": [396.5] },
+          { "level": 7, "multipliers": [421.3] },
+          { "level": 8, "multipliers": [446.1] },
+          { "level": 9, "multipliers": [470.9] },
+          { "level": 10, "multipliers": [495.7] },
+          { "level": 11, "multipliers": [520.5] },
+          { "level": 12, "multipliers": [545.3] },
+          { "level": 13, "multipliers": [570.1] },
+          { "level": 14, "multipliers": [594.9] },
+          { "level": 15, "multipliers": [619.7] },
+          { "level": 16, "multipliers": [644.5] }
+        ]
+      },
+
+      {
+        "id": "claret_flint-dodge_counter-bloodbloom_oath_returning_edge",
+        "name": "Bloodbloom Oath - Returning Edge (Dodge Counter)",
+        "description": "Press [BASIC] during a /bPerfect Dodge//b to activate:\n\nDelivers a powerful forward counterattack with the /bBlood Axe//b, dealing Electric DMG. /bCrimson Inscription//b will not end during this skill. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [330.0] },
+          { "level": 2, "multipliers": [360.0] },
+          { "level": 3, "multipliers": [390.0] },
+          { "level": 4, "multipliers": [420.0] },
+          { "level": 5, "multipliers": [450.0] },
+          { "level": 6, "multipliers": [480.0] },
+          { "level": 7, "multipliers": [510.0] },
+          { "level": 8, "multipliers": [540.0] },
+          { "level": 9, "multipliers": [570.0] },
+          { "level": 10, "multipliers": [600.0] },
+          { "level": 11, "multipliers": [630.0] },
+          { "level": 12, "multipliers": [660.0] },
+          { "level": 13, "multipliers": [690.0] },
+          { "level": 14, "multipliers": [720.0] },
+          { "level": 15, "multipliers": [750.0] },
+          { "level": 16, "multipliers": [780.0] }
+        ]
+      }
+    ],
+
+    "quickAssists": [
+      {
+        "id": "claret_flint-quick_assist-return_of_the_dire_moon",
+        "name": "Return of the Dire Moon (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nDeals Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [52.9] },
+          { "level": 2, "multipliers": [57.8] },
+          { "level": 3, "multipliers": [62.7] },
+          { "level": 4, "multipliers": [67.6] },
+          { "level": 5, "multipliers": [72.5] },
+          { "level": 6, "multipliers": [77.4] },
+          { "level": 7, "multipliers": [82.3] },
+          { "level": 8, "multipliers": [87.2] },
+          { "level": 9, "multipliers": [92.1] },
+          { "level": 10, "multipliers": [97.0] },
+          { "level": 11, "multipliers": [101.9] },
+          { "level": 12, "multipliers": [106.8] },
+          { "level": 13, "multipliers": [111.7] },
+          { "level": 14, "multipliers": [116.6] },
+          { "level": 15, "multipliers": [121.5] },
+          { "level": 16, "multipliers": [126.4] }
+        ]
+      },
+
+      {
+        "id": "claret_flint-quick_assist-bloodbloom_oath_return_of_the_dire_moon",
+        "name": "Bloodbloom Oath - Return of the Dire Moon (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nDeals Electric DMG. /bCrimson Inscription//b will not end during this skill. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [115.8] },
+          { "level": 2, "multipliers": [126.4] },
+          { "level": 3, "multipliers": [137.0] },
+          { "level": 4, "multipliers": [147.6] },
+          { "level": 5, "multipliers": [158.2] },
+          { "level": 6, "multipliers": [168.8] },
+          { "level": 7, "multipliers": [179.4] },
+          { "level": 8, "multipliers": [190.0] },
+          { "level": 9, "multipliers": [200.6] },
+          { "level": 10, "multipliers": [211.2] },
+          { "level": 11, "multipliers": [221.8] },
+          { "level": 12, "multipliers": [232.4] },
+          { "level": 13, "multipliers": [243.0] },
+          { "level": 14, "multipliers": [253.6] },
+          { "level": 15, "multipliers": [264.2] },
+          { "level": 16, "multipliers": [274.8] }
+        ]
+      }
+    ],
+
+    "perfectAssists": null,
+
+    "assistFollowup": [
+      {
+        "id": "claret_flint-assist_follow_up-bloodbloom_oath_pureforged_edge",
+        "name": "Bloodbloom Oath - Pureforged Edge (Assist Follow-Up)",
+        "description": "Press [BASIC] after a /bDefensive Assist//b to activate:\n\nDeals massive Electric DMG. /bCrimson Inscription//b will not end during this skill. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [446.2] },
+          { "level": 2, "multipliers": [486.8] },
+          { "level": 3, "multipliers": [527.4] },
+          { "level": 4, "multipliers": [568.0] },
+          { "level": 5, "multipliers": [608.6] },
+          { "level": 6, "multipliers": [649.2] },
+          { "level": 7, "multipliers": [689.8] },
+          { "level": 8, "multipliers": [730.4] },
+          { "level": 9, "multipliers": [771.0] },
+          { "level": 10, "multipliers": [811.6] },
+          { "level": 11, "multipliers": [852.2] },
+          { "level": 12, "multipliers": [892.8] },
+          { "level": 13, "multipliers": [933.4] },
+          { "level": 14, "multipliers": [974.0] },
+          { "level": 15, "multipliers": [1014.6] },
+          { "level": 16, "multipliers": [1055.2] }
+        ]
+      },
+
+      {
+        "id": "claret_flint-counter_assist-give_not_an_inch_of_steel",
+        "name": "Give Not an Inch of Steel (Counter Assist)",
+        "description": "When Claret or the on-field character is about to be hit by certain enemies' /bControl Skills//b, press [ASSIST] to activate:\n\nEngages the enemy in a power struggle. Win the struggle to neutralize the enemy's /bControl Skill//b and deal Electric DMG. /bCrimson Inscription//b's duration does not decrease during this skill. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [1153.0] },
+          { "level": 2, "multipliers": [1257.9] },
+          { "level": 3, "multipliers": [1362.8] },
+          { "level": 4, "multipliers": [1467.7] },
+          { "level": 5, "multipliers": [1572.6] },
+          { "level": 6, "multipliers": [1677.5] },
+          { "level": 7, "multipliers": [1782.4] },
+          { "level": 8, "multipliers": [1887.3] },
+          { "level": 9, "multipliers": [1992.2] },
+          { "level": 10, "multipliers": [2097.1] },
+          { "level": 11, "multipliers": [2202.0] },
+          { "level": 12, "multipliers": [2306.9] },
+          { "level": 13, "multipliers": [2411.8] },
+          { "level": 14, "multipliers": [2516.7] },
+          { "level": 15, "multipliers": [2621.6] },
+          { "level": 16, "multipliers": [2726.5] }
+        ]
+      },
+
+      {
+        "id": "claret_flint-assist_follow_up-bloodbloom_oath_hammer_into_shape",
+        "name": "Bloodbloom Oath - Hammer Into Shape (Assist Follow-Up)",
+        "description": "After using a /bCounter Assist//b, press [BASIC] to activate:\n\nDeals massive Electric DMG. When the heavy attack hits an enemy, it adds one stack of /bGash//b to the target. /bCrimson Inscription//b's duration does not decrease during this skill. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [856.3] },
+          { "level": 2, "multipliers": [934.2] },
+          { "level": 3, "multipliers": [1012.1] },
+          { "level": 4, "multipliers": [1090.0] },
+          { "level": 5, "multipliers": [1167.9] },
+          { "level": 6, "multipliers": [1245.8] },
+          { "level": 7, "multipliers": [1323.7] },
+          { "level": 8, "multipliers": [1401.6] },
+          { "level": 9, "multipliers": [1479.5] },
+          { "level": 10, "multipliers": [1557.4] },
+          { "level": 11, "multipliers": [1635.3] },
+          { "level": 12, "multipliers": [1713.2] },
+          { "level": 13, "multipliers": [1791.1] },
+          { "level": 14, "multipliers": [1869.0] },
+          { "level": 15, "multipliers": [1946.9] },
+          { "level": 16, "multipliers": [2024.8] }
+        ]
+      }
+    ],
+
+    "specialAttacks": [
+      {
+        "id": "claret_flint-special-porcelumes_first_call",
+        "name": "Porcelume's First Call (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nLaunches two bludgeoning attacks forward, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [90.1] },
+          { "level": 2, "multipliers": [98.3] },
+          { "level": 3, "multipliers": [106.5] },
+          { "level": 4, "multipliers": [114.7] },
+          { "level": 5, "multipliers": [122.9] },
+          { "level": 6, "multipliers": [131.1] },
+          { "level": 7, "multipliers": [139.3] },
+          { "level": 8, "multipliers": [147.5] },
+          { "level": 9, "multipliers": [155.7] },
+          { "level": 10, "multipliers": [163.9] },
+          { "level": 11, "multipliers": [172.1] },
+          { "level": 12, "multipliers": [180.3] },
+          { "level": 13, "multipliers": [188.5] },
+          { "level": 14, "multipliers": [196.7] },
+          { "level": 15, "multipliers": [204.9] },
+          { "level": 16, "multipliers": [213.1] }
+        ]
+      },
+
+      {
+        "id": "claret_flint-special-bloodbloom_oath_cleaving_gold_and_iron",
+        "name": "Bloodbloom Oath - Cleaving Gold and Iron (Special Attack)",
+        "description": "While in the /bCrimson Inscription//b state, press [SPECIAL] or [EX] to activate:\n\nPerforms a powerful upward slash forward, then follows up with a horizontal slash, dealing Electric DMG. If the horizontal slash hits an enemy inflicted with /bGash//b, triggers /bMaim//b on the target, dealing additional AoE Electric DMG. /bCrimson Inscription//b will not end during this skill. Anti-Interrupt Level is increased during this skill. After successfully inflicting /bMaim//b, the character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "Upward Attack DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Horizontal Slash DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [76.6, 87.7] },
+          { "level": 2, "multipliers": [83.6, 95.7] },
+          { "level": 3, "multipliers": [90.6, 103.7] },
+          { "level": 4, "multipliers": [97.6, 111.7] },
+          { "level": 5, "multipliers": [104.6, 119.7] },
+          { "level": 6, "multipliers": [111.6, 127.7] },
+          { "level": 7, "multipliers": [118.6, 135.7] },
+          { "level": 8, "multipliers": [125.6, 143.7] },
+          { "level": 9, "multipliers": [132.6, 151.7] },
+          { "level": 10, "multipliers": [139.6, 159.7] },
+          { "level": 11, "multipliers": [146.6, 167.7] },
+          { "level": 12, "multipliers": [153.6, 175.7] },
+          { "level": 13, "multipliers": [160.6, 183.7] },
+          { "level": 14, "multipliers": [167.6, 191.7] },
+          { "level": 15, "multipliers": [174.6, 199.7] },
+          { "level": 16, "multipliers": [181.6, 207.7] }
+        ]
+      },
+
+      {
+        "id": "claret_flint-special-bloodbloom_oath_blood_burial_assault",
+        "name": "Bloodbloom Oath - Blood Burial Assault (Special Attack)",
+        "description": "While in the /bCrimson Inscription//b state and during the upward slash of /bSpecial Attack: Bloodbloom Oath - Cleaving Gold and Iron//b, keep holding [SPECIAL] or [EX] to activate:\n\nPPerforms three consecutive horizontal slashes forward, dealing massive Electric DMG. Each horizontal slash that hits an enemy inflicted with /bGash//b triggers /bMaim//b on the target, dealing additional AoE Electric DMG.\n\nUp to 3 consecutive instances of /bMaim//b can be triggered during this skill, with the third having a higher Interrupt Level. /bCrimson Inscription//b will not end during this skill. Anti-Interrupt Level is increased while using this skill. After successfully inflicting /bMaim//b, the character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [312.8] },
+          { "level": 2, "multipliers": [341.3] },
+          { "level": 3, "multipliers": [369.8] },
+          { "level": 4, "multipliers": [398.3] },
+          { "level": 5, "multipliers": [426.8] },
+          { "level": 6, "multipliers": [455.3] },
+          { "level": 7, "multipliers": [483.8] },
+          { "level": 8, "multipliers": [512.3] },
+          { "level": 9, "multipliers": [540.8] },
+          { "level": 10, "multipliers": [569.3] },
+          { "level": 11, "multipliers": [597.8] },
+          { "level": 12, "multipliers": [626.3] },
+          { "level": 13, "multipliers": [654.8] },
+          { "level": 14, "multipliers": [683.3] },
+          { "level": 15, "multipliers": [711.8] },
+          { "level": 16, "multipliers": [740.3] }
+        ]
+      }
+    ],
+
+    "exSkills": [
+      {
+        "id": "claret_flint-ex_special_attack-bloodbloom_oath_secret_forging_techniques",
+        "name": "Bloodbloom Oath - Secret Forging Techniques (EX Special Attack)",
+        "description": "With enough /bSharpness//b, and while Claret is not in the /bCrimson Inscription//b state, press [EX] to activate:\n\nPTransforms the forging hammer into the /bBlood Axe//b to slash the target enemy, dealing Electric DMG. After using this skill, Claret enters the /bCrimson Inscription//b state for 16s. While off-field, its duration no longer decreases.\n\nWhen Claret's attacks hit an enemy, if the enemy is defeated within 0.5s and /bCrimson Inscription//b's remaining duration is not 0, the duration of /bCrimson Inscription//b is extended by 3s. This effect can trigger once every 3s.\n\nDuring this skill, keep holding [EX] to skip the slash and quickly chain into the alternate /bSpecial Attack: Bloodbloom Oath - Cleaving Gold and Iron//b and /bSpecial Attack: Bloodbloom Oath - Blood Burial Assault//b. After using this skill, press or hold [BASIC] to chain into the 3rd hit of /bBasic Attack: Bloodbloom Oath - Starforging//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [624.8] },
+          { "level": 2, "multipliers": [681.6] },
+          { "level": 3, "multipliers": [738.4] },
+          { "level": 4, "multipliers": [795.2] },
+          { "level": 5, "multipliers": [852.0] },
+          { "level": 6, "multipliers": [908.8] },
+          { "level": 7, "multipliers": [965.6] },
+          { "level": 8, "multipliers": [1022.4] },
+          { "level": 9, "multipliers": [1079.2] },
+          { "level": 10, "multipliers": [1136.0] },
+          { "level": 11, "multipliers": [1192.8] },
+          { "level": 12, "multipliers": [1249.6] },
+          { "level": 13, "multipliers": [1306.4] },
+          { "level": 14, "multipliers": [1363.2] },
+          { "level": 15, "multipliers": [1420.0] },
+          { "level": 16, "multipliers": [1476.8] }
+        ]
+      }
+    ],
+
+    "chainAttacks": [
+      {
+        "id": "claret_flint-chain_attack-bloodbloom_oath_resonant_blood_pact",
+        "name": "Bloodbloom Oath - Resonant Blood Pact (Chain Attack)",
+        "description": "When a /bChain Attack//b is triggered, select the character to activate:\n\nLaunches a series of slashes against enemies ahead, dealing massive Electric DMG. /bCrimson Inscription//b's duration does not decrease, and the state does not end during this skill. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [1058.0] },
+          { "level": 2, "multipliers": [1154.2] },
+          { "level": 3, "multipliers": [1250.4] },
+          { "level": 4, "multipliers": [1346.6] },
+          { "level": 5, "multipliers": [1442.8] },
+          { "level": 6, "multipliers": [1539.0] },
+          { "level": 7, "multipliers": [1635.2] },
+          { "level": 8, "multipliers": [1731.4] },
+          { "level": 9, "multipliers": [1827.6] },
+          { "level": 10, "multipliers": [1923.8] },
+          { "level": 11, "multipliers": [2020.0] },
+          { "level": 12, "multipliers": [2116.2] },
+          { "level": 13, "multipliers": [2212.4] },
+          { "level": 14, "multipliers": [2308.6] },
+          { "level": 15, "multipliers": [2404.8] },
+          { "level": 16, "multipliers": [2501.0] }
+        ]
+      }
+    ],
+
+    "ultimate": [
+      {
+        "id": "claret_flint-ultimate-bloodbloom_oath_trial_after_trial",
+        "name": "Bloodbloom Oath - Trial After Trial (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nLaunches a series of slashes against enemies ahead, dealing massive Electric DMG. /bCrimson Inscription//b's duration does not decrease, and the state does not end during this skill. Upon activating this skill, gain 10 /bSharpness//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "def",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [2252.0] },
+          { "level": 2, "multipliers": [2456.8] },
+          { "level": 3, "multipliers": [2661.6] },
+          { "level": 4, "multipliers": [2866.4] },
+          { "level": 5, "multipliers": [3071.2] },
+          { "level": 6, "multipliers": [3276.0] },
+          { "level": 7, "multipliers": [3480.8] },
+          { "level": 8, "multipliers": [3685.6] },
+          { "level": 9, "multipliers": [3890.4] },
+          { "level": 10, "multipliers": [4095.2] },
+          { "level": 11, "multipliers": [4300.0] },
+          { "level": 12, "multipliers": [4504.8] },
+          { "level": 13, "multipliers": [4709.6] },
+          { "level": 14, "multipliers": [4914.4] },
+          { "level": 15, "multipliers": [5119.2] },
+          { "level": 16, "multipliers": [5324.0] }
+        ]
+      }
+    ],
+
+    "mindscapeAbilities": []
+  }
+}

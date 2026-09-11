@@ -55,7 +55,7 @@
       "sourceId": "ben_bigger-mindscape_1",
       "label": "Reacting Force (Mindscape Cinema N°1)",
       "description": "When successfully Blocking an enemy with Ben's Special Attack or EX Special Attack, the DMG dealt by the blocked enemy is reduced by 30% for 15s.",
-      "shortDescription": "This mindscape cinema does not affect Ben's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Ben's stats.",
       "infoOnly": true
     },
     {
@@ -99,7 +99,7 @@
       "sourceId": "ben_bigger-mindscape_6",
       "label": "Wild Spirit (Mindscape Cinema N°6)",
       "description": "After launching an attack or follow-up attack during Ben's EX Special Attack, Daze inflicted by Basic Attacks, Dash Attack, and Dodge Counter is increased by 20%, lasting 12s.",
-      "shortDescription": "This mindscape cinema does not affect Ben's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Ben's stats.",
       "infoOnly": true
     }
   ],

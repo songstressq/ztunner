@@ -73,7 +73,7 @@
       "sourceId": "soukaku-mindscape_1",
       "label": "Uplifting Current (Mindscape Cinema N°1)",
       "description": "When Soukaku triggers Core Passive: Blade Banner or Additional Ability: Group Set Meal, the buff duration is increased by 8s.",
-      "shortDescription": "This mindscape cinema does not affect Soukaku's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Soukaku's stats.",
       "infoOnly": true
     },
     {
@@ -82,7 +82,7 @@
       "sourceId": "soukaku-mindscape_2",
       "label": "Experimental Charging Module (Mindscape Cinema N°2)",
       "description": "When Soukaku's Basic Attack, Dash Attack, Dodge Counter, or Quick Assist hits an enemy, there's a 15% chance she gains 1 stack of Vortex, triggering up to once per second. When Vortex reaches max stacks, any additional stacks grant Soukaku 1.2 Energy instead.",
-      "shortDescription": "This mindscape cinema does not affect Soukaku's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Soukaku's stats.",
       "infoOnly": true
     },
     {

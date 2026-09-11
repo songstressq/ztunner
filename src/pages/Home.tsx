@@ -13,6 +13,15 @@ const Home = () => {
   const [imageError, setImageError] = useState(false);
 
   const dominantAgent = useMemo(() => {
+    // ⭐ Si hay un Armorer con el theme actual, priorizarlo
+    const armorerMatch = agents.find(
+      (a) =>
+        a.themeColor === dominantTheme &&
+        a.specialty?.toLowerCase() === "armorer",
+    );
+    if (armorerMatch) return armorerMatch;
+
+    // Comportamiento original
     return agents.find((a) => a.themeColor === dominantTheme) || null;
   }, [dominantTheme]);
 
@@ -146,10 +155,10 @@ const Home = () => {
               work on them soon! 😫
             </div>
             <div className="important_notice-msg">
-              🚨 After compromising my bank account, Claret is finally home. The
-              full Laceration DMG formula is also ready, so I'll be adding it
-              over the next few days. The Maim DMG Calculator may take a little
-              while, though. 😝
+              🚨 Claret's Sharp DMG should be working now, but I don't have her
+              W-Engine, so Electric Sharp DMG may not work as intended. I'll
+              check that later, or maybe not, I have 640 Polychromes. I'll be
+              working on the Maim DMG Calculator over the next few days. 😝
             </div>
           </div>
         </div>
@@ -162,10 +171,23 @@ const Home = () => {
                 style={{ backgroundColor: dominantTheme }}
               />
               <div className="home_content_changelog_item">
+                <span>v1.1.0 — Armorer Update</span>
+
+                <h4>● Added - Armorer Specialty</h4>
+                <p>
+                  Added damage calculations for Laceration DMG and Sharp DMG,
+                  including its additional mechanics, to the Z-Tunner's ZZZ DMG
+                  Calculator.
+                </p>
+                <h4>● Added - Claret Flint</h4>
+                <p>
+                  Claret Flint has been added to Z-Tunner, with support for her
+                  unique abilities, mechanics, and damage calculations.
+                </p>
+              </div>
+              <div className="home_content_changelog_item">
                 <span>v1.0.1 — Minor Fixes &amp; Updates</span>
-
                 <h4>● Minor UI fixes and agent-related updates.</h4>
-
                 <p>
                   Fixed Alice's Sage at the Sword's Tip (Mindscape Cinema N°2)
                   in-game effect.
@@ -180,20 +202,6 @@ const Home = () => {
                   <br />
                   Fixed Jane's Crime Counsel (Mindscape Cinema N°1) in-game
                   effect.
-                </p>
-              </div>
-              <div className="home_content_changelog_item">
-                <span>v1.0.1 — Initial Release</span>
-
-                <h4>● Added ZZZ Damage Calculator </h4>
-                <p>
-                  Added damage calculations for Normal and CRIT DMG, Sheer DMG,
-                  Aftershock DMG, Anomaly DMG, Disorder DMG, and Vortex DMG.
-                </p>
-                <h4>● Added ZZZ Build Creator &amp; Build Manager</h4>
-                <p>
-                  Introduces sections for replicating your agents' in-game
-                  builds for later use in damage calculations.
                 </p>
               </div>
             </div>
@@ -231,14 +239,15 @@ const Home = () => {
               />
               <div className="home_content-features_grid">
                 <div className="home_content-features_card">
-                  <h3>🅾 Laceration DMG & Maim DMG Calculator</h3>
+                  <h3>🅾 Laceration DMG & ZZZ Maim DMG Calculator</h3>
                   <p>
                     Implement Armorer's exclusive mechanics in the Damage
-                    Calculator, including support for Laceration and Sharp DMG.
+                    Calculator, including support for Laceration, Sharp DMG and
+                    Maim DMG.
                   </p>
                   <div className="home_content-progress_bar">
-                    {renderProgressBar(40)}
-                    <span>40%</span>
+                    {renderProgressBar(50)}
+                    <span>50%</span>
                   </div>{" "}
                 </div>{" "}
                 <div className="home_content-features_card">
@@ -285,7 +294,7 @@ const Home = () => {
             <div>
               <h2 className="home_content-title_h2">
                 <span className="title_dot">⏺</span> Zenless Zone Zero: Version
-                3.1 — The Long Goodbye
+                3.2 — Their Secret Histories
               </h2>
 
               <div
@@ -301,73 +310,96 @@ const Home = () => {
                     <div className="home_content-agent_image">
                       <div className="home_content-agent_icons">
                         <img
-                          src="/resources/images/icons/attributes/Lumiflux.png"
-                          alt="Lumiflux"
+                          src="/resources/images/icons/attributes/Electric.png"
+                          alt="Electric"
                           className="remielle_icons"
                         />
                         <img
-                          src="/resources/images/icons/specialties/Anomaly.png"
+                          src="/resources/images/icons/specialties/Armorer.png"
                           alt="Anomaly"
                           className="remielle_icons"
                         />
                       </div>
                       <img
-                        src="/resources/images/agents/other/remielle.png"
-                        alt="Remielle Dan"
+                        src="/resources/images/agents/other/claret.png"
+                        alt="Claret Flint"
                         className="remielle_img"
                       />
                     </div>
-                    <p className="remielle_name">Remielle Dan</p>
+                    <p className="remielle_name">Claret Flint</p>
                   </div>
                   <div className="home_content-card_section order_3">
                     <div className="home_content-agent_image">
                       <div className="home_content-agent_icons">
                         <img
-                          src="/resources/images/icons/attributes/Ice.png"
+                          src="/resources/images/icons/attributes/Wind.png"
                           alt="Ice"
                           className="sigrid_icons"
                         />
                         <img
-                          src="/resources/images/icons/specialties/Attack.png"
+                          src="/resources/images/icons/specialties/Stun.png"
                           alt="Attack"
                           className="sigrid_icons"
                         />
                       </div>
                       <img
-                        src="/resources/images/agents/other/sigrid.png"
-                        alt="Sigrid de L'Azur"
+                        src="/resources/images/agents/other/roxy.png"
+                        alt="Roxy Ifrita Pryce"
                         className="sigrid_img"
                       />
                     </div>
-                    <p className="sigrid_name">Sigrid de L'Azur</p>
+                    <p className="sigrid_name">Roxy Ifrita Pryce</p>
                   </div>
                 </div>
                 {/* New W-Engines */}
-                <div className="home_content-single_card">
-                  <h4>New W-Engines</h4>
+                <div className="home_content-single_card more_space">
+                  <h4 className="space_more">New W-Engines</h4>
                   <div className="home_content-card_section order_2">
                     <div className="home_content-agent_image">
                       <img
-                        src="/resources/images/wengines/knights_extolment.png"
-                        alt="Knight's Extolment"
-                        className="sigrid_img no_agent_icon"
+                        src="/resources/images/wengines/crimson_thirst.png"
+                        alt="Crimson Thirst"
+                        className="remielle_img no_agent_icon"
                       />
                     </div>
-                    <p className="sigrid_name">Knight's Extolment</p>
+                    <p className="remielle_name">Crimson Thirst</p>
+                  </div>
+                  <div className="home_content-card_section order_2">
+                    <div className="home_content-agent_image">
+                      <img
+                        src="/resources/images/wengines/catty_luck.png"
+                        alt="Ode of Resurrected Wings"
+                        className="normal_img no_agent_icon"
+                      />
+                    </div>
+                    <p className="normal_name">Catty Luck</p>
                   </div>
                   <div className="home_content-card_section order_3">
                     <div className="home_content-agent_image">
                       <img
-                        src="/resources/images/wengines/ode_of_resurrected_wings.png"
-                        alt="Ode of Resurrected Wings"
-                        className="remielle_img no_agent_icon"
+                        src="/resources/images/wengines/bloodmarrow_coffer.png"
+                        alt="Bloodmarrow Coffer"
+                        className="normal_img no_agent_icon"
                       />
                     </div>
-                    <p className="remielle_name">Ode of Resurrected Wings</p>
+                    <p className="normal_name">Bloodmarrow Coffer</p>
+                  </div>
+                  <div className="home_content-card_section order_3">
+                    <div className="home_content-agent_image">
+                      <img
+                        src="/resources/images/wengines/crimson_moon_casket.png"
+                        alt="Crimson Moon Casket"
+                        className="sigrid_img no_agent_icon"
+                      />
+                    </div>
+                    <p className="sigrid_name">Crimson Moon Casket</p>
                   </div>
                 </div>
                 {/* New Disc Sets */}
-                <div className="home_content-single_card">
+                <div
+                  className="home_content-single_card"
+                  style={{ display: "none" }}
+                >
                   <h4>New Disc Sets</h4>
                   <div className="home_content-card_section order_2">
                     <div className="home_content-agent_image">
@@ -410,7 +442,7 @@ const Home = () => {
               <div className="social-footer-content">
                 <div className="social-footer-left">
                   <span className="social-copyright">© 2026 Z-TUNNER</span>
-                  <span className="social-version">v1.0.1</span>
+                  <span className="social-version">v1.1.0</span>
                 </div>
 
                 <div className="social-links">

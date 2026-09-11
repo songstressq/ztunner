@@ -57,7 +57,7 @@
       "sourceId": "seth_lowell-mindscape_1",
       "label": "Heroism (Mindscape Cinema N°1)",
       "description": "The shield value provided by Shield of Firm Resolve and its maximum limit is increased by 30%. When Shield of Firm Resolve ends, the Anomaly Proficiency increase provided by Core Passive: Protector lasts an additional 10s.",
-      "shortDescription": "This mindscape cinema does not affect Seth's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Seth's stats.",
       "infoOnly": true
     },
     {
@@ -66,7 +66,7 @@
       "sourceId": "seth_lowell-mindscape_2",
       "label": "Recklessness of Youth (Mindscape Cinema N°2)",
       "description": "Upon entering battle, Seth immediately gains 75% Resolve. Hitting an enemy with Basic Attack: Lightning Strike - Electrified increases the move's accumulated Electric Anomaly Buildup by 35%.",
-      "shortDescription": "This mindscape cinema does not affect Seth's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Seth's stats.",
       "infoOnly": true
     },
     {
@@ -75,7 +75,7 @@
       "sourceId": "seth_lowell-mindscape_4",
       "label": "Core Aspiration (Mindscape Cinema N°4)",
       "description": "The Daze caused by Defensive Assist: Thundershield is increased by 25%.",
-      "shortDescription": "This mindscape cinema does not affect Seth's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Seth's stats.",
       "infoOnly": true
     },
     {

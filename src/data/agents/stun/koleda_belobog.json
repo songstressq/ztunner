@@ -58,7 +58,7 @@
       "sourceId": "koleda_belobog-mindscape_1",
       "label": "Beat of the Hammer (Mindscape Cinema N°1)",
       "description": "After the 2nd or 4th hit of Koleda's Basic Attack or her enhanced Basic Attack, quickly use a Special Attack or EX Special Attack to increase the Daze dealt by 15%.",
-      "shortDescription": "This mindscape cinema does not affect Koleda's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Koleda's stats.",
       "infoOnly": true
     },
     {
@@ -67,7 +67,7 @@
       "sourceId": "koleda_belobog-mindscape_2",
       "label": "Kinetic Recovery (Mindscape Cinema N°2)",
       "description": "When Koleda's EX Special Attack hits an enemy, she recovers 60 Energy. Can trigger once every 45s.",
-      "shortDescription": "This mindscape cinema does not affect Koleda's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Koleda's stats.",
       "infoOnly": true
     },
     {

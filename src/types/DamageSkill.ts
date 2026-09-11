@@ -5,7 +5,8 @@ export type DamageType =
   | "physical"
   | "ether"
   | "wind"
-  | "aftershock";
+  | "aftershock"
+  | "sharp";
 export type SkillType =
   | "basic"
   | "ex"

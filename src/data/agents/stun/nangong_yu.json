@@ -118,7 +118,7 @@
       "sourceId": "nangong_yu-mindscape_2",
       "label": "Painless Tears (Mindscape Cinema N°2)",
       "description": "Each stack of Vibrato's additional Abloom DMG ratio increase from Core Passive: Prodigious Idol increases by an additional 10%. The Stun DMG Multiplier provided by Additional Ability: Angel Captain increases by an additional 30%. When the active character's Chain Attack heavy attack hits an enemy that is both Stunned and affected by an Attribute Anomaly, it triggers Polarity Disorder, dealing DMG equal to 25% of the original Disorder DMG. Each enemy can only trigger this effect once during the same Stun period.",
-      "shortDescription": "This mindscape cinema does not affect Nangong Yu's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Nangong Yu's stats.",
       "infoOnly": true
     },
     {
@@ -137,7 +137,7 @@
       "sourceId": "nangong_yu-mindscape_6",
       "label": "An Angel's Delusion (Mindscape Cinema N°6)",
       "description": "Nangong Yu's attacks deal 50% more Daze. When the enemy is not Stunned, each time any character triggers Abloom DMG, Disorder DMG, or inflicts an Attribute Anomaly on them, the enemy gains 1 stacks of Vibrato: Modified. When hit by the heavy attack of EX Special Attack: The Unbearable Weight of Love or Basic Attack: Adorable Explosive Impact, they gain 1 stacks of Vibrato: Modified. When hit by the heavy attack of Ultimate: Meteor Shower, they gain 2 stacks of Vibrato: Modified.\n\nVibrato: Modified can stack up to 4 times. When the enemy becomes Stunned, all Vibrato: Modified stacks are cleared. When Vibrato: Modified is cleared, if the enemy is under an Ether, Electric, Fire, Physical, or Ice Anomaly, Nangong Yu triggers an instance of Abloom DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to 800%/400%/1,000%/70%/100% of the original Attribute Anomaly DMG. Each stack of Vibrato: Modified on the enemy increases this Abloom DMG ratio by an additional 25%. Vibrato: Modified cannot stack with Vibrato..",
-      "shortDescription": "This mindscape cinema does not affect Nangong Yu's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Nangong Yu's stats.",
       "infoOnly": true
     }
   ],

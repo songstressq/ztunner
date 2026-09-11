@@ -48,7 +48,7 @@
       "sourceId": "trigger-mindscape_1",
       "label": "Sharpened Senses (Mindscape Cinema N°1)",
       "description": "The Stun DMG Multiplier applied through Core Passive: Soul-Searching Gaze is increased by an additional 20%. When activating Basic Attack: Harmonizing Shot, the cooldown is reduced to 2s. Purge gained upon hitting an enemy with the continuous fire or charged counter in Sniper Stance increases by 25%. Maximum Purge increases to 125.",
-      "shortDescription": "This mindscape cinema does not affect Trigger's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Trigger's stats.",
       "infoOnly": true
     },
     {

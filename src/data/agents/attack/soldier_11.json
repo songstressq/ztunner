@@ -89,7 +89,7 @@
       "sourceId": "soldier_11-mindscape_1",
       "label": "Rapid Heat (Mindscape Cinema N°1)",
       "description": "When Soldier 11 enters combat or switches in, if her Energy is less than 40, her Energy is recovered to 80. This effect can trigger once every 50s.",
-      "shortDescription": "This mindscape cinema does not affect Soldier 11's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Soldier 11's stats.",
       "infoOnly": true
     },
     {
@@ -113,7 +113,7 @@
       "sourceId": "soldier_11-mindscape_4",
       "label": "Indulgent Blaze (Mindscape Cinema N°4)",
       "description": "If Fire Suppression is triggered during the 1st, 2nd, or 3rd hit of Soldier 11's Basic Attack or a Dash Attack, Anti-Interrupt Level increases and DMG received is reduced by 18% during skill activation. If Fire Suppression is triggered during the 4th hit of her Basic Attack, she becomes invulnerable during skill activation.",
-      "shortDescription": "This mindscape cinema does not affect Soldier 11's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Soldier 11's stats.",
       "infoOnly": true
     },
     {

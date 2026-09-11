@@ -55,7 +55,7 @@
       "sourceId": "lycaon-mindscape_1",
       "label": "Full Moon Momentum (Mindscape Cinema N°1)",
       "description": "When Lycaon's EX Special Attack: Thrill of the Hunt hits an enemy, the attack's Daze increases by 12%. This effect can trigger once every 8s. When he charges his EX Special Attack: Thrill of the Hunt to completion, this buff will increase by an additional 10%.",
-      "shortDescription": "This mindscape cinema does not affect Lycaon's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Lycaon's stats.",
       "infoOnly": true
     },
     {
@@ -64,7 +64,7 @@
       "sourceId": "lycaon-mindscape_2",
       "label": "Energy Feedback (Mindscape Cinema N°2)",
       "description": "When Stunning an enemy or triggering a squad member's Chain Attack, Lycaon gains 5 Energy. Can trigger once every 1s.",
-      "shortDescription": "This mindscape cinema does not affect Lycaon's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Lycaon's stats.",
       "infoOnly": true
     },
     {
@@ -73,7 +73,7 @@
       "sourceId": "lycaon-mindscape_4",
       "label": "Graceful Demeanor (Mindscape Cinema N°4)",
       "description": "If Lycaon is attacked while using a Basic Attack or Special Attack, he will immediately gain a Shield equal to 7.5% of his Max HP, lasting for 15s. During the Shield's duration, his Anti-Interrupt level is increased. This effect can trigger once every 15s.",
-      "shortDescription": "This mindscape cinema does not affect Lycaon's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Lycaon's stats.",
       "infoOnly": true
     },
     {

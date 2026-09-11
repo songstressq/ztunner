@@ -53,6 +53,9 @@ export interface CollectedBonuses {
   elementStatBonuses?: Record<string, Record<string, number>>;
   sheerDmgFlat?: number;
   assaultCritDmgTotal?: number;
+  sharpDmgBonus: number; // ⭐
+  elementSharpDmgBonus: Record<string, number>; // ⭐
+  skillTypeElementalSharp: Record<string, Record<string, number>>; // ⭐
   sources: BonusSource[];
   breakdown: {
     dmgMod: {
@@ -196,6 +199,9 @@ export function collectDamageBonuses(
     hitStatExclusive: {},
     elementStatBonuses: {},
     sheerDmgFlat: 0,
+    sharpDmgBonus: 0,
+    elementSharpDmgBonus: {},
+    skillTypeElementalSharp: {},
     sources: [],
     breakdown: {
       dmgMod: {
@@ -653,6 +659,43 @@ export function collectDamageBonuses(
             bonuses.assaultCritDmgTotal =
               (bonuses.assaultCritDmgTotal || 0) + totalValue;
             break;
+          case "sharpDmg": {
+            bonuses.sharpDmgBonus += totalValue;
+            bonuses.sources.push({ ...baseSource, type: "sharpDmg" });
+            break;
+          }
+
+          case "elementSharpDmg": {
+            if (bonus.element) {
+              bonuses.elementSharpDmgBonus[bonus.element] =
+                (bonuses.elementSharpDmgBonus[bonus.element] || 0) + totalValue;
+              bonuses.sources.push({
+                ...baseSource,
+                type: "elementSharpDmg",
+                element: bonus.element,
+              });
+            }
+            break;
+          }
+
+          case "skillTypeElementalSharp": {
+            if (bonus.element && bonus.skillType) {
+              if (!bonuses.skillTypeElementalSharp[bonus.skillType]) {
+                bonuses.skillTypeElementalSharp[bonus.skillType] = {};
+              }
+              bonuses.skillTypeElementalSharp[bonus.skillType][bonus.element] =
+                (bonuses.skillTypeElementalSharp[bonus.skillType][
+                  bonus.element
+                ] || 0) + totalValue;
+              bonuses.sources.push({
+                ...baseSource,
+                type: "skillTypeElementalSharp",
+                element: bonus.element,
+                skillType: bonus.skillType,
+              });
+            }
+            break;
+          }
           default:
             break;
         }
@@ -1010,6 +1053,46 @@ export function collectDamageBonuses(
                 });
               }
               break;
+            case "sharpDmg": {
+              bonuses.sharpDmgBonus += totalValue;
+              bonuses.sources.push({ ...baseSource, type: "sharpDmg" });
+              break;
+            }
+
+            case "elementSharpDmg": {
+              if (bonus.element) {
+                bonuses.elementSharpDmgBonus[bonus.element] =
+                  (bonuses.elementSharpDmgBonus[bonus.element] || 0) +
+                  totalValue;
+                bonuses.sources.push({
+                  ...baseSource,
+                  type: "elementSharpDmg",
+                  element: bonus.element,
+                });
+              }
+              break;
+            }
+
+            case "skillTypeElementalSharp": {
+              if (bonus.element && bonus.skillType) {
+                if (!bonuses.skillTypeElementalSharp[bonus.skillType]) {
+                  bonuses.skillTypeElementalSharp[bonus.skillType] = {};
+                }
+                bonuses.skillTypeElementalSharp[bonus.skillType][
+                  bonus.element
+                ] =
+                  (bonuses.skillTypeElementalSharp[bonus.skillType][
+                    bonus.element
+                  ] || 0) + totalValue;
+                bonuses.sources.push({
+                  ...baseSource,
+                  type: "skillTypeElementalSharp",
+                  element: bonus.element,
+                  skillType: bonus.skillType,
+                });
+              }
+              break;
+            }
             default:
               break;
           }

@@ -148,6 +148,12 @@ function applyStatFromKey(base: UnifiedStats, key: string, raw: number) {
       if (!base._luminizeMultiplierBonus) base._luminizeMultiplierBonus = 0;
       base._luminizeMultiplierBonus += value;
       break;
+    case "lacerationDmg":
+      base.lacerationDmg += value;
+      break; // ⭐
+    case "sharpDmgBonus":
+      base.sharpDmgBonus += value;
+      break; // ⭐
     default:
   }
 }
@@ -321,6 +327,8 @@ export function calculateUnifiedStats(
     energyRegen: agent.combatBase.energyRegen,
     attributeDmgBonus: { ...agent.combatBase.attributeDmgBonus },
     sheerForce: 0,
+    lacerationDmg: agent.combatBase.lacerationDmg ?? 0, // ⭐
+    sharpDmgBonus: agent.combatBase.sharpDmgBonus ?? 0, // ⭐
   };
 
   if (agent.specialty === "Rupture") {
@@ -1350,6 +1358,12 @@ export function calculateUnifiedStats(
             (base as any).sheerForce = ((base as any).sheerForce || 0) + value;
           }
           break;
+        case "lacerationDmg":
+          base.lacerationDmg += value;
+          break; // ⭐
+        case "sharpDmgBonus":
+          base.sharpDmgBonus += value;
+          break; // ⭐
         case "hpFlat":
         case "hp":
           flatHP += value;
@@ -1472,10 +1486,22 @@ export function calculateUnifiedStats(
     base.atk += defToAtk;
   }
 
+  if (agent.id === "claret") {
+    const totalCritDmgPercent = (agent.combatBase.critDmg + critDmgAdd) * 100;
+    const critRateFromCritDmg = totalCritDmgPercent * 0.0035;
+    base.critRate += critRateFromCritDmg;
+  }
+
   if (agent.specialty === "Rupture") {
     base.energyRegen = 0;
     base.pen = 0;
     base.penRatio = 0;
+  }
+
+  if (agent.specialty === "Armorer") {
+    (base as any).__isArmorerAgent = true;
+    // PEN sigue funcional
+    // Energy Regen se oculta en UI, pero se mantiene en stats
   }
 
   if (base._energyRegenRawBonus) {

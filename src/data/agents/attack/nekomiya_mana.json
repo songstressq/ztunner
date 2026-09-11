@@ -80,12 +80,12 @@
       "flat": { "physicalResShred": 0.16 }
     },
     {
-      "id": "nekomata-mindscape_1-cat_and_mouse",
+      "id": "nekomata-mindscape_2-cat_and_mouse",
       "source": "mindscape",
       "sourceId": "nekomata-mindscape_2",
       "label": "Cat & Mouse (Mindscape Cinema N°2)",
       "description": "When there's only one enemy on the field and Nekomata is in combat, her Energy Generation Rate is increased by 25%.",
-      "shortDescription": "This mindscape cinema does not affect Nekomata's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Nekomata's stats.",
       "infoOnly": true
     },
     {

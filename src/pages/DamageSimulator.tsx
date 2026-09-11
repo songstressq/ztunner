@@ -648,8 +648,16 @@ const DamageSimulator = () => {
       return "#afafaf";
     }
 
-    const prioritySpecialties = ["anomaly", "attack", "rupture"];
+    // ⭐ Prioridad 0: Armorer siempre gana
+    const armorerSlot = teamSlotsInfo.find(
+      (slot) => slot.agent && slot.specialty?.toLowerCase() === "armorer",
+    );
+    if (armorerSlot?.agent?.themeColor) {
+      return armorerSlot.agent.themeColor;
+    }
 
+    // Prioridad 1: Anomaly / Attack / Rupture
+    const prioritySpecialties = ["anomaly", "attack", "rupture"];
     const prioritySlots = teamSlotsInfo.filter(
       (slot) =>
         slot.agent &&
@@ -674,6 +682,7 @@ const DamageSimulator = () => {
       return bestSlot?.agent?.themeColor || agents[0]?.themeColor || "#7EFFDB";
     }
 
+    // Fallback: el agente con más ATK / Sheer Force
     let bestSlot = null;
     let bestPower = -Infinity;
     for (const slot of teamSlotsInfo) {
@@ -1257,9 +1266,15 @@ const DamageSimulator = () => {
               <p style={getRecommendedStyle("PEN")}>
                 PEN: {Math.round(stats.pen)}
               </p>
-              {stats.energyRegen > 0 && (
+              {agent.specialty !== "Armorer" && stats.energyRegen > 0 && (
                 <p style={getRecommendedStyle("Energy Regen")}>
                   Energy Regen: {stats.energyRegen.toFixed(2)}
+                </p>
+              )}
+              {agent.specialty === "Armorer" && (
+                <p>
+                  Laceration DMG:{" "}
+                  {((stats.lacerationDmg || 0) * 100).toFixed(1)}%
                 </p>
               )}
               {"sheerForce" in stats && stats.sheerForce > 0 && (
@@ -1686,7 +1701,7 @@ const DamageSimulator = () => {
               <div className="social-footer-content">
                 <div className="social-footer-left">
                   <span className="social-copyright">© 2026 Z-TUNNER</span>
-                  <span className="social-version">v1.0.1</span>
+                  <span className="social-version">v1.1.0</span>
                 </div>
 
                 <div className="social-links">

@@ -46,7 +46,9 @@ export type EffectStat =
   | "anomalyDmgBonusFlat"
   | "disorderDmgBonusFlat"
   | "anomalyDmgBonusPerStat"
-  | "disorderMultiplierBonus";
+  | "disorderMultiplierBonus"
+  | "lacerationDmg"
+  | "sharpDmgBonus";
 
 export interface WEngineOverclockLevel {
   level: number;
@@ -75,7 +77,10 @@ export interface DamageBonus {
     | "skillTypeElemental"
     | "skillTypeStat"
     | "skillTypeElementalSheer"
-    | "critDamageElementalBonus";
+    | "critDamageElementalBonus"
+    | "sharpDmg"
+    | "elementSharpDmg"
+    | "skillTypeElementalSharp";
   value: number;
   element?:
     | "fire"

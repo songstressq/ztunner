@@ -167,7 +167,7 @@
       "sourceId": "cissia-mindscape_4",
       "label": "A Rogue's Resolve (Mindscape Cinema N°4)",
       "description": "When using an EX Special Attack, Chain Attack, or Ultimate, gain 1 stack of Decidedness, stacking up to 3 times. When using Basic Attack: Serpent's Kiss, consume all Decidedness. Each stack consumed triggers 1 special instance of Corrode Bone that does not consume Venom. This Corrode Bone does not cause Daze.",
-      "shortDescription": "This mindscape cinema does not affect Cissia's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Cissia's stats.",
       "infoOnly": true
     },
     {
@@ -176,7 +176,7 @@
       "sourceId": "cissia-mindscape_6",
       "label": "Home and Sixth Street (Mindscape Cinema N°6)",
       "description": "Each time Corrode Bone is triggered, gain 1 stack of Bone-Deep Corrosion. When attacks from any squad member, other than Corrode Bone, hit an enemy, consume 1 stack of Bone-Deep Corrosion to trigger 1 special Corrode Bone. This instance of Corrode Bone cannot inflict Daze, and at most 1 stack of Bone-Deep Corrosion can be consumed every 3s.",
-      "shortDescription": "This mindscape cinema does not affect Cissia's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Cissia's stats.",
       "infoOnly": true
     }
   ],

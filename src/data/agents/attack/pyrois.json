@@ -109,7 +109,7 @@
       "sourceId": "pyrois-mindscape_2",
       "label": "Blazing Cavalry (Mindscape Cinema N°2)",
       "description": "Using Ultimate: Triumphant Return grants 1,500 Decibels. This effect can trigger once every 180s. Pyrois's Decibel limit increases by 1,000.",
-      "shortDescription": "This mindscape cinema does not affect Pyrois' stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Pyrois' stats.",
       "infoOnly": true
     },
     {
@@ -118,7 +118,7 @@
       "sourceId": "pyrois-mindscape_4",
       "label": "Balefire Horizon (Mindscape Cinema N°4)",
       "description": "When Pyrois triggers a Perfect Block with EX Special Attack: Sun's Halo, immediately gain shield equal to 8% of Max HP, lasting 10s. Repeated triggers reset the duration. Pyrois deals 10% extra Daze while shielded.",
-      "shortDescription": "This mindscape cinema does not affect Pyrois' stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Pyrois' stats.",
       "infoOnly": true
     }
   ],

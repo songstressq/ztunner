@@ -14,6 +14,7 @@ import flamemaker_shaker from "./anomaly/flamemaker_shaker.json"; //Burnice
 import tusks_of_fury from "./defense/tusks_of_fury.json"; //Caesar
 import serpentine_seeker from "./attack/serpentine_seeker.json"; //Cissia
 import housekeeper from "./attack/housekeeper.json"; //Corin
+import crimson_thirst from "./armorer/crimson_thirst.json"; //Claret
 import yesterday_calls from "./stun/yesterday_calls.json"; //Dialyn
 import deep_sea_visitor from "./attack/deep_sea_visitor.json"; //Ellen
 import heartstring_nocturne from "./attack/heartstring_nocturne.json"; //Evelyn
@@ -59,6 +60,8 @@ import qingming_birdcage from "./rupture/qingming_birdcage.json"; //Yixuan
 import half_sugar_bunny from "./defense/half_sugar_bunny.json"; //Zhao
 import riot_suppressor_mark_vi from "./attack/riot_suppressor_mark_vi.json"; //Zhu Yuan
 
+import bloodmarrow_coffer from "./armorer/bloodmarrow_coffer.json";
+import catty_luck from "./armorer/catty_luck.json";
 import boisterous_echoes from "./anomaly/boisterous_echoes.json";
 import electro_lip_gloss from "./anomaly/electro_lip_gloss.json";
 import rainforest_gourmet from "./anomaly/rainforest_gourmet.json";
@@ -99,6 +102,7 @@ export const wEngines: WEngine[] = [
   tusks_of_fury as WEngine, //✅
   serpentine_seeker as WEngine,
   housekeeper as WEngine, //✅
+  crimson_thirst as WEngine,
   yesterday_calls as WEngine, //✅
   deep_sea_visitor as WEngine, //✅
   heartstring_nocturne as WEngine, //✅
@@ -144,6 +148,8 @@ export const wEngines: WEngine[] = [
   half_sugar_bunny as WEngine, //✅
   riot_suppressor_mark_vi as WEngine, //✅
 
+  bloodmarrow_coffer as WEngine,
+  catty_luck as WEngine,
   boisterous_echoes as WEngine,
   electro_lip_gloss as WEngine, //✅
   rainforest_gourmet as WEngine, //✅

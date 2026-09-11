@@ -36,6 +36,9 @@ export default function ActiveBonusesPanel({
     stats: true,
     hitExclusive: true,
     hitStatExclusive: true,
+    sharpDmg: true,
+    elementSharpDmg: true,
+    skillTypeElementalSharp: true,
   });
 
   const toggleSection = (section: string) => {
@@ -262,11 +265,20 @@ export default function ActiveBonusesPanel({
       : 0;
 
   const isRuptureAgent = agentSpecialty === "Rupture";
+  const isArmorerAgent = agentSpecialty === "Armorer";
 
   const hitStatBonusesForCurrentSkill =
     selectedSkillId && bonuses.hitStatExclusive?.[selectedSkillId]
       ? Object.entries(bonuses.hitStatExclusive[selectedSkillId])
       : [];
+
+  const hasSharpDmgBonus = (bonuses.sharpDmgBonus || 0) > 0;
+  const hasElementSharpDmgBonus = Object.values(
+    bonuses.elementSharpDmgBonus || {},
+  ).some((v) => v > 0);
+  const hasSkillTypeElementalSharp = Object.values(
+    bonuses.skillTypeElementalSharp || {},
+  ).some((elementMap) => Object.values(elementMap).some((v) => v > 0));
 
   const hasActiveBonuses = () => {
     if (globalSources.length > 0) return true;
@@ -319,6 +331,10 @@ export default function ActiveBonusesPanel({
 
     if (hitStatBonusesForCurrentSkill.length > 0) return true;
 
+    if (hasSharpDmgBonus) return true;
+    if (hasElementSharpDmgBonus) return true;
+    if (hasSkillTypeElementalSharp) return true;
+
     return false;
   };
 
@@ -348,6 +364,38 @@ export default function ActiveBonusesPanel({
           )}
         </span>
       </div>
+
+      {/* ⭐ TOTAL SHARP DMG BONUS - Solo para Armorer */}
+      {isArmorerAgent && bonuses.sharpDmgBonus > 0 && (
+        <div className="damage_panel-header_container">
+          <span className="damage_panel-header_text">
+            Total Sharp DMG Bonus:
+          </span>
+          <span className="damage_panel-header_tag">
+            {formatPercentage(bonuses.sharpDmgBonus)}
+          </span>
+        </div>
+      )}
+
+      {/* ⭐ TOTAL ELEMENT SHARP DMG BONUS - Solo para Armorer */}
+      {isArmorerAgent &&
+        Object.values(bonuses.elementSharpDmgBonus || {}).some(
+          (v) => v > 0,
+        ) && (
+          <div className="damage_panel-header_container">
+            <span className="damage_panel-header_text">
+              Total Element Sharp DMG Bonus:
+            </span>
+            <span className="damage_panel-header_tag">
+              {formatPercentage(
+                Object.values(bonuses.elementSharpDmgBonus || {}).reduce(
+                  (a, b) => a + b,
+                  0,
+                ),
+              )}
+            </span>
+          </div>
+        )}
 
       {/* ⭐ TOTAL SHEER DMG BONUS - Solo para Rupture */}
       {isRuptureAgent && bonuses.sheerDmgBonus > 0 && (
@@ -622,6 +670,171 @@ export default function ActiveBonusesPanel({
             )}
           </div>
         )}
+
+      {/* ⭐ SHARP DMG BONUS — general */}
+      {hasSharpDmgBonus && (
+        <div className="damage_panel-item_container">
+          <div
+            className="damage_panel-item_header"
+            onClick={() => toggleSection("sharpDmg")}
+          >
+            <span className="damage_panel-item_header-arrow">
+              {expandedSections.sharpDmg ? "▼" : "▶"}
+            </span>
+            <span className="damage_panel-item_header-title">
+              General Sharp DMG Bonus
+            </span>
+            <span className="damage_panel-item_header-tag">
+              +{formatPercentage(bonuses.sharpDmgBonus || 0)}
+            </span>
+          </div>
+          {expandedSections.sharpDmg && (
+            <div className="damage_panel-item_summary">
+              {bonuses.sources
+                .filter((s) => s.type === "sharpDmg")
+                .map((source, idx) => (
+                  <div
+                    key={`${source.id}-${idx}`}
+                    className="damage_panel-item_summary-container"
+                  >
+                    <div className="damage_panel-item_summary-text">
+                      <div className="damage_panel-subitem_summary-grid_area_1">
+                        <span>{getSourceIcon(source)}</span>
+                      </div>
+                      <div className="damage_panel-subitem_summary-grid_area_2">
+                        <span>{source.name}</span>
+                        {source.stacks > 1 && (
+                          <span className="damage_panel-item_summary-stacks">
+                            x{source.stacks}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <span className="damage_panel-subitem_summary-tag">
+                      +{formatPercentage(source.value)}
+                    </span>
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ⭐ ELEMENT SHARP DMG BONUSES */}
+      {hasElementSharpDmgBonus && (
+        <div className="damage_panel-item_container">
+          <div
+            className="damage_panel-item_header"
+            onClick={() => toggleSection("elementSharpDmg")}
+          >
+            <span className="damage_panel-item_header-arrow">
+              {expandedSections.elementSharpDmg ? "▼" : "▶"}
+            </span>
+            <span className="damage_panel-item_header-title">
+              Elemental Sharp DMG Bonuses
+            </span>
+          </div>
+          {expandedSections.elementSharpDmg && (
+            <div className="damage_panel-item_summary">
+              {Object.entries(bonuses.elementSharpDmgBonus || {})
+                .filter(([, value]) => value > 0)
+                .map(([element, elementTotal]) => {
+                  const elementSources = bonuses.sources.filter(
+                    (s) =>
+                      s.type === "elementSharpDmg" && s.element === element,
+                  );
+                  return (
+                    <div
+                      key={element}
+                      className="damage_panel-item_summary-subitem_container"
+                    >
+                      <div className="damage_panel-item_summary-subitem_header">
+                        <span>{getElementIcon(element)}</span>
+                        <span className="damage_panel-item_summary-subitem_title">
+                          {capitalize(element)} Sharp DMG
+                        </span>
+                        <span className="damage_panel-item_summary-subitem_tag">
+                          +{formatPercentage(elementTotal)}
+                        </span>
+                      </div>
+                      {elementSources.length > 0 && (
+                        <div className="damage_panel-item_summary-subitem_subcontainer">
+                          {elementSources.map((source, idx) => (
+                            <div
+                              key={`${source.id}-${idx}`}
+                              className="damage_panel-item_summary-container"
+                            >
+                              <div className="damage_panel-item_summary-text">
+                                <div className="damage_panel-subitem_summary-grid_area_1">
+                                  <span>{getSourceIcon(source)}</span>
+                                </div>
+                                <div className="damage_panel-subitem_summary-grid_area_2">
+                                  <span>{source.name}</span>
+                                  {source.stacks > 1 && (
+                                    <span className="damage_panel-item_summary-stacks">
+                                      x{source.stacks}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                              <span className="damage_panel-subitem_summary-tag">
+                                +{formatPercentage(source.value)}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ⭐ SKILL TYPE + ELEMENTAL SHARP */}
+      {hasSkillTypeElementalSharp && (
+        <div className="damage_panel-item_container">
+          <div
+            className="damage_panel-item_header"
+            onClick={() => toggleSection("skillTypeElementalSharp")}
+          >
+            <span className="damage_panel-item_header-arrow">
+              {expandedSections.skillTypeElementalSharp ? "▼" : "▶"}
+            </span>
+            <span className="damage_panel-item_header-title">
+              Skill Type & Elemental Sharp DMG Bonuses
+            </span>
+          </div>
+          {expandedSections.skillTypeElementalSharp && (
+            <div className="damage_panel-item_summary">
+              {Object.entries(bonuses.skillTypeElementalSharp || {})
+                .filter(([skillType]) => skillType === selectedSkillType)
+                .map(([skillType, elements]) =>
+                  Object.entries(elements)
+                    .filter(([, value]) => value > 0)
+                    .map(([element, value]) => (
+                      <div
+                        key={`${skillType}-${element}`}
+                        className="damage_panel-item_summary-subitem_container"
+                      >
+                        <div className="damage_panel-item_summary-subitem_header">
+                          <span>{getElementIcon(element)}</span>
+                          <span className="damage_panel-item_summary-subitem_title">
+                            {capitalize(element)} Sharp DMG (
+                            {getSkillTypeDisplayName(skillType)})
+                          </span>
+                          <span className="damage_panel-item_summary-subitem_tag">
+                            +{formatPercentage(value)}
+                          </span>
+                        </div>
+                      </div>
+                    )),
+                )}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* SKILL TYPE BONUSES */}
       {skillTypes.filter((skillType) => skillType === selectedSkillType)

@@ -1,0 +1,80 @@
+{
+  "id": "bloodmarrow_coffer",
+  "name": "Bloodmarrow Coffer",
+  "rarity": "A",
+  "specialty": "Armorer",
+
+  "baseStatType": "DEF",
+  "advancedStatType": "Crit Rate%",
+
+  "stats": {
+    "base": 356,
+    "advanced": 0.2
+  },
+
+  "ingameEffects": [
+    {
+      "id": "bloodmarrow_coffer-moment_of_unsealing-global_dmg",
+      "source": "wEngine",
+      "sourceId": "bloodmarrow_coffer",
+      "label": "Moment of Unsealing (W-Engine Passive)",
+      "description": "When the equipper's CRIT Rate exceeds 100%, every 1% of CRIT Rate above that increases DMG dealt by the equipper by a percentage, up to a fixed max increase.",
+      "shortDescription": "The equipper's DMG is increased based on their initial CRIT Rate.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.0048
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.0056
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.0064
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.0072
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "global",
+                "value": 0.008
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "maxStacks": 50,
+      "condition": {
+        "requiresSpecialty": "Armorer"
+      }
+    }
+  ]
+}

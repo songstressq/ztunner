@@ -75,7 +75,7 @@
       "sourceId": "billy_kid-mindscape_1",
       "label": "Dazzling Entrance (Mindscape Cinema N°1)",
       "description": "When Billy hits an enemy with a Dash Attack or Dodge Counter, he gains an additional 2.7 Energy. Can trigger once every 5s.",
-      "shortDescription": "This mindscape cinema does not affect Billy's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Billy's stats.",
       "infoOnly": true
     },
     {
@@ -106,7 +106,7 @@
       "sourceId": "billy_kid-mindscape_4",
       "label": "Starlight Ballistics (Mindscape Cinema N°4)",
       "description": "When Billy hits an enemy with his EX Special Attack, the skill's CRIT Rate is increased based on the distance from the enemy. The closer he is to the target, the greater the effect, up to a maximum increase of 32%.",
-      "shortDescription": "This mindscape cinema does not affect Billy's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Billy's stats.",
       "infoOnly": true
     },
     {

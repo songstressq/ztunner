@@ -100,7 +100,7 @@
       "sourceId": "qingyi-mindscape_2",
       "label": "Minimal Effort, Maximum Impact (Mindscape Cinema N°2)",
       "description": "The Stun DMG Multiplier increase provided by each stack of Subjugation in Core Passive: Eternal Seasons increases to 135% of its original value. When Qingyi's attack hits an enemy and the stacks of Subjugation she applies reaches its maximum stacks, her Daze dealt to the target increases by 15%.",
-      "shortDescription": "This mindscape cinema does not affect Qingyi's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Qingyi's stats.",
       "infoOnly": true
     },
     {
@@ -109,7 +109,7 @@
       "sourceId": "qingyi-mindscape_4",
       "label": "Stable Arc Barrier (Mindscape Cinema N°4)",
       "description": "Upon entering or exiting Flash Connect state, gain a shield equal to 10% of Qingyi's Max HP. If a previous shield is still active when the shield effect refreshes, Qingyi generates 5 Energy. This Energy Generation effect can be triggered once every 10s.",
-      "shortDescription": "This mindscape cinema does not affect Qingyi's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Qingyi's stats.",
       "infoOnly": true
     },
     {

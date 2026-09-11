@@ -605,14 +605,6 @@ const IngameEffectsPanel = ({
     return true;
   };
 
-  if (
-    selfEffects.length === 0 &&
-    teamEffectsList.length === 0 &&
-    infoOnlyEffects.length === 0
-  ) {
-    return null;
-  }
-
   const emptyObjectsStyle = {
     backgroundImage: `linear-gradient(
       to right bottom, 

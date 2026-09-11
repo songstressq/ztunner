@@ -108,7 +108,7 @@
       "sourceId": "anton_ivanov-mindscape_1",
       "label": "Warm-Up Exercises (Mindscape Cinema N°1)",
       "description": "When Drill Attack hits an enemy, Anton gains additional Energy, up to a maximum of 5 Energy per skill use.",
-      "shortDescription": "This mindscape cinema does not affect Anton's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Anton's stats.",
       "infoOnly": true
     },
     {
@@ -117,7 +117,7 @@
       "sourceId": "anton_ivanov-mindscape_2",
       "label": "State of Flow (Mindscape Cinema N°2)",
       "description": "When Anton uses his EX Special Attack and enters Burst Mode, he gains a Shield that equals to 7.5% of his max HP. While in Burst Mode, entering combat or switching in reapplies the Shield effect. This effect can trigger once every 15s. The Shield dissipates when Burst Mode ends.",
-      "shortDescription": "This mindscape cinema does not affect Anton's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Anton's stats.",
       "infoOnly": true
     },
     {

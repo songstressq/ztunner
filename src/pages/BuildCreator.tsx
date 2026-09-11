@@ -46,6 +46,7 @@ export default function BuildCreator() {
   const activeBuildId = wEnginesSession.activeBuildId;
   const selectedAgent = agents.find((a) => a.id === selectedId)!;
   const isRupture = selectedAgent.specialty === "Rupture";
+  const isArmorer = selectedAgent.specialty === "Armorer";
   const selectedEngine =
     wEngines.find((w) => w.id === selectedEngineId) ?? null;
   const engineStats = selectedEngine
@@ -683,6 +684,16 @@ export default function BuildCreator() {
             theme={selectedAgent.themeColor}
             sections={[
               {
+                title: "Armorer Agents",
+                items: agents
+                  .filter((a) => a.specialty === "Armorer")
+                  .map((a) => ({
+                    id: a.id,
+                    name: a.name,
+                    img: `/resources/images/agents/icons/${a.id} (2).png`,
+                  })),
+              },
+              {
                 title: "Attack Agents",
                 items: agents
                   .filter((a) => a.specialty === "Attack")
@@ -933,10 +944,30 @@ export default function BuildCreator() {
               >
                 PEN: {Math.round(unifiedStats.pen)} <br />
               </p>
+
               {isRupture ? (
                 <p style={highlightIfRecommended("Sheer Force")}>
                   Sheer Force: {sheerForce} <br />
                   <span className="stat-sub"></span>
+                </p>
+              ) : isArmorer ? (
+                <p>
+                  Laceration DMG:{" "}
+                  {((unifiedStats.lacerationDmg || 0) * 100).toFixed(1)}% <br />
+                  <span className="stat-sub">
+                    (
+                    {(
+                      (selectedAgent.combatBase.lacerationDmg || 0) * 100
+                    ).toFixed(0)}
+                    %
+                    {(() => {
+                      const base = selectedAgent.combatBase.lacerationDmg || 0;
+                      const total = unifiedStats.lacerationDmg || 0;
+                      const added = total - base;
+                      return added > 0 ? ` + ${(added * 100).toFixed(1)}%` : "";
+                    })()}
+                    )
+                  </span>
                 </p>
               ) : (
                 <p style={highlightIfRecommended("Energy Regen")}>
@@ -1119,6 +1150,16 @@ export default function BuildCreator() {
             className="engine-modal"
             theme={selectedAgent.themeColor}
             sections={[
+              {
+                title: "Armorer",
+                items: wEngines
+                  .filter((e) => e.specialty === "Armorer")
+                  .map((w) => ({
+                    id: w.id,
+                    name: w.name,
+                    img: `/resources/images/wengines/${w.id}.png`,
+                  })),
+              },
               {
                 title: "Attack",
                 items: wEngines
@@ -1588,7 +1629,7 @@ export default function BuildCreator() {
               <div className="social-footer-content">
                 <div className="social-footer-left">
                   <span className="social-copyright">© 2026 Z-TUNNER</span>
-                  <span className="social-version">v1.0.1</span>
+                  <span className="social-version">v1.1.0</span>
                 </div>
 
                 <div className="social-links">

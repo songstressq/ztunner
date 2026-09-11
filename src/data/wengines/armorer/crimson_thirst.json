@@ -1,0 +1,198 @@
+{
+  "id": "crimson_thirst",
+  "name": "Crimson Thirst",
+  "rarity": "S",
+  "specialty": "Armorer",
+
+  "baseStatType": "DEF",
+  "advancedStatType": "DEF%",
+
+  "stats": {
+    "base": 431,
+    "advanced": 0.48
+  },
+
+  "ingameEffects": [
+    {
+      "id": "crimson_thirst-bloodthirst-crit_rate",
+      "source": "wEngine",
+      "sourceId": "crimson_thirst",
+      "label": "Bloodthirst (W-Engine Passive)",
+      "description": "The equipper's CRIT Rate increases by a percentage, and Electric DMG increases by a percentage. When the equipper uses an EX Special Attack or triggers Maim, Electric Sharp DMG dealt is increased for 40s. Repeated triggers reset the duration.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "baseStats": {
+              "critRate": 0.25
+            }
+          },
+          {
+            "level": 2,
+            "baseStats": {
+              "critRate": 0.275
+            }
+          },
+          {
+            "level": 3,
+            "baseStats": {
+              "critRate": 0.3
+            }
+          },
+          {
+            "level": 4,
+            "baseStats": {
+              "critRate": 0.325
+            }
+          },
+          {
+            "level": 5,
+            "baseStats": {
+              "critRate": 0.35
+            }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Armorer"
+      }
+    },
+    {
+      "id": "crimson_thirst-bloodthirst-electric_dmg",
+      "source": "wEngine",
+      "sourceId": "crimson_thirst",
+      "label": "Bloodthirst (W-Engine Passive)",
+      "description": "The equipper's CRIT Rate increases by a percentage, and Electric DMG increases by a percentage. When the equipper uses an EX Special Attack or triggers Maim, Electric Sharp DMG dealt is increased for 40s. Repeated triggers reset the duration.",
+      "shortDescription": "The equipper's Electric DMG is increased.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.15
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.175
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.2
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.225
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "electric",
+                "value": 0.25
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Armorer"
+      }
+    },
+    {
+      "id": "crimson_thirst-bloodthirst-electric_sharp_dmg",
+      "source": "wEngine",
+      "sourceId": "crimson_thirst",
+      "label": "Bloodthirst (W-Engine Passive)",
+      "description": "The equipper's CRIT Rate increases by a percentage, and Electric DMG increases by a percentage. When the equipper uses an EX Special Attack or triggers Maim, Electric Sharp DMG dealt is increased for 40s. Repeated triggers reset the duration.",
+      "shortDescription": "The equipper's Electric Sharp DMG is increased for 40s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "elementSharpDmg",
+                "element": "electric",
+                "value": 0.1
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "elementSharpDmg",
+                "element": "electric",
+                "value": 0.115
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "elementSharpDmg",
+                "element": "electric",
+                "value": 0.13
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "elementSharpDmg",
+                "element": "electric",
+                "value": 0.145
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "elementSharpDmg",
+                "element": "electric",
+                "value": 0.16
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Armorer"
+      }
+    }
+  ]
+}

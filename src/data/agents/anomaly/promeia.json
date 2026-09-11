@@ -66,7 +66,7 @@
       "sourceId": "promeia-mindscape_1",
       "label": "Innocent Idealism (Mindscape Cinema N°1)",
       "description": "When Promeia uses Ultimate: Glaciating Impalement, she gains an additional effect: if Trial by Cold points are not at maximum, gain 1 point of Trial by Cold. This effect can trigger once after using Ultimate: Glaciating Impalement. When any squad member triggers Abloom on enemies with Presumption of Guilt, it ignores an additional 20% DEF.",
-      "shortDescription": "This mindscape cinema does not affect Promeia's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Promeia's stats.",
       "infoOnly": true
     },
     {
@@ -85,7 +85,7 @@
       "sourceId": "promeia-mindscape_4",
       "label": "Ruthless Accusation (Mindscape Cinema N°4)",
       "description": "When Promeia triggers Abloom, she restores 5 Corrosive Chill. This effect can trigger once every 0.5s.",
-      "shortDescription": "This mindscape cinema does not affect Promeia's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Promeia's stats.",
       "infoOnly": true
     },
     {

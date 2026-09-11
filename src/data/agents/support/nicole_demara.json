@@ -90,7 +90,7 @@
       "sourceId": "nicole_demara-mindscape_2",
       "label": "Charging Device (Mindscape Cinema N°2)",
       "description": "Nicole recovers 5 Energy when Core Passive: Mechanical Case's debuff is triggered. This effect can trigger once every 15s.",
-      "shortDescription": "This mindscape cinema does not affect Nicole's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Nicole's stats.",
       "infoOnly": true
     },
     {
@@ -99,7 +99,7 @@
       "sourceId": "nicole_demara-mindscape_4",
       "label": "Field Expansion (Mindscape Cinema N°4)",
       "description": "When Nicole uses her EX Special Attack, Chain Attack, or Ultimate, the diameter of the energy field generated at the target location is increased by 3m.",
-      "shortDescription": "This mindscape cinema does not affect Nicole's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Nicole's stats.",
       "infoOnly": true
     },
     {

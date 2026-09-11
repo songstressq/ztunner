@@ -12,6 +12,7 @@ import burnice from "./anomaly/burnice_white.json"; //ok
 import caesar from "./defense/caesar_king.json"; //ok
 import cissia from "./attack/cissia.json"; //ok
 import corin from "./attack/corin_wickes.json"; //ok
+import claret from "./armorer/claret_flint.json";
 import dialyn from "./stun/dialyn.json"; //ok
 import ellen from "./attack/ellen_joe.json"; //ok
 import evelyn from "./attack/evelyn_chevalier.json"; //ok
@@ -82,6 +83,7 @@ export const agents: Agent[] = [
   caesar as Agent, //✅
   cissia as Agent, //✅
   corin as Agent, //✅
+  claret as Agent,
   dialyn as Agent, //✅
   ellen as Agent, //✅
   evelyn as Agent, //✅

@@ -58,7 +58,7 @@
       "sourceId": "piper_wheel-mindscape_1",
       "label": "Leisure Moment (Mindscape Cinema N°1)",
       "description": "When Piper's Special Attack: Tire Spin, EX Special Attack: Engine Spin, or Ultimate hits an enemy with a spinning slash, there is a 50% chance to gain an additional stack of Power. The maximum stack limit of Power is increased to 30.",
-      "shortDescription": "This mindscape cinema does not affect Piper's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Piper's stats.",
       "infoOnly": true
     },
     {
@@ -89,7 +89,7 @@
       "sourceId": "piper_wheel-mindscape_4",
       "label": "Refined Techniques (Mindscape Cinema N°4)",
       "description": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, Piper recovers 20 Energy. This effect can trigger every 30s.",
-      "shortDescription": "This mindscape cinema does not affect Piper's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Piper's stats.",
       "infoOnly": true
     },
     {
@@ -98,7 +98,7 @@
       "sourceId": "piper_wheel-mindscape_6",
       "label": "Mild Excitement (Mindscape Cinema N°6)",
       "description": "WIncreases the duration limit of EX Special Attack: Engine Spin by 2s and extends the duration of Power by 4s.",
-      "shortDescription": "This mindscape cinema does not affect Piper's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Piper's stats.",
       "infoOnly": true
     }
   ],

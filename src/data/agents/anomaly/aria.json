@@ -64,7 +64,7 @@
       "sourceId": "aria-mindscape_1",
       "label": "Energetic Sound Waves (Mindscape Cinema N°1)",
       "description": "When Aria's Basic Attack, Special Attack, or EX Special Attack deals DMG to enemies, it ignores 10% of the target's Ether Anomaly Buildup RES. Additionally, when Aria triggers Abloom, it has a chance to trigger a critical hit. The base CRIT Rate is 25%, and CRIT DMG is 25%. If initial Anomaly Mastery exceeds 100, each additional point of initial Anomaly Mastery increases this effect's CRIT Rate by 0.5%.",
-      "shortDescription": "This mindscape cinema does not affect Aria's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Aria's stats.",
       "infoOnly": true
     },
     {
@@ -87,7 +87,7 @@
       "sourceId": "aria-mindscape_4",
       "label": "Mechanical Angel (Mindscape Cinema N°4)",
       "description": "When Aria triggers Abloom, she gains 4 Energy and 70 Decibels. This effect can trigger once every 10s.",
-      "shortDescription": "This mindscape cinema does not affect Aria's stats.",
+      "shortDescription": "This Mindscape Cinema does not affect Aria's stats.",
       "infoOnly": true
     },
     {

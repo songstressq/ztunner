@@ -1,0 +1,91 @@
+{
+  "id": "catty_luck",
+  "name": "Catty Luck",
+  "rarity": "A",
+  "specialty": "Armorer",
+
+  "baseStatType": "DEF",
+  "advancedStatType": "DEF%",
+
+  "stats": {
+    "base": 356,
+    "advanced": 0.4
+  },
+
+  "ingameEffects": [
+    {
+      "id": "catty_luck-lucky_pawpad-def_percent",
+      "source": "wEngine",
+      "sourceId": "catty_luck",
+      "label": "Lucky Pawpad (W-Engine Passive)",
+      "description": "DEF increases by 8%. When using EX Special Attack, DEF increases by an additional 8% for 40s. Repeated triggers reset the duration.",
+      "shortDescription": "The equipper's DEF is increased.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "defPercentRaw": 0.08 }
+          },
+          {
+            "level": 2,
+            "stats": { "defPercentRaw": 0.09 }
+          },
+          {
+            "level": 3,
+            "stats": { "defPercentRaw": 0.1 }
+          },
+          {
+            "level": 4,
+            "stats": { "defPercentRaw": 0.11 }
+          },
+          {
+            "level": 5,
+            "stats": { "defPercentRaw": 0.12 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Armorer"
+      }
+    },
+    {
+      "id": "catty_luck-lucky_pawpad-ex_def_percent",
+      "source": "wEngine",
+      "sourceId": "catty_luck",
+      "label": "Lucky Pawpad (W-Engine Passive)",
+      "description": "DEF increases by 8%. When using EX Special Attack, DEF increases by an additional 8% for 40s. Repeated triggers reset the duration.",
+      "shortDescription": "The equipper's DEF is further increased for 40s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "defPercentRaw": 0.08 }
+          },
+          {
+            "level": 2,
+            "stats": { "defPercentRaw": 0.09 }
+          },
+          {
+            "level": 3,
+            "stats": { "defPercentRaw": 0.1 }
+          },
+          {
+            "level": 4,
+            "stats": { "defPercentRaw": 0.11 }
+          },
+          {
+            "level": 5,
+            "stats": { "defPercentRaw": 0.12 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Armorer"
+      }
+    }
+  ]
+}
