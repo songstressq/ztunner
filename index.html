@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      const redirect = sessionStorage.getItem("redirect");
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get("redirect");
       if (redirect) {
-        sessionStorage.removeItem("redirect");
         window.history.replaceState(null, "", redirect);
       }
     </script>

@@ -6,8 +6,9 @@
       const path = window.location.pathname;
       const search = window.location.search;
 
-      sessionStorage.setItem("redirect", path + search);
-      window.location.replace("/");
+      const redirect = path + search;
+
+      window.location.replace("/?redirect=" + encodeURIComponent(redirect));
     </script>
   </head>
   <body></body>
