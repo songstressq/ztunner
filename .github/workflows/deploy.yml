@@ -39,6 +39,20 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Prepare SPA routes
+        run: |
+          mkdir -p dist/zzz-damage-calculator
+          mkdir -p dist/zzz-build-creator
+          mkdir -p dist/zzz-build-manager
+          mkdir -p dist/zzz-disc-inventory
+          mkdir -p dist/info-settings
+
+          cp dist/index.html dist/zzz-damage-calculator/index.html
+          cp dist/index.html dist/zzz-build-creator/index.html
+          cp dist/index.html dist/zzz-build-manager/index.html
+          cp dist/index.html dist/zzz-disc-inventory/index.html
+          cp dist/index.html dist/info-settings/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
