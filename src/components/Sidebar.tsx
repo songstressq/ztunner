@@ -56,12 +56,11 @@ const Sidebar = () => {
         <span className="arrow-text">Z-TUNNER</span>
       </div>
       <ul className="sidebar-list">
-        {/* NUEVO ÍTEM HOME */}
         <li className="sidebar-item">
           <Link
-            to="/home"
+            to="/"
             className="sidebar-link"
-            onClick={() => handleLinkClick("/home")}
+            onClick={() => handleLinkClick("/")}
           >
             <img
               src="/resources/images/sidebar/home.png"
@@ -70,11 +69,12 @@ const Sidebar = () => {
             <span className="item-text">Home</span>
           </Link>
         </li>
+
         <li className="sidebar-item">
           <Link
-            to="/build-creator"
+            to="/zzz-build-creator"
             className="sidebar-link"
-            onClick={() => handleLinkClick("/build-creator")}
+            onClick={() => handleLinkClick("/zzz-build-creator")}
           >
             <img
               src="/resources/images/sidebar/wengines.png"
@@ -83,11 +83,12 @@ const Sidebar = () => {
             <span className="item-text">Build Creator</span>
           </Link>
         </li>
+
         <li className="sidebar-item">
           <Link
-            to="/damage-simulator"
+            to="/zzz-damage-calculator"
             className="sidebar-link"
-            onClick={() => handleLinkClick("/damage-simulator")}
+            onClick={() => handleLinkClick("/zzz-damage-calculator")}
           >
             <img
               src="/resources/images/sidebar/simu.png"
@@ -96,11 +97,12 @@ const Sidebar = () => {
             <span className="item-text">Damage Calculator</span>
           </Link>
         </li>
+
         <li className="sidebar-item">
           <Link
-            to="/build-manager"
+            to="/zzz-build-manager"
             className="sidebar-link"
-            onClick={() => handleLinkClick("/build-manager")}
+            onClick={() => handleLinkClick("/zzz-build-manager")}
           >
             <img
               src="/resources/images/sidebar/agents.png"
@@ -109,11 +111,12 @@ const Sidebar = () => {
             <span className="item-text">Build Manager</span>
           </Link>
         </li>
+
         <li className="sidebar-item">
           <Link
-            to="/disc-inventory"
+            to="/zzz-disc-inventory"
             className="sidebar-link"
-            onClick={() => handleLinkClick("/disc-inventory")}
+            onClick={() => handleLinkClick("/zzz-disc-inventory")}
           >
             <img
               src="/resources/images/sidebar/disks.png"
@@ -122,6 +125,7 @@ const Sidebar = () => {
             <span className="item-text">Disc Inventory</span>
           </Link>
         </li>
+
         <li className="sidebar-item">
           <Link
             to="/info-settings"

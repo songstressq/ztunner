@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      const path = window.location.pathname;
+      const search = window.location.search;
+
+      sessionStorage.setItem("redirect", path + search);
+      window.location.replace("/");
+    </script>
+  </head>
+  <body></body>
+</html>
