@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import gameModesData from "@/data/gameModes.json";
 import { InfoTooltip } from "./InfoTooltip";
 import { useSession } from "@/context/SessionContext";
-
 import { formatStatName, formatStatValue } from "@/utils/statFormatters";
 
 interface GameModeTogglePanelProps {
@@ -38,6 +37,48 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const teamEffects = homeSession.teamEffects;
   const modes = (gameModesData as any).modes as ModeDef[];
 
+  // ═══════════════════════════════════════════════════════════════
+  // 🔬 LOGS DE DIAGNÓSTICO
+  // ═══════════════════════════════════════════════════════════════
+  const teamEffectsRef = useRef(teamEffects);
+  useEffect(() => {
+    teamEffectsRef.current = teamEffects;
+  }, [teamEffects]);
+
+  const getGameModeActives = (state: Record<string, any>) =>
+    Object.entries(state || {})
+      .filter(([_, s]) => s?.enabled && s.ownerAgentId === "gameMode")
+      .map(([id, s]) => `${id} (stacks:${s.stacks})`);
+
+  // Mount / Unmount
+  useEffect(() => {
+    console.log(
+      "🟢 [GMP] MOUNT. gameMode actives:",
+      getGameModeActives(teamEffectsRef.current),
+    );
+    console.log("🟢 [GMP] session keys:", {
+      gameModeCurrentModeId: homeSession.gameModeCurrentModeId,
+      gameModeCurrentRoomId: homeSession.gameModeCurrentRoomId,
+      gameModeCurrentBuffId: homeSession.gameModeCurrentBuffId,
+      gameModeEffectId: homeSession.gameModeEffectId,
+    });
+    return () => {
+      console.log(
+        "🔴 [GMP] UNMOUNT. gameMode actives:",
+        getGameModeActives(teamEffectsRef.current),
+      );
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Cualquier cambio en teamEffects
+  useEffect(() => {
+    console.log(
+      "🔵 [GMP] teamEffects changed. gameMode actives:",
+      getGameModeActives(teamEffects),
+    );
+  }, [teamEffects]);
+
   const initialModeId = homeSession.gameModeCurrentModeId || modes[0]?.id || "";
   const initialRoomId =
     homeSession.gameModeCurrentRoomId || modes[0]?.rooms[0]?.id || "";
@@ -51,11 +92,40 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const currentMode = modes.find((m) => m.id === currentModeId);
   const currentRooms = currentMode?.rooms || [];
   const currentBuffs = currentMode?.buffs || [];
-
   const currentRoom = currentRooms.find((r) => r.id === currentRoomId);
   const currentEffects = currentRoom?.effects || [];
 
-  // Si el buff guardado en sesión no pertenece al modo actual, caemos al primero
+  // ⭐ Reset de todos los gameMode effects al montar el panel.
+  // Evita que los toggles sobrevivan a la navegación entre páginas.
+  useEffect(() => {
+    const toDisable = Object.entries(teamEffects)
+      .filter(([_, s]) => s?.enabled && s.ownerAgentId === "gameMode")
+      .map(([id]) => id);
+
+    console.log("🧹 [GMP] Mount reset. Disabling:", toDisable);
+
+    toDisable.forEach((id) => {
+      onTeamEffectToggle(id, false, 1, slotIndex, "gameMode");
+    });
+
+    // También limpiamos el "efecto principal" para que DamageSimulator
+    // no lo vuelva a encender con su useEffect de sincronización.
+    if (activeEffectId) {
+      onSelectEffect(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // ← solo en mount, nunca más
+
+  // Cualquier cambio en la selección de sección
+  useEffect(() => {
+    console.log("🟣 [GMP] selection changed:", {
+      currentModeId,
+      currentRoomId,
+      currentBuffId,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentModeId, currentRoomId, currentBuffId]);
+
   const resolvedBuffId = useMemo(() => {
     if (!currentBuffs.length) return "";
     return currentBuffs.some((b) => b.id === currentBuffId)
@@ -69,12 +139,9 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const isDeadlyAssault = currentModeId === "deadly_assault";
   const hasBuffs = isDeadlyAssault && currentBuffs.length > 0;
 
-  // ── Deriva el estado activo directamente de teamEffects ──
-  // No hay Sets locales: no pueden desincronizarse.
   const isEffectActive = (id: string) => !!teamEffects[id]?.enabled;
   const isBuffEffectActive = (id: string) => !!teamEffects[id]?.enabled;
 
-  // ── Sincroniza mode / room / buff a sesión ──
   useEffect(() => {
     setHomeSession((prev) => ({
       ...prev,
@@ -84,7 +151,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
     }));
   }, [currentModeId, currentRoomId, resolvedBuffId, setHomeSession]);
 
-  // ── Al montar, si el buff guardado no es válido, corrígelo en estado local ──
   useEffect(() => {
     if (resolvedBuffId && resolvedBuffId !== currentBuffId) {
       setCurrentBuffId(resolvedBuffId);
@@ -102,16 +168,22 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   };
 
   const disableEffects = (effects: any[]) => {
+    console.log(
+      "🟠 [GMP] disableEffects called with",
+      effects.length,
+      "effects",
+    );
     effects.forEach((e) => {
       const st = teamEffects[e.id];
       if (st?.enabled && st.ownerAgentId === "gameMode") {
+        console.log("🟠 [GMP]   → disabling", e.id);
         onTeamEffectToggle(e.id, false, 1, slotIndex, "gameMode");
       }
     });
   };
 
-  // ── Handlers ──
   const handleModeChange = (modeId: string) => {
+    console.log("🟡 [GMP] handleModeChange:", currentModeId, "→", modeId);
     if (modeId === currentModeId) return;
     disableEffects(currentEffects);
     disableEffects(currentBuffEffects);
@@ -124,6 +196,7 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   };
 
   const handleRoomChange = (roomId: string) => {
+    console.log("🟡 [GMP] handleRoomChange:", currentRoomId, "→", roomId);
     if (roomId === currentRoomId) return;
     disableEffects(currentEffects);
     setCurrentRoomId(roomId);
@@ -131,6 +204,7 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   };
 
   const handleBuffChange = (buffId: string) => {
+    console.log("🟡 [GMP] handleBuffChange:", resolvedBuffId, "→", buffId);
     if (buffId === resolvedBuffId) return;
     disableEffects(currentBuffEffects);
     setCurrentBuffId(buffId);
@@ -139,8 +213,15 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const handleRoomToggle = (effectId: string) => {
     const nowActive = !!teamEffects[effectId]?.enabled;
     const stacks = localStacks[effectId] || 1;
+    console.log(
+      "🟡 [GMP] handleRoomToggle:",
+      effectId,
+      "nowActive:",
+      nowActive,
+      "→",
+      !nowActive,
+    );
     onTeamEffectToggle(effectId, !nowActive, stacks, slotIndex, "gameMode");
-    // Solo los rooms actualizan el "efecto principal"
     if (!nowActive) onSelectEffect(effectId);
     else if (activeEffectId === effectId) onSelectEffect(null);
   };
@@ -148,8 +229,15 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const handleBuffToggle = (effectId: string) => {
     const nowActive = !!teamEffects[effectId]?.enabled;
     const stacks = localStacks[effectId] || 1;
+    console.log(
+      "🟡 [GMP] handleBuffToggle:",
+      effectId,
+      "nowActive:",
+      nowActive,
+      "→",
+      !nowActive,
+    );
     onTeamEffectToggle(effectId, !nowActive, stacks, slotIndex, "gameMode");
-    // Los buffs NO tocan gameModeEffectId
   };
 
   const handleStackChange = (effectId: string, newStacks: number) => {
@@ -180,59 +268,45 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
     const skillName = bonus.skillType
       ? SKILL_TYPE_LABELS[bonus.skillType] || bonus.skillType
       : "";
-
     switch (bonus.type) {
       case "global":
         return "All DMG";
-
       case "element":
         return bonus.element
           ? `${bonus.element.toUpperCase()} DMG`
           : "Element DMG";
-
       case "skillType":
         return skillName ? `${skillName} DMG` : "Skill DMG";
-
       case "skillTypeElemental":
         return bonus.element && bonus.skillType
           ? `${bonus.element.toUpperCase()} ${skillName} DMG`
           : "Skill/Element DMG";
-
       case "skillTypeStat": {
-        // El nombre del stat viene formateado por el helper
         const statLabel = bonus.stat ? formatStatName(bonus.stat) : "Stat";
         return skillName ? `${skillName} ${statLabel}` : statLabel;
       }
-
       case "exclusive":
         return "Skill-Exclusive DMG";
-
       case "elementExclusive":
         return bonus.element
           ? `${bonus.element.toUpperCase()} Skill-Exclusive DMG`
           : "Skill-Exclusive DMG";
-
       case "hitExclusive":
         return bonus.hitName ? `${bonus.hitName} DMG` : "Hit-Specific DMG";
-
       case "sheerDmg":
         return "Sheer DMG";
-
       case "elementSheerDmg":
         return bonus.element
           ? `${bonus.element.toUpperCase()} Sheer DMG`
           : "Sheer DMG";
-
       case "skillTypeElementalSheer":
         return bonus.element && bonus.skillType
           ? `${bonus.element.toUpperCase()} ${skillName} Sheer DMG`
           : "Skill Sheer DMG";
-
       case "critDamageElementalBonus":
         return bonus.element
           ? `${bonus.element.toUpperCase()} CRIT DMG`
           : "Elemental CRIT DMG";
-
       default:
         return bonus.type || "Bonus";
     }
@@ -243,7 +317,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
     shiyu_defense: "/resources/images/other/shiyu_defense.png",
   };
 
-  // ── Render de efectos (reusable rooms + buffs) ──
   const renderEffects = (
     effects: any[],
     isActiveFn: (id: string) => boolean,
@@ -258,7 +331,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
         const hasFlat = effect.flat && Object.keys(effect.flat).length > 0;
         const hasDamageBonuses =
           effect.damageBonuses && effect.damageBonuses.length > 0;
-
         return (
           <div key={effect.id} className="ingame_toggle-main_container">
             <div
@@ -400,11 +472,8 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
       style={{ "--theme": theme } as React.CSSProperties}
     >
       <div
-        className={`game_mode-main_grid ${
-          hasBuffs ? "game_mode-main_grid--with-buffs" : ""
-        }`}
+        className={`game_mode-main_grid ${hasBuffs ? "game_mode-main_grid--with-buffs" : ""}`}
       >
-        {/* Columna 1: modos */}
         <div className="game_mode-main_grid-left_column">
           {modes.map((mode) => {
             const isActive = currentModeId === mode.id;
@@ -440,7 +509,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
           })}
         </div>
 
-        {/* Columna 2: rooms + efectos */}
         <div className="game_mode-main_grid-right_column">
           <div className="game_mode-button_wrapper-rooms">
             <div className="game_mode-rooms_row" style={emptyObjectsStyle}>
@@ -450,9 +518,7 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
                   <button
                     key={room.id}
                     onClick={() => handleRoomChange(room.id)}
-                    className={`game_mode-room_button ${
-                      isActive ? "active" : ""
-                    }`}
+                    className={`game_mode-room_button ${isActive ? "active" : ""}`}
                     disabled={isActive}
                   >
                     {room.label}
@@ -464,7 +530,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
           {renderEffects(currentEffects, isEffectActive, handleRoomToggle)}
         </div>
 
-        {/* Columna 3: buffs — SOLO Deadly Assault */}
         {hasBuffs && (
           <div className="game_mode-main_grid-buffs_column">
             <div className="game_mode-button_wrapper-rooms">
@@ -475,9 +540,7 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
                     <button
                       key={buff.id}
                       onClick={() => handleBuffChange(buff.id)}
-                      className={`game_mode-room_button ${
-                        isActive ? "active" : ""
-                      }`}
+                      className={`game_mode-room_button ${isActive ? "active" : ""}`}
                       disabled={isActive}
                     >
                       {buff.label}

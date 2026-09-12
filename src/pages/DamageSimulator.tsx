@@ -184,24 +184,6 @@ const DamageSimulator = () => {
         handleTeamEffectToggle(effectId, false, 1, 0, "gameMode");
       }
     });
-
-    // ─────────────────────────────────────────────────────────────
-    // 3) Asegurar que el efecto primario (seleccionado desde los
-    //    rooms) siga activo. NO tocamos los buffs aquí: viven en
-    //    paralelo y el panel los gestiona por su cuenta.
-    // ─────────────────────────────────────────────────────────────
-    if (gameModeEffectId && validGameModeIds.has(gameModeEffectId)) {
-      const state = homeSession.teamEffects[gameModeEffectId];
-      if (!state?.enabled) {
-        handleTeamEffectToggle(
-          gameModeEffectId,
-          true,
-          state?.stacks ?? 1,
-          0,
-          "gameMode",
-        );
-      }
-    }
   }, [gameModeEffectId, homeSession.teamEffects]);
 
   const handleSeedVanguardChange = (

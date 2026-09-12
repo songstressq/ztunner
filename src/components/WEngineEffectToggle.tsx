@@ -1,6 +1,7 @@
 import type { IngameEffect } from "@/types/IngameEffect";
 import { useState, useEffect } from "react";
 import { InfoTooltip } from "./InfoTooltip";
+import { formatStatName, formatStatValue } from "@/utils/statFormatters";
 
 interface Props {
   effect: IngameEffect;
@@ -139,90 +140,6 @@ const WEngineEffectToggle = ({
   const handleOverclockChange = (level: number) => {
     setLocalOverclock(level);
     onOverclockChange(level);
-  };
-
-  const formatStatValue = (stat: string, value: number): string => {
-    const percentStats = [
-      "atkPercent",
-      "hpPercent",
-      "defPercent",
-      "critRate",
-      "critDmg",
-      "penRatio",
-      "energyRegen",
-      "impactPercent",
-      "attributeDmgBonus",
-      "iceDmgBonus",
-      "fireDmgBonus",
-      "etherDmgBonus",
-      "physicalDmgBonus",
-      "electricDmgBonus",
-      "sheerDmgBonus",
-      "fireSheerDmgBonus",
-      "iceSheerDmgBonus",
-      "electricSheerDmgBonus",
-      "physicalSheerDmgBonus",
-      "etherSheerDmgBonus",
-    ];
-
-    const isPercent =
-      percentStats.includes(stat) ||
-      stat.toLowerCase().includes("percent") ||
-      stat.toLowerCase().includes("ratio") ||
-      stat.toLowerCase().includes("rate") ||
-      stat.toLowerCase().includes("bonus");
-
-    if (isPercent) {
-      return `${(value * 100).toFixed(2)}%`;
-    }
-
-    return Number.isInteger(value) ? value.toString() : value.toFixed(2);
-  };
-
-  const formatStatName = (stat: string): string => {
-    const statNames: Record<string, string> = {
-      atk: "ATK",
-      atkFlat: "ATK",
-      atkPercent: "ATK%",
-      hp: "HP",
-      hpFlat: "HP",
-      hpPercent: "HP%",
-      def: "DEF",
-      defFlat: "DEF",
-      defPercent: "DEF%",
-      critRate: "CRIT Rate",
-      critDmg: "CRIT DMG",
-      impact: "Impact",
-      impactPercent: "Impact%",
-      impactPercentRaw: "Impact%",
-      energyRegen: "Energy Regen",
-      energyRegenRaw: "Energy Regen",
-      penRatio: "PEN Ratio",
-      attributeDmgBonus: "Attribute DMG Bonus",
-      fireDmgBonus: "Fire DMG Bonus",
-      iceDmgBonus: "Ice DMG Bonus",
-      electricDmgBonus: "Electric DMG Bonus",
-      physicalDmgBonus: "Physical DMG Bonus",
-      etherDmgBonus: "Ether DMG Bonus",
-      anomalyProficiency: "Anomaly Proficiency",
-      anomalyMastery: "Anomaly Mastery",
-      anomalyMasteryRaw: "Anomaly Mastery",
-      sheerForce: "Sheer Force",
-      defShred: "DEF Reduction",
-      fireResShred: "Fire RES Ignore",
-      iceResShred: "Ice RES Ignore",
-      electricResShred: "Electric RES Ignore",
-      physicalResShred: "Physical RES Ignore",
-      etherResShred: "Ether RES Ignore",
-      sheerDmgBonus: "Sheer DMG Bonus",
-      fireSheerDmgBonus: "Fire Sheer DMG Bonus",
-      iceSheerDmgBonus: "Ice Sheer DMG Bonus",
-      electricSheerDmgBonus: "Electric Sheer DMG Bonus",
-      physicalSheerDmgBonus: "Physical Sheer DMG Bonus",
-      etherSheerDmgBonus: "Ether Sheer DMG Bonus",
-    };
-
-    return statNames[stat] || stat.replace(/([A-Z])/g, " $1").trim();
   };
 
   const emptyObjectsStyle = {
@@ -423,7 +340,7 @@ const WEngineEffectToggle = ({
                         </span>
 
                         <span className="ingame_toggle-stat_value">
-                          +{formatStatValue(stat, value)}
+                          +{formatStatValue(stat, value, { decimals: 2 })}
                           {stackMultiplier &&
                             maxStacks > 1 &&
                             ` (×${localStacks})`}
