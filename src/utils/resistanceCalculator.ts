@@ -1,5 +1,6 @@
 import type { Enemy } from "@/types/Enemy";
 import { ingameEffectsRegistry } from "@/data/ingameEffectsRegistry";
+import { ANOMALY_DEFINITIONS } from "@/types/Anomaly";
 
 export interface ResistanceCalculation {
   baseResistance: number;
@@ -18,10 +19,15 @@ export function calculateElementalResistance(
   isVortex: boolean = false,
   isLuminize: boolean = false,
 ): ResistanceCalculation {
+  const parentAttr =
+    ANOMALY_DEFINITIONS[damageType]?.parentAttribute ??
+    ANOMALY_DEFINITIONS[damageType.toLowerCase()]?.parentAttribute ??
+    damageType;
+  const resolvedElement = parentAttr.toLowerCase();
+
   let totalResShred = 0;
   let baseResistance = 0;
-
-  switch (damageType.toLowerCase()) {
+  switch (resolvedElement) {
     case "fire":
       baseResistance = enemy.stats.fireResistance;
       break;
@@ -175,7 +181,13 @@ export function getResShredForElement(
     const effect = ingameEffectsRegistry[effectId];
     if (!effect) return;
     const stacks = state.stacks || 1;
-    switch (element.toLowerCase()) {
+    const parentAttr =
+      ANOMALY_DEFINITIONS[element]?.parentAttribute ??
+      ANOMALY_DEFINITIONS[element.toLowerCase()]?.parentAttribute ??
+      element;
+    const resolvedElement = parentAttr.toLowerCase();
+
+    switch (resolvedElement) {
       case "fire":
         if (effect.flat?.fireResShred)
           total += effect.flat.fireResShred * stacks;

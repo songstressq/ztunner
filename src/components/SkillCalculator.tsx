@@ -850,8 +850,14 @@ export default function SkillCalculator({
       attackerLevelCoeff / (attackerLevelCoeff + defenseAfterPen);
     let damage = baseDamage * defMultiplier;
 
+    const parentAttr =
+      ANOMALY_DEFINITIONS[damageType]?.parentAttribute ??
+      ANOMALY_DEFINITIONS[damageType.toLowerCase()]?.parentAttribute ??
+      damageType;
+    const resolvedElement = parentAttr.toLowerCase();
+
     let baseResistance = 0;
-    switch (damageType.toLowerCase()) {
+    switch (resolvedElement) {
       case "fire":
         baseResistance = selectedEnemy.stats.fireResistance;
         break;
@@ -1095,6 +1101,9 @@ export default function SkillCalculator({
         i,
         hitNameForRealDamage,
         additionalDefShred,
+        0,
+        false,
+        false,
         penRatio,
       );
 
@@ -1107,6 +1116,9 @@ export default function SkillCalculator({
         i,
         hitNameForRealDamage,
         additionalDefShred,
+        0,
+        false,
+        false,
         penRatio,
       );
 
