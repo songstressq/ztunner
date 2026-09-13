@@ -241,6 +241,26 @@
       "notes": null
     },
     {
+      "id": "kusarikku",
+      "name": "Kusarikku",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "In combat, once Kusarikku uses the Meteor Hammer to smash the spatial fissures and activates the Corruptive Barrier, it will frequently slips into the fissures and unleashes Rift Assaults. Use Defensive Assist to counter Rift Assaults and rapidly reduce the Corruptive Barrier. Repeatedly countering them successfully can allow you to seize the initiative in battle.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": -0.2,
+        "iceResistance": 0.4,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
       "id": "sanguine_sweeper",
       "name": "Sanguine Sweeper",
       "level": 60,
@@ -610,6 +630,26 @@
       "type": "boss",
       "enemyType": "Specials",
       "description": "In combat, Scorched Horizon can utilize its extraordinary mastery of Ether to reconstruct itself multiple times, simulating the attack patterns and corresponding attributes of various Etheric Irregularities. Scorched Horizon will activate Gale Scorcher at specific moments to enhance its attacks, generating tornadoes on the battlefield to fight by its side. Meanwhile, Scorched Horizon will enter the Windswept state. If another Attribute Anomaly is inflicted it will trigger Vortex and render it Impaired.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.4,
+        "etherResistance": 0.0,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "integrated_scorched_horizon",
+      "name": "Integrated - Scorched Horizon",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "In combat, Scorched Horizon leverages extraordinary Ether mastery to undergo multiple self-reconstructions, simulating various Etheric Other attack forms and their corresponding attributes. Scorched Horizon activates the Misty Veil state at specific opportunities while simultaneously enabling the Corruptive Barrier. Performing Chain Defensive moves against certain skills used during the Misty Veil state triggers Impaired and rapidly depletes the Corruptive Barrier. Additionally, during the Misty Veil state, updrafts will frequently appear across the battlefield — taking damage from these updrafts will restore a small amount of Scorched Horizon's Corruptive Barrier.",
       "stats": {
         "def": 953,
         "defBase": 953,

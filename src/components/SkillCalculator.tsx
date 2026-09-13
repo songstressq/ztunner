@@ -30,6 +30,7 @@ import {
   calculateSheerDamage,
   isSheerDamage,
 } from "@/utils/sheerDamageCalculator";
+import MaimCalculator from "@/components/MaimCalculator";
 
 interface SkillCalculatorProps {
   agent: Agent;
@@ -2755,6 +2756,24 @@ export default function SkillCalculator({
           </div>
         )}
       </div>
+
+      {/* ⭐ Maim DMG Calculator — SOLO Armorer */}
+      {agent.specialty === "Armorer" && (
+        <MaimCalculator
+          agent={agent}
+          unifiedStats={unifiedStats}
+          selectedEnemy={selectedEnemy}
+          stunMultiplier={stunMultiplier}
+          damageBonuses={bonuses}
+          anomalyBonuses={anomalyBonuses}
+          activeEffects={allActiveEffects}
+          teamSlotsInfo={teamSlotsInfo}
+          currentSlotIndex={currentSlotIndex}
+          theme={theme}
+          calculatorState={calculatorState}
+          onCalculatorStateChange={onCalculatorStateChange}
+        />
+      )}
 
       <div
         className="calculator-main_wrapper"

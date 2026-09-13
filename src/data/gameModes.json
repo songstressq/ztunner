@@ -6,78 +6,64 @@
       "rooms": [
         {
           "id": "room_1",
-          "label": "Room 1: Dead End Butcher",
+          "label": "Room 1: Kusarikku",
           "effects": [
             {
-              "id": "game_mode_da_room1_effect_a",
-              "label": "Dead End Butcher - CRIT DMG",
-              "description": "When not in a Stunned state, Boss enemies gain 1 stack of All or Nothing every 6s, stacking up to 3 stacks. Each stach of All or Nothing increases the DMG dealt by the Boss enemy by 10%. When an Agent's attack hits an enemy, for each stack of All or Nothing the target has, CRIT DMG from the Agent's attacks increases by 25% and Attribute Anomaly DMG decreases by 15%. When an enemy enters a Stunned state, they gain 1 stack of All or Nothing. All or Nothing stacks will be reset when the enemy recovers from being Stunned.",
-              "shortDescription": "All squad members' CRIT DMG is increased by 25%, stacking up to 3 times.",
+              "id": "Kusarikku End Butcher - Anomaly DMG",
+              "description": "Attribute Anomaly DMG taken by Kusarikku is reduced by 40%. ... ",
+              "shortDescription": "All squad members' DMG from Attribute Anomalies is decreased by 40%.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "critDmg": 0.25 },
-              "maxStacks": 3
+              "perStack": { "anomalyDmgBonus": -0.4 }
             },
             {
-              "id": "game_mode_da_room1_effect_b",
-              "label": "Dead End Butcher - Anomaly DMG",
-              "description": "When not in a Stunned state, Boss enemies gain 1 stack of All or Nothing every 6s, stacking up to 3 stacks. Each stach of All or Nothing increases the DMG dealt by the Boss enemy by 10%. When an Agent's attack hits an enemy, for each stack of All or Nothing the target has, CRIT DMG from the Agent's attacks increases by 25% and Attribute Anomaly DMG decreases by 15%. When an enemy enters a Stunned state, they gain 1 stack of All or Nothing. All or Nothing stacks will be reset when the enemy recovers from being Stunned.",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is decreased by 15%, stacking up to 3 times.",
+              "id": "Kusarikku End Butcher - Laceration DMG",
+              "description": "... When an Agent successfully uses a Defensive Assist against Kusarikku's Rift Assault, applies 1 stack opf Exposed to Kusarikku. When Kusarikku becomes stunned, applies 2 stacks of Exposed. Each stack of Exposed increases the Laceration DMG Kousarikku receives by 10%. Exposed can stack up to 4 times and lasts 30s. Repeated triggers reset the duration.",
+              "shortDescription": "All squad members' Laceration DMG is increased by 10% for 30s, stacking up to 4 times.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": -0.15 },
-              "maxStacks": 3
+              "flat": { "lacerationDmg": 0.1 },
+              "maxStacks": 4
             }
           ]
         },
         {
           "id": "room_2",
-          "label": "Room 2: Girtablullu",
+          "label": "Room 2: Girtablullu - Stagnant Aberrant",
           "effects": [
             {
               "id": "game_mode_da_room2_effect_a",
-              "label": "Girtablullu - Anomaly DMG",
-              "description": "Whenever an Agent inflicts an Anomaly on the Boss, they apply 1 stack of Shadow to it. Each stach of Shadow increases the Boss's Anomaly DMG taken by 7.5% an additionally increases its Vortex DMG taken by 5% for 10s. Shadow can stack up to 3 times. ...",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is increased by 7.5%, stacking up to 3 times.",
+              "label": "Girtablullu - Stagnant Aberrant - Anomaly DMG",
+              "description": "When an Agent inflicts an Attribute Anomaly on an enemy, the target enemy gains 1 stack of Blight Mark of the corresponding attribute, lasting 30s and stacking up to 2 times. Repeated triggers of same-attribute Blight Mark reset its duration. For every stack of Blight Mark inflicted, the enemies take 8% more Attribute Anomaly DMG, and DMG taken by Corruptive Barried increased by 8%. ...",
+              "shortDescription": "All squad members' DMG from Attribute Anomalies is increased by 8% for 30s, stacking up to 2 times.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.075 },
-              "maxStacks": 3
+              "perStack": { "anomalyDmgBonus": 0.08 },
+              "maxStacks": 2
             },
             {
               "id": "game_mode_da_room2_effect_b",
-              "label": "Girtablullu - Vortex DMG",
-              "description": "Whenever an Agent inflicts an Anomaly on the Boss, they apply 1 stack of Shadow to it. Each stach of Shadow increases the Boss's Anomaly DMG taken by 7.5% an additionally increases its Vortex DMG taken by 5% for 10s. Shadow can stack up to 3 times. ...",
-              "shortDescription": "All squad members' DMG from Vortex is increased by 5%, stacking up to 3 times.",
+              "label": "Girtablullu - Stagnant Aberrant - Anomaly Proficiency",
+              "description": "... When inflicting Impaired or Shutdown on an enemy, the whole squad's Anomaly Proficiency increases by 60 pts, lasting 30s. Repeated triggers reset the duration.",
+              "shortDescription": "All squad members' Anomaly Proficiency is increased by 60 for 30s.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "vortexDmgBonus": 0.05 },
-              "maxStacks": 3
+              "flat": { "anomalyProficiency": 60 }
             }
           ]
         },
         {
           "id": "room_3",
-          "label": "Room 3: Primordial Nightmare - \"The Creator\"",
+          "label": "Room 3: Ye Shiyuan the Thrall",
           "effects": [
             {
               "id": "game_mode_da_room3_effect_a",
-              "label": "All RES Shred",
-              "description": "Boss Anomaly DMG taken is reduced by 30%. When switching from Miasmic Shield state to normal state. or from normal state to Miasmic Shield state, Agent CRIT DMG against them is increased by 20%. This effect can stack up to 3 times and resets when the boss recovers from Stun.",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is decreased by 30%.",
+              "label": "Ye Shiyuan the Thrall - CRIT DMG",
+              "description": "When Sobek and The Thrall alternate turns, The Thrall gains 1 stack of Contract and Self-Sacrifice. Contract and Self-Sacrifice can stack up to 3 times. Each stack of Contract increases All-Attribute Anomaly Buildup RES by 15%, each stack of Self-Sacrifice reduces The Thrall's DEF by 8%. Ehen The Thrall is Stunned, CRIT DMG taken increses by 50%. ...",
+              "shortDescription": "All squad members' CRIT DMG is increased by 50%.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": -0.3 }
-            },
-            {
-              "id": "game_mode_da_room3_effect_b",
-              "label": "All RES Shred",
-              "description": "Boss Anomaly DMG taken is reduced by 30%. When switching from Miasmic Shield state to normal state. or from normal state to Miasmic Shield state, Agent CRIT DMG against them is increased by 20%. This effect can stack up to 3 times and resets when the boss recovers from Stun.",
-              "shortDescription": "All squad members' CRIT DMG is increased by 20%, stacking up to 3 times.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "critDmg": 0.2 },
-              "maxStacks": 3
+              "flat": { "critDmg": 0.5 }
             }
           ]
         }
@@ -89,48 +75,22 @@
           "effects": [
             {
               "id": "game_mode_da_buff1_effect_a",
-              "label": "Deadly Assault: Icy Raid",
-              "description": "DMG dealt by Agents' Basic Attack and Ultimate increases by 30%. When an Agent with Attack specialty hits an enemy, their attacks ignore 20% of the target's Ice RES.",
-              "shortDescription": "All squad members' DMG from Basic Attacks and Ultimates is increased by 30%.",
+              "label": "Deadly Assault: Sharp Rupture",
+              "description": "Agent PEN Ratio increases by 5%. When an attack hits an enemy, it ignores 15% of the target's Electric RES. ...",
+              "shortDescription": "All squad members' PEN Ratio is increased by 8%, and their DMG ignores 15% of the target's Electric RES",
               "source": "gameMode",
               "target": "team",
-              "damageBonuses": [
-                {
-                  "type": "skillType",
-                  "skillType": "ultimate",
-                  "value": 0.3
-                },
-                {
-                  "type": "skillType",
-                  "skillType": "basic",
-                  "value": 0.3
-                }
-              ]
+              "flat": { "penRatio": 0.08, "electricResShred": 0.15 }
             },
             {
               "id": "game_mode_da_buff1_effect_b",
               "label": "Deadly Assault: Icy Raid",
-              "description": "DMG dealt by Agents' Basic Attack and Ultimate increases by 30%. When an Agent with Attack specialty hits an enemy, their attacks ignore 20% of the target's Ice RES. ...",
-              "shortDescription": "Attack Agents' DMG ignores 20% of the target's Ice RES.",
+              "description": "... After an Agent uses an EX Special Attack or Special Attack, Sharp DMG increases by 20% and DEF increases by 10%. ...",
+              "shortDescription": "All squad members' Sharp DMG is increased by 20%, and their DEF is increased by 10%.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "iceResShred": 0.2 },
-              "condition": { "requiresSpecialty": "Attack" }
-            },
-            {
-              "id": "game_mode_da_buff1_effect_c",
-              "label": "Deadly Assault: Icy Raid",
-              "description": "... After an Agent uses an EX Special Attack, their own Ice DMG increases by 30% for 15s. Repeated triggers reset the duration.",
-              "shortDescription": "All squad members' Ice DMG is increased by 30% for 15s.",
-              "source": "gameMode",
-              "target": "team",
-              "damageBonuses": [
-                {
-                  "type": "element",
-                  "element": "ice",
-                  "value": 0.3
-                }
-              ]
+              "flat": { "defPercentRaw": 0.1 },
+              "damageBonuses": [{ "type": "sharpDmg", "value": 0.2 }]
             }
           ]
         },
@@ -140,42 +100,30 @@
           "effects": [
             {
               "id": "game_mode_da_buff2_effect_a",
-              "label": "Deadly Assault: Mutation",
-              "description": "If there are 2/3 Agents with the Anomaly specialty in your squad, the whole squad's Attribute Anomaly DMG increases by 10%/30%, and their ATK increases by 5%/15% respectively. ...",
-              "shortDescription": "With 2 Anomaly Agents in the squad, all squad members' DMG from Attribute Anomalies is increased by 10%, and their ATK is increased by 5%.",
+              "label": "Deadly Assault: Cinders of Corrosion",
+              "description": "If there are 2/3 Agents in the squad with the Anomaly specialty, the whole squad's Anomaly Proficiency increases by 20/60 respectively, and Anomaly Buildup Rate increases by 10%/20% respectively. ...",
+              "shortDescription": "With 2 Anomaly Agents in the squad, all squad members' Anomaly Proficiency is increased by 20.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.1, "atkPercentRaw": 0.05 }
+              "flat": { "anomalyProficiency": 20 }
             },
             {
               "id": "game_mode_da_buff2_effect_b",
-              "label": "Deadly Assault: Mutation",
-              "description": "If there are 2/3 Agents with the Anomaly specialty in your squad, the whole squad's Attribute Anomaly DMG increases by 10%/30%, and their ATK increases by 5%/15% respectively. ...",
-              "shortDescription": "With 3 Anomaly Agents in the squad, all squad members' DMG from Attribute Anomalies is increased by 30%, and their ATK is increased by 15%.",
+              "label": "Deadly Assault: Cinders of Corrosion",
+              "description": "If there are 2/3 Agents in the squad with the Anomaly specialty, the whole squad's Anomaly Proficiency increases by 20/60 respectively, and Anomaly Buildup Rate increases by 10%/20% respectively. ...",
+              "shortDescription": "With 3 Anomaly Agents in the squad, all squad members' Anomaly Proficiency is increased by 60.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.3, "atkPercentRaw": 0.15 }
+              "flat": { "anomalyProficiency": 60 }
             },
             {
               "id": "game_mode_da_buff2_effect_c",
-              "label": "Deadly Assault: Mutation",
-              "description": "... When dealing Attribute Anomaly DMG to an enemy, ignore 10% of their All-Attribute RES and 10% of their DEF.",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies ignore 10 of the target's All-Attribute RES, and 10% of their DEF.",
+              "label": "Deadly Assault: Cinders of Corrosion",
+              "description": "... After an Agent inflicts an Attribute Anomaly on an enemy, the enemy's DEF is reduced by 10% for 10s. Repeated triggers reset the duration.",
+              "shortDescription": "All squad members' DMG from Attribute Anomalies is increased by 10% for 10s.",
               "source": "gameMode",
               "target": "team",
-              "perStack": {
-                "defShred": 0.3,
-                "iceResShred": 0.15,
-                "etherResShred": 0.15,
-                "fireResShred": 0.15,
-                "electricResShred": 0.15,
-                "physicalResShred": 0.15,
-                "windResShred": 0.15
-              },
-              "condition": {
-                "appliesToAnomalyOnly": true,
-                "appliesToDisorderOnly": true
-              }
+              "perStack": { "anomalyDmgBonus": 0.1 }
             }
           ]
         },
@@ -185,44 +133,28 @@
           "effects": [
             {
               "id": "game_mode_da_buff3_effect_a",
-              "label": "Deadly Assault: Heartcrusher",
-              "description": "Agent CRIT DMG increases by 30%. ...",
-              "shortDescription": "All squad members' CRIT DMG is increased by 30%.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "critDmg": 0.3 }
-            },
-            {
-              "id": "game_mode_da_buff3_effect_b",
-              "label": "Deadly Assault: Heartcrusher",
-              "description": "... ATK of Agents with Attack specialty increases by 10%. Their Basic Attack DMG increases by 30% and ignore 15% of enemy DEF.",
-              "shortDescription": "Attack Agents' ATK is increased by 10%.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "atkPercentRaw": 0.1 },
-              "condition": { "requiresSpecialty": "Attack" }
-            },
-            {
-              "id": "game_mode_da_buff3_effect_c",
-              "label": "Deadly Assault: Heartcrusher",
-              "description": "... ATK of Agents with Attack specialty increases by 10%. Their Basic Attack DMG increases by 30% and ignore 15% of enemy DEF.",
-              "shortDescription": "Attack Agents' DMG from Basic Attacks is increased by 30%, and ignores 15 of the target's DEF.",
+              "label": "Deadly Assault: Gleaming Frost",
+              "description": "Agents with the Attack specialty deal 20% more Ice DMG. ...",
+              "shortDescription": "All squad members' Ice DMG is increased by 20%.",
               "source": "gameMode",
               "target": "team",
               "damageBonuses": [
                 {
-                  "type": "skillTypeStat",
-                  "stat": "defShred",
-                  "skillType": "basic",
-                  "value": 0.5
-                },
-                {
-                  "type": "skillType",
-                  "skillType": "basic",
-                  "value": 0.3
+                  "type": "element",
+                  "element": "ice",
+                  "value": 0.2
                 }
               ],
               "condition": { "requiresSpecialty": "Attack" }
+            },
+            {
+              "id": "game_mode_da_buff3_effect_b",
+              "label": "Deadly Assault: Gleaming Frost",
+              "description": "... Agent CRIT DMG increases by 30%. When attacking a Stunned enemy, the enemy's Stun DMG Multiplier additionally increases by 20% for 20s. Repeated triggers reset the duration.",
+              "shortDescription": "All squad members' CRIT DMG is increased by 20% for 20s.",
+              "source": "gameMode",
+              "target": "team",
+              "flat": { "critDmg": 0.2 }
             }
           ]
         }

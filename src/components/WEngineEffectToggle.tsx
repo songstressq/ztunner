@@ -340,7 +340,7 @@ const WEngineEffectToggle = ({
                         </span>
 
                         <span className="ingame_toggle-stat_value">
-                          +{formatStatValue(stat, value, { decimals: 2 })}
+                          {formatStatValue(stat, value, { decimals: 2 })}
                           {stackMultiplier &&
                             maxStacks > 1 &&
                             ` (×${localStacks})`}

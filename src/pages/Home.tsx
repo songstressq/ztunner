@@ -173,16 +173,17 @@ const Home = () => {
               <div className="home_content_changelog_item">
                 <span>v1.1.0 — Armorer Update</span>
 
-                <h4>● Added - Armorer Specialty</h4>
+                <h4>● Added - ZZZ Maim DMG Calculator</h4>
                 <p>
-                  Added damage calculations for Laceration DMG and Sharp DMG,
-                  including its additional mechanics, to the Z-Tunner's ZZZ DMG
-                  Calculator.
+                  Added calculations for Laceration DMG, Sharp DMG, and Maim
+                  DMG, including their additional mechanics, to Z-Tunner's ZZZ
+                  DMG/Maim DMG Calculator.
                 </p>
-                <h4>● Added - Claret Flint</h4>
+                <h4>● Added - Claret Flint / Armorer Specialty</h4>
                 <p>
-                  Claret Flint has been added to Z-Tunner, with support for her
-                  unique abilities, mechanics, and damage calculations.
+                  Claret Flint and the Armorer Specialty have been added to
+                  Z-Tunner, with support for their unique abilities, mechanics,
+                  and damage calculations.
                 </p>
               </div>
               <div className="home_content_changelog_item">
@@ -246,8 +247,8 @@ const Home = () => {
                     Maim DMG.
                   </p>
                   <div className="home_content-progress_bar">
-                    {renderProgressBar(50)}
-                    <span>50%</span>
+                    {renderProgressBar(100)}
+                    <span>100%</span>
                   </div>{" "}
                 </div>{" "}
                 <div className="home_content-features_card">

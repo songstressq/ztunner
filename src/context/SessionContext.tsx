@@ -70,6 +70,9 @@ export interface CalculatorUIState {
   fluxedAttributes: (string | null)[];
   yanagiPolarityTimeRemaining: number;
   nangongPolarityTimeRemaining: number;
+  maimSelectedSkillId: string | null;
+  maimSkillLevel: number;
+  maimMindscape1Active: boolean;
 }
 
 export const defaultCalculatorState: CalculatorUIState = {
@@ -99,6 +102,9 @@ export const defaultCalculatorState: CalculatorUIState = {
   fluxedAttributes: [null, null, null],
   yanagiPolarityTimeRemaining: 10,
   nangongPolarityTimeRemaining: 10,
+  maimSelectedSkillId: null,
+  maimSkillLevel: 11,
+  maimMindscape1Active: false,
 };
 
 interface HomeSession {
