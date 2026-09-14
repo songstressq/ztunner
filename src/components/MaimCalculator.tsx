@@ -33,11 +33,7 @@ interface Props {
 
 const MS1_MULTIPLIER = 1.3;
 const ALC = 794;
-
-// ⭐ Efecto del Core Passive de Claret que habilita el checkbox MS1
 const BANQUET_EFFECT_ID = "claret_flint-mindscape_1-bloodstained_chronicle";
-
-// Default de nivel si la sesión guardada es vieja y no tiene el campo
 const DEFAULT_MAIM_LEVEL = 11;
 
 export default function MaimCalculator({
@@ -72,7 +68,6 @@ export default function MaimCalculator({
       maimMindscape1Active: value,
     }));
 
-  // ── Detectar skills con "Maim Multiplier" ──
   const maimSkills = useMemo<DamageSkill[]>(() => {
     if (agent.specialty !== "Armorer") return [];
     const allSkills: DamageSkill[] = [
@@ -89,11 +84,10 @@ export default function MaimCalculator({
       ...(agent.skills?.mindscapeAbilities || []),
     ];
     return allSkills.filter((skill) =>
-      skill.hits?.some((hit: any) => hit.name === "Maim DMG Multiplier"),
+      skill.hits?.some((hit: any) => hit.name === "Maim Multiplier"),
     );
   }, [agent]);
 
-  // Auto-seleccionar la primera skill
   useEffect(() => {
     if (maimSkills.length > 0 && !maimSelectedSkillId) {
       setMaimSelectedSkillId(maimSkills[0].id);
@@ -103,9 +97,6 @@ export default function MaimCalculator({
 
   const selectedSkill = maimSkills.find((s) => s.id === maimSelectedSkillId);
 
-  // ⭐ Garantizar que maimSkillLevel sea un nivel válido para la skill actual.
-  // Cubre 2 casos: (a) sesión vieja donde el campo era undefined → set a 11;
-  // (b) la skill no llega a 11 → cae al máximo disponible.
   useEffect(() => {
     if (!selectedSkill) return;
     const availableLevels = selectedSkill.levels.map((l) => l.level);
@@ -124,19 +115,13 @@ export default function MaimCalculator({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSkill, maimSkillLevel]);
 
-  // ⭐ Efectivo: nunca dejamos que quede en undefined mientras hay skill válida
   const effectiveSkillLevel = selectedSkill
     ? (maimSkillLevel ?? Math.max(...selectedSkill.levels.map((l) => l.level)))
     : DEFAULT_MAIM_LEVEL;
 
-  // ⭐ Claret's Core Passive — habilita el checkbox MS1
   const hasBanquetOfPaleBlood = useMemo(() => {
     if (agent.id !== "claret") return false;
-
-    // 1) Si está como toggle interactivo y enabled → cuenta
     if (activeEffects[BANQUET_EFFECT_ID]?.enabled) return true;
-
-    // 2) Si está definida como infoOnly → cuenta igualmente
     const effectDef: any = (agent as any).ingameEffects?.find(
       (e: any) => e.id === BANQUET_EFFECT_ID,
     );
@@ -152,7 +137,7 @@ export default function MaimCalculator({
     );
     if (!levelData) return 0;
     const hitIndex = selectedSkill.hits.findIndex(
-      (hit: any) => hit.name === "Maim DMG Multiplier",
+      (hit: any) => hit.name === "Maim Multiplier",
     );
     if (hitIndex === -1) return 0;
     return levelData.multipliers[hitIndex] / 100;
@@ -164,7 +149,6 @@ export default function MaimCalculator({
       ? baseMaimMult * MS1_MULTIPLIER
       : baseMaimMult;
 
-  // ── Cálculo principal ──
   const result = useMemo(() => {
     if (!selectedSkill || !selectedEnemy || effectiveMaimMult === 0)
       return null;
@@ -175,10 +159,8 @@ export default function MaimCalculator({
         ? agent.attribute?.toLowerCase() || "electric"
         : rawDamageType;
 
-    // ① Base
     const base = unifiedStats.def * effectiveMaimMult;
 
-    // ② DefMult
     const enemyDef = selectedEnemy.stats.def;
     const penRatio = unifiedStats.penRatio || 0;
     const penFlat = unifiedStats.pen || 0;
@@ -186,7 +168,6 @@ export default function MaimCalculator({
     const defenseAfterPen = Math.max(0, defenseAfterPenRatio - penFlat);
     const defMultiplier = ALC / (ALC + defenseAfterPen);
 
-    // ③ DMG%
     let dmgMod = 1;
     dmgMod += damageBonuses.global || 0;
     dmgMod += damageBonuses.elements?.[damageType] || 0;
@@ -197,12 +178,10 @@ export default function MaimCalculator({
     dmgMod += damageBonuses.skillTypes?.[selectedSkill.skillType] || 0;
     dmgMod += damageBonuses.exclusive?.[selectedSkill.id] || 0;
 
-    // ④ Lac₁ + Lac₂ garantizados
     const lacDmg = unifiedStats.lacerationDmg || 1.5;
     const lac1Multiplier = 1 + lacDmg;
     const lac2Multiplier = 1 + lacDmg;
 
-    // ⑤ Sharp DMG Bonus
     const sharpBonus =
       1 +
       (damageBonuses.sharpDmgBonus || 0) +
@@ -211,10 +190,8 @@ export default function MaimCalculator({
         damageType
       ] || 0);
 
-    // ⑥ Stun
     const stunMult = 1 + stunMultiplier / 100;
 
-    // ⑦ RES
     const resCalc = calculateElementalResistance(
       selectedEnemy,
       damageType,
@@ -227,7 +204,6 @@ export default function MaimCalculator({
     );
     const resMult = resCalc.damageMultiplier;
 
-    // Running totals
     const afterDefMult = base * defMultiplier;
     const afterDmgMod = afterDefMult * dmgMod;
     const afterLac1 = afterDmgMod * lac1Multiplier;
@@ -404,8 +380,8 @@ export default function MaimCalculator({
               <div className="anomaly-grid-header">
                 <div className="anomaly-title-with-icon">
                   <img
-                    src="/resources/images/icons/skilltypes/core.png"
-                    alt="Maim"
+                    src="/resources/images/icons/attributes/Electric.png"
+                    alt="Electric"
                     className="anomaly-attribute-icon"
                   />
                   <span className="anomaly-title-text">

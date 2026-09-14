@@ -62,7 +62,7 @@
       "label": "Twin Rainbows of the Swordheart (Core Passive)",
       "description": "... If Disorder is triggered while the enemy is suffering a Physical Anomaly, for every 1s of remaining Physical Anomaly duration, the Disorder DMG multiplier increases by 18%, up to a max of 180%. ...",
       "shortDescription": "The target's Disorder DMG Multiplier suffered is increased by 18% for physical anomalies, stacking up to 10 times.",
-      "target": "team",
+      "target": "self",
       "perStack": { "disorderMultiplierBonus": 0.18 },
       "maxStacks": 10,
       "condition": { "requiresDisorderAttribute": "physical" }

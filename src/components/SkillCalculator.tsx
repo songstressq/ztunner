@@ -89,16 +89,16 @@ interface SkillCalculatorProps {
 interface DamageResult {
   normal: number[];
   critical: number[];
-  sharp: number[]; // ⭐
+  sharp: number[]; 
   realNormal: number[];
   realCritical: number[];
-  realSharp: number[]; // ⭐
+  realSharp: number[]; 
   totalNormal: number;
   totalCritical: number;
-  totalSharp: number; // ⭐
+  totalSharp: number; 
   totalRealNormal: number;
   totalRealCritical: number;
-  totalRealSharp: number; // ⭐
+  totalRealSharp: number; 
 }
 
 interface AdditionalDamage {
@@ -116,6 +116,14 @@ interface AdditionalDamage {
 const ALC_TABLE: Record<number, number> = {
   60: 794,
 };
+
+const SPECIAL_HIT_NAMES = new Set<string>([
+  "Luminize Multiplier",
+  "Maim Multiplier",
+]);
+
+const isSpecialMarkerHit = (hit: any): boolean =>
+  SPECIAL_HIT_NAMES.has(hit?.name ?? "");
 
 export default function SkillCalculator({
   agent,
@@ -595,7 +603,6 @@ export default function SkillCalculator({
     if (seenIds.has(effectId)) return;
     const effect = ingameEffectsRegistry[effectId] as any;
     if (effect && allActiveEffects[effectId]?.enabled) {
-      // ── Filtro de especialidad (mismo criterio que en statScaling.ts) ──
       const requiredSpecialty =
         effect.condition?.requiresSpecialty ?? effect.requiresSpecialty;
       if (requiredSpecialty) {
@@ -608,10 +615,9 @@ export default function SkillCalculator({
             agent.specialty.toLowerCase().trim() !==
             requiredSpecialty.toLowerCase().trim()
           ) {
-            return; // este agente no cumple → no entra a allEffects
+            return;
           }
         } else if (effect.target === "team" && !isOwner) {
-          // efecto de equipo de otro agente: aplica a todos (comportamiento original)
         } else if (agent.specialty !== requiredSpecialty) {
           return;
         }
@@ -1455,8 +1461,6 @@ export default function SkillCalculator({
     const critRate = unifiedStats.critRate;
     const lacDmg = unifiedStats.lacerationDmg || 1.5;
 
-    // Lac₁ = 1 + min(max(CR,0),1) * LacDMG
-    // Lac₂ = 1 + min(max(CR-1,0),1) * LacDMG
     const lac1Mult = 1 + Math.min(Math.max(critRate, 0), 1) * lacDmg;
     const lac2Mult = critRate > 1 && critRate < 2 ? 1 + lacDmg : 1;
 
@@ -1466,16 +1470,13 @@ export default function SkillCalculator({
       const hitDamageType = (hit as any)?.damageType || "sharp";
       const hitName = hit?.name || `Hit ${i + 1}`;
 
-      // ── Base: DEF × SkillMult
       let damage = defStat * skillMult;
 
-      // ── DMG%
       let totalBonus = 1;
       totalBonus += bonuses.global;
       totalBonus += bonuses.skillTypes[selectedSkill.skillType] || 0;
       totalBonus += bonuses.exclusive[selectedSkill.id] || 0;
 
-      // Para "sharp" usamos RES del atributo del agente, no un "sharp" propio
       const effectiveDamageType =
         hitDamageType === "sharp"
           ? agent.attribute.toLowerCase()
@@ -1502,12 +1503,9 @@ export default function SkillCalculator({
       }
       damage *= totalBonus;
 
-      // ── Lac₁ → CRIT HIT
       const critDamage = damage * lac1Mult;
-      // ── Lac₂ → SHARP HIT
       const sharpDamage = critDamage * lac2Mult;
 
-      // ── Sharp DMG Bonus (post-Lac₂)
       const sharpBonus =
         1 +
         (bonuses.sharpDmgBonus || 0) +
@@ -1822,6 +1820,44 @@ export default function SkillCalculator({
   const damageResults = calculateDamage();
   const additionalDamages = calculateAdditionalDamages();
   const sunnaTriggerDamages = calculateSunnaTriggerDamage();
+
+   Índices de hits que NO son marcadores especiales
+  const visibleHitIndices = selectedSkill?.hits
+    ? selectedSkill.hits
+        .map((hit: any, index: number) =>
+          isSpecialMarkerHit(hit) ? -1 : index,
+        )
+        .filter((i) => i >= 0)
+    : [];
+
+  const displayTotals = damageResults
+    ? {
+        totalNormal: visibleHitIndices.reduce(
+          (s, i) => s + ((damageResults.normal ?? [])[i] || 0),
+          0,
+        ),
+        totalCritical: visibleHitIndices.reduce(
+          (s, i) => s + ((damageResults.critical ?? [])[i] || 0),
+          0,
+        ),
+        totalSharp: visibleHitIndices.reduce(
+          (s, i) => s + ((damageResults.sharp ?? [])[i] || 0),
+          0,
+        ),
+        totalRealNormal: visibleHitIndices.reduce(
+          (s, i) => s + ((damageResults.realNormal ?? [])[i] || 0),
+          0,
+        ),
+        totalRealCritical: visibleHitIndices.reduce(
+          (s, i) => s + ((damageResults.realCritical ?? [])[i] || 0),
+          0,
+        ),
+        totalRealSharp: visibleHitIndices.reduce(
+          (s, i) => s + ((damageResults.realSharp ?? [])[i] || 0),
+          0,
+        ),
+      }
+    : null;
 
   const hasBonuses =
     Object.values(bonuses.skillTypes).some((v) => v > 0) ||
@@ -2338,6 +2374,7 @@ export default function SkillCalculator({
               </div>
 
               {selectedSkill.hits.map((hit, index) => {
+                if (isSpecialMarkerHit(hit)) return null;
                 const damageSubtype = (hit as any).damageSubtype;
                 const isAftershock = damageSubtype === "aftershock";
                 return (
@@ -2476,25 +2513,24 @@ export default function SkillCalculator({
                 )}
 
               {/* TOTAL */}
-              {/* TOTAL */}
               {isArmorer ? (
                 <div className="grid-row-total">
                   <div className="row-cell cell-hit">Total</div>
                   <div className="row-cell cell-multiplier">—</div>
                   <div className="row-cell cell-critical">
-                    {formatNumber(damageResults.totalCritical)}
+                    {formatNumber(displayTotals?.totalCritical ?? 0)}
                   </div>
                   <div className="row-cell cell-critical">
-                    {formatNumber(damageResults.totalSharp)}
+                    {formatNumber(displayTotals?.totalSharp ?? 0)}
                   </div>
                   <div className="row-cell cell-realdmg">
                     <div className="crit-sub">
                       <span className="crit-span">Crit:</span>
-                      {formatNumber(damageResults.totalRealCritical)}
+                      {formatNumber(displayTotals?.totalRealCritical ?? 0)}
                     </div>
                     <div className="crit-sub">
                       <span className="crit-span">Sharp:</span>
-                      {formatNumber(damageResults.totalRealSharp)}
+                      {formatNumber(displayTotals?.totalRealSharp ?? 0)}
                     </div>
                   </div>
                 </div>
@@ -2503,16 +2539,18 @@ export default function SkillCalculator({
                   <div className="row-cell cell-hit">Total</div>
                   <div className="row-cell cell-multiplier">—</div>
                   <div className="row-cell cell-normal">
-                    {formatNumber(damageResults.totalNormal)}
+                    {formatNumber(displayTotals?.totalNormal ?? 0)}
                   </div>
                   <div className="row-cell cell-critical">
-                    {formatNumber(damageResults.totalCritical)}
+                    {formatNumber(displayTotals?.totalCritical ?? 0)}
                   </div>
                   <div className="row-cell cell-realdmg">
-                    <div>{formatNumber(damageResults.totalRealNormal)}</div>
+                    <div>
+                      {formatNumber(displayTotals?.totalRealNormal ?? 0)}
+                    </div>
                     <div className="crit-sub">
                       <span className="crit-span">Crit:</span>
-                      {formatNumber(damageResults.totalRealCritical)}
+                      {formatNumber(displayTotals?.totalRealCritical ?? 0)}
                     </div>
                   </div>
                 </div>

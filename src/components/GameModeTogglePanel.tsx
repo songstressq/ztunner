@@ -37,9 +37,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const teamEffects = homeSession.teamEffects;
   const modes = (gameModesData as any).modes as ModeDef[];
 
-  // ═══════════════════════════════════════════════════════════════
-  // 🔬 LOGS DE DIAGNÓSTICO
-  // ═══════════════════════════════════════════════════════════════
   const teamEffectsRef = useRef(teamEffects);
   useEffect(() => {
     teamEffectsRef.current = teamEffects;
@@ -49,35 +46,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
     Object.entries(state || {})
       .filter(([_, s]) => s?.enabled && s.ownerAgentId === "gameMode")
       .map(([id, s]) => `${id} (stacks:${s.stacks})`);
-
-  // Mount / Unmount
-  useEffect(() => {
-    console.log(
-      "🟢 [GMP] MOUNT. gameMode actives:",
-      getGameModeActives(teamEffectsRef.current),
-    );
-    console.log("🟢 [GMP] session keys:", {
-      gameModeCurrentModeId: homeSession.gameModeCurrentModeId,
-      gameModeCurrentRoomId: homeSession.gameModeCurrentRoomId,
-      gameModeCurrentBuffId: homeSession.gameModeCurrentBuffId,
-      gameModeEffectId: homeSession.gameModeEffectId,
-    });
-    return () => {
-      console.log(
-        "🔴 [GMP] UNMOUNT. gameMode actives:",
-        getGameModeActives(teamEffectsRef.current),
-      );
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Cualquier cambio en teamEffects
-  useEffect(() => {
-    console.log(
-      "🔵 [GMP] teamEffects changed. gameMode actives:",
-      getGameModeActives(teamEffects),
-    );
-  }, [teamEffects]);
 
   const initialModeId = homeSession.gameModeCurrentModeId || modes[0]?.id || "";
   const initialRoomId =
@@ -95,36 +63,19 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const currentRoom = currentRooms.find((r) => r.id === currentRoomId);
   const currentEffects = currentRoom?.effects || [];
 
-  // ⭐ Reset de todos los gameMode effects al montar el panel.
-  // Evita que los toggles sobrevivan a la navegación entre páginas.
   useEffect(() => {
     const toDisable = Object.entries(teamEffects)
       .filter(([_, s]) => s?.enabled && s.ownerAgentId === "gameMode")
       .map(([id]) => id);
 
-    console.log("🧹 [GMP] Mount reset. Disabling:", toDisable);
-
     toDisable.forEach((id) => {
       onTeamEffectToggle(id, false, 1, slotIndex, "gameMode");
     });
-
-    // También limpiamos el "efecto principal" para que DamageSimulator
-    // no lo vuelva a encender con su useEffect de sincronización.
     if (activeEffectId) {
       onSelectEffect(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // ← solo en mount, nunca más
-
-  // Cualquier cambio en la selección de sección
-  useEffect(() => {
-    console.log("🟣 [GMP] selection changed:", {
-      currentModeId,
-      currentRoomId,
-      currentBuffId,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentModeId, currentRoomId, currentBuffId]);
+  }, []);
 
   const resolvedBuffId = useMemo(() => {
     if (!currentBuffs.length) return "";
@@ -168,22 +119,15 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   };
 
   const disableEffects = (effects: any[]) => {
-    console.log(
-      "🟠 [GMP] disableEffects called with",
-      effects.length,
-      "effects",
-    );
     effects.forEach((e) => {
       const st = teamEffects[e.id];
       if (st?.enabled && st.ownerAgentId === "gameMode") {
-        console.log("🟠 [GMP]   → disabling", e.id);
         onTeamEffectToggle(e.id, false, 1, slotIndex, "gameMode");
       }
     });
   };
 
   const handleModeChange = (modeId: string) => {
-    console.log("🟡 [GMP] handleModeChange:", currentModeId, "→", modeId);
     if (modeId === currentModeId) return;
     disableEffects(currentEffects);
     disableEffects(currentBuffEffects);
@@ -196,7 +140,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   };
 
   const handleRoomChange = (roomId: string) => {
-    console.log("🟡 [GMP] handleRoomChange:", currentRoomId, "→", roomId);
     if (roomId === currentRoomId) return;
     disableEffects(currentEffects);
     setCurrentRoomId(roomId);
@@ -204,7 +147,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   };
 
   const handleBuffChange = (buffId: string) => {
-    console.log("🟡 [GMP] handleBuffChange:", resolvedBuffId, "→", buffId);
     if (buffId === resolvedBuffId) return;
     disableEffects(currentBuffEffects);
     setCurrentBuffId(buffId);
@@ -213,14 +155,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const handleRoomToggle = (effectId: string) => {
     const nowActive = !!teamEffects[effectId]?.enabled;
     const stacks = localStacks[effectId] || 1;
-    console.log(
-      "🟡 [GMP] handleRoomToggle:",
-      effectId,
-      "nowActive:",
-      nowActive,
-      "→",
-      !nowActive,
-    );
     onTeamEffectToggle(effectId, !nowActive, stacks, slotIndex, "gameMode");
     if (!nowActive) onSelectEffect(effectId);
     else if (activeEffectId === effectId) onSelectEffect(null);
@@ -229,14 +163,6 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   const handleBuffToggle = (effectId: string) => {
     const nowActive = !!teamEffects[effectId]?.enabled;
     const stacks = localStacks[effectId] || 1;
-    console.log(
-      "🟡 [GMP] handleBuffToggle:",
-      effectId,
-      "nowActive:",
-      nowActive,
-      "→",
-      !nowActive,
-    );
     onTeamEffectToggle(effectId, !nowActive, stacks, slotIndex, "gameMode");
   };
 

@@ -65,19 +65,16 @@ function registerGameModeEffects() {
   };
 
   for (const mode of data.modes) {
-    // Rooms (efecto primario)
     if (mode.rooms) {
       for (const room of mode.rooms) {
         registerEffects(room.effects);
       }
     }
-    // Buffs (sección extra de Deadly Assault)
     if (mode.buffs) {
       for (const buff of mode.buffs) {
         registerEffects(buff.effects);
       }
     }
-    // Fallback legacy (modo con effects directos sin rooms)
     if (mode.effects) {
       registerEffects(mode.effects);
     }

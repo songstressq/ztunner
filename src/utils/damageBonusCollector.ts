@@ -53,9 +53,9 @@ export interface CollectedBonuses {
   elementStatBonuses?: Record<string, Record<string, number>>;
   sheerDmgFlat?: number;
   assaultCritDmgTotal?: number;
-  sharpDmgBonus: number; // ⭐
-  elementSharpDmgBonus: Record<string, number>; // ⭐
-  skillTypeElementalSharp: Record<string, Record<string, number>>; // ⭐
+  sharpDmgBonus: number;
+  elementSharpDmgBonus: Record<string, number>;
+  skillTypeElementalSharp: Record<string, Record<string, number>>;
   sources: BonusSource[];
   breakdown: {
     dmgMod: {

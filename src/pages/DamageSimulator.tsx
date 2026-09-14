@@ -941,9 +941,9 @@ const DamageSimulator = () => {
           <div className="build-selector-wrapper">
             <div className="build-selector-block" style={emptySlotStyle}>
               <NeonSelect
-                value="Seleccionar build..."
+                value="Select Build..."
                 options={[
-                  { value: "", label: "Seleccionar build...", disabled: false },
+                  { value: "", label: "Select Build...", disabled: false },
                   ...builds.map((b) => {
                     const agent = agents.find((a) => a.id === b.agentId);
                     const isAlreadySelected = otherSelectedAgentIds.includes(
@@ -951,7 +951,7 @@ const DamageSimulator = () => {
                     );
                     return {
                       value: b.id,
-                      label: `${b.name} ${agent ? `(${agent.displayName})` : ""}${isAlreadySelected ? " - Ya seleccionado" : ""}`,
+                      label: `${b.name} ${agent ? `(${agent.displayName})` : ""}${isAlreadySelected ? " - Already Selected " : ""}`,
                       disabled: isAlreadySelected,
                     };
                   }),
@@ -1161,10 +1161,10 @@ const DamageSimulator = () => {
               value={
                 build
                   ? `${build.name} (${agent?.displayName})`
-                  : "Seleccionar build..."
+                  : "Select Build..."
               }
               options={[
-                { value: "", label: "Seleccionar build...", disabled: false },
+                { value: "", label: "Select Build...", disabled: false },
                 ...builds.map((b) => {
                   const agent = agents.find((a) => a.id === b.agentId);
                   const isAlreadySelected = otherSelectedAgentIds.includes(
@@ -1173,7 +1173,7 @@ const DamageSimulator = () => {
                   const isCurrentSelection = build?.id === b.id;
                   return {
                     value: b.id,
-                    label: `${b.name} ${agent ? `(${agent.displayName})` : ""}${isAlreadySelected && !isCurrentSelection ? " - ALREADY SELECTED" : ""}`,
+                    label: `${b.name} ${agent ? `(${agent.displayName})` : ""}${isAlreadySelected && !isCurrentSelection ? " - Already Selected" : ""}`,
                     disabled: isAlreadySelected && !isCurrentSelection,
                   };
                 }),

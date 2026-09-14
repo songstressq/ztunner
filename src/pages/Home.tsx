@@ -156,9 +156,10 @@ const Home = () => {
             </div>
             <div className="important_notice-msg">
               🚨 Claret's Sharp DMG should be working now, but I don't have her
-              W-Engine, so Electric Sharp DMG may not work as intended. I'll
-              check that later, or maybe not, I have 640 Polychromes. I'll be
-              working on the Maim DMG Calculator over the next few days. 😝
+              W-Engine, so its Electric Sharp DMG bonus may not work as
+              intended. I'll check that later, or maybe not since I only have
+              640 Polychromes. 😭 In other news, the Maim DMG Calculator is now
+              available! 😝
             </div>
           </div>
         </div>

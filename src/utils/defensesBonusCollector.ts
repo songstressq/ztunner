@@ -220,12 +220,12 @@ export function collectDefenseBonuses(
       }
     }
 
-    // ---- ✨ NUEVO: BASE STATS ----
+    // ----  BASE STATS ----
     if (effect.baseStats && effect.baseStats.defShred) {
       addSource(effect.baseStats.defShred * stacks, "defShred", effect, stacks);
     }
 
-    // ---- ✨ NUEVO: CONDITIONAL STATS ----
+    // ---- CONDITIONAL STATS ----
     if (effect.conditionalStats) {
       const conditionalState = activeEffects[`${effect.id}_conditional`];
       if (conditionalState?.enabled) {
