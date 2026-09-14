@@ -1821,7 +1821,6 @@ export default function SkillCalculator({
   const additionalDamages = calculateAdditionalDamages();
   const sunnaTriggerDamages = calculateSunnaTriggerDamage();
 
-   Índices de hits que NO son marcadores especiales
   const visibleHitIndices = selectedSkill?.hits
     ? selectedSkill.hits
         .map((hit: any, index: number) =>
