@@ -65,6 +65,18 @@
   margin-bottom: var(--padding-2px);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* #region MAIN /// SLOT STRUCTURE */
 
 .slot-agent_card-wrapper,
@@ -3974,7 +3986,7 @@ body.sidebar-open .carousel-dots-wrapper {
 
 /* #endregion SKILL MODAL */
 
-/* ⭐ MAIM CALCULATOR — Checkbox MS1 */
+/* #region MAIM CALCULATOR */
 .maim-mindscape-row {
   display: flex;
   align-items: center;
@@ -4043,6 +4055,102 @@ body.sidebar-open .carousel-dots-wrapper {
   color: var(--theme, #8995d6);
   font-weight: bold;
 }
+
+.anomaly-total-block {
+  display: grid;
+  grid-template-columns:
+    var(--text-30_4px) 1.8fr var(--icon-80px) var(--text-28px)
+    auto;
+  max-width: 100%;
+  font-size: var(--home-13px);
+  gap: 0;
+  padding-left: var(--padding-5px);
+  padding-right: var(--padding-7_5px);
+  border-top: 2px solid rgba(107, 107, 107, 0.2);
+}
+
+.anomaly-total-block .anomaly-total-cell {
+  padding: var(--spacing-9px) var(--padding-6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anomaly-total-block .anomaly-total-cell.step {
+  font-size: var(--home-16px);
+  color: rgba(255, 255, 255, 0.6);
+  justify-content: center;
+}
+
+.anomaly-total-block .anomaly-total-cell.calculation {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--padding-2px);
+  padding-left: var(--padding-8px);
+}
+
+.anomaly-total-block .anomaly-total-cell.arrow {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+  font-size: var(--home-14px);
+  justify-content: center;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.anomaly-total-block .anomaly-total-cell.after {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding-left: var(--padding-12px);
+  padding-right: var(--padding-12px);
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--home-14px);
+  font-weight: 700;
+  color: var(--theme);
+  text-shadow: 0 0 30px rgba(126, 255, 219, 0.15);
+  gap: var(--padding-1px);
+  background: transparent !important;
+}
+
+.anomaly-total-block .anomaly-total-cell.after .crit-sub {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: var(--padding-3px);
+  width: 100%;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: var(--home-16_5px);
+  color: var(--theme);
+  opacity: 0.95;
+  text-shadow: 0 0 30px rgba(126, 255, 219, 0.15);
+  white-space: nowrap;
+}
+
+.anomaly-total-block .anomaly-total-cell.after .crit-sub .crit-span {
+  font-size: var(--home-10_5px);
+  text-transform: uppercase;
+  opacity: 0.75;
+  letter-spacing: 0.5px;
+  padding-right: 0;
+}
+
+.anomaly-total-block .total-label {
+  color: var(--theme);
+  font-weight: lighter;
+  font-size: var(--home-13px);
+  letter-spacing: 0.5px;
+}
+
+.anomaly-total-block .total-target {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--home-10_5x);
+  font-weight: 400;
+}
+
+/* #region MAIM CALCULATOR */
 
 @media (min-width: 926px) and (max-width: 1366px) {
   :root {

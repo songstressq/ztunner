@@ -196,7 +196,7 @@
   font-weight: lighter;
 }
 
-.home_content-changelog h4 {
+.home_content-changelog h3 {
   font-size: var(--text-15px);
   padding: 0;
   margin: var(--padding-10px) 0;

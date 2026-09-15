@@ -81,9 +81,10 @@ const Home = () => {
         {shouldShowImage ? (
           <img
             src={imageUrl}
-            alt={`${dominantAgent?.displayName || "Agent"} Mindscape`}
+            alt={`${dominantAgent?.displayName || "Agent"} Mindscape art – ZZZ Damage Calculator`}
             className="home-background-img"
             onError={() => setImageError(true)}
+            fetchPriority="high"
           />
         ) : (
           <div
@@ -93,25 +94,35 @@ const Home = () => {
         )}
         <div className="home-overlay" />
         <div className="home-content">
-          <div className="home-title">
+          {/* ⭐ H1 real, crawlable, invisible (SEO) */}
+          <h1 className="sr-only">
+            ZZZ Damage Calculator – Zenless Zone Zero Damage & Build Manager
+          </h1>
+
+          <div className="home-title" aria-label="Z-TUNNER">
             <TypingAnimation
               key="title"
               text="Z-TUNNER"
               speed={175}
               onComplete={onTitleComplete}
             />
-            {!showSubtitle && <span className="home-cursor" />}
+            {!showSubtitle && (
+              <span className="home-cursor" aria-hidden="true" />
+            )}
           </div>
           {showSubtitle && (
-            <div className="home-subtitle">
+            <p
+              className="home-subtitle"
+              aria-label="ZZZ Damage Calculator & Build Manager"
+            >
               <TypingAnimation
                 key="subtitle"
                 text="ZZZ Damage Calculator & Build Manager"
                 speed={80}
                 onComplete={onSubtitleComplete}
               />
-              <span className="home-cursor" />
-            </div>
+              <span className="home-cursor" aria-hidden="true" />
+            </p>
           )}
         </div>
       </div>
@@ -121,9 +132,9 @@ const Home = () => {
         <div className="agents-block home_content-header">
           <div className="agents-wrapper" style={dominantEmptyStyle}>
             <div>
-              <h1 className="home_content-title_h1">
-                Z-Tunner: ZZZ Damage Calculator
-              </h1>
+              <h2 className="home_content-title_h1">
+                Z-Tunner: ZZZ Damage Calculator for Zenless Zone Zero
+              </h2>
               <div
                 className="home_divider"
                 style={{ backgroundColor: dominantTheme }}
@@ -134,12 +145,13 @@ const Home = () => {
                   ZZZ Damage Calculator
                 </strong>{" "}
                 for testing builds, team compositions, and combat scenarios in
-                Zenless Zone Zero. Check your agents' overall damage potential,
-                see how stats, skills, and different buffs impact your scores,
-                and optimize your team for the highest possible damage output —{" "}
-                <strong className="home_content-text_strong">
-                  right here on Z-Tunner.
-                </strong>
+                Zenless Zone Zero. Z-Tunner simulates combat directly in your
+                browser, including DMG, Anomaly, Disorder, Sharp, Maim, and
+                Luminize DMG, with support for W-Engines, Drive Discs, Mindscape
+                Cinemas, and in-game effects. Compare builds, fine-tune your
+                team compositions, and see how each stat, skill, and buff
+                affects your overall damage output — all in one place on{" "}
+                <strong className="home_content-text_strong">Z-Tunner.</strong>
               </p>
             </div>
           </div>
@@ -154,13 +166,13 @@ const Home = () => {
               early, don't mind any temporarily disabled sections for now. I'll
               work on them soon! 😫
             </div>
-            <div className="important_notice-msg">
+            {/*<div className="important_notice-msg">
               🚨 Claret's Sharp DMG should be working now, but I don't have her
               W-Engine, so its Electric Sharp DMG bonus may not work as
               intended. I'll check that later, or maybe not since I only have
               640 Polychromes. 😭 In other news, the Maim DMG Calculator is now
               available! 😝
-            </div>
+            </div>*/}
           </div>
         </div>
         <div className="agents-block home_content-changelog">
@@ -174,13 +186,13 @@ const Home = () => {
               <div className="home_content_changelog_item">
                 <span>v1.1.0 — Armorer Update</span>
 
-                <h4>● Added - ZZZ Maim DMG Calculator</h4>
+                <h3>● Added - ZZZ Maim DMG Calculator</h3>
                 <p>
                   Added calculations for Laceration DMG, Sharp DMG, and Maim
                   DMG, including their additional mechanics, to Z-Tunner's ZZZ
                   DMG/Maim DMG Calculator.
                 </p>
-                <h4>● Added - Claret Flint / Armorer Specialty</h4>
+                <h3>● Added - Claret Flint / Armorer Specialty</h3>
                 <p>
                   Claret Flint and the Armorer Specialty have been added to
                   Z-Tunner, with support for their unique abilities, mechanics,
@@ -189,7 +201,7 @@ const Home = () => {
               </div>
               <div className="home_content_changelog_item">
                 <span>v1.0.1 — Minor Fixes &amp; Updates</span>
-                <h4>● Minor UI fixes and agent-related updates.</h4>
+                <h3>● Minor UI fixes and agent-related updates.</h3>
                 <p>
                   Fixed Alice's Sage at the Sword's Tip (Mindscape Cinema N°2)
                   in-game effect.
@@ -221,7 +233,8 @@ const Home = () => {
                 className="home_content-trailer_video"
                 width="100%"
                 src="https://www.youtube.com/embed/4O-Iq8lj9_k"
-                title="Zenless Zone Zero Version 3.2 Teaser - Their Secret Histories"
+                title="Zenless Zone Zero Version 3.2 Teaser – Their Secret Histories"
+                loading="lazy"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

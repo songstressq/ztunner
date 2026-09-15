@@ -210,7 +210,12 @@ export default function MaimCalculator({
     const afterLac2 = afterLac1 * lac2Multiplier;
     const afterSharp = afterLac2 * sharpBonus;
     const afterStun = afterSharp * stunMult;
-    const finalDamage = Math.round(afterStun * resMult);
+
+    const afterSharpCrit = afterLac1 * sharpBonus;
+    const afterStunCrit = afterSharpCrit * stunMult;
+
+    const finalSharpDamage = Math.round(afterStun * resMult);
+    const finalCritDamage = Math.round(afterStunCrit * resMult);
 
     return {
       base,
@@ -228,7 +233,10 @@ export default function MaimCalculator({
       afterLac2,
       afterSharp,
       afterStun,
-      finalDamage,
+      afterSharpCrit,
+      afterStunCrit,
+      finalSharpDamage,
+      finalCritDamage,
       maimMult: effectiveMaimMult,
       damageType,
     };
@@ -548,20 +556,24 @@ export default function MaimCalculator({
                     {result.resMult.toFixed(3)}×
                   </div>
                 </div>
-
-                {/* Total */}
-                <div className="anomaly-grid-total-row">
-                  <div className="anomaly-row-cell step">☑</div>
-                  <div className="anomaly-row-cell calculation">
-                    <span className="total-label">Final Maim DMG</span>
-                    <span className="total-target">
-                      vs {selectedEnemy.name}
-                    </span>
+              </div>
+              {/* Total — FUERA del grid */}
+              <div className="anomaly-total-block">
+                <div className="anomaly-total-cell step">☑</div>
+                <div className="anomaly-total-cell calculation">
+                  <span className="total-label">Final Maim DMG</span>
+                  <span className="total-target">vs {selectedEnemy.name}</span>
+                </div>
+                <div className="anomaly-total-cell before" />
+                <div className="anomaly-total-cell arrow">=</div>
+                <div className="anomaly-total-cell after">
+                  <div className="crit-sub">
+                    <span className="crit-span">Crit:</span>{" "}
+                    {formatNumber(result.finalCritDamage)}
                   </div>
-                  <div className="anomaly-row-cell before" />
-                  <div className="anomaly-row-cell arrow">=</div>
-                  <div className="anomaly-row-cell after total-value">
-                    {formatNumber(result.finalDamage)}
+                  <div className="crit-sub">
+                    <span className="crit-span">Sharp:</span>{" "}
+                    {formatNumber(result.finalSharpDamage)}
                   </div>
                 </div>
               </div>

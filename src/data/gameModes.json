@@ -9,7 +9,8 @@
           "label": "Room 1: Kusarikku",
           "effects": [
             {
-              "id": "Kusarikku End Butcher - Anomaly DMG",
+              "id": "game_mode_da_room1_effect_a",
+              "label": "Kusarikku - Anomaly DMG",
               "description": "Attribute Anomaly DMG taken by Kusarikku is reduced by 40%. ... ",
               "shortDescription": "All squad members' DMG from Attribute Anomalies is decreased by 40%.",
               "source": "gameMode",
@@ -17,7 +18,8 @@
               "perStack": { "anomalyDmgBonus": -0.4 }
             },
             {
-              "id": "Kusarikku End Butcher - Laceration DMG",
+              "id": "game_mode_da_room1_effect_b",
+              "label": "Kusarikku - Laceration DMG",
               "description": "... When an Agent successfully uses a Defensive Assist against Kusarikku's Rift Assault, applies 1 stack opf Exposed to Kusarikku. When Kusarikku becomes stunned, applies 2 stacks of Exposed. Each stack of Exposed increases the Laceration DMG Kousarikku receives by 10%. Exposed can stack up to 4 times and lasts 30s. Repeated triggers reset the duration.",
               "shortDescription": "All squad members' Laceration DMG is increased by 10% for 30s, stacking up to 4 times.",
               "source": "gameMode",
@@ -84,7 +86,7 @@
             },
             {
               "id": "game_mode_da_buff1_effect_b",
-              "label": "Deadly Assault: Icy Raid",
+              "label": "Deadly Assault: Sharp Rupture",
               "description": "... After an Agent uses an EX Special Attack or Special Attack, Sharp DMG increases by 20% and DEF increases by 10%. ...",
               "shortDescription": "All squad members' Sharp DMG is increased by 20%, and their DEF is increased by 10%.",
               "source": "gameMode",
