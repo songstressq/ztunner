@@ -707,9 +707,8 @@ const ConditionalEffectToggle = ({
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
                             {" "}
-                            Excess (above {effect.conditional.threshold ||
-                              0}{" "}
-                            ):{" "}
+                            Excess {formatStatName(bonus.basedOn)} (❯  
+                            {effect.conditional.threshold || 0}):{" "}
                           </span>
                           <span className="ingame_toggle-stat_value">
                             {bonus.basedOn === "penRatio" ||
@@ -724,8 +723,8 @@ const ConditionalEffectToggle = ({
                       {bonus.fromStat > 0 && (
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            From {formatStatName(bonus.basedOn || "")} ({" "}
-                            {bonus.statUsed} ×{" "}
+                            {formatStatName(bonus.basedOn || "")} Bonus (
+                            {bonus.excessStat} ×{" "}
                             {bonus.unitMultiplier !== undefined &&
                             bonus.unitMultiplier !== null
                               ? bonus.unitMultiplier < 1
@@ -733,7 +732,7 @@ const ConditionalEffectToggle = ({
                                 : bonus.unitMultiplier % 1 === 0
                                   ? bonus.unitMultiplier
                                   : bonus.unitMultiplier.toFixed(1)
-                              : "0.0"}{" "}
+                              : "0.0"}
                             ):
                           </span>
                           <span className="ingame_toggle-stat_value">
@@ -744,8 +743,7 @@ const ConditionalEffectToggle = ({
                       {bonus.fromBase > 0 && (
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            {" "}
-                            Base Bonus:{" "}
+                            Base {formatStatName(bonus.basedOn)} Bonus:{" "}
                           </span>
                           <span className="ingame_toggle-stat_value">
                             +{formatStatValue(bonus.fromBase, affectedStat)}
@@ -763,7 +761,7 @@ const ConditionalEffectToggle = ({
                       >
                         <span className="ingame_toggle-stat_name">
                           {" "}
-                          Total {formatStatName(affectedStat)}:{" "}
+                          Total {formatStatName(affectedStat)} Increase:
                         </span>
                         <span className="ingame_toggle-stat_value">
                           +{formatStatValue(bonus.total, affectedStat)}{" "}

@@ -762,6 +762,67 @@
         "critResistance": 0.0
       },
       "notes": null
+    },
+    {
+      "id": "the_decider_terror_raptor",
+      "name": "The Decider - Terror Raptor",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "In combat, The Decider - Terror Raptor relies on its agile, powerful mechanical legs for close-range attacks while unleashing a barrage of ranged weapons to suppress its enemy. Use Defensive Assists to rebound its bombs back, leaving The Decider - Terror Raptor temporarily paralyzed. In addition, The Decider - Terror Raptor will activate Corruptive Barrier at specific moments to fend off attacks, during which it focuses on melee attacks and its certain moves additionally deal powerful electric DMG.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.4,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "lockspring",
+      "name": "Lockspring",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "In combat, Lockspring attacks the player with its weapon. Certain blows hit with such force that, despite a successful Defensive Assist, an Assist Follow-Up cannot activate, and Lockspring may respond with a taunt.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": -0.2,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+
+    {
+      "id": "mirage_archer_unit",
+      "name": "Mirage Archer Unit",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Machines",
+      "description": "Mirage Archer Unit is proficient in multiple attack methods. When facing formidable enemies, it activates excess power output to generate Energy, compressing it into a nearly solid concentrated Energy blade. With highly threatening offensive pressure, it unleashes continuous slashes to sweep the battlefield. When energy reaches its threshold, the light blade enter an overload state, and the escaping energy disrupts enemy movement and reactions, creating an opening for the next decisive assault.",
+      "stats": {
+        "def": 858,
+        "defBase": 858,
+        "fireResistance": 0.2,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
     }
   ]
 }

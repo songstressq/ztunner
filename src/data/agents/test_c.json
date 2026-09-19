@@ -3,7 +3,7 @@
   "name": "Test Agent C",
   "specialty": "Anomaly",
   "faction": "Not applicable",
-  "attribute": "Ether",
+  "attribute": "Fire",
   "rarity": "S",
 
   "fullName": "Test Agent C",
@@ -13,20 +13,20 @@
   "themeColor": "#7EFFDB",
 
   "baseStats": {
-    "hp": 10000,
-    "atk": 1000,
-    "def": 1000
+    "hp": 30000,
+    "atk": 5000,
+    "def": 5000
   },
 
   "combatBase": {
-    "impact": 100,
-    "critRate": 0.5,
-    "critDmg": 1.5,
-    "anomalyProficiency": 100,
-    "anomalyMastery": 100,
+    "impact": 250,
+    "critRate": 1,
+    "critDmg": 2.5,
+    "anomalyProficiency": 500,
+    "anomalyMastery": 250,
     "penRatio": 0,
     "pen": 0,
-    "energyRegen": 1.2,
+    "energyRegen": 4.0,
 
     "attributeDmgBonus": {
       "fire": 0,
@@ -55,36 +55,418 @@
 
   "ingameEffects": [
     {
-      "id": "test_agent_c-core-global_dmg_bonus",
+      "id": "test_agent_c-core-thief_of_flames",
       "source": "core",
       "sourceId": "test_agent_c-core",
-      "label": "Global DMG Bonus",
-      "description": "This toggle is for DMG Calculation purposes.",
-      "shortDescription": "This should add 10% Global DMG Bonus.",
+      "label": "Thief of Flames (Core Passive) (Promeia)",
+      "description": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's Abloom DMG by 0.35%. ...",
+      "shortDescription": "Promeia's Anomaly Proficiency is increased based on her initial Anomaly Mastery.",
       "target": "self",
-      "damageBonuses": [
-        {
-          "type": "global",
-          "value": 0.1
-        }
-      ]
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "anomalyMastery",
+        "threshold": 150,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [{ "level": 1, "maxBonus": 99999, "perUnitBonus": 1.5 }],
+        "affectedStats": ["anomalyProficiency"]
+      }
     },
-
     {
-      "id": "test_agent_c-core-element_dmg_bonus",
+      "id": "test_agent_c-core-invitation_to_bloom",
       "source": "core",
       "sourceId": "test_agent_c-core",
-      "label": "Element DMG Bonus",
-      "description": "This toggle is for DMG Calculation purposes.",
-      "shortDescription": "This should add 10% Ether DMG Bonus.",
+      "label": "Invitation to Bloom (Additional Ability) (Remielle)",
+      "description": "When another character in your squad is an Anomaly character or shares the same faction:\n\nWhen there are 1/2/3 Anomaly characters in the squad, upon entering the battlefield, all squad members gain an ATK increase equal to 6%/12%/40% of Remielle's initial ATK, up to a maximum increase of 1,600 ATK. Remielle's Daze dealt while in the Phase Flow state increases by 6%/12%/35%. ...",
+      "shortDescription": "With 3 Anomaly agents in the squad, all squad members' ATK is increased based on Remielle's initial ATK.",
       "target": "self",
-      "damageBonuses": [
-        {
-          "type": "element",
-          "element": "ether",
-          "value": 0.1
-        }
-      ]
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 4000,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [{ "level": 1, "maxBonus": 1600, "perUnitBonus": 0.4 }],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-breeze_in_bloom",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Breeze in Bloom (Core Passive) (Velina)",
+      "description": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84. ...",
+      "shortDescription": "Velina's Anomaly Mastery is increased based on her initial Energy Regen.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.2,
+        "baseBonus": 0,
+        "perUnit": 0.01,
+        "skillLevels": [{ "level": 1, "perUnitBonus": 0.5, "maxBonus": 84 }],
+        "affectedStats": ["anomalyMastery"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-fatal_concoction",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Fatal Concoction (Core Passive) (Cissia)",
+      "description": "... With Venom, the squad's Electric DMG ignores 6% of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional 1% of the enemy's DEF is ignored, up to a maximum of 25% of enemy DEF. This effect lasts until 30s after Venom is depleted. ...",
+      "shortDescription": "All squad members' Electric RES Shred is increased based on Cissia's initial Energy Regen.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.4,
+        "maxStat": 99999,
+        "baseBonus": 0.06,
+        "perUnit": 0.12,
+        "skillLevels": [{ "level": 1, "maxBonus": 0.25, "perUnitBonus": 0.01 }],
+        "affectedStats": ["electricResShred"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-taming_wind_and_fire_protocol",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Taming Wind and Fire Protocol (Core Passive) (Orphie And Magus)",
+      "description": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead. When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by 280. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed 700. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+      "shortDescription": "All squad members' ATK is increased based on Orphie & Magus' initial Energy Regen.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.6,
+        "maxStat": 99999,
+        "baseBonus": 280,
+        "perUnit": 0.1,
+        "skillLevels": [{ "level": 1, "maxBonus": 700, "perUnitBonus": 20 }],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-meridian_enlightenment",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Meridian Enlightenment (Core Passive) (Pan Yinhu)",
+      "description": "For a brief period when Pan Yinhu's EX Special Attack: Mountainous Pulse Strike hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the Meridian Flow effect. This effect provides a Sheer Force boost equal to a percentage of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points.",
+      "shortDescription": "All squad members' Sheer Force is increased based on Pan Yinhu's initial ATK for 25s.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [{ "level": 1, "maxBonus": 540, "perUnitBonus": 0.18 }],
+        "affectedStats": ["sheerForce"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-ideal_colleague",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Ideal Colleague (Core Passive) (Zhao)",
+      "description": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining 1.4% CRIT Rate for every 1,000 initial Max HP.",
+      "shortDescription": "Zhao's CRIT Rate is increased based on her initial HP.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1000,
+        "skillLevels": [
+          { "level": 1, "maxBonus": 99999, "perUnitBonus": 0.014 }
+        ],
+        "affectedStats": ["critRate"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-five_star_service_hotline",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Five-Star Service Hotline (Core Passive) (Dialyn)",
+      "description": "Upon entering the battlefield, Dialyn starts with 60 Positive Reviews. If her initial CRIT Rate surpasses 50%, her Impact increases by 2 for each additional 1%, up to a maximum increase of 100. ...",
+      "shortDescription": "Dialyn's Impact is increased based on her initial CRIT Rate.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "critRate",
+        "threshold": 50,
+        "maxStat": 100,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [{ "level": 1, "maxBonus": 100, "perUnitBonus": 2 }],
+        "affectedStats": ["impactBaseRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-fu_rocious_might",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Fu-rocious Might (Core Passive) (Ju Fufu)",
+      "description": "... When Hu Wei hits an enemy and has at least 100 Might, and Ju Fufu is not the currently active character, Ju Fufu will launch Chain Attack: Suppressing Tiger Cauldron centered around the target enemy. Upon activation, all squad members gain the Tiger's Roar effect: CRIT DMG increases by 20%, and when Ju Fufu's initial ATK is greater than or equal to 2,800, every additional 100 ATK further increases CRIT DMG by 5%, up to a maximum additional increase of 30%. ...",
+      "shortDescription": "All squad members' CRIT DMG is increased based on Ju Fufu's initial ATK.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "threshold": 2800,
+        "maxStat": 3400,
+        "baseBonus": 0.2,
+        "perUnit": 100,
+        "perUnitBonus": 5,
+        "skillLevels": [{ "level": 1, "maxBonus": 0.5, "perUnitBonus": 5 }],
+        "affectedStats": ["critDmg"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-prodigious_idol",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": " Prodigious Idol (Core Passive) (Nangong Yu)",
+      "description": "... When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1. When an enemy is Stunned, each time any character triggers Abloom DMG, Disorder DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of Vibrato. ...",
+      "shortDescription": "Nangong Yu's Impact is increased based on her initial Anomaly Mastery.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "anomalyMastery",
+        "threshold": 110,
+        "maxStat": 99999,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [{ "level": 1, "maxBonus": 99999, "perUnitBonus": 1 }],
+        "affectedStats": ["impactBaseRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-precise_guidance",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Precise Guidance (Core Passive) (Norma)",
+      "description": "When initial CRIT Rate exceeds 50%, every additional 1% increases her CRIT DMG by 1.7%, up to a maximum increase of 85%. ...",
+      "shortDescription": "Norma's CRIT DMG is increased based on her initial CRIT Rate.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "critRate",
+        "maxStat": 99999,
+        "threshold": 50,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [
+          { "level": 1, "maxBonus": 0.85, "perUnitBonus": 0.017 }
+        ],
+        "affectedStats": ["critDmg"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-graceful_andante",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Graceful Andante (Core Passive) (Astra Yao)",
+      "description": "During the Idyllic Cadenza state, when other squad members switch in through a Quick Assist, Chain Attack, Defensive Assist, or Evasive Assist, and when Astra Yao expends Energy to release Tremolo to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to 35% of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+      "shortDescription": "All squad members' ATK is increased based on Astra Yao's initial ATK.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 3429,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [{ "level": 1, "maxBonus": 1200, "perUnitBonus": 0.35 }],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-symphony_of_the_reaper_daybreak",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Symphony of the Reaper - Daybreak (EX Special Attack) (Lucia Elowen)",
+      "description": "With enough Energy, press EX Special Attack to activate: This EX Special Attack is a Harmony. When activated, it summons an Ethereal figure that delivers a powerful forward slash in a line, dealing Ether DMG.\n\nWhen Lucia uses any Harmony, all squad members gain the Darkbreaker state. While in Darkbreaker state, Sheer Force increases by 12. Every 200 points of Lucia's initial Max HP grants an additional amount of Sheer Force. The Darkbreaker state can increase Sheer Force by up to a maximum value, lasting 20s and repeated triggers reset the duration. When Lucia's initial Max HP reaches 24,000, the above bonus effect reaches its maximum value.\n\nWhen any Harmony deals DMG, Lucia increases the final attack's DMG by an additional percentage of her Max HP. If she activates this EX Special Attack while in the Dream state and under the effect of Ether Veil: Wellspring, Ether Veil: Wellspring duration is extended by 16s. After activating her EX Special Attack, Lucia can immediately follow up with the 5th hit of her Basic Attack. If not in the Dream state, Lucia gains 60 Dream Points upon using this Harmony. Character is invulnerable while using this skill.",
+      "shortDescription": "All squad members' Sheer Force is increased based on Lucia's initial HP.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "hp",
+        "maxStat": 24000,
+        "baseBonus": 12,
+        "perUnit": 200,
+        "skillLevels": [
+          { "level": 1, "maxBonus": 636, "perUnitBonus": 5.2 },
+          { "level": 2, "maxBonus": 660, "perUnitBonus": 5.4 },
+          { "level": 3, "maxBonus": 684, "perUnitBonus": 5.6 },
+          { "level": 4, "maxBonus": 708, "perUnitBonus": 5.8 },
+          { "level": 5, "maxBonus": 732, "perUnitBonus": 6 },
+          { "level": 6, "maxBonus": 756, "perUnitBonus": 6.2 },
+          { "level": 7, "maxBonus": 780, "perUnitBonus": 6.4 },
+          { "level": 8, "maxBonus": 804, "perUnitBonus": 6.6 },
+          { "level": 9, "maxBonus": 828, "perUnitBonus": 6.8 },
+          { "level": 10, "maxBonus": 852, "perUnitBonus": 7 },
+          { "level": 11, "maxBonus": 876, "perUnitBonus": 7.2 },
+          { "level": 12, "maxBonus": 900, "perUnitBonus": 7.4 },
+          { "level": 13, "maxBonus": 924, "perUnitBonus": 7.6 },
+          { "level": 14, "maxBonus": 948, "perUnitBonus": 7.8 },
+          { "level": 15, "maxBonus": 972, "perUnitBonus": 8 },
+          { "level": 16, "maxBonus": 996, "perUnitBonus": 8.2 }
+        ],
+        "affectedStats": ["sheerForce"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-cheer_on",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Cheer On! (Special Attack) (Luciana De Montefio)",
+      "description": "After using EX Special Attack, when a guard boar triggers an explosion, it will apply the Cheer On! status to all squad members and Bangboo, and the guard boars themselves. While under the Cheer On! status, allies' ATK increases by a percentage of Lucy's initial ATK plus a set amount, up to a maximum of 600. The Cheer On! status lasts for 10s when a Line Drive is hit, and 15s when a Fly Ball is hit. Repeated triggers reset the duration.",
+      "shortDescription": "All squad members' ATK is increased based on Lucy's initial ATK.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 99999,
+        "perUnit": 1,
+        "skillLevels": [
+          {
+            "level": 1,
+            "maxBonus": 600,
+            "perUnitBonus": 0.138,
+            "baseBonus": 44
+          },
+          {
+            "level": 2,
+            "maxBonus": 600,
+            "perUnitBonus": 0.146,
+            "baseBonus": 48
+          },
+          {
+            "level": 3,
+            "maxBonus": 600,
+            "perUnitBonus": 0.154,
+            "baseBonus": 52
+          },
+          {
+            "level": 4,
+            "maxBonus": 600,
+            "perUnitBonus": 0.162,
+            "baseBonus": 56
+          },
+          {
+            "level": 5,
+            "maxBonus": 600,
+            "perUnitBonus": 0.17,
+            "baseBonus": 60
+          },
+          {
+            "level": 6,
+            "maxBonus": 600,
+            "perUnitBonus": 0.178,
+            "baseBonus": 64
+          },
+          {
+            "level": 7,
+            "maxBonus": 600,
+            "perUnitBonus": 0.186,
+            "baseBonus": 68
+          },
+          {
+            "level": 8,
+            "maxBonus": 600,
+            "perUnitBonus": 0.194,
+            "baseBonus": 72
+          },
+          {
+            "level": 9,
+            "maxBonus": 600,
+            "perUnitBonus": 0.202,
+            "baseBonus": 76
+          },
+          {
+            "level": 10,
+            "maxBonus": 600,
+            "perUnitBonus": 0.21,
+            "baseBonus": 80
+          },
+          {
+            "level": 11,
+            "maxBonus": 600,
+            "perUnitBonus": 0.218,
+            "baseBonus": 84
+          },
+          {
+            "level": 12,
+            "maxBonus": 600,
+            "perUnitBonus": 0.226,
+            "baseBonus": 88
+          },
+          {
+            "level": 13,
+            "maxBonus": 600,
+            "perUnitBonus": 0.234,
+            "baseBonus": 92
+          },
+          {
+            "level": 14,
+            "maxBonus": 600,
+            "perUnitBonus": 0.242,
+            "baseBonus": 96
+          },
+          {
+            "level": 15,
+            "maxBonus": 600,
+            "perUnitBonus": 0.25,
+            "baseBonus": 100
+          },
+          {
+            "level": 16,
+            "maxBonus": 600,
+            "perUnitBonus": 0.258,
+            "baseBonus": 104
+          }
+        ],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-cuteness_is_justice",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Cuteness is Justice (Core Passive) (Sunna)",
+      "description": "Characters in the Angelic Chord-ination state gain increased ATK, equal to 30% of Sunna's initial ATK, up to a maximum of 1050 ATK. When Sunna's initial ATK reaches 3500, the ATK bonus granted to all squad members reaches its maximum...",
+      "shortDescription": "All squad members' ATK is increased based on Sunna's initial ATK.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 3500,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "perUnitBonus": 0.3,
+        "skillLevels": [{ "level": 1, "maxBonus": 1050, "perUnitBonus": 0.3 }],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-whimsical_wonder",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Whimsical Wonder (Core Passive) (Ukinami Yuzuha)",
+      "description": "Upon entering the battlefield, Yuzuha immediately gains 3 Sugar Points. Yuzuha can have up to 6 Sugar Points. When Yuzuha's EX Special Attack: Cavity Alert, EX Special Attack: Cavity Alert, Right Now!, or Ultimate: Surrender or Suffer the Mischief hits an enemy, all squad members receive the Tanuki Wish effect. Tanuki Wish grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of 1200, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration. If Yuzuha's initial ATK reaches 3000, she grants the full ATK bonus to all squad members.",
+      "shortDescription": "All squad members' ATK is increased based on Yuzuha's Initial ATK for 40s, and their DMG is increased by 15% for 40s.",
+      "target": "self",
+      "damageBonuses": [{ "type": "global", "value": 0.15 }],
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 3000,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [{ "level": 1, "maxBonus": 1200, "perUnitBonus": 0.4 }],
+        "affectedStats": ["atkFlatRaw"]
+      }
     }
   ],
 

@@ -20,7 +20,8 @@ export interface Enemy {
     | "Thugs"
     | "Corrupted"
     | "Rebel Soldiers"
-    | "Special";
+    | "Special"
+    | "Machine";
   description: string;
   stats: EnemyStats;
   notes?: string | null;
