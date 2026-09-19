@@ -1735,7 +1735,7 @@ export function calculateUnifiedStats(
             base.pen += bonusValue;
             break;
           case "penRatio":
-            base.penRatio += bonusValue / 100;
+            base.penRatio += bonusValue;
             break;
           case "energyRegen":
             base.energyRegen += bonusValue;

@@ -1,6 +1,7 @@
 import type { IngameEffect } from "@/types/IngameEffect";
 import { useState, useEffect } from "react";
 import { InfoTooltip } from "./InfoTooltip";
+import { formatStatName, formatStatValue } from "@/utils/statFormatters";
 
 interface Props {
   effect: IngameEffect;
@@ -151,13 +152,19 @@ const ConditionalEffectToggle = ({
         : currentStatValue;
     const excess = Math.max(0, cappedStat - threshold);
     const units = Math.floor(excess / perUnit);
-    let fromStat = units * perUnitBonus;
-    if (maxBonus !== Infinity) {
-      fromStat = Math.min(fromStat, maxBonus);
-    }
+
+    const rawFromStat = units * perUnitBonus;
     const fromBase = baseBonus;
-    let total = fromBase + fromStat;
-    const maxReached = fromStat >= maxBonus;
+    const rawTotal = fromBase + rawFromStat;
+
+    let maxReached = false;
+    let total = rawTotal;
+    if (maxBonus !== Infinity) {
+      maxReached = rawTotal >= maxBonus;
+      total = Math.min(rawTotal, maxBonus);
+    }
+
+    const fromStatCapped = Math.max(0, total - fromBase);
 
     let damageBonusTotal = 0;
     let damageBonusType = "global";
@@ -170,8 +177,11 @@ const ConditionalEffectToggle = ({
     return {
       total: damageBonusTotal || total,
       fromBase: damageBonuses ? 0 : fromBase,
-      fromStat: damageBonuses ? total : fromStat,
-      maxReached: maxReached,
+      fromStat: damageBonuses ? total : rawFromStat,
+      fromStatCapped,
+      rawFromStat,
+      rawTotal,
+      maxReached,
       statUsed: currentStatValue,
       excessStat: excess,
       units,
@@ -179,9 +189,8 @@ const ConditionalEffectToggle = ({
       maxPossible: maxBonus,
       perUnitBonusDisplay: perUnitBonus * 100,
       isDamageBonus: !!damageBonuses,
-      damageBonusType: damageBonusType,
+      damageBonusType,
       damageBonusValue: damageBonusTotal,
-      rawFromStat: total,
     };
   };
 
@@ -274,144 +283,6 @@ const ConditionalEffectToggle = ({
 
   const bonus = calculateBonus();
 
-  const formatStatValue = (
-    value: number,
-    statType: string,
-    isDamageBonus: boolean = false,
-  ): string => {
-    if (isDamageBonus) {
-      return `${(value * 100).toFixed(1)}%`;
-    }
-
-    const percentStats = [
-      "critRate",
-      "critDmg",
-      "penRatio",
-      "dmgBonus",
-      "attributeDmgBonus",
-      "anomalyDmgBonus",
-      "disorderDmgBonus",
-      "sheerDmgBonus",
-      "fireResShred",
-      "iceResShred",
-      "electricResShred",
-      "physicalResShred",
-      "etherResShred",
-      "defShred",
-      "atkPercent",
-      "hpPercent",
-      "defPercent",
-      "impactPercent",
-      "atkPercentRaw",
-      "hpPercentRaw",
-      "defPercentRaw",
-      "refringeCoefficient",
-    ];
-
-    const flatStats = [
-      "atkFlat",
-      "hpFlat",
-      "defFlat",
-      "atk",
-      "atkFlat",
-      "atkFlatRaw",
-      "hp",
-      "def",
-      "anomalyProficiency",
-      "anomalyMastery",
-      "impact",
-      "pen",
-      "sheerForce",
-      "atkFlatRaw",
-      "hpFlatRaw",
-      "defFlatRaw",
-    ];
-
-    const decimalStats = ["energyRegen"];
-
-    if (
-      percentStats.includes(statType) ||
-      statType.includes("Percent") ||
-      statType.includes("Bonus") ||
-      statType.includes("ResShred")
-    ) {
-      return `${(value * 100).toFixed(1)}%`;
-    }
-    if (decimalStats.includes(statType)) {
-      return value.toFixed(2);
-    }
-    if (flatStats.includes(statType)) {
-      return Math.round(value).toString();
-    }
-    return Number.isInteger(value) ? value.toString() : value.toFixed(1);
-  };
-
-  const formatStatName = (stat: string): string => {
-    const statNames: Record<string, string> = {
-      hp: "HP",
-      atk: "ATK",
-      def: "DEF",
-      hpFlat: "HP",
-      atkFlat: "ATK",
-      defFlat: "DEF",
-      hpPercent: "HP%",
-      atkPercent: "ATK%",
-      atkFlatRaw: "ATK",
-      defPercent: "DEF%",
-      critRate: "CRIT Rate",
-      critDmg: "CRIT DMG",
-      impact: "Impact",
-      impactPercent: "Impact%",
-      anomalyProficiency: "Anomaly Proficiency",
-      anomalyMastery: "Anomaly Mastery",
-      penRatio: "PEN Ratio",
-      pen: "PEN",
-      energyRegen: "Energy Regen",
-      sheerForce: "Sheer Force",
-      attributeDmgBonus: "DMG Bonus",
-      anomalyDmgBonus: "Anomaly DMG",
-      disorderDmgBonus: "Disorder DMG",
-      sheerDmgBonus: "Sheer DMG",
-      defShred: "DEF Reduction",
-      fireResShred: "Fire RES Ignore",
-      iceResShred: "Ice RES Ignore",
-      electricResShred: "Electric RES Ignore",
-      physicalResShred: "Physical RES Ignore",
-      etherResShred: "Ether RES Ignore",
-      dmgBonus: "DMG Bonus",
-    };
-    return statNames[stat] || stat;
-  };
-
-  const isPercentageBasedStat = (stat: string): boolean => {
-    const percentageStats = [
-      "critRate",
-      "critDmg",
-      "penRatio",
-      "atkPercent",
-      "hpPercent",
-      "defPercent",
-      "impactPercent",
-      "energyRegenPercent",
-      "attributeDmgBonus",
-      "anomalyDmgBonus",
-      "disorderDmgBonus",
-      "sheerDmgBonus",
-      "fireResShred",
-      "iceResShred",
-      "electricResShred",
-      "physicalResShred",
-      "etherResShred",
-      "defShred",
-    ];
-    return (
-      percentageStats.some((s) => stat === s) ||
-      stat.includes("Percent") ||
-      stat.includes("Bonus") ||
-      stat.includes("ResShred")
-    );
-  };
-
   const getRecommendedSkillLevel = () => {
     if (
       !effect.useManualThresholds ||
@@ -475,6 +346,9 @@ const ConditionalEffectToggle = ({
       ${theme}11
     )`,
   };
+
+  const fmtVal = (value: number, statType: string) =>
+    formatStatValue(statType, value, { showSign: false });
 
   return (
     <div className="ingame_toggle-main_container">
@@ -609,10 +483,9 @@ const ConditionalEffectToggle = ({
             {enabled && effect.conditional && (
               <div className="ingame_toggle-stats_section">
                 <div className="ingame_toggle-stats_header">
-                  Active Bonus{" "}
+                  Active Bonus
                   {isSkillLevelBased && ` (Skill Lv.${skillLevel})`}
-                  {isDamageBonus &&
-                    ` - ${damageBonusType.toUpperCase()} DMG BONUS`}
+                  {isDamageBonus && ` - ${formatStatName(damageBonusType)}`}
                 </div>
 
                 {/* INITIAL STAT BASED DAMAGE BONUS */}
@@ -621,8 +494,7 @@ const ConditionalEffectToggle = ({
                     <>
                       <div className="ingame_toggle-stat_row">
                         <span className="ingame_toggle-stat_name">
-                          {" "}
-                          Initial {formatStatName(bonus.basedOn || "hp")}:{" "}
+                          Initial {formatStatName(bonus.basedOn || "hp")}:
                         </span>
                         <span className="ingame_toggle-stat_value">
                           {Math.round(bonus.statUsed).toLocaleString()}
@@ -631,8 +503,7 @@ const ConditionalEffectToggle = ({
                       {bonus.excessStat > 0 && (
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            {" "}
-                            Excess (above {effect.conditional.threshold}):{" "}
+                            Excess (above {effect.conditional.threshold}):
                           </span>
                           <span className="ingame_toggle-stat_value">
                             {Math.round(bonus.excessStat).toLocaleString()}
@@ -642,10 +513,10 @@ const ConditionalEffectToggle = ({
                       {bonus.units > 0 && (
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            {bonus.units} ×{" "}
+                            {bonus.units} ×
                             {(
                               (effect.conditional.perUnitBonus || 0) * 100
-                            ).toFixed(1)}{" "}
+                            ).toFixed(1)}
                             %:
                           </span>
                           <span className="ingame_toggle-stat_value is-bonus">
@@ -656,8 +527,7 @@ const ConditionalEffectToggle = ({
                       {bonus.fromBase > 0 && (
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            {" "}
-                            Base Bonus:{" "}
+                            Base Bonus:
                           </span>
                           <span className="ingame_toggle-stat_value is-bonus">
                             +{(bonus.fromBase * 100).toFixed(1)}%
@@ -674,11 +544,10 @@ const ConditionalEffectToggle = ({
                         }}
                       >
                         <span className="ingame_toggle-stat_name">
-                          {" "}
-                          Total DMG Bonus:{" "}
+                          Total DMG Bonus:
                         </span>
                         <span className="ingame_toggle-stat_value">
-                          +{(bonus.total * 100).toFixed(1)}%{" "}
+                          +{(bonus.total * 100).toFixed(1)}%
                           {bonus.maxReached && "(MAX)"}
                         </span>
                       </div>
@@ -691,8 +560,7 @@ const ConditionalEffectToggle = ({
                     <>
                       <div className="ingame_toggle-stat_row">
                         <span className="ingame_toggle-stat_name">
-                          {" "}
-                          Initial {formatStatName(bonus.basedOn || "hp")}:{" "}
+                          Initial {formatStatName(bonus.basedOn || "hp")}:
                         </span>
                         <span className="ingame_toggle-stat_value">
                           {bonus.basedOn === "penRatio" ||
@@ -706,9 +574,8 @@ const ConditionalEffectToggle = ({
                       {bonus.excessStat > 0 && (
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            {" "}
                             Excess {formatStatName(bonus.basedOn)} (❯  
-                            {effect.conditional.threshold || 0}):{" "}
+                            {effect.conditional.threshold || 0}):
                           </span>
                           <span className="ingame_toggle-stat_value">
                             {bonus.basedOn === "penRatio" ||
@@ -723,7 +590,7 @@ const ConditionalEffectToggle = ({
                       {bonus.fromStat > 0 && (
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            {formatStatName(bonus.basedOn || "")} Bonus (
+                            Excess {formatStatName(affectedStat || "")} Bonus (
                             {bonus.excessStat} ×{" "}
                             {bonus.unitMultiplier !== undefined &&
                             bonus.unitMultiplier !== null
@@ -736,17 +603,17 @@ const ConditionalEffectToggle = ({
                             ):
                           </span>
                           <span className="ingame_toggle-stat_value">
-                            +{formatStatValue(bonus.fromStat, affectedStat)}
+                            +{fmtVal(bonus.fromStat, affectedStat)}
                           </span>
                         </div>
                       )}
                       {bonus.fromBase > 0 && (
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            Base {formatStatName(bonus.basedOn)} Bonus:{" "}
+                            Base {formatStatName(affectedStat)} Bonus:
                           </span>
                           <span className="ingame_toggle-stat_value">
-                            +{formatStatValue(bonus.fromBase, affectedStat)}
+                            +{fmtVal(bonus.fromBase, affectedStat)}
                           </span>
                         </div>
                       )}
@@ -760,11 +627,10 @@ const ConditionalEffectToggle = ({
                         }}
                       >
                         <span className="ingame_toggle-stat_name">
-                          {" "}
                           Total {formatStatName(affectedStat)} Increase:
                         </span>
                         <span className="ingame_toggle-stat_value">
-                          +{formatStatValue(bonus.total, affectedStat)}{" "}
+                          +{fmtVal(bonus.total, affectedStat)}{" "}
                           {bonus.maxReached && "(MAX)"}
                         </span>
                       </div>
@@ -777,11 +643,10 @@ const ConditionalEffectToggle = ({
                     {bonus.bonuses.critDmg && (
                       <div className="ingame_toggle-stat_row">
                         <span className="ingame_toggle-stat_name">
-                          {" "}
-                          CRIT DMG:{" "}
+                          CRIT DMG:
                         </span>
                         <span className="ingame_toggle-stat_value">
-                          +{formatStatValue(bonus.bonuses.critDmg, "critDmg")}
+                          +{fmtVal(bonus.bonuses.critDmg, "critDmg")}
                         </span>
                       </div>
                     )}
@@ -814,11 +679,10 @@ const ConditionalEffectToggle = ({
                             key={idx}
                           >
                             <span className="ingame_toggle-stat_name">
-                              {" "}
-                              {label}:{" "}
+                              {label}:
                             </span>
                             <span className="ingame_toggle-stat_value is-bonus">
-                              +{formatStatValue(dmgBonus.value, "dmgBonus")}
+                              +{fmtVal(dmgBonus.value, "dmgBonus")}
                             </span>
                           </div>
                         );
@@ -846,56 +710,73 @@ const ConditionalEffectToggle = ({
                       <>
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            {" "}
                             Current{" "}
-                            {formatStatName(effect.conditional.basedOn || "")}
-                            :{" "}
+                            {formatStatName(effect.conditional.basedOn || "")}:
                           </span>
                           <span className="ingame_toggle-stat_value">
-                            {formatStatValue(
-                              bonus.statUsed,
-                              effect.conditional.basedOn || "atk",
-                            )}
+                            {bonus.basedOn === "penRatio" ||
+                            bonus.basedOn === "critRate"
+                              ? `${bonus.statUsed.toFixed(1)}%`
+                              : bonus.basedOn === "energyRegen"
+                                ? `${bonus.statUsed.toFixed(2)}/s`
+                                : Math.round(bonus.statUsed).toLocaleString()}
                           </span>
                         </div>
-                        {effect.conditional.threshold > 0 && (
+
+                        {bonus.excessStat > 0 && (
                           <div className="ingame_toggle-stat_row">
                             <span className="ingame_toggle-stat_name">
-                              {" "}
-                              Excess (above {effect.conditional.threshold}
-                              ):{" "}
+                              Excess {formatStatName(bonus.basedOn)} (❯  
+                              {effect.conditional.threshold || 0}):
                             </span>
                             <span className="ingame_toggle-stat_value">
-                              {formatStatValue(
-                                bonus.excessStat,
-                                effect.conditional.basedOn || "atk",
-                              )}
+                              {bonus.basedOn === "penRatio" ||
+                              bonus.basedOn === "critRate"
+                                ? `${bonus.excessStat.toFixed(1)}%`
+                                : bonus.basedOn === "energyRegen"
+                                  ? `${bonus.excessStat.toFixed(2)}/s`
+                                  : Math.round(
+                                      bonus.excessStat,
+                                    ).toLocaleString()}
                             </span>
                           </div>
                         )}
-                        {bonus.fromBase > 0 && (
-                          <div className="ingame_toggle-stat_row">
-                            <span className="ingame_toggle-stat_name">
-                              {" "}
-                              Base Bonus:{" "}
-                            </span>
-                            <span className="ingame_toggle-stat_value">
-                              +{formatStatValue(bonus.fromBase, affectedStat)}
-                            </span>
-                          </div>
-                        )}
+
                         {bonus.fromStat > 0 && (
                           <div className="ingame_toggle-stat_row">
                             <span className="ingame_toggle-stat_name">
-                              From {formatStatName(bonus.basedOn || "")} ({" "}
-                              {bonus.units} × {effect.conditional.perUnitBonus}{" "}
+                              Excess {formatStatName(affectedStat || "")}
+                              {!/bonus/i.test(
+                                formatStatName(affectedStat || ""),
+                              ) && " Bonus"}{" "}
+                              ({bonus.units} ×{" "}
+                              {effect.conditional.perUnitBonus !== undefined &&
+                              effect.conditional.perUnitBonus !== null
+                                ? effect.conditional.perUnitBonus < 1
+                                  ? `${(effect.conditional.perUnitBonus * 100).toFixed(2)}%`
+                                  : effect.conditional.perUnitBonus % 1 === 0
+                                    ? effect.conditional.perUnitBonus
+                                    : effect.conditional.perUnitBonus.toFixed(1)
+                                : "0.0"}
                               ):
                             </span>
                             <span className="ingame_toggle-stat_value">
-                              +{formatStatValue(bonus.fromStat, affectedStat)}
+                              +{fmtVal(bonus.fromStat, affectedStat)}
                             </span>
                           </div>
                         )}
+
+                        {bonus.fromBase > 0 && (
+                          <div className="ingame_toggle-stat_row">
+                            <span className="ingame_toggle-stat_name">
+                              Base {formatStatName(affectedStat)} Bonus:
+                            </span>
+                            <span className="ingame_toggle-stat_value">
+                              +{fmtVal(bonus.fromBase, affectedStat)}
+                            </span>
+                          </div>
+                        )}
+
                         <div
                           className="ingame_toggle-stat_row"
                           style={{
@@ -906,10 +787,10 @@ const ConditionalEffectToggle = ({
                           }}
                         >
                           <span className="ingame_toggle-stat_name">
-                            Total:
+                            Total {formatStatName(affectedStat)} Increase:
                           </span>
                           <span className="ingame_toggle-stat_value">
-                            +{formatStatValue(bonus.total, affectedStat)}{" "}
+                            +{fmtVal(bonus.total, affectedStat)}{" "}
                             {bonus.maxReached && "(MAX)"}
                           </span>
                         </div>
@@ -918,27 +799,60 @@ const ConditionalEffectToggle = ({
                       <>
                         <div className="ingame_toggle-stat_row">
                           <span className="ingame_toggle-stat_name">
-                            Current {formatStatName(bonus.basedOn || "stat")}:
+                            Current{" "}
+                            {formatStatName(effect.conditional.basedOn || "")}:
                           </span>
                           <span className="ingame_toggle-stat_value">
-                            {bonus.statUsed?.toFixed(0)}
-                            {bonus.basedOn?.includes("Rate") ? "%" : ""}
+                            {bonus.basedOn === "penRatio" ||
+                            bonus.basedOn === "critRate"
+                              ? `${bonus.statUsed.toFixed(1)}%`
+                              : bonus.basedOn === "energyRegen"
+                                ? `${bonus.statUsed.toFixed(2)}/s`
+                                : Math.round(bonus.statUsed).toLocaleString()}
                           </span>
                         </div>
+
+                        {bonus.excessStat > 0 && (
+                          <div className="ingame_toggle-stat_row">
+                            <span className="ingame_toggle-stat_name">
+                              Excess {formatStatName(bonus.basedOn)} (❯{" "}
+                              {effect.conditional.threshold || 0}):
+                            </span>
+                            <span className="ingame_toggle-stat_value">
+                              {bonus.basedOn === "penRatio" ||
+                              bonus.basedOn === "critRate"
+                                ? `${bonus.excessStat.toFixed(1)}%`
+                                : bonus.basedOn === "energyRegen"
+                                  ? `${bonus.excessStat.toFixed(2)}/s`
+                                  : Math.round(
+                                      bonus.excessStat,
+                                    ).toLocaleString()}
+                            </span>
+                          </div>
+                        )}
+
                         {bonus.units > 0 && (
                           <div className="ingame_toggle-stat_row">
                             <span className="ingame_toggle-stat_name">
-                              {bonus.units} ×{" "}
-                              {(effect.conditional.perUnitBonus * 100).toFixed(
-                                1,
-                              )}
-                              %:
+                              Excess{" "}
+                              {formatStatName(bonus.damageBonusType || "")} DMG
+                              Bonus ({bonus.units} ×{" "}
+                              {effect.conditional.perUnitBonus !== undefined &&
+                              effect.conditional.perUnitBonus !== null
+                                ? effect.conditional.perUnitBonus < 1
+                                  ? `${(effect.conditional.perUnitBonus * 100).toFixed(1)}%`
+                                  : effect.conditional.perUnitBonus % 1 === 0
+                                    ? effect.conditional.perUnitBonus
+                                    : effect.conditional.perUnitBonus.toFixed(1)
+                                : "0.0"}
+                              ):
                             </span>
                             <span className="ingame_toggle-stat_value is-bonus">
                               +{(bonus.rawFromStat * 100).toFixed(1)}%
                             </span>
                           </div>
                         )}
+
                         <div
                           className="ingame_toggle-stat_row"
                           style={{
@@ -948,13 +862,13 @@ const ConditionalEffectToggle = ({
                           }}
                         >
                           <span className="ingame_toggle-stat_name">
-                            Total {bonus.damageBonusType?.toUpperCase()} DMG
-                            Bonus:
+                            Total {formatStatName(bonus.damageBonusType)} DMG
+                            Bonus Increase:
                           </span>
                           <span
                             className="ingame_toggle-stat_value"
                             style={{
-                              color: bonus.maxReached ? "#4CAF50" : theme,
+                              color: bonus.maxReached ? theme : "inherit",
                             }}
                           >
                             +{(bonus.total * 100).toFixed(1)}%{" "}

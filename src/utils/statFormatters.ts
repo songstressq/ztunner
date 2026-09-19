@@ -42,6 +42,7 @@ const PERCENT_STATS = new Set<string>([
   "windDmgBonus",
 
   "critDamageElementalBonus",
+  "dmgBonus",
 ]);
 
 const FLAT_STATS = new Set<string>([
@@ -136,6 +137,13 @@ const STAT_NAMES: Record<string, string> = {
   luminizeMultiplierBonus: "Luminize Multiplier",
   assaultCritDmgBonus: "Assault CRIT DMG",
   assaultCritDmgTotal: "Assault CRIT DMG",
+  dmgBonus: "DMG Bonus",
+
+  global: "Global",
+  element: "Element",
+  skillType: "Skill Type",
+  exclusive: "Exclusive",
+  anomalyTypeDmg: "Anomaly Type",
 };
 
 function camelToTitle(key: string): string {

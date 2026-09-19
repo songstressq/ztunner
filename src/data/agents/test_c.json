@@ -24,7 +24,7 @@
     "critDmg": 2.5,
     "anomalyProficiency": 500,
     "anomalyMastery": 250,
-    "penRatio": 0,
+    "penRatio": 0.75,
     "pen": 0,
     "energyRegen": 4.0,
 
@@ -466,6 +466,193 @@
         "perUnit": 1,
         "skillLevels": [{ "level": 1, "maxBonus": 1200, "perUnitBonus": 0.4 }],
         "affectedStats": ["atkFlatRaw"]
+      }
+    },
+
+    {
+      "id": "test_agent_c-core-mystery_hunt",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Mystery Hunt (Additional Ability) (Alice Thymefield)",
+      "description": "When another character in your squad is an Anomaly or Support character:\n\nWhen any squad member triggers Disorder, Alice gains 30 Blade Etiquette. If Alice's Anomaly Mastery exceeds 140, each additional point grants her 1.6 Anomaly Proficiency. Upon entering the battlefield, Alice gains 300 Blade Etiquette. This effect can trigger once every 180s in Investigation Zone mode. ...",
+      "shortDescription": "Alice's Anomaly Proficiency is incresed based on her current Anomaly Mastery.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyMastery",
+        "threshold": 140,
+        "perUnit": 1,
+        "perUnitBonus": 1.6,
+        "maxBonus": 99999,
+        "affectedStats": ["anomalyProficiency"],
+        "affectsAnomaly": false,
+        "affectsDisorder": false
+      }
+    },
+    {
+      "id": "test_agent_c-core-passion",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Passion (Basic Attack) (Jane Doe)",
+      "description": "When Jane triggers Perfect Dodge, Defensive Assist, or performs a move that deals damage to the enemy, she accumulates Passion Stream. Upon reaching the maximum Passion Stream, Jane enters the Passion state.\n\nWhile in the Passion state, Jane's Physical Anomaly Buildup Rate is increased by 25%. Additionally, if Jane's Anomaly Proficiency exceeds 120 points, each extra point raises her ATK by 2, up to a maximum of 600. In the Passion state, Jane's skills that deal damage expend Passion Stream. Activating a Perfect Dodge or Defensive Assist regenerates Passion Stream. Jane exits the Passion state when all of her Passion Stream is expended.",
+      "shortDescription": "Jane Doe's ATK is increased based on her current Anomaly Proficiency.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyProficiency",
+        "threshold": 120,
+        "perUnit": 1,
+        "perUnitBonus": 2,
+        "maxBonus": 600,
+        "affectedStats": ["atkFlatRaw"],
+        "affectsAnomaly": false,
+        "affectsDisorder": false
+      }
+    },
+    {
+      "id": "test_agent_c-core-crime_counsel",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Crime Counsel (Mindscape Cinema N°1) (Jane Doe)",
+      "description": "The maximum uses of Basic Attack: Salchow Jump are increased by one. While in the Passion state, Jane's Physical Anomaly Buildup Rate increases by an extra 15% and each point of Jane's Anomaly Proficiency increases her damage by 0.1%, up to a maximum of 30%.",
+      "shortDescription": "Jane Doe's DMG is increased based on her current Anomaly Proficiency.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyProficiency",
+        "threshold": 0,
+        "perUnit": 1,
+        "perUnitBonus": 0.001,
+        "maxBonus": 0.3,
+        "damageBonuses": [{ "type": "global", "value": 1 }]
+      }
+    },
+    {
+      "id": "test_agent_c-core-temporal_patterns_stilled_colors",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Temporal Patterns = Stilled Colors (Core Passive) (Remielle)",
+      "description": "Remielle's Refringe Coefficient is equal to 0.02% of her Anomaly Proficiency. If there are 3 Anomaly characters in the squad, her Refringe Coefficient increases by an additional 10%. ...",
+      "shortDescription": "Remielle's Refringe Coefficient is increased based on her current Anomaly Proficiency.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyProficiency",
+        "perUnit": 1,
+        "perUnitBonus": 0.0002,
+        "threshold": 0,
+        "affectedStats": ["refringeCoefficient"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-precise_guidance",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Precise Guidance (Core Passive) (Norma)",
+      "description": "... Norma gains additional ATK based on her Sheer Force. Every 1 point of Sheer Force increases her ATK by 1.25, up to a maximum increase of 1,200 ATK. ...",
+      "shortDescription": "Norma's ATK is increased based on her current Sheer Force.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "sheerForce",
+        "threshold": 0,
+        "perUnit": 1,
+        "perUnitBonus": 1.25,
+        "maxBonus": 1200,
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-three_verses_of_farewell_at_yang_pass",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Three Verses of Farewell at Yang Pass (Additional Ability) (Qingyi)",
+      "description": "When another character in your squad is an Attack character or shares the same Faction:\n\nBasic Attacks deal 20% increased Daze. If Qingyi's Impact is greater than 120, each point over increases her ATK by 6, up to a maximum of 600.",
+      "shortDescription": "Qingyi's ATK is increased based on her current Impact, up to a maximum of 600.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "impact",
+        "threshold": 120,
+        "perUnit": 1,
+        "perUnitBonus": 6,
+        "maxBonus": 600,
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-mini_destruction_partner",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Mini Destruction Partner (Core Passive) (Alexandrina Sebastiane)",
+      "description": "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + 12%, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+      "shortDescription": "All squad members' PEN Ratio is increased based on Rina's current PEN Ratio.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "penRatio",
+        "threshold": 0,
+        "perUnit": 1,
+        "perUnitBonus": 0.0025,
+        "maxBonus": 0.3,
+        "baseBonus": 0.12,
+        "affectedStats": ["penRatio"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-perfect_service_atk",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Perfect Service (Awakened Potential N°6) (Alexandrina Sebastiane)",
+      "description": "PEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
+      "shortDescription": "All squad members ATK is increased based on Rina's current PEN Ratio.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "penRatio",
+        "perUnit": 1,
+        "perUnitBonus": 8,
+        "maxBonus": 576,
+        "threshold": 0,
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-perfect_service_def",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "Perfect Service (Awakened Potential N°6) (Alexandrina Sebastiane)",
+      "description": "PEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
+      "shortDescription": "All squad members DEF is increased based on Rina's current PEN Ratio.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "penRatio",
+        "perUnit": 1,
+        "perUnitBonus": 6.5,
+        "maxBonus": 468,
+        "threshold": 0,
+        "affectedStats": ["defFlatRaw"]
+      }
+    },
+    {
+      "id": "test_agent_c-core-the_more_the_merrier",
+      "source": "core",
+      "sourceId": "test_agent_c-core",
+      "label": "The More the Merrier (Additional Ability) (Ukinami Yuzuha)",
+      "description": "When another character in your squad is an Anomaly character or shares the same Faction:\n\nIf Yuzuha's Anomaly Mastery exceeds 100, every point over increases the Anomaly Buildup Rate of characters with Tanuki Wish by 0.2%, up to a maximum of 20%, and all Attribute Anomaly DMG and Disorder DMG by 0.2%, up to a maximum of 20%. When Yuzuha's Anomaly Mastery is at 200, she grants the full buff effect.",
+      "shortDescription": "All squad members' DMG from Attribute Anomalies or Disorder is increased based on Yuzuha's current Anomaly Mastery.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "anomalyMastery",
+        "threshold": 100,
+        "perUnit": 1,
+        "perUnitBonus": 0.002,
+        "maxBonus": 0.2,
+        "affectedStats": ["anomalyDmgBonus", "disorderDmgBonus"],
+        "affectsAnomaly": true,
+        "affectsDisorder": true
       }
     }
   ],
