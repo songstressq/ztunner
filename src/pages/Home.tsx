@@ -184,6 +184,26 @@ const Home = () => {
                 style={{ backgroundColor: dominantTheme }}
               />
               <div className="home_content_changelog_item">
+                <span>v1.0.2 — Minor Fixes &amp; Updates</span>
+                <h3>● Fixed - In-Game Toggle Calculations</h3>
+                <p>
+                  Fixed calculations and summary display issues for in-game
+                  toggles that interact with Initial Stats or Current Stats in
+                  the Damage Calculator.
+                </p>
+
+                <h3>● Minor UI fixes and agent-related updates.</h3>
+                <p>
+                  Fixed Rina's Mini Destruction Partner (Core Passive) in-game
+                  effect.
+                  <br />
+                  Fixed Rina's Dance Duet (Mindscape Cinema N°1) in-game effect.
+                  <br />
+                  Fixed Jane Doe's Crime Counsel (Mindscape Cinema N°1) in-game
+                  effect.
+                </p>
+              </div>
+              <div className="home_content_changelog_item">
                 <span>v1.1.0 — Armorer Update</span>
 
                 <h3>● Added - ZZZ Maim DMG Calculator</h3>
@@ -197,25 +217,6 @@ const Home = () => {
                   Claret Flint and the Armorer Specialty have been added to
                   Z-Tunner, with support for their unique abilities, mechanics,
                   and damage calculations.
-                </p>
-              </div>
-              <div className="home_content_changelog_item">
-                <span>v1.0.1 — Minor Fixes &amp; Updates</span>
-                <h3>● Minor UI fixes and agent-related updates.</h3>
-                <p>
-                  Fixed Alice's Sage at the Sword's Tip (Mindscape Cinema N°2)
-                  in-game effect.
-                  <br />
-                  Fixed Aria's Fantastical Beat (Mindscape Cinema N°2) in-game
-                  effect.
-                  <br />
-                  Fixed Anton's Brothers in Arms! (Core Passive) in-game effect.
-                  <br />
-                  Fixed Seed's Flower Chain Protocol (Core Passive) in-game
-                  effect.
-                  <br />
-                  Fixed Jane's Crime Counsel (Mindscape Cinema N°1) in-game
-                  effect.
                 </p>
               </div>
             </div>

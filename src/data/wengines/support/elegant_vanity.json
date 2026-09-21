@@ -70,6 +70,9 @@
         ],
         "maxStacks": 2,
         "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Support"
       }
     }
   ]

@@ -378,7 +378,7 @@ const WEngineEffectToggle = ({
                       ) {
                         description = `${bonus.element.toUpperCase()} DMG (${bonus.skillType.toUpperCase()})`;
                       } else if (bonus.type === "global") {
-                        description = "All DMG";
+                        description = "Global DMG";
                       } else if (bonus.type === "element" && bonus.element) {
                         description = `${bonus.element.toUpperCase()} DMG`;
                       } else if (
@@ -414,7 +414,6 @@ const WEngineEffectToggle = ({
           </>
         )}
 
-        {/* Mensaje si está deshabilitado o no aplica */}
         {(!isApplicable || disabled) && (
           <div className="ingame_toggle-disabled_section">
             <p>

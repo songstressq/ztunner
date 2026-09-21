@@ -631,6 +631,14 @@
   font-weight: bold;
 }
 
+.ingame_toggle-skill_level_row {
+  font-size: var(--home-10_5px);
+  color: #888;
+  margin-top: var(--padding-6px);
+  padding-top: var(--padding-3px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .ingame_toggle-stat_row.is-bonus {
   border-bottom: none;
   margin-top: var(--padding-4px);
@@ -4161,7 +4169,7 @@ body.sidebar-open .carousel-dots-wrapper {
 
 .anomaly-total-block .total-target {
   color: rgba(255, 255, 255, 0.75);
-  font-size: var(--home-10_5x);
+  font-size: var(--home-10_5px);
   font-weight: 400;
 }
 

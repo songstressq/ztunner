@@ -255,6 +255,77 @@ const InfoAndSettings = () => {
           </div>
         </div>
 
+        {/* NUEVO: SECCIÓN CHANGELOG */}
+        <div className="agents-block changelog_div">
+          <div className="agents-wrapper" style={dominantEmptyStyle}>
+            <div>
+              <h1 className="home_content-title_h1">Changelog</h1>
+              <div
+                className="home_divider"
+                style={{ backgroundColor: dominantTheme }}
+              />
+
+              <div className="changelog_grid">
+                {/* v1.1.0 */}
+                <div className="home_content_changelog_item">
+                  <span>v1.1.0 — Armorer Update</span>
+                  <h3>● Added - ZZZ Maim DMG Calculator</h3>
+                  <p>
+                    Added calculations for Laceration DMG, Sharp DMG, and Maim
+                    DMG, including their additional mechanics, to Z-Tunner's ZZZ
+                    DMG/Maim DMG Calculator.
+                  </p>
+                  <h3>● Added - Claret Flint / Armorer Specialty</h3>
+                  <p>
+                    Claret Flint and the Armorer Specialty have been added to
+                    Z-Tunner, with support for their unique abilities,
+                    mechanics, and damage calculations.
+                  </p>
+                </div>
+
+                {/* v1.0.1 */}
+                <div className="home_content_changelog_item">
+                  <span>v1.0.1 — Minor Fixes &amp; Updates</span>
+                  <h3>● Minor UI fixes and agent-related updates.</h3>
+                  <p>
+                    Fixed Alice's Sage at the Sword's Tip (Mindscape Cinema N°2)
+                    in-game effect.
+                    <br />
+                    Fixed Aria's Fantastical Beat (Mindscape Cinema N°2) in-game
+                    effect.
+                    <br />
+                    Fixed Anton's Brothers in Arms! (Core Passive) in-game
+                    effect.
+                    <br />
+                    Fixed Seed's Flower Chain Protocol (Core Passive) in-game
+                    effect.
+                    <br />
+                    Fixed Jane's Crime Counsel (Mindscape Cinema N°1) in-game
+                    effect.
+                  </p>
+                </div>
+
+                {/* v1.0.0 */}
+                <div className="home_content_changelog_item">
+                  <span>v1.0.0 — Initial Release</span>
+
+                  <h3>● Added ZZZ Damage Calculator </h3>
+                  <p>
+                    Added damage calculations for Normal and CRIT DMG, Sheer
+                    DMG, Aftershock DMG, Anomaly DMG, Disorder DMG, and Vortex
+                    DMG.
+                  </p>
+                  <h3>● Added ZZZ Build Creator &amp; Build Manager</h3>
+                  <p>
+                    Introduces sections for replicating your agents' in-game
+                    builds for later use in damage calculations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* NUEVO: SECCIÓN PRIVACY POLICY */}
         <div className="agents-block policy_div">
           <div className="agents-wrapper" style={dominantEmptyStyle}>
