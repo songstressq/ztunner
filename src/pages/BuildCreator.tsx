@@ -26,6 +26,7 @@ import {
 import MindscapeSelector from "@/components/MindscapeSelector";
 import { useSidebar } from "@/components/SidebarContext";
 import CustomPrompt from "@/components/CustomPrompt";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 import { useSession } from "@/context/SessionContext";
 
@@ -58,6 +59,7 @@ export default function BuildCreator() {
   const [skinReady, setSkinReady] = useState(false);
   const [isDirty, setIsDirty] = useState(false);
   const [localMindscapes, setLocalMindscapes] = useState<string[]>([]);
+  const { trackEvent } = useAnalytics();
 
   const emptySubstats = () =>
     Array(4)
@@ -440,6 +442,13 @@ export default function BuildCreator() {
         setWEnginesSession((prev) => ({ ...prev, activeBuildId: build.id }));
         setIsDirty(false);
         setSavedBuilds(loadAllBuilds());
+
+        trackEvent("zzz_create_build", {
+          agent_id: selectedId,
+          agent_name: selectedAgent.displayName || selectedAgent.name,
+          w_engine_id: selectedEngineId,
+          core_level: coreLevel,
+        });
       },
     );
   }

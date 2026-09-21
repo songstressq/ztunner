@@ -30,6 +30,7 @@ import GameModeTogglePanel from "@/components/GameModeTogglePanel";
 import SkillsProfileModal from "@/components/SkillsProfileModal";
 import CustomPrompt from "@/components/CustomPrompt";
 import gameModesData from "@/data/gameModes.json";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const DamageSimulator = () => {
   const [builds, setBuilds] = useState<SavedBuild[]>([]);
@@ -49,6 +50,7 @@ const DamageSimulator = () => {
     agents[0]?.id || "",
   );
   const showGameModePanel = homeSession.showGameModePanel ?? true;
+  const { trackEvent } = useAnalytics();
 
   const [promptState, setPromptState] = useState<{
     isOpen: boolean;
@@ -914,6 +916,17 @@ const DamageSimulator = () => {
             return { ...prev, activeEffectsByBuild: newEffects };
           });
         }
+      }
+
+      if (newBuildId && newBuild) {
+        const newAgent = agents.find((a) => a.id === newBuild.agentId);
+        trackEvent("zzz_assign_build_to_slot", {
+          slot_index: slotIndex,
+          build_id: newBuildId,
+          build_name: newBuild.name,
+          agent_id: newBuild.agentId,
+          agent_name: newAgent?.displayName || newAgent?.name || "Unknown",
+        });
       }
     };
 
