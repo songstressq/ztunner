@@ -521,7 +521,7 @@ const InfoAndSettings = () => {
               <div className="social-footer-content">
                 <div className="social-footer-left">
                   <span className="social-copyright">© 2026 Z-TUNNER</span>
-                  <span className="social-version">v1.1.0</span>
+                  <span className="social-version">v1.1.1</span>
                 </div>
                 <div className="social-links">
                   <a
