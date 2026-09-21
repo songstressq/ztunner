@@ -604,11 +604,26 @@
 .ingame_toggle-stat_row {
   display: flex;
   justify-content: space-between;
+  padding-bottom: var(--padding-2_5px);
+}
+
+.ingame_toggle-total_row {
   padding: var(--padding-2px) 0;
+  margin-top: var(--padding-4px);
+  padding-top: var(--padding-5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ingame_toggle-stat_name {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.ingame_toggle-stat_tag {
+  color: color-mix(in srgb, var(--theme) 15%, rgba(255, 255, 255, 0.75));
+}
+
+.ingame_toggle-total_stat_tag {
+  color: color-mix(in srgb, var(--theme) 70%, white);
 }
 
 .ingame_toggle-stat_value {

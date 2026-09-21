@@ -1,0 +1,2196 @@
+[
+  {
+    "id": "dc66351b-57bd-40ff-aba9-df60e32be1ed",
+    "name": "Polaris' Dialyn Build",
+    "agentId": "dialyn",
+    "engineId": "hellfire_gears",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "king_of_the_summit",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 3,
+            "value": 0.096
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "king_of_the_summit",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "HP",
+            "rolls": 1,
+            "value": 224
+          },
+          {
+            "type": "HP%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 3,
+            "value": 0.096
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "woodpecker_electro",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 3,
+            "value": 0.096
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "king_of_the_summit",
+        "main": {
+          "type": "CRIT Rate%",
+          "value": 0.24
+        },
+        "substats": [
+          {
+            "type": "DEF%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 2,
+            "value": 0.144
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "king_of_the_summit",
+        "main": {
+          "type": "PEN Ratio%",
+          "value": 0.24
+        },
+        "substats": [
+          {
+            "type": "HP",
+            "rolls": 0,
+            "value": 112
+          },
+          {
+            "type": "DEF%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 2,
+            "value": 0.144
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "woodpecker_electro",
+        "main": {
+          "type": "HP%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 3,
+            "value": 0.096
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "ATK",
+            "rolls": 0,
+            "value": 19
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1789254110046,
+    "updatedAt": 1789254110046,
+    "skinId": "default"
+  },
+  {
+    "id": "0da42d36-05ed-4365-9a66-86f3f10fbdee",
+    "name": "Polaris' Yixuan Build",
+    "agentId": "yixuan",
+    "engineId": "radiowave_journey",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "yunkui_tales",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "HP%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "branch_and_blade_song",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "astral_voice",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "astral_voice",
+        "main": {
+          "type": "CRIT Rate%",
+          "value": 0.24
+        },
+        "substats": [
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "ATK%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "PEN",
+            "rolls": 2,
+            "value": 27
+          },
+          {
+            "type": "HP",
+            "rolls": 0,
+            "value": 112
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "branch_and_blade_song",
+        "main": {
+          "type": "HP%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "DEF%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 3,
+            "value": 0.096
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "yunkui_tales",
+        "main": {
+          "type": "HP%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "DEF%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 3,
+            "value": 0.192
+          },
+          {
+            "type": "HP",
+            "rolls": 0,
+            "value": 112
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1789255631086,
+    "updatedAt": 1789255631086,
+    "skinId": "default"
+  },
+  {
+    "id": "dad783c0-5a2d-4c64-bf19-d9ee59055ca3",
+    "name": "Polaris' Anby Build",
+    "agentId": "anby",
+    "engineId": "demara_battery_mark_ii",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "shockstar_disco",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "ATK%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 2,
+            "value": 27
+          },
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "thunder_metal",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "PEN",
+            "rolls": 2,
+            "value": 27
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 2,
+            "value": 27
+          },
+          {
+            "type": "ATK%",
+            "rolls": 1,
+            "value": 0.06
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "shockstar_disco",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "ATK%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "shockstar_disco",
+        "main": {
+          "type": "CRIT Rate%",
+          "value": 0.24
+        },
+        "substats": [
+          {
+            "type": "ATK",
+            "rolls": 0,
+            "value": 19
+          },
+          {
+            "type": "HP",
+            "rolls": 1,
+            "value": 224
+          },
+          {
+            "type": "ATK%",
+            "rolls": 3,
+            "value": 0.12
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 0,
+            "value": 0.048
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "shockstar_disco",
+        "main": {
+          "type": "Electric DMG Bonus%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "thunder_metal",
+        "main": {
+          "type": "Energy Regen%",
+          "value": 0.6
+        },
+        "substats": [
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 2,
+            "value": 0.144
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1789258873763,
+    "updatedAt": 1789258873763,
+    "skinId": "default"
+  },
+  {
+    "id": "63fac61f-564a-4407-9afe-ceabdcd68163",
+    "name": "Polaris' Yidhari Build",
+    "agentId": "yidhari",
+    "engineId": "cauldron_of_clarity",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "branch_and_blade_song",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "HP%",
+            "rolls": 2,
+            "value": 0.09
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "yunkui_tales",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "DEF",
+            "rolls": 1,
+            "value": 30
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "branch_and_blade_song",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 3,
+            "value": 0.192
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "HP",
+            "rolls": 0,
+            "value": 112
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "yunkui_tales",
+        "main": {
+          "type": "CRIT DMG%",
+          "value": 0.48
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "ATK",
+            "rolls": 0,
+            "value": 19
+          },
+          {
+            "type": "HP",
+            "rolls": 1,
+            "value": 224
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "yunkui_tales",
+        "main": {
+          "type": "HP%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "DEF%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "HP",
+            "rolls": 2,
+            "value": 336
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "yunkui_tales",
+        "main": {
+          "type": "HP%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 3,
+            "value": 0.096
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1789259851503,
+    "updatedAt": 1789259851503,
+    "skinId": "default"
+  },
+  {
+    "id": "4b0c1aeb-eddb-4f06-8118-6ad8bbeac0c5",
+    "name": "Polaris' Pyrois Build",
+    "agentId": "pyrois",
+    "engineId": "sol_exuvia",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "the_sky_ablaze",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 2,
+            "value": 0.144
+          },
+          {
+            "type": "ATK%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "the_sky_ablaze",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "HP%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "woodpecker_electro",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 0,
+            "value": 0.024
+          },
+          {
+            "type": "HP",
+            "rolls": 0,
+            "value": 112
+          },
+          {
+            "type": "ATK",
+            "rolls": 0,
+            "value": 19
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 3,
+            "value": 0.192
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "woodpecker_electro",
+        "main": {
+          "type": "CRIT DMG%",
+          "value": 0.48
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "PEN",
+            "rolls": 1,
+            "value": 18
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "the_sky_ablaze",
+        "main": {
+          "type": "ATK%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "DEF%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "HP",
+            "rolls": 2,
+            "value": 336
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "the_sky_ablaze",
+        "main": {
+          "type": "ATK%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          },
+          {
+            "type": "HP",
+            "rolls": 1,
+            "value": 224
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1789261525765,
+    "updatedAt": 1789261525765,
+    "skinId": "default"
+  },
+  {
+    "id": "2b14af97-a4eb-4c4a-a65c-ff5ad1b1f0cb",
+    "name": "Polaris' Claret Build",
+    "agentId": "claret",
+    "engineId": "",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "thorned_rose",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "DEF%",
+            "rolls": 3,
+            "value": 0.192
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "thorned_rose",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "DEF%",
+            "rolls": 2,
+            "value": 0.144
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "moonlight_lullaby",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 2,
+            "value": 0.144
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "HP%",
+            "rolls": 0,
+            "value": 0.03
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "woodpecker_electro",
+        "main": {
+          "type": "CRIT Rate%",
+          "value": 0.24
+        },
+        "substats": [
+          {
+            "type": "ATK",
+            "rolls": 0,
+            "value": 19
+          },
+          {
+            "type": "DEF",
+            "rolls": 1,
+            "value": 30
+          },
+          {
+            "type": "HP",
+            "rolls": 0,
+            "value": 112
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 3,
+            "value": 0.192
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "thorned_rose",
+        "main": {
+          "type": "Electric DMG Bonus%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 2,
+            "value": 0.072
+          },
+          {
+            "type": "PEN",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "DEF%",
+            "rolls": 1,
+            "value": 0.096
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "woodpecker_electro",
+        "main": {
+          "type": "DEF%",
+          "value": 0.48
+        },
+        "substats": [
+          {
+            "type": "DEF",
+            "rolls": 1,
+            "value": 30
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1789265671929,
+    "updatedAt": 1789266949881,
+    "skinId": "default"
+  },
+  {
+    "id": "e2c7dcab-ce41-4a9b-acac-21f365aaa8e8",
+    "name": "Polaris' Alice Build",
+    "agentId": "alice",
+    "engineId": "practiced_perfection",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "phaetons_melody",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 2,
+            "value": 27
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "PEN",
+            "rolls": 1,
+            "value": 18
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "phaetons_melody",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 0,
+            "value": 0.024
+          },
+          {
+            "type": "HP",
+            "rolls": 1,
+            "value": 224
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "fanged_metal",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "DEF%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 4,
+            "value": 45
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "fanged_metal",
+        "main": {
+          "type": "Anomaly Proficiency",
+          "value": 92
+        },
+        "substats": [
+          {
+            "type": "DEF%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "ATK%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "fanged_metal",
+        "main": {
+          "type": "ATK%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "PEN",
+            "rolls": 2,
+            "value": 27
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 2,
+            "value": 27
+          },
+          {
+            "type": "HP%",
+            "rolls": 0,
+            "value": 0.03
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "fanged_metal",
+        "main": {
+          "type": "Anomaly Mastery%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "DEF",
+            "rolls": 1,
+            "value": 30
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1789350831769,
+    "updatedAt": 1789351120763,
+    "skinId": "default"
+  },
+  {
+    "id": "e6428dac-ea38-48cc-a416-83fcf83753c3",
+    "name": "Polaris' Yuzuha Build",
+    "agentId": "yuzuha",
+    "engineId": "kaboom_the_cannon",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "phaetons_melody",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "ATK",
+            "rolls": 0,
+            "value": 19
+          },
+          {
+            "type": "ATK%",
+            "rolls": 4,
+            "value": 0.15
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "moonlight_lullaby",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "HP%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "ATK%",
+            "rolls": 3,
+            "value": 0.12
+          },
+          {
+            "type": "DEF",
+            "rolls": 2,
+            "value": 45
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "moonlight_lullaby",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "moonlight_lullaby",
+        "main": {
+          "type": "Anomaly Proficiency",
+          "value": 92
+        },
+        "substats": [
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "DEF",
+            "rolls": 1,
+            "value": 30
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 0,
+            "value": 0.048
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "moonlight_lullaby",
+        "main": {
+          "type": "ATK%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "DEF",
+            "rolls": 2,
+            "value": 45
+          },
+          {
+            "type": "DEF%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "HP%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "phaetons_melody",
+        "main": {
+          "type": "Anomaly Mastery%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 0,
+            "value": 0.024
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1789351810809,
+    "updatedAt": 1789352484982,
+    "skinId": "default"
+  },
+  {
+    "id": "fa1ab476-d55e-4796-ba99-bfb0867cddae",
+    "name": "Polairs' Remielle Build",
+    "agentId": "remielle",
+    "engineId": "ode_of_resurrected_wings",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "chaos_jazz",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "HP%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "feathered_fate",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "DEF",
+            "rolls": 0,
+            "value": 15
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "feathered_fate",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "ATK",
+            "rolls": 1,
+            "value": 38
+          },
+          {
+            "type": "ATK%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 3,
+            "value": 36
+          },
+          {
+            "type": "HP%",
+            "rolls": 0,
+            "value": 0.03
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "chaos_jazz",
+        "main": {
+          "type": "Anomaly Proficiency",
+          "value": 92
+        },
+        "substats": [
+          {
+            "type": "ATK%",
+            "rolls": 2,
+            "value": 0.09
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "HP%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "DEF",
+            "rolls": 1,
+            "value": 30
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "feathered_fate",
+        "main": {
+          "type": "ATK%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "HP",
+            "rolls": 0,
+            "value": 112
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 3,
+            "value": 36
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "DEF%",
+            "rolls": 1,
+            "value": 0.096
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "feathered_fate",
+        "main": {
+          "type": "ATK%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 2,
+            "value": 0.144
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [
+      "remielle_dan-mindscape_1-naive_oath_1",
+      "remielle_dan-mindscape_1-naive_oath_2",
+      "remielle-mindscape_2-fall_into_the_noise_1",
+      "remielle-mindscape_2-fall_into_the_noise_2"
+    ],
+    "createdAt": 1789353774062,
+    "updatedAt": 1790016744889,
+    "skinId": "default"
+  },
+  {
+    "id": "e4a2c922-28ac-4376-b0a8-a9723598520e",
+    "name": "Test C Build",
+    "agentId": "test_c",
+    "engineId": "",
+    "coreLevel": 0,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "",
+        "main": {
+          "type": null,
+          "value": 0
+        },
+        "substats": [
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "",
+        "main": {
+          "type": null,
+          "value": 0
+        },
+        "substats": [
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "",
+        "main": {
+          "type": null,
+          "value": 0
+        },
+        "substats": [
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "",
+        "main": {
+          "type": null,
+          "value": 0
+        },
+        "substats": [
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "",
+        "main": {
+          "type": null,
+          "value": 0
+        },
+        "substats": [
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "",
+        "main": {
+          "type": null,
+          "value": 0
+        },
+        "substats": [
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          },
+          {
+            "type": null,
+            "rolls": 0,
+            "value": 0
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1790013271231,
+    "updatedAt": 1790013271231,
+    "skinId": "default"
+  },
+  {
+    "id": "ee64af2d-0848-40d4-813a-c92a61177b51",
+    "name": "Polaris' Zhao Build",
+    "agentId": "zhao",
+    "engineId": "original_transmorpher",
+    "coreLevel": 6,
+    "discs": {
+      "1": {
+        "slot": 1,
+        "rarity": "S",
+        "setId": "bunny_in_wonderland",
+        "main": {
+          "type": "HP",
+          "value": 2200
+        },
+        "substats": [
+          {
+            "type": "ATK%",
+            "rolls": 1,
+            "value": 0.06
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "HP%",
+            "rolls": 2,
+            "value": 0.09
+          }
+        ]
+      },
+      "2": {
+        "slot": 2,
+        "rarity": "S",
+        "setId": "swing_jazz",
+        "main": {
+          "type": "ATK",
+          "value": 316
+        },
+        "substats": [
+          {
+            "type": "CRIT Rate%",
+            "rolls": 0,
+            "value": 0.024
+          },
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "HP%",
+            "rolls": 4,
+            "value": 0.15
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          }
+        ]
+      },
+      "3": {
+        "slot": 3,
+        "rarity": "S",
+        "setId": "swing_jazz",
+        "main": {
+          "type": "DEF",
+          "value": 184
+        },
+        "substats": [
+          {
+            "type": "HP%",
+            "rolls": 3,
+            "value": 0.12
+          },
+          {
+            "type": "ATK%",
+            "rolls": 0,
+            "value": 0.03
+          },
+          {
+            "type": "Anomaly Proficiency",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "HP",
+            "rolls": 1,
+            "value": 224
+          }
+        ]
+      },
+      "4": {
+        "slot": 4,
+        "rarity": "S",
+        "setId": "bunny_in_wonderland",
+        "main": {
+          "type": "HP%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "PEN",
+            "rolls": 0,
+            "value": 9
+          },
+          {
+            "type": "ATK",
+            "rolls": 2,
+            "value": 57
+          },
+          {
+            "type": "DEF%",
+            "rolls": 0,
+            "value": 0.048
+          },
+          {
+            "type": "DEF",
+            "rolls": 2,
+            "value": 45
+          }
+        ]
+      },
+      "5": {
+        "slot": 5,
+        "rarity": "S",
+        "setId": "bunny_in_wonderland",
+        "main": {
+          "type": "HP%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "HP",
+            "rolls": 2,
+            "value": 336
+          },
+          {
+            "type": "CRIT Rate%",
+            "rolls": 1,
+            "value": 0.048
+          },
+          {
+            "type": "PEN",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "CRIT DMG%",
+            "rolls": 0,
+            "value": 0.048
+          }
+        ]
+      },
+      "6": {
+        "slot": 6,
+        "rarity": "S",
+        "setId": "bunny_in_wonderland",
+        "main": {
+          "type": "HP%",
+          "value": 0.3
+        },
+        "substats": [
+          {
+            "type": "CRIT DMG%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "DEF%",
+            "rolls": 1,
+            "value": 0.096
+          },
+          {
+            "type": "PEN",
+            "rolls": 1,
+            "value": 18
+          },
+          {
+            "type": "DEF",
+            "rolls": 1,
+            "value": 30
+          }
+        ]
+      }
+    },
+    "activeMindscapes": [],
+    "createdAt": 1790016088963,
+    "updatedAt": 1790017059956,
+    "skinId": "default"
+  }
+]

@@ -126,12 +126,12 @@ const STAT_NAMES: Record<string, string> = {
   critDamageElementalBonus: "Elemental CRIT DMG Bonus",
 
   defShred: "DEF Shred",
-  fireResShred: "Fire RES Ignore",
-  iceResShred: "Ice RES Ignore",
-  electricResShred: "Electric RES Ignore",
-  physicalResShred: "Physical RES Ignore",
-  etherResShred: "Ether RES Ignore",
-  windResShred: "Wind RES Ignore",
+  fireResShred: "Fire RES Shred",
+  iceResShred: "Ice RES Shred",
+  electricResShred: "Electric RES Shred",
+  physicalResShred: "Physical RES Shred",
+  etherResShred: "Ether RES Shred",
+  windResShred: "Wind RES Shred",
 
   refringeCoefficient: "Refringe Coefficient",
   luminizeMultiplierBonus: "Luminize Multiplier",

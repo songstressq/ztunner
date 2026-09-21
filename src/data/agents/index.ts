@@ -60,7 +60,7 @@ import zhu_yuan from "./attack/zhu_yuan.json"; //ok
 
 //import test_a from "./test_a.json";
 //import test_b from "./test_b.json";
-//import test_c from "./test_c.json";
+import test_c from "./test_c.json";
 import type { Agent } from "@/types/Agent";
 
 export const agents: Agent[] = [
@@ -132,5 +132,5 @@ export const agents: Agent[] = [
 
   //test_a as Agent,
   //test_b as Agent,
-  //test_c as Agent,
+  test_c as Agent,
 ];
