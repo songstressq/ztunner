@@ -19,7 +19,7 @@
       "sourceId": "starlight_engine",
       "label": "Knight's Combo (W-Engine Passive)",
       "description": "Launching a Dodge Counter or Quick Assist increases the equipper's ATK by a percentage for 12s.",
-      "shortDescription": "Increases the equipper's ATK by a percentage.",
+      "shortDescription": "The equipper's ATK is increased for 12s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

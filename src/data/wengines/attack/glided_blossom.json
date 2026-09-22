@@ -14,18 +14,18 @@
 
   "ingameEffects": [
     {
-      "id": "glided_blossom_extraordinary_anti_theft_measures",
+      "id": "glided_blossom_extraordinary-anti_theft_measures",
       "source": "wEngine",
       "sourceId": "glided_blossom",
       "label": "Extraordinary Anti-Theft Measures (W-Engine Passive)",
       "description": "ATK increases by a percentage, and DMG dealt by EX Special Attacks is increased.",
-      "shortDescription": "Increases the equipper's ATK and EX Special Attack DMG by a percentage.",
+      "shortDescription": "The equipper's ATK is increased, and their DMG from EX Special Attacks is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
           {
             "level": 1,
-            "stats": { "atkPercent": 0.06 },
+            "stats": { "atkPercentRaw": 0.06 },
             "damageBonuses": [
               {
                 "type": "skillType",
@@ -36,7 +36,7 @@
           },
           {
             "level": 2,
-            "stats": { "atkPercent": 0.069 },
+            "stats": { "atkPercentRaw": 0.069 },
             "damageBonuses": [
               {
                 "type": "skillType",
@@ -47,7 +47,7 @@
           },
           {
             "level": 3,
-            "stats": { "atkPercent": 0.078 },
+            "stats": { "atkPercentRaw": 0.078 },
             "damageBonuses": [
               {
                 "type": "skillType",
@@ -58,7 +58,7 @@
           },
           {
             "level": 4,
-            "stats": { "atkPercent": 0.087 },
+            "stats": { "atkPercentRaw": 0.087 },
             "damageBonuses": [
               {
                 "type": "skillType",
@@ -69,7 +69,7 @@
           },
           {
             "level": 5,
-            "stats": { "atkPercent": 0.096 },
+            "stats": { "atkPercentRaw": 0.096 },
             "damageBonuses": [
               {
                 "type": "skillType",

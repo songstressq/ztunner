@@ -19,7 +19,7 @@
       "sourceId": "bellicose_blaze",
       "label": "Flame-Devouring Choir (W-Engine Passive)",
       "description": "Increases CRIT Rate. When the equipper triggers an Aftershock that deals Fire DMG, their attacks ignore a portion of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "bellicose_blaze",
       "label": "Flame-Devouring Choir (W-Engine Passive)",
       "description": "Increases CRIT Rate. When the equipper triggers an Aftershock that deals Fire DMG, their attacks ignore a portion of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
-      "shortDescription": "The equipper's attacks ignore a percentage of the Enemy's DEF",
+      "shortDescription": "The equipper's DMG ignores a percentage of the target's DEF for 8s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -82,6 +82,7 @@
             "stats": { "defShred": 0.24 }
           }
         ],
+        "maxStacks": 2,
         "stackMultiplier": false
       },
       "condition": {

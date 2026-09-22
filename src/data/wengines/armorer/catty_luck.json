@@ -18,7 +18,7 @@
       "source": "wEngine",
       "sourceId": "catty_luck",
       "label": "Lucky Pawpad (W-Engine Passive)",
-      "description": "DEF increases by 8%. When using EX Special Attack, DEF increases by an additional 8% for 40s. Repeated triggers reset the duration.",
+      "description": "DEF increases by a percentage. When using EX Special Attack, DEF increases by an additional percentage for 40s. Repeated triggers reset the duration.",
       "shortDescription": "The equipper's DEF is increased.",
       "target": "self",
       "wEngineOverclock": {
@@ -55,7 +55,7 @@
       "source": "wEngine",
       "sourceId": "catty_luck",
       "label": "Lucky Pawpad (W-Engine Passive)",
-      "description": "DEF increases by 8%. When using EX Special Attack, DEF increases by an additional 8% for 40s. Repeated triggers reset the duration.",
+      "description": "DEF increases by a percentage. When using EX Special Attack, DEF increases by an additional percentage for 40s. Repeated triggers reset the duration.",
       "shortDescription": "The equipper's DEF is further increased for 40s.",
       "target": "self",
       "wEngineOverclock": {

@@ -19,7 +19,7 @@
       "sourceId": "spectral_gaze",
       "label": "Wind Seeker (W-Engine Passive)",
       "description": "When the equipper hits an enemy with Aftershock, causing Electric DMG, the target's DEF is reduced for 5s. Passive effects of the same name do not stack. When this effect is triggered, if the equipper is not the active character, they gain 1 stack of Spirit Lock, up to a maximum of 3 stacks. This can trigger only once per use of a skill. Each stack of Spirit Lock increases the equipper's Impact by a percentage lasting 12s. The duration of each stack is calculated separately. At full stacks of Spirit Lock, the equipper's Impact increases by an additional percentage.",
-      "shortDescription": "The equipper's Electric DMG from aftershocks reduce the target's DEF for 5s.",
+      "shortDescription": "The target's DEF is reduced by a percentage for 5s.",
       "target": "team",
       "wEngineOverclock": {
         "levels": [

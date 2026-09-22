@@ -57,29 +57,29 @@
       "sourceId": "bunny_band",
       "label": "Pet the Bunny (W-Engine Passive)",
       "description": "Increases Max HP by a percentage. Increases the equipper's ATK when they are shielded.",
-      "shortDescription": "Increases the equipper's ATK.",
+      "shortDescription": "The equipper's ATK is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
           {
             "level": 1,
-            "stats": { "atkPercent": 0.1 }
+            "stats": { "atkPercentRaw": 0.1 }
           },
           {
             "level": 2,
-            "stats": { "atkPercent": 0.115 }
+            "stats": { "atkPercentRaw": 0.115 }
           },
           {
             "level": 3,
-            "stats": { "atkPercent": 0.13 }
+            "stats": { "atkPercentRaw": 0.13 }
           },
           {
             "level": 4,
-            "stats": { "atkPercent": 0.145 }
+            "stats": { "atkPercentRaw": 0.145 }
           },
           {
             "level": 5,
-            "stats": { "atkPercent": 0.16 }
+            "stats": { "atkPercentRaw": 0.16 }
           }
         ],
         "stackMultiplier": false

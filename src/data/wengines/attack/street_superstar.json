@@ -18,7 +18,7 @@
       "source": "discSet",
       "label": "Flaming Bars (W-Engine)",
       "description": "Whenever a squad member launches a Chain Attack, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own Ultimate, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by a percentage.",
-      "shortDescription": "Increases the equipper's Ultimate DMG, stacking up to 3 times.",
+      "shortDescription": "The equipper's DMG from Ultimates is increased, stacking up to 3 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

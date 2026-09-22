@@ -14,38 +14,71 @@
 
   "ingameEffects": [
     {
-      "id": "fusion_complier-data_flood",
+      "id": "fusion_complier-data_flood-atk_percent",
       "source": "wEngine",
       "sourceId": "fusion_complier",
       "label": "Data Flood (W-Engine Passive)",
       "description": "Increases ATK by a percentage. When using a Special Attack or EX Special Attack, the equipper's Anomaly Proficiency is increased for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's ATK and Anomaly Proficiency, the latter stacking up to 3 times.",
+      "shortDescription": "The equipper's ATK is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
           {
             "level": 1,
-            "baseStats": { "atkPercentRaw": 0.12 },
+            "baseStats": { "atkPercentRaw": 0.12 }
+          },
+          {
+            "level": 2,
+            "baseStats": { "atkPercentRaw": 0.15 }
+          },
+          {
+            "level": 3,
+            "baseStats": { "atkPercentRaw": 0.18 }
+          },
+          {
+            "level": 4,
+            "baseStats": { "atkPercentRaw": 0.21 }
+          },
+          {
+            "level": 5,
+            "baseStats": { "atkPercentRaw": 0.24 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    },
+
+    {
+      "id": "fusion_complier-data_flood-anomaly_proficiency",
+      "source": "wEngine",
+      "sourceId": "fusion_complier",
+      "label": "Data Flood (W-Engine Passive)",
+      "description": "Increases ATK by a percentage. When using a Special Attack or EX Special Attack, the equipper's Anomaly Proficiency is increased for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "shortDescription": "The equipper's Anomaly Proficiency is increased for 8s, stacking up to 3 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
             "stats": { "anomalyProficiency": 25 }
           },
           {
             "level": 2,
-            "baseStats": { "atkPercentRaw": 0.15 },
             "stats": { "anomalyProficiency": 31 }
           },
           {
             "level": 3,
-            "baseStats": { "atkPercentRaw": 0.18 },
             "stats": { "anomalyProficiency": 37 }
           },
           {
             "level": 4,
-            "baseStats": { "atkPercentRaw": 0.21 },
             "stats": { "anomalyProficiency": 43 }
           },
           {
             "level": 5,
-            "baseStats": { "atkPercentRaw": 0.24 },
             "stats": { "anomalyProficiency": 50 }
           }
         ],

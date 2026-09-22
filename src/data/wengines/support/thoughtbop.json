@@ -121,7 +121,7 @@
       "sourceId": "thoughtbop",
       "label": "Decibel Monologue (W-Engine Passive)",
       "description": "While not the active character, the equipper's Energy Regen is increased. When the equipper uses an EX Special Attack and deals Physical DMG, all squad members gain a buff that increases their DMG dealt for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain additional ATK. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "At full stacks, all squad members' ATK is increased.",
+      "shortDescription": "All squad members' ATK is increased at full stacks.",
       "target": "team",
       "wEngineOverclock": {
         "levels": [

@@ -19,7 +19,7 @@
       "sourceId": "sharpened_stinger",
       "label": "Indulge in the Hunt (W-Engine Passive)",
       "description": "Upon activating a Dash Attack, gain 1 stack of Predatory Instinct. Each stack of Predatory Instinct increases the equipper's Physical DMG for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering Perfect Dodge, gain 3 stacks of Predatory Instinct. While Predatory Instinct is at maximum stacks, the equipper's Anomaly Buildup Rate is increased.",
-      "shortDescription": "Increases the equipper's Physical DMG, stacking up to 3 times.",
+      "shortDescription": "The equipper's Physical DMG is increased for 10s, stacking up to 3 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

@@ -19,7 +19,7 @@
       "sourceId": "cannon_rotor",
       "label": "Oversized Barrel (W-Engine Passive)",
       "description": "Increases ATK by a percentage. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect has a cooldown.",
-      "shortDescription": "Increases the equipper's ATK by a percentage.",
+      "shortDescription": "The equipper's ATK is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

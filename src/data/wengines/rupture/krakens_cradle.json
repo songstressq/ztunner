@@ -19,7 +19,7 @@
       "sourceId": "krakens_cradle",
       "label": "Heartfelt Caress (W-Engine Passive)",
       "description": "When the equipper's HP decreases, their Ice Sheer DMG increases, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of Max HP or below, CRIT Rate is increased.",
-      "shortDescription": "Increases the equipper's Ice Sheer DMG for 25s, stacking up to 3 times.",
+      "shortDescription": "The equipper's Ice Sheer DMG is increased for 25s, stacking up to 3 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -88,7 +88,7 @@
       "sourceId": "krakens_cradle",
       "label": "Heartfelt Caress (W-Engine Passive)",
       "description": "When the equipper's HP decreases, their Ice Sheer DMG increases, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of Max HP or below, CRIT Rate is increased.",
-      "shortDescription": "Increases the equipper's CRIT Rate when below 50% Max HP.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

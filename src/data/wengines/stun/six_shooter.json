@@ -18,7 +18,7 @@
       "source": "wEngine",
       "label": "Fire! (W-Engine Passive)",
       "description": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an EX Special Attack, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted.",
-      "shortDescription": "This w-engine does not affect the equipper's stats.",
+      "shortDescription": "This W-Engine does not affect the equipper's stats.",
       "target": "self",
       "infoOnly": true
     }

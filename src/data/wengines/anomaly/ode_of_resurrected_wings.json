@@ -19,7 +19,7 @@
       "sourceId": "ode_of_resurrected_wings",
       "label": "Paradise Lost (W-Engine Passive)",
       "description": "Increases Anomaly Proficiency. When the equipper triggers a Refringe reaction, they gain increased Anomaly DMG, and all squad members gain increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "shortDescription": "The equipper's Anomaly Proficiency is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "ode_of_resurrected_wings",
       "label": "Energetic Strike (W-Engine Passive)",
       "description": "Increases Anomaly Proficiency. When the equipper triggers a Refringe reaction, they gain increased Anomaly DMG, and all squad members gain increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's Attribute Anomaly DMG for 30s.",
+      "shortDescription": "The equipper's DMG from Attribute Anomales is increased for 30s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

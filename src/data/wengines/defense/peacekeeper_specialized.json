@@ -19,7 +19,7 @@
       "sourceId": "peacekeeper_specialized",
       "label": "Standard Blocking Technique (W-Engine Passive)",
       "description": "While Shielded, the equipper's Energy Regen is increased. The Anomaly Buildup of EX Special Attacks and Assist Follow-Ups is increased.",
-      "shortDescription": "Increases the equipper's Energy Regen while shielded.",
+      "shortDescription": "The equipper's Energy Regen is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

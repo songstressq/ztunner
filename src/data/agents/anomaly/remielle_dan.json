@@ -281,7 +281,7 @@
       "sourceId": "remielle-mindscape_2",
       "label": "Refringe Amplify (Mindscape Cinema N°2)",
       "description": "Remielle's Refringe Coefficient increases by 20%. When an Anomaly character in the squad deals Anomaly DMG to an enemy affected by Prismatic, the attack ignores 15% of the target's DEF. This effect persists for an additional 8s after Prismatic ends. While Remielle is in the Phase Flow state, the frequency at which she automatically attacks to apply Lumiflux Buildup to enemies increases.",
-      "shortDescription": "Anomaly squad members' DMG from Anomalies ignores the 15% of the target's DEF.",
+      "shortDescription": "Anomaly squad members' DMG from Attribute Anomalies ignores the 15% of the target's DEF.",
       "target": "team",
       "flat": { "defShred": 0.2 },
       "condition": { "appliesToAnomalyOnly": true }

@@ -19,7 +19,7 @@
       "sourceId": "boisterous_echoes",
       "label": "Resounding Drum (W-Engine Passive)",
       "description": "When the equipper triggers the Vortex effect, they gain energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals increased DMG.",
-      "shortDescription": "Increases the equipper's DMG by a percentage.",
+      "shortDescription": "The equipper's DMG is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

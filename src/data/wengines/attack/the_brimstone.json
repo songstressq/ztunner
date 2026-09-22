@@ -19,7 +19,7 @@
       "sourceId": "the_brimstone",
       "label": "Scorching Breath (W-Engine Passive)",
       "description": "Upon hitting an enemy with a Basic Attack, Dash Attack, or Dodge Counter, the equipper's ATK is increased for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's ATK by a percentage.",
+      "shortDescription": "The equipper's ATK is increased for 8s, stacking up to 8 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

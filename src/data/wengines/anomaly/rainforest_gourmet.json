@@ -19,7 +19,7 @@
       "sourceId": "rainforest_gourmet",
       "label": "Dinner's Ready! (W-Engine Passive)",
       "description": "For every 10 Energy consumed, the equipper gains a buff that increases ATK for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's ATK by a percentage, stacking up to 10 times.",
+      "shortDescription": "The equipper's ATK is increased for 10s, stacking up to 10 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

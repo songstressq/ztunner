@@ -19,7 +19,7 @@
       "sourceId": "flight_of_fancy",
       "label": "Silver Spiked Feathers (W-Engine Passive)",
       "description": "Increases the Anomaly Buildup Rate by a percentage. When the equipper deals Ether DMG, their Anomaly Proficiency is increased for 5s, stacking up to 6 times. This effect can trigger once every 0.5s, and repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "shortDescription": "The equipper's Anomaly Proficiency is increased for 5s, stacking up to 6 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

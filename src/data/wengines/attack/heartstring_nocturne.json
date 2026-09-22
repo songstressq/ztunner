@@ -19,7 +19,7 @@
       "sourceId": "heartstring_nocturne_1",
       "label": "String & Melody (W-Engine Passive)",
       "description": "CRIT DMG is increased. When the equipper enters the battlefield, or activates a Chain Attack or Ultimate, they gain 1 stack of Heartstring. Each stack of Heartstring allows the equipper's Chain Attack and Ultimate to ignore a portion of the target's Fire RES, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's CRIT DMG.",
+      "shortDescription": "The equipper's CRIT DMG is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "heartstring_nocturne_2",
       "label": "String & Melody (W-Engine Passive)",
       "description": "CRIT DMG is increased. When the equipper enters the battlefield, or activates a Chain Attack or Ultimate, they gain 1 stack of Heartstring. Each stack of Heartstring allows the equipper's Chain Attack and Ultimate to ignore a portion of the target's Fire RES, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-      "shortDescription": "The equipper's Chain Attack and Ultimate ignore a portion of the target's Fire RES.",
+      "shortDescription": "The equipper's DMG from Chain Attack and Ultimate ignore a percentage of the target's Fire RES for 30s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

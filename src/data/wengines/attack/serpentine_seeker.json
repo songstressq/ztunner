@@ -19,7 +19,7 @@
       "sourceId": "serpentine_seeker",
       "label": "Bioengineered Venom (W-Engine Passive)",
       "description": "CRIT Rate is increased. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing Electric DMG, ignore a percentage of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.",
-      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,29 +57,29 @@
       "sourceId": "serpentine_seeker",
       "label": "Bioengineered Venom (W-Engine Passive)",
       "description": "CRIT Rate is increased. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing Electric DMG, ignore a percentage of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.",
-      "shortDescription": "The equipper's attacks ignore a percentage of the target's Electric RES.",
+      "shortDescription": "The equipper's DMG ignores a percentage of the target's DEF for 3s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
           {
             "level": 1,
-            "stats": { "electricResShred": 0.28 }
+            "stats": { "defShred": 0.28 }
           },
           {
             "level": 2,
-            "stats": { "electricResShred": 0.315 }
+            "stats": { "defShred": 0.315 }
           },
           {
             "level": 3,
-            "stats": { "electricResShred": 0.35 }
+            "stats": { "defShred": 0.35 }
           },
           {
             "level": 4,
-            "stats": { "electricResShred": 0.385 }
+            "stats": { "defShred": 0.385 }
           },
           {
             "level": 5,
-            "stats": { "electricResShred": 0.42 }
+            "stats": { "defShred": 0.42 }
           }
         ],
         "stackMultiplier": false

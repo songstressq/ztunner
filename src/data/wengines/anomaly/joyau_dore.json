@@ -19,7 +19,7 @@
       "sourceId": "joyau_dore",
       "label": "Flawless Etiquette (W-Engine Passive)",
       "description": "The equipper's Anomaly Proficiency is increased. When the equipper's EX Special Attack deals Wind DMG, the DMG dealt by their Vortex and Windswept increases for 40s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill use. At 2 stacks, all squad members gain Anomaly Proficiency. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "shortDescription": "The equipper's Anomaly Proficiency is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "joyau_dore",
       "label": "Flawless Etiquette (W-Engine Passive)",
       "description": "The equipper's Anomaly Proficiency is increased. When the equipper's EX Special Attack deals Wind DMG, the DMG dealt by their Vortex and Windswept increases for 40s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill use. At 2 stacks, all squad members gain Anomaly Proficiency. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "Increases the equipper's Attribute Anomaly and Vortex DMG for 40s, stacking up to 2 times.",
+      "shortDescription": "The equipper's DMG from Windswept and Vortex is increased for 40s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

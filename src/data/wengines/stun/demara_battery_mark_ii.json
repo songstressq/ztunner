@@ -19,7 +19,7 @@
       "sourceId": "demara_battery_mark_ii",
       "label": "In a Flash of Light (W-Engine Passive)",
       "description": "Increases Electric DMG. When the equipper hits an enemy with Dodge Counter or Assist Attack, their Energy Generation Rate is increased for 8s.",
-      "shortDescription": "Increases the equipper's Electric DMG.",
+      "shortDescription": "The equipper's Electric DMG is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

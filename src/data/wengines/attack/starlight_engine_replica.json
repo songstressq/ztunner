@@ -19,7 +19,7 @@
       "sourceId": "starlight_engine_replica",
       "label": "Knight Beam: Change (W-Engine Passive)",
       "description": "Increases the equipper's Physical DMG by a percentage for 8s upon hitting an enemy at least 6 meters away with a Basic Attack or Dash Attack.",
-      "shortDescription": "Increases the equipper's Physical DMG.",
+      "shortDescription": "The equipper's Physical DMG is increased for 8s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

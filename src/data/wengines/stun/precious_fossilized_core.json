@@ -18,7 +18,7 @@
       "source": "wEngine",
       "label": "Behemoth Hunter Core (W-Engine Passive)",
       "description": "When the target's HP is no lower than 50%, the equipper inflicts more Daze. When the target's HP is no lower than 75%, this bonus is further enhanced.",
-      "shortDescription": "This w-engine does not affect the equipper's stats.",
+      "shortDescription": "This W-Engine does not affect the equipper's stats.",
       "target": "self",
       "infoOnly": true
     }

@@ -18,7 +18,7 @@
       "source": "discSet",
       "label": "Hell's Generator (W-Engine)",
       "description": "When launching an EX Special Attack or Chain Attack, Electric DMG from Basic Attacks and Dash Attacks increases by a percentage for 10s. This effect can trigger once every 15s.",
-      "shortDescription": "Increases the equipper's Electric DMG from Basic Attacks and Dash Attacks.",
+      "shortDescription": "The equipper's Electric DMG from Basic Attacks and Dash Attacks is increased for 10s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

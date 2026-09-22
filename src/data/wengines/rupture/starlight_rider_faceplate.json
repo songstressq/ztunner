@@ -19,7 +19,7 @@
       "sourceId": "starlight_rider_faceplate",
       "label": "Knight's Morale (W-Engine Passive)",
       "description": "Increases CRIT Rate by a percentage. When the equipper launches a Special Attack, their Physical Sheer DMG is increased, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "starlight_rider_faceplate",
       "label": "Knight's Morale (W-Engine Passive)",
       "description": "Increases CRIT Rate by a percentage. When the equipper launches a Special Attack, their Physical Sheer DMG is increased, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's Physical Sheer DMG for 30s, stacking up to 2 times.",
+      "shortDescription": "The equipper's Physical Sheer DMG is increased for 30s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

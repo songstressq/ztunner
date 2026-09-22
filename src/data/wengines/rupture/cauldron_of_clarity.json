@@ -83,7 +83,7 @@
       "sourceId": "cauldron_of_clarity",
       "label": "Summoning Arcanum (W-Engine Passive)",
       "description": "When the equipper activates an EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's DMG, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate is increased.",
-      "shortDescription": "Increases the equipper's CRIT Rate at full stacks.",
+      "shortDescription": "The equipper's CRIT Rate is increased at full stacks.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

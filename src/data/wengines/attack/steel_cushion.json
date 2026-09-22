@@ -19,7 +19,7 @@
       "sourceId": "steel_cushion",
       "label": "Metal Cat Claws (W-Engine Passive)",
       "description": "Increases Physical DMG by a percentage. The equipper's DMG is increased when attacking the enemy from behind.",
-      "shortDescription": "Increases the equipper's Physical DMG.",
+      "shortDescription": "The equipper's Physical DMG is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -87,7 +87,7 @@
       "sourceId": "steel_cushion",
       "label": "Metal Cat Claws (W-Engine Passive)",
       "description": "Increases Physical DMG by a percentage. The equipper's DMG is increased when attacking the enemy from behind.",
-      "shortDescription": "Increases the equipper's DMG when attacking from behind.",
+      "shortDescription": "The equipper's DMG is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

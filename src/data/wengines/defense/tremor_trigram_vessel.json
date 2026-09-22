@@ -18,7 +18,7 @@
       "source": "wEngine",
       "label": "Meridian Mapping (W-Engine)",
       "description": "The equipper's EX Special Attack and Ultimate DMG is increased Whenever any squad member takes DMG or recovers HP, the equipper gains Energy. This effect can trigger once every 5s.",
-      "shortDescription": "Increases the equipper's EX Special Attack and Ultimate DMG.",
+      "shortDescription": "The equipper's DMG from EX Special Attacks and Ultimates is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -98,7 +98,6 @@
             ]
           }
         ],
-        "maxStacks": 3,
         "stackMultiplier": false
       },
       "condition": {

@@ -19,7 +19,7 @@
       "sourceId": "box_cutter",
       "label": "Watch your Fingers (W-Engine Passive)",
       "description": "When launching an Aftershock, the equipper's Physical DMG is increased, and their Daze inflicted increases for 10s.",
-      "shortDescription": "Increases the equipper's Physical DMG.",
+      "shortDescription": "The equipper's Physical DMG is increased for 10s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

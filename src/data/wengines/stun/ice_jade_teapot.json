@@ -19,7 +19,7 @@
       "sourceId": "ice_jade_teapot",
       "label": "Ringing Melody (W-Engine Passive)",
       "description": "When a Basic Attack hits an enemy, gain 1 stack of Tea-riffic. Each stack of Tea-riffic increases the user's Impact by a percentage, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring Tea-riffic, if the equipper possesses stacks of Tea-riffic greater than or equal to 15, all squad members' DMG is increased for 10s. Passive effects of the same name do not stack.",
-      "shortDescription": "Increases the equipper's Impact for 8s, stacking up to 30 times.",
+      "shortDescription": "The equipper's Impact is increased for 8s, stacking up to 30 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -58,7 +58,7 @@
       "sourceId": "ice_jade_teapot",
       "label": "Ringing Melody (W-Engine Passive)",
       "description": "When a Basic Attack hits an enemy, gain 1 stack of Tea-riffic. Each stack of Tea-riffic increases the user's Impact by a percentage, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring Tea-riffic, if the equipper possesses stacks of Tea-riffic greater than or equal to 15, all squad members' DMG is increased for 10s. Passive effects of the same name do not stack.",
-      "shortDescription": "All squad members' DMG is increased for 10s when stacks are equal or greater than 15.",
+      "shortDescription": "All squad members' DMG is increased for 10s.",
       "target": "team",
       "wEngineOverclock": {
         "levels": [

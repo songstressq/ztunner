@@ -19,7 +19,7 @@
       "sourceId": "chief_sidekick",
       "label": "The Genius's Follower (W-Engine Passive)",
       "description": "The equipper's Impact is increased, and their DMG ignores a percentage of the target's Fire RES. When the equipper is not the active character, Energy Regen is increasd. When the equipper deals Fire DMG with an EX Special Attack, all Agents' DMG increases for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "Increases the equipper's Impact.",
+      "shortDescription": "The equipper's Impact is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "chief_sidekick",
       "label": "The Genius's Follower (W-Engine Passive)",
       "description": "The equipper's Impact is increased, and their DMG ignores a percentage of the target's Fire RES. When the equipper is not the active character, Energy Regen is increasd. When the equipper deals Fire DMG with an EX Special Attack, all Agents' DMG increases for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "The equipper's DMG ignores a portion of the target's Fire RES.",
+      "shortDescription": "The equipper's DMG ignores a percentage of the target's Fire RES.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

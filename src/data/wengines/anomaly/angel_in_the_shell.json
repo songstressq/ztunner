@@ -57,7 +57,7 @@
       "sourceId": "angel_in_the_shell",
       "label": "Energetic Strike (W-Engine Passive)",
       "description": "Increases the equipper's Anomaly Proficiency. When the equipper is an Ether character, and comes on-field or uses a Special Attack or EX Special Attack, they gain a buff: DMG dealt to enemies afflicted with Attribute Anomalies increases, and all Attribute Anomaly DMG they trigger increases by a percentage, lasting 15s. Repeated triggers reset the duration, and the effect is removed when switching off-field.",
-      "shortDescription": "The equipper's DMG is increased for 15s while attacking enemies affected by Attribute Anomalies.",
+      "shortDescription": "The equipper's DMG is increased for 15s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -120,7 +120,7 @@
       "sourceId": "angel_in_the_shell",
       "label": "Energetic Strike (W-Engine Passive)",
       "description": "Increases the equipper's Anomaly Proficiency. When the equipper is an Ether character, and comes on-field or uses a Special Attack or EX Special Attack, they gain a buff: DMG dealt to enemies afflicted with Attribute Anomalies increases, and all Attribute Anomaly DMG they trigger increases by a percentage, lasting 15s. Repeated triggers reset the duration, and the effect is removed when switching off-field.",
-      "shortDescription": "Increases the equipper's Attribute Anomaly DMG for 15s.",
+      "shortDescription": "The equipper's DMG from Attribute Anomalies is increased for 15s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

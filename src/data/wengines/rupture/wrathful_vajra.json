@@ -19,7 +19,7 @@
       "sourceId": "wrathful_vajra",
       "label": "Purging Karmic Fire (W-Engine Passive)",
       "description": "CRIT Rate is increased. When the equipper launches an EX Special Attack, their Fire Sheer DMG increases, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "wrathful_vajra",
       "label": "Purging Karmic Fire (W-Engine Passive)",
       "description": "CRIT Rate is increased. When the equipper launches an EX Special Attack, their Fire Sheer DMG increases, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's Fire Sheer DMG for 20s, stacking up to 2 times.",
+      "shortDescription": "The equipper's Fire Sheer DMG is increased for 20s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

@@ -19,7 +19,7 @@
       "sourceId": "myriad_eclipse",
       "label": "False Personas (W-Engine Passive)",
       "description": "Increases CRIT DMG. When using an EX Special Attack, Chain Attack, or Ultimate to deal Ice DMG, the equipper gains the Absolute Zero Death Sentence effect for 3s. While Absolute Zero Death Sentence is active, the character ignores a portion of the enemy's DEF when landing a hit.",
-      "shortDescription": "Increases the equipper's CRIT DMG.",
+      "shortDescription": "The equipper's CRIT DMG is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "myriad_eclipse",
       "label": "False Personas (W-Engine Passive)",
       "description": "Increases CRIT DMG. When using an EX Special Attack, Chain Attack, or Ultimate to deal Ice DMG, the equipper gains the Absolute Zero Death Sentence effect for 3s. While Absolute Zero Death Sentence is active, the character ignores a portion of the enemy's DEF when landing a hit.",
-      "shortDescription": "The equipper's attacks ignore a percentage of the Enemy's DEF.",
+      "shortDescription": "The equipper's DMG ignores a percentage of the target's DEF for 3s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

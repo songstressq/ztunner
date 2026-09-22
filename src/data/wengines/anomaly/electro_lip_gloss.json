@@ -16,14 +16,14 @@
       "sourceId": "electro_lip_gloss",
       "label": "Kiss of Death (W-Engine Passive)",
       "description": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK is increased and they deal additional DMG to the target.",
-      "shortDescription": "Increases the equipper's ATK and deals additional DMG.",
+      "shortDescription": "The equipper's ATK is increased, and their DMG is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
           {
             "level": 1,
             "stats": {
-              "atkPercent": 0.1
+              "atkPercentRaw": 0.1
             },
             "damageBonuses": [
               {
@@ -35,7 +35,7 @@
           {
             "level": 2,
             "stats": {
-              "atkPercent": 0.115
+              "atkPercentRaw": 0.115
             },
             "damageBonuses": [
               {
@@ -47,7 +47,7 @@
           {
             "level": 3,
             "stats": {
-              "atkPercent": 0.13
+              "atkPercentRaw": 0.13
             },
             "damageBonuses": [
               {
@@ -59,7 +59,7 @@
           {
             "level": 4,
             "stats": {
-              "atkPercent": 0.145
+              "atkPercentRaw": 0.145
             },
             "damageBonuses": [
               {
@@ -71,7 +71,7 @@
           {
             "level": 5,
             "stats": {
-              "atkPercent": 0.16
+              "atkPercentRaw": 0.16
             },
             "damageBonuses": [
               {

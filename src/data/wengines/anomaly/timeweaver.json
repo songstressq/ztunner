@@ -18,8 +18,8 @@
       "source": "wEngine",
       "sourceId": "timeweaver",
       "label": "Time-Devouring Stratagem (W-Engine Passive)",
-      "description": "Time-Devouring Stratagem The equipper's Electric Anomaly Buildup Rate increases by 30%. When Special Attacks or EX Special Attacks hit enemies under Attribute Anomalies, the equipper's Anomaly Proficiency increases by 75 for 15s. When the equipper's Anomaly Proficiency is greater than or equal to 375, Disorder DMG inflicted by the equipper increases by 25%.",
-      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "description": "Time-Devouring Stratagem The equipper's Electric Anomaly Buildup Rate increases by 30%. When Special Attacks or EX Special Attacks hit enemies under Attribute Anomalies, the equipper's Anomaly Proficiency increases for 15s. When the equipper's Anomaly Proficiency is greater than or equal to 375, Disorder DMG inflicted by the equipper increases by a percentage.",
+      "shortDescription": "The equipper's Anomaly Proficiency is increased for 15s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -56,8 +56,8 @@
       "source": "wEngine",
       "sourceId": "timeweaver",
       "label": "Time-Devouring Stratagem (W-Engine Passive)",
-      "description": "Time-Devouring Stratagem The equipper's Electric Anomaly Buildup Rate increases by 30%. When Special Attacks or EX Special Attacks hit enemies under Attribute Anomalies, the equipper's Anomaly Proficiency increases by 75 for 15s. When the equipper's Anomaly Proficiency is greater than or equal to 375, Disorder DMG inflicted by the equipper increases by 25%.",
-      "shortDescription": "Increases the equipper's Disorder DMG.",
+      "description": "Time-Devouring Stratagem The equipper's Electric Anomaly Buildup Rate increases by 30%. When Special Attacks or EX Special Attacks hit enemies under Attribute Anomalies, the equipper's Anomaly Proficiency increases for 15s. When the equipper's Anomaly Proficiency is greater than or equal to 375, Disorder DMG inflicted by the equipper increases by a percentage.",
+      "shortDescription": "The equipper's DMG from Disorder is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

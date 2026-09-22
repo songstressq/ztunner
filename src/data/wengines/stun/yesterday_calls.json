@@ -19,7 +19,7 @@
       "sourceId": "yesterday_calls",
       "label": "24/7 (W-Engine Passive)",
       "description": "While off-field, the equipper's Energy Regen id increased. When the equipper deals Physical DMG with an EX Special Attack, the Daze dealt by the equipper's attacks is increased for 10s, stacking up to 3 times. At 3 stacks, all squad members gain additional CRIT DMG for 40s. Repeated triggers reset the duration. Only one instance of this CRIT DMG boost effect can exist in the same squad.",
-      "shortDescription": "Increases the equipper's Energy Regen while off-field.",
+      "shortDescription": "The equipper's Energy Regen is increased while off-field.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

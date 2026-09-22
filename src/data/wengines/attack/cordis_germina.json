@@ -19,7 +19,7 @@
       "sourceId": "cordis_germina",
       "label": "Sprouting Core (W-Engine Passive)",
       "description": "Increases CRIT Rate. When the equipper deals DMG with a Basic Attack or EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's Electric DMG, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's Basic Attack and Ultimate DMG ignore a portion of enemy DEF.",
-      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -67,7 +67,7 @@
       "sourceId": "cordis_germina",
       "label": "Sprouting Core (W-Engine Passive)",
       "description": "Increases CRIT Rate. When the equipper deals DMG with a Basic Attack or EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's Electric DMG, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's Basic Attack and Ultimate DMG ignore a portion of enemy DEF.",
-      "shortDescription": "Increases the equipper's Electric DMG, stacking up to 2 times.",
+      "shortDescription": "The equipper's Electric DMG is increased for 40s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -136,7 +136,7 @@
       "sourceId": "cordis_germina",
       "label": "Sprouting Core (W-Engine Passive)",
       "description": "Increases CRIT Rate. When the equipper deals DMG with a Basic Attack or EX Special Attack, they gain 1 stack of a buff. Each stack increases the equipper's Electric DMG, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's Basic Attack and Ultimate DMG ignore a portion of enemy DEF.",
-      "shortDescription": "The equipper's Basic Attacks and Ultimates ignore a percentage of the target's DEF.",
+      "shortDescription": "The equipper's DMG from Basic Attacks and Ultimates ignore a percentage of the target's DEF at full stacks.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

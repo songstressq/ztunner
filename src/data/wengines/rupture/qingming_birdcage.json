@@ -19,7 +19,7 @@
       "sourceId": "qingming_birdcage",
       "label": "Cloud Flow (W-Engine Passive)",
       "description": "CRIT Rate is increased. When the equipper launches an EX Special Attack, the character gains 1 stack of Qingming Companion effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the Qingming Companion effect increases the equipper's Ether DMG, and increases Ultimate and EX Special Attack Ether Sheer DMG.",
-      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "qingming_birdcage",
       "label": "Cloud Flow (W-Engine Passive)",
       "description": "CRIT Rate us increased. When the equipper launches an EX Special Attack, the character gains 1 stack of Qingming Companion effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the Qingming Companion effect increases the equipper's Ether DMG, and increases Ultimate and EX Special Attack Ether Sheer DMG",
-      "shortDescription": "Increases the equipper's Ether DMG for 15s, stacking up to 2 times.",
+      "shortDescription": "The equipper's Ether DMG is increased for 15s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -126,7 +126,7 @@
       "sourceId": "qingming_birdcage",
       "label": "Cloud Flow (W-Engine Passive)",
       "description": "CRIT Rate us increased. When the equipper launches an EX Special Attack, the character gains 1 stack of Qingming Companion effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the Qingming Companion effect increases the equipper's Ether DMG, and increases Ultimate and EX Special Attack Ether Sheer DMG",
-      "shortDescription": "Increases the equipper's Ether Sheer DMG from EX Special Attacks and Ultimates for 15s, stacking up to 2 times.",
+      "shortDescription": "The equipper's Ether Sheer DMG from EX Special Attacks and Ultimates is increased for 15s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

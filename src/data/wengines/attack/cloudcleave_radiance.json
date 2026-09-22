@@ -19,7 +19,7 @@
       "sourceId": "cloudcleave_radiance",
       "label": "Jade Soul, Frozen Heart (W-Engine Passive)",
       "description": "The equipper's DMG ignores a portion of the target's Physical RES. When the equipper activates an Ether Veil, the equipper's DMG and CRIT DMG are increased for 40s. Repeated triggers reset the duration.",
-      "shortDescription": "The equipper's attacks ignore a portion of the target's Physical RES.",
+      "shortDescription": "The equipper's DMG ignores a percentage of the target's Physical RES.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "cloudcleave_radiance",
       "label": "Jade Soul, Frozen Heart (W-Engine Passive)",
       "description": "The equipper's DMG ignores a portion of the target's Physical RES. When the equipper activates an Ether Veil, the equipper's DMG and CRIT DMG are increased for 40s. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's DMG and CRIT DMG.",
+      "shortDescription": "The equipper's CRIT DMG is increased for 40s, and their DMG is increased for 40s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

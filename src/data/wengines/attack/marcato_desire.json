@@ -19,7 +19,7 @@
       "sourceId": "marcato_desire",
       "label": "Get Everyone Fired Up (W-Engine Passive)",
       "description": "When an EX Special Attack or Chain Attack hits an enemy, the equipper's ATK increases by a percentage for 8s. While the target is under an Attribute Anomaly, this effect is further increased.",
-      "shortDescription": "Increases the equipper's ATK by a percentage, stacking up to 2 times.",
+      "shortDescription": "The equipper's ATK is increased for 8s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

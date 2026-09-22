@@ -58,7 +58,7 @@
       "sourceId": "knights_extolment",
       "label": "Knight's Rite (W-Engine Passive)",
       "description": "When the equipper's Basic Attack or EX Special Attack's heavy attack hits an enemy, they gain 1 stack of Battle Edge, increasing CRIT DMG for 25s. Battle Edge can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all Battle Edge. At 2 stacks of Battle Edge, the equipper gains Bonechill: Their DMG ignores a percentage of the target's Ice RES.",
-      "shortDescription": "The equipper's DMG ignores a portion of the target's Ice RES at full stacks.",
+      "shortDescription": "The equipper's DMG ignores a percentage of the target's Ice RES at full stacks.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

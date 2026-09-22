@@ -19,7 +19,7 @@
       "sourceId": "riot_suppressor_mark_vi",
       "label": "Security Patrol (W-Engine Passive)",
       "description": "Increases CRIT Rate. Launching an EX Special Attack grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's Basic Attack or Dash Attack deals Ether DMG, consumes a Charge stack and increases the skill's DMG.",
-      "shortDescription": "Increases the equipper's CRIT Rate.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "riot_suppressor_mark_vi",
       "label": "Security Patrol (W-Engine Passive)",
       "description": "Increases CRIT Rate. Launching an EX Special Attack grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's Basic Attack or Dash Attack deals Ether DMG, consumes a Charge stack and increases the skill's DMG.",
-      "shortDescription": "Increases the equipper's Ether DMG from Basic Attacks and Dash Attacks.",
+      "shortDescription": "The equipper's Ether DMG from Basic Attacks and Dash Attacks is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

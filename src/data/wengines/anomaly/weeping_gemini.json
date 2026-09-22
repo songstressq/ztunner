@@ -19,7 +19,7 @@
       "sourceId": "weeping_gemini",
       "label": "Lingering Cries (W-Engine Passive)",
       "description": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's Anomaly Proficiency, stacking up to 4 times.",
+      "shortDescription": "The equipper's Anomaly Proficiency is increased, stacking up to 4 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

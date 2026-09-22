@@ -19,7 +19,7 @@
       "sourceId": "original_transmorpher",
       "label": "Starlight Knight Flying Kick (W-Engine Passive)",
       "description": "Increases Max HP by a percentage. When attacked, the equipper's Impact is increased by a percentage for 12s.",
-      "shortDescription": "Increases the equipper's Max HP.",
+      "shortDescription": "The equipper's HP is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "original_transmorpher",
       "label": "Starlight Knight Flying Kick (W-Engine Passive)",
       "description": "Increases Max HP by a percentage. When attacked, the equipper's Impact is increased by a percentage for 12s.",
-      "shortDescription": "Increases the equipper's Impact.",
+      "shortDescription": "The equipper's Impact is increased for 12s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

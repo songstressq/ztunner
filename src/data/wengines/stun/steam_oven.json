@@ -19,7 +19,7 @@
       "sourceId": "steam_oven",
       "label": "Thick Broth (W-Engine Passive)",
       "description": "For every 10 Energy accumulated, the equipper's Impact is increased by, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's Impact, stacking up to 8 times.",
+      "shortDescription": "The equipper's Impact is increased, stacking up to 8 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

@@ -19,7 +19,7 @@
       "sourceId": "zanshin_herb_case",
       "label": "Growth Through Adversity (W-Engine Passive)",
       "description": "CRIT Rate is increased. Dash Attack Electric DMG increases by a percentage. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate is further increased for 12s.",
-      "shortDescription": "Increases the equipper's CRIT Rate, stacking up to 2 times",
+      "shortDescription": "The equipper's CRIT Rate is increased, stacking up to 2 times",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -58,7 +58,7 @@
       "sourceId": "zanshin_herb_case",
       "label": "Growth Through Adversity (W-Engine Passive)",
       "description": "CRIT Rate is increased. Dash Attack Electric DMG increases by a percentage. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate is further increased for 12s.",
-      "shortDescription": "Increases the equipper's Electric DMG from Dash Attacks.",
+      "shortDescription": "The equipper's Electric DMG from Dash Attacks is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

@@ -19,7 +19,7 @@
       "sourceId": "frostfall_sickle",
       "label": "Terminating Verdict (W-Engine Passive)",
       "description": "When an Ice attribute equipper uses a Special Attack or EX Special Attack, their Ice DMG is increased for 40s, stacking up to 2 times, once per use of a skill. Repeated triggers refresh the duration. At 2 stacks, the equipper's Abloom DMG dealt is increased by an additional percentage.",
-      "shortDescription": "Increases the equipper's Ice DMG, stacking up to 2 times.",
+      "shortDescription": "The equipper's Ice DMG is increased for 40s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

@@ -19,7 +19,7 @@
       "sourceId": "puzzle_sphere",
       "label": "Ingenious Craft (W-Engine Passive)",
       "description": "Upon launching an EX Special Attack, the equipper's CRIT DMG is increased for 12s. Additionally, if the target's current HP is below 50% of their Max HP, EX Special Attack DMG is increased.",
-      "shortDescription": "Increases the equipper's CRIT DMG for 12s.",
+      "shortDescription": "The equipper's CRIT DMG is increased for 12s.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "puzzle_sphere",
       "label": "Ingenious Craft (W-Engine Passive)",
       "description": "Upon launching an EX Special Attack, the equipper's CRIT DMG is increased for 12s. Additionally, if the target's current HP is below 50% of their Max HP, EX Special Attack DMG is increased.",
-      "shortDescription": "Increases the equipper's EX Special Attack DMG when the target's HP is below 50%.",
+      "shortDescription": "The equipper's DMG from EX Special Attacks is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

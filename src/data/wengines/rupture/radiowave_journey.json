@@ -19,7 +19,7 @@
       "sourceId": "radiowave_journey",
       "label": "Easy Strides (W-Engine Passive)",
       "description": "When launching a Chain Attack or Ultimate, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's Sheer Force for 12s, stacking up to 3 times.",
+      "shortDescription": "The equipper's Sheer Force is increased for 12s, stacking up to 3 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

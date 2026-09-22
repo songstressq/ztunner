@@ -18,7 +18,7 @@
       "source": "wEngine",
       "label": "Flash Engraving (W-Engine Passive)",
       "description": "When a squad member's HP is greater than or equal to 50%, they take less DMG, and less Miasma Contamination. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "This w-engine does not affect the equipper's stats.",
+      "shortDescription": "This W-Engine does not affect the equipper's stats.",
       "target": "self",
       "infoOnly": true
     }

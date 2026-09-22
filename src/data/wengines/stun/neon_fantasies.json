@@ -19,7 +19,7 @@
       "sourceId": "neon_fantasies",
       "label": "Disco Demon (W-Engine Passive)",
       "description": "The equipper's Anomaly Proficiency is increased. When the equipper's EX Special Attack or Basic Attack deals Ether DMG, all squad members' DMG dealt is increased for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency is further increased. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "shortDescription": "The equipper's Anomaly Proficiency is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -121,7 +121,7 @@
       "sourceId": "neon_fantasies",
       "label": "Disco Demon (W-Engine Passive)",
       "description": "The equipper's Anomaly Proficiency is increased. When the equipper's EX Special Attack or Basic Attack deals Ether DMG, all squad members' DMG dealt is increased for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency is further increased. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "Increases the equipper's Anomaly Proficiency at full stacks.",
+      "shortDescription": "The equipper's Anomaly Proficiency is increased at full stacks.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

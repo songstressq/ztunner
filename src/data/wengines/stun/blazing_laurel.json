@@ -57,7 +57,7 @@
       "sourceId": "blazing_laurel",
       "label": "Flowing Flame (W-Engine Passive)",
       "description": "Upon launching a Quick Assist or Perfect Assist, the equipper's Impact is increased for 8s. When the equipper launches and hits an enemy with a Basic Attack, apply Wilt to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of Wilt applied to the target, the CRIT DMG of the Ice DMG and Fire DMG dealt by that attack is increased. Only one of this effect can be active at a time in the same squad.",
-      "shortDescription": "All squad members's Fire and Ice CRIT DMG is increased for 30s, stacking up to 20 times.",
+      "shortDescription": "All squad members' CRIT DMG from Fire DMG and Ice DMG is increased for 30s, stacking up to 20 times.",
       "target": "team",
       "wEngineOverclock": {
         "levels": [

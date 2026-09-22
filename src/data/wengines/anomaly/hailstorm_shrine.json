@@ -14,12 +14,12 @@
 
   "ingameEffects": [
     {
-      "id": "hailstorm_shrine-frost_stained_star",
+      "id": "hailstorm_shrine-frost_stained_star-crit_dmg",
       "source": "wEngine",
       "sourceId": "hailstorm_shrine",
       "label": "Frost-Stained Star (W-Engine Passive)",
       "description": "CRIT DMG increases by a percentage. When using an EX Special Attack or when any squad member applies an Attribute Anomaly to an enemy, the equipper's Ice DMG, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's CRIT DMG and Ice DMG Bonus.",
+      "shortDescription": "The equipper's CRIT DMG is increased.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -27,7 +27,52 @@
             "level": 1,
             "baseStats": {
               "critDmg": 0.5
-            },
+            }
+          },
+          {
+            "level": 2,
+            "baseStats": {
+              "critDmg": 0.57
+            }
+          },
+          {
+            "level": 3,
+            "baseStats": {
+              "critDmg": 0.65
+            }
+          },
+          {
+            "level": 4,
+            "baseStats": {
+              "critDmg": 0.72
+            }
+          },
+          {
+            "level": 5,
+            "baseStats": {
+              "critDmg": 0.8
+            }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    },
+
+    {
+      "id": "hailstorm_shrine-frost_stained_star-ice_dmg",
+      "source": "wEngine",
+      "sourceId": "hailstorm_shrine",
+      "label": "Frost-Stained Star (W-Engine Passive)",
+      "description": "CRIT DMG increases by a percentage. When using an EX Special Attack or when any squad member applies an Attribute Anomaly to an enemy, the equipper's Ice DMG, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.",
+      "shortDescription": "The equipper's Ice DMG is increased for 15s, stacking up to 2 times.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
             "damageBonuses": [
               {
                 "type": "element",
@@ -38,9 +83,6 @@
           },
           {
             "level": 2,
-            "baseStats": {
-              "critDmg": 0.57
-            },
             "damageBonuses": [
               {
                 "type": "element",
@@ -51,9 +93,6 @@
           },
           {
             "level": 3,
-            "baseStats": {
-              "critDmg": 0.65
-            },
             "damageBonuses": [
               {
                 "type": "element",
@@ -64,9 +103,6 @@
           },
           {
             "level": 4,
-            "baseStats": {
-              "critDmg": 0.72
-            },
             "damageBonuses": [
               {
                 "type": "element",
@@ -77,9 +113,6 @@
           },
           {
             "level": 5,
-            "baseStats": {
-              "critDmg": 0.8
-            },
             "damageBonuses": [
               {
                 "type": "element",

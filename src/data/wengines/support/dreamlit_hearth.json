@@ -120,7 +120,7 @@
       "sourceId": "dreamlit_hearth",
       "label": "Moontide Epic (W-Engine Passive)",
       "description": "The equipper's Energy Regen is increased. When the equipper activates Ether Veil or extends its duration, all squad members gain increased DMG and increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
-      "shortDescription": "All squad members' Max HP is increased for 45s.",
+      "shortDescription": "All squad members' HP is increased for 45s.",
       "target": "team",
       "wEngineOverclock": {
         "levels": [

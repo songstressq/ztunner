@@ -57,7 +57,7 @@
       "sourceId": "half_sugar_bunny",
       "label": "Fragile Sweetness (W-Engine Passive)",
       "description": "The equipper's Energy Regen is increased. All squad members gain ATK and Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an Ether Veil, all squad members gain additional CRIT DMG for 60s. Repeated triggers reset the duration.",
-      "shortDescription": "All squad members's Max HP and ATK are increased.",
+      "shortDescription": "All squad members's HP is increased, and their ATK is increased.",
       "target": "team",
       "wEngineOverclock": {
         "levels": [

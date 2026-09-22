@@ -19,7 +19,7 @@
       "sourceId": "hellfire_gears",
       "label": "Passionate Construction (W-Engine Passive)",
       "description": "While off-field, the equipper's Energy Regen is increased. When using an EX Special Attack, the equipper's Impact is increased for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's Energy Regen while off-field.",
+      "shortDescription": "The equipper's Energy Regen is increased while off-field.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -57,7 +57,7 @@
       "sourceId": "hellfire_gears",
       "label": "Passionate Construction (W-Engine Passive)",
       "description": "While off-field, the equipper's Energy Regen is increased. When using an EX Special Attack, the equipper's Impact is increased for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-      "shortDescription": "Increases the equipper's Impact for 10s, stacking up to 2 times.",
+      "shortDescription": "The equipper's Impact is increased for 10s, stacking up to 2 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [

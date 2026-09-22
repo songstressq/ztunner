@@ -19,7 +19,7 @@
       "sourceId": "housekeeper_1",
       "label": "Safe Household Saw (W-Engine Passive)",
       "description": "While off-field, the equipper's Energy Regen is increased. When an EX Special Attack hits an enemy, the equipper's Physical DMG increases by a percentage, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's Energy Regen while off-field.",
+      "shortDescription": "The equipper's Energy Regen is increased while off-field.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
@@ -67,7 +67,7 @@
       "sourceId": "housekeeper_2",
       "label": "Safe Household Saw (W-Engine Passive)",
       "description": "While off-field, the equipper's Energy Regen is increased. When an EX Special Attack hits an enemy, the equipper's Physical DMG increases by a percentage, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
-      "shortDescription": "Increases the equipper's Physycal DMG, stacking up to 15 times.",
+      "shortDescription": "The equipper's Physycal DMG is increased for 1s, stacking up to 15 times.",
       "target": "self",
       "wEngineOverclock": {
         "levels": [
