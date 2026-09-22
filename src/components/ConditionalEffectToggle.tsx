@@ -585,7 +585,7 @@ const ConditionalEffectToggle = ({
                           </span>{" "}
                           Increase:
                         </span>
-                        <span className="ingame_toggle-stat_value">
+                        <span className="ingame_toggle-stat_value stat_value_total">
                           +{fmtVal(bonus.total, affectedStat)}{" "}
                           {bonus.maxReached && "(MAX)"}
                         </span>
@@ -684,7 +684,7 @@ const ConditionalEffectToggle = ({
                           </span>{" "}
                           Increase:
                         </span>
-                        <span className="ingame_toggle-stat_value">
+                        <span className="ingame_toggle-stat_value stat_value_total">
                           +{fmtVal(bonus.total, affectedStat)}{" "}
                           {bonus.maxReached && "(MAX)"}
                         </span>
@@ -850,7 +850,7 @@ const ConditionalEffectToggle = ({
                             </span>{" "}
                             Increase:
                           </span>
-                          <span className="ingame_toggle-stat_value">
+                          <span className="ingame_toggle-stat_value stat_value_total">
                             +{fmtVal(bonus.total, affectedStat)}{" "}
                             {bonus.maxReached && "(MAX)"}
                           </span>
@@ -923,7 +923,7 @@ const ConditionalEffectToggle = ({
                         <div className="ingame_toggle-stat_row ingame_toggle-total_row">
                           <span className="ingame_toggle-stat_name">
                             Total{" "}
-                            <span className="ingame_toggle-total_stat_tag">
+                            <span className="ingame_toggle-total_stat_tag stat_value_total">
                               {formatStatName(bonus.damageBonusType)} DMG Bonus
                             </span>{" "}
                             Increase:

@@ -275,7 +275,7 @@ const SlotReferenceToggle = ({
                         className="ingame_toggle-stats_header"
                         style={{ color: theme }}
                       >
-                        📊 Reference Bonus Details
+                        Reference Bonus Details
                       </div>
 
                       {selectedSlotInfo.specialty === "Attack" && (

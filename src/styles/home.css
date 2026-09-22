@@ -611,7 +611,7 @@
   padding: var(--padding-2px) 0;
   margin-top: var(--padding-4px);
   padding-top: var(--padding-5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid color-mix(in srgb, var(--theme) 25%, transparent);
 }
 
 .ingame_toggle-stat_name {
@@ -619,16 +619,22 @@
 }
 
 .ingame_toggle-stat_tag {
-  color: color-mix(in srgb, var(--theme) 15%, rgba(255, 255, 255, 0.75));
+  color: color-mix(in srgb, var(--theme) 70%, white);
 }
 
 .ingame_toggle-total_stat_tag {
-  color: color-mix(in srgb, var(--theme) 70%, white);
+  color: var(--theme);
 }
 
 .ingame_toggle-stat_value {
   color: color-mix(in srgb, var(--theme) 70%, white);
   font-weight: bold;
+}
+
+.stat_value_total {
+  color: var(--theme);
+  font-weight: bold;
+  border: none;
 }
 
 .ingame_toggle-skill_level_row {

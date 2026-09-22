@@ -159,7 +159,7 @@ const DynamicStatToggle = ({
                     className="ingame_toggle-stats_header"
                     style={{ color: theme }}
                   >
-                    📊 Dynamic Bonus Calculation
+                    Dynamic Bonus Calculation
                   </div>
                   <div className="ingame_toggle-stat_row">
                     <span className="ingame_toggle-stat_name">

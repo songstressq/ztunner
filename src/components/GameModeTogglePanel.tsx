@@ -349,7 +349,7 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
                 {isActive && hasFlat && (
                   <div className="ingame_toggle-stats_section">
                     <div className="ingame_toggle-stats_header">
-                      📊 Active Bonuses
+                      Active Bonuses
                     </div>
                     {Object.entries(effect.flat).map(([stat, value]) => (
                       <div key={stat} className="ingame_toggle-stat_row">
@@ -366,7 +366,7 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
                 {isActive && hasDamageBonuses && (
                   <div className="ingame_toggle-stats_section">
                     <div className="ingame_toggle-stats_header">
-                      📊 Damage Bonuses
+                      Damage Bonuses
                     </div>
                     {effect.damageBonuses.map((bonus: any, idx: number) => (
                       <div

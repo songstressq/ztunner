@@ -149,7 +149,7 @@ const SeedVanguardSelector = ({
                     className="ingame_toggle-stats_header"
                     style={{ color: theme }}
                   >
-                    📊 Active Buffs
+                    Active Buffs
                   </div>
                   <div className="ingame_toggle-stat_row">
                     <span className="ingame_toggle-stat_name">ATK Bonus:</span>
