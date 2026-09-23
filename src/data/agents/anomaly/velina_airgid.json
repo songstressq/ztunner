@@ -167,7 +167,7 @@
       {
         "id": "velina_airgid-basic_attack-dancing_fans",
         "name": "Dancing Fans (Basic Attack)",
-        "description": "Press [BASIC] to activate: Launches up to five attacks against enemies ahead, dealing Wind DMG. During the 5th attack, Velina's Anti-Interrupt Level increases, and DMG taken is reduced by 40%.",
+        "description": "Press [BASIC] to activate:\n\nLaunches up to five attacks against enemies ahead, dealing Wind DMG. During the 5th attack, Velina's Anti-Interrupt Level increases, and DMG taken is reduced by 40%.",
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
@@ -201,7 +201,7 @@
       {
         "id": "velina_airgid-dash_attack-gale_step",
         "name": "Gale Step (Dash Attack)",
-        "description": "Press [BASIC] during a dodge to activate: Delivers a quick attack forward, dealing Wind DMG.",
+        "description": "Press [BASIC] during a dodge to activate:\n\nDelivers a quick attack forward, dealing Wind DMG.",
         "skillType": "dash",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -229,7 +229,7 @@
       {
         "id": "velina_airgid-dodge_counter-cloudrend",
         "name": "Cloudrend (Dodge Counter)",
-        "description": "Press [BASIC] during a [COUNTER] to activate: Launches a series of attacks on the target, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nLaunches a series of attacks on the target, dealing Wind DMG. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -257,7 +257,7 @@
       {
         "id": "velina_airgid-quick_assist-emergency_protocol",
         "name": "Emergency Protocol (Quick Assist)",
-        "description": "When the active character is launched, press [ASSIST] to activate: Unleashes consecutive attacks against the target, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nUnleashes consecutive attacks against the target, dealing Wind DMG. Character is invulnerable while using this skill.",
         "skillType": "quickAssist",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -286,7 +286,7 @@
       {
         "id": "velina_airgid-assist_follow_up-negotiation_techniques",
         "name": "Negotiation Techniques (Assist Follow-Up)",
-        "description": "Press [BASIC] after a [PERFECT] to activate: Unleashes a series of attacks, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleashes a series of attacks, dealing Wind DMG. Character is invulnerable while using this skill.",
         "skillType": "followup",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -314,7 +314,7 @@
       {
         "id": "velina_airgid-special_attack-wind_shear_purging_surge",
         "name": "Wind Shear - Purging Surge (Special Attack)",
-        "description": "Press [SPECIAL] to activate: Unleashes a sweeping gust forward, dealing Wind DMG.",
+        "description": "Press [SPECIAL] to activate:\n\nUnleashes a sweeping gust forward, dealing Wind DMG.",
         "skillType": "special",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -342,7 +342,7 @@
       {
         "id": "velina_airgid-ex_special_attack-wind_shear_purifying_rise",
         "name": "Wind Shear - Purifying Rise (EX Special Attack)",
-        "description": "With enough Energy, press [EX] to activate: Dodges backward, then unleashes a massive wind blast to attack enemies, dealing Wind DMG. During the backward dodge, a dodge effect is active. Successfully dodging an enemy attack triggers /bVital View//b. After using this skill, press [BASIC] to chain into the 5th hit of the /bBasic Attack//b. Character is invulnerable while using this skill.",
+        "description": "With enough Energy, press [EX] to activate:\n\nDodges backward, then unleashes a massive wind blast to attack enemies, dealing Wind DMG. During the backward dodge, a dodge effect is active. Successfully dodging an enemy attack triggers /bVital View//b.\n\nAfter using this skill, press [BASIC] to chain into the 5th hit of the /bBasic Attack//b. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -368,7 +368,7 @@
       {
         "id": "velina_airgid-ex_special_attack-wind_shear_triple_deathblow",
         "name": "Wind Shear - Triple Deathblow (EX Special Attack)",
-        "description": "With enough energy and after using /bEX Special Attack: Wind Shear - Purifying Rise//b, press or hold [EX] to activate: Continuously swings the fan, dealing Wind DMG. After using this skill, press [BASIC] to chain into the 5th hit of the /bBasic Attack//b. Character is invulnerable while using this skill.",
+        "description": "With enough energy and after using /bEX Special Attack: Wind Shear - Purifying Rise//b, press or hold [EX] to activate:\n\nContinuously swings the fan, dealing Wind DMG. After using this skill, press [BASIC] to chain into the 5th hit of the /bBasic Attack//b. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -394,7 +394,7 @@
       {
         "id": "velina_airgid-ex_special_attack-wind_shear_eye_of_the_storm",
         "name": "Wind Shear - Eye of the Storm (EX Special Attack)",
-        "description": "With 90 or more Windbloom, hold [SPECIAL] or /bBasic Attack//b to activate: Velina channels a whirlwind and summons a /bSweeping Cyclone//b to continuously attack enemies and triggers the previous character's /bQuick Assist//b. /bSweeping Cyclone//b lasts for 5s and deals Wind DMG to nearby enemies once every 0.5s.",
+        "description": "With 90 or more Windbloom, hold [SPECIAL] or /bBasic Attack//b to activate:\n\nVelina channels a whirlwind and summons a /bSweeping Cyclone//b to continuously attack enemies and triggers the previous character's /bQuick Assist//b. /bSweeping Cyclone//b lasts for 5s and deals Wind DMG to nearby enemies once every 0.5s.",
         "skillType": "ex",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -422,7 +422,7 @@
       {
         "id": "velina_airgid-chain_attack-thousandfold_spiral",
         "name": "Thousandfold Spiral (Chain Attack)",
-        "description": "When a [CHAIN] is triggered, select the character to activate: Transforms into a hurricane to unleash multiple attacks against enemies, followed by a /bFinishing Move//b, dealing massive Wind DMG. Character is invulnerable while using this skill.",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nTransforms into a hurricane to unleash multiple attacks against enemies, followed by a /bFinishing Move//b, dealing massive Wind DMG. Character is invulnerable while using this skill.",
         "skillType": "chain",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],
@@ -450,7 +450,7 @@
       {
         "id": "velina_airgid-ultimate-heed_the_tempest",
         "name": "Heed the Tempest (Ultimate)",
-        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate: Unleashes multiple attacks against enemies ahead, dealing massive Wind DMG. After using this skill, the previous character's /bQuick Assist//b is triggered. Character is invulnerable while using this skill.",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes multiple attacks against enemies ahead, dealing massive Wind DMG. After using this skill, the previous character's /bQuick Assist//b is triggered. Character is invulnerable while using this skill.",
         "skillType": "ultimate",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "wind" }],

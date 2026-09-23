@@ -51,7 +51,7 @@
       "source": "core",
       "sourceId": "nicole_demara-core",
       "label": "Mechanical Case (Core Passive)",
-      "description": "WAfter hitting an enemy with a Special Attack, EX Special Attack, Chain Attack, or Ultimate, Nicole can reload, enhance her Basic Attack and Dash Attack. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by 40% for 3.5s.",
+      "description": "After hitting an enemy with a Special Attack, EX Special Attack, Chain Attack, or Ultimate, Nicole can reload, enhance her Basic Attack and Dash Attack. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by 40% for 3.5s.",
       "shortDescription": "The target's DEF is reduced by 40% for 3.5s.",
       "target": "team",
       "flat": { "defShred": 0.4 }

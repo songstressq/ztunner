@@ -1157,11 +1157,34 @@
 .text-pink {
   color: #fedbf3;
 }
+.text-electric {
+  color: #36a9fcff;
+}
+
+.text-physical {
+  color: #ffdd35ff;
+}
+
+.text-ice {
+  color: #94f3f3ff;
+}
+
+.text-fire {
+  color: #ff4d25ff;
+}
+
+.text-ether {
+  color: #ff4684ff;
+}
+
+.text-wind {
+  color: #a6c5fd;
+}
 
 .attribute-flux-buttons {
   display: flex;
   align-items: center;
-  flex-wrap: no-wrap;
+  flex-wrap: wrap;
   gap: var(--padding-8px);
   padding: var(--padding-6px) 0;
 }
@@ -1189,6 +1212,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .attribute-flux-btn:hover:not(.active) {

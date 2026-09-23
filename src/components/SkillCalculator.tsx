@@ -84,21 +84,24 @@ interface SkillCalculatorProps {
       chain: number;
     }
   >;
+  contaminationElement?: string | null;
+  onContaminationElementChange?: (element: string | null) => void;
+  slotFluxedAttributes?: Record<number, string | null>;
 }
 
 interface DamageResult {
   normal: number[];
   critical: number[];
-  sharp: number[]; 
+  sharp: number[];
   realNormal: number[];
   realCritical: number[];
-  realSharp: number[]; 
+  realSharp: number[];
   totalNormal: number;
   totalCritical: number;
-  totalSharp: number; 
+  totalSharp: number;
   totalRealNormal: number;
   totalRealCritical: number;
-  totalRealSharp: number; 
+  totalRealSharp: number;
 }
 
 interface AdditionalDamage {
@@ -140,6 +143,9 @@ export default function SkillCalculator({
   calculatorState,
   onCalculatorStateChange,
   skillProfiles = {},
+  contaminationElement = null,
+  onContaminationElementChange,
+  slotFluxedAttributes,
 }: SkillCalculatorProps) {
   const {
     selectedEnemyId,
@@ -342,6 +348,14 @@ export default function SkillCalculator({
       });
     }
     return result;
+  };
+
+  const getDirectDmgMultiplier = (damageType: string): number => {
+    if (!contaminationElement) return 1;
+    const type = damageType.toLowerCase();
+    if (type === "wind") return 1.1; // Windswept
+    if (type === contaminationElement) return 1.1; // Contamination
+    return 1;
   };
 
   const getSkillDataFromMarker = (
@@ -895,6 +909,11 @@ export default function SkillCalculator({
     const finalResistance = baseResistance - totalResShred;
     const resMultiplier = 1 - finalResistance;
     damage *= resMultiplier;
+
+    if (!isAnomaly && !isVortex && !isLuminize) {
+      damage *= getDirectDmgMultiplier(damageType);
+    }
+
     return Math.round(damage);
   };
 
@@ -2072,6 +2091,158 @@ export default function SkillCalculator({
             )}
           </div>
         )}
+
+        {agent.attribute.toLowerCase() === "wind" &&
+          onContaminationElementChange && (
+            <div className="attribute_flux-main_wrapper">
+              <div className="attribute_flux-header">
+                <label className="stun-multiplier-label">
+                  {agent.displayName || agent.name}'s Contamination State
+                </label>
+              </div>
+              <div className="skill_selector-description">
+                <p>
+                  While in <span className="text-wind">Windswept</span> state,
+                  enemies take increased{" "}
+                  <span className="text-wind">direct Wind DMG</span> based on
+                  the Wind Anomaly trigger's{" "}
+                  <span className="text-wind">Tempest Coefficient</span>. The
+                  first time the enemy takes{" "}
+                  <span className="text-fire">Fire DMG</span>,{" "}
+                  <span className="text-ice">Ice DMG</span>,{" "}
+                  <span className="text-electric">Electric DMG</span>,{" "}
+                  <span className="text-physical">Physical DMG</span>, or{" "}
+                  <span className="text-ether">Ether DMG</span>, the
+                  corresponding <span className="text-wind">Contamination</span>{" "}
+                  effect is triggered.
+                </p>
+                <p>
+                  While under <span className="text-wind">Contamination</span>,
+                  both <span className="text-wind">direct Wind DMG</span> and
+                  direct DMG from the triggering{" "}
+                  <span className="text-wind">Contamination</span> attribute are
+                  increased based on the Wind Anomaly trigger's{" "}
+                  <span className="text-wind">Tempest Coefficient</span>. During
+                  a single <span className="text-wind">Windswept</span>{" "}
+                  instance, <span className="text-wind">Contamination</span> can
+                  only be triggered this way once.
+                </p>
+              </div>
+              <div className="attribute-flux-buttons">
+                <label className="skill_selector-header">AGENT:</label>
+
+                {/* Self (Wind) */}
+                {(() => {
+                  const isActive = contaminationElement === "wind";
+                  const color = ATTRIBUTE_COLORS.wind;
+                  return (
+                    <button
+                      className={`attribute-flux-btn ${isActive ? "active" : "inactive"}`}
+                      style={{ "--btn-color": color } as React.CSSProperties}
+                      onClick={() =>
+                        onContaminationElementChange(isActive ? null : "wind")
+                      }
+                    >
+                      {agent.displayName || agent.name} (Wind)
+                    </button>
+                  );
+                })()}
+
+                {/* Teammates */}
+                {teamSlotsInfo
+                  ?.filter(
+                    (slot) =>
+                      slot.slotIndex !== currentSlotIndex &&
+                      slot.agentName !== "Empty",
+                  )
+                  .map((slot) => {
+                    const agentData = agents.find(
+                      (a) =>
+                        a.displayName === slot.agentName ||
+                        a.name === slot.agentName,
+                    );
+                    let attr =
+                      agentData?.attribute?.toLowerCase() ||
+                      slot.agent?.attribute?.toLowerCase() ||
+                      "unknown";
+
+                    let isFluxFallback = false;
+                    if (attr === "lumiflux") {
+                      const fluxed =
+                        slotFluxedAttributes?.[slot.slotIndex] ?? null;
+                      if (fluxed) {
+                        attr = fluxed;
+                        isFluxFallback = true;
+                      } else {
+                        return null;
+                      }
+                    }
+
+                    const isActive = contaminationElement === attr;
+                    const color = ATTRIBUTE_COLORS[attr] || "#888";
+                    const displayAttr =
+                      attr.charAt(0).toUpperCase() + attr.slice(1);
+
+                    return (
+                      <button
+                        key={slot.slotIndex}
+                        className={`attribute-flux-btn ${isActive ? "active" : "inactive"}`}
+                        style={{ "--btn-color": color } as React.CSSProperties}
+                        onClick={() =>
+                          onContaminationElementChange(isActive ? null : attr)
+                        }
+                      >
+                        {slot.agentName} ({displayAttr})
+                      </button>
+                    );
+                  })}
+              </div>
+
+              {contaminationElement && (
+                <div className="skill_selector-description">
+                  <p>
+                    Enemy is in{" "}
+                    <span className="text-wind">Windswept Contamination</span>{" "}
+                    state
+                    {contaminationElement !== "wind" && (
+                      <>
+                        {" "}
+                        and contaminated with{" "}
+                        <span
+                          style={{
+                            color:
+                              ATTRIBUTE_COLORS[contaminationElement] || "#fff",
+                          }}
+                        >
+                          {contaminationElement.charAt(0).toUpperCase() +
+                            contaminationElement.slice(1)}{" "}
+                          DMG
+                        </span>
+                      </>
+                    )}
+                    . Direct <span className="text-wind"> Wind DMG</span>
+                    {contaminationElement !== "wind" && (
+                      <>
+                        {" "}
+                        and direct{" "}
+                        <span
+                          style={{
+                            color:
+                              ATTRIBUTE_COLORS[contaminationElement] || "#fff",
+                          }}
+                        >
+                          {contaminationElement.charAt(0).toUpperCase() +
+                            contaminationElement.slice(1)}{" "}
+                          DMG
+                        </span>
+                      </>
+                    )}{" "}
+                    +10%.
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
 
         <div
           className="skill_selector-main_wrapper"

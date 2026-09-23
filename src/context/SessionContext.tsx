@@ -133,6 +133,7 @@ interface HomeSession {
   >;
   showGameModePanel: boolean;
   dominantTheme: string;
+  contaminationElement: string | null;
 }
 
 interface WEnginesSession {
@@ -169,6 +170,7 @@ const defaultHomeSession: HomeSession = {
   skillProfiles: {},
   showGameModePanel: false,
   dominantTheme: "#AFAFAF",
+  contaminationElement: null,
 };
 
 const defaultWEnginesSession: WEnginesSession = {
@@ -207,6 +209,9 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         parsed.gameModeCurrentModeId = defaultHomeSession.gameModeCurrentModeId;
       if (!parsed.gameModeCurrentRoomId)
         parsed.gameModeCurrentRoomId = defaultHomeSession.gameModeCurrentRoomId;
+      if (parsed.contaminationElement === undefined) {
+        parsed.contaminationElement = null;
+      }
 
       return { ...defaultHomeSession, ...parsed };
     } catch {

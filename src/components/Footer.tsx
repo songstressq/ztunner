@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({
       <div className="social-footer-content">
         <div className="social-footer-left">
           <span className="social-copyright">© 2026 Z-TUNNER</span>
-          <span className="social-version">v1.1.1</span>
+          <span className="social-version">v1.1.2</span>
         </div>
         <div className="social-links">
           {/* Discord */}

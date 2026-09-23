@@ -185,6 +185,17 @@ const Home = () => {
                 style={{ backgroundColor: dominantTheme }}
               />
               <div className="home_content_changelog_item">
+                <span>v1.1.2 — Contamination State</span>
+                <h3>● Added - Contamination State's Direct DMG</h3>
+                <p>
+                  Added calculations for the Direct DMG bonuses granted by the
+                  Contamination state, including its interaction with the
+                  triggering attribute. This was mainly added with Roxy in mind,
+                  as her being a Wind Stunner will make Wind more common in
+                  different team compositions.
+                </p>
+              </div>
+              <div className="home_content_changelog_item">
                 <span>v1.1.1 — Minor Fixes &amp; Updates</span>
                 <h3>● Fixed - In-Game Toggle Calculations</h3>
                 <p>
@@ -202,22 +213,6 @@ const Home = () => {
                   <br />
                   Fixed Jane Doe's Crime Counsel (Mindscape Cinema N°1) in-game
                   effect.
-                </p>
-              </div>
-              <div className="home_content_changelog_item">
-                <span>v1.1.0 — Armorer Update</span>
-
-                <h3>● Added - ZZZ Maim DMG Calculator</h3>
-                <p>
-                  Added calculations for Laceration DMG, Sharp DMG, and Maim
-                  DMG, including their additional mechanics, to Z-Tunner's ZZZ
-                  DMG/Maim DMG Calculator.
-                </p>
-                <h3>● Added - Claret Flint / Armorer Specialty</h3>
-                <p>
-                  Claret Flint and the Armorer Specialty have been added to
-                  Z-Tunner, with support for their unique abilities, mechanics,
-                  and damage calculations.
                 </p>
               </div>
             </div>

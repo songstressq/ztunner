@@ -537,6 +537,10 @@ const DamageSimulator = () => {
     }
   }, [showSkillsProfileModal]);
 
+  const setContaminationElement = (element: string | null) => {
+    setHomeSession((prev) => ({ ...prev, contaminationElement: element }));
+  };
+
   const resetAllEffects = () => {
     openConfirm(
       "Reset Effects",
@@ -694,6 +698,15 @@ const DamageSimulator = () => {
   const dominantEmptyStyle = {
     backgroundImage: `linear-gradient( to right bottom, ${dominantTheme}11, ${dominantTheme}22, ${dominantTheme}55, ${dominantTheme}22, ${dominantTheme}11 )`,
   };
+
+  const slotFluxedAttributes = useMemo(() => {
+    const result: Record<number, string | null> = {};
+    [0, 1, 2].forEach((idx) => {
+      const state = homeSession.slotCalculatorStates[idx];
+      result[idx] = state?.fluxedAttributes?.[idx] ?? null;
+    });
+    return result;
+  }, [homeSession.slotCalculatorStates]);
 
   /* useEffect(() => {
   if (builds.length > 0 && teamSlotsInfo.length === 3) {
@@ -1439,6 +1452,9 @@ const DamageSimulator = () => {
                     updateSlotCalculatorState(slotIndex, updater)
                   }
                   skillProfiles={homeSession.skillProfiles}
+                  contaminationElement={homeSession.contaminationElement}
+                  onContaminationElementChange={setContaminationElement}
+                  slotFluxedAttributes={slotFluxedAttributes}
                 />
               );
             })()}
