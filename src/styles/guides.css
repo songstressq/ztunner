@@ -1,0 +1,479 @@
+/* ═══════════════════════════════════════════════════ GUIDES ═══════════════════════════════════════════════════ */
+
+/* ─── GRID ────────────────────────────────────────── */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: var(--padding-10px);
+  margin-bottom: var(--padding-10px);
+  flex: 1;
+  align-content: start;
+}
+
+/* ─── TARJETA DE GUÍA (wrapper + block) ───────────── */
+.guide-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 0.55rem rgba(0, 0, 0, 0.5);
+  padding: var(--padding-7_5px);
+  background-color: transparent;
+  transition: filter 0.2s ease;
+}
+
+.guide-card-link:hover {
+  filter: brightness(1.075);
+}
+
+/* Revertido a la versión simple original */
+.guide-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-10px);
+  height: 100%;
+  min-height: 240px;
+  padding: var(--padding-20px);
+}
+
+.guide-card-title {
+  font-size: var(--home-22px);
+  color: #fff;
+  margin: 0;
+  font-weight: lighter;
+}
+
+.guide-card-description {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--home-16px);
+  font-weight: lighter;
+  margin: 0;
+  flex: 1;
+  line-height: 1.6;
+}
+
+.guide-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.guide-card-tag {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.guide-card-footer {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--home-12_8px);
+  font-weight: lighter;
+}
+
+/* ─── DETALLE ─────────────────────────────────────── */
+.guide-detail-wrapper {
+  padding: var(--padding-10px);
+  border-radius: 10px;
+}
+
+.guide-detail-block {
+  background-color: rgba(51, 53, 52, 0.75);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow:
+    0 0 6px rgba(43, 42, 42, 0.6),
+    0 0 12px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(116, 116, 116, 0.2);
+  border-radius: 6.4px;
+  padding: var(--padding-10px) var(--padding-12px);
+}
+
+.guide-detail-header {
+  position: relative; /* ← nuevo: sirve de ancla */
+  margin-bottom: var(--padding-10px);
+  padding: 0 var(--padding-5px);
+}
+
+.guide-back-link {
+  position: absolute; /* ← nuevo: sale del flujo */
+  top: var(--padding-4px); /* ← nuevo: ajusta vertical */
+  left: var(--padding-5px); /* ← nuevo: alinea con el header */
+  z-index: 2; /* ← nuevo: por encima del título */
+
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--home-14px);
+  text-decoration: none;
+  display: inline-block;
+  padding: var(--padding-4px) var(--padding-6px);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(40, 40, 40, 0.5);
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+}
+
+.guide-back-link:hover {
+  color: #fff;
+  background: color-mix(in srgb, var(--dominant-theme) 12%, transparent);
+  border-color: var(--dominant-theme);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--dominant-theme) 40%, transparent);
+}
+
+.guide-detail-title {
+  font-size: var(--text-38px);
+  color: rgba(255, 255, 255);
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: var(--padding-5px) 0 var(--padding-15px);
+  padding: 0 var(--text-24px);
+}
+
+/* Divisor idéntico a .slot-divider */
+.home_divider {
+  height: var(--padding-2px);
+  width: 100%;
+  border-radius: 2px;
+  margin: var(--padding-2_5px) auto var(--padding-10px);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--dominant-theme),
+    transparent
+  );
+  box-shadow:
+    0 0 6px var(--dominant-theme),
+    0 0 14px var(--dominant-theme);
+  filter: brightness(0.75);
+}
+
+/* ─── TOC (fondo transparente, sin "caja negra") ─── */
+.guide-toc {
+  padding: var(--padding-10px) var(--padding-12px);
+  margin: 0 var(--padding-7_5px) var(--padding-7_5px);
+  background: color-mix(in srgb, var(--dominant-theme) 10%, transparent);
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px
+    color-mix(in srgb, var(--dominant-theme) 8%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--dominant-theme);
+  backdrop-filter: blur(4px);
+}
+
+.guide-toc-title {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-8px);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--home-16px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0 0 var(--padding-8px);
+  transition: opacity 0.2s ease;
+}
+
+.guide-toc-title:hover {
+  opacity: 0.8;
+}
+
+.guide-toc-arrow {
+  font-size: var(--home-12px);
+  display: inline-block;
+  width: 12px;
+  color: var(--dominant-theme);
+}
+
+.guide-toc-count {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: var(--home-10px);
+  font-weight: lighter;
+  letter-spacing: 0;
+  margin-left: auto;
+}
+
+.guide-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-4px);
+}
+
+.guide-toc-item--h3 {
+  padding-left: var(--text-16px);
+}
+.guide-toc-item--h4 {
+  padding-left: calc(var(--spacing-30px) + var(--padding-2px));
+}
+.guide-toc-item--h5 {
+  padding-left: var(--icon-48px);
+}
+.guide-toc-item--h6 {
+  padding-left: 64px;
+}
+
+.guide-toc-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--home-14px);
+  font-weight: lighter;
+  text-decoration: none;
+  display: inline-block;
+  padding: var(--padding-1px) 0;
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.guide-toc-link:hover {
+  color: var(--dominant-theme);
+  padding-left: var(--padding-4px);
+  text-shadow: 0 0 6px
+    color-mix(in srgb, var(--dominant-theme) 50%, transparent);
+}
+
+/* ═══════════════════════════════════════════════════ CONTENIDO MDX ═══════════════════════════════════════════════════ */
+.guide-mdx-content {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: lighter;
+  line-height: 1.55;
+  font-size: var(--home-17px);
+  margin: var(--padding-8px) var(--text-24px);
+}
+
+/* ─── HEADINGS ─────────────────────────────────────── */
+.guide-mdx-content h1 {
+  display: none;
+}
+
+.guide-mdx-content h1,
+.guide-mdx-content h2,
+.guide-mdx-content h3,
+.guide-mdx-content h4,
+.guide-mdx-content strong,
+.guide-mdx-content b {
+  position: relative;
+}
+
+.guide-mdx-content h2 {
+  font-size: var(--home-26px); /* midpoint 22 ↔ 36.8 */
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: lighter;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  margin: var(--padding-20px) 0 var(--padding-8px);
+  padding-bottom: var(--padding-6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  scroll-margin-top: var(--padding-20px);
+}
+
+.guide-mdx-content h3 {
+  font-size: var(--home-24px); /* midpoint 18 ↔ 28 */
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: lighter;
+  letter-spacing: 0.5px;
+  margin: var(--text-14px) 0 var(--padding-6px);
+  scroll-margin-top: var(--padding-20px);
+}
+
+.guide-mdx-content h4 {
+  font-size: var(--home-17px); /* midpoint 14.4 ↔ 19.2 */
+  color: var(--dominant-theme);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: var(--padding-12px) 0 var(--padding-4px);
+}
+
+/* Barra inferior compartida para TODOS los encabezados + bold */
+.guide-mdx-content h1::after,
+.guide-mdx-content h2::after,
+.guide-mdx-content h3::after,
+.guide-mdx-content h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--dominant-theme), transparent);
+  box-shadow: 0 0 6px var(--dominant-theme);
+  pointer-events: none;
+}
+
+.guide-mdx-content strong,
+.guide-mdx-content b {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: bold;
+  display: inline-block;
+  letter-spacing: 0.65px;
+}
+
+/* ─── TEXTO ────────────────────────────────────────── */
+.guide-mdx-content p {
+  margin: var(--padding-6px) 0;
+}
+
+.guide-mdx-content a {
+  color: var(--dominant-theme);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.guide-mdx-content a:hover {
+  border-bottom-color: var(--dominant-theme);
+  text-shadow: 0 0 8px
+    color-mix(in srgb, var(--dominant-theme) 50%, transparent);
+}
+
+.guide-mdx-content ul,
+.guide-mdx-content ol {
+  padding-left: var(--padding-18px);
+  margin: var(--padding-6px) 0;
+}
+
+.guide-mdx-content li {
+  margin: var(--padding-2px) 0;
+}
+
+.guide-mdx-content li::marker {
+  color: var(--dominant-theme);
+}
+
+/* ─── CÓDIGO ───────────────────────────────────────── */
+.guide-mdx-content code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: var(--home-14_4px); /* midpoint 13 ↔ 16 */
+  color: var(--dominant-theme);
+  font-family: "JetBrains Mono", "Consolas", "Monaco", monospace;
+  border: 1px solid color-mix(in srgb, var(--dominant-theme) 20%, transparent);
+}
+
+.guide-mdx-content pre {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: var(--padding-12px);
+  overflow-x: auto;
+  margin: var(--padding-12px) 0;
+  font-size: var(--home-14_4px); /* midpoint 13 ↔ 16 */
+  line-height: 1.5;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.guide-mdx-content pre code {
+  background: none;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: inherit;
+  border: none;
+}
+
+/* ─── BLOCKQUOTE ───────────────────────────────────── */
+.guide-mdx-content blockquote {
+  border-left: 3px solid var(--dominant-theme);
+  padding: var(--padding-6px) var(--text-14px);
+  margin: var(--text-14px) 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  background: color-mix(in srgb, var(--dominant-theme) 6%, transparent);
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset 4px 0 12px -4px
+    color-mix(in srgb, var(--dominant-theme) 40%, transparent);
+}
+
+/* ─── TABLAS ───────────────────────────────────────── */
+.guide-mdx-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--text-14px) 0;
+  font-size: var(--home-14_4px); /* midpoint 13 ↔ 16 */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 0 6px rgba(43, 42, 42, 0.6),
+    0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.guide-mdx-content th,
+.guide-mdx-content td {
+  padding: var(--padding-8px) var(--padding-12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.guide-mdx-content th {
+  background: rgba(51, 53, 52, 0.75);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: var(--home-13_4px); /* midpoint 11.8 ↔ 14.4 */
+}
+
+.guide-mdx-content tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ─── DIVISOR DEL MDX (mismo look que .slot-divider) ─ */
+.guide-mdx-content hr {
+  border: none;
+  height: var(--padding-2px);
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--dominant-theme),
+    transparent
+  );
+  box-shadow:
+    0 0 6px var(--dominant-theme),
+    0 0 14px var(--dominant-theme);
+  filter: brightness(0.75);
+  margin: var(--text-24px) 0;
+}
+
+/* ─── IMÁGENES ─────────────────────────────────────── */
+.guide-mdx-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: var(--padding-12px) 0;
+  box-shadow:
+    0 0 6px rgba(43, 42, 42, 0.6),
+    0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════ MISC ═══════════════════════════════════════════════════ */
+.guide-loading {
+  color: rgba(255, 255, 255, 0.5);
+  padding: var(--padding-20px);
+  text-align: center;
+}
+
+.guide-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--text-24px);
+  padding-top: var(--text-16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}

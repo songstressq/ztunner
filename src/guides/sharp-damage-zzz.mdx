@@ -1,0 +1,383 @@
+---
+title: "Sharp Damage in Zenless Zone Zero — Laceration and Maim DMG Explained"
+slug: "sharp-damage-zzz"
+description: "A complete analysis of Sharp Damage in Zenless Zone Zero, the new Armorer mechanic, and how it interacts with Laceration DMG and Maim DMG in-game, including the formulas behind the damage calculation."
+tags: ["mechanics", "armorer", "sharp-dmg", "claret"]
+date: "2026-09-24"
+published: true
+toc: true
+---
+
+**Sharp DMG** is a brand-new damage type introduced alongside the **Armorer** specialty in Zenless Zone Zero Version 3.2, que trajo consigo a Claret como agente de esta nueva clase. Para ayudarte a entender cómo funciona el Sharp Damage en Zenless Zone Zero, here's a complete breakdown about this new mechanic, from the basic formula hasta las nuevas ¿submecánicas? que introduce, Laceration DMG y Maim.
+
+---
+
+## 1. Entendiendo el daño en Zenless Zone Zero
+
+Every agent in ZZZ deals damage through a standard formula:
+
+```text
+Standard DMG = (ATK × SkillMult) × DefMult × DMG% × CRIT × RES × STUN ×Direct DMG%
+```
+
+Where `ATK` representa el ataque y `CRIT` el CRIT DMG que posee el agente al momento de aplicar su daño. Sin embargo, Armorer agents change a few of these fundamental pieces para construir su fórmula de daño:
+
+| Standard Agent        | Armorer Agent                      |
+| --------------------- | ---------------------------------- |
+| Scales with **ATK**   | Scales with **DEF**                |
+| Uses **CRIT DMG**     | Uses **Laceration DMG**            |
+| Single CRIT check     | **Double** CRIT check (Laceration) |
+| Normal DMG / CRIT DMG | Sharp DMG                          |
+
+The result is a separate damage pipeline that can be represented as the **Sharp DMG Formula**. The interesting part is that, despite having its own mechanics, Sharp DMG still follows many of the same rules used by the game's existing damage systems. PEN, PEN Ratio, DEF Shred, RES Shred, and Stun Multiplier still play a role en esta nueva mecánica. Y, ya que gané mi 50/50 de Claret, pude pasar algo de tiempo en el Training Room para traerte lo siguiente:
+
+---
+
+## 2. The ZZZ Sharp DMG Formula
+
+After testing the different components individually, the complete **Sharp DMG formula** can be represented as:
+
+```text
+Sharp DMG = (DEF × SkillMult)
+          × DefMult
+          × DMG%
+          × Lac₁
+          × Lac₂
+          × SharpDMGBonus
+          × StunMult
+          × ResMult
+          × DirectDMG%
+```
+
+### Component Breakdown
+
+| Component           | Description                                                          |
+| ------------------- | -------------------------------------------------------------------- |
+| **DEF × SkillMult** | Base skill multiplier damage. Uses Armorers' total DEF.              |
+| **DefMult**         | Enemy defense multiplier.                                            |
+| **DMG%**            | All damage bonuses (elemental, skill type, global, exclusive, etc.). |
+| **Lac₁**            | First Laceration check (0%–100% CRIT Rate).                          |
+| **Lac₂**            | Second Laceration check (100%–200% CRIT Rate).                       |
+| **SharpDMGBonus**   | Damage bonus applied after Lac₂, analogous to Sheer DMG Bonus.       |
+| **StunMult**        | Enemy stun multiplier.                                               |
+| **ResMult**         | Enemy elemental resistance multiplier.                               |
+| **DirectDMG%**      | Damage bonus coming from the Contamination state.                    |
+
+At this point, the formula looks relatively simple. The real mystery starts with the two Laceration checks.
+
+---
+
+## 3. How does Laceration DMG works in ZZZ
+
+This is where Sharp DMG gets a little more interesting. The game actually gives us a pretty good hint about what's happening here en la pasiva de Claret:
+
+> When a critical hit is triggered, Sharp DMG doesn’t receive the CRIT DMG Bonus and instead uses the Laceration DMG Bonus. If CRIT Rate exceeds 100% and a critical hit has already been triggered, an additional Laceration check is performed based on the excess CRIT Rate. If Laceration is triggered, the Laceration DMG Bonus is applied an additional time.
+
+In other words, Sharp DMG doesn't simply have un sistema de crit unico, sino que el CRIT system itself is effectively being reused, with Laceration DMG replacing CRIT DMG, and excess CRIT Rate becoming relevant for a second check. Ambos Laceration checks funcionan de la siguiente manera:
+
+### Lac₁ — First CRIT Check
+
+The first check uses the standard CRIT Rate range from 0% to 100%:
+
+```text
+Lac₁ = 1 + min(max(CRIT Rate, 0), 1) × Laceration DMG
+```
+
+- At 0% CRIT Rate: `Lac₁ = 1` (no bonus).
+- At 50% CRIT Rate: `Lac₁ = 1 + 0.5 × LacDMG` (probabilistic).
+- At 100% CRIT Rate or higher: `Lac₁ = 1 + 1.0 × LacDMG` (guaranteed, capped).
+
+### Lac₂ — Second CRIT Check
+
+Once CRIT Rate goes beyond 100%, the excess CRIT Rate becomes the basis for the second Laceration check:
+
+```text
+Lac₂ = 1 + min(max(CRIT Rate − 1, 0), 1) × Laceration DMG
+```
+
+- At 100% CRIT Rate: `Lac₂ = 1` (no bonus).
+- At 150% CRIT Rate: `Lac₂ = 1 + 0.5 × LacDMG` (probabilistic).
+- At 200% CRIT Rate or higher: `Lac₂ = 1 + 1.0 × LacDMG` (guaranteed, capped).
+
+So, in simple terms:
+
+**0–100% CRIT Rate → first check**
+
+**100–200% CRIT Rate → second check**
+
+**200%+ CRIT Rate → no additional benefit**
+
+### The 200% Cap
+
+This was one of the things I really wanted to test, because without getting above 200% CRIT Rate, there was no way to know whether the second check actually had a cap.
+
+Thankfully, **Ben** came in clutch here, because without him I would've been stuck around 197% CRIT Rate.
+
+The result was clear: **CRIT Rate above 200% does not provide another Laceration check or increase the second one beyond 100%.**
+
+So, for Sharp DMG, 200% CRIT Rate is effectively the ceiling for the Laceration system.
+
+### How It Looks In-Game
+
+- If only Lac₁ succeeds, the damage number is followed by **`!!`**.
+- If both Lac₁ and Lac₂ succeed, the damage number is followed by **`!!!`**.
+
+The second check doesn't create a separate damage instance. Instead, it applies another Laceration multiplier to the same hit.
+
+---
+
+## 4. Laceration DMG — The Stat
+
+**Laceration DMG** is the stat that replaces CRIT DMG for Armorers.
+
+Unlike CRIT DMG, which is a fixed multiplier tied to a single CRIT check, Laceration DMG acts as a multiplier for each individual Laceration check. It is applied once when Lac₁ succeeds, and applied again as a separate multiplication when Lac₂ succeeds.
+
+Claret starts with **150% Laceration DMG**.
+
+At 150% Laceration DMG, each successful check is:
+
+```text
+1 + 1.5 = 2.5×
+```
+
+If both checks succeed:
+
+```text
+2.5 × 2.5 = 6.25×
+```
+
+### Increasing Laceration DMG
+
+Laceration DMG can be increased through several sources:
+
+| Source                                                           | Effect                                                                                    |    Value | Notes                                          |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------: | ---------------------------------------------- |
+| **Remnant Edge** — Claret's Additional Ability: Bloodline Legacy | When Claret or another squad member triggers Maim, all Armorer Agents enter Remnant Edge. | **+25%** | Lasts 40s and refreshes.                       |
+| **Koleda — Potential Vision N°6: Get Workin'! VI**               | Armorer Agents gain Laceration DMG.                                                       | **+12%** | Non-Armorer Agents instead gain +35% CRIT DMG. |
+| **Roxy** _(upcoming)_                                            | Expected to provide another Laceration DMG source.                                        |  **TBD** | To be confirmed once available.                |
+
+Multiple sources add together.
+
+For example:
+
+```text
+150% + 25% + 15% = 190%
+```
+
+At 190% Laceration DMG, each successful check becomes:
+
+```text
+1 + 1.9 = 2.9×
+```
+
+| Total Laceration DMG |  Lac₁ |  Lac₂ | Both Succeed |
+| -------------------: | ----: | ----: | -----------: |
+|                 150% | 2.50× | 2.50× |        6.25× |
+|                 175% | 2.75× | 2.75× |      7.5625× |
+|                 187% | 2.87× | 2.87× |      8.2369× |
+
+The higher the Laceration DMG stat, the more valuable it becomes to guarantee both CRIT checks — which is why CRIT Rate up to 200% is a meaningful investment for Armorers.
+
+---
+
+## 5. Maim DMG
+
+**Maim** is a special damage instance triggered by specific skills when the enemy has **Gash** stacks, with a maximum of 3 stacks. It is exclusive to Armorer agents, currently Claret.
+
+When I started looking into Maim, I wasn't really sure whether it would follow its own damage formula or behave more like the other specialized damage types in ZZZ.
+
+Turns out, it was much simpler than I expected.
+
+Unlike Remielle's Luminize, the Maim DMG formula is practically the same as the normal Sharp DMG formula.
+
+The only real change is:
+
+```text
+SkillMult → MaimMult
+```
+
+```text
+Maim DMG = (DEF × MaimMult)
+         × DefMult
+         × DMG%
+         × Lac₁
+         × Lac₂
+         × SharpDMGBonus
+         × StunMult
+         × ResMult
+```
+
+Maim uses the same double-Laceration system as normal Sharp DMG. There is no automatic maximum roll; CRIT and Laceration are still rolled for each Maim instance.
+
+Maim is also a separate hit, with its own skill-specific **Maim Multiplier**. For example, _Special Attack: Bloodbloom Oath – Cleaving Gold and Iron_ has a Maim multiplier ranging from **812.7% at Level 1 to 1921.2% at Level 16**.
+
+Claret's **Mindscape 1 (Bloodstained Chronicle)** also increases the Maim Multiplier to 130% of its original value:
+
+```text
+Effective MaimMult = BaseMaimMult × 1.30
+```
+
+This increases the base Maim multiplier itself rather than applying a 30% bonus to the final damage.
+
+### Confirmed Examples
+
+Claret's tested values were:
+
+- DEF: **1402**
+- Maim Multiplier: **1625.6%**
+- Laceration DMG: **150%**
+
+| Scenario                       | Calculated | Observed | Difference |
+| ------------------------------ | ---------: | -------: | ---------: |
+| Base Maim                      |      83902 |    83922 |        +20 |
+| + PEN Ratio 24%                |      77291 |    77307 |        +16 |
+| + Electric DMG Bonus 30%       |      92414 |    92435 |        +21 |
+| + RES Shred 8.5% + LacDMG 175% |     121326 |   121354 |        +28 |
+
+All differences are below 0.03%, consistent with rounding.
+
+These values correspond to hits where the second Laceration check succeeded.
+
+---
+
+## 6. Defense Multiplier
+
+The Defense Multiplier follows the same general structure used by other damage types.
+
+```text
+EnemyDEF_effective = (EnemyDEF × (1 − DefShred) × (1 − PEN Ratio)) − PEN
+
+DefMult = ALC / (ALC + EnemyDEF_effective)
+```
+
+At level 60, the tested ALC value is **794**.
+
+The order is important:
+
+1. DEF Shred
+2. PEN Ratio
+3. PEN Flat
+
+For example, with 572 DEF:
+
+```text
+PEN flat 27:
+
+572 − 27 = 545
+```
+
+With 24% PEN Ratio and 9 PEN:
+
+```text
+(572 × 0.76) − 9 = 425.72
+```
+
+Armorers do **not** ignore PEN or PEN Ratio. Both stats are functional and are included in the Sharp DMG calculation.
+
+---
+
+## 7. What Applies to Sharp DMG
+
+| Bonus / Stat           | Applies? | Where                    |
+| ---------------------- | -------- | ------------------------ |
+| **Electric DMG Bonus** | Yes      | DMG% before Lac₁         |
+| **Skill Type Bonus**   | Yes      | DMG% before Lac₁         |
+| **PEN Ratio**          | Yes      | DefMult before PEN flat  |
+| **PEN Flat**           | Yes      | DefMult after PEN Ratio  |
+| **DEF Shred**          | Yes      | DefMult before PEN Ratio |
+| **Stun Multiplier**    | Yes      | Final multiplier         |
+| **RES Shred**          | Yes      | Final multiplier         |
+| **Sharp DMG Bonus**    | Yes      | After Lac₂               |
+
+### What Does NOT Apply
+
+| Stat                 | Applies? | Reason                                       |
+| -------------------- | -------- | -------------------------------------------- |
+| **CRIT DMG**         | No       | Replaced by Laceration DMG                   |
+| **Energy Regen**     | No       | Replaced by Automatic Sharpness Accumulation |
+| **ATK** (for skills) | No       | Armorer skills scale with DEF                |
+
+ATK is still used for **Anomaly calculations**, including Shock and Disorder.
+
+Claret's base ATK was confirmed at **1112** through reverse-engineering the Shock formula.
+
+This might still make a small difference when it comes to triggering **Vortex** with Roxy, but we'll see once she's actually available to test.
+
+---
+
+## 8. Automatic Sharpness Accumulation
+
+**Automatic Sharpness Accumulation** replaces Energy Regen for Armorer agents.
+
+It has no direct impact on the Sharp DMG formula, other than dictating the frequency of possible Maim triggers.
+
+In other words, it doesn't increase the damage of an individual Sharp DMG hit, but it can affect how frequently certain Maim-related effects can be triggered.
+
+---
+
+## 9. Sharp DMG Bonus
+
+**Sharp DMG Bonus** is an in-game bonus for Armorer agents and is effectively the equivalent of **Sheer DMG Bonus** for Rupture.
+
+Unlike normal Electric DMG Bonus, which is part of the general `DMG%` pool, Sharp DMG Bonus is a separate multiplicative modifier applied after the Laceration checks.
+
+```text
+SharpDMGBonus = 1 + SharpDMGBonus%
+```
+
+A 15% Sharp DMG Bonus therefore contributes a `×1.15` multiplier.
+
+### Verified Behavior
+
+With a **15% Sharp DMG Bonus**, the following values were confirmed exactly in-game inside a Deadly Assault room:
+
+| Multiplier | CRIT HIT | SHARP HIT |
+| ---------: | -------: | --------: |
+|     215.5% |    12244 |     30611 |
+|     109.4% |     6216 |     15540 |
+
+These results confirm that Sharp DMG Bonus behaves as a clean multiplicative modifier rather than being added to the normal DMG% pool.
+
+---
+
+## 10. Full Reference Formula
+
+The complete Sharp DMG formula can be written as:
+
+```text
+Sharp DMG = (DEF × SkillMult)
+          × [ALC / (ALC + max(0, (EnemyDEF × (1 − DefShred) × (1 − PEN Ratio)) − PEN))]
+          × (1 + global + skillType + element + exclusive + …)
+          × (1 + min(max(CR − 0%, 0), 100%) × LacDMG)
+          × (1 + min(max(CR − 100%, 0), 100%) × LacDMG)
+          × (1 + SharpDMGBonus)
+          × (1 + Stun / 100)
+          × (1 − (EnemyRES − RESShred))
+```
+
+For Maim DMG, `SkillMult` is replaced by `MaimMult`:
+
+```text
+Maim DMG = (DEF × MaimMult)
+         × DefMult
+         × DMG%
+         × (1 + min(max(CR, 0), 1) × LacDMG)
+         × (1 + min(max(CR − 1, 0), 1) × LacDMG)
+         × (1 + SharpDMGBonus)
+         × (1 + Stun / 100)
+         × (1 − (EnemyRES − RESShred))
+```
+
+---
+
+## Final Notes
+
+This article is based on experimental testing, in-game observations, official in-game descriptions, and reverse-engineering of Claret's damage pipeline in Zenless Zone Zero. The tested values consistently matched the proposed formulas, with only minor rounding differences.
+
+The same formula is currently used by the calculator you're visiting, so if you want to experiment with your own Claret's damage output, head over to the **Damage Calculator**.
+
+If you spot an incorrect number, interaction, or any other mistake, don't hesitate to let me know so I can fix it as soon as possible.
+
+```
+
+```
