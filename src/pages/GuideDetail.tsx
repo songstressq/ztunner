@@ -85,6 +85,12 @@ const GuideDetail = () => {
             />
           </div>
 
+          {guide.cover && (
+            <div className="guide-cover">
+              <img src={guide.cover} alt={guide.title} />
+            </div>
+          )}
+
           {guide.toc !== false && toc.length > 0 && (
             <GuideTOC items={toc} theme={dominantTheme} />
           )}

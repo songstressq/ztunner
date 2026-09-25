@@ -65,8 +65,10 @@ const Guides = () => {
             style={{ backgroundColor: dominantTheme }}
           />
           <p className="agents-stats-description">
-            In-depth guides about ZZZ mechanics, damage formulas, and build
-            strategies.
+            Detailed guides covering ZZZ combat mechanics, damage formulas,
+            character interactions, and optimization strategies. Each guide
+            breaks down complex mechanics and calculations into clear, practical
+            explanations to help you deepen your understanding of the game.
           </p>
         </div>
       </div>
@@ -124,10 +126,10 @@ const Guides = () => {
         <div className="agents-block">
           <div className="agents-wrapper" style={dominantEmptyStyle}>
             <div className="agents-empty">
-              <h3 className="agents-empty-title">
+              <h3 className="agents-empty-text">
                 No guides match your filters
               </h3>
-              <p className="agents-empty-text">Try different search terms.</p>
+              <p className="agents-empty-sub">Try different search terms.</p>
             </div>
           </div>
         </div>
@@ -151,6 +153,11 @@ const Guides = () => {
               >
                 <div className="guide-card-content">
                   <h3 className="guide-card-title">{guide.title}</h3>
+                  {guide.cover && (
+                    <div className="guide-card-cover">
+                      <img src={guide.cover} alt={guide.title} />
+                    </div>
+                  )}
                   <p className="guide-card-description">{guide.description}</p>
                   <div className="guide-card-tags">
                     {guide.tags.map((tag) => (
