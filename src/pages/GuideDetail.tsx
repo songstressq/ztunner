@@ -24,7 +24,7 @@ const GuideDetail = () => {
     const collectHeadings = () => {
       if (!contentRef.current) return false;
       const headings = Array.from(
-        contentRef.current.querySelectorAll("h2, h3, h4, h5, h6"),
+        contentRef.current.querySelectorAll("h2, h3"),
       );
       if (headings.length === 0) return false;
 
@@ -32,7 +32,7 @@ const GuideDetail = () => {
         headings.map((h) => ({
           id: h.id,
           text: h.textContent || "",
-          level: Number(h.tagName[1]) as 2 | 3 | 4 | 5 | 6,
+          level: h.tagName === "H2" ? 2 : 3,
         })),
       );
       return true;

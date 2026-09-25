@@ -9,26 +9,26 @@ published: true
 toc: true
 ---
 
-**Sharp DMG** is a brand-new damage type introduced alongside the **Armorer** specialty in Zenless Zone Zero Version 3.2, which brought Claret as an agent of this new class. To help you understand how Sharp Damage works in Zenless Zone Zero, here's a complete breakdown about this new mechanic, from the basic formula to the new sub-mechanics it introduces, Laceration DMG and Maim.
+**Sharp Damage** is a new damage type introduced alongside the **Armorer** specialty in Zenless Zone Zero Version 3.2, with Claret becoming the first agent of this new specialty. Unlike standard damage, **Sharp DMG** scales with DEF instead of ATK and replaces the traditional CRIT DMG system with Laceration DMG. To understand **how Sharp Damage works**, it is first important to look at what makes **Armorers** different from standard agents and how their damage system is structured.
 
 ## Introduction to Armorers
 
 Every agent in ZZZ deals damage through a standard formula:
 
 ```text
-Standard DMG = (ATK × SkillMult) × DefMult × DMG% × CRIT × RES × STUN ×Direct DMG%
+Standard DMG = (ATK × SkillMult) × DefMult × DMG% × CritMult × ResMult × StunMult × Direct DMG%
 ```
 
-Where `ATK` represents Attack and `CRIT` represents the CRIT DMG the agent has at the moment of applying their damage. However, Armorer agents change a few of these fundamental pieces to build their damage formula:
+Where `ATK` represents the agent's Attack, while `CritMult` is the critical hit multiplier determined by the hit's CRIT result and the agent's CRIT DMG. However, Armorer agents change a few of these fundamental pieces to build their damage formula:
 
-| Standard Agent        | Armorer Agent           |
-| --------------------- | ----------------------- |
-| Scales with ATK       | Scales with **DEF**     |
-| Uses CRIT DMG         | Uses **Laceration DMG** |
-| Single CRIT check     | Double Laceration check |
-| Normal DMG / CRIT DMG | Sharp DMG               |
+| Standard Agent    | Armorer Agent           |
+| ----------------- | ----------------------- |
+| Scales with ATK   | Scales with **DEF**     |
+| Uses CRIT DMG     | Uses **Laceration DMG** |
+| Single CRIT check | Double Laceration check |
+| Normal DMG        | Sharp DMG               |
 
-The result is a separate damage pipeline that can be represented as the **Sharp DMG Formula**. The interesting part is that, despite having its own mechanics, Sharp DMG still follows many of the same rules used by the game's existing damage systems. PEN, PEN Ratio, DEF Shred, RES Shred, and Stun Multiplier still play a role in this new mechanic. And, since I won my 50/50 for Claret, I was able to spend some time in the Training Room to bring you the following calculations:
+The result is a separate damage pipeline that can be represented as the **Sharp DMG Formula**. The interesting part is that, despite having its own mechanics, Sharp DMG still follows many of the same rules used by the game's existing damage systems. PEN, PEN Ratio, DEF Shred, RES Shred, and Stun Multiplier still play a role in this new mechanic. And, since I won my 50/50 for Clarett, I was able to spend some time in the Training Room testing these interactions firsthand.
 
 ## Sharp DMG Formula
 
@@ -40,7 +40,7 @@ Sharp DMG = (DEF × SkillMult)
           × DMG%
           × Lac₁
           × Lac₂
-          × SharpDMGBonus
+          × SharpDMG%
           × StunMult
           × ResMult
           × DirectDMG%
@@ -62,7 +62,7 @@ Sharp DMG = (DEF × SkillMult)
 
 At this point, the formula looks relatively simple. The real mystery starts with the two Laceration checks.
 
-## How Sharp DMG Works in ZZZ
+## How Sharp Damage works in ZZZ
 
 This is where **Sharp DMG** gets a little more interesting. The game actually gives us a pretty good hint about what's happening here in Claret's passive:
 
@@ -108,15 +108,15 @@ If both Lac₁ and Lac₂ succeed, the damage number is followed by **`!!!`** in
 
 One of the things I had to clarify was a possible third Laceration check, but I had no way to do it without Claret's Signature W-Engine. However, with some help from Ben, I was able to determine that **CRIT Rate above 200% does not provide another Laceration check** nor increase the second one beyond 100%.
 
-So, for **Sharp DMG**, 200% CRIT Rate is effectively the ceiling for the Laceration system, and going beyond this cap is effectively wasting stats rolls on your build.
+So, for **Sharp Damage**, 200% CRIT Rate is effectively the ceiling for the Laceration system. Beyond 200%, additional CRIT Rate provides no further benefit to Sharp DMG or its Laceration checks, making any CRIT Rate above this threshold effectively wasted for an Armorer's build.
 
 ## Laceration DMG
 
-**Laceration DMG** is the stat that replaces CRIT DMG for Armorers. Unlike CRIT DMG, which is a fixed percentage tied to a single CRIT check, Laceration DMG acts as a multiplier for each individual Laceration check. It is applied once when Lac₁ succeeds, and applied again as a separate multiplication when Lac₂ succeeds.
+**Laceration DMG** is the stat that replaces CRIT DMG for Armorers. Unlike CRIT DMG, which is a fixed percentage tied to a single CRIT check, Laceration DMG determines the multiplier applied when a Laceration check succeeds. It is applied once when Lac₁ succeeds, and applied again as a separate multiplication when Lac₂ succeeds.
 
 <div style={{ height: "var(--padding-6px)" }} />
 
-Claret starts with 150% Laceration DMG. So, at 150% Laceration DMG, each successful check is:
+Claret's base Laceration DMG is 150%.. So, at 150% Laceration DMG, each successful check is:
 
 ```text
 1 + 1.5 = 2.5×
@@ -152,7 +152,7 @@ Meanwhile, if both checks succeed:
 
 <div style={{ height: "var(--padding-6px)" }} />
 
-So, the higher the **Laceration DMG** stat, the more valuable it becomes in terms of final damage, and each source of Laceration DMG has a perhaps higher value for the specialty itself. Although such a stat still cannot be justified if its source is Koleda, if that's what you wanted to find out. If that's your case, literally any other Stunner will give you better results.
+So, the higher the **Laceration DMG** stat, the greater its impact on final damage, since each successful Laceration check applies the full Laceration DMG multiplier. This makes Laceration DMG particularly valuable for Armorers, as the stat can be applied independently by both Laceration checks when both are triggered.
 
 ## Maim DMG
 
@@ -166,13 +166,13 @@ Maim DMG = (DEF × MaimMult)
          × DMG%
          × Lac₁
          × Lac₂
-         × SharpDMGBonus
+         × SharpDMG%
          × StunMult
          × ResMult
          × DirectDMG%
 ```
 
-**Maim** uses the same Laceration system as normal **Sharp DMG**, and Laceration is still rolled for each Maim instance, which means it also benefits from the CRIT Rate the agent has. Maim is also a separate hit, with its own skill-specific **Maim Multiplier**, which is defined by the level of the skill that contains it.
+**Maim** uses the same Laceration system as normal **Sharp DMG**, and Laceration is still rolled for each Maim instance, which means it also benefits from the CRIT Rate the agent has. Maim is treated as a separate damage instance, using its own skill-specific **Maim Multiplier**, which is defined by the level of the skill that contains it.
 
 ### Formula Breakdown
 
@@ -188,17 +188,17 @@ Maim DMG = (DEF × MaimMult)
 | ResMult        | Enemy elemental resistance multiplier.                               |
 | DirectDMG%     | Damage bonus coming from the Contamination state.                    |
 
-For example, _Special Attack: Bloodbloom Oath – Cleaving Gold and Iron_ has a Maim multiplier ranging from 812.7% at Level 1 to 1921.2% at Level 16. Claret's _Mindscape Cinema N°1: Bloodstained Chronicle_ also increases the **Maim Multiplier** to 130% of its original value. If the enemy has one or more **Gash** stacks, dealing damage to them with a skill that contains a Maim Multiplier will apply a **Maim** instance per Gash stack consumed.
+For example, _Special Attack: Bloodbloom Oath – Cleaving Gold and Iron_ has a Maim multiplier ranging from 812.7% at Level 1 to 1921.2% at Level 16. Each consumed **Gash** stack triggers one **Maim** damage instance using the **Maim Multiplier** of the skill that triggered it. Since Claret can consume up to 3 Gash stacks at once, a single skill can generate up to 3 Maim instances.
 
-## Sharp DMG Bonus in Zenless Zone Zero
+## Sharp DMG Bonus
 
-**Sharp DMG Bonus** is an in-game bonus exclusive to Armorer agents, and is effectively the equivalent of what Sheer DMG Bonus is for Rupture Agents. Unlike normal Electric DMG Bonus, which would be part of the general DMG% pool, **Sharp DMG Bonus** is a separate multiplicative modifier applied after the Laceration checks.
+**Sharp DMG Bonus** is an in-game bonus exclusive to Armorer agents, and is effectively the equivalent of what Sheer DMG Bonus is for Rupture Agents. Unlike regular DMG Bonus values, **Sharp DMG Bonus** is not added to the general DMG% pool. Instead, it acts as a separate multiplicative modifier after both Laceration checks.
 
 ```text
-SharpDMGBonus = 1 + SharpDMGBonus%
+SharpDMG = 1 + SharpDMG%
 ```
 
-This means its value is much higher than that of an Electric DMG Bonus, which would be applied much earlier in the **Sharp DMG formula**. However, currently the only source of **Sharp DMG Bonus** is Claret's Signature W-Engine, Crimson Thirst, which grants a percentage of Electric Sharp DMG after using a Special Attack or triggering Maim. Although it is really beneficial for Claret, it doesn't make pulling for her Signature W-Engine 100% mandatory.
+This means its value is much higher than that of an Electric DMG Bonus, which would be applied much earlier in the **Sharp DMG formula**. However, currently the only source of **Sharp DMG Bonus** is Claret's Signature W-Engine, Crimson Thirst, which grants a percentage of Electric Sharp DMG after using a Special Attack or triggering Maim
 
 ## Final Sharp DMG Formula
 
@@ -207,11 +207,11 @@ So, to wrap up, the complete **Sharp DMG formula** is as follows:
 ```text
 Sharp DMG = (DEF × SkillMult)
           × [ALC / (ALC + max(0, (EnemyDEF × (1 − DefShred) × (1 − PEN Ratio)) − PEN))]
-          × (1 + global + skillType + element + exclusive + …)
-          × (1 + min(max(CR − 0%, 0), 100%) × LacDMG)
-          × (1 + min(max(CR − 100%, 0), 100%) × LacDMG)
-          × (1 + SharpDMGBonus)
-          × (1 + Stun / 100)
+          × (1 + DMG%)
+          × (1 + min(max(CR, 0), 1) × LacDMG)
+          × (1 + min(max(CR − 1, 0), 1) × LacDMG)
+          × (1 + SharpDMG%)
+          × (1 + Stun / 1)
           × (1 − (EnemyRES − RESShred))
 ```
 
@@ -223,15 +223,13 @@ Maim DMG = (DEF × MaimMult)
          × DMG%
          × (1 + min(max(CR, 0), 1) × LacDMG)
          × (1 + min(max(CR − 1, 0), 1) × LacDMG)
-         × (1 + SharpDMGBonus)
+         × (1 + SharpDMG%)
          × (1 + Stun / 100)
          × (1 − (EnemyRES − RESShred))
 ```
 
 ## Final Notes
 
-This article is based on experimental testing, in-game observations, official in-game descriptions, and reverse-engineering of Claret's damage pipeline in Zenless Zone Zero. The tested values consistently matched the proposed formulas, with only minor rounding differences.
+This article is based on experimental testing, in-game observations, official in-game descriptions, and reverse-engineering of Claret's damage pipeline in Zenless Zone Zero. The tested values consistently matched the proposed formulas, with only minor differences caused by in-game rounding.
 
-The same formula is currently used by the calculator you're visiting, so if you want to experiment with your own Claret's damage output, head over to the **Damage Calculator** section after replicating your build in the **Build Creator**.
-
-If you spot an incorrect number, interaction, or any other mistake, don't hesitate to let me know so I can fix it as soon as possible.
+These formulas are also implemented in the Z-TUNNER Damage Calculator, allowing you to test Sharp DMG and Maim interactions using your own Claret build. If you spot an incorrect number, interaction, or any other mistake, don't hesitate to let me know so I can fix it as soon as possible.
