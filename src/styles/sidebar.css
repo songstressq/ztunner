@@ -57,7 +57,7 @@
 .sidebar-link {
   display: flex;
   align-items: center;
-  height: var(--sidebar-80px);
+  height: var(--sidebar-75px);
   flex-shrink: 0;
   color: #ffffff7e;
   text-decoration: none;
@@ -77,7 +77,7 @@
 
 /* ÍCONOS */
 .item-icon {
-  width: var(var(--sidebar-50px));
+  width: var(--sidebar-50px);
   height: var(--sidebar-50px);
   margin-left: var(--sidebar-22_5px);
   transform: rotate(0deg);

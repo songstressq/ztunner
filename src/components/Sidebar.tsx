@@ -112,6 +112,7 @@ const Sidebar = () => {
           </Link>
         </li>
 
+        {/*
         <li className="sidebar-item">
           <Link
             to="/zzz-disc-inventory"
@@ -125,7 +126,7 @@ const Sidebar = () => {
             <span className="item-text">Disc Inventory</span>
           </Link>
         </li>
-
+*/}
         <li className="sidebar-item">
           <Link
             to="/guides"
