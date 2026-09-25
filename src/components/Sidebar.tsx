@@ -128,6 +128,20 @@ const Sidebar = () => {
 
         <li className="sidebar-item">
           <Link
+            to="/guides"
+            className="sidebar-link"
+            onClick={() => handleLinkClick("/guides")}
+          >
+            <img
+              src="/resources/images/sidebar/guides.png"
+              className="item-icon"
+            />
+            <span className="item-text">Guides</span>
+          </Link>
+        </li>
+
+        <li className="sidebar-item">
+          <Link
             to="/info-settings"
             className="sidebar-link"
             onClick={() => handleLinkClick("/info-settings")}
