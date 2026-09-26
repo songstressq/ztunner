@@ -701,7 +701,7 @@ export default function SkillCalculator({
         total += effect.aftershockDefShred * (state.stacks || 1);
       }
     });
-    return total;
+    return Math.min(total, 1);
   };
 
   const aftershockDefShredTotal = calculateAftershockDefShred();
@@ -844,17 +844,19 @@ export default function SkillCalculator({
       effectDefShredEffective = calculateTotalDefShred(allActiveEffects, true);
     }
 
+    const aftershockContribution =
+      damageSubtype === "aftershock" ? aftershockDefShredTotal : 0;
+
     const totalDefShredWithBonus = Math.min(
       effectDefShredEffective +
         wEngineDefShred +
         skillTypeDefShred +
-        additionalDefShred,
+        additionalDefShred +
+        aftershockContribution,
       1,
     );
-    let defenseAfterShred = enemyDef * (1 - totalDefShredWithBonus);
-    if (damageSubtype === "aftershock" && aftershockDefShredTotal > 0) {
-      defenseAfterShred = defenseAfterShred * (1 - aftershockDefShredTotal);
-    }
+
+    const defenseAfterShred = enemyDef * (1 - totalDefShredWithBonus);
 
     const penRatio =
       overridePenRatio !== undefined
@@ -2006,6 +2008,9 @@ export default function SkillCalculator({
           selectedEnemyId={selectedEnemyId}
           onEnemyChange={setSelectedEnemyId}
           defReduction={totalDefShred}
+          aftershockDefShred={aftershockDefShredTotal}
+          penRatio={unifiedStats.penRatio || 0}
+          pen={unifiedStats.pen || 0}
           theme={agent?.themeColor || "#7EFFDB"}
         />
 

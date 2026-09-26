@@ -434,7 +434,13 @@
         "description": "When off-field with 60 or more Energy, automatically triggers during ally attacks:\n\nPerforms a sweeping laser attack in an area around, dealing Fire DMG. Upon activating this skill, restore 20 Bottled Heat. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "atk",
-        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
         "levels": [
           { "level": 1, "multipliers": [678.4] },
           { "level": 2, "multipliers": [740.1] },
@@ -492,7 +498,13 @@
         "description": "Automatically activates after /bEX Special Attack: Heat Charge//b reaches maximum firing time:\n\nPerforms a spinning attack forward, then fires a laser ahead dealing Fire DMG. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "atk",
-        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire",
+            "damageSubtype": "aftershock"
+          }
+        ],
         "levels": [
           { "level": 1, "multipliers": [259.6] },
           { "level": 2, "multipliers": [283.2] },

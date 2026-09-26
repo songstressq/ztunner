@@ -7,6 +7,9 @@ interface EnemySelectorProps {
   selectedEnemyId: string;
   onEnemyChange: (enemyId: string) => void;
   defReduction?: number;
+  aftershockDefShred?: number;
+  penRatio?: number;
+  pen?: number;
   className?: string;
   theme?: string;
 }
@@ -15,6 +18,9 @@ export default function EnemySelector({
   selectedEnemyId,
   onEnemyChange,
   defReduction = 0,
+  aftershockDefShred = 0,
+  penRatio = 0,
+  pen = 0,
   className = "",
   theme = "#7EFFDB",
 }: EnemySelectorProps) {
@@ -51,11 +57,16 @@ export default function EnemySelector({
     }
   };
 
-  const getEffectiveDefense = () => {
-    if (!selectedEnemy || defReduction <= 0)
-      return selectedEnemy?.stats.def || 572;
-    return selectedEnemy.stats.def * (1 - defReduction);
+  const applyDefChain = (shred: number) => {
+    const baseDef = selectedEnemy?.stats.def ?? 572;
+    const afterShred = baseDef * (1 - Math.min(shred, 1));
+    const afterPenRatio =
+      penRatio > 0 ? afterShred * (1 - penRatio) : afterShred;
+    const afterPen = pen > 0 ? Math.max(0, afterPenRatio - pen) : afterPenRatio;
+    return { baseDef, afterShred, afterPenRatio, afterPen };
   };
+
+  const normalChain = applyDefChain(defReduction);
 
   const groupedOptions = () => {
     const groups: Record<string, Enemy[]> = {};
@@ -115,13 +126,29 @@ export default function EnemySelector({
             </span>
           </div>
           <div className="enemy_selector-content_row">
-            <span>DEF: {selectedEnemy.stats.def.toFixed(0)}</span>
+            <span>DEF: {normalChain.baseDef.toFixed(0)}</span>
           </div>
           {defReduction > 0 && (
             <div className="enemy_selector-content_row enemy_selector-content_row--shred">
               <span>
-                DEF (After {Math.round(defReduction * 100)}% Shred):{" "}
-                {getEffectiveDefense().toFixed(0)}
+                DEF After {Math.round(defReduction * 100)}% DEF Shred:{" "}
+                {normalChain.afterShred.toFixed(0)}
+              </span>
+            </div>
+          )}
+          {penRatio > 0 && (
+            <div className="enemy_selector-content_row enemy_selector-content_row--shred">
+              <span>
+                DEF After {(penRatio * 100).toFixed(1)}% PEN Ratio:{" "}
+                {normalChain.afterPenRatio.toFixed(0)}
+              </span>
+            </div>
+          )}
+          {pen > 0 && (
+            <div className="enemy_selector-content_row enemy_selector-content_row--shred">
+              <span>
+                DEF After {pen.toFixed(0)} PEN:{" "}
+                {normalChain.afterPen.toFixed(0)}
               </span>
             </div>
           )}

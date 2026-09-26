@@ -144,7 +144,7 @@ export default function DefensesBonusesPanel({
       {defensesBonuses.allResShred.total > 0 && (
         <div className="damage_panel-header_container">
           <span className="damage_panel-header_text">
-            All-Attribute RES Ignore:
+            All-Attribute RES Shred:
           </span>
           <span className="damage_panel-header_tag">
             {formatPercentage(defensesBonuses.allResShred.total)}
@@ -156,7 +156,7 @@ export default function DefensesBonusesPanel({
       {defensesBonuses.totalAftershockDefShred > 0 && (
         <div className="damage_panel-header_container">
           <span className="damage_panel-header_text">
-            Total Aftershock DEF Ignore:
+            Total Aftershock DEF Shred:
           </span>
           <span className="damage_panel-header_tag">
             {formatPercentage(defensesBonuses.totalAftershockDefShred)}
@@ -222,7 +222,7 @@ export default function DefensesBonusesPanel({
               {expandedSections.allResShred ? "▼" : "▶"}
             </span>
             <span className="damage_panel-item_header-title">
-              All-Attribute RES Ignore
+              All-Attribute RES Shred
             </span>
             <span className="damage_panel-item_header-tag">
               +{formatPercentage(defensesBonuses.allResShred.total)}
@@ -269,7 +269,7 @@ export default function DefensesBonusesPanel({
               {expandedSections.resShred ? "▼" : "▶"}
             </span>
             <span className="damage_panel-item_header-title">
-              Elemental RES Ignore
+              Elemental RES Shred
             </span>
           </div>
           {expandedSections.resShred && (
@@ -282,7 +282,7 @@ export default function DefensesBonusesPanel({
                   <div className="damage_panel-item_summary-subitem_header">
                     <span>{getElementIcon(element)}</span>
                     <span className="damage_panel-item_summary-subitem_title">
-                      {capitalize(element)} RES Ignore
+                      {capitalize(element)} RES Shred
                     </span>
                     <span className="damage_panel-item_summary-subitem_tag">
                       +{formatPercentage(total)}
@@ -394,7 +394,7 @@ export default function DefensesBonusesPanel({
               {expandedSections.aftershockDefShred ? "▼" : "▶"}
             </span>
             <span className="damage_panel-item_header-title">
-              Aftershock DEF Ignore
+              Aftershock DEF Shred
             </span>
             <span className="damage_panel-item_header-tag">
               +{formatPercentage(defensesBonuses.totalAftershockDefShred)}
@@ -434,7 +434,7 @@ export default function DefensesBonusesPanel({
       {!hasActiveBonuses() && (
         <div className="damage_panel-no_active_bonuses">
           <p className="damage_panel-no_effects_found">
-            No active DEF Shred or RES Ignore bonuses
+            No active DEF Shred or RES Shred bonuses
           </p>
           <p className="damage_panel-enable_some_effects">
             Enable some in-game effects in the effects section above to see them

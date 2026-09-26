@@ -164,11 +164,12 @@ export function collectDefenseBonuses(
       return resKeys.map((k) => (source?.[k] ?? 0) * stacks);
     };
 
-    // ---- FLAT ----
+    // ── FLAT ──
     if (effect.flat) {
       const flatValues = getResValues(effect.flat);
       const allSame =
         flatValues.every((v) => v === flatValues[0]) && flatValues[0] > 0;
+
       if (allSame && flatValues[0] > 0) {
         addSource(flatValues[0], "allResShred", effect, stacks);
       } else {
@@ -180,17 +181,20 @@ export function collectDefenseBonuses(
           }
         });
       }
+
       if (effect.flat.defShred) {
         addSource(effect.flat.defShred * stacks, "defShred", effect, stacks);
       }
-      if ((effect as any).aftershockDefShred) {
-        addSource(
-          (effect as any).aftershockDefShred * stacks,
-          "aftershockDefShred",
-          effect,
-          stacks,
-        );
-      }
+    }
+
+    // ── AFTERSHOCK DEF IGNORE (top-level, no vive dentro de flat) ──
+    if ((effect as any).aftershockDefShred) {
+      addSource(
+        (effect as any).aftershockDefShred * stacks,
+        "aftershockDefShred",
+        effect,
+        stacks,
+      );
     }
 
     // ---- PER STACK ----

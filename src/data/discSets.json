@@ -700,6 +700,19 @@
     "stats4": {},
     "ingameEffects": [
       {
+        "id": "shadow_harmony_2",
+        "source": "discSet",
+        "label": "Shadow Harmony (2 Piece Bonus)",
+        "description": "The DMG of Aftershocks and Dash Attacks is increased by 15%.",
+        "shortDescription": "The equipper's DMG from Aftershocks and Dash Attacks is increased by 15%.",
+        "target": "self",
+        "damageBonuses": [
+          { "type": "element", "element": "aftershock", "value": 0.15 },
+          { "type": "skillType", "skillType": "dash", "value": 0.15 }
+        ],
+        "infoOnly": false
+      },
+      {
         "id": "shadow_harmony_4",
         "source": "discSet",
         "label": "Shadow Harmony (4 Piece Bonus)",

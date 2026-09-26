@@ -31,26 +31,17 @@
         },
         {
           "id": "room_2",
-          "label": "Room 2: Girtablullu - Stagnant Aberrant",
+          "label": "Room 2: Miasmic Fiend - Unfathomable",
           "effects": [
             {
               "id": "game_mode_da_room2_effect_a",
-              "label": "Girtablullu - Stagnant Aberrant - Anomaly DMG",
-              "description": "When an Agent inflicts an Attribute Anomaly on an enemy, the target enemy gains 1 stack of Blight Mark of the corresponding attribute, lasting 30s and stacking up to 2 times. Repeated triggers of same-attribute Blight Mark reset its duration. For every stack of Blight Mark inflicted, the enemies take 8% more Attribute Anomaly DMG, and DMG taken by Corruptive Barried increased by 8%. ...",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is increased by 8% for 30s, stacking up to 2 times.",
+              "label": "Miasmic Fiend - Unfathomable - Anomaly DMG",
+              "description": "When Miasmic Fiend is affected by Attribute Anomaly, it takes 8% bonus Anomaly DMG from Agents, stacking up to 6 times; activating Miasmic Shield clears all stacks, with each stack incerasing the reduction efficiency of Miasmic Shield by 2.5%. ...",
+              "shortDescription": "All squad members' DMG from Attribute Anomalies is increased by 8% for 30s, stacking up to 6 times.",
               "source": "gameMode",
               "target": "team",
               "perStack": { "anomalyDmgBonus": 0.08 },
-              "maxStacks": 2
-            },
-            {
-              "id": "game_mode_da_room2_effect_b",
-              "label": "Girtablullu - Stagnant Aberrant - Anomaly Proficiency",
-              "description": "... When inflicting Impaired or Shutdown on an enemy, the whole squad's Anomaly Proficiency increases by 60 pts, lasting 30s. Repeated triggers reset the duration.",
-              "shortDescription": "All squad members' Anomaly Proficiency is increased by 60 for 30s.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "anomalyProficiency": 60 }
+              "maxStacks": 6
             }
           ]
         },
@@ -61,7 +52,7 @@
             {
               "id": "game_mode_da_room3_effect_a",
               "label": "Ye Shiyuan the Thrall - CRIT DMG",
-              "description": "When Sobek and The Thrall alternate turns, The Thrall gains 1 stack of Contract and Self-Sacrifice. Contract and Self-Sacrifice can stack up to 3 times. Each stack of Contract increases All-Attribute Anomaly Buildup RES by 15%, each stack of Self-Sacrifice reduces The Thrall's DEF by 8%. Ehen The Thrall is Stunned, CRIT DMG taken increses by 50%. ...",
+              "description": "When Sobek and The Thrall alternate turns, The Thrall gains 1 stack of Contract and Self-Sacrifice. Contract and Self-Sacrifice can stack up to 3 times. Each stack of Contract increases All-Attribute Anomaly Buildup RES by 15%, each stack of Self-Sacrifice reduces The Thrall's DEF by 8%. When The Thrall is Stunned, CRIT DMG taken increses by 50%. ...",
               "shortDescription": "All squad members' CRIT DMG is increased by 50%.",
               "source": "gameMode",
               "target": "team",
