@@ -183,24 +183,6 @@
       }
     },
     {
-      "id": "remielle_dan-core_1-invitation_to_bloom",
-      "source": "core",
-      "sourceId": "remielle-core",
-      "label": "Invitation to Bloom (Additional Ability)",
-      "description": "When another character in your squad is an Anomaly character or shares the same faction:\n\nWhen there are 1/2/3 Anomaly characters in the squad, upon entering the battlefield, all squad members gain an ATK increase equal to 6%/12%/40% of Remielle's initial ATK, up to a maximum increase of 1,600 ATK. Remielle's Daze dealt while in the Phase Flow state increases by 6%/12%/35%. ...",
-      "shortDescription": "With 1 Anomaly agent in the squad, all squad members' ATK is increased based on Remielle's initial ATK.",
-      "target": "team",
-      "conditional": {
-        "type": "initialStatBased",
-        "basedOn": "atk",
-        "maxStat": 26666.67,
-        "baseBonus": 0,
-        "perUnit": 1,
-        "skillLevels": [{ "level": 1, "maxBonus": 1600, "perUnitBonus": 0.06 }],
-        "affectedStats": ["atkFlatRaw"]
-      }
-    },
-    {
       "id": "remielle_dan-core_2-invitation_to_bloom",
       "source": "core",
       "sourceId": "remielle-core",
@@ -263,7 +245,10 @@
       "shortDescription": "The remaining squad members' DMG from Attribute Anomalies is increased by 10%.",
       "target": "team",
       "damageBonuses": [{ "type": "anomalyDmgBonus", "value": 0.1 }],
-      "condition": { "excludeOwner": true }
+      "condition": {
+        "excludeOwner": true,
+        "requiresReceiverSpecialty": "Anomaly"
+      }
     },
     {
       "id": "remielle-mindscape_2-fall_into_the_noise_1",
@@ -283,7 +268,7 @@
       "description": "Remielle's Refringe Coefficient increases by 20%. When an Anomaly character in the squad deals Anomaly DMG to an enemy affected by Prismatic, the attack ignores 15% of the target's DEF. This effect persists for an additional 8s after Prismatic ends. While Remielle is in the Phase Flow state, the frequency at which she automatically attacks to apply Lumiflux Buildup to enemies increases.",
       "shortDescription": "Anomaly squad members' DMG from Attribute Anomalies ignores the 15% of the target's DEF.",
       "target": "team",
-      "flat": { "defShred": 0.2 },
+      "flat": { "defShred": 0.15 },
       "condition": { "appliesToAnomalyOnly": true }
     },
     {

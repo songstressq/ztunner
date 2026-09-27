@@ -1280,3 +1280,23 @@
     }
   ]
 }
+
+
+ {
+      "id": "remielle_dan-core_1-invitation_to_bloom",
+      "source": "core",
+      "sourceId": "remielle-core",
+      "label": "Invitation to Bloom (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same faction:\n\nWhen there are 1/2/3 Anomaly characters in the squad, upon entering the battlefield, all squad members gain an ATK increase equal to 6%/12%/40% of Remielle's initial ATK, up to a maximum increase of 1,600 ATK. Remielle's Daze dealt while in the Phase Flow state increases by 6%/12%/35%. ...",
+      "shortDescription": "With 1 Anomaly agent in the squad, all squad members' ATK is increased based on Remielle's initial ATK.",
+      "target": "team",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "atk",
+        "maxStat": 26666.67,
+        "baseBonus": 0,
+        "perUnit": 1,
+        "skillLevels": [{ "level": 1, "maxBonus": 1600, "perUnitBonus": 0.06 }],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },

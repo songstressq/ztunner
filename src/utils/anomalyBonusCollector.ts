@@ -92,6 +92,7 @@ export function collectAnomalyBonuses(
   realTimeOwnerStats: Record<string, UnifiedStats> = {},
   currentAgentId?: string,
   previousAttribute?: AttributeType,
+  currentAgentSpecialty?: string,
 ): AnomalyBonuses {
   if (!effects || !Array.isArray(effects)) {
     return {
@@ -140,6 +141,15 @@ export function collectAnomalyBonuses(
         ANOMALY_DEFINITIONS[previousAttribute]?.attribute || previousAttribute;
       if (
         previousBaseAttribute !== effect.condition.requiresDisorderAttribute
+      ) {
+        continue;
+      }
+    }
+    if (effect.condition?.requiresReceiverSpecialty) {
+      if (
+        !currentAgentSpecialty ||
+        currentAgentSpecialty.toLowerCase().trim() !==
+          effect.condition.requiresReceiverSpecialty.toLowerCase().trim()
       ) {
         continue;
       }

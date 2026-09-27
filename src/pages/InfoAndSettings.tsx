@@ -267,6 +267,40 @@ const InfoAndSettings = () => {
               />
 
               <div className="changelog_grid">
+                {/* v1.1.2 */}
+                <div className="home_content_changelog_item">
+                  <span>v1.1.2 — Contamination State</span>
+                  <h3>● Added - Contamination State's Direct DMG</h3>
+                  <p>
+                    Added calculations for the Direct DMG bonuses granted by the
+                    Contamination state, including its interaction with the
+                    triggering attribute. This was mainly added with Roxy in
+                    mind, as her being a Wind Stunner will make Wind more common
+                    in different team compositions.
+                  </p>
+                </div>
+                {/* v1.1.1 */}
+                <div className="home_content_changelog_item">
+                  <span>v1.1.1 — Minor Fixes &amp; Updates</span>
+                  <h3>● Fixed - In-Game Toggle Calculations</h3>
+                  <p>
+                    Fixed calculations and summary display issues for in-game
+                    toggles that interact with Initial Stats or Current Stats in
+                    the Damage Calculator.
+                  </p>
+
+                  <h3>● Minor UI fixes and agent-related updates.</h3>
+                  <p>
+                    Fixed Rina's Mini Destruction Partner (Core Passive) in-game
+                    effect.
+                    <br />
+                    Fixed Rina's Dance Duet (Mindscape Cinema N°1) in-game
+                    effect.
+                    <br />
+                    Fixed Jane Doe's Crime Counsel (Mindscape Cinema N°1)
+                    in-game effect.
+                  </p>
+                </div>
                 {/* v1.1.0 */}
                 <div className="home_content_changelog_item">
                   <span>v1.1.0 — Armorer Update</span>

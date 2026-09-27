@@ -40,10 +40,9 @@ const WEngineEffectToggle = ({
   const [localOverclock, setLocalOverclock] = useState(overclockLevel);
 
   const isApplicable =
-    effect.target === "self"
-      ? !effect.condition?.requiresSpecialty ||
-        agentSpecialty === effect.condition.requiresSpecialty
-      : true;
+    !effect.condition?.requiresSpecialty ||
+    !agentSpecialty ||
+    agentSpecialty === effect.condition.requiresSpecialty;
 
   const hasWEngineConfig = effect.wEngineOverclock?.levels?.length > 0;
   const maxOverclock = effect.wEngineOverclock?.levels?.length || 5;
@@ -182,8 +181,8 @@ const WEngineEffectToggle = ({
           )}
           <div className="ingame_toggle-title-section">
             <strong>{effect.label}</strong>
-            {/* Mostrar icono de especialidad si aplica */}
-            {effect.condition?.requiresSpecialty && (
+            {/* Mostrar icono de especialidad si aplica (solo si no viene de otro slot) */}
+            {effect.condition?.requiresSpecialty && !sourceNote && (
               <div
                 className="ingame_toggle-agent_specialty"
                 style={{
@@ -417,10 +416,10 @@ const WEngineEffectToggle = ({
         {(!isApplicable || disabled) && (
           <div className="ingame_toggle-disabled_section">
             <p>
-              {!isApplicable
-                ? `Not applicable for ${agentSpecialty} agents`
-                : sourceNote
-                  ? `Effect received from ${sourceNote}`
+              {sourceNote
+                ? `Effect received from ${sourceNote}`
+                : !isApplicable
+                  ? `Not applicable for ${agentSpecialty} agents`
                   : "Controlled by another slot"}
             </p>
           </div>

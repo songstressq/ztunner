@@ -430,6 +430,7 @@ export default function AnomalyCalculator({
       {},
       agent.id,
       selectedPreviousAttribute as AttributeType,
+      agent.specialty,
     );
   }, [
     JSON.stringify(allEffects?.map((e) => e.id).sort()),
@@ -450,6 +451,7 @@ export default function AnomalyCalculator({
     unifiedStats.penRatio,
     JSON.stringify(realTimeOwnerStats),
     selectedPreviousAttribute,
+    agent.specialty,
   ]);
 
   const computedTotalBonusDamage = useMemo(() => {
@@ -953,6 +955,7 @@ export default function AnomalyCalculator({
         calculateRealDamage,
         additionalMV: 0,
         isVortex: true,
+        refringeCoefficient: unifiedStats._refringeCoefficient || 0,
       });
       setDisorderResult({
         timeRemaining: disorderTimeRemaining,
@@ -963,8 +966,12 @@ export default function AnomalyCalculator({
         previousAttribute: selectedAttribute,
         totalBonusDamageUsed: sourceTotalBonusDamage,
         sourceAtk: sourceStats.atk,
+        sourceAp: sourceStats.anomalyProficiency,
+        sourcePen: sourceStats.pen || 0,
+        sourcePenRatio: sourceStats.penRatio || 0,
         dmgMod: result.dmgMod ?? 1,
         buffMod: result.buffMod ?? 1,
+        refringeMod: result.refringeMod ?? 1,
       });
     } else {
       const slotBonuses = {
@@ -981,6 +988,7 @@ export default function AnomalyCalculator({
         slotBonuses,
         stunMultiplier,
         calculateRealDamage,
+        refringeCoefficient: unifiedStats._refringeCoefficient || 0,
       });
       setDisorderResult({
         timeRemaining: disorderTimeRemaining,
@@ -991,8 +999,12 @@ export default function AnomalyCalculator({
         previousAttribute: selectedAttribute,
         totalBonusDamageUsed: sourceTotalBonusDamage,
         sourceAtk: sourceStats.atk,
+        sourceAp: sourceStats.anomalyProficiency,
+        sourcePen: sourceStats.pen || 0,
+        sourcePenRatio: sourceStats.penRatio || 0,
         dmgMod: disorderResultCalc.dmgMod ?? 1,
         buffMod: disorderResultCalc.buffMod ?? 1,
+        refringeMod: disorderResultCalc.refringeMod ?? 1,
       });
     }
   }, [
@@ -1148,7 +1160,9 @@ export default function AnomalyCalculator({
       slotBonuses,
       stunMultiplier,
       calculateRealDamage,
+      refringeCoefficient: unifiedStats._refringeCoefficient || 0,
     });
+
     const newAliceDisorderResult = {
       timeRemaining: aliceTimeRemaining,
       timePassed,
@@ -1158,8 +1172,12 @@ export default function AnomalyCalculator({
       previousAttribute: selectedAttribute,
       totalBonusDamageUsed: sourceTotalBonusDamage,
       sourceAtk: sourceStats.atk,
+      sourceAp: sourceStats.anomalyProficiency,
+      sourcePen: sourceStats.pen || 0,
+      sourcePenRatio: sourceStats.penRatio || 0,
       dmgMod: disorderResultCalc.dmgMod ?? 1,
       buffMod: disorderResultCalc.buffMod ?? 1,
+      refringeMod: disorderResultCalc.refringeMod ?? 1,
     };
     setAliceDisorderResult(newAliceDisorderResult);
   }, [
@@ -1460,6 +1478,49 @@ export default function AnomalyCalculator({
     }
   }, [selectedNangongSlot, nangongSlotStillValid, setNangongPolaritySource]);
 
+  const getEffectiveDefForDisplay = (
+    overridePen?: number,
+    overridePenRatio?: number,
+  ) => {
+    if (!selectedEnemy) return 0;
+    const enemyDef = selectedEnemy.stats.def;
+
+    // Mismo path que calculateRealDamage con isAnomalyDefShredOnly = true
+    let defShredTotal = 0;
+    Object.entries(activeEffects).forEach(([effectId, state]) => {
+      if (!state.enabled) return;
+      const effect = ingameEffectsRegistry[effectId];
+      if (!effect) return;
+      if (
+        effect.condition?.requiresSpecialty &&
+        effect.condition.requiresSpecialty !== agent.specialty
+      ) {
+        return;
+      }
+      const stacks = state.stacks || 1;
+      if (effect.flat?.defShred) {
+        defShredTotal += effect.flat.defShred * stacks;
+      }
+      if (effect.perStack?.defShred) {
+        defShredTotal += effect.perStack.defShred * stacks;
+      }
+    });
+    defShredTotal = Math.min(defShredTotal, 1);
+
+    const penRatio =
+      overridePenRatio !== undefined
+        ? overridePenRatio
+        : (disorderResult.sourcePenRatio ?? unifiedStats.penRatio ?? 0);
+    const penFlat =
+      overridePen !== undefined
+        ? overridePen
+        : (disorderResult.sourcePen ?? unifiedStats.pen ?? 0);
+
+    const afterShred = enemyDef * (1 - defShredTotal);
+    const afterPen = Math.max(0, afterShred * (1 - penRatio) - penFlat);
+    return Math.round(afterPen);
+  };
+
   if (!selectedEnemy) return null;
 
   return (
@@ -1643,10 +1704,50 @@ export default function AnomalyCalculator({
                   </div>
                 );
               })()}
+
+              {/* Paso 8: Refringe Mod - Solo Remielle */}
+              {anomalyResult.refringeMod &&
+                anomalyResult.refringeMod !== 1 &&
+                (() => {
+                  const beforeValue =
+                    anomalyResult.withBuffLevel ?? anomalyResult.withAP ?? 0;
+                  const dmgMod = anomalyResult.dmgMod ?? 1;
+                  const buffMod = anomalyResult.buffMod ?? 1;
+                  const refringeMod = anomalyResult.refringeMod ?? 1;
+                  const withBuff = beforeValue * dmgMod * buffMod;
+                  const withRefringe = withBuff * refringeMod;
+                  const refringePercent =
+                    Math.round((refringeMod - 1) * 100 * 10) / 10;
+                  return (
+                    <div className="anomaly-grid-row">
+                      <div className="anomaly-row-cell step">⑧</div>
+                      <div className="anomaly-row-cell calculation">
+                        <span className="calc-label">Refringe Mod</span>
+                        <span className="calc-detail">
+                          {" "}
+                          +{refringePercent.toFixed(1)}%{" "}
+                        </span>
+                      </div>
+                      <div className="anomaly-row-cell before">
+                        {Math.round(withBuff).toLocaleString()}
+                      </div>
+                      <div className="anomaly-row-cell arrow">×</div>
+                      <div className="anomaly-row-cell after highlight-bonus">
+                        {Math.round(withRefringe).toLocaleString()}
+                      </div>
+                    </div>
+                  );
+                })()}
+
               {/* Stun */}
               {stunMultiplier > 0 && (
                 <div className="anomaly-grid-row stun-row">
-                  <div className="anomaly-row-cell step">⑦</div>
+                  <div className="anomaly-row-cell step">
+                    {anomalyResult.refringeMod &&
+                    anomalyResult.refringeMod !== 1
+                      ? "⑨"
+                      : "⑧"}
+                  </div>
                   <div className="anomaly-row-cell calculation">
                     <span className="calc-label">Stun</span>
                     <span className="calc-detail">+{stunMultiplier}%</span>
@@ -1670,7 +1771,14 @@ export default function AnomalyCalculator({
                     {" "}
                     Final {capitalize(definition.anomalyType)} DMG{" "}
                   </span>
-                  <span className="total-target">vs {selectedEnemy.name}</span>
+                  <span className="total-target">
+                    vs {selectedEnemy.name} (DEF:{" "}
+                    {getEffectiveDefForDisplay(
+                      unifiedStats.pen || 0,
+                      unifiedStats.penRatio || 0,
+                    ).toLocaleString()}
+                    )
+                  </span>
                 </div>
                 <div className="anomaly-row-cell before" />
                 <div className="anomaly-row-cell arrow">=</div>
@@ -1923,17 +2031,73 @@ export default function AnomalyCalculator({
                   ).toLocaleString()}
                 </div>
               </div>
-              {/* Paso ⑤: DMG% Mod */}
+
+              {/* Paso ⑤: AP Multiplier */}
               {(() => {
-                const beforeValue =
+                const baseDamage =
                   (disorderResult.sourceAtk ?? unifiedStats.atk) *
                   disorderResult.multiplier;
+                const ap =
+                  disorderResult.sourceAp ?? unifiedStats.anomalyProficiency;
+                const apMultiplier = ap / 100;
+                return (
+                  <div className="anomaly-grid-row">
+                    <div className="anomaly-row-cell step">⑤</div>
+                    <div className="anomaly-row-cell calculation">
+                      <span className="calc-label">AP Multiplier</span>
+                      <span className="calc-detail"> {ap} AP × 0.01 </span>
+                    </div>
+                    <div className="anomaly-row-cell before">
+                      {Math.round(baseDamage).toLocaleString()}
+                    </div>
+                    <div className="anomaly-row-cell arrow">×</div>
+                    <div className="anomaly-row-cell after highlight-ap">
+                      {apMultiplier.toFixed(2)}
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* Paso ⑥: Buff Level */}
+              {(() => {
+                const baseDamage =
+                  (disorderResult.sourceAtk ?? unifiedStats.atk) *
+                  disorderResult.multiplier;
+                const ap =
+                  disorderResult.sourceAp ?? unifiedStats.anomalyProficiency;
+                const withAP = baseDamage * (ap / 100);
+                return (
+                  <div className="anomaly-grid-row">
+                    <div className="anomaly-row-cell step">⑥</div>
+                    <div className="anomaly-row-cell calculation">
+                      <span className="calc-label">Buff Level</span>
+                      <span className="calc-detail">Lv.60 Multiplier</span>
+                    </div>
+                    <div className="anomaly-row-cell before">
+                      {Math.round(withAP).toLocaleString()}
+                    </div>
+                    <div className="anomaly-row-cell arrow">×</div>
+                    <div className="anomaly-row-cell after highlight-ap">
+                      2.00
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* Paso ⑦: DMG% Mod */}
+              {(() => {
+                const baseDamage =
+                  (disorderResult.sourceAtk ?? unifiedStats.atk) *
+                  disorderResult.multiplier;
+                const ap =
+                  disorderResult.sourceAp ?? unifiedStats.anomalyProficiency;
+                const beforeValue = baseDamage * (ap / 100) * 2;
                 const dmgMod = disorderResult.dmgMod ?? 1;
                 const withDMG = beforeValue * dmgMod;
                 const dmgPercent = Math.round((dmgMod - 1) * 100 * 10) / 10;
                 return (
                   <div className="anomaly-grid-row">
-                    <div className="anomaly-row-cell step">⑤</div>
+                    <div className="anomaly-row-cell step">⑦</div>
                     <div className="anomaly-row-cell calculation">
                       <span className="calc-label">DMG% Mod</span>
                       <span className="calc-detail">
@@ -1951,11 +2115,15 @@ export default function AnomalyCalculator({
                   </div>
                 );
               })()}
-              {/* Paso ⑥: Disorder Bonus */}
+
+              {/* Paso ⑧: Disorder Bonus (o Vortex Bonus si es Wind) */}
               {(() => {
-                const beforeValue =
+                const baseDamage =
                   (disorderResult.sourceAtk ?? unifiedStats.atk) *
                   disorderResult.multiplier;
+                const ap =
+                  disorderResult.sourceAp ?? unifiedStats.anomalyProficiency;
+                const beforeValue = baseDamage * (ap / 100) * 2;
                 const dmgMod = disorderResult.dmgMod ?? 1;
                 const withDMG = beforeValue * dmgMod;
                 const buffMod = disorderResult.buffMod ?? 1;
@@ -1963,9 +2131,11 @@ export default function AnomalyCalculator({
                 const buffPercent = Math.round((buffMod - 1) * 100 * 10) / 10;
                 return (
                   <div className="anomaly-grid-row">
-                    <div className="anomaly-row-cell step">⑥</div>
+                    <div className="anomaly-row-cell step">⑧</div>
                     <div className="anomaly-row-cell calculation">
-                      <span className="calc-label">Disorder Bonus</span>
+                      <span className="calc-label">
+                        {isWindAgent ? "Vortex Bonus" : "Disorder Bonus"}
+                      </span>
                       <span className="calc-detail">
                         {" "}
                         +{buffPercent.toFixed(1)}%{" "}
@@ -1981,10 +2151,54 @@ export default function AnomalyCalculator({
                   </div>
                 );
               })()}
+
+              {/* Paso ⑨: Refringe Mod */}
+              {disorderResult.refringeMod &&
+                disorderResult.refringeMod !== 1 &&
+                (() => {
+                  const baseDamage =
+                    (disorderResult.sourceAtk ?? unifiedStats.atk) *
+                    disorderResult.multiplier;
+                  const ap =
+                    disorderResult.sourceAp ?? unifiedStats.anomalyProficiency;
+                  const beforeValue = baseDamage * (ap / 100) * 2;
+                  const dmgMod = disorderResult.dmgMod ?? 1;
+                  const buffMod = disorderResult.buffMod ?? 1;
+                  const refringeMod = disorderResult.refringeMod ?? 1;
+                  const withBuff = beforeValue * dmgMod * buffMod;
+                  const withRefringe = withBuff * refringeMod;
+                  const refringePercent =
+                    Math.round((refringeMod - 1) * 100 * 10) / 10;
+                  return (
+                    <div className="anomaly-grid-row">
+                      <div className="anomaly-row-cell step">⑨</div>
+                      <div className="anomaly-row-cell calculation">
+                        <span className="calc-label">Refringe Mod</span>
+                        <span className="calc-detail">
+                          {" "}
+                          +{refringePercent.toFixed(1)}%{" "}
+                        </span>
+                      </div>
+                      <div className="anomaly-row-cell before">
+                        {Math.round(withBuff).toLocaleString()}
+                      </div>
+                      <div className="anomaly-row-cell arrow">×</div>
+                      <div className="anomaly-row-cell after highlight-bonus">
+                        {Math.round(withRefringe).toLocaleString()}
+                      </div>
+                    </div>
+                  );
+                })()}
+
               {/* Stun */}
               {stunMultiplier > 0 && (
                 <div className="anomaly-grid-row stun-row">
-                  <div className="anomaly-row-cell step">⑦</div>
+                  <div className="anomaly-row-cell step">
+                    {disorderResult.refringeMod &&
+                    disorderResult.refringeMod !== 1
+                      ? "⑩"
+                      : "⑨"}
+                  </div>
                   <div className="anomaly-row-cell calculation">
                     <span className="calc-label">Stun</span>
                     <span className="calc-detail">+{stunMultiplier}%</span>
@@ -2014,7 +2228,10 @@ export default function AnomalyCalculator({
                   <span className="total-label">
                     {isWindAgent ? "Final Vortex DMG" : "Final Disorder DMG"}
                   </span>
-                  <span className="total-target">vs {selectedEnemy.name}</span>
+                  <span className="total-target">
+                    vs {selectedEnemy.name} (DEF:{" "}
+                    {getEffectiveDefForDisplay().toLocaleString()})
+                  </span>
                 </div>
                 <div className="anomaly-row-cell before" />
                 <div className="anomaly-row-cell arrow">=</div>
@@ -2251,7 +2468,7 @@ export default function AnomalyCalculator({
                         aliceDisorderResult.multiplier,
                     ).toLocaleString()}
                   </div>
-                  <div className="anomaly-row-cell arrow">×</div>
+                  <div className="anomaly-row-cell arrow">=</div>
                   <div className="anomaly-row-cell after highlight-value">
                     {Math.round(
                       (aliceDisorderResult.sourceAtk || unifiedStats.atk) *
@@ -2260,21 +2477,80 @@ export default function AnomalyCalculator({
                   </div>
                 </div>
 
-                {/* ⑥ DMG% Mod */}
+                {/* ⑥ AP Multiplier */}
                 {(() => {
-                  const beforeValue =
+                  const baseDamage =
                     (aliceDisorderResult.sourceAtk || unifiedStats.atk) *
                     aliceDisorderResult.multiplier;
+                  const ap =
+                    aliceDisorderResult.sourceAp ||
+                    unifiedStats.anomalyProficiency;
+                  const apMultiplier = ap / 100;
+                  return (
+                    <div className="anomaly-grid-row">
+                      <div className="anomaly-row-cell step">⑥</div>
+                      <div className="anomaly-row-cell calculation">
+                        <span className="calc-label">AP Multiplier</span>
+                        <span className="calc-detail"> {ap} AP × 0.01 </span>
+                      </div>
+                      <div className="anomaly-row-cell before">
+                        {Math.round(baseDamage).toLocaleString()}
+                      </div>
+                      <div className="anomaly-row-cell arrow">×</div>
+                      <div className="anomaly-row-cell after highlight-ap">
+                        {apMultiplier.toFixed(2)}
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* ⑦ Buff Level */}
+                {(() => {
+                  const baseDamage =
+                    (aliceDisorderResult.sourceAtk || unifiedStats.atk) *
+                    aliceDisorderResult.multiplier;
+                  const ap =
+                    aliceDisorderResult.sourceAp ||
+                    unifiedStats.anomalyProficiency;
+                  const withAP = baseDamage * (ap / 100);
+                  return (
+                    <div className="anomaly-grid-row">
+                      <div className="anomaly-row-cell step">⑦</div>
+                      <div className="anomaly-row-cell calculation">
+                        <span className="calc-label">Buff Level</span>
+                        <span className="calc-detail">Lv.60 Multiplier</span>
+                      </div>
+                      <div className="anomaly-row-cell before">
+                        {Math.round(withAP).toLocaleString()}
+                      </div>
+                      <div className="anomaly-row-cell arrow">×</div>
+                      <div className="anomaly-row-cell after highlight-ap">
+                        2.00
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* ⑧ DMG% Mod */}
+                {(() => {
+                  const baseDamage =
+                    (aliceDisorderResult.sourceAtk || unifiedStats.atk) *
+                    aliceDisorderResult.multiplier;
+                  const ap =
+                    aliceDisorderResult.sourceAp ||
+                    unifiedStats.anomalyProficiency;
+                  const beforeValue = baseDamage * (ap / 100) * 2;
                   const dmgMod = aliceDisorderResult.dmgMod || 1;
                   const withDMG = beforeValue * dmgMod;
                   const dmgPercent = Math.round((dmgMod - 1) * 100 * 10) / 10;
                   return (
                     <div className="anomaly-grid-row">
-                      <div className="anomaly-row-cell step">⑥</div>
+                      <div className="anomaly-row-cell step">⑧</div>
                       <div className="anomaly-row-cell calculation">
                         <span className="calc-label">DMG% Mod</span>
                         <span className="calc-detail">
-                          +{dmgPercent.toFixed(1)}%
+                          {" "}
+                          +{dmgPercent.toFixed(1)}%{" "}
                         </span>
                       </div>
                       <div className="anomaly-row-cell before">
@@ -2288,11 +2564,15 @@ export default function AnomalyCalculator({
                   );
                 })()}
 
-                {/* ⑦ Disorder Bonus (Polarized) */}
+                {/* ⑨ Polarized Disorder Bonus */}
                 {(() => {
-                  const beforeValue =
+                  const baseDamage =
                     (aliceDisorderResult.sourceAtk || unifiedStats.atk) *
                     aliceDisorderResult.multiplier;
+                  const ap =
+                    aliceDisorderResult.sourceAp ||
+                    unifiedStats.anomalyProficiency;
+                  const beforeValue = baseDamage * (ap / 100) * 2;
                   const dmgMod = aliceDisorderResult.dmgMod || 1;
                   const withDMG = beforeValue * dmgMod;
                   const buffMod = aliceDisorderResult.buffMod || 1;
@@ -2300,13 +2580,14 @@ export default function AnomalyCalculator({
                   const buffPercent = Math.round((buffMod - 1) * 100 * 10) / 10;
                   return (
                     <div className="anomaly-grid-row">
-                      <div className="anomaly-row-cell step">⑦</div>
+                      <div className="anomaly-row-cell step">⑨</div>
                       <div className="anomaly-row-cell calculation">
                         <span className="calc-label">
                           Polarized Disorder Bonus
                         </span>
                         <span className="calc-detail">
-                          +{buffPercent.toFixed(1)}%
+                          {" "}
+                          +{buffPercent.toFixed(1)}%{" "}
                         </span>
                       </div>
                       <div className="anomaly-row-cell before">
@@ -2320,10 +2601,54 @@ export default function AnomalyCalculator({
                   );
                 })()}
 
-                {/* ⑧ Stun (si > 0) */}
+                {/* ⑩ Refringe Mod */}
+                {aliceDisorderResult.refringeMod &&
+                  aliceDisorderResult.refringeMod !== 1 &&
+                  (() => {
+                    const baseDamage =
+                      (aliceDisorderResult.sourceAtk || unifiedStats.atk) *
+                      aliceDisorderResult.multiplier;
+                    const ap =
+                      aliceDisorderResult.sourceAp ||
+                      unifiedStats.anomalyProficiency;
+                    const beforeValue = baseDamage * (ap / 100) * 2;
+                    const dmgMod = aliceDisorderResult.dmgMod || 1;
+                    const buffMod = aliceDisorderResult.buffMod || 1;
+                    const refringeMod = aliceDisorderResult.refringeMod ?? 1;
+                    const withBuff = beforeValue * dmgMod * buffMod;
+                    const withRefringe = withBuff * refringeMod;
+                    const refringePercent =
+                      Math.round((refringeMod - 1) * 100 * 10) / 10;
+                    return (
+                      <div className="anomaly-grid-row">
+                        <div className="anomaly-row-cell step">⑩</div>
+                        <div className="anomaly-row-cell calculation">
+                          <span className="calc-label">Refringe Mod</span>
+                          <span className="calc-detail">
+                            {" "}
+                            +{refringePercent.toFixed(1)}%{" "}
+                          </span>
+                        </div>
+                        <div className="anomaly-row-cell before">
+                          {Math.round(withBuff).toLocaleString()}
+                        </div>
+                        <div className="anomaly-row-cell arrow">×</div>
+                        <div className="anomaly-row-cell after highlight-bonus">
+                          {Math.round(withRefringe).toLocaleString()}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                {/* Stun (si > 0) */}
                 {stunMultiplier > 0 && (
                   <div className="anomaly-grid-row stun-row">
-                    <div className="anomaly-row-cell step">⑧</div>
+                    <div className="anomaly-row-cell step">
+                      {aliceDisorderResult.refringeMod &&
+                      aliceDisorderResult.refringeMod !== 1
+                        ? "⑪"
+                        : "⑩"}
+                    </div>
                     <div className="anomaly-row-cell calculation">
                       <span className="calc-label">Stun</span>
                       <span className="calc-detail">+{stunMultiplier}%</span>

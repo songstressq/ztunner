@@ -73,12 +73,11 @@ export function calculateAnomalyDamage({
   const dmgMod = 1 + totalBonusDamage;
   const typeBonus = anomalyBonuses?.perAnomalyType?.[definition.anomalyType];
   const buffMod =
-    1 +
-    (anomalyBonuses?.anomalyDmgBonus || 0) +
-    (typeBonus?.dmgBonus || 0) +
-    refringeCoefficient;
+    1 + (anomalyBonuses?.anomalyDmgBonus || 0) + (typeBonus?.dmgBonus || 0);
+  const refringeMod = 1 + refringeCoefficient;
 
-  const damageWithBonuses = damageWithBuffLevel * dmgMod * buffMod;
+  const damageWithBonuses =
+    damageWithBuffLevel * dmgMod * buffMod * refringeMod;
   const damageAfterStun = damageWithBonuses * (1 + stunMultiplier / 100);
 
   let realDamage = 0;
@@ -153,6 +152,7 @@ export function calculateAnomalyDamage({
     assaultCritDmgTotal,
     dmgMod,
     buffMod,
+    refringeMod,
   };
 }
 
@@ -167,6 +167,7 @@ export function calculateDisorderDamage({
   stunMultiplier,
   calculateRealDamage,
   skillId,
+  refringeCoefficient = 0,
 }: {
   previousAttribute: AttributeType;
   slotAttribute: AttributeType;
@@ -182,7 +183,15 @@ export function calculateDisorderDamage({
     ...args: any[]
   ) => number;
   skillId?: string;
-}): { multiplier: number; damage: number; realDamage: number } {
+  refringeCoefficient?: number;
+}): {
+  multiplier: number;
+  damage: number;
+  realDamage: number;
+  dmgMod: number;
+  buffMod: number;
+  refringeMod: number;
+} {
   const def = ANOMALY_DEFINITIONS[slotAttribute];
   if (!def) {
     return { multiplier: 0, damage: 0, realDamage: 0 };
@@ -212,8 +221,9 @@ export function calculateDisorderDamage({
   const typeBonus =
     sourceBonuses.anomalyTypeDmg?.[def.anomalyType]?.disorderBonus || 0;
   const buffMod = 1 + slotBonuses.disorderDmgBonus + typeBonus;
-
-  const damageWithBonuses = damageWithBuffLevel * dmgMod * buffMod;
+  const refringeMod = 1 + refringeCoefficient;
+  const damageWithBonuses =
+    damageWithBuffLevel * dmgMod * buffMod * refringeMod;
   const damageAfterStun = damageWithBonuses * (1 + stunMultiplier / 100);
 
   const realDamage = calculateRealDamage(
@@ -240,6 +250,7 @@ export function calculateDisorderDamage({
     realDamage,
     dmgMod,
     buffMod,
+    refringeMod,
   };
 }
 
@@ -255,6 +266,7 @@ export function calculateVortexDamage({
   calculateRealDamage,
   additionalMV = 0,
   isVortex = false,
+  refringeCoefficient = 0,
 }: {
   attribute: AttributeType;
   slotAttribute: AttributeType;
@@ -271,7 +283,15 @@ export function calculateVortexDamage({
   ) => number;
   additionalMV?: number;
   isVortex?: boolean;
-}): { multiplier: number; damage: number; realDamage: number } {
+  refringeCoefficient?: number;
+}): {
+  multiplier: number;
+  damage: number;
+  realDamage: number;
+  dmgMod: number;
+  buffMod: number;
+  refringeMod: number;
+} {
   let def = ANOMALY_DEFINITIONS[attribute];
   if (!def?.vortexFormula) {
     def = ANOMALY_DEFINITIONS[slotAttribute];
@@ -304,8 +324,9 @@ export function calculateVortexDamage({
     Object.values(sourceBonuses.skillTypes).reduce((a, b) => a + b, 0);
 
   const buffMod = 1 + (slotBonuses.vortexDmgBonus || 0);
-
-  const damageWithBonuses = damageWithBuffLevel * dmgMod * buffMod;
+  const refringeMod = 1 + refringeCoefficient;
+  const damageWithBonuses =
+    damageWithBuffLevel * dmgMod * buffMod * refringeMod;
   const damageAfterStun = damageWithBonuses * (1 + stunMultiplier / 100);
 
   const realDamage = calculateRealDamage(
@@ -332,6 +353,7 @@ export function calculateVortexDamage({
     realDamage,
     dmgMod,
     buffMod,
+    refringeMod,
   };
 }
 

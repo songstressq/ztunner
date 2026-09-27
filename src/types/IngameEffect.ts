@@ -177,6 +177,7 @@ export interface ConditionalEffect {
 export interface Condition {
   minAnomalyMastery?: number;
   requiresSpecialty?: string;
+  requiresReceiverSpecialty?: string;
   requiresAgent?: string;
   attributeDmgTypes?: string[];
   skillTypes?: string[];

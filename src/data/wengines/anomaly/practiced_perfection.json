@@ -14,7 +14,7 @@
 
   "ingameEffects": [
     {
-      "id": "practiced_perfection-gift_of_stardust",
+      "id": "practiced_perfection-gift_of_stardust-anomaly_mastery",
       "source": "wEngine",
       "sourceId": "practiced_perfection",
       "label": "Gift of Stardust (W-Engine Passive)",
@@ -62,7 +62,7 @@
     },
 
     {
-      "id": "practiced_perfection-gift_of_stardust",
+      "id": "practiced_perfection-gift_of_stardust-physical_dmg",
       "source": "wEngine",
       "sourceId": "practiced_perfection",
       "label": "Gift of Stardust (W-Engine Passive)",

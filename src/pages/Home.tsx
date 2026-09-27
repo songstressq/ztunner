@@ -159,10 +159,7 @@ const Home = () => {
         </div>
         <div className="agents-block important_notice">
           <div className="agents-wrapper" style={dominantEmptyStyle}>
-            <div
-              className="important_notice-msg"
-              style={{ marginBottom: "var(--padding-5px)" }}
-            >
+            <div className="important_notice-msg">
               🚨 I'm still setting up this page, so if u happen to be here
               early, don't mind any temporarily disabled sections for now. I'll
               work on them soon! 😫
@@ -185,34 +182,30 @@ const Home = () => {
                 style={{ backgroundColor: dominantTheme }}
               />
               <div className="home_content_changelog_item">
-                <span>v1.1.2 — Contamination State</span>
-                <h3>● Added - Contamination State's Direct DMG</h3>
+                <span>v1.1.3 — Anomaly Formulas &amp; Other Fixes</span>
+                <h3>
+                  ● Fixed - Anomaly, Disorder, Vortex and Luminize DMG Formulas
+                </h3>
                 <p>
-                  Added calculations for the Direct DMG bonuses granted by the
-                  Contamination state, including its interaction with the
-                  triggering attribute. This was mainly added with Roxy in mind,
-                  as her being a Wind Stunner will make Wind more common in
-                  different team compositions.
+                  Remielle's Refringe Mod is now correctly applied as an
+                  independent multiplier in each formula, and the Luminize
+                  Calculator no longer double-counts the Voidflare source's
+                  bonuses. New detailed calculation steps are now displayed
+                  consistently across all damage grids.
                 </p>
-              </div>
-              <div className="home_content_changelog_item">
-                <span>v1.1.1 — Minor Fixes &amp; Updates</span>
-                <h3>● Fixed - In-Game Toggle Calculations</h3>
+                <h3>● Fixed - DEF Shred and Effective DEF Display</h3>
                 <p>
-                  Fixed calculations and summary display issues for in-game
-                  toggles that interact with Initial Stats or Current Stats in
-                  the Damage Calculator.
+                  Aftershock DEF Shred is now correctly displayed in the Defense
+                  Bonuses panel and is properly limited by the DEF Shred cap.
+                  The Enemy panel now shows the full Shred → PEN Ratio → PEN
+                  breakdown.
                 </p>
-
-                <h3>● Minor UI fixes and agent-related updates.</h3>
+                <h3>● Fixed - Specialty Filtering for W-Engine Effects</h3>
                 <p>
-                  Fixed Rina's Mini Destruction Partner (Core Passive) in-game
-                  effect.
-                  <br />
-                  Fixed Rina's Dance Duet (Mindscape Cinema N°1) in-game effect.
-                  <br />
-                  Fixed Jane Doe's Crime Counsel (Mindscape Cinema N°1) in-game
-                  effect.
+                  Team W-Engine in-game effects with specialty requirements are
+                  now correctly disabled and marked as received from another
+                  slot. W-Engines users from other specialties can no longer use
+                  these effects incorrectly.
                 </p>
               </div>
             </div>
@@ -229,7 +222,7 @@ const Home = () => {
               <iframe
                 className="home_content-trailer_video"
                 width="100%"
-                src="https://www.youtube.com/embed/4O-Iq8lj9_k"
+                src="https://www.youtube.com/embed/w088eYNQW4w"
                 title="Zenless Zone Zero Version 3.2 Teaser – Their Secret Histories"
                 loading="lazy"
                 frameBorder="0"
