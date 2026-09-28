@@ -591,6 +591,7 @@ export default function AnomalyCalculator({
             {},
             teamEffects,
             sourceSlotInfo.agent.id,
+            sourceSlotInfo.agent.specialty,
           );
           const baseAttrBonus =
             sourceStats.attributeDmgBonus[
@@ -677,6 +678,7 @@ export default function AnomalyCalculator({
             {},
             teamEffects,
             slotInfo.agent.id,
+            sourceSlotInfo.agent.specialty,
           );
           const baseAttrBonus =
             otherStats.attributeDmgBonus[
@@ -1100,6 +1102,7 @@ export default function AnomalyCalculator({
           {},
           teamEffects,
           sourceSlotInfo.agent.id,
+          sourceSlotInfo.agent.specialty,
         );
         const baseAttrBonus =
           sourceStats.attributeDmgBonus[

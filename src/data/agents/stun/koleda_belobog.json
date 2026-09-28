@@ -53,6 +53,36 @@
       "maxStacks": 2
     },
     {
+      "id": "koleda_belobog-potential_1-get_workin",
+      "source": "potential",
+      "sourceId": "koleda_belobog-potential",
+      "label": "Get Workin'! (Potential Vision N°6)",
+      "description": "Potential Awakening: Demolition Ops\n\nArmorer Agents in the team gain 12% increased Laceration DMG, while non-Armorer Agents gain 35% increased CRIT DMG.",
+      "shortDescription": "Armorers' Laceration DMG is increased by 12%.",
+      "target": "team",
+      "flat": { "lacerationDmg": 0.12 },
+      "condition": { "requiresReceiverSpecialty": "Armorer" }
+    },
+    {
+      "id": "koleda_belobog-potential_2-get_workin",
+      "source": "potential",
+      "sourceId": "koleda_belobog-potential",
+      "label": "Get Workin'! (Potential Vision N°6)",
+      "description": "Potential Awakening: Demolition Ops\n\nArmorer Agents in the team gain 12% increased Laceration DMG, while non-Armorer Agents gain 35% increased CRIT DMG.",
+      "shortDescription": "Non-Armorers' CRIT DMG is increased by 35%.",
+      "target": "team",
+      "flat": { "critDmg": 0.35 },
+      "condition": {
+        "requiresReceiverSpecialty": [
+          "Attack",
+          "Rupture",
+          "Anomaly",
+          "Support",
+          "Stun"
+        ]
+      }
+    },
+    {
       "id": "koleda_belobog-mindscape_1-beat_of_the_hammer",
       "source": "mindscape",
       "sourceId": "koleda_belobog-mindscape_1",

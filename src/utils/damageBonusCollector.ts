@@ -166,6 +166,7 @@ export function collectDamageBonuses(
   },
   teamEffects?: Record<string, any>,
   currentAgentId?: string,
+  currentAgentSpecialty?: string,
 ): CollectedBonuses {
   const bonuses: CollectedBonuses = {
     global: 0,
@@ -225,6 +226,18 @@ export function collectDamageBonuses(
   for (const effect of effects) {
     const isActive = activeEffects[effect.id]?.enabled;
     if (!isActive) continue;
+    if (effect.condition?.requiresReceiverSpecialty) {
+      const required = Array.isArray(effect.condition.requiresReceiverSpecialty)
+        ? effect.condition.requiresReceiverSpecialty
+        : [effect.condition.requiresReceiverSpecialty];
+      const normalizedAgent = (currentAgentSpecialty || "")
+        .toLowerCase()
+        .trim();
+      const matches = required.some(
+        (r) => r.toLowerCase().trim() === normalizedAgent,
+      );
+      if (!matches) continue;
+    }
     const stacks = activeEffects[effect.id]?.stacks || 1;
     const owner = getEffectOwner(effect, currentAgentId);
 

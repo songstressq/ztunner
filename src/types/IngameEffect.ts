@@ -177,14 +177,14 @@ export interface ConditionalEffect {
 export interface Condition {
   minAnomalyMastery?: number;
   requiresSpecialty?: string;
-  requiresReceiverSpecialty?: string;
+  requiresReceiverSpecialty?: string | string[];
   requiresAgent?: string;
   attributeDmgTypes?: string[];
   skillTypes?: string[];
   damageType?: string;
   appliesToAnomalyOnly?: boolean;
-  appliesToDisorderOnly?: boolean; 
-  appliesToVortexOnly?: boolean; 
+  appliesToDisorderOnly?: boolean;
+  appliesToVortexOnly?: boolean;
   appliesToLuminize?: boolean;
   requiresDisorderAttribute?: AttributeType;
 }
@@ -235,8 +235,15 @@ export interface ReferenceStatEffect {
 
 export interface IngameEffect {
   id: string;
-  source: "discSet" | "wEngine" | "core" | "mindscape" | "exSkill" | "gameMode";;
-  sourceId: string; 
+  source:
+    | "discSet"
+    | "wEngine"
+    | "core"
+    | "mindscape"
+    | "exSkill"
+    | "gameMode"
+    | "potential";
+  sourceId: string;
   label: string;
   description: string;
   shortDescription?: string;

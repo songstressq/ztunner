@@ -672,6 +672,7 @@ export default function SkillCalculator({
     initialStats,
     teamEffects,
     agent.id,
+    agent.specialty,
   );
 
   const effectDefShred = calculateTotalDefShred(allActiveEffects, false);

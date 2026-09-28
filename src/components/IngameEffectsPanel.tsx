@@ -128,7 +128,8 @@ const IngameEffectsPanel = ({
       core: 1,
       wEngine: 2,
       discSet: 3,
-      mindscape: 4,
+      potential: 4,
+      mindscape: 5,
     };
     const sourceA = a.source || "unknown";
     const sourceB = b.source || "unknown";

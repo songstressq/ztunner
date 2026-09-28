@@ -690,6 +690,17 @@ export function calculateUnifiedStats(
       }
     }
 
+    if (effect.condition?.requiresReceiverSpecialty) {
+      const required = Array.isArray(effect.condition.requiresReceiverSpecialty)
+        ? effect.condition.requiresReceiverSpecialty
+        : [effect.condition.requiresReceiverSpecialty];
+      const normalizedAgent = (agent.specialty || "").toLowerCase().trim();
+      const matches = required.some(
+        (r) => r.toLowerCase().trim() === normalizedAgent,
+      );
+      if (!matches) continue;
+    }
+
     if ((effect as any).requiresManualTarget && targetedEffects) {
       if ((effect as any).isManualTargetApplied) {
       } else {

@@ -75,21 +75,21 @@
       ]
     },
     {
-      "id": "alexandrina_sebastiane-core_1-perfect_service",
-      "source": "core",
-      "sourceId": "alexandrina_sebastiane-core",
-      "label": "Perfect Service (Awakened Potential N°6)",
-      "description": "PEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
+      "id": "alexandrina_sebastiane-potential_1-perfect_service",
+      "source": "potential",
+      "sourceId": "alexandrina_sebastiane-potential",
+      "label": "Big Cleanup (Potential Vision N°6)",
+      "description": "Awakened Potential: Perfect Service\n\nPEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
       "shortDescription": "Rina's PEN Ratio is increased by 1.6%.",
       "target": "self",
       "flat": { "penRatio": 0.016 }
     },
     {
-      "id": "alexandrina_sebastiane-core_2-perfect_service",
-      "source": "core",
-      "sourceId": "alexandrina_sebastiane-core",
-      "label": "Perfect Service (Awakened Potential N°6)",
-      "description": "PEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
+      "id": "alexandrina_sebastiane-potential_2-perfect_service",
+      "source": "potential",
+      "sourceId": "alexandrina_sebastiane-potential",
+      "label": "Big Cleanup (Potential Vision N°6)",
+      "description": "Awakened Potential: Perfect Service\n\nPEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
       "shortDescription": "All squad members ATK is increased based on Rina's current PEN Ratio.",
       "target": "team",
       "conditional": {
@@ -103,11 +103,11 @@
       }
     },
     {
-      "id": "alexandrina_sebastiane-core_3-perfect_service",
-      "source": "core",
-      "sourceId": "alexandrina_sebastiane-core",
-      "label": "Perfect Service (Awakened Potential N°6)",
-      "description": "PEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
+      "id": "alexandrina_sebastiane-potential_3-perfect_service",
+      "source": "potential",
+      "sourceId": "alexandrina_sebastiane-potential",
+      "label": "Big Cleanup (Potential Vision N°6)",
+      "description": "Awakened Potential: Perfect Service\n\nPEN Ratio increases by 1.6%. While the buff gained from Core Passive: Mini Destruction Partner is active, for every 1% of Rina's PEN Ratio, all squad members gain 8 ATK and 6.5 DEF, up to a maximum of 576 ATK and 468 DEF",
       "shortDescription": "All squad members DEF is increased based on Rina's current PEN Ratio.",
       "target": "team",
       "conditional": {
@@ -234,7 +234,7 @@
       },
       {
         "id": "alexandrina_sebastiane-basic_attack-morning_cleanup",
-        "name": "Morning Cleanup (Basic Attack) (Potential Vision)",
+        "name": "Morning Cleanup (Basic Attack) [Potential Vision]",
         "description": "After Rina uses an /bEX Special Attack//b, /bChain Attack//b, or /bUltimate//b, she enters the Spotless state for 13s. During this time, /bDrusilla//b or /bAnastella//b attacks an enemy once every 2.5s, dealing Physical DMG and Electric DMG, and grants 1 stack of Fright, up to a maximum of 6 stacks. After using the skill, /bDrusilla and Anastella//b's exit timer resets.",
         "skillType": "basic",
         "statBase": "atk",
@@ -264,7 +264,7 @@
       },
       {
         "id": "alexandrina_sebastiane-basic_attack-midnight_cleanup",
-        "name": "Midnight Cleanup (Basic Attack) (Potential Vision)",
+        "name": "Midnight Cleanup (Basic Attack) [Potential Vision]",
         "description": "When reaches 6 stacks, the next Basic Attack: Morning Cleanup performed by /bDrusilla//b or /bAnastella//b consumes all Fright stacks and is replaced with Basic Attack: Midnight Cleanup, dealing Electric DMG After using the skill, /bDrusilla and Anastella//b's exit timer resets.",
         "skillType": "basic",
         "statBase": "atk",

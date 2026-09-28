@@ -146,13 +146,16 @@ export function collectAnomalyBonuses(
       }
     }
     if (effect.condition?.requiresReceiverSpecialty) {
-      if (
-        !currentAgentSpecialty ||
-        currentAgentSpecialty.toLowerCase().trim() !==
-          effect.condition.requiresReceiverSpecialty.toLowerCase().trim()
-      ) {
-        continue;
-      }
+      const required = Array.isArray(effect.condition.requiresReceiverSpecialty)
+        ? effect.condition.requiresReceiverSpecialty
+        : [effect.condition.requiresReceiverSpecialty];
+      const normalizedAgent = (currentAgentSpecialty || "")
+        .toLowerCase()
+        .trim();
+      const matches = required.some(
+        (r) => r.toLowerCase().trim() === normalizedAgent,
+      );
+      if (!matches) continue;
     }
     const stacks = state.stacks || 1;
     const skillLevel = state.skillLevel || 1;
