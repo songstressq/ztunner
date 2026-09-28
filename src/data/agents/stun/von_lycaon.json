@@ -50,6 +50,16 @@
       "flat": { "iceResShred": 0.25 }
     },
     {
+      "id": "lycaon-potential_1-hunters_grace",
+      "source": "potential",
+      "sourceId": "lycaon-potential",
+      "label": "Hunter's Grace (Potential Vision N°6)",
+      "description": "Potential Awakening: Glacial Rush\n\nWhile Encircle Prey is active, when Lycaon performs a Basic Attack, Dash Attack, or Dodge Counter as a non-active Agent, his Impact is increased by 15%.",
+      "shortDescription": "Lycaon's Impact is increased by 15%.",
+      "target": "self",
+      "flat": { "impactPercentRaw": 0.15 }
+    },
+    {
       "id": "lycaon-mindscape_1-full_moon_momentum",
       "source": "mindscape",
       "sourceId": "lycaon-mindscape_1",
@@ -349,6 +359,37 @@
           { "level": 14, "multipliers": [630.2] },
           { "level": 15, "multipliers": [656.5] },
           { "level": 16, "multipliers": [682.8] }
+        ]
+      },
+      {
+        "id": "lycaon-assist_follow_up-vengeful_counterattack_glacial_waltz",
+        "name": "Vengeful Counterattack - Glacial Waltz (Assist Follow-Up) [Potential Vision]",
+        "description": "Hold [BASIC] after a /bDefensive Assist//b to activate:\n\nQuickly launch multiple strikes against enemies in front, dealing Ice DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [410.7] },
+          { "level": 2, "multipliers": [448.1] },
+          { "level": 3, "multipliers": [485.5] },
+          { "level": 4, "multipliers": [522.9] },
+          { "level": 5, "multipliers": [560.3] },
+          { "level": 6, "multipliers": [597.7] },
+          { "level": 7, "multipliers": [635.1] },
+          { "level": 8, "multipliers": [672.5] },
+          { "level": 9, "multipliers": [709.9] },
+          { "level": 10, "multipliers": [747.3] },
+          { "level": 11, "multipliers": [784.7] },
+          { "level": 12, "multipliers": [822.1] },
+          { "level": 13, "multipliers": [859.5] },
+          { "level": 14, "multipliers": [896.9] },
+          { "level": 15, "multipliers": [934.3] },
+          { "level": 16, "multipliers": [971.7] }
         ]
       }
     ],

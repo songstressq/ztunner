@@ -75,6 +75,27 @@
       "maxStacks": 10
     },
     {
+      "id": "ellen_joe-potential_1-sharks_rage",
+      "source": "potential",
+      "sourceId": "ellen_joe-potential",
+      "label": "Shark's Rage (Potential Vision N°6)",
+      "description": "Potential Awakening: Permafrost Zone\n\nEllen's \"Additional Ability: Rising Storm\" CRIT DMG increases by 4.8% per stack. At 10 stacks, the attack ignores 10% of the target's Ice RES.",
+      "shortDescription": "Ellen Joe's CRIT DMG is increased by 4.8% for 10s, stacking up to 10 times.",
+      "target": "self",
+      "flat": { "critDmg": 0.048 },
+      "maxStacks": 10
+    },
+    {
+      "id": "ellen_joe-potential_2-sharks_rage",
+      "source": "potential",
+      "sourceId": "ellen_joe-potential",
+      "label": "Shark's Rage (Potential Vision N°6)",
+      "description": "Potential Awakening: Permafrost Zone\n\nEllen's \"Additional Ability: Rising Storm\" CRIT DMG increases by 4.8% per stack. At 10 stacks, the attack ignores 10% of the target's Ice RES.",
+      "shortDescription": "Ellen Joe's DMG ignores 10% of the target's Ice RES.",
+      "target": "self",
+      "flat": { "iceResShred": 0.1 }
+    },
+    {
       "id": "ellen_joe-mindscape_1-glacial_omen",
       "source": "mindscape",
       "sourceId": "ellen_joe-mindscape_1",
@@ -137,6 +158,12 @@
         {
           "type": "hitExclusive",
           "skillId": "ellen_joe-dash_attack-arctic_ambush",
+          "hitName": "Charged Scissors DMG Multiplier",
+          "value": 2.5
+        },
+        {
+          "type": "hitExclusive",
+          "skillId": "ellen_joe-dash_attack-arctic_ambush_potential_vision",
           "hitName": "Charged Scissors DMG Multiplier",
           "value": 2.5
         }
@@ -203,6 +230,82 @@
           { "level": 14, "multipliers": [217.9, 402.4, 1083.8] },
           { "level": 15, "multipliers": [227, 419.2, 1129] },
           { "level": 16, "multipliers": [236.1, 436, 1174.2] }
+        ]
+      },
+
+      {
+        "id": "ellen_joe-basic_attack-glacial_blade_wave",
+        "name": "Glacial Blade Wave (Basic Attack) [Potential Vision]",
+        "description": "After the 3rd hit of /bBasic Attack: Flash Freeze Trimming//b, /bDash Attack: Arctic Ambush//b's charged scissor strike, /bDodge Counter: Reef Rock//b, and /bQuick Assist//b, if Ellen has /bFlash Freeze Charges//b, pressing [BASIC] will launch /bBasic Attack: Glacial Blade Wave//b, dealing Ice DMG.\n\nThis skill consumes 2 points of /bFlash Freeze Charge//b. After use, it can be directly followed up with the 3rd hit of her /bBasic Attack//b. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [230.2, 146.8] },
+          { "level": 2, "multipliers": [251.2, 160.2] },
+          { "level": 3, "multipliers": [272.2, 173.6] },
+          { "level": 4, "multipliers": [293.2, 187.0] },
+          { "level": 5, "multipliers": [314.2, 200.4] },
+          { "level": 6, "multipliers": [335.2, 213.8] },
+          { "level": 7, "multipliers": [356.2, 227.2] },
+          { "level": 8, "multipliers": [377.2, 240.6] },
+          { "level": 9, "multipliers": [398.2, 254.0] },
+          { "level": 10, "multipliers": [419.2, 267.4] },
+          { "level": 11, "multipliers": [440.2, 280.8] },
+          { "level": 12, "multipliers": [461.2, 294.2] },
+          { "level": 13, "multipliers": [482.2, 307.6] },
+          { "level": 14, "multipliers": [503.2, 321.0] },
+          { "level": 15, "multipliers": [524.2, 334.4] },
+          { "level": 16, "multipliers": [545.2, 347.8] }
+        ]
+      },
+
+      {
+        "id": "ellen_joe-basic_attack-icy_blade",
+        "name": "Icy Blade (Basic Attack) [Potential Vision]",
+        "description": "After the 3rd hit of /bBasic Attack: Flash Freeze Trimming//b, /bEX Special Attack: Sharknami//b, /bDodge Counter: Reef Rock//b, and /bAssist Follow-Up//b, automatically launch /bBasic Attack: Icy Blade//b, dealing multiple instances of Ice DMG to all enemies in a large area ahead.\n\nIt inflicts additional instances of Ice DMG against /bMedium//b and /bLarge//b foes. After the skill, Ellen gains the /bQuick Charge//b effect. /bBasic Attack: Icy Blade//b does not affect the branch or form of the original skill. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier to Small Enemies",
+            "damageType": "ice"
+          },
+          {
+            "name": "DMG Multiplier to Medium Enemies",
+            "damageType": "ice"
+          },
+          {
+            "name": "DMG Multiplier to Large Enemies",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [181.2, 220.2, 259.2] },
+          { "level": 2, "multipliers": [197.7, 240.3, 282.9] },
+          { "level": 3, "multipliers": [214.2, 260.4, 306.6] },
+          { "level": 4, "multipliers": [230.7, 280.5, 330.3] },
+          { "level": 5, "multipliers": [247.2, 300.6, 354.0] },
+          { "level": 6, "multipliers": [263.7, 320.7, 377.7] },
+          { "level": 7, "multipliers": [280.2, 340.8, 401.4] },
+          { "level": 8, "multipliers": [296.7, 360.9, 425.1] },
+          { "level": 9, "multipliers": [313.2, 381.0, 448.8] },
+          { "level": 10, "multipliers": [329.7, 401.1, 472.5] },
+          { "level": 11, "multipliers": [346.2, 421.2, 496.2] },
+          { "level": 12, "multipliers": [362.7, 441.3, 519.9] },
+          { "level": 13, "multipliers": [379.2, 461.4, 543.6] },
+          { "level": 14, "multipliers": [395.7, 481.5, 567.3] },
+          { "level": 15, "multipliers": [412.2, 501.6, 591.0] },
+          { "level": 16, "multipliers": [428.7, 521.7, 614.7] }
         ]
       }
     ],
@@ -286,6 +389,45 @@
           { "level": 13, "multipliers": [130.7, 266.8, 331] },
           { "level": 14, "multipliers": [136.4, 278.4, 345.4] },
           { "level": 15, "multipliers": [142.1, 290, 359.8] },
+          { "level": 16, "multipliers": [147.8, 301.6, 374.2] }
+        ]
+      },
+      {
+        "id": "ellen_joe-dash_attack-arctic_ambush_potential_vision",
+        "name": "Arctic Ambush (Dash Attack) [Potential Vision]",
+        "description": "While in the /bRoaming//b state, press [BASIC] to activate:\n\nDelivers a spinning slash to enemies before opening her scissors for a /bSwift Scissors//b strike, dealing Ice DMG. Gain 1 point of /bFlash Freeze Charge//b when the /bSwift Scissors//b strike hits.\n\nWhile in the /bRoaming//b state, hold [BASIC] to activate:\n\nPerform a spinning slash against the enemy, then pull apart the scissors to unleash a /bCharged Scissor//b strike, dealing massive Ice DMG. Gain 3 points of /bFlash Freeze Charge//b when the /bCharged Scissor//b strike hits. If the enemy is /bFrozen//b, it always triggers /bShatter//b. Anti-Interrupt level is increased while charging the skill, and DMG taken is reduced by 40%.\n\nWhen taking DMG from enemies while the skill is charging, that instance of DMG is nullified, and charging instantly completes. Character is invulnerable while using this skill.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Spinning Slash DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Swift Scissors DMG Multiplier",
+            "damageType": "ice"
+          },
+          {
+            "name": "Charged Scissors DMG Multiplier",
+            "damageType": "ice"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [62.3, 127.6, 158.2] },
+          { "level": 2, "multipliers": [68.0, 139.2, 172.6] },
+          { "level": 3, "multipliers": [73.7, 150.8, 187.0] },
+          { "level": 4, "multipliers": [79.4, 162.4, 201.4] },
+          { "level": 5, "multipliers": [85.1, 174.0, 215.8] },
+          { "level": 6, "multipliers": [90.8, 185.6, 230.2] },
+          { "level": 7, "multipliers": [96.5, 197.2, 244.6] },
+          { "level": 8, "multipliers": [102.2, 208.8, 259.0] },
+          { "level": 9, "multipliers": [107.9, 220.4, 273.4] },
+          { "level": 10, "multipliers": [113.6, 232.0, 287.8] },
+          { "level": 11, "multipliers": [119.3, 243.6, 302.2] },
+          { "level": 12, "multipliers": [125.0, 255.2, 316.6] },
+          { "level": 13, "multipliers": [130.7, 266.8, 331.0] },
+          { "level": 14, "multipliers": [136.4, 278.4, 345.4] },
+          { "level": 15, "multipliers": [142.1, 290.0, 359.8] },
           { "level": 16, "multipliers": [147.8, 301.6, 374.2] }
         ]
       }
