@@ -55,7 +55,8 @@
           "type": "exclusive",
           "appliesTo": [
             "soldier_11-basic_attack-fire_suppression",
-            "soldier_11-dash_attack-fire_suppression"
+            "soldier_11-dash_attack-fire_suppression",
+            "soldier_11-dash_attack-fire_suppression_potential_vision"
           ],
           "value": 0.7
         }
@@ -82,6 +83,16 @@
       "damageBonuses": [
         { "type": "element", "element": "fire", "value": 0.225 }
       ]
+    },
+    {
+      "id": "soldier_11-potential_1-blazing_melody",
+      "source": "potential",
+      "sourceId": "ellen_joe-potential",
+      "label": "Blazing Melody (Potential Vision N°6)",
+      "description": "Awakened Potential: Infernal Blaze\n\n In \"Additional Ability: Fields of Fire\", Soldier 11's CRIT DMG is increased by 48%.",
+      "shortDescription": "Soldier 11's CRIT DMG is increased by 48% for 10s.",
+      "target": "self",
+      "flat": { "critDmg": 0.48 }
     },
     {
       "id": "soldier_11-mindscape_1-rapid_heat",
@@ -131,7 +142,10 @@
           "appliesTo": [
             "soldier_11-ex_special_attack-fervent_fire",
             "soldier_11-chain_attack-uplifting_flame",
-            "soldier_11-ultimate-bellowing_flame"
+            "soldier_11-ultimate-bellowing_flame",
+            "soldier_11-ex_special_attack-fervent_fire_potential_vision",
+            "soldier_11-chain_attack-uplifting_flame_potential_vision",
+            "soldier_11-ultimate-bellowing_flame_potential_vision"
           ],
           "value": 0.25
         }
@@ -200,6 +214,140 @@
           { "level": 14, "multipliers": [121.4, 124.8, 288, 743.7] },
           { "level": 15, "multipliers": [126.5, 130, 300, 774.7] },
           { "level": 16, "multipliers": [131.6, 135.2, 312, 805.7] }
+        ]
+      },
+      {
+        "id": "soldier_11-basic_attack-fire_suppression_potential_vision",
+        "name": "Fire Suppression (Basic Attack) [Potential Vision]",
+        "description": "Press [BASIC] at the right moment to activate:\n\nLaunches a stronger slash, dealing Fire DMG.\n\nWhen /bFire Suppression//b is guaranteed to trigger, pressing [BASIC] when the attack is about to end speeds up the transition into the next hit of /bBasic Attack//b. When /bFire Suppression//b is guaranteed to trigger, the 5th hit of the /bBasic Attack//b string unlocks. Activating a /bChain Attack//b or /bUltimate//b powers up her next /bBasic Attack//b 5th hit. A strengthened /bBasic Attack//b 5th hit will consume all remaining guaranteed /bFire Suppression//b activations to deal additional Fire DMG per activation spent.\n\nAfter triggering a /bPerfect Dodge//b, the current /bBasic Attack//b hit count is retained for 5s. After performing a /bDodge Counter//b, pressing [BASIC] resumes the /bBasic Attack//b from the retained hit count.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "5th-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Enhanced Basic Attack 5th-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "Enhanced Basic Attack 5th-Hit Additional DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          {
+            "level": 1,
+            "multipliers": [55.1, 57.2, 132.0, 340.7, 441.7, 441.7, 82.8]
+          },
+          {
+            "level": 2,
+            "multipliers": [60.2, 62.4, 144.0, 371.7, 481.9, 481.9, 90.4]
+          },
+          {
+            "level": 3,
+            "multipliers": [65.3, 67.6, 156.0, 402.7, 522.1, 522.1, 98.0]
+          },
+          {
+            "level": 4,
+            "multipliers": [70.4, 72.8, 168.0, 433.7, 562.3, 562.3, 105.6]
+          },
+          {
+            "level": 5,
+            "multipliers": [75.5, 78.0, 180.0, 464.7, 602.5, 602.5, 113.2]
+          },
+          {
+            "level": 6,
+            "multipliers": [80.6, 83.2, 192.0, 495.7, 642.7, 642.7, 120.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [85.7, 88.4, 204.0, 526.7, 682.9, 682.9, 128.4]
+          },
+          {
+            "level": 8,
+            "multipliers": [90.8, 93.6, 216.0, 557.7, 723.1, 723.1, 136.0]
+          },
+          {
+            "level": 9,
+            "multipliers": [95.9, 98.8, 228.0, 588.7, 763.3, 763.3, 143.6]
+          },
+          {
+            "level": 10,
+            "multipliers": [101.0, 104.0, 240.0, 619.7, 803.5, 803.5, 151.2]
+          },
+          {
+            "level": 11,
+            "multipliers": [106.1, 109.2, 252.0, 650.7, 843.7, 843.7, 158.8]
+          },
+          {
+            "level": 12,
+            "multipliers": [111.2, 114.4, 264.0, 681.7, 883.9, 883.9, 166.4]
+          },
+          {
+            "level": 13,
+            "multipliers": [116.3, 119.6, 276.0, 712.7, 924.1, 924.1, 174.0]
+          },
+          {
+            "level": 14,
+            "multipliers": [121.4, 124.8, 288.0, 743.7, 964.3, 964.3, 181.6]
+          },
+          {
+            "level": 15,
+            "multipliers": [126.5, 130.0, 300.0, 774.7, 1004.5, 1004.5, 189.2]
+          },
+          {
+            "level": 16,
+            "multipliers": [131.6, 135.2, 312.0, 805.7, 1044.7, 1044.7, 196.8]
+          }
+        ]
+      },
+      {
+        "id": "soldier_11-basic_attack-fire_assault_potential_vision",
+        "name": "Fire Assault (Basic Attack) [Potential Vision]",
+        "description": "Hold [BASIC] to activate: /bBasic Attack: Fire Charge//b\n\n Release [BASIC] while /bBasic Attack: Fire Charge//b is activated to launch /bBasic Attack: Fire Assault//b. If attacked by an enemy during /bBasic Attack: Fire Assault//b or the moment /bBasic Attack: Fire Charge//b is activated, a /bBlock Counter//b can be triggered, negating that instance of DMG and granting 3 guaranteed triggers of /bFire Suppression//b.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b, up to 8 times. While charging, tilting the joystick launches /bBasic Attack: Blazing Rush//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [94.1] },
+          { "level": 2, "multipliers": [102.7] },
+          { "level": 3, "multipliers": [111.3] },
+          { "level": 4, "multipliers": [119.9] },
+          { "level": 5, "multipliers": [128.5] },
+          { "level": 6, "multipliers": [137.1] },
+          { "level": 7, "multipliers": [145.7] },
+          { "level": 8, "multipliers": [154.3] },
+          { "level": 9, "multipliers": [162.9] },
+          { "level": 10, "multipliers": [171.5] },
+          { "level": 11, "multipliers": [180.1] },
+          { "level": 12, "multipliers": [188.7] },
+          { "level": 13, "multipliers": [197.3] },
+          { "level": 14, "multipliers": [205.9] },
+          { "level": 15, "multipliers": [214.5] },
+          { "level": 16, "multipliers": [223.1] }
         ]
       }
     ],
@@ -396,6 +544,37 @@
           { "level": 15, "multipliers": [1534.6] },
           { "level": 16, "multipliers": [1596] }
         ]
+      },
+      {
+        "id": "soldier_11-ex_special_attack-fervent_fire_potential_vision",
+        "name": "Fervent Fire (EX Special Attack) [Potential Vision]",
+        "description": "With enough Energy, press [EX] to activate:\n\nExecutes a powerful slash against enemies nearby, dealing massive Fire DMG. Character is invulnerable while using this skill. After using this skill, Soldier 11's /bBasic Attacks//b and /bDash Attacks//b are guaranteed to trigger /bFire Suppression//b for up to 30s or 8 times.\n\nAfter using this skill, press [BASIC] to immediately follow up with the 4th hit of a /bBasic Attack//b. Soldier 11 enters the /bAlert Stance//b after using this skill.\n\nWhile in /bAlert Stance//b, if hit during a /bBasic Attack//b, triggers /bBasic Attack: Fire Charge//b to block the attack, followed by /bBasic Attack: Fire Assault//b.\n\nAfter /bBasic Attack: Fire Assault//b is performed, press [BASIC] to resume /bBasic Attack//b from the retained /bBasic Attack//b hit count.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [675.0] },
+          { "level": 2, "multipliers": [736.4] },
+          { "level": 3, "multipliers": [797.8] },
+          { "level": 4, "multipliers": [859.2] },
+          { "level": 5, "multipliers": [920.6] },
+          { "level": 6, "multipliers": [982.0] },
+          { "level": 7, "multipliers": [1043.4] },
+          { "level": 8, "multipliers": [1104.8] },
+          { "level": 9, "multipliers": [1166.2] },
+          { "level": 10, "multipliers": [1227.6] },
+          { "level": 11, "multipliers": [1289.0] },
+          { "level": 12, "multipliers": [1350.4] },
+          { "level": 13, "multipliers": [1411.8] },
+          { "level": 14, "multipliers": [1473.2] },
+          { "level": 15, "multipliers": [1534.6] },
+          { "level": 16, "multipliers": [1596.0] }
+        ]
       }
     ],
     "chainAttacks": [
@@ -424,6 +603,37 @@
           { "level": 15, "multipliers": [1437.5] },
           { "level": 16, "multipliers": [1495] }
         ]
+      },
+      {
+        "id": "soldier_11-chain_attack-uplifting_flame_potential_vision",
+        "name": "Uplifting Flame (Chain Attack) [Potential Vision]",
+        "description": "When a /bChain Attack//b is triggered, select the character to activate:\n\nSlashes enemies in a small area ahead, then executes a powerful upwards slash, dealing massive Fire DMG. Character is invulnerable while using this skill. After using this skill, Soldier 11's /bBasic Attacks//b and /bDash Attacks//b are guaranteed to trigger /bFire Suppression//b for up to 30s or 8 times.\n\nAfter using this skill, press [BASIC] to immediately follow up with the 4th hit of a /bBasic Attack//b. Soldier 11 enters the /bAlert Stance//b after using this skill.\n\nWhile in /bAlert Stance//b, if hit during a /bBasic Attack//b, triggers /bBasic Attack: Fire Charge//b to block the attack, followed by /bBasic Attack: Fire Assault//b.\n\nAfter /bBasic Attack: Fire Assault//b is performed, press [BASIC] to resume /bBasic Attack//b from the retained /bBasic Attack//b hit count.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [632.5] },
+          { "level": 2, "multipliers": [690.0] },
+          { "level": 3, "multipliers": [747.5] },
+          { "level": 4, "multipliers": [805.0] },
+          { "level": 5, "multipliers": [862.5] },
+          { "level": 6, "multipliers": [920.0] },
+          { "level": 7, "multipliers": [977.5] },
+          { "level": 8, "multipliers": [1035.0] },
+          { "level": 9, "multipliers": [1092.5] },
+          { "level": 10, "multipliers": [1150.0] },
+          { "level": 11, "multipliers": [1207.5] },
+          { "level": 12, "multipliers": [1265.0] },
+          { "level": 13, "multipliers": [1322.5] },
+          { "level": 14, "multipliers": [1380.0] },
+          { "level": 15, "multipliers": [1437.5] },
+          { "level": 16, "multipliers": [1495.0] }
+        ]
       }
     ],
     "ultimate": [
@@ -451,6 +661,37 @@
           { "level": 14, "multipliers": [4588.6] },
           { "level": 15, "multipliers": [4779.8] },
           { "level": 16, "multipliers": [4971] }
+        ]
+      },
+      {
+        "id": "soldier_11-ultimate-bellowing_flame_potential_vision",
+        "name": "Bellowing Flame (Ultimate) [Potential Vision]",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nSlashes enemies nearby, dealing massive Fire DMG. Character is invulnerable while using this skill. After using this skill, Soldier 11's /bBasic Attacks//b and /bDash Attacks//b are guaranteed to trigger /bFire Suppression//b for up to 30s or 8 times.\n\nAfter using this skill, press [BASIC] to immediately follow up with the 4th hit of a /bBasic Attack//b. Soldier 11 enters the /bAlert Stance//b after using this skill.\n\nWhile in /bAlert Stance//b, if hit during a /bBasic Attack//b, triggers /bBasic Attack: Fire Charge//b to block the attack, followed by /bBasic Attack: Fire Assault//b.\n\nAfter /bBasic Attack: Fire Assault//b is performed, press [BASIC] to resume /bBasic Attack//b from the retained /bBasic Attack//b hit count.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [2103.0] },
+          { "level": 2, "multipliers": [2294.2] },
+          { "level": 3, "multipliers": [2485.4] },
+          { "level": 4, "multipliers": [2676.6] },
+          { "level": 5, "multipliers": [2867.8] },
+          { "level": 6, "multipliers": [3059.0] },
+          { "level": 7, "multipliers": [3250.2] },
+          { "level": 8, "multipliers": [3441.4] },
+          { "level": 9, "multipliers": [3632.6] },
+          { "level": 10, "multipliers": [3823.8] },
+          { "level": 11, "multipliers": [4015.0] },
+          { "level": 12, "multipliers": [4206.2] },
+          { "level": 13, "multipliers": [4397.4] },
+          { "level": 14, "multipliers": [4588.6] },
+          { "level": 15, "multipliers": [4779.8] },
+          { "level": 16, "multipliers": [4971.0] }
         ]
       }
     ],

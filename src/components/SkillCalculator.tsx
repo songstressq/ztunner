@@ -321,7 +321,7 @@ export default function SkillCalculator({
 
     const EXCEPTIONS: Record<string, { before?: string[]; after?: string[] }> =
       {
-        Assault: { before: ["Burial "], after: [" Mode"] },
+        Assault: { before: ["Burial ", "Fire "], after: [" Mode"] },
         Frostbite: { before: [], after: [" Points", " Embrace"] },
       };
 
