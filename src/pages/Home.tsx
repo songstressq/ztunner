@@ -164,6 +164,15 @@ const Home = () => {
               early, don't mind any temporarily disabled sections for now. I'll
               work on them soon! 😫
             </div>
+            <div className="important_notice-msg">
+              🚨 Finally, after a few days of testing, Remielle's Luminize DMG
+              Calculator is now calculating damage correctly, with a difference
+              of approximately 0.03% compared to the in-game value. I used
+              Remielle with Alice and Velina, so if you happen to find any
+              errors or discrepancies with other agents, send me a message on
+              Discord. 🫩
+            </div>
+
             {/*<div className="important_notice-msg">
               🚨 Claret's Sharp DMG should be working now, but I don't have her
               W-Engine, so its Electric Sharp DMG bonus may not work as

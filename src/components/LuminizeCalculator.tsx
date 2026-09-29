@@ -10,6 +10,7 @@ import {
   defaultCalculatorState,
   type CalculatorUIState,
 } from "@/context/SessionContext";
+import { ingameEffectsRegistry } from "@/data/ingameEffectsRegistry";
 
 interface Props {
   agent: Agent;
@@ -113,6 +114,31 @@ export default function LuminizeCalculator({
     const def = ANOMALY_DEFINITIONS[attr];
     return def?.anomalyType || attr;
   };
+
+  const getSourceEffectiveDef = (): number | null => {
+    if (!selectedEnemy || !sourceSlotInfo?.stats) return null;
+    const enemyDef = selectedEnemy.stats.def;
+
+    // Shred total activo (mismo path que el panel del source)
+    let shredTotal = 0;
+    Object.entries(activeEffects).forEach(([effectId, state]) => {
+      if (!state.enabled) return;
+      const effect = ingameEffectsRegistry[effectId];
+      if (!effect) return;
+      const stacks = state.stacks || 1;
+      if (effect.flat?.defShred) shredTotal += effect.flat.defShred * stacks;
+      if (effect.perStack?.defShred)
+        shredTotal += effect.perStack.defShred * stacks;
+    });
+    shredTotal = Math.min(shredTotal, 1);
+
+    const penRatio = sourceSlotInfo.stats.penRatio || 0;
+    const penFlat = sourceSlotInfo.stats.pen || 0;
+    const afterShred = enemyDef * (1 - shredTotal);
+    const afterPen = Math.max(0, afterShred * (1 - penRatio) - penFlat);
+    return Math.round(afterPen);
+  };
+
   const voidflareData = useMemo(() => {
     if (luminizeSourceSlot === null || !slotAnomalyResults[luminizeSourceSlot])
       return null;
@@ -154,7 +180,9 @@ export default function LuminizeCalculator({
     const luminizeBonus = unifiedStats._luminizeMultiplierBonus || 0;
     const totalLuminizeMult = baseLuminizeMult * (1 + luminizeBonus);
 
-    const rawDamage = voidflare * totalLuminizeMult;
+    const anomalyFactor = 1 + (anomalyBonuses?.anomalyDmgBonus || 0);
+
+    const rawDamage = voidflare * totalLuminizeMult * anomalyFactor;
 
     let resMultiplier = 1;
     if (selectedEnemy) {
@@ -183,6 +211,7 @@ export default function LuminizeCalculator({
       baseLuminizeMult,
       luminizeBonus,
       totalLuminizeMult,
+      anomalyFactor,
       resMultiplier,
       rawDamage,
       damageAfterRes,
@@ -381,9 +410,33 @@ export default function LuminizeCalculator({
               </div>
             </div>
 
-            {/* ⑤ Resistance Factor (nuevo) */}
+            {/* ③ Anomaly DMG Factor */}
+            {result.anomalyFactor !== 1 && (
+              <div className="anomaly-grid-row">
+                <div className="anomaly-row-cell step">③</div>
+                <div className="anomaly-row-cell calculation">
+                  <span className="calc-label">Anomaly DMG Factor</span>
+                  <span className="calc-detail">
+                    +{((result.anomalyFactor - 1) * 100).toFixed(1)}%
+                  </span>
+                </div>
+                <div className="anomaly-row-cell before">
+                  {formatNumber(result.voidflare * result.totalLuminizeMult)}
+                </div>
+                <div className="anomaly-row-cell arrow">×</div>
+                <div className="anomaly-row-cell after highlight-bonus">
+                  {formatNumber(
+                    result.voidflare *
+                      result.totalLuminizeMult *
+                      result.anomalyFactor,
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* ④ Resistance Factor */}
             <div className="anomaly-grid-row">
-              <div className="anomaly-row-cell step">⑤</div>
+              <div className="anomaly-row-cell step">④</div>
               <div className="anomaly-row-cell calculation">
                 <span className="calc-label">Resistance Factor</span>
                 <span className="calc-detail">
@@ -391,7 +444,11 @@ export default function LuminizeCalculator({
                 </span>
               </div>
               <div className="anomaly-row-cell before">
-                {formatNumber(result.voidflare * result.totalLuminizeMult)}
+                {formatNumber(
+                  result.voidflare *
+                    result.totalLuminizeMult *
+                    result.anomalyFactor,
+                )}
               </div>
               <div className="anomaly-row-cell arrow">×</div>
               <div className="anomaly-row-cell after highlight-bonus">
@@ -399,10 +456,9 @@ export default function LuminizeCalculator({
               </div>
             </div>
 
-            {/* Stun (si > 0) */}
             {result.stunMultiplier > 0 && (
               <div className="anomaly-grid-row stun-row">
-                <div className="anomaly-row-cell step">⑥</div>
+                <div className="anomaly-row-cell step">⑤</div>
                 <div className="anomaly-row-cell calculation">
                   <span className="calc-label">Stun</span>
                   <span className="calc-detail">+{result.stunMultiplier}%</span>
@@ -422,7 +478,10 @@ export default function LuminizeCalculator({
               <div className="anomaly-row-cell step">☑</div>
               <div className="anomaly-row-cell calculation">
                 <span className="total-label">Final Luminize DMG</span>
-                <span className="total-target">vs {selectedEnemy?.name}</span>
+                <span className="total-target">
+                  vs {selectedEnemy?.name} (DEF:{" "}
+                  {getSourceEffectiveDef() ?? "—"})
+                </span>
               </div>
               <div className="anomaly-row-cell before" />
               <div className="anomaly-row-cell arrow">=</div>

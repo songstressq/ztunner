@@ -2003,6 +2003,16 @@ export default function SkillCalculator({
     return totalBonus;
   };
 
+  const getEffectiveDefForDisplay = (): number => {
+    if (!selectedEnemy) return 0;
+    const enemyDef = selectedEnemy.stats.def;
+    const penRatio = unifiedStats.penRatio || 0;
+    const penFlat = unifiedStats.pen || 0;
+    const afterShred = enemyDef * (1 - totalDefShred);
+    const afterPen = Math.max(0, afterShred * (1 - penRatio) - penFlat);
+    return Math.round(afterPen);
+  };
+
   return (
     <div>
       <div
@@ -2566,7 +2576,8 @@ export default function SkillCalculator({
                 </div>
                 {isArmorer && <div className="header-cell">Sharp DMG</div>}
                 <div className="header-cell">
-                  In-Game DMG (vs {formatNumber(selectedEnemy?.stats.def)} DEF)
+                  In-Game DMG (vs {formatNumber(getEffectiveDefForDisplay())}{" "}
+                  DEF)
                 </div>
               </div>
 
