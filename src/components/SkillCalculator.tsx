@@ -347,6 +347,27 @@ export default function SkillCalculator({
         return `<span style="color: ${color}; font-weight: lighter;">${match}</span>`;
       });
     }
+
+    result = result.replace(
+      /\b(Ether)(,\s+)(Electric)(,\s+)(Fire)(,\s+)(Physical)(,\s+)(Ice)(,)/g,
+      (_, eth, sep1, ele, sep2, fir, sep3, phy, sep4, ice, trailingComma) =>
+        `<span style="color: ${ATTRIBUTE_COLORS.ether}; font-weight: lighter;">${eth}</span>${sep1}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.electric}; font-weight: lighter;">${ele}</span>${sep2}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.fire}; font-weight: lighter;">${fir}</span>${sep3}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.physical}; font-weight: lighter;">${phy}</span>${sep4}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.ice}; font-weight: lighter;">${ice}</span>${trailingComma}`,
+    );
+    // Hardcoded: "480%/240%/600%/40%/60%/24%" ordered color sequence
+    result = result.replace(
+      /(480%)(\s*\/\s*)(240%)(\s*\/\s*)(600%)(\s*\/\s*)(40%)(\s*\/\s*)(60%)(\s*\/\s*)(24%)/g,
+      (_, a, s1, b, s2, c, s3, d, s4, e, s5, f) =>
+        `<span style="color: ${ATTRIBUTE_COLORS.ether}; font-weight: lighter;">${a}</span>${s1}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.electric}; font-weight: lighter;">${b}</span>${s2}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.fire}; font-weight: lighter;">${c}</span>${s3}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.physical}; font-weight: lighter;">${d}</span>${s4}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.ice}; font-weight: lighter;">${e}</span>${s5}` +
+        `<span style="color: ${ATTRIBUTE_COLORS.wind}; font-weight: lighter;">${f}</span>`,
+    );
     return result;
   };
 

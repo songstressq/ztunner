@@ -62,7 +62,6 @@
   padding: var(--padding-8px);
   box-shadow: 0 0 0 12px
     color-mix(in srgb, var(--dominant-theme) 75%, transparent);
-  margin-bottom: var(--padding-2px);
 }
 
 .sr-only {
@@ -3354,6 +3353,7 @@
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+  margin-bottom: var(--spacing-neg-2px);
 }
 
 .slots-track {

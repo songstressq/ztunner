@@ -48,12 +48,24 @@
       "sourceId": "grace_howard-core",
       "label": "Tech Support Dept. (Additional Ability)",
       "description": "When another character in your squad shares the same Attribute or Faction:\n\nUpon hitting an enemy with an EX Special Attack, the next Shock effect inflicted on the target increases Shock DMG by 18%. This effect can stack up to 2 times, and each enemy can trigger it once per use. Resets when the Shock effect ends.",
-      "shortDescription": "Grace's DMG from Shock is increased by 18%, stacking up to 2 times.",
-      "target": "self",
+      "shortDescription": "Any squad member's DMG from Shock is increased by 18%, stacking up to 2 times.",
+      "target": "team",
       "damageBonuses": [
         { "type": "anomalyTypeDmg", "anomalyType": "shock", "value": 0.18 }
       ],
       "maxStacks": 2
+    },
+    {
+      "id": "grace_howard-potential_1-steel_symphony",
+      "source": "potential",
+      "sourceId": "ellen_joe-potential",
+      "label": "Steel Symphony (Potential Vision N°6)",
+      "description": "Awakened Potential: Overclocked Engineering Engine\n\nWhen consuming Zap, gain Enhanced Zap, increasing Electric DMG by 30% for 25s. Repeated triggers reset the duration.",
+      "shortDescription": "Grace's Electric DMG is increased by 30% for 25s.",
+      "target": "self",
+      "damageBonuses": [
+        { "type": "element", "element": "electric", "value": 0.3 }
+      ]
     },
     {
       "id": "grace_howard-mindscape_1-recharge_chamber",
@@ -108,7 +120,39 @@
       {
         "id": "grace-basic_attack-high_pressure_spike",
         "name": "High-Pressure Spike (Basic Attack)",
-        "description": "Press [BASIC] to launch this attack.\n\nUnleashes up to 4 strikes, dealing Physical DMG and Electric DMG. While launching /bBasic Attacks//b, drag the joystick to attack while moving. This allows Grace to reposition herself and deal Physical DMG. While Grace is launching /bBasic Attacks//b, her /bBasic Attack//b combo will not be interrupted by her /bSpecial Attacks//b, /bEX Special Attacks//b, Dodge, /bDash Attacks//b, or /bDodge Counter//b.",
+        "description": "Press [BASIC] to launch this attack.\n\nUnleashes up to 4 strikes, dealing Physical DMG and Electric DMG. While launching /bBasic Attacks//b, drag the joystick to attack while moving. This allows Grace to reposition herself and deal Physical DMG. While Grace is launching /bBasic Attacks//b, her /bBasic Attack//b combo will not be interrupted by her /bSpecial Attacks//b, /bEX Special Attacks//b, /bDodge//b, /bDash Attacks//b, or /bDodge Counter//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "Moving Shot DMG Multiplier", "damageType": "physical" }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [55.1, 59.7, 124.8, 186.3, 40.3] },
+          { "level": 2, "multipliers": [60.2, 65.2, 136.2, 203.3, 44] },
+          { "level": 3, "multipliers": [65.3, 70.7, 147.6, 220.3, 47.7] },
+          { "level": 4, "multipliers": [70.4, 76.2, 159, 237.3, 51.4] },
+          { "level": 5, "multipliers": [75.5, 81.7, 170.4, 254.3, 55.1] },
+          { "level": 6, "multipliers": [80.6, 87.2, 181.8, 271.3, 58.8] },
+          { "level": 7, "multipliers": [85.7, 92.7, 193.2, 288.3, 62.5] },
+          { "level": 8, "multipliers": [90.8, 98.2, 204.6, 305.3, 66.2] },
+          { "level": 9, "multipliers": [95.9, 103.7, 216, 322.3, 69.9] },
+          { "level": 10, "multipliers": [101, 109.2, 227.4, 339.3, 73.6] },
+          { "level": 11, "multipliers": [106.1, 114.7, 238.8, 356.3, 77.3] },
+          { "level": 12, "multipliers": [111.2, 120.2, 250.2, 373.3, 81] },
+          { "level": 13, "multipliers": [116.3, 125.7, 261.6, 390.3, 84.7] },
+          { "level": 14, "multipliers": [121.4, 131.2, 273, 407.3, 88.4] },
+          { "level": 15, "multipliers": [126.5, 136.7, 284.4, 424.3, 92.1] },
+          { "level": 16, "multipliers": [131.6, 142.2, 295.8, 441.3, 95.8] }
+        ]
+      },
+      {
+        "id": "grace-basic_attack-high_pressure_spike_potential_vision",
+        "name": "High-Pressure Spike (Basic Attack) [Potential Vision]",
+        "description": "Press [BASIC] to launch this attack.\n\nUnleashes up to 4 attacks, dealing Physical DMG and Electric DMG. While launching /bBasic Attacks//b, drag the joystick to attack while moving. This allows Grace to reposition herself and deal Physical DMG. If used after the 1st or 2nd hit of a /bBasic Attack//b, pressing /bBasic Attack//b again resumes the combo from the 3rd or 4th hit of the /bBasic Attack//b. While Grace is launching /bBasic Attacks//b, her /bBasic Attack//b combo will not be interrupted by her /bSpecial Attacks//b, /bEX Special Attacks//b, /bDodge//b, /bDash Attacks//b, or /bDodge Counter//b.",
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
@@ -171,6 +215,32 @@
         "id": "grace-dodge_counter-violation_penalty",
         "name": "Violation Penalty (Dodge Counter)",
         "description": "Press [BASIC] during a [COUNTER] to activate:\n\nThrows a grenade at enemies, dealing Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
+        "levels": [
+          { "level": 1, "multipliers": [164.2] },
+          { "level": 2, "multipliers": [179.2] },
+          { "level": 3, "multipliers": [194.2] },
+          { "level": 4, "multipliers": [209.2] },
+          { "level": 5, "multipliers": [224.2] },
+          { "level": 6, "multipliers": [239.2] },
+          { "level": 7, "multipliers": [254.2] },
+          { "level": 8, "multipliers": [269.2] },
+          { "level": 9, "multipliers": [284.2] },
+          { "level": 10, "multipliers": [299.2] },
+          { "level": 11, "multipliers": [314.2] },
+          { "level": 12, "multipliers": [329.2] },
+          { "level": 13, "multipliers": [344.2] },
+          { "level": 14, "multipliers": [359.2] },
+          { "level": 15, "multipliers": [374.2] },
+          { "level": 16, "multipliers": [389.2] }
+        ]
+      },
+      {
+        "id": "grace-dodge_counter-violation_penalty_potential_vision",
+        "name": "Violation Penalty (Dodge Counter) [Potential Vision]",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nThrows a grenade at enemies, dealing Electric DMG, then automatically triggers the /bBasic Attack//b's 4th hit. Character is invulnerable while using this skill.",
         "skillType": "counter",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
@@ -277,6 +347,67 @@
           { "level": 15, "multipliers": [96.7] },
           { "level": 16, "multipliers": [100.6] }
         ]
+      },
+      {
+        "id": "grace-special_attack-obstruction_removal_potential_vision",
+        "name": "Obstruction Removal (Special Attack) [Potential Vision]",
+        "description": "Press [SPECIAL] to activate:\n\nThrows a grenade forward, dealing Electric DMG. During the skill, drag the joystick to reposition in that direction. When activated via consuming /bZap//b, dodge incoming enemy attacks. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
+        "levels": [
+          { "level": 1, "multipliers": [42.1] },
+          { "level": 2, "multipliers": [46] },
+          { "level": 3, "multipliers": [49.9] },
+          { "level": 4, "multipliers": [53.8] },
+          { "level": 5, "multipliers": [57.7] },
+          { "level": 6, "multipliers": [61.6] },
+          { "level": 7, "multipliers": [65.5] },
+          { "level": 8, "multipliers": [69.4] },
+          { "level": 9, "multipliers": [73.3] },
+          { "level": 10, "multipliers": [77.2] },
+          { "level": 11, "multipliers": [81.1] },
+          { "level": 12, "multipliers": [85] },
+          { "level": 13, "multipliers": [88.9] },
+          { "level": 14, "multipliers": [92.8] },
+          { "level": 15, "multipliers": [96.7] },
+          { "level": 16, "multipliers": [100.6] }
+        ]
+      },
+      {
+        "id": "grace-special-obstruction_removal_cycle_potential_vision",
+        "name": "Obstruction Removal - Cycle (Special Attack) [Potential Vision]",
+        "description": "While in the /bPulse//b state, hold [SPECIAL] to activate:\n\nRepeatedly hurls grenades forward during the skill, dealing Electric DMG and granting 1 /bZap//b stack each time grenades are thrown. During the skill, tilt the joystick to reposition and dodge enemy attacks. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          },
+          {
+            "name": "Pulse Grenade Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [19.4, 42.0] },
+          { "level": 2, "multipliers": [21.2, 45.9] },
+          { "level": 3, "multipliers": [23.0, 49.8] },
+          { "level": 4, "multipliers": [24.7, 53.7] },
+          { "level": 5, "multipliers": [26.5, 57.6] },
+          { "level": 6, "multipliers": [28.3, 61.5] },
+          { "level": 7, "multipliers": [30.0, 65.4] },
+          { "level": 8, "multipliers": [31.8, 69.3] },
+          { "level": 9, "multipliers": [33.6, 73.2] },
+          { "level": 10, "multipliers": [35.3, 77.1] },
+          { "level": 11, "multipliers": [37.1, 81.0] },
+          { "level": 12, "multipliers": [38.9, 84.9] },
+          { "level": 13, "multipliers": [40.7, 88.8] },
+          { "level": 14, "multipliers": [42.4, 92.7] },
+          { "level": 15, "multipliers": [44.2, 96.6] },
+          { "level": 16, "multipliers": [46.0, 100.5] }
+        ]
       }
     ],
     "exSkills": [
@@ -284,6 +415,32 @@
         "id": "grace-ex_special_attack-supercharged_obstruction_removal",
         "name": "Supercharged Obstruction Removal (EX Special Attack)",
         "description": "With enough Energy, press [EX] to activate:\n\nLeap in the air and throw two grenades to the front, dealing massive Electric DMG. Upon use, drag the joystick to change directions. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
+        "levels": [
+          { "level": 1, "multipliers": [166.9] },
+          { "level": 2, "multipliers": [182.1] },
+          { "level": 3, "multipliers": [197.3] },
+          { "level": 4, "multipliers": [212.5] },
+          { "level": 5, "multipliers": [227.7] },
+          { "level": 6, "multipliers": [242.9] },
+          { "level": 7, "multipliers": [258.1] },
+          { "level": 8, "multipliers": [273.3] },
+          { "level": 9, "multipliers": [288.5] },
+          { "level": 10, "multipliers": [303.7] },
+          { "level": 11, "multipliers": [318.9] },
+          { "level": 12, "multipliers": [334.1] },
+          { "level": 13, "multipliers": [349.3] },
+          { "level": 14, "multipliers": [364.5] },
+          { "level": 15, "multipliers": [379.7] },
+          { "level": 16, "multipliers": [394.9] }
+        ]
+      },
+      {
+        "id": "grace-ex_special_attack-supercharged_obstruction_removal_potential_vision",
+        "name": "Supercharged Obstruction Removal (EX Special Attack [Potential Vision]",
+        "description": "With enough Energy, press [EX] to activate:\n\nLeaps into the air and throws two grenades forward, dealing massive Electric DMG. During the skill, drag the joystick to change directions.\n\nIf /bZap//b reaches max stacks, throws an additional /bVortex Cluster Grenade//b, generating an electromagnetic field at the point of detonation that pulls in enemies and deals Electric DMG. Character is invulnerable while using this skill.",
         "skillType": "ex",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
@@ -340,6 +497,32 @@
         "id": "grace-ultimate-demolition_blast_beware",
         "name": "Demolition Blast - Beware (Ultimate)",
         "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nThrows a custom grenade which explodes in the air and splits into four smaller grenades, dealing massive Electric DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
+        "levels": [
+          { "level": 1, "multipliers": [1478.8] },
+          { "level": 2, "multipliers": [1613.3] },
+          { "level": 3, "multipliers": [1747.8] },
+          { "level": 4, "multipliers": [1882.3] },
+          { "level": 5, "multipliers": [2016.8] },
+          { "level": 6, "multipliers": [2151.3] },
+          { "level": 7, "multipliers": [2285.8] },
+          { "level": 8, "multipliers": [2420.3] },
+          { "level": 9, "multipliers": [2554.8] },
+          { "level": 10, "multipliers": [2689.3] },
+          { "level": 11, "multipliers": [2823.8] },
+          { "level": 12, "multipliers": [2958.3] },
+          { "level": 13, "multipliers": [3092.8] },
+          { "level": 14, "multipliers": [3227.3] },
+          { "level": 15, "multipliers": [3361.8] },
+          { "level": 16, "multipliers": [3496.3] }
+        ]
+      },
+      {
+        "id": "grace-ultimate-demolition_blast_beware_potential_vision",
+        "name": "Demolition Blast - Beware (Ultimate) [Potential Vision]",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nThrows a custom grenade which explodes in the air and splits into four smaller grenades, dealing massive Electric DMG. Gains 8 stacks of /bZap//b and 25 stacks of /bPulse//b (max 25 stacks). Character is invulnerable while using this skill.",
         "skillType": "ultimate",
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
