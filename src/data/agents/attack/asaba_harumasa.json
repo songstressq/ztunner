@@ -54,7 +54,10 @@
         {
           "stat": "critDmg",
           "type": "exclusive",
-          "appliesTo": ["harumasa-dash_attack-hiten_no_tsuru_slash"],
+          "appliesTo": [
+            "harumasa-dash_attack-hiten_no_tsuru_slash",
+            "harumasa-dash_attack-hiten_no_tsuru_slash_potential_vision"
+          ],
           "value": 0.12
         }
       ],
@@ -69,6 +72,36 @@
       "shortDescription": "Harumasa's DMG is increased by 40% against stunned or Attribute Anomaly-inflicted enemies.",
       "target": "self",
       "damageBonuses": [{ "type": "global", "value": 0.4 }]
+    },
+    {
+      "id": "asaba_harumasa-potential_1-sure_shot",
+      "source": "potential",
+      "sourceId": "asaba_harumasa-potential",
+      "label": "Sure Shot (Potential Vision N°6)",
+      "description": "Potential Awakening: Focus\n\nWhen activating an EX Special Attack, Chain Attack, or Ultimate, increases ATK by 12%. Dash Attack: Hiten no Tsuru - Slash and Chasing Thunder ignore 15% of the target's Electric RES for 12s. Repeated triggers reset the duration. Extends the duration of Core Passive's Gleaming Edge to 10s.",
+      "shortDescription": "Harumasa's ATK is increased by 12%.",
+      "target": "self",
+      "flat": { "atkPercentRaw": 0.12 }
+    },
+    {
+      "id": "asaba_harumasa-potential_2-sure_shot",
+      "source": "potential",
+      "sourceId": "asaba_harumasa-potential",
+      "label": "Sure Shot (Potential Vision N°6)",
+      "description": "Potential Awakening: Focus\n\nWhen activating an EX Special Attack, Chain Attack, or Ultimate, increases ATK by 12%. Dash Attack: Hiten no Tsuru - Slash and Chasing Thunder ignore 15% of the target's Electric RES for 12s. Repeated triggers reset the duration. Extends the duration of Core Passive's Gleaming Edge to 10s.",
+      "shortDescription": "Harumasa's DMG from Dash Attack: Hiten no Tsuru - Slash ignores 15% of the target's Electric RES.",
+      "target": "self",
+      "exclusiveStatBonuses": [
+        {
+          "stat": "electricResShred",
+          "type": "exclusive",
+          "appliesTo": [
+            "harumasa-dash_attack-hiten_no_tsuru_slash",
+            "harumasa-dash_attack-hiten_no_tsuru_slash_potential_vision"
+          ],
+          "value": 0.15
+        }
+      ]
     },
     {
       "id": "asaba_harumasa-mindscape_1-high_spirit",
@@ -90,7 +123,10 @@
       "damageBonuses": [
         {
           "type": "exclusive",
-          "appliesTo": ["harumasa-dash_attack-hiten_no_tsuru_slash"],
+          "appliesTo": [
+            "harumasa-dash_attack-hiten_no_tsuru_slash",
+            "harumasa-dash_attack-hiten_no_tsuru_slash_potential_vision"
+          ],
           "value": 0.5
         }
       ]
@@ -258,7 +294,37 @@
       {
         "id": "harumasa-dash_attack-hiten_no_tsuru_slash",
         "name": "Hiten no Tsuru - Slash (Dash Attack)",
-        "description": "While there are /bX-Marked//b enemies on the field, Harumasa will enter the /bAwakened//b state, switching /bDash Attack: Hiten no Tsuru//b for /bDash Attack: Hiten no Tsuru - Slash//b.\n\nWhile in the /bAwakened//b state, press [BASIC] during a dodge to activate:\n\nRush forwards to the closest /bX-Marked//b enemy and execute a powerful slash, dealing Electric DMG. When the slash hits the target, it consumes 2 stacks of /bElectro Prison//b. With less than 2 stacks of /bElectro Prison//b, /bX-Marked//b will be removed from the enemy. Before /bX-Marked//b is removed, repeatedly press [BASIC] to repeatedly use /bDash Attack: Hiten no Tsuru - Slash//b. While no /bX-Marked//b enemies exist on the field, Harumasa leaves the /bAwakened//b state.\n\nWhile in the /bAwakened//b state, press [BASIC] after /bBasic Attack: Falling Feather//b to quickly follow up with /bDash Attack: Hiten no Tsuru - Slash//b. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%..",
+        "description": "While there are /bX-Marked//b enemies on the field, Harumasa will enter the /bAwakened//b state, switching /bDash Attack: Hiten no Tsuru//b for /bDash Attack: Hiten no Tsuru - Slash//b.\n\nWhile in the /bAwakened//b state, press [BASIC] during a dodge to activate:\n\nRush forwards to the closest /bX-Marked//b enemy and execute a powerful slash, dealing Electric DMG. When the slash hits the target, it consumes 2 stacks of /bElectro Prison//b. With less than 2 stacks of /bElectro Prison//b, /bX-Marked//b will be removed from the enemy. Before /bX-Marked//b is removed, repeatedly press [BASIC] to repeatedly use /bDash Attack: Hiten no Tsuru - Slash//b. While no /bX-Marked//b enemies exist on the field, Harumasa leaves the /bAwakened//b state.\n\nWhile in the /bAwakened//b state, press [BASIC] after /bBasic Attack: Falling Feather//b to quickly follow up with /bDash Attack: Hiten no Tsuru - Slash//b. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          { "name": "1st-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "electric" }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [162.3, 166.6, 189.6] },
+          { "level": 2, "multipliers": [177.1, 181.8, 206.9] },
+          { "level": 3, "multipliers": [191.9, 197, 224.2] },
+          { "level": 4, "multipliers": [206.7, 212.2, 241.5] },
+          { "level": 5, "multipliers": [221.5, 227.4, 258.8] },
+          { "level": 6, "multipliers": [236.3, 242.6, 276.1] },
+          { "level": 7, "multipliers": [251.1, 257.8, 293.4] },
+          { "level": 8, "multipliers": [265.9, 273, 310.7] },
+          { "level": 9, "multipliers": [280.7, 288.2, 328] },
+          { "level": 10, "multipliers": [295.5, 303.4, 345.3] },
+          { "level": 11, "multipliers": [310.3, 318.6, 362.6] },
+          { "level": 12, "multipliers": [325.1, 333.8, 379.9] },
+          { "level": 13, "multipliers": [339.9, 349, 397.2] },
+          { "level": 14, "multipliers": [354.7, 364.2, 414.5] },
+          { "level": 15, "multipliers": [369.5, 379.4, 431.8] },
+          { "level": 16, "multipliers": [384.3, 394.6, 449.1] }
+        ]
+      },
+      {
+        "id": "harumasa-dash_attack-hiten_no_tsuru_slash_potential_vision",
+        "name": "Hiten no Tsuru - Slash (Dash Attack) [Potential Vision]",
+        "description": "While there are /bX-Marked//b enemies on the field, Harumasa will enter the /bAwakened//b state, switching /bDash Attack: Hiten no Tsuru//b for /bDash Attack: Hiten no Tsuru - Slash//b.\n\nWhile in the /bAwakened//b state, press [BASIC] during a dodge to activate:\n\nRush forwards to the closest /bX-Marked//b enemy and execute a powerful slash, dealing Electric DMG. Hitting a Stunned enemy triggers Chasing Thunder, dealing 1 instance of additional Electric DMG.\n\nWhen the slash hits the target, it consumes 2 stacks of /bElectro Prison//b. With less than 2 stacks of /bElectro Prison//b, /bX-Marked//b will be removed from the enemy. Before /bX-Marked//b is removed, repeatedly press [BASIC] to repeatedly use /bDash Attack: Hiten no Tsuru - Slash//b. While no /bX-Marked//b enemies exist on the field, Harumasa leaves the /bAwakened//b state.\n\nWhile in the /bAwakened//b state, press [BASIC] after /bBasic Attack: Falling Feather//b to quickly follow up with /bDash Attack: Hiten no Tsuru - Slash//b. Enemy attacks can be blocked during the 1st hit of the skill. The pursuit effect of the second and third hits is increased. During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
         "skillType": "dash",
         "statBase": "atk",
         "hits": [
@@ -425,6 +491,37 @@
           { "level": 15, "multipliers": [1021.9] },
           { "level": 16, "multipliers": [1062.8] }
         ]
+      },
+      {
+        "id": "asaba_harumasa-ex_special_attack-nowhere_to_run_patrol_potential_vision",
+        "name": "Nowhere to Run - Patrol (EX Special Attack) [Potential Vision]",
+        "description": "With enough energy, press [EX] after using the 4th/5th attack of /bBasic Attack: Cloud Piercer//b, /bDash Attack: Hiten no Tsuru - Slash//b, an /bUltimate//b, /bDodge Counter: Hidden Edge//b, or /bQuick Assist: Braced Bow//b to activate:\n\nFire enhanced arrows forward in rapid succession, dealing massive Electric DMG. When the first enhanced arrow hits an enemy or the ground, 6 /bElectro Quivers//b are generated. When the final enhanced arrow hits an enemy, it activates the /bElectro Quivers//b on the field, firing /bHa-Oto no Ya//b at the target, dealing Electric DMG.\n\nWhen the target's /bElectro Prison//b stacks are close to the maximum, fewer /bElectro Quivers//b will be activated. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [513.1] },
+          { "level": 2, "multipliers": [559.8] },
+          { "level": 3, "multipliers": [606.5] },
+          { "level": 4, "multipliers": [653.2] },
+          { "level": 5, "multipliers": [699.9] },
+          { "level": 6, "multipliers": [746.6] },
+          { "level": 7, "multipliers": [793.3] },
+          { "level": 8, "multipliers": [840.0] },
+          { "level": 9, "multipliers": [886.7] },
+          { "level": 10, "multipliers": [933.4] },
+          { "level": 11, "multipliers": [980.1] },
+          { "level": 12, "multipliers": [1026.8] },
+          { "level": 13, "multipliers": [1073.5] },
+          { "level": 14, "multipliers": [1120.2] },
+          { "level": 15, "multipliers": [1166.9] },
+          { "level": 16, "multipliers": [1213.6] }
+        ]
       }
     ],
     "chainAttacks": [
@@ -452,6 +549,37 @@
           { "level": 14, "multipliers": [1129.9] },
           { "level": 15, "multipliers": [1177] },
           { "level": 16, "multipliers": [1224.1] }
+        ]
+      },
+      {
+        "id": "asaba_harumasa-chain_attack-zanshin_scattered_blossoms_potential_vision",
+        "name": "Zanshin - Scattered Blossoms (Chain Attack) [Potential Vision]",
+        "description": "Activates ALT automatically after [ULTIMATE]: /bZanshin//b:\n\nUnleashes a wide-area piercing attack against enemies in front, dealing Electric DMG. This is considered /bUltimate//b DMG. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [236.5] },
+          { "level": 2, "multipliers": [258.0] },
+          { "level": 3, "multipliers": [279.5] },
+          { "level": 4, "multipliers": [301.0] },
+          { "level": 5, "multipliers": [322.5] },
+          { "level": 6, "multipliers": [344.0] },
+          { "level": 7, "multipliers": [365.5] },
+          { "level": 8, "multipliers": [387.0] },
+          { "level": 9, "multipliers": [408.5] },
+          { "level": 10, "multipliers": [430.0] },
+          { "level": 11, "multipliers": [451.5] },
+          { "level": 12, "multipliers": [473.0] },
+          { "level": 13, "multipliers": [494.5] },
+          { "level": 14, "multipliers": [516.0] },
+          { "level": 15, "multipliers": [537.5] },
+          { "level": 16, "multipliers": [559.0] }
         ]
       }
     ],

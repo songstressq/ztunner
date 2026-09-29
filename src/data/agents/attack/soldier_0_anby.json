@@ -92,6 +92,18 @@
       ]
     },
     {
+      "id": "soldier_0_anby-potential_1-silver_heart",
+      "source": "potential",
+      "sourceId": "soldier_0_anby-potential",
+      "label": "Silver Heart (Potential Vision N°6)",
+      "description": "Awakened Potential: Electropulse\n\nDuring Additional Ability: Voltage Surge, all squad members' Aftershock DMG against enemies marked with Silver Star is increased to 50%.",
+      "shortDescription": "All squad members' DMG from Aftershocks is further increased by 25%.",
+      "target": "team",
+      "damageBonuses": [
+        { "type": "element", "element": "aftershock", "value": 0.25 }
+      ]
+    },
+    {
       "id": "soldier_0_anby-mindscape_1-static_charge",
       "source": "mindscape",
       "sourceId": "soldier_0_anby-mindscape_1",
@@ -188,6 +200,63 @@
           },
           { "level": 16, "multipliers": [77.7, 147.7, 189.6, 95.4, 366, 351] }
         ]
+      },
+      {
+        "id": "soldier_0_anby-basic_attack-penetrating_shock_potential_vision",
+        "name": "Penetrating Shock (Basic Attack) [Potential Vision]",
+        "description": "Press [BASIC] to activate:\n\nPerform up to five slashes ahead, dealing Electric DMG. On the 3rd hit of the /bBasic Attack//b, enemies are continuously pulled in. After the 4th attack hits the enemy, repeatedly press or hold /bBasic Attack//b to quickly pass through enemies in front up to 5 times.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          { "name": "1st-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "electric" },
+          {
+            "name": "3rd Hit Finisher DMG Multiplier",
+            "damageType": "electric"
+          },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "electric" },
+          { "name": "5th-Hit DMG Multiplier", "damageType": "electric" }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [32.7, 62.2, 80.1, 39.9, 154.5, 148.5] },
+          { "level": 2, "multipliers": [35.7, 67.9, 87.4, 43.6, 168.6, 162] },
+          { "level": 3, "multipliers": [38.7, 73.6, 94.7, 47.3, 182.7, 175.5] },
+          { "level": 4, "multipliers": [41.7, 79.3, 102, 51, 196.8, 189] },
+          { "level": 5, "multipliers": [44.7, 85, 109.3, 54.7, 210.9, 202.5] },
+          { "level": 6, "multipliers": [47.7, 90.7, 116.6, 58.4, 225, 216] },
+          {
+            "level": 7,
+            "multipliers": [50.7, 96.4, 123.9, 62.1, 239.1, 229.5]
+          },
+          { "level": 8, "multipliers": [53.7, 102.1, 131.2, 65.8, 253.2, 243] },
+          {
+            "level": 9,
+            "multipliers": [56.7, 107.8, 138.5, 69.5, 267.3, 256.5]
+          },
+          {
+            "level": 10,
+            "multipliers": [59.7, 113.5, 145.8, 73.2, 281.4, 270]
+          },
+          {
+            "level": 11,
+            "multipliers": [62.7, 119.2, 153.1, 76.9, 295.5, 283.5]
+          },
+          {
+            "level": 12,
+            "multipliers": [65.7, 124.9, 160.4, 80.6, 309.6, 297]
+          },
+          {
+            "level": 13,
+            "multipliers": [68.7, 130.6, 167.7, 84.3, 323.7, 310.5]
+          },
+          { "level": 14, "multipliers": [71.7, 136.3, 175, 88, 337.8, 324] },
+          {
+            "level": 15,
+            "multipliers": [74.7, 142, 182.3, 91.7, 351.9, 337.5]
+          },
+          { "level": 16, "multipliers": [77.7, 147.7, 189.6, 95.4, 366, 351] }
+        ]
       }
     ],
     "dashAttacks": [
@@ -199,22 +268,22 @@
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          { "level": 1, "multiplier": 82.5 },
-          { "level": 2, "multiplier": 90 },
-          { "level": 3, "multiplier": 97.5 },
-          { "level": 4, "multiplier": 105 },
-          { "level": 5, "multiplier": 112.5 },
-          { "level": 6, "multiplier": 120 },
-          { "level": 7, "multiplier": 127.5 },
-          { "level": 8, "multiplier": 135 },
-          { "level": 9, "multiplier": 142.5 },
-          { "level": 10, "multiplier": 150 },
-          { "level": 11, "multiplier": 157.5 },
-          { "level": 12, "multiplier": 165 },
-          { "level": 13, "multiplier": 172.5 },
-          { "level": 14, "multiplier": 180 },
-          { "level": 15, "multiplier": 187.5 },
-          { "level": 16, "multiplier": 195 }
+          { "level": 1, "multipliers": [82.5] },
+          { "level": 2, "multipliers": [90] },
+          { "level": 3, "multipliers": [97.5] },
+          { "level": 4, "multipliers": [105] },
+          { "level": 5, "multipliers": [112.5] },
+          { "level": 6, "multipliers": [120] },
+          { "level": 7, "multipliers": [127.5] },
+          { "level": 8, "multipliers": [135] },
+          { "level": 9, "multipliers": [142.5] },
+          { "level": 10, "multipliers": [150] },
+          { "level": 11, "multipliers": [157.5] },
+          { "level": 12, "multipliers": [165] },
+          { "level": 13, "multipliers": [172.5] },
+          { "level": 14, "multipliers": [180] },
+          { "level": 15, "multipliers": [187.5] },
+          { "level": 16, "multipliers": [195] }
         ]
       }
     ],
@@ -227,22 +296,48 @@
         "statBase": "atk",
         "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
         "levels": [
-          { "level": 1, "multiplier": 250.6 },
-          { "level": 2, "multiplier": 273.4 },
-          { "level": 3, "multiplier": 296.2 },
-          { "level": 4, "multiplier": 319 },
-          { "level": 5, "multiplier": 341.8 },
-          { "level": 6, "multiplier": 364.6 },
-          { "level": 7, "multiplier": 387.4 },
-          { "level": 8, "multiplier": 410.2 },
-          { "level": 9, "multiplier": 433 },
-          { "level": 10, "multiplier": 455.8 },
-          { "level": 11, "multiplier": 478.6 },
-          { "level": 12, "multiplier": 501.4 },
-          { "level": 13, "multiplier": 524.2 },
-          { "level": 14, "multiplier": 547 },
-          { "level": 15, "multiplier": 569.8 },
-          { "level": 16, "multiplier": 592.6 }
+          { "level": 1, "multipliers": [250.6] },
+          { "level": 2, "multipliers": [273.4] },
+          { "level": 3, "multipliers": [296.2] },
+          { "level": 4, "multipliers": [319] },
+          { "level": 5, "multipliers": [341.8] },
+          { "level": 6, "multipliers": [364.6] },
+          { "level": 7, "multipliers": [387.4] },
+          { "level": 8, "multipliers": [410.2] },
+          { "level": 9, "multipliers": [433] },
+          { "level": 10, "multipliers": [455.8] },
+          { "level": 11, "multipliers": [478.6] },
+          { "level": 12, "multipliers": [501.4] },
+          { "level": 13, "multipliers": [524.2] },
+          { "level": 14, "multipliers": [547] },
+          { "level": 15, "multipliers": [569.8] },
+          { "level": 16, "multipliers": [592.6] }
+        ]
+      },
+      {
+        "id": "soldier_0_anby-dodge_counter-ground_flash_counter_potential_vision",
+        "name": "Ground Flash Counter (Dodge Counter) [Potential Vision]",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nPerform consecutive slashes at enemies in front, dealing Electric DMG. On hit, gain the /bVoltage Overload//b state for 15s. Repeated triggers refresh the duration.\n\nWhile in the /bVoltage Overload//b state, dodge performance is enhanced. Additionally, when using /bBasic Attack//b//bDash Attack//b//bDodge Counter//b, if the enemy target has /bWhite Thunder//b, pressing [SPECIAL] will immediately cancel the current skill and launch /bSpecial Attack: Azure Flash//b.\n\nWhile in this state, if the enemy does not have /bWhite Thunder//b, press [EX] to directly launch /bEX Special Attack: Sundering Bolt//b. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [{ "name": "DMG Multiplier", "damageType": "electric" }],
+        "levels": [
+          { "level": 1, "multipliers": [250.6] },
+          { "level": 2, "multipliers": [273.4] },
+          { "level": 3, "multipliers": [296.2] },
+          { "level": 4, "multipliers": [319] },
+          { "level": 5, "multipliers": [341.8] },
+          { "level": 6, "multipliers": [364.6] },
+          { "level": 7, "multipliers": [387.4] },
+          { "level": 8, "multipliers": [410.2] },
+          { "level": 9, "multipliers": [433] },
+          { "level": 10, "multipliers": [455.8] },
+          { "level": 11, "multipliers": [478.6] },
+          { "level": 12, "multipliers": [501.4] },
+          { "level": 13, "multipliers": [524.2] },
+          { "level": 14, "multipliers": [547] },
+          { "level": 15, "multipliers": [569.8] },
+          { "level": 16, "multipliers": [592.6] }
         ]
       }
     ],
@@ -393,6 +488,38 @@
           { "level": 14, "multipliers": [410.4] },
           { "level": 15, "multipliers": [427.5] },
           { "level": 16, "multipliers": [444.6] }
+        ]
+      },
+      {
+        "id": "soldier_0_anby-special-azure_flash_boundary_potential_vision",
+        "name": "Azure Flash - Boundary (Special Attack) [Potential Vision]",
+        "description": "When /bSpecial Attack: Thunder Smite//b DMG is triggered:\n\nIf /bEX Special Attack: Sundering Bolt//b or /bSpecial Attack: Azure Flash//b is currently being used, then /bSpecial Attack: Azure Flash - Boundary//b will automatically trigger when the current skill ends, unleashing a flurry of slashes that deal multiple instances of Electric DMG. This skill counts as an /bAftershock//b. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "electric",
+            "damageSubtype": "aftershock"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [249.4] },
+          { "level": 2, "multipliers": [272.1] },
+          { "level": 3, "multipliers": [294.8] },
+          { "level": 4, "multipliers": [317.5] },
+          { "level": 5, "multipliers": [340.2] },
+          { "level": 6, "multipliers": [362.9] },
+          { "level": 7, "multipliers": [385.6] },
+          { "level": 8, "multipliers": [408.3] },
+          { "level": 9, "multipliers": [431.0] },
+          { "level": 10, "multipliers": [453.7] },
+          { "level": 11, "multipliers": [476.4] },
+          { "level": 12, "multipliers": [499.1] },
+          { "level": 13, "multipliers": [521.8] },
+          { "level": 14, "multipliers": [544.5] },
+          { "level": 15, "multipliers": [567.2] },
+          { "level": 16, "multipliers": [589.9] }
         ]
       }
     ],

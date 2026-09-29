@@ -77,6 +77,16 @@
       "assaultCritDmgBase": 0.5
     },
     {
+      "id": "jane_doe-potential_1-heartsnatch_tango",
+      "source": "potential",
+      "sourceId": "jane_doe-potential",
+      "label": "Heartsnatch Tango (Potential Vision N°6)",
+      "description": "Awakened Potential: Lethal Dance\n\nWhen Jane triggers Assault, the CRIT DMG of that instance of Assault is additionally increased by 30%.",
+      "shortDescription": "Jane Doe' CRIT DMG from Assault is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [{ "type": "assaultCritDmgBonus", "value": 0.3 }]
+    },
+    {
       "id": "jane_doe-mindscape_1-crime_counsel",
       "source": "mindscape",
       "sourceId": "jane_doe-mindscape_1",
@@ -198,9 +208,78 @@
         ]
       },
       {
+        "id": "jane_doe-basic_attack-dancing_blades_potential_vision",
+        "name": "Dancing Blades (Basic Attack) [Potential Vision]",
+        "description": "Press [BASIC] to activate:\n\nUnleashes up to 6 attacks in front, dealing Physical DMG. The sixth /bBasic Attack//b is also treated as a /bDash Attack//b, and Anti-Interrupt level is increased while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          { "name": "1st-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "2nd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "3rd-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "4th-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "5th-Hit DMG Multiplier", "damageType": "physical" },
+          { "name": "6th Hit DMG Multiplier", "damageType": "physical" }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [36.1, 62.3, 83.5, 163.4, 98.8, 291.3] },
+          { "level": 2, "multipliers": [39.4, 68, 91.1, 178.3, 107.8, 317.8] },
+          {
+            "level": 3,
+            "multipliers": [42.7, 73.7, 98.7, 193.2, 116.8, 344.3]
+          },
+          { "level": 4, "multipliers": [46, 79.4, 106.3, 208.1, 125.8, 370.8] },
+          { "level": 5, "multipliers": [49.3, 85.1, 113.9, 223, 134.8, 397.3] },
+          {
+            "level": 6,
+            "multipliers": [52.6, 90.8, 121.5, 237.9, 143.8, 423.8]
+          },
+          {
+            "level": 7,
+            "multipliers": [55.9, 96.5, 129.1, 252.8, 152.8, 450.3]
+          },
+          {
+            "level": 8,
+            "multipliers": [59.2, 102.2, 136.7, 267.7, 161.8, 476.8]
+          },
+          {
+            "level": 9,
+            "multipliers": [62.5, 107.9, 144.3, 282.6, 170.8, 503.3]
+          },
+          {
+            "level": 10,
+            "multipliers": [65.8, 113.6, 151.9, 297.5, 179.8, 529.8]
+          },
+          {
+            "level": 11,
+            "multipliers": [69.1, 119.3, 159.5, 312.4, 188.8, 556.3]
+          },
+          {
+            "level": 12,
+            "multipliers": [72.4, 125, 167.1, 327.3, 197.8, 582.8]
+          },
+          {
+            "level": 13,
+            "multipliers": [75.7, 130.7, 174.7, 342.2, 206.8, 609.3]
+          },
+          {
+            "level": 14,
+            "multipliers": [79, 136.4, 182.3, 357.1, 215.8, 635.8]
+          },
+          {
+            "level": 15,
+            "multipliers": [82.3, 142.1, 189.9, 372, 224.8, 662.3]
+          },
+          {
+            "level": 16,
+            "multipliers": [85.6, 147.8, 197.5, 386.9, 233.8, 688.8]
+          }
+        ]
+      },
+      {
         "id": "jane_doe-basic_attack-salchow_jump",
         "name": "Salchow Jump (Basic Attack)",
-        "description": "Entering the /bPassion//b state grants Jane one use of Basic Attack:\n\nSalchow Jump. When available, hold [BASIC] to activate: Launch rapid consecutive attacks forward, followed by a finishing strike, dealing Physical DMG. Hold the button during the continuous attacks to extend the skill duration.\n\nRelease [BASIC] to trigger the finishing strike early. Anti-Interrupt level is increased during the continuous attacks, and Jane takes 40% reduced DMG. Jane is invulnerable during the finishing strike. Using /bBasic Attack: Salchow Jump//b while in the /bPassion//b state generates /bPassion Stream//b.",
+        "description": "Entering the /bPassion//b state grants Jane one use of /bBasic Attack: Salchow Jump//b.When available, hold [BASIC] to activate:\n\nLaunch rapid consecutive attacks forward, followed by a finishing strike, dealing Physical DMG.\n\nHold the button during the continuous attacks to extend the skill duration.Release [BASIC] to trigger the finishing strike early. Anti-Interrupt level is increased during the continuous attacks, and Jane takes 40% reduced DMG. Jane is invulnerable during the finishing strike. Using /bBasic Attack: Salchow Jump//b while in the /bPassion//b state generates /bPassion Stream//b.",
         "skillType": "basic",
         "statBase": "atk",
         "hits": [
@@ -227,6 +306,41 @@
           { "level": 14, "multipliers": [657, 352.4] },
           { "level": 15, "multipliers": [684.4, 367.1] },
           { "level": 16, "multipliers": [711.8, 381.8] }
+        ]
+      },
+      {
+        "id": "jane_doe-basic_attack-salchow_jump_potential_vision",
+        "name": "Salchow Jump (Basic Attack)",
+        "description": "Entering the /bPassion//b state grants Jane one use of /bBasic Attack: Salchow Jump//b. When available, hold [BASIC] to activate:\n\nLaunches rapid consecutive attacks forward, followed by a /bFinishing Move//b, dealing Physical DMG.\n\nHold the button during the consecutive attacks to greatly extend the skill duration. Release [BASIC] to trigger the /bFinishing Move//b early. Anti-Interrupt level is increased during the consecutive attacks, and Jane takes 40% reduced DMG. Jane is invulnerable during the /bFinishing Move//b, which can also trigger a /bPerfect Dodge//b upon activation.\n\nIf a /bPerfect Dodge//b is triggered, the /bFinishing Move//b restores more /bPassion Stream//b on hit. Using and damaging an enemy with /bBasic Attack: Salchow Jump//b while in the /bPassion//b state generates /bPassion Stream//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Consecutive Attack DMG Multiplier",
+            "damageType": "physical"
+          },
+          {
+            "name": "Finishing Move DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [482.1, 161.3] },
+          { "level": 2, "multipliers": [526.0, 176.0] },
+          { "level": 3, "multipliers": [569.9, 190.7] },
+          { "level": 4, "multipliers": [613.8, 205.4] },
+          { "level": 5, "multipliers": [657.7, 220.1] },
+          { "level": 6, "multipliers": [701.6, 234.8] },
+          { "level": 7, "multipliers": [745.5, 249.5] },
+          { "level": 8, "multipliers": [789.4, 264.2] },
+          { "level": 9, "multipliers": [833.3, 278.9] },
+          { "level": 10, "multipliers": [877.2, 293.6] },
+          { "level": 11, "multipliers": [921.1, 308.3] },
+          { "level": 12, "multipliers": [965.0, 323.0] },
+          { "level": 13, "multipliers": [1008.9, 337.7] },
+          { "level": 14, "multipliers": [1052.8, 352.4] },
+          { "level": 15, "multipliers": [1096.7, 367.1] },
+          { "level": 16, "multipliers": [1140.6, 381.8] }
         ]
       }
     ],
@@ -480,6 +594,63 @@
           { "level": 14, "multipliers": [1254.6] },
           { "level": 15, "multipliers": [1306.9] },
           { "level": 16, "multipliers": [1359.2] }
+        ]
+      },
+      {
+        "id": "jane_doe-ex_special_attack-aerial_sweep_clearout_potential_vision",
+        "name": "Aerial Sweep - Clearout (EX Special Attack) [Potential Vision]",
+        "description": "With enough Energy, press [EX] to activate:\n\nLeaps into the air to launch a series of kicks forward, then sweeps across, dealing massive Physical DMG. Character is invulnerable while using this skill, which also counts as a /bDash Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [{ "name": "DMG Multiplier", "damageType": "physical" }],
+        "levels": [
+          { "level": 1, "multipliers": [574.7] },
+          { "level": 2, "multipliers": [627] },
+          { "level": 3, "multipliers": [679.3] },
+          { "level": 4, "multipliers": [731.6] },
+          { "level": 5, "multipliers": [783.9] },
+          { "level": 6, "multipliers": [836.2] },
+          { "level": 7, "multipliers": [888.5] },
+          { "level": 8, "multipliers": [940.8] },
+          { "level": 9, "multipliers": [993.1] },
+          { "level": 10, "multipliers": [1045.4] },
+          { "level": 11, "multipliers": [1097.7] },
+          { "level": 12, "multipliers": [1150] },
+          { "level": 13, "multipliers": [1202.3] },
+          { "level": 14, "multipliers": [1254.6] },
+          { "level": 15, "multipliers": [1306.9] },
+          { "level": 16, "multipliers": [1359.2] }
+        ]
+      },
+      {
+        "id": "jane_doe-ex_special_attack-aerial_sweep_onslaught_potential_vision",
+        "name": "Aerial Sweep - Onslaught (EX Special Attack) [Potential Vision]",
+        "description": "While in the /bPassion//b state and with enough Energy, press [EX] to activate:\n\nLeaps into the air to launch multiple consecutive kicks forward, then sweeps across, dealing massive Physical DMG. Character is invulnerable while using this skill, which also counts as a /bDash Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "physical"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [595.1] },
+          { "level": 2, "multipliers": [649.2] },
+          { "level": 3, "multipliers": [703.3] },
+          { "level": 4, "multipliers": [757.4] },
+          { "level": 5, "multipliers": [811.5] },
+          { "level": 6, "multipliers": [865.6] },
+          { "level": 7, "multipliers": [919.7] },
+          { "level": 8, "multipliers": [973.8] },
+          { "level": 9, "multipliers": [1027.9] },
+          { "level": 10, "multipliers": [1082.0] },
+          { "level": 11, "multipliers": [1136.1] },
+          { "level": 12, "multipliers": [1190.2] },
+          { "level": 13, "multipliers": [1244.3] },
+          { "level": 14, "multipliers": [1298.4] },
+          { "level": 15, "multipliers": [1352.5] },
+          { "level": 16, "multipliers": [1406.6] }
         ]
       }
     ],

@@ -58,7 +58,7 @@
     {
       "id": "grace_howard-potential_1-steel_symphony",
       "source": "potential",
-      "sourceId": "ellen_joe-potential",
+      "sourceId": "grace_howard-potential",
       "label": "Steel Symphony (Potential Vision N°6)",
       "description": "Awakened Potential: Overclocked Engineering Engine\n\nWhen consuming Zap, gain Enhanced Zap, increasing Electric DMG by 30% for 25s. Repeated triggers reset the duration.",
       "shortDescription": "Grace's Electric DMG is increased by 30% for 25s.",
