@@ -2,7 +2,11 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import gameModesData from "@/data/gameModes.json";
 import { InfoTooltip } from "./InfoTooltip";
 import { useSession } from "@/context/SessionContext";
-import { formatStatName, formatStatValue } from "@/utils/statFormatters";
+import {
+  formatStatName,
+  formatStatValue,
+  formatDamageBonusLabel,
+} from "@/utils/statFormatters";
 
 interface GameModeTogglePanelProps {
   activeEffectId: string | null;
@@ -177,66 +181,7 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
     }
   };
 
-  const SKILL_TYPE_LABELS: Record<string, string> = {
-    basic: "Basic",
-    dash: "Dash",
-    counter: "Dodge Counter",
-    quickAssist: "Quick Assist",
-    followup: "Assist Follow-Up",
-    special: "Special",
-    ex: "EX Special",
-    chain: "Chain",
-    ultimate: "Ultimate",
-    mindscape: "Other",
-  };
-
-  const getBonusLabel = (bonus: any): string => {
-    const skillName = bonus.skillType
-      ? SKILL_TYPE_LABELS[bonus.skillType] || bonus.skillType
-      : "";
-    switch (bonus.type) {
-      case "global":
-        return "All DMG";
-      case "element":
-        return bonus.element
-          ? `${bonus.element.toUpperCase()} DMG`
-          : "Element DMG";
-      case "skillType":
-        return skillName ? `${skillName} DMG` : "Skill DMG";
-      case "skillTypeElemental":
-        return bonus.element && bonus.skillType
-          ? `${bonus.element.toUpperCase()} ${skillName} DMG`
-          : "Skill/Element DMG";
-      case "skillTypeStat": {
-        const statLabel = bonus.stat ? formatStatName(bonus.stat) : "Stat";
-        return skillName ? `${skillName} ${statLabel}` : statLabel;
-      }
-      case "exclusive":
-        return "Skill-Exclusive DMG";
-      case "elementExclusive":
-        return bonus.element
-          ? `${bonus.element.toUpperCase()} Skill-Exclusive DMG`
-          : "Skill-Exclusive DMG";
-      case "hitExclusive":
-        return bonus.hitName ? `${bonus.hitName} DMG` : "Hit-Specific DMG";
-      case "sheerDmg":
-        return "Sheer DMG";
-      case "elementSheerDmg":
-        return bonus.element
-          ? `${bonus.element.toUpperCase()} Sheer DMG`
-          : "Sheer DMG";
-      case "skillTypeElementalSheer":
-        return bonus.element && bonus.skillType
-          ? `${bonus.element.toUpperCase()} ${skillName} Sheer DMG`
-          : "Skill Sheer DMG";
-      case "critDamageElementalBonus":
-        return bonus.element
-          ? `${bonus.element.toUpperCase()} CRIT DMG`
-          : "Elemental CRIT DMG";
-      default:
-        return bonus.type || "Bonus";
-    }
-  };
+  const getBonusLabel = (bonus: any): string => formatDamageBonusLabel(bonus);
 
   const modeIcons: Record<string, string> = {
     deadly_assault: "/resources/images/other/deadly_assault.png",

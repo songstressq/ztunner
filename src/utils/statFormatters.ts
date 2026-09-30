@@ -26,24 +26,37 @@ const PERCENT_STATS = new Set<string>([
   "defShred",
   "refringeCoefficient",
   "luminizeMultiplierBonus",
-
   "fireResShred",
   "iceResShred",
   "electricResShred",
   "physicalResShred",
   "etherResShred",
   "windResShred",
-
   "fireDmgBonus",
   "iceDmgBonus",
   "electricDmgBonus",
   "physicalDmgBonus",
   "etherDmgBonus",
   "windDmgBonus",
-
   "critDamageElementalBonus",
   "dmgBonus",
   "lacerationDmg",
+  "anomalyTypeDmg",
+  "disorderTypeDmg",
+  "vortexDmg",
+  "vortexMultiplier",
+  "disorderMultiplier",
+  "skillTypeElemental",
+  "skillTypeElementalSheer",
+  "skillTypeElementalSharp",
+  "skillTypeStat",
+  "elementSheerDmg",
+  "elementExclusive",
+  "elementSharpDmg",
+  "hitExclusive",
+  "sheerDmg",
+  "sharpDmg",
+  "exclusive",
 ]);
 
 const FLAT_STATS = new Set<string>([
@@ -197,4 +210,168 @@ export function formatStatDisplay(
   options?: { showSign?: boolean; decimals?: number },
 ): string {
   return `${formatStatName(key)}: ${formatStatValue(key, value, options)}`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// DamageBonus label formatter
+// Maneja los tipos compuestos (element + skillType + anomalyType)
+// reutilizando formatStatName para los casos simples.
+// ─────────────────────────────────────────────────────────────
+
+interface DamageBonusLike {
+  type?: string;
+  value?: number;
+  element?: string;
+  skillType?: string;
+  anomalyType?: string;
+  stat?: string;
+  hitName?: string;
+  hitNames?: string[];
+}
+
+const SKILL_TYPE_DISPLAY: Record<string, string> = {
+  basic: "Basic",
+  dash: "Dash",
+  counter: "Dodge Counter",
+  quickAssist: "Quick Assist",
+  perfectAssist: "Defensive Assist",
+  followup: "Assist Follow-Up",
+  special: "Special",
+  ex: "EX Special",
+  chain: "Chain",
+  ultimate: "Ultimate",
+  mindscape: "Mindscape",
+};
+
+function capitalizeWord(s?: string): string {
+  if (!s) return "";
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function displaySkillType(skillType?: string): string {
+  if (!skillType) return "";
+  return SKILL_TYPE_DISPLAY[skillType] ?? capitalizeWord(skillType);
+}
+
+function displayElement(element?: string): string {
+  if (!element) return "";
+  return capitalizeWord(element);
+}
+
+export function formatDamageBonusLabel(
+  bonus: DamageBonusLike | null | undefined,
+): string {
+  if (!bonus?.type) return "Bonus";
+
+  const type = bonus.type;
+  const elementName = displayElement(bonus.element);
+  const skillName = displaySkillType(bonus.skillType);
+  const anomalyName = capitalizeWord(bonus.anomalyType);
+
+  switch (type) {
+    // ── Básicos ──
+    case "global":
+      return "Global DMG";
+
+    case "element":
+      return elementName ? `${elementName} DMG` : "Element DMG";
+
+    case "skillType":
+      return skillName ? `${skillName} DMG` : "Skill Type DMG";
+
+    case "exclusive":
+      return "Skill-Exclusive DMG";
+
+    case "elementExclusive":
+      return elementName
+        ? `${elementName} Skill-Exclusive DMG`
+        : "Skill-Exclusive DMG";
+
+    case "hitExclusive":
+      return bonus.hitName ? `${bonus.hitName} DMG` : "Hit-Specific DMG";
+
+    // ── Sheer ──
+    case "sheerDmg":
+      return "Sheer DMG Bonus";
+
+    case "elementSheerDmg":
+      return elementName ? `${elementName} Sheer DMG Bonus` : "Sheer DMG Bonus";
+
+    case "skillTypeElementalSheer":
+      return elementName && skillName
+        ? `${elementName} ${skillName} Sheer DMG`
+        : "Skill Sheer DMG";
+
+    // ── SkillType + Element / Stat ──
+    case "skillTypeElemental":
+      return elementName && skillName
+        ? `${elementName} ${skillName} DMG`
+        : "Skill/Element DMG";
+
+    case "skillTypeStat":
+      return skillName
+        ? `${skillName} ${bonus.stat ? formatStatName(bonus.stat) : "Stat"}`
+        : "Skill Type Stat";
+
+    // ── CRIT ──
+    case "critDamageElementalBonus":
+      return elementName ? `${elementName} CRIT DMG` : "Elemental CRIT DMG";
+
+    case "assaultCritDmgBonus":
+    case "assaultCritDmgTotal":
+      return "Assault CRIT DMG";
+
+    // ── Anomaly ──
+    case "anomalyDmgBonus":
+    case "anomalyDmgBonusFlat":
+      return "Anomaly DMG Bonus";
+
+    case "disorderDmgBonus":
+    case "disorderDmgBonusFlat":
+      return "Disorder DMG Bonus";
+
+    case "disorderMultiplier":
+    case "disorderMultiplierBonus":
+      return "Disorder Multiplier";
+
+    case "anomalyTypeDmg":
+      return anomalyName ? `${anomalyName} DMG` : "Anomaly Type DMG";
+
+    case "disorderTypeDmg":
+      return anomalyName ? `${anomalyName} Disorder DMG` : "Disorder Type DMG";
+
+    // ── Vortex ──
+    case "vortexDmg":
+    case "vortexDmgBonus":
+      return "Vortex DMG Bonus";
+
+    case "vortexMultiplier":
+    case "vortexMultiplierBonus":
+      return "Vortex Multiplier";
+
+    // ── Refringe / Luminize ──
+    case "refringeCoefficient":
+      return "Refringe Coefficient";
+
+    case "luminizeMultiplierBonus":
+      return "Luminize Multiplier";
+
+    // ── Sharp ──
+    case "sharpDmg":
+      return "Sharp DMG Bonus";
+
+    case "elementSharpDmg":
+      return elementName
+        ? `${elementName} Sharp DMG Bonus`
+        : "Elemental Sharp DMG Bonus";
+
+    case "skillTypeElementalSharp":
+      return elementName && skillName
+        ? `${elementName} ${skillName} Sharp DMG`
+        : "Skill Sharp DMG";
+
+    // ── Fallback: usar STAT_NAMES / camelToTitle ──
+    default:
+      return formatStatName(type);
+  }
 }

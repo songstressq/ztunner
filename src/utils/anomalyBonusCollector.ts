@@ -542,8 +542,16 @@ export function collectAnomalyBonuses(
           (l) => l.level === overclockLevel,
         ) || effect.wEngineOverclock.levels[0];
       if (currentLevel?.damageBonuses) {
-        currentLevel.damageBonuses.forEach((bonus) => {
-          const totalValue = bonus.value * stacks;
+        currentLevel.damageBonuses.forEach((bonus: any) => {
+          // Defensa: si value no es número, tratamos como 0
+          const rawValue =
+            typeof bonus?.value === "number" && !Number.isNaN(bonus.value)
+              ? bonus.value
+              : 0;
+          const totalValue = rawValue * stacks;
+          const sourceType = effect.source ?? "wEngine";
+          const sourceIdResolved = effect.sourceId ?? effect.id;
+
           if (bonus.type === "disorderDmgBonus") {
             bonuses.disorderDmgBonus += totalValue;
             bonuses.disorderSources.push({
@@ -551,12 +559,13 @@ export function collectAnomalyBonuses(
               label: effect.label,
               value: totalValue,
               type: "disorder",
-              source: effect.source || "wEngine",
-              sourceId: effect.sourceId || effect.id,
+              source: sourceType,
+              sourceId: sourceIdResolved,
               ownerAgentId: owner.ownerAgentId,
               ownerDisplayName: owner.ownerDisplayName,
             });
           }
+
           if (bonus.type === "anomalyDmgBonus") {
             bonuses.anomalyDmgBonus += totalValue;
             bonuses.anomalySources.push({
@@ -565,12 +574,13 @@ export function collectAnomalyBonuses(
               value: totalValue,
               stacks,
               type: "anomaly",
-              source: effect.source ?? "wEngine",
-              sourceId: effect.sourceId ?? effect.id,
+              source: sourceType,
+              sourceId: sourceIdResolved,
               ownerAgentId: owner.ownerAgentId,
               ownerDisplayName: owner.ownerDisplayName,
             });
           }
+
           if (bonus.type === "disorderMultiplier") {
             bonuses.disorderMultiplierBonus += totalValue;
             bonuses.disorderMultiplierSources.push({
@@ -578,8 +588,63 @@ export function collectAnomalyBonuses(
               label: effect.label,
               value: totalValue,
               stacks,
-              source: effect.source ?? "wEngine",
-              sourceId: effect.sourceId ?? effect.id,
+              source: sourceType,
+              sourceId: sourceIdResolved,
+              ownerAgentId: owner.ownerAgentId,
+              ownerDisplayName: owner.ownerDisplayName,
+            });
+          }
+
+          // ⭐ NUEVO: anomalyTypeDmg (ej. Windswept en Flawless Etiquette)
+          if (bonus.type === "anomalyTypeDmg" && bonus.anomalyType) {
+            if (!bonuses.perAnomalyType[bonus.anomalyType]) {
+              bonuses.perAnomalyType[bonus.anomalyType] = {
+                dmgBonus: 0,
+                disorderBonus: 0,
+              };
+            }
+            bonuses.perAnomalyType[bonus.anomalyType].dmgBonus += totalValue;
+            bonuses.anomalySources.push({
+              id: effect.id,
+              label: effect.label,
+              value: totalValue,
+              stacks,
+              type: "anomaly",
+              anomalyType: bonus.anomalyType,
+              source: sourceType,
+              sourceId: sourceIdResolved,
+              ownerAgentId: owner.ownerAgentId,
+              ownerDisplayName: owner.ownerDisplayName,
+            });
+          }
+
+          // ⭐ NUEVO: vortexDmgBonus
+          if (bonus.type === "vortexDmgBonus") {
+            bonuses.vortexDmgBonus += totalValue;
+            bonuses.vortexDmgSources.push({
+              id: effect.id,
+              label: effect.label,
+              value: totalValue,
+              stacks,
+              type: "anomaly",
+              source: sourceType,
+              sourceId: sourceIdResolved,
+              ownerAgentId: owner.ownerAgentId,
+              ownerDisplayName: owner.ownerDisplayName,
+            });
+          }
+
+          // ⭐ NUEVO: vortexMultiplierBonus
+          if (bonus.type === "vortexMultiplierBonus") {
+            bonuses.vortexMultiplierBonus += totalValue;
+            bonuses.vortexMultiplierSources.push({
+              id: effect.id,
+              label: effect.label,
+              value: totalValue,
+              stacks,
+              type: "anomaly",
+              source: sourceType,
+              sourceId: sourceIdResolved,
               ownerAgentId: owner.ownerAgentId,
               ownerDisplayName: owner.ownerDisplayName,
             });

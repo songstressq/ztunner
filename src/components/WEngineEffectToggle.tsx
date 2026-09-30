@@ -1,7 +1,11 @@
 import type { IngameEffect } from "@/types/IngameEffect";
 import { useState, useEffect } from "react";
 import { InfoTooltip } from "./InfoTooltip";
-import { formatStatName, formatStatValue } from "@/utils/statFormatters";
+import {
+  formatStatName,
+  formatStatValue,
+  formatDamageBonusLabel,
+} from "@/utils/statFormatters";
 
 interface Props {
   effect: IngameEffect;
@@ -100,16 +104,21 @@ const WEngineEffectToggle = ({
     }> = [];
 
     if (currentLevel.damageBonuses) {
-      currentLevel.damageBonuses.forEach((bonus) => {
+      currentLevel.damageBonuses.forEach((bonus: any) => {
         const finalValue = bonus.value * localStacks;
-        const key = `damageBonus_${bonus.type}_${bonus.element || bonus.skillType || "global"}`;
+        const key = `damageBonus_${bonus.type}_${
+          bonus.anomalyType || bonus.element || bonus.skillType || "global"
+        }`;
         result[key] = finalValue;
         damageBonusesInfo.push({
           type: bonus.type,
           value: finalValue,
           element: bonus.element,
           skillType: bonus.skillType,
+          anomalyType: bonus.anomalyType,
           stat: bonus.stat,
+          hitName: bonus.hitName,
+          hitNames: bonus.hitNames,
         });
       });
     }
@@ -350,45 +359,12 @@ const WEngineEffectToggle = ({
                   {/* Damage bonuses */}
                   {(stats as any)._damageBonuses?.map(
                     (bonus: any, index: number) => {
-                      let description = "";
-
-                      if (
-                        bonus.type === "skillTypeElementalSheer" &&
-                        bonus.element &&
-                        bonus.skillType
-                      ) {
-                        const skillTypeName =
-                          bonus.skillType === "ultimate"
-                            ? "ULTIMATE"
-                            : bonus.skillType === "ex"
-                              ? "EX SPECIAL"
-                              : bonus.skillType.toUpperCase();
-
-                        description = `${bonus.element.toUpperCase()} Sheer DMG (${skillTypeName})`;
-                      } else if (
-                        bonus.type === "elementSheerDmg" &&
-                        bonus.element
-                      ) {
-                        description = `${bonus.element.toUpperCase()} Sheer DMG`;
-                      } else if (
-                        bonus.type === "skillTypeElemental" &&
-                        bonus.element &&
-                        bonus.skillType
-                      ) {
-                        description = `${bonus.element.toUpperCase()} DMG (${bonus.skillType.toUpperCase()})`;
-                      } else if (bonus.type === "global") {
-                        description = "Global DMG";
-                      } else if (bonus.type === "element" && bonus.element) {
-                        description = `${bonus.element.toUpperCase()} DMG`;
-                      } else if (
-                        bonus.type === "skillType" &&
-                        bonus.skillType
-                      ) {
-                        description = `${bonus.skillType.toUpperCase()} DMG`;
-                      } else {
-                        description = bonus.type || "Bonus";
-                      }
-
+                      const description = formatDamageBonusLabel(bonus);
+                      const valueText = formatStatValue(
+                        bonus.type ?? "dmgBonus",
+                        bonus.value ?? 0,
+                        { decimals: 1, showSign: true },
+                      );
                       return (
                         <div
                           className="ingame_toggle-stat_row is-bonus"
@@ -398,7 +374,7 @@ const WEngineEffectToggle = ({
                             {description}:
                           </span>
                           <span className="ingame_toggle-stat_value is-bonus">
-                            +{(bonus.value * 100).toFixed(1)}%
+                            {valueText}
                             {stackMultiplier &&
                               maxStacks > 1 &&
                               ` (×${localStacks})`}
