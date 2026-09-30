@@ -1622,6 +1622,12 @@ export function calculateUnifiedStats(
               case "penRatio":
                 base.penRatio += bonusValue;
                 break;
+              case "critDmg":
+                base.critDmg += bonusValue;
+                break;
+              case "lacerationDmg":
+                base.lacerationDmg += bonusValue;
+                break;
               default:
             }
           });
@@ -1729,10 +1735,13 @@ export function calculateUnifiedStats(
             base._defPercentAdditive += bonusValue / 100;
             break;
           case "critRate":
-            base.critRate += bonusValue / 100;
+            base.critRate += bonusValue;
             break;
           case "critDmg":
-            base.critDmg += bonusValue / 100;
+            base.critDmg += bonusValue;
+            break;
+          case "lacerationDmg":
+            base.lacerationDmg += bonusValue;
             break;
           case "impact":
             if (!base._impactFlat) base._impactFlat = 0;

@@ -1,0 +1,715 @@
+{
+  "id": "roxy",
+  "name": "Roxy Ifrita Pryce",
+  "specialty": "Stun",
+  "faction": "Belobog Industries",
+  "attribute": "Wind",
+  "rarity": "S",
+
+  "fullName": "Roxy Ifrita Pryce",
+  "displayName": "Roxy",
+  "attributeIcon": "Wind",
+
+  "themeColor": "#23bebc",
+
+  "baseStats": {
+    "hp": 8418,
+    "atk": 666,
+    "def": 641
+  },
+
+  "combatBase": {
+    "impact": 83,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 63,
+    "anomalyMastery": 110,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "ATK"]
+  },
+
+  "coreEnhancement": [
+    { "level": 0, "stats": { "atkFlat": 0, "critRate": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 2, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 4, "stats": { "atkFlat": 25, "critRate": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "critRate": 0.048 } },
+    { "level": 6, "stats": { "atkFlat": 25, "critRate": 0 } }
+  ],
+
+  "ingameEffects": [
+    {
+      "id": "roxy_ifrita_pryce-core_1-warm_nights_embrace",
+      "source": "core",
+      "sourceId": "roxy-core",
+      "label": "Warm Night's Embrace (Core Passive)",
+      "description": "... When Roxy's initial Energy Regen exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of 960, and Impact increases by 0.4, up to a maximum increase of 76.8. ...",
+      "shortDescription": "Roxy's ATK is increased based on her initial Energy Regen.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.2,
+        "baseBonus": 0,
+        "perUnit": 0.01,
+        "skillLevels": [{ "level": 1, "perUnitBonus": 5, "maxBonus": 960 }],
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "roxy_ifrita_pryce-core_2-warm_nights_embrace",
+      "source": "core",
+      "sourceId": "roxy-core",
+      "label": "Warm Night's Embrace (Core Passive)",
+      "description": "... When Roxy's initial Energy Regen exceeds 1.2, for every 0.01 above this value, ATK increases by 5, up to a maximum increase of 960, and Impact increases by 0.4, up to a maximum increase of 76.8. ...",
+      "shortDescription": "Roxy's Impact is increased based on her initial Energy Regen.",
+      "target": "self",
+      "conditional": {
+        "type": "initialStatBased",
+        "basedOn": "energyRegen",
+        "threshold": 1.2,
+        "baseBonus": 0,
+        "perUnit": 0.01,
+        "skillLevels": [{ "level": 1, "perUnitBonus": 0.4, "maxBonus": 76.8 }],
+        "affectedStats": ["impactBaseRaw"]
+      }
+    },
+    {
+      "id": "roxy_ifrita_pryce-core_3-warm_nights_embrace",
+      "source": "core",
+      "sourceId": "roxy-core",
+      "label": "Warm Night's Embrace (Core Passive)",
+      "description": "... When any squad member triggers Contamination or Cleanse, Roxy provides all squad members with a buff based on the attribute of the Contamination or Cleanse effect: for every 1% CRIT Rate Roxy has, when non-Armorer characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to 40%. When Armorer characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to 20%. Each attribute's buff lasts 50s, and repeated triggers reset the duration. ...",
+      "shortDescription": "Non-Armorers' CRIT DMG is increased based on Roxy's current CRIT Rate for 50s.",
+      "target": "team",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "critRate",
+        "threshold": 0,
+        "perUnit": 1,
+        "perUnitBonus": 0.004,
+        "maxBonus": 0.4,
+        "affectedStats": ["critDmg"]
+      },
+      "condition": {
+        "requiresReceiverSpecialty": [
+          "Attack",
+          "Rupture",
+          "Anomaly",
+          "Support",
+          "Stun"
+        ]
+      }
+    },
+    {
+      "id": "roxy_ifrita_pryce-core_4-warm_nights_embrace",
+      "source": "core",
+      "sourceId": "roxy-core",
+      "label": "Warm Night's Embrace (Core Passive)",
+      "description": "... When any squad member triggers Contamination or Cleanse, Roxy provides all squad members with a buff based on the attribute of the Contamination or Cleanse effect: for every 1% CRIT Rate Roxy has, when non-Armorer characters deal DMG of the corresponding attribute or Wind DMG, their CRIT DMG increases by 0.4%, up to 40%. When Armorer characters deal DMG of the corresponding attribute or Wind DMG, their Laceration DMG increases by 0.2%, up to 20%. Each attribute's buff lasts 50s, and repeated triggers reset the duration. ...",
+      "shortDescription": "Armorers' Laceration DMG is increased based on Roxy's current CRIT Rate for 50s.",
+      "target": "team",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "critRate",
+        "threshold": 0,
+        "perUnit": 1,
+        "perUnitBonus": 0.002,
+        "maxBonus": 0.2,
+        "affectedStats": ["lacerationDmg"]
+      },
+      "condition": {
+        "requiresReceiverSpecialty": ["Armorer"]
+      }
+    },
+    {
+      "id": "roxy_ifrita_pryce-core_1-porcelloy_heart",
+      "source": "core",
+      "sourceId": "roxy-core",
+      "label": "Porcelloy Heart (Additional Ability)",
+      "description": "When another character in your squad is an Attack, Rupture, or Armorer character:\n\nRoxy's DMG increases by 8%. This effect increases with character level, increasing by 1.2% per level, up to 80%. ...",
+      "shortDescription": "Roxy's DMG is increased by 80%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "global",
+          "value": 0.8
+        }
+      ]
+    },
+    {
+      "id": "roxy_ifrita_pryce-core_2-porcelloy_heart",
+      "source": "core",
+      "sourceId": "roxy-core",
+      "label": "Porcelloy Heart (Additional Ability)",
+      "description": "... While an enemy is in the Windswept state applied by a squad member, the direct Wind DMG they take and the direct DMG they take of the attribute that triggered Contamination are increased by 8%. ...",
+      "shortDescription": "All squad members' Direct DMG is increased by 8%.",
+      "target": "team"
+    },
+    {
+      "id": "roxy_ifrita_pryce-mindscape_1-versatile_attendant_1",
+      "source": "mindscape",
+      "sourceId": "roxy_ifrita_pryce-mindscape_1",
+      "label": "Versatile Attendant (Mindscape Cinema N°1)",
+      "description": "When EX Special Attack: Kindly Rest in Peace hits, it reduces the enemy's All-Attribute RES by 15% for 50s. Repeated triggers reset the duration. CRIT DMG increases by 40%.",
+      "shortDescription": "The target's All-Attribute RES is reduced by 15% for 50s.",
+      "target": "team",
+      "perStack": {
+        "fireResShred": 0.15,
+        "iceResShred": 0.15,
+        "electricResShred": 0.15,
+        "physicalResShred": 0.15,
+        "etherResShred": 0.15,
+        "windResShred": 0.15
+      }
+    },
+    {
+      "id": "roxy_ifrita_pryce-mindscape_1-versatile_attendant_2",
+      "source": "mindscape",
+      "sourceId": "roxy_ifrita_pryce-mindscape_1",
+      "label": "Versatile Attendant (Mindscape Cinema N°1)",
+      "description": "When EX Special Attack: Kindly Rest in Peace hits, it reduces the enemy's All-Attribute RES by 15% for 50s. Repeated triggers reset the duration. CRIT DMG increases by 40%.",
+      "shortDescription": "Roxy's CRIT DMG is increased by 40%.",
+      "target": "self",
+      "flat": {
+        "critDmg": 0.4
+      }
+    },
+    {
+      "id": "roxy_ifrita_pryce-mindscape_2-clocking_out_myth",
+      "source": "mindscape",
+      "sourceId": "roxy_ifrita_pryce-mindscape_2",
+      "label": "Clocking Out Myth (Mindscape Cinema N°2)",
+      "description": "EX Special Attack: Don't Catch a Chill deals 5% more Daze. For each Eye of the Storm detonated, gain 1 stack of Windflow}, up to 3 stacks. During EX Special Attack: Don't Catch a Chill, if Roxy switches out after entering the Whirlwind state, she consumes all Windflow. Each stack consumed sustains the Whirlwind state for 0.2s, during which no Energy is consumed, up to a maximum of 0.6s. When EX Special Attack: Don't Catch a Chill hits an enemy, that enemy's Stun DMG Multiplier increases by 30% until the target recovers from Stun.",
+      "shortDescription": "This Mindscape Cinema does not affect Roxy's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "roxy_ifrita_pryce-mindscape_4-rip",
+      "source": "mindscape",
+      "sourceId": "roxy_ifrita_pryce-mindscape_4",
+      "label": "R.I.P. (Mindscape Cinema N°4)",
+      "description": "When a Defensive Assist successfully parries an enemy attack, Roxy gains 1 Energy, up to once per skill. When Dodge Counter: Returned Courtesy hits an enemy, it grants 2 Energy, up to once per skill. Ultimate: Requiem for the Night-Burial deals 20% more DMG and 10% more Daze.",
+      "shortDescription": "Roxy's DMG from Ultimate: Requiem for the Night-Burial is increased by 20%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "exclusive",
+          "appliesTo": [
+            "roxy_ifrita_pryce-ultimate-requiem_for_the_night_burial"
+          ],
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "roxy_ifrita_pryce-mindscape_6-eternity_and_the_clockwork_doll_1",
+      "source": "mindscape",
+      "sourceId": "roxy_ifrita_pryce-mindscape_6",
+      "label": "Eternity and the Clockwork Doll (Mindscape Cinema N°6)",
+      "description": "The DMG dealt by attacks ignores 15% of the target's Wind RES. When Special Attack: Forgive Me for Not Seeing You Off detonates Eyes of the Storm to generate a Giant Windstorm, the primary target is inflicted with Afterecho. A Giant Windstorm is generated at the target's location every 3s, for a total of 2 additional Giant Windstorms. Repeated triggers stack the number of additional Giant Windstorm instances generated and refresh the duration of Afterecho. The DMG dealt by the Giant Windstorm increases to 250% of its original value, and the Daze it inflicts increases by 20%.",
+      "shortDescription": "Roxy's DMG ignores 15% of the target's Wind RES.",
+      "target": "self",
+      "flat": { "windResShred": 0.15 }
+    },
+    {
+      "id": "roxy_ifrita_pryce-mindscape_6-eternity_and_the_clockwork_doll_2",
+      "source": "mindscape",
+      "sourceId": "roxy_ifrita_pryce-mindscape_6",
+      "label": "Eternity and the Clockwork Doll (Mindscape Cinema N°6)",
+      "description": "The DMG dealt by attacks ignores 15% of the target's Wind RES. When Special Attack: Forgive Me for Not Seeing You Off detonates Eyes of the Storm to generate a Giant Windstorm, the primary target is inflicted with Afterecho. A Giant Windstorm is generated at the target's location every 3s, for a total of 2 additional Giant Windstorms. Repeated triggers stack the number of additional Giant Windstorm instances generated and refresh the duration of Afterecho. The DMG dealt by the Giant Windstorm increases to 250% of its original value, and the Daze it inflicts increases by 20%.",
+      "shortDescription": "Roxy's DMG from Giant Windstorm, from Special Attack: Eye of the Storm, is increased by 250%.",
+      "target": "self",
+      "damageBonuses": [
+        {
+          "type": "hitExclusive",
+          "skillId": "roxy_ifrita_pryce-special-eye_of_the_storm",
+          "hitName": "Giant Windstorm DMG Multiplier per Second",
+          "value": 1.5
+        }
+      ]
+    }
+  ],
+
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "roxy_ifrita_pryce-basic_attack-do_stay_a_while",
+        "name": "Do Stay a While (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerforms up to 4 strikes forward, dealing Wind DMG.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "2nd Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "3rd Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "4th Hit DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [52.4, 107.9, 172.4, 192.5] },
+          { "level": 2, "multipliers": [57.2, 117.8, 188.1, 210.0] },
+          { "level": 3, "multipliers": [62.0, 127.7, 203.8, 227.5] },
+          { "level": 4, "multipliers": [66.8, 137.6, 219.5, 245.0] },
+          { "level": 5, "multipliers": [71.6, 147.5, 235.2, 262.5] },
+          { "level": 6, "multipliers": [76.4, 157.4, 250.9, 280.0] },
+          { "level": 7, "multipliers": [81.2, 167.3, 266.6, 297.5] },
+          { "level": 8, "multipliers": [86.0, 177.2, 282.3, 315.0] },
+          { "level": 9, "multipliers": [90.8, 187.1, 298.0, 332.5] },
+          { "level": 10, "multipliers": [95.6, 197.0, 313.7, 350.0] },
+          { "level": 11, "multipliers": [100.4, 206.9, 329.4, 367.5] },
+          { "level": 12, "multipliers": [105.2, 216.8, 345.1, 385.0] },
+          { "level": 13, "multipliers": [110.0, 226.7, 360.8, 402.5] },
+          { "level": 14, "multipliers": [114.8, 236.6, 376.5, 420.0] },
+          { "level": 15, "multipliers": [119.6, 246.5, 392.2, 437.5] },
+          { "level": 16, "multipliers": [124.4, 256.4, 407.9, 455.0] }
+        ]
+      }
+    ],
+
+    "dashAttacks": [
+      {
+        "id": "roxy_ifrita_pryce-dash_attack-forgive_my_rudeness",
+        "name": "Forgive My Rudeness (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nStrikes forward, dealing Wind DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [35.6] },
+          { "level": 2, "multipliers": [38.9] },
+          { "level": 3, "multipliers": [42.2] },
+          { "level": 4, "multipliers": [45.5] },
+          { "level": 5, "multipliers": [48.8] },
+          { "level": 6, "multipliers": [52.1] },
+          { "level": 7, "multipliers": [55.4] },
+          { "level": 8, "multipliers": [58.7] },
+          { "level": 9, "multipliers": [62.0] },
+          { "level": 10, "multipliers": [65.3] },
+          { "level": 11, "multipliers": [68.6] },
+          { "level": 12, "multipliers": [71.9] },
+          { "level": 13, "multipliers": [75.2] },
+          { "level": 14, "multipliers": [78.5] },
+          { "level": 15, "multipliers": [81.8] },
+          { "level": 16, "multipliers": [85.1] }
+        ]
+      }
+    ],
+
+    "dodgeCounters": [
+      {
+        "id": "roxy_ifrita_pryce-dodge_counter-returned_courtesy",
+        "name": "Returned Courtesy (Dodge Counter)",
+        "description": "Press [BASIC] during a [COUNTER] to activate:\n\nStrikes enemies in front, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [392.0] },
+          { "level": 2, "multipliers": [427.7] },
+          { "level": 3, "multipliers": [463.4] },
+          { "level": 4, "multipliers": [499.1] },
+          { "level": 5, "multipliers": [534.8] },
+          { "level": 6, "multipliers": [570.5] },
+          { "level": 7, "multipliers": [606.2] },
+          { "level": 8, "multipliers": [641.9] },
+          { "level": 9, "multipliers": [677.6] },
+          { "level": 10, "multipliers": [713.3] },
+          { "level": 11, "multipliers": [749.0] },
+          { "level": 12, "multipliers": [784.7] },
+          { "level": 13, "multipliers": [820.4] },
+          { "level": 14, "multipliers": [856.1] },
+          { "level": 15, "multipliers": [891.8] },
+          { "level": 16, "multipliers": [927.5] }
+        ]
+      }
+    ],
+
+    "quickAssists": [
+      {
+        "id": "roxy_ifrita_pryce-quick_assist-at_your_service",
+        "name": "At Your Service (Quick Assist)",
+        "description": "When the on-field character is launched, press [ASSIST] to activate:\n\nStrikes enemies in front, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [100.8] },
+          { "level": 2, "multipliers": [110.0] },
+          { "level": 3, "multipliers": [119.2] },
+          { "level": 4, "multipliers": [128.4] },
+          { "level": 5, "multipliers": [137.6] },
+          { "level": 6, "multipliers": [146.8] },
+          { "level": 7, "multipliers": [156.0] },
+          { "level": 8, "multipliers": [165.2] },
+          { "level": 9, "multipliers": [174.4] },
+          { "level": 10, "multipliers": [183.6] },
+          { "level": 11, "multipliers": [192.8] },
+          { "level": 12, "multipliers": [202.0] },
+          { "level": 13, "multipliers": [211.2] },
+          { "level": 14, "multipliers": [220.4] },
+          { "level": 15, "multipliers": [229.6] },
+          { "level": 16, "multipliers": [238.8] }
+        ]
+      }
+    ],
+
+    "perfectAssists": [
+      {
+        "id": "roxy_ifrita_pryce-assist_follow_up-more_overtime",
+        "name": "More Overtime? (Assist)",
+        "description": "After activating a /bDefensive Assist//b, press [ASSIST] again to activate:\n\nRoxy stays on the field and strikes enemies ahead, dealing Wind DMG. This skill is treated as activating a /bBasic Attack//b. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [39.0] },
+          { "level": 2, "multipliers": [42.6] },
+          { "level": 3, "multipliers": [46.2] },
+          { "level": 4, "multipliers": [49.8] },
+          { "level": 5, "multipliers": [53.4] },
+          { "level": 6, "multipliers": [57.0] },
+          { "level": 7, "multipliers": [60.6] },
+          { "level": 8, "multipliers": [64.2] },
+          { "level": 9, "multipliers": [67.8] },
+          { "level": 10, "multipliers": [71.4] },
+          { "level": 11, "multipliers": [75.0] },
+          { "level": 12, "multipliers": [78.6] },
+          { "level": 13, "multipliers": [82.2] },
+          { "level": 14, "multipliers": [85.8] },
+          { "level": 15, "multipliers": [89.4] },
+          { "level": 16, "multipliers": [93.0] }
+        ]
+      }
+    ],
+
+    "assistFollowup": [
+      {
+        "id": "roxy_ifrita_pryce-assist_follow_up-midnight_code",
+        "name": "Midnight Code (Assist Follow-Up)",
+        "description": "Press [BASIC] after a /bDefensive Assist//b to activate:\n\nStrikes enemies ahead, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [611.6] },
+          { "level": 2, "multipliers": [667.2] },
+          { "level": 3, "multipliers": [722.8] },
+          { "level": 4, "multipliers": [778.4] },
+          { "level": 5, "multipliers": [834.0] },
+          { "level": 6, "multipliers": [889.6] },
+          { "level": 7, "multipliers": [945.2] },
+          { "level": 8, "multipliers": [1000.8] },
+          { "level": 9, "multipliers": [1056.4] },
+          { "level": 10, "multipliers": [1112.0] },
+          { "level": 11, "multipliers": [1167.6] },
+          { "level": 12, "multipliers": [1223.2] },
+          { "level": 13, "multipliers": [1278.8] },
+          { "level": 14, "multipliers": [1334.4] },
+          { "level": 15, "multipliers": [1390.0] },
+          { "level": 16, "multipliers": [1445.6] }
+        ]
+      }
+    ],
+
+    "specialAttacks": [
+      {
+        "id": "roxy_ifrita_pryce-special-much_obliged",
+        "name": "Much Obliged (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nPerforms a forward strike, dealing Wind DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [50.9] },
+          { "level": 2, "multipliers": [55.6] },
+          { "level": 3, "multipliers": [60.3] },
+          { "level": 4, "multipliers": [65.0] },
+          { "level": 5, "multipliers": [69.7] },
+          { "level": 6, "multipliers": [74.4] },
+          { "level": 7, "multipliers": [79.1] },
+          { "level": 8, "multipliers": [83.8] },
+          { "level": 9, "multipliers": [88.5] },
+          { "level": 10, "multipliers": [93.2] },
+          { "level": 11, "multipliers": [97.9] },
+          { "level": 12, "multipliers": [102.6] },
+          { "level": 13, "multipliers": [107.3] },
+          { "level": 14, "multipliers": [112.0] },
+          { "level": 15, "multipliers": [116.7] },
+          { "level": 16, "multipliers": [121.4] }
+        ]
+      },
+      {
+        "id": "roxy_ifrita_pryce-special-forgive_me_for_not_seeing_you_off",
+        "name": "Forgive Me for Not Seeing You Off (Special Attack)",
+        "description": "After activating /bEX Special Attack: Kindly Rest in Peace//b, this attack is automatically activated when the total number of /bEyes of the Storm//b on the field and Roxy's /bWind Energy//b reaches at least 3:\n\nThrows her hammer at enemies on the field, dealing Wind DMG. /bEyes of the Storm//b hit by this attack are detonated, up to 3 /bEyes of the Storm//b at a time. Based on the number detonated, a corresponding number of /b/bMiniature Windstorm//bs//b are generated, dealing Wind DMG.\n\nIf 3 /bEyes of the Storm//b are detonated at once, a /bGiant Windstorm//b is generated instead, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [250.0] },
+          { "level": 2, "multipliers": [272.8] },
+          { "level": 3, "multipliers": [295.6] },
+          { "level": 4, "multipliers": [318.4] },
+          { "level": 5, "multipliers": [341.2] },
+          { "level": 6, "multipliers": [364.0] },
+          { "level": 7, "multipliers": [386.8] },
+          { "level": 8, "multipliers": [409.6] },
+          { "level": 9, "multipliers": [432.4] },
+          { "level": 10, "multipliers": [455.2] },
+          { "level": 11, "multipliers": [478.0] },
+          { "level": 12, "multipliers": [500.8] },
+          { "level": 13, "multipliers": [523.6] },
+          { "level": 14, "multipliers": [546.4] },
+          { "level": 15, "multipliers": [569.2] },
+          { "level": 16, "multipliers": [592.0] }
+        ]
+      },
+      {
+        "id": "roxy_ifrita_pryce-special-eye_of_the_storm",
+        "name": "Eye of the Storm (Special Attack)",
+        "description": "Generated after /bEX Special Attack: Kindly Rest in Peace//b consumes /bWind Energy//b, and automatically detonates after 30s.\n\nUp to 9 /bEyes of the Storm//b can exist at the same time. If this limit is exceeded, the earliest generated /bEye of the Storm//b will automatically detonate.\n\nDetonates when hit by /bSpecial Attack: Forgive Me for Not Seeing You Off//b. If fewer than 3 are hit at the same time, 1 /bMiniature Windstorm//b is generated at the location of each Eye of the Storm, tracking enemies and dealing Wind DMG for 1s.\n\nIf 3 are hit at the same time, 1 /bGiant Windstorm//b is generated instead, dealing Wind DMG for 1s. When detonated by any means, an /bEye of the Storm//b releases a blast, dealing 1 instance of Wind DMG to nearby enemies.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Detonation DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "Miniature Windstorm DMG Multiplier per Second",
+            "damageType": "wind"
+          },
+          {
+            "name": "Giant Windstorm DMG Multiplier per Second",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [52.1, 52.1, 208.4] },
+          { "level": 2, "multipliers": [56.9, 56.9, 227.4] },
+          { "level": 3, "multipliers": [61.7, 61.7, 246.4] },
+          { "level": 4, "multipliers": [66.5, 66.5, 265.4] },
+          { "level": 5, "multipliers": [71.3, 71.3, 284.4] },
+          { "level": 6, "multipliers": [76.1, 76.1, 303.4] },
+          { "level": 7, "multipliers": [80.9, 80.9, 322.4] },
+          { "level": 8, "multipliers": [85.7, 85.7, 341.4] },
+          { "level": 9, "multipliers": [90.5, 90.5, 360.4] },
+          { "level": 10, "multipliers": [95.3, 95.3, 379.4] },
+          { "level": 11, "multipliers": [100.1, 100.1, 398.4] },
+          { "level": 12, "multipliers": [104.9, 104.9, 417.4] },
+          { "level": 13, "multipliers": [109.7, 109.7, 436.4] },
+          { "level": 14, "multipliers": [114.5, 114.5, 455.4] },
+          { "level": 15, "multipliers": [119.3, 119.3, 474.4] },
+          { "level": 16, "multipliers": [124.1, 124.1, 493.4] }
+        ]
+      }
+    ],
+
+    "exSkills": [
+      {
+        "id": "roxy_ifrita_pryce-ex_special_attack-dont_catch_a_chill",
+        "name": "Don't Catch a Chill (EX Special Attack)",
+        "description": "With enough energy, press or hold [EX] to activate:\n\nSlides forward, dealing Wind DMG.\n\nWhile sliding, press and hold [EX] to have Roxy enter the Whirlwind state:\n\nWhile in the /bWhirlwind//b state, Roxy generates a tornado. Drag the joystick to control its direction. During this, Energy is continuously consumed, dealing Wind DMG to enemies along its path.\n\nWhen Energy is depleted, or when [EX] is released while the joystick is not being moved, Roxy exits the /bWhirlwind//b state. When the slide ends or when exiting the /bWhirlwind//b state, automatically follows up with /bEX Special Attack: Kindly Rest in Peace//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "Whirlwind DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [13.7, 1304.0] },
+          { "level": 2, "multipliers": [15.0, 1422.6] },
+          { "level": 3, "multipliers": [16.3, 1541.2] },
+          { "level": 4, "multipliers": [17.6, 1659.8] },
+          { "level": 5, "multipliers": [18.9, 1778.4] },
+          { "level": 6, "multipliers": [20.2, 1897.0] },
+          { "level": 7, "multipliers": [21.5, 2015.6] },
+          { "level": 8, "multipliers": [22.8, 2134.2] },
+          { "level": 9, "multipliers": [24.1, 2252.8] },
+          { "level": 10, "multipliers": [25.4, 2371.4] },
+          { "level": 11, "multipliers": [26.7, 2490.0] },
+          { "level": 12, "multipliers": [28.0, 2608.6] },
+          { "level": 13, "multipliers": [29.3, 2727.2] },
+          { "level": 14, "multipliers": [30.6, 2845.8] },
+          { "level": 15, "multipliers": [31.9, 2964.4] },
+          { "level": 16, "multipliers": [33.2, 3083.0] }
+        ]
+      },
+
+      {
+        "id": "roxy_ifrita_pryce-ex_special_attack-kindly_rest_in_peace",
+        "name": "Kindly Rest in Peace (EX Special Attack)",
+        "description": "Automatically activates after /bEX Special Attack: Don't Catch a Chill//b ends:\n\nConsumes all /bWind Energy//b to fire a wind cannon forward, dealing Wind DMG. After the attack, for each point of /bWind Energy//b consumed, deals an additional instance of Wind DMG and generates 1 /bEye of the Storm//b at the current position. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "Additional Explosion DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [31.9, 26.1] },
+          { "level": 2, "multipliers": [34.8, 28.5] },
+          { "level": 3, "multipliers": [37.7, 30.9] },
+          { "level": 4, "multipliers": [40.6, 33.3] },
+          { "level": 5, "multipliers": [43.5, 35.7] },
+          { "level": 6, "multipliers": [46.4, 38.1] },
+          { "level": 7, "multipliers": [49.3, 40.5] },
+          { "level": 8, "multipliers": [52.2, 42.9] },
+          { "level": 9, "multipliers": [55.1, 45.3] },
+          { "level": 10, "multipliers": [58.0, 47.7] },
+          { "level": 11, "multipliers": [60.9, 50.1] },
+          { "level": 12, "multipliers": [63.8, 52.5] },
+          { "level": 13, "multipliers": [66.7, 54.9] },
+          { "level": 14, "multipliers": [69.6, 57.3] },
+          { "level": 15, "multipliers": [72.5, 59.7] },
+          { "level": 16, "multipliers": [75.4, 62.1] }
+        ]
+      }
+    ],
+
+    "chainAttacks": [
+      {
+        "id": "roxy_ifrita_pryce-chain_attack-gale_burial_great_hammer",
+        "name": "Gale-Burial Great Hammer (Chain Attack)",
+        "description": "When a /bChain Attack//b is triggered, select the character to activate:\n\nUnleashes a powerful strike at enemies in front, dealing massive Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [902.2] },
+          { "level": 2, "multipliers": [984.3] },
+          { "level": 3, "multipliers": [1066.4] },
+          { "level": 4, "multipliers": [1148.5] },
+          { "level": 5, "multipliers": [1230.6] },
+          { "level": 6, "multipliers": [1312.7] },
+          { "level": 7, "multipliers": [1394.8] },
+          { "level": 8, "multipliers": [1476.9] },
+          { "level": 9, "multipliers": [1559.0] },
+          { "level": 10, "multipliers": [1641.1] },
+          { "level": 11, "multipliers": [1723.2] },
+          { "level": 12, "multipliers": [1805.3] },
+          { "level": 13, "multipliers": [1887.4] },
+          { "level": 14, "multipliers": [1969.5] },
+          { "level": 15, "multipliers": [2051.6] },
+          { "level": 16, "multipliers": [2133.7] }
+        ]
+      }
+    ],
+
+    "ultimate": [
+      {
+        "id": "roxy_ifrita_pryce-ultimate-requiem_for_the_night_burial",
+        "name": "Requiem for the Night-Burial (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes a powerful strike at enemies in front in a large area, dealing massive Wind DMG. After the skill ends, gains 1 /bWind Energy//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [2131.5] },
+          { "level": 2, "multipliers": [2325.3] },
+          { "level": 3, "multipliers": [2519.1] },
+          { "level": 4, "multipliers": [2712.9] },
+          { "level": 5, "multipliers": [2906.7] },
+          { "level": 6, "multipliers": [3100.5] },
+          { "level": 7, "multipliers": [3294.3] },
+          { "level": 8, "multipliers": [3488.1] },
+          { "level": 9, "multipliers": [3681.9] },
+          { "level": 10, "multipliers": [3875.7] },
+          { "level": 11, "multipliers": [4069.5] },
+          { "level": 12, "multipliers": [4263.3] },
+          { "level": 13, "multipliers": [4457.1] },
+          { "level": 14, "multipliers": [4650.9] },
+          { "level": 15, "multipliers": [4844.7] },
+          { "level": 16, "multipliers": [5038.5] }
+        ]
+      }
+    ],
+
+    "mindscapeAbilities": []
+  }
+}

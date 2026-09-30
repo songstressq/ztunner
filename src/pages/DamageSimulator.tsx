@@ -541,6 +541,13 @@ const DamageSimulator = () => {
     setHomeSession((prev) => ({ ...prev, contaminationElement: element }));
   };
 
+  const setRoxyContaminationBoost = (active: boolean) => {
+    setHomeSession((prev) => ({
+      ...prev,
+      roxyContaminationBoost: active,
+    }));
+  };
+
   const resetAllEffects = () => {
     openConfirm(
       "Reset Effects",
@@ -1454,6 +1461,8 @@ const DamageSimulator = () => {
                   skillProfiles={homeSession.skillProfiles}
                   contaminationElement={homeSession.contaminationElement}
                   onContaminationElementChange={setContaminationElement}
+                  roxyContaminationBoost={homeSession.roxyContaminationBoost}
+                  onRoxyContaminationBoostChange={setRoxyContaminationBoost}
                   slotFluxedAttributes={slotFluxedAttributes}
                 />
               );

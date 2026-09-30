@@ -1,0 +1,128 @@
+{
+  "id": "crimson_moon_casket",
+  "name": "Crimson Moon Casket",
+  "rarity": "S",
+  "specialty": "Stun",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Energy Regen%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.6
+  },
+
+  "ingameEffects": [
+    {
+      "id": "crimson_moon_casket-sleepless_eternal_night-crit_rate",
+      "source": "wEngine",
+      "sourceId": "crimson_moon_casket",
+      "label": "Sleepless Eternal Night (W-Engine Passive)",
+      "description": "The equipper's CRIT Rate is increased. DMG dealt ignores a percentage of the target's Wind RES. When the equipper uses an EX Special Attack to deal Wind DMG, Daze dealt increases by a percentage, and DMG dealt by all other squad members increases by a percentage, for 50s. Repeated triggers reset the duration. Only one instance of the DMG increase effect can exist in the same squad.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.24 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.26 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.28 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.3 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.32 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    },
+    {
+      "id": "crimson_moon_casket-sleepless_eternal_night-wind_res_shred",
+      "source": "wEngine",
+      "sourceId": "crimson_moon_casket",
+      "label": "Sleepless Eternal Night (W-Engine Passive)",
+      "description": "The equipper's CRIT Rate is increased. DMG dealt ignores a percentage of the target's Wind RES. When the equipper uses an EX Special Attack to deal Wind DMG, Daze dealt increases by a percentage, and DMG dealt by all other squad members increases by a percentage, for 50s. Repeated triggers reset the duration. Only one instance of the DMG increase effect can exist in the same squad.",
+      "shortDescription": "The equipper's DMG ignores a percentage of the target's Wind RES.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "windResShred": 0.15 }
+          },
+          {
+            "level": 2,
+            "stats": { "windResShred": 0.173 }
+          },
+          {
+            "level": 3,
+            "stats": { "windResShred": 0.195 }
+          },
+          {
+            "level": 4,
+            "stats": { "windResShred": 0.218 }
+          },
+          {
+            "level": 5,
+            "stats": { "windResShred": 0.24 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    },
+    {
+      "id": "crimson_moon_casket-sleepless_eternal_night-global_dmg",
+      "source": "wEngine",
+      "sourceId": "crimson_moon_casket",
+      "label": "Sleepless Eternal Night (W-Engine Passive)",
+      "description": "The equipper's CRIT Rate is increased. DMG dealt ignores a percentage of the target's Wind RES. When the equipper uses an EX Special Attack to deal Wind DMG, Daze dealt increases by a percentage, and DMG dealt by all other squad members increases by a percentage, for 50s. Repeated triggers reset the duration. Only one instance of the DMG increase effect can exist in the same squad.",
+      "shortDescription": "All squad members' DMG is increased for 50s.",
+      "target": "team",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [{ "type": "global", "value": 0.2 }]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [{ "type": "global", "value": 0.23 }]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [{ "type": "global", "value": 0.26 }]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [{ "type": "global", "value": 0.29 }]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [{ "type": "global", "value": 0.32 }]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Stun"
+      }
+    }
+  ]
+}

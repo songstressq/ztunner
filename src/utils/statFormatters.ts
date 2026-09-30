@@ -43,6 +43,7 @@ const PERCENT_STATS = new Set<string>([
 
   "critDamageElementalBonus",
   "dmgBonus",
+  "lacerationDmg",
 ]);
 
 const FLAT_STATS = new Set<string>([
@@ -138,6 +139,7 @@ const STAT_NAMES: Record<string, string> = {
   assaultCritDmgBonus: "Assault CRIT DMG",
   assaultCritDmgTotal: "Assault CRIT DMG",
   dmgBonus: "DMG Bonus",
+  lacerationDmg: "Laceration DMG",
 
   global: "Global",
   element: "Element",

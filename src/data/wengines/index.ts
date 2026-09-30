@@ -40,6 +40,7 @@ import box_cutter from "./stun/box_cutter.json"; //Pulchra
 import sol_exuvia from "./attack/sol_exuvia.json"; //Pyrois
 import ice_jade_teapot from "./stun/ice_jade_teapot.json"; //Qingyi
 import ode_of_resurrected_wings from "./anomaly/ode_of_resurrected_wings.json"; //Remielle
+import crimson_moon_casket from "./stun/crimson_moon_casket.json";
 import cordis_germina from "./attack/cordis_germina.json"; //Seed
 import peacekeeper_specialized from "./defense/peacekeeper_specialized.json"; //Seth
 import knights_extolment from "./attack/knights_extolment.json"; //sigrid
@@ -128,6 +129,7 @@ export const wEngines: WEngine[] = [
   sol_exuvia as WEngine,
   ice_jade_teapot as WEngine, //✅
   ode_of_resurrected_wings as WEngine,
+  crimson_moon_casket as WEngine,
   cordis_germina as WEngine, //✅
   peacekeeper_specialized as WEngine,
   knights_extolment as WEngine,

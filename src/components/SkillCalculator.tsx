@@ -86,6 +86,8 @@ interface SkillCalculatorProps {
   >;
   contaminationElement?: string | null;
   onContaminationElementChange?: (element: string | null) => void;
+  roxyContaminationBoost?: boolean;
+  onRoxyContaminationBoostChange?: (active: boolean) => void;
   slotFluxedAttributes?: Record<number, string | null>;
 }
 
@@ -145,6 +147,8 @@ export default function SkillCalculator({
   skillProfiles = {},
   contaminationElement = null,
   onContaminationElementChange,
+  roxyContaminationBoost = false,
+  onRoxyContaminationBoostChange,
   slotFluxedAttributes,
 }: SkillCalculatorProps) {
   const {
@@ -374,8 +378,19 @@ export default function SkillCalculator({
   const getDirectDmgMultiplier = (damageType: string): number => {
     if (!contaminationElement) return 1;
     const type = damageType.toLowerCase();
-    if (type === "wind") return 1.1; // Windswept
-    if (type === contaminationElement) return 1.1; // Contamination
+
+    const teamState = teamEffects?.["roxy_ifrita_pryce-core_2-porcelloy_heart"];
+
+    const roxyBoostActive =
+      agent.id === "roxy"
+        ? (activeEffects["roxy_ifrita_pryce-core_2-porcelloy_heart"]?.enabled ??
+          teamState?.enabled ??
+          false)
+        : (teamState?.enabled ?? false);
+
+    const contaminationBonus = roxyBoostActive ? 1.18 : 1.1;
+    if (type === "wind") return contaminationBonus;
+    if (type === contaminationElement) return contaminationBonus;
     return 1;
   };
 
@@ -1410,6 +1425,7 @@ export default function SkillCalculator({
       const damageAfterSheerMod = damageAfterDmgMod * sheerModTotal;
       let finalDamage = damageAfterSheerMod;
       if (bonuses.sheerDmgFlat) finalDamage += bonuses.sheerDmgFlat;
+      finalDamage *= getDirectDmgMultiplier(damageType);
 
       const critDamage = finalDamage * (1 + totalCritDmg);
       let finalCritDamage = critDamage;
@@ -1417,6 +1433,7 @@ export default function SkillCalculator({
         const critBonus = bonuses.critDamageElementalBonus[damageType];
         finalCritDamage = critDamage * (1 + critBonus);
       }
+      finalCritDamage *= getDirectDmgMultiplier(damageType);
 
       let baseResistance = 0;
       switch (damageType) {

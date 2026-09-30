@@ -134,6 +134,7 @@ interface HomeSession {
   showGameModePanel: boolean;
   dominantTheme: string;
   contaminationElement: string | null;
+  roxyContaminationBoost: boolean;
 }
 
 interface WEnginesSession {
@@ -171,6 +172,7 @@ const defaultHomeSession: HomeSession = {
   showGameModePanel: false,
   dominantTheme: "#AFAFAF",
   contaminationElement: null,
+  roxyContaminationBoost: false,
 };
 
 const defaultWEnginesSession: WEnginesSession = {
@@ -211,6 +213,9 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         parsed.gameModeCurrentRoomId = defaultHomeSession.gameModeCurrentRoomId;
       if (parsed.contaminationElement === undefined) {
         parsed.contaminationElement = null;
+      }
+      if (parsed.roxyContaminationBoost === undefined) {
+        parsed.roxyContaminationBoost = false;
       }
 
       return { ...defaultHomeSession, ...parsed };

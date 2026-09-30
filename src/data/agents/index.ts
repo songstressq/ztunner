@@ -38,6 +38,7 @@ import pulchra from "./stun/pulchra_fellini.json"; //ok
 import pyrois from "./attack/pyrois.json"; //ok
 import qingyi from "./stun/qingyi.json"; //ok
 import remielle from "./anomaly/remielle_dan.json";
+import roxy from "./stun/roxy_ifrita_pryce.json";
 import seed from "./attack/seed.json"; //ok
 import seth from "./defense/seth_lowell.json"; //ok
 import sigrid from "./attack/sigrid_de_lazur.json";
@@ -111,6 +112,7 @@ export const agents: Agent[] = [
   qingyi as Agent, //✅
   remielle as Agent, //✅
   rina as Agent, //✅
+  roxy as Agent,
   seed as Agent, //✅
   seth as Agent, //✅  NOTE: M6 needs in game testing?
   sigrid as Agent, //✅
