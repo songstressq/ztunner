@@ -134,25 +134,28 @@ const Home = () => {
           <div className="agents-wrapper" style={dominantEmptyStyle}>
             <div>
               <h2 className="home_content-title_h1">
-                Z-Tunner: ZZZ Damage Calculator for Zenless Zone Zero
+                Z-Tunner: Zenless Zone Zero Damage Calculator
               </h2>
               <div
                 className="home_divider"
                 style={{ backgroundColor: dominantTheme }}
               />
               <p className="home_content-text_h1">
-                A{" "}
+                Z-Tunner is a{" "}
                 <strong className="home_content-text_strong">
-                  ZZZ Damage Calculator
+                  Zenless Zone Zero Damage Calculator
                 </strong>{" "}
-                for testing builds, team compositions, and combat scenarios in
-                Zenless Zone Zero. Z-Tunner simulates combat directly in your
-                browser, including DMG, Anomaly, Disorder, Sharp, Maim, and
-                Luminize DMG, with support for W-Engines, Drive Discs, Mindscape
-                Cinemas, and in-game effects. Compare builds, fine-tune your
-                team compositions, and see how each stat, skill, and buff
-                affects your overall damage output — all in one place on{" "}
-                <strong className="home_content-text_strong">Z-Tunner.</strong>
+                designed for testing builds, comparing teams, and figuring out
+                how different mechanics affect your damage. Set up your Agents,
+                choose their W-Engines and Drive Discs, and configure the buffs
+                provided by your team to recreate different combat scenarios.{" "}
+                <strong className="home_content-text_strong">
+                  Z-Tunner supports Skill DMG, Anomaly, Disorder and Vortex DMG,
+                  Sharp and Maim DMG, and Luminize DMG
+                </strong>
+                , so you can test different setups without having to do all the
+                math yourself. Everything you need to experiment with your
+                builds is right here, on Z-Tunner.
               </p>
             </div>
           </div>
