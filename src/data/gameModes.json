@@ -113,10 +113,10 @@
               "id": "game_mode_da_buff2_effect_c",
               "label": "Deadly Assault: Cinders of Corrosion",
               "description": "... After an Agent inflicts an Attribute Anomaly on an enemy, the enemy's DEF is reduced by 10% for 10s. Repeated triggers reset the duration.",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is increased by 10% for 10s.",
+              "shortDescription": "All squad members' DMG ignores 10% of the target's DEF.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.1 }
+              "perStack": { "defShred": 0.1 }
             }
           ]
         },
@@ -163,13 +163,12 @@
           "effects": [
             {
               "id": "game_mode_sd_room1_effect_a",
-              "label": "Shiyu Defense: Lockspring",
-              "description": "Agent Sharp DMG increases by 25%, and DEF increases by 15%. ...",
-              "shortDescription": "All squad members' Sharp DMG is increased by 25%, and their DEF is increased by 15%.",
+              "label": "Shiyu Defense: Conqueror",
+              "description": "Agent Sharp DMG increases by 20%. After defeating normal enemies, Agents with the Stun specialty restore 15 energy. ...",
+              "shortDescription": "All squad members' Sharp DMG is increased by 20%.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "defPercentRaw": 0.15 },
-              "damageBonuses": [{ "type": "sharpDmg", "value": 0.25 }]
+              "damageBonuses": [{ "type": "sharpDmg", "value": 0.2 }]
             }
           ]
         },
@@ -179,30 +178,24 @@
           "effects": [
             {
               "id": "game_mode_sd_room2_effect_a",
-              "label": "Shiyu Defense: The Decider - Terror Raptor",
-              "description": "Agent Anomaly Buildup Rate inceases by 15%, and Attribute Anomaly DMG dealt increases by 20%. ...",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is increased by 20%.",
+              "label": "Shiyu Defense: Miasmic Doppelganger Komano Manato",
+              "description": "Agent Ice DMG and Ether DMG increase by 25%, and their Ice and Ether anomaly Buildup Rate increase by 15%. ...",
+              "shortDescription": "All squad members' Ice DMG and Ether DMG is increased by 25%.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.2 }
+              "damageBonuses": [
+                { "type": "element", "element": "ice", "value": 0.25 },
+                { "type": "element", "element": "ether", "value": 0.25 }
+              ]
             },
             {
               "id": "game_mode_sd_room2_effect_b",
-              "label": "Shiyu Defense: The Decider - Terror Raptor",
-              "description": "If there are 2/3 Agents with the Anomaly specialty, Agent Anomaly Proficiency increases by 20/60. ...",
-              "shortDescription": "With 2 Anomaly Agents in the squad, all squad members' Anomaly Proficiency is increased by 20.",
+              "label": "Shiyu Defense: Miasmic Doppelganger Komano Manato",
+              "description": "... When an Agent inflicts an Attribute Anomaly on an enemy, the enemy's DEF decreases by 10% for 10s. Repeated triggers reset the duration. ...",
+              "shortDescription": "All squad members' DMG ignores 10% of the target's DEF.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "anomalyProficiency": 20 }
-            },
-            {
-              "id": "game_mode_sd_room2_effect_c",
-              "label": "Shiyu Defense: The Decider - Terror Raptor",
-              "description": "If there are 2/3 Agents with the Anomaly specialty, Agent Anomaly Proficiency increases by 20/60. ...",
-              "shortDescription": "With 3 Anomaly Agents in the squad, all squad members' Anomaly Proficiency is increased by 60.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "anomalyProficiency": 60 }
+              "flat": { "defShred": 0.1 }
             }
           ]
         },
@@ -212,14 +205,14 @@
           "effects": [
             {
               "id": "game_mode_sd_room3_effect_a",
-              "label": "Shiyu Defense: Mirage Archer Unit",
-              "description": "Agent Ether DMG increases by 20%, and Anomaly Proficiency increases by 20. ...",
-              "shortDescription": "All squad members' DEF is increased by 15%, and their DMG ignores 20% of the target's Electric RES.",
+              "label": "Shiyu Defense: Doppelganger - Starlight - Billy",
+              "description": "Agent Fire DMG and Electric DMG increase by 35%, and Daze dealt by Agents with the Stun specialty increases by 15%. ...",
+              "shortDescription": "All squad members' Fire DMG and Electric DMG is increased by 35%.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "anomalyProficiency": 20 },
               "damageBonuses": [
-                { "type": "element", "element": "ether", "value": 0.2 }
+                { "type": "element", "element": "fire", "value": 0.35 },
+                { "type": "element", "element": "electric", "value": 0.35 }
               ]
             }
           ]
