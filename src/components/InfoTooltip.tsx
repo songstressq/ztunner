@@ -1,4 +1,12 @@
-import { useRef, useState, useEffect, ReactNode } from "react";
+import {
+  useRef,
+  useState,
+  useEffect,
+  ReactNode,
+  isValidElement,
+  cloneElement,
+  type ReactElement,
+} from "react";
 import { createPortal } from "react-dom";
 import "../styles/InfoTooltip.css";
 
@@ -186,13 +194,14 @@ const TooltipContent = ({ tooltip }: TooltipContentProps) => {
   }, [tooltip.x, tooltip.y]);
 
   const getArrowStyle = () => {
+    const ARROW_COLOR = "rgb(50, 50, 50)";
     switch (direction) {
       case "top":
         return {
           bottom: "-6px",
           left: arrowPos.left,
           transform: "translateX(-50%)",
-          borderTop: `6px solid #1a1a1a`,
+          borderTop: `6px solid ${ARROW_COLOR}`,
           borderLeft: "6px solid transparent",
           borderRight: "6px solid transparent",
           borderBottom: "none",
@@ -202,7 +211,7 @@ const TooltipContent = ({ tooltip }: TooltipContentProps) => {
           top: "-6px",
           left: arrowPos.left,
           transform: "translateX(-50%)",
-          borderBottom: `6px solid #1a1a1a`,
+          borderBottom: `6px solid ${ARROW_COLOR}`,
           borderLeft: "6px solid transparent",
           borderRight: "6px solid transparent",
           borderTop: "none",
@@ -212,7 +221,7 @@ const TooltipContent = ({ tooltip }: TooltipContentProps) => {
           right: "-6px",
           top: arrowPos.top,
           transform: "translateY(-50%)",
-          borderLeft: `6px solid #1a1a1a`,
+          borderLeft: `6px solid ${ARROW_COLOR}`,
           borderTop: "6px solid transparent",
           borderBottom: "6px solid transparent",
           borderRight: "none",
@@ -222,7 +231,7 @@ const TooltipContent = ({ tooltip }: TooltipContentProps) => {
           left: "-6px",
           top: arrowPos.top,
           transform: "translateY(-50%)",
-          borderRight: `6px solid #1a1a1a`,
+          borderRight: `6px solid ${ARROW_COLOR}`,
           borderTop: "6px solid transparent",
           borderBottom: "6px solid transparent",
           borderLeft: "none",
@@ -248,12 +257,14 @@ interface InfoTooltipProps {
   content: string;
   children?: ReactNode;
   className?: string;
+  triggerAsChild?: boolean;
 }
 
 export const InfoTooltip = ({
   content,
   children,
   className = "info-icon",
+  triggerAsChild = false,
 }: InfoTooltipProps) => {
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
@@ -270,6 +281,34 @@ export const InfoTooltip = ({
     setTooltip(null);
   };
 
+  // ⭐ Modo triggerAsChild: clonamos el hijo y le inyectamos los handlers,
+  // así el elemento original sigue siendo hijo directo del grid/flex.
+  if (triggerAsChild && isValidElement(children)) {
+    const child = children as ReactElement<any>;
+    const childProps = child.props;
+
+    const merged = cloneElement(child, {
+      className: `${childProps.className || ""} hover-tooltip-trigger`.trim(),
+      onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
+        childProps.onMouseEnter?.(e);
+        handleMouseEnter(e);
+      },
+      onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
+        childProps.onMouseLeave?.(e);
+        handleMouseLeave();
+      },
+    });
+
+    return (
+      <>
+        {merged}
+        {tooltip &&
+          createPortal(<TooltipContent tooltip={tooltip} />, document.body)}
+      </>
+    );
+  }
+
+  // Modo original (ícono ⓘ)
   return (
     <>
       <div

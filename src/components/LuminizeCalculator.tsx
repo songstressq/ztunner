@@ -6,6 +6,7 @@ import type { AnomalyBonuses } from "@/utils/anomalyBonusCollector";
 import NeonSelect from "@/components/NeonSelect";
 import { ANOMALY_DEFINITIONS, type AttributeType } from "@/types/Anomaly";
 import { calculateElementalResistance } from "@/utils/resistanceCalculator";
+import { formatAnomalyType } from "@/utils/statFormatters";
 import {
   defaultCalculatorState,
   type CalculatorUIState,
@@ -235,10 +236,14 @@ export default function LuminizeCalculator({
 
   const sourceOptions = teamSlotsInfo
     .filter((s) => s.slotIndex !== currentSlotIndex && s.agentName !== "Empty")
-    .map((s) => ({
-      value: String(s.slotIndex),
-      label: `Slot ${s.slotIndex + 1}: ${s.agentName} (${s.agent?.attribute || "Unknown"})`,
-    }));
+    .map((s) => {
+      const attr = s.agent?.attribute?.toLowerCase() || "unknown";
+      const def = ANOMALY_DEFINITIONS[attr];
+      return {
+        value: String(s.slotIndex),
+        label: `Slot ${s.slotIndex + 1}: ${s.agentName} (${formatAnomalyType(def?.anomalyType || attr)})`,
+      };
+    });
 
   const skillOptions = luminizeSkills.map((s) => ({
     value: s.id,
@@ -378,8 +383,8 @@ export default function LuminizeCalculator({
               <div className="anomaly-row-cell calculation">
                 <span className="calc-label">Voidflare</span>
                 <span className="calc-detail">
-                  {result.sourceName}'s {result.anomalyType} /{" "}
-                  {result.baseMultiplier}
+                  {result.sourceName}'s {formatAnomalyType(result.anomalyType)}{" "}
+                  / {result.baseMultiplier}
                 </span>
               </div>
               <div className="anomaly-row-cell before">

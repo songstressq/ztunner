@@ -31,6 +31,7 @@ import {
   isSheerDamage,
 } from "@/utils/sheerDamageCalculator";
 import MaimCalculator from "@/components/MaimCalculator";
+import { InfoTooltip } from "@/components/InfoTooltip";
 
 interface SkillCalculatorProps {
   agent: Agent;
@@ -2587,15 +2588,37 @@ export default function SkillCalculator({
               <div className="grid-header">
                 <div className="header-cell">Hit Name</div>
                 <div className="header-cell">Multiplier (%)</div>
-                {!isArmorer && <div className="header-cell">Normal DMG</div>}
-                <div className="header-cell">
-                  {isArmorer ? "Critical DMG" : "Critical DMG"}
-                </div>
-                {isArmorer && <div className="header-cell">Sharp DMG</div>}
-                <div className="header-cell">
-                  In-Game DMG (vs {formatNumber(getEffectiveDefForDisplay())}{" "}
-                  DEF)
-                </div>
+                {!isArmorer && (
+                  <InfoTooltip
+                    triggerAsChild
+                    content="The hit's damage based on the Agent's relevant stat, without applying CRIT or other game mechanics."
+                  >
+                    <div className="header-cell">Normal DMG</div>
+                  </InfoTooltip>
+                )}
+                <InfoTooltip
+                  triggerAsChild
+                  content="The hit's damage based on the Agent's relevant stat, with CRIT applied but without applying other game mechanics."
+                >
+                  <div className="header-cell">Critical DMG</div>
+                </InfoTooltip>
+                {isArmorer && (
+                  <InfoTooltip
+                    triggerAsChild
+                    content="The hit's damage based on the Agent's relevant stat, with Sharp applied but without applying other game mechanics."
+                  >
+                    <div className="header-cell">Sharp DMG</div>
+                  </InfoTooltip>
+                )}
+                <InfoTooltip
+                  triggerAsChild
+                  content="The hit's final damage after applying enemy DEF and Attribute RES, the Agent's DMG modifiers, Stun multiplier, and other applicable effects."
+                >
+                  <div className="header-cell">
+                    In-Game DMG (vs {formatNumber(getEffectiveDefForDisplay())}{" "}
+                    DEF)
+                  </div>
+                </InfoTooltip>
               </div>
 
               {selectedSkill.hits.map((hit, index) => {

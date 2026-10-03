@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { AnomalyBonuses } from "@/utils/anomalyBonusCollector";
+import { formatAnomalyType } from "@/utils/statFormatters";
 
 interface Props {
   anomalyBonuses: AnomalyBonuses;
@@ -296,7 +297,7 @@ export default function AnomalyBonusesPanel({
                   >
                     <div className="damage_panel-item_summary-subitem_header">
                       <span className="damage_panel-item_summary-subitem_title">
-                        {capitalize(type)} Anomaly DMG
+                        {formatAnomalyType(type)} Anomaly DMG
                       </span>
                       <span className="damage_panel-item_summary-subitem_tag">
                         +{formatPercentage(bonuses.dmgBonus)}
@@ -521,7 +522,7 @@ export default function AnomalyBonusesPanel({
                   >
                     <div className="damage_panel-item_summary-subitem_header">
                       <span className="damage_panel-item_summary-subitem_title">
-                        {capitalize(type)} Disorder DMG
+                        {formatAnomalyType(type)} Disorder DMG
                       </span>
                       <span className="damage_panel-item_summary-subitem_tag">
                         +{formatPercentage(bonuses.disorderBonus)}

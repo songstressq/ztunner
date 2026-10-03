@@ -16,6 +16,7 @@ import { ingameEffectsRegistry } from "@/data/ingameEffectsRegistry";
 import AnomalyBonusesPanel from "./AnomalyBonusesPanel";
 import NeonSelect from "@/components/NeonSelect";
 import type { CollectedBonuses } from "@/utils/damageBonusCollector";
+import { formatAnomalyType } from "@/utils/statFormatters";
 import {
   defaultCalculatorState,
   type CalculatorUIState,
@@ -218,7 +219,7 @@ export default function AnomalyCalculator({
           attribute: attr,
           agentName: slot.agentName,
           agentId: otherAgent?.id || "",
-          label: `${slot.agentName} (${def?.anomalyType || attr})`,
+          label: `${slot.agentName} (${formatAnomalyType(def?.anomalyType || attr)})`,
           isSelf: false,
         });
       });
@@ -499,7 +500,7 @@ export default function AnomalyCalculator({
     if (isValidAnomalyAttribute(currentAttribute)) {
       options.push({
         value: `current:${currentAttribute}`,
-        label: `${definition.anomalyType.toUpperCase()} (current agent)`,
+        label: `${formatAnomalyType(definition.anomalyType)} (current agent)`,
       });
     }
 
@@ -522,7 +523,7 @@ export default function AnomalyCalculator({
           const otherDef = ANOMALY_DEFINITIONS[otherAttribute];
           options.push({
             value: `${slot.slotIndex}:${otherAttribute}`,
-            label: `Slot ${slot.slotIndex + 1}: ${slot.agentName} (${otherDef?.anomalyType || otherAttribute})`,
+            label: `Slot ${slot.slotIndex + 1}: ${slot.agentName} (${formatAnomalyType(otherDef?.anomalyType || otherAttribute)})`,
           });
         }
       });
@@ -1327,7 +1328,7 @@ export default function AnomalyCalculator({
     if (!isWindAgent) {
       options.push({
         value: `current:${currentAttribute}`,
-        label: `Slot ${currentSlotIndex + 1}: ${currentAgentName} (${definition.anomalyType.toUpperCase()})`,
+        label: `Slot ${currentSlotIndex + 1}: ${currentAgentName} (${formatAnomalyType(definition.anomalyType)})`,
         disabled: true,
       });
     }
@@ -1351,7 +1352,7 @@ export default function AnomalyCalculator({
         const isSameAttribute = otherAttribute === currentAttribute;
         options.push({
           value: `${slot.slotIndex}:${otherAttribute}`,
-          label: `Slot ${slot.slotIndex + 1}: ${slot.agentName} (${otherDef?.anomalyType || otherAttribute})`,
+          label: `Slot ${slot.slotIndex + 1}: ${slot.agentName} (${formatAnomalyType(otherDef?.anomalyType || otherAttribute)})`,
           disabled: isSameAttribute && !isWindAgent,
         });
       });

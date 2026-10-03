@@ -128,7 +128,7 @@
               "id": "game_mode_da_buff3_effect_a",
               "label": "Deadly Assault: Gleaming Frost",
               "description": "Agents with the Attack specialty deal 20% more Ice DMG. ...",
-              "shortDescription": "All squad members' Ice DMG is increased by 20%.",
+              "shortDescription": "Attack Agents' Ice DMG is increased by 20%.",
               "source": "gameMode",
               "target": "team",
               "damageBonuses": [

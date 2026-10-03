@@ -1,21 +1,20 @@
 /* InfoTooltip.css */
 .effect-tooltip-portal {
   position: fixed;
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 8px 12px;
+  background-color: rgba(50, 50, 50);
+  color: rgba(255, 255, 255, 0.95);
+  padding: var(--padding-8px) var(--padding-12px);
   border-radius: 8px;
-  font-size: 12px;
+  font-size: var(--text-14_4px);
   white-space: pre-wrap;
   max-width: 350px;
   width: max-content;
   min-width: 150px;
   z-index: 99999;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(120, 120, 120, 0.3);
   pointer-events: none;
   font-family: inherit;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .effect-tooltip-arrow {
@@ -32,10 +31,10 @@
   font-size: 11px;
   color: #666;
   cursor: help;
-  background-color: #333;
+  background-color: #33333392 !important;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: var(--padding-18px);
+  height: var(--padding-18px);
   display: flex;
   align-items: center;
   justify-content: center;

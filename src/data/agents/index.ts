@@ -65,12 +65,6 @@ import zhu_yuan from "./attack/zhu_yuan.json"; //ok
 import type { Agent } from "@/types/Agent";
 
 export const agents: Agent[] = [
-  //DISK INVENTORY DONT RESET MAIN STAT WHEN SLOT CHANGES
-  //MAKE MODAL CLOSE WHEN SIDEBAR OPEN
-  //id": "remielle-mindscape_2-fall_into_the_noise_2", NEEDS REQUIERE SPECIALTY
-
-  //skin dots no styles format
-
   alice as Agent, //✅
   anby as Agent, //✅
   anton as Agent, //✅

@@ -375,3 +375,43 @@ export function formatDamageBonusLabel(
       return formatStatName(type);
   }
 }
+
+// ─────────────────────────────────────────────────────────────
+// Anomaly Type / Attribute display names
+// Usado en los NeonSelect de Disorder, Vortex y Luminize.
+// ─────────────────────────────────────────────────────────────
+
+const ANOMALY_TYPE_DISPLAY: Record<string, string> = {
+  // Anomaly Types
+  windswept: "Windswept",
+  burn: "Burn",
+  shock: "Shock",
+  corruption: "Corruption",
+  shatter: "Shatter",
+  assault: "Assault",
+  frost: "Frost",
+  auricink: "Auric Ink",
+  honededge: "Honed Edge",
+  // Atributos base (fallback para lumiflux, wind, etc.)
+  fire: "Fire",
+  ice: "Ice",
+  electric: "Electric",
+  physical: "Physical",
+  ether: "Ether",
+  wind: "Wind",
+  lumiflux: "Lumiflux",
+};
+
+export function formatAnomalyType(type?: string): string {
+  if (!type) return "";
+  const normalized = type.toLowerCase().replace(/\s+/g, "");
+  if (ANOMALY_TYPE_DISPLAY[normalized]) {
+    return ANOMALY_TYPE_DISPLAY[normalized];
+  }
+  // Fallback: camelCase → Title Case
+  return type
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .split(" ")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
+}
