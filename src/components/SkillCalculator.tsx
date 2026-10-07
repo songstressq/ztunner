@@ -1689,7 +1689,29 @@ export default function SkillCalculator({
       totalBonus += unifiedStats.attributeDmgBonus.physical || 0;
 
       const damageWithBonus = baseDamage * totalBonus;
-      const critDamage = damageWithBonus * (1 + unifiedStats.critDmg);
+
+      // ⭐ Buscar CRIT DMG exclusivo que aplique al skill activo.
+      // Preferimos el skill seleccionado; si no, cualquiera de los EX de Dialyn.
+      const getApplicableExclusiveCritDmg = (): number => {
+        const statBonuses = bonuses.statBonuses || {};
+
+        // 1) Skill actualmente seleccionado
+        if (selectedSkillId && statBonuses[selectedSkillId]?.critDmg) {
+          return statBonuses[selectedSkillId].critDmg;
+        }
+
+        // 2) Cualquier EX Special de Dialyn
+        const dialynExIds = agent.skills?.exSkills?.map((s) => s.id) ?? [];
+        for (const id of dialynExIds) {
+          if (statBonuses[id]?.critDmg) return statBonuses[id].critDmg;
+        }
+
+        return 0;
+      };
+
+      const exclusiveCritDmg = getApplicableExclusiveCritDmg();
+      const totalCritDmg = unifiedStats.critDmg + exclusiveCritDmg;
+      const critDamage = damageWithBonus * (1 + totalCritDmg);
       const realDamage = calculateRealDamage(
         damageWithBonus,
         "physical",
@@ -2903,8 +2925,8 @@ export default function SkillCalculator({
                     </div>
                     <div className="extra-panel-calc-row">
                       <span className="extra-panel-calc-label">
-                        Real DMG (vs {formatNumber(selectedEnemy?.stats.def)}{" "}
-                        DEF)
+                        In-Game DMG (vs{" "}
+                        {formatNumber(getEffectiveDefForDisplay())} DEF)
                       </span>
                       <span className="extra-panel-calc-value real">
                         {formatNumber(damage.realValue)}
@@ -2912,7 +2934,7 @@ export default function SkillCalculator({
                     </div>
                     <div className="extra-panel-calc-row">
                       <span className="extra-panel-calc-label">
-                        Real Critical DMG
+                        In-Game Critical DMG
                       </span>
                       <span className="extra-panel-calc-value real-crit">
                         {formatNumber(damage.realCritValue)}
@@ -3020,8 +3042,8 @@ export default function SkillCalculator({
                     </div>
                     <div className="extra-panel-calc-row">
                       <span className="extra-panel-calc-label">
-                        Real DMG (vs {formatNumber(selectedEnemy?.stats.def)}{" "}
-                        DEF)
+                        In-Game DMG (vs{" "}
+                        {formatNumber(getEffectiveDefForDisplay())} DEF)
                       </span>
                       <span className="extra-panel-calc-value real">
                         {formatNumber(damage.realValue)}
@@ -3029,7 +3051,7 @@ export default function SkillCalculator({
                     </div>
                     <div className="extra-panel-calc-row">
                       <span className="extra-panel-calc-label">
-                        Real Critical DMG
+                        in-Game Critical DMG
                       </span>
                       <span className="extra-panel-calc-value real-crit">
                         {formatNumber(damage.realCritValue)}
