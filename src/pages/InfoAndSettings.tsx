@@ -267,6 +267,35 @@ const InfoAndSettings = () => {
               />
 
               <div className="changelog_grid">
+                {/* v1.1.3 */}
+                <div className="home_content_changelog_item">
+                  <span>v1.1.3 — Anomaly Formulas &amp; Other Fixes</span>
+                  <h3>
+                    ● Fixed - Anomaly, Disorder, Vortex and Luminize DMG
+                    Formulas
+                  </h3>
+                  <p>
+                    Remielle's Refringe Mod is now correctly applied as an
+                    independent multiplier in each formula, and the Luminize
+                    Calculator no longer double-counts the Voidflare source's
+                    bonuses. New detailed calculation steps are now displayed
+                    consistently across all damage grids.
+                  </p>
+                  <h3>● Fixed - DEF Shred and Effective DEF Display</h3>
+                  <p>
+                    Aftershock DEF Shred is now correctly displayed in the
+                    Defense Bonuses panel and is properly limited by the DEF
+                    Shred cap. The Enemy panel now shows the full Shred → PEN
+                    Ratio → PEN breakdown.
+                  </p>
+                  <h3>● Fixed - Specialty Filtering for W-Engine Effects</h3>
+                  <p>
+                    Team W-Engine in-game effects with specialty requirements
+                    are now correctly disabled and marked as received from
+                    another slot. W-Engines users from other specialties can no
+                    longer use these effects incorrectly.
+                  </p>
+                </div>
                 {/* v1.1.2 */}
                 <div className="home_content_changelog_item">
                   <span>v1.1.2 — Contamination State</span>

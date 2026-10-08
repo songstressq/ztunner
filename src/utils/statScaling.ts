@@ -1,6 +1,7 @@
 import type { WEngine } from "@/types/WEngine";
 import type { Agent, UnifiedStats } from "@/types/Agent";
 import type { DriveDisc } from "@/types/DriveDisc";
+import type { CustomBaseStats } from "@/types/SavedBuild";
 import discSets from "@/data/discSets.json";
 import { getActiveSets } from "@/utils/setDetection";
 import { effectToModifier } from "@/utils/effectsToModifiers";
@@ -310,32 +311,35 @@ export function calculateUnifiedStats(
     agentName: string;
     specialty: string;
   }> = [],
+  customBaseStats?: CustomBaseStats, // ⭐ NUEVO
 ): UnifiedStats {
   const teamEffectsData = teamEffects || {};
-
+  const custom = customBaseStats ?? {};
   const base: UnifiedStats = {
-    hp: agent.baseStats.hp,
-    atk: agent.baseStats.atk,
-    def: agent.baseStats.def,
+    hp: custom.hp ?? agent.baseStats.hp,
+    atk: custom.atk ?? agent.baseStats.atk,
+    def: custom.def ?? agent.baseStats.def,
     impact: 0,
-    critRate: agent.combatBase.critRate,
-    critDmg: agent.combatBase.critDmg,
-    anomalyProficiency: agent.combatBase.anomalyProficiency,
-    anomalyMastery: agent.combatBase.anomalyMastery,
-    penRatio: agent.combatBase.penRatio,
-    pen: agent.combatBase.pen,
-    energyRegen: agent.combatBase.energyRegen,
-    attributeDmgBonus: { ...agent.combatBase.attributeDmgBonus },
+    critRate: custom.critRate ?? agent.combatBase.critRate,
+    critDmg: custom.critDmg ?? agent.combatBase.critDmg,
+    anomalyProficiency:
+      custom.anomalyProficiency ?? agent.combatBase.anomalyProficiency,
+    anomalyMastery: custom.anomalyMastery ?? agent.combatBase.anomalyMastery,
+    penRatio: custom.penRatio ?? agent.combatBase.penRatio,
+    pen: custom.pen ?? agent.combatBase.pen,
+    energyRegen: custom.energyRegen ?? agent.combatBase.energyRegen,
+    attributeDmgBonus: {
+      ...agent.combatBase.attributeDmgBonus,
+      ...(custom.attributeDmgBonus ?? {}),
+    },
     sheerForce: 0,
-    lacerationDmg: agent.combatBase.lacerationDmg ?? 0, // ⭐
-    sharpDmgBonus: agent.combatBase.sharpDmgBonus ?? 0, // ⭐
+    lacerationDmg: custom.lacerationDmg ?? agent.combatBase.lacerationDmg ?? 0,
+    sharpDmgBonus: custom.sharpDmgBonus ?? agent.combatBase.sharpDmgBonus ?? 0,
   };
-
   if (agent.specialty === "Rupture") {
     (base as any).__isRuptureAgent = true;
   }
-
-  const impactBase = agent.combatBase.impact;
+  const impactBase = custom.impact ?? agent.combatBase.impact;
 
   let impactMul = 0;
   let impactFlat = 0;
@@ -482,8 +486,9 @@ export function calculateUnifiedStats(
     }
   }
 
-  if (agent.id === "ben") {
-    const initialDef = agent.baseStats.def * (1 + defPercent) + flatDEF;
+  if (agent.id === "ben" && custom.atk === undefined) {
+    const baseDefValue = custom.def ?? agent.baseStats.def;
+    const initialDef = baseDefValue * (1 + defPercent) + flatDEF;
     const defToAtk = Math.floor(initialDef * 0.4);
     flatATK += defToAtk;
   }
@@ -1492,21 +1497,27 @@ export function calculateUnifiedStats(
     }
   }
 
-  if (agent.id === "ben") {
+  if (agent.id === "ben" && custom.atk === undefined) {
     const defToAtk = Math.floor(base.def * 0.4);
     base.atk += defToAtk;
   }
 
-  if (agent.id === "claret") {
-    const totalCritDmgPercent = (agent.combatBase.critDmg + critDmgAdd) * 100;
+  if (agent.id === "claret" && custom.critRate === undefined) {
+    const totalCritDmgPercent = base.critDmg * 100;
     const critRateFromCritDmg = totalCritDmgPercent * 0.0035;
     base.critRate += critRateFromCritDmg;
   }
 
   if (agent.specialty === "Rupture") {
-    base.energyRegen = 0;
-    base.pen = 0;
-    base.penRatio = 0;
+    if (custom.sheerForce !== undefined) {
+      // ⭐ Override manual: valor exacto, sin fórmula
+      base.sheerForce = custom.sheerForce;
+    } else {
+      // Fórmula automática estándar
+      const sfHP = Math.floor(base.hp * 0.1);
+      const sfATK = Math.floor(base.atk * 0.3);
+      base.sheerForce = sfHP + sfATK;
+    }
   }
 
   if (agent.specialty === "Armorer") {

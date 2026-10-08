@@ -614,6 +614,7 @@ const DamageSimulator = () => {
         idx,
         getStatsBySlot,
         slotsInfo,
+        slotBuild.customBaseStats, // ⭐ NUEVO
       );
       statsMap[idx] = slotStats;
       slotsInfo.push({
@@ -1069,6 +1070,13 @@ const DamageSimulator = () => {
       build.coreLevel,
       build.discs,
       {},
+      {},
+      undefined,
+      {},
+      0,
+      undefined,
+      [],
+      build.customBaseStats, // ⭐ NUEVO
     );
 
     const getTeamStatsBySlot = (
@@ -1106,6 +1114,7 @@ const DamageSimulator = () => {
       slotIndex,
       getTeamStatsBySlot,
       teamSlotsInfo,
+      build.customBaseStats, // ⭐ NUEVO
     );
 
     const skinId = build.skinId || "default";

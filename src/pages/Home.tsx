@@ -167,7 +167,10 @@ const Home = () => {
               early, don't mind any temporarily disabled sections for now. I'll
               work on them soon! 😫
             </div>
-            <div className="important_notice-msg">
+            <div
+              className="important_notice-msg"
+              style={{ marginTop: "var(--padding-5px)" }}
+            >
               🚨 Finally, after a few days of testing, Remielle's Luminize DMG
               Calculator is now calculating damage correctly, with a difference
               of approximately 0.03% compared to the in-game value. I used
@@ -175,7 +178,14 @@ const Home = () => {
               errors or discrepancies with other agents, send me a message on
               Discord. 🫩
             </div>
-
+            <div
+              className="important_notice-msg"
+              style={{ marginTop: "var(--padding-5px)" }}
+            >
+              🚨 The new Custom Base Stats functionality is an experimental
+              feature and may still produce unexpected errors. I recommend using
+              it with an empty build. ⚠️
+            </div>
             {/*<div className="important_notice-msg">
               🚨 Claret's Sharp DMG should be working now, but I don't have her
               W-Engine, so its Electric Sharp DMG bonus may not work as
@@ -193,31 +203,32 @@ const Home = () => {
                 className="home_divider"
                 style={{ backgroundColor: dominantTheme }}
               />
+
               <div className="home_content_changelog_item">
-                <span>v1.1.3 — Anomaly Formulas &amp; Other Fixes</span>
-                <h3>
-                  ● Fixed - Anomaly, Disorder, Vortex and Luminize DMG Formulas
-                </h3>
+                <span>v1.2.0 — Custom Base Stats</span>
+
+                <h3>● Added - Custom Base Stats</h3>
                 <p>
-                  Remielle's Refringe Mod is now correctly applied as an
-                  independent multiplier in each formula, and the Luminize
-                  Calculator no longer double-counts the Voidflare source's
-                  bonuses. New detailed calculation steps are now displayed
-                  consistently across all damage grids.
+                  Added the ability to manually enter custom stats for an agent
+                  in the Build Creator, allowing you to test specific stat
+                  values without having to fully configure the agent's build.
+                  Empty fields automatically use the calculated values from the
+                  build.
                 </p>
-                <h3>● Fixed - DEF Shred and Effective DEF Display</h3>
+
+                <h3>● Minor UI Fixes &amp; Improvements</h3>
                 <p>
-                  Aftershock DEF Shred is now correctly displayed in the Defense
-                  Bonuses panel and is properly limited by the DEF Shred cap.
-                  The Enemy panel now shows the full Shred → PEN Ratio → PEN
-                  breakdown.
+                  Added detailed damage descriptions to the main Skill DMG
+                  results grid when hovering over damage type headers.
+                  <br />
+                  In-game toggles now display stat information more accurately,
+                  with more detailed breakdowns of the stats being applied.
                 </p>
-                <h3>● Fixed - Specialty Filtering for W-Engine Effects</h3>
+
+                <h3>● Agent-Related Updates</h3>
                 <p>
-                  Team W-Engine in-game effects with specialty requirements are
-                  now correctly disabled and marked as received from another
-                  slot. W-Engines users from other specialties can no longer use
-                  these effects incorrectly.
+                  Fixed Dialyn's External Line (Additional Ability) In-game
+                  effect and its special damage calculation section.
                 </p>
               </div>
             </div>
@@ -234,7 +245,7 @@ const Home = () => {
               <iframe
                 className="home_content-trailer_video"
                 width="100%"
-                src="https://www.youtube.com/embed/w088eYNQW4w"
+                src="https://www.youtube.com/embed/s-y-Vc1dVkU"
                 title="Zenless Zone Zero Version 3.2 Teaser – Their Secret Histories"
                 loading="lazy"
                 frameBorder="0"

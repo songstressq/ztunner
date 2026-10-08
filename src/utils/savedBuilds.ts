@@ -27,7 +27,12 @@ export function updateBuild(
   id: string,
   partial: Pick<
     SavedBuild,
-    "engineId" | "coreLevel" | "discs" | "activeMindscapes"
+    | "engineId"
+    | "coreLevel"
+    | "discs"
+    | "activeMindscapes"
+    | "skinId"
+    | "customBaseStats"
   >,
 ) {
   const builds = loadAllBuilds();

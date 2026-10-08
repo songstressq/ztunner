@@ -14,7 +14,7 @@ import ModalSelector from "@/components/ModalSelector";
 //import "../styles/marquee.css";
 //import DiagonalMarquee from "@/components/DiagonalMarquee";
 import NeonSelect from "@/components/NeonSelect";
-import type { SavedBuild } from "@/types/SavedBuild";
+import type { SavedBuild, CustomBaseStats } from "@/types/SavedBuild";
 import {
   loadAllBuilds,
   createBuild,
@@ -26,6 +26,7 @@ import {
 import MindscapeSelector from "@/components/MindscapeSelector";
 import { useSidebar } from "@/components/SidebarContext";
 import CustomPrompt from "@/components/CustomPrompt";
+import CustomBaseStatsModal from "@/components/CustomBaseStatsModal";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import Footer from "@/components/Footer";
 import { useSession } from "@/context/SessionContext";
@@ -56,6 +57,10 @@ export default function BuildCreator() {
 
   const [savedBuilds, setSavedBuilds] = useState<SavedBuild[]>([]);
   const [selectedSkinId, setSelectedSkinId] = useState<string | null>(null);
+  const [customBaseStats, setCustomBaseStats] = useState<
+    CustomBaseStats | undefined
+  >(undefined);
+  const [customStatsModalOpen, setCustomStatsModalOpen] = useState(false);
   const [skinReady, setSkinReady] = useState(false);
   const [isDirty, setIsDirty] = useState(false);
   const [localMindscapes, setLocalMindscapes] = useState<string[]>([]);
@@ -130,11 +135,14 @@ export default function BuildCreator() {
         setDiscs(structuredClone(activeBuild.discs));
         setLocalMindscapes(activeBuild.activeMindscapes || []);
         setSelectedSkinId(activeBuild.skinId || "default");
+        setCustomBaseStats(activeBuild.customBaseStats);
       } else {
         setSelectedSkinId("default");
+        setCustomBaseStats(undefined);
       }
     } else {
       setSelectedSkinId("default");
+      setCustomBaseStats(undefined);
     }
     setSkinReady(true);
   }, []);
@@ -275,6 +283,14 @@ export default function BuildCreator() {
     selectedEngine,
     coreLevel,
     discs,
+    {},
+    {},
+    undefined,
+    {},
+    0,
+    undefined,
+    [],
+    customBaseStats,
   );
 
   const sheerForce = isRupture ? unifiedStats.sheerForce : null;
@@ -323,6 +339,7 @@ export default function BuildCreator() {
     0,
     undefined,
     [],
+    customBaseStats,
   );
 
   const baseStats = {
@@ -437,6 +454,7 @@ export default function BuildCreator() {
           createdAt: Date.now(),
           updatedAt: Date.now(),
           skinId: selectedSkinId,
+          customBaseStats, // ⭐ NUEVO
         };
         createBuild(build);
         setWEnginesSession((prev) => ({ ...prev, activeBuildId: build.id }));
@@ -461,6 +479,7 @@ export default function BuildCreator() {
       discs: structuredClone(discs),
       activeMindscapes: localMindscapes,
       skinId: selectedSkinId,
+      customBaseStats, // ⭐ NUEVO
     });
     setIsDirty(false);
     setSavedBuilds(loadAllBuilds());
@@ -532,6 +551,7 @@ export default function BuildCreator() {
     setLocalMindscapes(build.activeMindscapes || []);
     setIsDirty(false);
     setSelectedSkinId(build.skinId || "default");
+    setCustomBaseStats(build.customBaseStats); // ⭐ NUEVO
     setSkinReady(true);
   }
 
@@ -818,6 +838,7 @@ export default function BuildCreator() {
                 },
               });
               setSelectedSkinId("default");
+              setCustomBaseStats(undefined); // ⭐ NUEVO
               setSkinReady(true);
               setAgentModalOpen(false);
             }}
@@ -881,8 +902,17 @@ export default function BuildCreator() {
         {/* AGENT STATS */}
         <div className="block agent-stats-block">
           <div className="agent-stats-wrapper" style={emptyObjectsStyle}>
-            <div className="agent-stats_title">
+            <div className="agent-stats_title custom-stats-title-row">
               <h2 className="transform-title">Stats</h2>
+              <button
+                type="button"
+                className="custom-stats-btn modal-header-button"
+                onClick={() => setCustomStatsModalOpen(true)}
+                style={{ borderColor: theme, color: theme }}
+                title="Override base stats for this build"
+              >
+                ⚙️
+              </button>
               <div className="divider" style={{ backgroundColor: theme }}></div>
             </div>
             <div className="agent-stats_left-columm">
@@ -1043,9 +1073,10 @@ export default function BuildCreator() {
                         (isCurrent ? "current " : "")
                       }
                       onClick={() => {
+                        const newLevel = isCurrent ? 0 : level;
                         setWEnginesSession((prev) => ({
                           ...prev,
-                          coreLevel: level,
+                          coreLevel: newLevel,
                         }));
                         markDirty();
                       }}
@@ -1865,6 +1896,18 @@ export default function BuildCreator() {
             </div>
           </div>
         )}
+
+        <CustomBaseStatsModal
+          isOpen={customStatsModalOpen}
+          onClose={() => setCustomStatsModalOpen(false)}
+          agent={selectedAgent}
+          currentCustomStats={customBaseStats}
+          onApply={(stats) => {
+            setCustomBaseStats(stats);
+            markDirty();
+          }}
+          theme={theme}
+        />
       </div>
     </div>
   );
