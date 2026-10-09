@@ -2060,4 +2060,49 @@
   transform: scale(0.97);
 }
 
+.custom-stats-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--padding-12px);
+  padding: var(--padding-10px) var(--padding-12px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: var(--home-13px, 13px);
+  color: #ddd;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.custom-stats-checkbox:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: color-mix(in srgb, var(--theme) 40%, transparent);
+}
+
+/* El switch se alinea con la primera línea del texto */
+.custom-stats-checkbox .conditional-toggle-switch {
+  margin-top: 1px;
+}
+
+/* El label de texto es clickable para togglear el switch */
+.custom-stats-checkbox-text {
+  cursor: pointer;
+  display: block;
+  line-height: 1.4;
+  user-select: none;
+  color: #ddd;
+}
+
+.custom-stats-checkbox-hint {
+  display: block;
+  margin-top: var(--padding-4px);
+  font-size: var(--home-11px, 11px);
+  color: #888;
+  font-style: italic;
+  line-height: 1.35;
+  cursor: default;
+}
+
 /* #endregion CUSTOM BASE STATS */

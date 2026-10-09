@@ -25,6 +25,7 @@ export interface CustomBaseStats {
     ether: number;
     wind: number;
   }>;
+  ignoreWEngineStats?: boolean;
 }
 
 export type SavedBuild = {

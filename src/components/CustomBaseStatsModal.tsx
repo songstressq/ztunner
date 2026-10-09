@@ -68,6 +68,7 @@ export default function CustomBaseStatsModal({
 }: Props) {
   const [values, setValues] = useState<Record<string, string>>({});
   const [attributes, setAttributes] = useState<Record<string, string>>({});
+  const [ignoreWEngine, setIgnoreWEngine] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -92,6 +93,7 @@ export default function CustomBaseStatsModal({
     }
     setValues(nextValues);
     setAttributes(nextAttrs);
+    setIgnoreWEngine(currentCustomStats?.ignoreWEngineStats ?? false);
   }, [isOpen, currentCustomStats]);
 
   if (!isOpen) return null;
@@ -121,6 +123,7 @@ export default function CustomBaseStatsModal({
   const handleReset = () => {
     setValues({});
     setAttributes({});
+    setIgnoreWEngine(false);
   };
 
   const buildResult = (): CustomBaseStats | undefined => {
@@ -152,6 +155,11 @@ export default function CustomBaseStatsModal({
     }
     if (Object.keys(attrOut).length > 0) {
       out.attributeDmgBonus = attrOut as any;
+    }
+
+    if (ignoreWEngine) {
+      out.ignoreWEngineStats = true;
+      anySet = true;
     }
 
     return anySet ? out : undefined;
@@ -243,6 +251,43 @@ export default function CustomBaseStatsModal({
             </h4>
             <div className="custom-stats-grid">
               {ATTRIBUTE_FIELDS.map((f) => renderField(f, true))}
+            </div>
+          </div>
+
+          {/* ⭐ Toggle global para ignorar stats del W-Engine */}
+          <div className="custom-stats-section">
+            <div className="custom-stats-checkbox">
+              <label
+                htmlFor="custom-stats-ignore-wengine"
+                className="custom-stats-checkbox-text"
+              >
+                Ignore W-Engine base stats
+                <span className="custom-stats-checkbox-hint">
+                  The W-Engine's base and advanced stats won't be added. Its
+                  effects and overclock passives still apply.
+                </span>
+              </label>
+              <div className="conditional-toggle-switch">
+                <input
+                  type="checkbox"
+                  className="conditional-toggle-input"
+                  id="custom-stats-ignore-wengine"
+                  checked={ignoreWEngine}
+                  onChange={(e) => setIgnoreWEngine(e.target.checked)}
+                />
+                <label
+                  htmlFor="custom-stats-ignore-wengine"
+                  className="conditional-toggle-label"
+                  style={
+                    ignoreWEngine
+                      ? {
+                          backgroundColor: theme,
+                          boxShadow: `0 0 8px ${theme}`,
+                        }
+                      : undefined
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>

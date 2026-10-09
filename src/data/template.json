@@ -1300,3 +1300,25 @@
         "affectedStats": ["atkFlatRaw"]
       }
     },
+
+
+        {
+      "id": "sweeper",
+      "name": "Sweeper",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Public Security",
+      "description": "During combat, Autonomous Support Unit - Sweeper uses its long arms to perform a spinning attack. Use Defensive Assist before it does so to completely prevent it from even executing the skill.",
+      "stats": {
+        "def": 858,
+        "defBase": 858,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },

@@ -397,7 +397,7 @@ export function calculateUnifiedStats(
     }
   }
 
-  if (engine) {
+  if (engine && !custom.ignoreWEngineStats) {
     const eng = getWEngineStats(engine);
 
     if (engine.baseStatType === "ATK") base.atk += norm(eng.base);
