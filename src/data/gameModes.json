@@ -6,57 +6,82 @@
       "rooms": [
         {
           "id": "room_1",
-          "label": "Room 1: Kusarikku",
+          "label": "Room 1: Phaethon of the Scorched Horizon",
           "effects": [
             {
               "id": "game_mode_da_room1_effect_a",
+              "label": "Phaethon of the Scorched Horizon - Global DMG",
+              "description": "... After Scorched Horizon activates Gale Scorcher, they gain 5 stacks of Into Flames. Each stack of Into Flames increases DMG dealt by 10% and reduces CRIT DMG taken by 25%. ... ",
+              "shortDescription": "All squad members' DMG is increased by 10%, stacking up to 5 times.",
+              "source": "gameMode",
+              "target": "team",
+              "damageBonuses": [
+                {
+                  "type": "global",
+                  "value": 0.1
+                }
+              ],
+              "maxStacks": 5
+            },
+            {
+              "id": "game_mode_da_room1_effect_b",
+              "label": "Phaethon of the Scorched Horizon - CRIT DMG",
+              "description": "... After Scorched Horizon activates Gale Scorcher, they gain 5 stacks of Into Flames. Each stack of Into Flames increases DMG dealt by 10% and reduces CRIT DMG taken by 25%. ... ",
+              "shortDescription": "All squad members' CRIT DMG is decreased by 25%, stacking up to 5 times.",
+              "source": "gameMode",
+              "target": "team",
+              "perStack": { "critDmg": -0.25 },
+              "maxStacks": 5
+            }
+          ]
+        },
+        {
+          "id": "room_2",
+          "label": "Room 2: Infernal Revenant",
+          "effects": [
+            {
+              "id": "game_mode_da_room2_effect_a",
+              "label": "Infernal Revenant - Anomaly DMG",
+              "description": "After Infernal Revenant enters the Infernal state, the Attribute Anomaly DMG it takes is reduced by 30%; ...",
+              "shortDescription": "All squad members' DMG from Attribute Anomalies is decreased by 30%.",
+              "source": "gameMode",
+              "target": "team",
+              "perStack": { "anomalyDmgBonus": -0.3 }
+            },
+            {
+              "id": "game_mode_da_room2_effect_b",
+              "label": "Infernal Revenant - CRIT DMG",
+              "description": "... every time Chain Parry is triggered, the Boss gains 1 stack of Overheat; triggering Defensive Assist or Perfect Dodge 2 times in total applies 1 stack of Overheat on the Boss, and each stack of Overheat increases CRIT DMG of the whole squad by 25%, stacking up to 3 times and lasting 20s. Triggering Defensive Assist or retriggering Overheat resets the duration.",
+              "shortDescription": "All squad members' CRIT DMG is increased by 25% for 20s, stacking up to 3 times.",
+              "source": "gameMode",
+              "target": "team",
+              "flat": { "critDmg": 0.25 },
+              "maxStacks": 3
+            }
+          ]
+        },
+        {
+          "id": "room_3",
+          "label": "Room 3: Kusarikku",
+          "effects": [
+            {
+              "id": "game_mode_da_room3_effect_a",
               "label": "Kusarikku - Anomaly DMG",
-              "description": "Attribute Anomaly DMG taken by Kusarikku is reduced by 40%. ... ",
+              "description": "Attribute Anomaly DMG taken by Kusarikku is reduced by 40%. ...",
               "shortDescription": "All squad members' DMG from Attribute Anomalies is decreased by 40%.",
               "source": "gameMode",
               "target": "team",
               "perStack": { "anomalyDmgBonus": -0.4 }
             },
             {
-              "id": "game_mode_da_room1_effect_b",
+              "id": "game_mode_da_room3_effect_b",
               "label": "Kusarikku - Laceration DMG",
-              "description": "... When an Agent successfully uses a Defensive Assist against Kusarikku's Rift Assault, applies 1 stack opf Exposed to Kusarikku. When Kusarikku becomes stunned, applies 2 stacks of Exposed. Each stack of Exposed increases the Laceration DMG Kousarikku receives by 10%. Exposed can stack up to 4 times and lasts 30s. Repeated triggers reset the duration.",
+              "description": "... When an Agent successfully uses a Defensive Assist against Kusarikku's Rift Assault, applies 1 stack of Exposed to Kusarikku. When Kuarikku becomes Stunned, applies 2 stacks of Exposed. Each stack of Exposed increases the Laceration DMG Kusarikku receives by 10. Exposed can stack up to 4 times and lasts 30s. Repeated triggers reset the duration.",
               "shortDescription": "All squad members' Laceration DMG is increased by 10% for 30s, stacking up to 4 times.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "lacerationDmg": 0.1 },
+              "perStack": { "lacerationDmg": 0.1 },
               "maxStacks": 4
-            }
-          ]
-        },
-        {
-          "id": "room_2",
-          "label": "Room 2: Miasmic Fiend - Unfathomable",
-          "effects": [
-            {
-              "id": "game_mode_da_room2_effect_a",
-              "label": "Miasmic Fiend - Unfathomable - Anomaly DMG",
-              "description": "When Miasmic Fiend is affected by Attribute Anomaly, it takes 8% bonus Anomaly DMG from Agents, stacking up to 6 times; activating Miasmic Shield clears all stacks, with each stack incerasing the reduction efficiency of Miasmic Shield by 2.5%. ...",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is increased by 8% for 30s, stacking up to 6 times.",
-              "source": "gameMode",
-              "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.08 },
-              "maxStacks": 6
-            }
-          ]
-        },
-        {
-          "id": "room_3",
-          "label": "Room 3: Ye Shiyuan the Thrall",
-          "effects": [
-            {
-              "id": "game_mode_da_room3_effect_a",
-              "label": "Ye Shiyuan the Thrall - CRIT DMG",
-              "description": "When Sobek and The Thrall alternate turns, The Thrall gains 1 stack of Contract and Self-Sacrifice. Contract and Self-Sacrifice can stack up to 3 times. Each stack of Contract increases All-Attribute Anomaly Buildup RES by 15%, each stack of Self-Sacrifice reduces The Thrall's DEF by 8%. When The Thrall is Stunned, CRIT DMG taken increses by 50%. ...",
-              "shortDescription": "All squad members' CRIT DMG is increased by 50%.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "critDmg": 0.5 }
             }
           ]
         }
@@ -68,22 +93,28 @@
           "effects": [
             {
               "id": "game_mode_da_buff1_effect_a",
-              "label": "Deadly Assault: Sharp Rupture",
-              "description": "Agent PEN Ratio increases by 5%. When an attack hits an enemy, it ignores 15% of the target's Electric RES. ...",
-              "shortDescription": "All squad members' PEN Ratio is increased by 8%, and their DMG ignores 15% of the target's Electric RES",
+              "label": "Deadly Assault: Frigidity",
+              "description": "Agent Ice DMG incraeses by 15%, and their Anomaly Proficiency increases by 60. ...",
+              "shortDescription": "All squad members' Ice DMG is increased by 15%, and their Anomaly Proficiency is increased by 60.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "penRatio": 0.08, "electricResShred": 0.15 }
+              "damageBonuses": [
+                {
+                  "type": "element",
+                  "element": "ice",
+                  "value": 0.15
+                }
+              ],
+              "flat": { "anomalyProficiency": 60 }
             },
             {
               "id": "game_mode_da_buff1_effect_b",
-              "label": "Deadly Assault: Sharp Rupture",
-              "description": "... After an Agent uses an EX Special Attack or Special Attack, Sharp DMG increases by 20% and DEF increases by 10%. ...",
-              "shortDescription": "All squad members' Sharp DMG is increased by 20%, and their DEF is increased by 10%.",
+              "label": "Deadly Assault: Frigidity",
+              "description": "... When an Agent triggers Abloom or Disorder on an enemy, Attribute Anomaly DMG and Disorder DMG deal by the whole squad increase by 25%, ...",
+              "shortDescription": "All squad members' DMG from Attribute Anomalies and Disorder is increased by 25%.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "defPercentRaw": 0.1 },
-              "damageBonuses": [{ "type": "sharpDmg", "value": 0.2 }]
+              "flat": { "anomalyDmgBonus": 0.25, "disorderDmgBonus": 0.25 }
             }
           ]
         },
@@ -93,30 +124,23 @@
           "effects": [
             {
               "id": "game_mode_da_buff2_effect_a",
-              "label": "Deadly Assault: Cinders of Corrosion",
-              "description": "If there are 2/3 Agents in the squad with the Anomaly specialty, the whole squad's Anomaly Proficiency increases by 20/60 respectively, and Anomaly Buildup Rate increases by 10%/20% respectively. ...",
-              "shortDescription": "With 2 Anomaly Agents in the squad, all squad members' Anomaly Proficiency is increased by 20.",
+              "label": "Deadly Assault: Defense Crusher",
+              "description": "... Agents with the Attack specialty have their ATK increased by 20%. After using Ultimate, their CRIT DMG increases by 50% for 20s. Repeated triggers reset the duration.",
+              "shortDescription": "Attack Agents' ATK is increased by 20%.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "anomalyProficiency": 20 }
+              "flat": { "atkPercentRaw": 0.2 },
+              "requiresSpecialty": "Attack"
             },
             {
               "id": "game_mode_da_buff2_effect_b",
-              "label": "Deadly Assault: Cinders of Corrosion",
-              "description": "If there are 2/3 Agents in the squad with the Anomaly specialty, the whole squad's Anomaly Proficiency increases by 20/60 respectively, and Anomaly Buildup Rate increases by 10%/20% respectively. ...",
-              "shortDescription": "With 3 Anomaly Agents in the squad, all squad members' Anomaly Proficiency is increased by 60.",
+              "label": "Deadly Assault: Defense Crusher",
+              "description": "... Agents with the Attack specialty have their ATK increased by 20%. After using Ultimate, their CRIT DMG increases by 50% for 20s. Repeated triggers reset the duration.",
+              "shortDescription": "Attack Agents' CRIT DMG is increased by 50% for 20s.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "anomalyProficiency": 60 }
-            },
-            {
-              "id": "game_mode_da_buff2_effect_c",
-              "label": "Deadly Assault: Cinders of Corrosion",
-              "description": "... After an Agent inflicts an Attribute Anomaly on an enemy, the enemy's DEF is reduced by 10% for 10s. Repeated triggers reset the duration.",
-              "shortDescription": "All squad members' DMG ignores 10% of the target's DEF.",
-              "source": "gameMode",
-              "target": "team",
-              "perStack": { "defShred": 0.1 }
+              "flat": { "critDmg": 0.5 },
+              "requiresSpecialty": "Attack"
             }
           ]
         },
@@ -126,28 +150,25 @@
           "effects": [
             {
               "id": "game_mode_da_buff3_effect_a",
-              "label": "Deadly Assault: Gleaming Frost",
-              "description": "Agents with the Attack specialty deal 20% more Ice DMG. ...",
-              "shortDescription": "Attack Agents' Ice DMG is increased by 20%.",
+              "label": "Deadly Assault: Knide Edge",
+              "description": "Agent DEF increases by 15%, and their Sharp DMG increases by 15%. ...",
+              "shortDescription": "All squad members' DEF is increased by 15%, and their Sharp DMG is increased by 15%.",
               "source": "gameMode",
               "target": "team",
-              "damageBonuses": [
-                {
-                  "type": "element",
-                  "element": "ice",
-                  "value": 0.2
-                }
-              ],
-              "condition": { "requiresSpecialty": "Attack" }
+              "flat": { "defPercentRaw": 0.15 },
+              "damageBonuses": [{ "type": "sharpDmg", "value": 0.15 }]
             },
             {
               "id": "game_mode_da_buff3_effect_b",
-              "label": "Deadly Assault: Gleaming Frost",
-              "description": "... Agent CRIT DMG increases by 30%. When attacking a Stunned enemy, the enemy's Stun DMG Multiplier additionally increases by 20% for 20s. Repeated triggers reset the duration.",
-              "shortDescription": "All squad members' CRIT DMG is increased by 20% for 20s.",
+              "label": "Deadly Assault: Knide Edge",
+              "description": "... After an Agent uses an EX Special Attack or Special Attack, Electric DMG and Wind DMG increase by 30% for 15s. Repeated triggers reset the duration.",
+              "shortDescription": "All squad members' Electric DMG and Wind DMG is increased 30% for 15s.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "critDmg": 0.2 }
+              "damageBonuses": [
+                { "type": "element", "element": "electric", "value": 0.3 },
+                { "type": "element", "element": "wind", "value": 0.3 }
+              ]
             }
           ]
         }

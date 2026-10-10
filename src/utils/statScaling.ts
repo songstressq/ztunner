@@ -575,8 +575,10 @@ export function calculateUnifiedStats(
       }
     };
 
-    if (s.effect2 && setInfo.stats2) applySetStats(setInfo.stats2);
-    if (s.effect4 && setInfo.stats4) applySetStats(setInfo.stats4);
+    if (!custom.ignoreDiscSetStats) {
+      if (s.effect2 && setInfo.stats2) applySetStats(setInfo.stats2);
+      if (s.effect4 && setInfo.stats4) applySetStats(setInfo.stats4);
+    }
 
     if (setInfo.ingameEffects) {
       for (const effect of setInfo.ingameEffects) {

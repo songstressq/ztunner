@@ -300,6 +300,26 @@
       },
       "notes": null
     },
+    {
+      "id": "infernal_revenant",
+      "name": "Infernal Revenant",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "In combat, the Infernal Revenant unleashes powerful attacks with its weapon. After taking a certain amount of DMG, it enters the \"Infernal State.\" While in the \"Infernal State,\" some attacks can only be blocked by successfully performing a Chain Parry. The Infernal Revenant also summons a rain of fire that continuously damages Agents. Shattering each flint grants an \"Infernal Shield\" and restores Energy. Shattering all three flints will end the rain of fire.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.2,
+        "etherResistance": 0.0,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
 
     {
       "id": "sanguine_sweeper",

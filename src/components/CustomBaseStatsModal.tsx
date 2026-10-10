@@ -69,6 +69,7 @@ export default function CustomBaseStatsModal({
   const [values, setValues] = useState<Record<string, string>>({});
   const [attributes, setAttributes] = useState<Record<string, string>>({});
   const [ignoreWEngine, setIgnoreWEngine] = useState(false);
+  const [ignoreDiscSet, setIgnoreDiscSet] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -94,6 +95,7 @@ export default function CustomBaseStatsModal({
     setValues(nextValues);
     setAttributes(nextAttrs);
     setIgnoreWEngine(currentCustomStats?.ignoreWEngineStats ?? false);
+    setIgnoreDiscSet(currentCustomStats?.ignoreDiscSetStats ?? false);
   }, [isOpen, currentCustomStats]);
 
   if (!isOpen) return null;
@@ -124,6 +126,7 @@ export default function CustomBaseStatsModal({
     setValues({});
     setAttributes({});
     setIgnoreWEngine(false);
+    setIgnoreDiscSet(false);
   };
 
   const buildResult = (): CustomBaseStats | undefined => {
@@ -159,6 +162,11 @@ export default function CustomBaseStatsModal({
 
     if (ignoreWEngine) {
       out.ignoreWEngineStats = true;
+      anySet = true;
+    }
+
+    if (ignoreDiscSet) {
+      out.ignoreDiscSetStats = true;
       anySet = true;
     }
 
@@ -263,8 +271,9 @@ export default function CustomBaseStatsModal({
               >
                 Ignore W-Engine base stats
                 <span className="custom-stats-checkbox-hint">
-                  The W-Engine's base and advanced stats won't be added. Its
-                  effects and overclock passives still apply.
+                  The selected W-Engine's bonus stats won't be included in the
+                  Agent's custom build. Its effects and passives can still be
+                  used in the Damage Calculator.
                 </span>
               </label>
               <div className="conditional-toggle-switch">
@@ -280,6 +289,41 @@ export default function CustomBaseStatsModal({
                   className="conditional-toggle-label"
                   style={
                     ignoreWEngine
+                      ? {
+                          backgroundColor: theme,
+                          boxShadow: `0 0 8px ${theme}`,
+                        }
+                      : undefined
+                  }
+                />
+              </div>
+            </div>
+            {/* ⭐ Toggle para ignorar stats numéricos de disc sets */}
+            <div className="custom-stats-checkbox" style={{ marginTop: 8 }}>
+              <label
+                htmlFor="custom-stats-ignore-disc-set"
+                className="custom-stats-checkbox-text"
+              >
+                Ignore Disc Set stats
+                <span className="custom-stats-checkbox-hint">
+                  The selected Drive Disc sets' bonus stats won't be included in
+                  the Agent's custom build. Their effects and passives can still
+                  be used in the Damage Calculator.
+                </span>
+              </label>
+              <div className="conditional-toggle-switch">
+                <input
+                  type="checkbox"
+                  className="conditional-toggle-input"
+                  id="custom-stats-ignore-disc-set"
+                  checked={ignoreDiscSet}
+                  onChange={(e) => setIgnoreDiscSet(e.target.checked)}
+                />
+                <label
+                  htmlFor="custom-stats-ignore-disc-set"
+                  className="conditional-toggle-label"
+                  style={
+                    ignoreDiscSet
                       ? {
                           backgroundColor: theme,
                           boxShadow: `0 0 8px ${theme}`,
