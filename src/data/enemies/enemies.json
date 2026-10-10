@@ -342,6 +342,26 @@
       "notes": null
     },
     {
+      "id": "hollow_thug_bulky_enforcer",
+      "name": "Bulky Enforcer",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Thugs",
+      "description": "During combat, Hollow Thug - Bulky Enforcer uses both fists to punch while using nimble sidesteps to shake up the angle of attack.",
+      "stats": {
+        "def": 794,
+        "defBase": 794,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
       "id": "hollow_thug_rampant-brute",
       "name": "Rampant Brute",
       "level": 60,

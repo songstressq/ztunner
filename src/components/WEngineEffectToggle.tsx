@@ -361,7 +361,7 @@ const WEngineEffectToggle = ({
                     (bonus: any, index: number) => {
                       const description = formatDamageBonusLabel(bonus);
                       const valueText = formatStatValue(
-                        bonus.type ?? "dmgBonus",
+                        "dmgBonus",
                         bonus.value ?? 0,
                         { decimals: 1, showSign: true },
                       );
