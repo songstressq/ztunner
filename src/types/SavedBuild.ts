@@ -26,6 +26,7 @@ export interface CustomBaseStats {
     wind: number;
   }>;
   ignoreWEngineStats?: boolean;
+  ignoreDiscSetStats?: boolean;
 }
 
 export type SavedBuild = {
@@ -38,5 +39,5 @@ export type SavedBuild = {
   updatedAt: number;
   activeMindscapes?: string[];
   skinId?: string;
-  customBaseStats?: CustomBaseStats; // ⭐ NUEVO
+  customBaseStats?: CustomBaseStats;
 };
