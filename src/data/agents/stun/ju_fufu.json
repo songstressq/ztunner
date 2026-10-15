@@ -96,6 +96,16 @@
       "flat": { "critRate": 0.12 }
     },
     {
+      "id": "ju_fufu-mindscape_1-super_scary_little_tiger_2",
+      "source": "mindscape",
+      "sourceId": "ju_fufu-mindscape_1",
+      "label": "Super Scary Little Tiger (Mindscape Cinema N°1)",
+      "description": "Upon entering combat, Ju Fufu's CRIT Rate increases by 12%, and she immediately gains 100 Might. When Ju Fufu's Chain Attack hits an enemy, when the target is Stunned, the target's Stun DMG Multiplier increases by 35%, lasting for 30s.",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 35% while Stunned.",
+      "target": "team",
+      "stunDmgMultiplier": 0.35
+    },
+    {
       "id": "ju_fufu-mindscape_2-almighty_qingming_warrior",
       "source": "mindscape",
       "sourceId": "ju_fufu-mindscape_2",

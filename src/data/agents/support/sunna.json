@@ -97,6 +97,16 @@
       }
     },
     {
+      "id": "sunna-core-daydreamers_counterpoint",
+      "source": "core",
+      "sourceId": "sunna-core",
+      "label": "Daydreamer's Counterpoint (Additional Ability)",
+      "description": "When another character in your squad is an Attack character or shares the same Faction:\n\nWhen characters inside Ether Veil: Delusion Reprise land attacks on enemies, the target's Stun DMG Multiplier increases by 30% for 40s. When Sunna enters the battlefield, she gains 15 Energy. In Investigation Zone mode, the effect can trigger once every 180s.",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 30% for 40s.",
+      "target": "team",
+      "stunDmgMultiplier": 0.3
+    },
+    {
       "id": "sunna-mindscape_1-loneliness_corruption_symptoms",
       "source": "mindscape",
       "sourceId": "sunna-mindscape_1",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 interface Props {
   value: number;
@@ -8,6 +8,9 @@ interface Props {
   effects?: Array<{ name: string; value: number }>;
 }
 
+const MIN_SLIDER = 0;
+const MAX_SLIDER = 200;
+
 const StunMultiplierInput: React.FC<Props> = ({
   value,
   onChange,
@@ -15,20 +18,43 @@ const StunMultiplierInput: React.FC<Props> = ({
   className = "",
   effects = [],
 }) => {
+  const effectsBonus = effects.reduce((sum, e) => sum + e.value, 0);
+  const minValue = Math.max(MIN_SLIDER, effectsBonus);
+  const displayValue = Math.max(value, minValue);
+
+  // ⭐ Cuando el bonus cambia (toggle on/off), sumamos/restamos el delta
+  // directamente al valor. El bonus es aditivo:
+  // - User con 60 sin toggle → activa +35 → 95
+  // - User con 95 con toggle → desactiva → 60
+  const prevBonusRef = useRef(effectsBonus);
+  useEffect(() => {
+    const prev = prevBonusRef.current;
+    if (effectsBonus === prev) return;
+    prevBonusRef.current = effectsBonus;
+
+    const delta = effectsBonus - prev;
+    onChange(Math.max(MIN_SLIDER, Math.min(MAX_SLIDER, value + delta)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [effectsBonus]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseFloat(e.target.value) || 0;
-    onChange(Math.max(0, Math.min(250, newValue)));
+    onChange(Math.max(minValue, Math.min(MAX_SLIDER, newValue)));
   };
 
   const increment = () => {
-    const newValue = Math.min(value + 5, 250);
-    onChange(newValue);
+    onChange(Math.min(displayValue + 5, MAX_SLIDER));
   };
 
   const decrement = () => {
-    const newValue = Math.max(value - 5, 0);
-    onChange(newValue);
+    onChange(Math.max(displayValue - 5, minValue));
   };
+
+  // El fill va de 0 a displayValue sobre el track completo (0-200).
+  const fillPercent = (displayValue / MAX_SLIDER) * 100;
+
+  const minFillPercent =
+    ((minValue - MIN_SLIDER) / (MAX_SLIDER - MIN_SLIDER)) * 100;
 
   return (
     <div className={`stun-multiplier-main_wrapper ${className}`}>
@@ -38,35 +64,42 @@ const StunMultiplierInput: React.FC<Props> = ({
           <button
             className="stun-multiplier-roller"
             onClick={decrement}
-            disabled={disabled || value <= 0}
+            disabled={disabled || displayValue <= minValue}
           >
             &lt;
           </button>
-          <span className="stun-multiplier-indicator">{value}%</span>
+          <span className="stun-multiplier-indicator">{displayValue}%</span>
           <button
             className="stun-multiplier-roller"
             onClick={increment}
-            disabled={disabled || value >= 250}
+            disabled={disabled || displayValue >= MAX_SLIDER}
           >
             &gt;
           </button>
         </div>
       </div>
+
       <div className="stun-multiplier-slider-container">
         <input
           type="range"
-          value={value}
+          value={displayValue}
           onChange={handleChange}
-          min="0"
-          max="200"
+          min={MIN_SLIDER}
+          max={MAX_SLIDER}
           step="5"
           className="stun-multiplier-slider"
+          style={
+            {
+              "--fill": `${fillPercent}%`,
+            } as React.CSSProperties
+          }
         />
       </div>
+
       <div className="stun-multiplier-slider-labels">
-        <span>0%</span>
-        <span className="stun_multipler-100">100%</span>
-        <span>200%</span>
+        <span>+{minValue > 0 ? `${minValue}%` : "0%"}</span>
+        <span className="stun_multipler-100">+100%</span>
+        <span>+{MAX_SLIDER}%</span>
       </div>
     </div>
   );

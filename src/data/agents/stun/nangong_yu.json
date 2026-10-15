@@ -96,6 +96,16 @@
       "damageBonuses": [{ "type": "global", "value": 0.25 }]
     },
     {
+      "id": "nangong_yu-core_4-prodigious_idol",
+      "source": "core",
+      "sourceId": "nangong_yu-core",
+      "label": " Angel Captain (Additional Ability)",
+      "description": "... When the third hit of Nangong Yu's Basic Attack: Adorable Explosive Impact or Ultimate: Meteor Shower hits an enemy, the enemy suffers Misstep. Under this effect, Stun DMG Multiplier increases by 30% and when an enemy becomes Stunned, their Stun duration increases by 3s. Before recovering from Stun, Misstep can only trigger once on the same target. The increased Stun duration cannot stack with similar effects. When an enemy with Misstep recovers from Stun, the Misstep effect ends. ...",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 30%.",
+      "target": "team",
+      "stunDmgMultiplier": 0.3
+    },
+    {
       "id": "nangong_yu-mindscape_1-lazy_spotlight",
       "source": "mindscape",
       "sourceId": "nangong_yu-mindscape_1",
@@ -118,8 +128,9 @@
       "sourceId": "nangong_yu-mindscape_2",
       "label": "Painless Tears (Mindscape Cinema N°2)",
       "description": "Each stack of Vibrato's additional Abloom DMG ratio increase from Core Passive: Prodigious Idol increases by an additional 10%. The Stun DMG Multiplier provided by Additional Ability: Angel Captain increases by an additional 30%. When the active character's Chain Attack heavy attack hits an enemy that is both Stunned and affected by an Attribute Anomaly, it triggers Polarity Disorder, dealing DMG equal to 25% of the original Disorder DMG. Each enemy can only trigger this effect once during the same Stun period.",
-      "shortDescription": "This Mindscape Cinema does not affect Nangong Yu's stats.",
-      "infoOnly": true
+      "shortDescription": "The target's Stun DMG Multiplier is further increased by 30%.",
+      "target": "team",
+      "stunDmgMultiplier": 0.3
     },
     {
       "id": "nangong_yu-mindscape_4-accomplices_dance_step",

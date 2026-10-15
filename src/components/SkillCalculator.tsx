@@ -32,6 +32,7 @@ import {
 } from "@/utils/sheerDamageCalculator";
 import MaimCalculator from "@/components/MaimCalculator";
 import { InfoTooltip } from "@/components/InfoTooltip";
+import StunBonusesPanel from "@/components/StunBonusesPanel";
 
 interface SkillCalculatorProps {
   agent: Agent;
@@ -520,28 +521,92 @@ export default function SkillCalculator({
     return allEffects;
   };
 
-  const collectStunEffects = (): Array<{ name: string; value: number }> => {
-    const effects: Array<{ name: string; value: number }> = [];
+  const collectStunEffects = (): Array<{
+    name: string;
+    value: number;
+    source?: string;
+    sourceId?: string;
+    ownerAgentId?: string;
+    ownerDisplayName?: string;
+  }> => {
+    const effects: Array<{
+      name: string;
+      value: number;
+      source?: string;
+      sourceId?: string;
+      ownerAgentId?: string;
+      ownerDisplayName?: string;
+    }> = [];
     const allEffects = getAllEffectsWithOverclock();
+
     Object.entries(allEffects).forEach(([effectId, state]) => {
       if (!state.enabled) return;
-      const effect = ingameEffectsRegistry[effectId];
+      const effect = ingameEffectsRegistry[effectId] as any;
       if (!effect) return;
-      if ((effect as any).stunMultiplier) {
-        effects.push({
-          name: effect.label,
-          value: (effect as any).stunMultiplier * 100,
-        });
+
+      const stacks = state.stacks || 1;
+      const overclockLevel = (state as any).overclockLevel || 1;
+
+      // ⭐ Sumar todas las fuentes posibles, igual que los otros collectors
+      let totalValue = 0;
+
+      // 1. Top-level: effect.stunDmgMultiplier (× stacks)
+      if (effect.stunDmgMultiplier) {
+        totalValue += effect.stunDmgMultiplier * stacks;
       }
-      if ((effect as any).stunMultiplierFlat) {
+
+      // 2. Flat: effect.flat.stunDmgMultiplier (× stacks)
+      if (effect.flat?.stunDmgMultiplier) {
+        totalValue += effect.flat.stunDmgMultiplier * stacks;
+      }
+
+      // 3. Per-stack: effect.perStack.stunDmgMultiplier (× stacks)
+      if (effect.perStack?.stunDmgMultiplier) {
+        totalValue += effect.perStack.stunDmgMultiplier * stacks;
+      }
+
+      // 4. W-Engine overclock: effect.wEngineOverclock.levels[n].stats.stunDmgMultiplier
+      if (effect.wEngineOverclock) {
+        const currentLevel =
+          effect.wEngineOverclock.levels.find(
+            (l: any) => l.level === overclockLevel,
+          ) || effect.wEngineOverclock.levels[0];
+        const ocValue =
+          currentLevel?.stats?.stunDmgMultiplier ||
+          currentLevel?.baseStats?.stunDmgMultiplier;
+        if (ocValue) {
+          totalValue += ocValue * stacks;
+        }
+      }
+
+      if (totalValue > 0) {
+        const ownerAgentId =
+          (state as any).ownerAgentId || effect.ownerAgentId || agent.id;
+        const ownerDisplayName =
+          (state as any).ownerDisplayName ||
+          effect.ownerDisplayName ||
+          agent.displayName ||
+          agent.name;
+
         effects.push({
           name: effect.label,
-          value: (effect as any).stunMultiplierFlat * 100,
+          value: totalValue * 100,
+          source: effect.source,
+          sourceId: effect.sourceId,
+          ownerAgentId,
+          ownerDisplayName,
         });
       }
     });
+
     return effects;
   };
+
+  // ⭐ El bonus de los toggles es un FLOOR, no aditivo.
+  // El slider puede subir por encima, pero nunca bajar del bonus.
+  const stunEffects = collectStunEffects();
+  const stunEffectsBonus = stunEffects.reduce((sum, e) => sum + e.value, 0);
+  const effectiveStunMultiplier = Math.max(stunMultiplier, stunEffectsBonus);
 
   const getSkillLevels = (): Record<string, number> => {
     const allEffects = getAllEffectsWithOverclock();
@@ -1344,8 +1409,8 @@ export default function SkillCalculator({
       0,
     );
 
-    if (stunMultiplier > 0) {
-      const stunMod = 1 + stunMultiplier / 100;
+    if (effectiveStunMultiplier > 0) {
+      const stunMod = 1 + effectiveStunMultiplier / 100;
       results.normal = results.normal.map((d) => Math.round(d * stunMod));
       results.critical = results.critical.map((d) => Math.round(d * stunMod));
       results.realNormal = results.realNormal.map((d) =>
@@ -1476,8 +1541,8 @@ export default function SkillCalculator({
     results.totalRealNormal = results.realNormal.reduce((a, b) => a + b, 0);
     results.totalRealCritical = results.realCritical.reduce((a, b) => a + b, 0);
 
-    if (stunMultiplier > 0) {
-      const stunMod = 1 + stunMultiplier / 100;
+    if (effectiveStunMultiplier > 0) {
+      const stunMod = 1 + effectiveStunMultiplier / 100;
       results.normal = results.normal.map((d) => Math.round(d * stunMod));
       results.critical = results.critical.map((d) => Math.round(d * stunMod));
       results.realNormal = results.realNormal.map((d) =>
@@ -1610,8 +1675,8 @@ export default function SkillCalculator({
     results.totalRealCritical = results.realCritical.reduce((a, b) => a + b, 0);
     results.totalRealSharp = results.realSharp.reduce((a, b) => a + b, 0);
 
-    if (stunMultiplier > 0) {
-      const stunMod = 1 + stunMultiplier / 100;
+    if (effectiveStunMultiplier > 0) {
+      const stunMod = 1 + effectiveStunMultiplier / 100;
       results.critical = results.critical.map((d) => Math.round(d * stunMod));
       results.sharp = results.sharp.map((d) => Math.round(d * stunMod));
       results.realCritical = results.realCritical.map((d) =>
@@ -2073,8 +2138,10 @@ export default function SkillCalculator({
         <StunMultiplierInput
           value={stunMultiplier}
           onChange={setStunMultiplier}
-          effects={collectStunEffects()}
+          effects={stunEffects}
         />
+
+        <StunBonusesPanel effects={stunEffects} />
 
         <EnemySelector
           selectedEnemyId={selectedEnemyId}
@@ -3071,7 +3138,7 @@ export default function SkillCalculator({
           agent={agent}
           unifiedStats={unifiedStats}
           selectedEnemy={selectedEnemy}
-          stunMultiplier={stunMultiplier}
+          stunMultiplier={effectiveStunMultiplier}
           damageBonuses={bonuses}
           anomalyBonuses={anomalyBonuses}
           activeEffects={allActiveEffects}
@@ -3100,7 +3167,7 @@ export default function SkillCalculator({
               agent={agent}
               unifiedStats={unifiedStats}
               selectedEnemy={selectedEnemy}
-              stunMultiplier={stunMultiplier}
+              stunMultiplier={effectiveStunMultiplier}
               damageBonuses={bonuses}
               anomalyBonuses={anomalyBonuses}
               teamSlotsInfo={teamSlotsInfo}
@@ -3132,7 +3199,7 @@ export default function SkillCalculator({
               totalBonusDamage={
                 bonuses.global + bonuses.elements[agent.attribute.toLowerCase()]
               }
-              stunMultiplier={stunMultiplier}
+              stunMultiplier={effectiveStunMultiplier}
               calculateRealDamage={calculateRealDamage}
               teamSlotsInfo={teamSlotsInfo}
               slotStatsMap={slotStatsMap}

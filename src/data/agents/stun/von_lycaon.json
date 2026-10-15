@@ -50,6 +50,16 @@
       "flat": { "iceResShred": 0.25 }
     },
     {
+      "id": "lycaon-core-elegant_predator",
+      "source": "core",
+      "sourceId": "lycaon-core",
+      "label": "Elegant Predator (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same Attribute or Faction:\n\nWhen Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%.",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 35% while Stunned.",
+      "target": "team",
+      "stunDmgMultiplier": 0.35
+    },
+    {
       "id": "lycaon-potential_1-hunters_grace",
       "source": "potential",
       "sourceId": "lycaon-potential",

@@ -268,6 +268,16 @@
       "condition": { "attributeDmgTypes": ["fire", "ice"] }
     },
     {
+      "id": "lighter-mindscape_2-red_scarf_2",
+      "source": "mindscape",
+      "sourceId": "lighter-mindscape_2",
+      "label": "Red Scarf (Mindscape Cinema N°2)",
+      "description": "When applying Collapse via Core Passive: Accelerant to enemies, the target's Stun DMG Multiplier increases by 25%. The increase to Ice DMG and Fire DMG provided by Elation from Additional Ability: Fighting Spirit increases to 120% of the original.",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 25%.",
+      "target": "team",
+      "stunDmgMultiplier": 0.25
+    },
+    {
       "id": "lighter-mindscape_4-sunglasses",
       "source": "mindscape",
       "sourceId": "lighter-mindscape_4",

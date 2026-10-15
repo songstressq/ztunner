@@ -102,6 +102,17 @@
       "damageBonuses": [{ "type": "global", "value": 0.2 }]
     },
     {
+      "id": "norma_hollowell-core_3-advantage_in_numbers",
+      "source": "core",
+      "sourceId": "norma-core",
+      "label": "Advantage in Numbers (Additional Ability)",
+      "description": "When another character in your squad is an Attack or Rupture character, or shares the same Faction:\n\nWhen Norma, her creations, or Combat Bangboo hit an enemy, they apply 1 stack of Tech Divide. Each stack of Tech Divide increases the target's Stun DMG Multiplier by 3%, stacking up to 10 times. This effect can stack once every 0.5s. ...",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 3%, stacking up to 10 times.",
+      "target": "team",
+      "stunDmgMultiplier": 0.03,
+      "maxStacks": 10
+    },
+    {
       "id": "norma_holowell-mindscape_1-visionary_extremism",
       "source": "mindscape",
       "sourceId": "norma_holowell-mindscape_1",
@@ -124,8 +135,10 @@
       "sourceId": "norma_holowell-mindscape_2",
       "label": "Axiom of Universal Unity (Mindscape Cinema N°2)",
       "description": "The Stun DMG Multiplier granted by each stack of Tech Divide in Norma's Additional Ability: Advantage in Numbers is increased to 6%. When Norma uses Basic Attack: Hat Trick while in combat, she gains 25 Energy. This effect can trigger once every 20s.",
-      "shortDescription": "This Mindscape Cinema does not affect Norma's stats.",
-      "infoOnly": true
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 6%, stacking up to 10 times.",
+      "target": "team",
+      "stunDmgMultiplier": 0.06,
+      "maxStacks": 10
     },
     {
       "id": "norma_holowell-mindscape_4-bangboo_superiority_theory",

@@ -160,7 +160,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="agents-block important_notice">
+        {/*<div className="agents-block important_notice">
           <div className="agents-wrapper" style={dominantEmptyStyle}>
             <div className="important_notice-msg">
               🚨 I'm still setting up this page, so if u happen to be here
@@ -171,30 +171,12 @@ const Home = () => {
               className="important_notice-msg"
               style={{ marginTop: "var(--padding-5px)" }}
             >
-              🚨 Finally, after a few days of testing, Remielle's Luminize DMG
-              Calculator is now calculating damage correctly, with a difference
-              of approximately 0.03% compared to the in-game value. I used
-              Remielle with Alice and Velina, so if you happen to find any
-              errors or discrepancies with other agents, send me a message on
-              Discord. 🫩
-            </div>
-            <div
-              className="important_notice-msg"
-              style={{ marginTop: "var(--padding-5px)" }}
-            >
               🚨 The new Custom Base Stats functionality is an experimental
               feature and may still produce unexpected errors. I recommend using
               it with an empty build. ⚠️
             </div>
-            {/*<div className="important_notice-msg">
-              🚨 Claret's Sharp DMG should be working now, but I don't have her
-              W-Engine, so its Electric Sharp DMG bonus may not work as
-              intended. I'll check that later, or maybe not since I only have
-              640 Polychromes. 😭 In other news, the Maim DMG Calculator is now
-              available! 😝
-            </div>*/}
           </div>
-        </div>
+        </div>*/}
         <div className="agents-block home_content-changelog">
           <div className="agents-wrapper" style={dominantEmptyStyle}>
             <div>
@@ -203,7 +185,16 @@ const Home = () => {
                 className="home_divider"
                 style={{ backgroundColor: dominantTheme }}
               />
-
+              <div className="home_content_changelog_item">
+                <span>v1.2.1 — Stun DMG Multiplier Bonuses</span>
+                <h3>● Added - Stun DMG Multiplier Bonuses</h3>
+                <p>
+                  Added in-game toggles to the Damage Calculator that grant Stun
+                  DMG Multiplier% to the squad, making build creation for
+                  Stunners a bit more meaningful. After all, the original name
+                  of this app was ZTunner, without the -.
+                </p>
+              </div>
               <div className="home_content_changelog_item">
                 <span>v1.2.0 — Custom Base Stats</span>
 
@@ -267,22 +258,12 @@ const Home = () => {
               />
               <div className="home_content-features_grid">
                 <div className="home_content-features_card">
-                  <h3>🅾 Laceration DMG & ZZZ Maim DMG Calculator</h3>
-                  <p>
-                    Implement Armorer's exclusive mechanics in the Damage
-                    Calculator, including support for Laceration, Sharp DMG and
-                    Maim DMG.
-                  </p>
-                  <div className="home_content-progress_bar">
-                    {renderProgressBar(100)}
-                    <span>100%</span>
-                  </div>{" "}
-                </div>{" "}
-                <div className="home_content-features_card">
-                  <h3>🅾 Drive Disc Inventory</h3>
+                  <h3>🅾 Drive Disc Inventory (Paused)</h3>
                   <p>
                     Create and name drive discs for easier organization and
                     reuse when creating and managing your agents' builds.
+                    <br /> ✱ Currently on hold, as Custom Base Stats makes
+                    creating builds easier.
                   </p>
                   <div className="home_content-progress_bar">
                     {renderProgressBar(80)}

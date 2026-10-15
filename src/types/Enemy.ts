@@ -1,6 +1,7 @@
 export interface EnemyStats {
   def: number;
   defBase: number;
+  stunDmgMultiplier?: number;
   fireResistance: number;
   iceResistance: number;
   electricResistance: number;

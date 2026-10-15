@@ -296,8 +296,7 @@ export interface IngameEffect {
 
   referenceStatEffect?: ReferenceStatEffect;
 
-  stunMultiplier?: number;
-  stunMultiplierFlat?: number;
+  stunDmgMultiplier?: number;
 
   baseStats?: Partial<Record<EffectStat, number>>;
   conditionalStats?: {

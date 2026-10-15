@@ -62,6 +62,16 @@
       }
     },
     {
+      "id": "dialyn-core-five_star_service_hotline_2",
+      "source": "core",
+      "sourceId": "dialyn-core",
+      "label": "Five-Star Service Hotline (Core Passive)",
+      "description": "... When EX Special Attack: Paper! hits an enemy, it applies the Malicious Complaint effect. While under Malicious Complaint, if the enemy becomes Stunned, the Stun duration is extended by 2s, and Stun DMG Multiplier increases by 30%. Before recovering from Stun, Malicious Complaint can trigger on the same target only once. The Stun duration bonus does not stack with similar effects. When an enemy with Malicious Complaint recovers from being Stunned, the effect ends. ...",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 30% while Stunned.",
+      "target": "team",
+      "stunDmgMultiplier": 0.3
+    },
+    {
       "id": "dialyn-core_1-external_line",
       "source": "core",
       "sourceId": "dialyn-core",
@@ -146,6 +156,16 @@
       "shortDescription": "All squad members' DMG is increased by 15%.",
       "target": "team",
       "damageBonuses": [{ "type": "global", "value": 0.15 }]
+    },
+    {
+      "id": "dialyn-mindscape_2-24_7_hotline_2",
+      "source": "mindscape",
+      "sourceId": "dialyn-mindscape_2",
+      "label": "24/7 Hotline (Mindscape Cinema N°2)",
+      "description": "Enemies affected by Malicious Complaint gain an additional 20% Stun DMG Multiplier when Stunned. All units deal 15% increased DMG to targets affected by Malicious Complaint.",
+      "shortDescription": "The target's Stun DMG Multiplier is further increased by 20% while Stunned.",
+      "target": "team",
+      "stunDmgMultiplier": 0.2
     },
     {
       "id": "dialyn-mindscape_4-the_past_never_fades",

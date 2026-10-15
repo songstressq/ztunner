@@ -10,6 +10,7 @@
       "stats": {
         "def": 572,
         "defBase": 572,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -30,6 +31,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": 0.0,
@@ -50,6 +52,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": 0.0,
@@ -70,6 +73,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.0,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": 0.0,
@@ -90,6 +94,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": 0.0,
@@ -110,6 +115,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.4,
         "electricResistance": 0.0,
@@ -130,6 +136,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": 0.0,
@@ -150,6 +157,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -170,6 +178,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -190,6 +199,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -210,6 +220,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -230,6 +241,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -250,6 +262,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": -0.2,
         "iceResistance": 0.4,
         "electricResistance": -0.2,
@@ -270,6 +283,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": -0.2,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -290,6 +304,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -310,6 +325,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -331,6 +347,7 @@
       "stats": {
         "def": 476,
         "defBase": 476,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.4,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -351,6 +368,7 @@
       "stats": {
         "def": 476,
         "defBase": 476,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.4,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -371,6 +389,7 @@
       "stats": {
         "def": 794,
         "defBase": 794,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -391,6 +410,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": -0.2,
         "iceResistance": 0.2,
         "electricResistance": 0.0,
@@ -412,6 +432,7 @@
       "stats": {
         "def": 1588,
         "defBase": 1588,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": -0.2,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -432,6 +453,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.25,
         "fireResistance": 0.4,
         "iceResistance": 0.0,
         "electricResistance": 0.0,
@@ -452,6 +474,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": -0.2,
         "iceResistance": 0.0,
         "electricResistance": 0.4,
@@ -472,6 +495,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": -0.2,
         "iceResistance": 0.0,
         "electricResistance": 0.4,
@@ -483,7 +507,7 @@
       "notes": null
     },
     {
-      "id": "notorious_pompey",
+      "id": "unknown_corrpution_complex",
       "name": "Unknown Corruption Complex",
       "level": 60,
       "type": "boss",
@@ -492,6 +516,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -512,6 +537,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": 0.2,
@@ -532,6 +558,7 @@
       "stats": {
         "def": 1588,
         "defBase": 1588,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": -0.2,
         "iceResistance": -0.2,
         "electricResistance": 0.2,
@@ -553,6 +580,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.25,
         "fireResistance": 0.2,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -573,6 +601,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.2,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -593,6 +622,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": 0.2,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -613,6 +643,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": -0.2,
         "iceResistance": 0.0,
         "electricResistance": 0.0,
@@ -633,6 +664,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.2,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -653,6 +685,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": -0.2,
         "iceResistance": 0.0,
         "electricResistance": 0.0,
@@ -673,6 +706,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.2,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -693,6 +727,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": 0.0,
         "iceResistance": 0.2,
         "electricResistance": -0.2,
@@ -713,6 +748,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -734,6 +770,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -745,8 +782,8 @@
       "notes": null
     },
     {
-      "id": "integrated_scorched_horizon",
-      "name": "Integrated - Scorched Horizon",
+      "id": "integrated__phaeton_of_the_scorched_horizon",
+      "name": "Integrated - Phaethon of the Scorched Horizon",
       "level": 60,
       "type": "boss",
       "enemyType": "Specials",
@@ -754,12 +791,13 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
-        "iceResistance": -0.2,
+        "iceResistance": 0.0,
         "electricResistance": 0.0,
-        "physicalResistance": 0.4,
+        "physicalResistance": 0.0,
         "etherResistance": 0.0,
-        "windResistance": -0.2,
+        "windResistance": 0.0,
         "critResistance": 0.0
       },
       "notes": null
@@ -774,6 +812,7 @@
       "stats": {
         "def": 476,
         "defBase": 476,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.4,
         "iceResistance": 0.4,
         "electricResistance": 0.0,
@@ -794,6 +833,7 @@
       "stats": {
         "def": 476,
         "defBase": 476,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.4,
         "electricResistance": 0.0,
@@ -814,6 +854,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.4,
@@ -825,8 +866,8 @@
       "notes": null
     },
     {
-      "id": "the_deflier",
-      "name": "The Deflier",
+      "id": "the_defiler",
+      "name": "The Defiler",
       "level": 60,
       "type": "boss",
       "enemyType": "Specials",
@@ -834,6 +875,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.25,
         "fireResistance": 0.0,
         "iceResistance": 0.4,
         "electricResistance": -0.2,
@@ -854,6 +896,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.0,
@@ -874,6 +917,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 1.0,
         "fireResistance": 0.0,
         "iceResistance": -0.2,
         "electricResistance": 0.4,
@@ -894,6 +938,7 @@
       "stats": {
         "def": 953,
         "defBase": 953,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.0,
         "iceResistance": 0.0,
         "electricResistance": -0.2,
@@ -915,6 +960,7 @@
       "stats": {
         "def": 858,
         "defBase": 858,
+        "stunDmgMultiplier": 0.5,
         "fireResistance": 0.2,
         "iceResistance": 0.0,
         "electricResistance": 0.0,

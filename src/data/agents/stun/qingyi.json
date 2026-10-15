@@ -57,6 +57,17 @@
       "maxStacks": 25
     },
     {
+      "id": "qingyi-core-eternals_seasons",
+      "source": "core",
+      "sourceId": "qingyi_core",
+      "label": "Eternal Seasons (Core Passive)",
+      "description": "When Qingyi lands a Finishing Move on an enemy with her Basic Attack: Enchanted Moonlit Blossoms, it applies 5 stacks of Subjugation to the enemy, stacking up to 20 times. Each stack of Subjugation increases the target's Stun DMG Multiplier by 4%. ...",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 4%, stacking up to 20 times.",
+      "target": "team",
+      "stunDmgMultiplier": 0.04,
+      "maxStacks": 20
+    },
+    {
       "id": "qingyi-core-three_verses_of_farewell_at_yang_pass",
       "source": "core",
       "sourceId": "qingyi_core",

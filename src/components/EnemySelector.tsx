@@ -125,6 +125,14 @@ export default function EnemySelector({
               {selectedEnemy.description}
             </span>
           </div>
+          {selectedEnemy.stats.stunDmgMultiplier !== undefined && (
+            <div className="enemy_selector-content_row">
+              <span>
+                Stun: +
+                {(selectedEnemy.stats.stunDmgMultiplier * 100).toFixed(0)}%
+              </span>
+            </div>
+          )}
           <div className="enemy_selector-content_row">
             <span>DEF: {normalChain.baseDef.toFixed(0)}</span>
           </div>

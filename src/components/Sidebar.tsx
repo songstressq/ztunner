@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { useSidebar } from "./SidebarContext";
 import { useRef, useEffect } from "react";
+import NotificationStack from "./NotificationStack";
+import { fireAllSiteNotifications } from "@/config/notifications";
 
 const Sidebar = () => {
   const { isSidebarOpen, openSidebar, closeSidebar, toggleSidebar } =
@@ -49,70 +51,82 @@ const Sidebar = () => {
     return () => document.body.classList.remove("sidebar-open");
   }, [isSidebarOpen]);
 
+  useEffect(() => {
+    const cleanup = fireAllSiteNotifications();
+    return cleanup;
+  }, []);
+
   return (
-    <nav className={`sidebar ${isSidebarOpen ? "open" : ""}`} ref={sidebarRef}>
-      <div className="arrow" onClick={toggleSidebar}>
-        <img src="/resources/images/sidebar/logo.png" className="arrow-icon" />
-        <span className="arrow-text">Z-TUNNER</span>
-      </div>
-      <ul className="sidebar-list">
-        <li className="sidebar-item">
-          <Link
-            to="/"
-            className="sidebar-link"
-            onClick={() => handleLinkClick("/")}
-          >
-            <img
-              src="/resources/images/sidebar/home.png"
-              className="item-icon"
-            />
-            <span className="item-text">Home</span>
-          </Link>
-        </li>
+    <>
+      <nav
+        className={`sidebar ${isSidebarOpen ? "open" : ""}`}
+        ref={sidebarRef}
+      >
+        <div className="arrow" onClick={toggleSidebar}>
+          <img
+            src="/resources/images/sidebar/logo.png"
+            className="arrow-icon"
+          />
+          <span className="arrow-text">Z-TUNNER</span>
+        </div>
+        <ul className="sidebar-list">
+          <li className="sidebar-item">
+            <Link
+              to="/"
+              className="sidebar-link"
+              onClick={() => handleLinkClick("/")}
+            >
+              <img
+                src="/resources/images/sidebar/home.png"
+                className="item-icon"
+              />
+              <span className="item-text">Home</span>
+            </Link>
+          </li>
 
-        <li className="sidebar-item">
-          <Link
-            to="/zzz-build-creator"
-            className="sidebar-link"
-            onClick={() => handleLinkClick("/zzz-build-creator")}
-          >
-            <img
-              src="/resources/images/sidebar/wengines.png"
-              className="item-icon"
-            />
-            <span className="item-text">Build Creator</span>
-          </Link>
-        </li>
+          <li className="sidebar-item">
+            <Link
+              to="/zzz-build-creator"
+              className="sidebar-link"
+              onClick={() => handleLinkClick("/zzz-build-creator")}
+            >
+              <img
+                src="/resources/images/sidebar/wengines.png"
+                className="item-icon"
+              />
+              <span className="item-text">Build Creator</span>
+            </Link>
+          </li>
 
-        <li className="sidebar-item">
-          <Link
-            to="/zzz-damage-calculator"
-            className="sidebar-link"
-            onClick={() => handleLinkClick("/zzz-damage-calculator")}
-          >
-            <img
-              src="/resources/images/sidebar/simu.png"
-              className="item-icon"
-            />
-            <span className="item-text">Damage Calculator</span>
-          </Link>
-        </li>
+          <li className="sidebar-item">
+            <Link
+              to="/zzz-damage-calculator"
+              className="sidebar-link"
+              onClick={() => handleLinkClick("/zzz-damage-calculator")}
+            >
+              <img
+                src="/resources/images/sidebar/simu.png"
+                className="item-icon"
+              />
+              <span className="item-text">Damage Calculator</span>
+            </Link>
+          </li>
 
-        <li className="sidebar-item">
-          <Link
-            to="/zzz-build-manager"
-            className="sidebar-link"
-            onClick={() => handleLinkClick("/zzz-build-manager")}
-          >
-            <img
-              src="/resources/images/sidebar/agents.png"
-              className="item-icon"
-            />
-            <span className="item-text">Build Manager</span>
-          </Link>
-        </li>
+          <li className="sidebar-item">
+            <Link
+              to="/zzz-build-manager"
+              className="sidebar-link"
+              onClick={() => handleLinkClick("/zzz-build-manager")}
+            >
+              <img
+                src="/resources/images/sidebar/agents.png"
+                className="item-icon"
+              />
+              <span className="item-text">Build Manager</span>
+            </Link>
+          </li>
 
-        {/*
+          {/*
         <li className="sidebar-item">
           <Link
             to="/zzz-disc-inventory"
@@ -127,35 +141,37 @@ const Sidebar = () => {
           </Link>
         </li>
 */}
-        <li className="sidebar-item">
-          <Link
-            to="/guides"
-            className="sidebar-link"
-            onClick={() => handleLinkClick("/guides")}
-          >
-            <img
-              src="/resources/images/sidebar/guides.png"
-              className="item-icon"
-            />
-            <span className="item-text">Guides</span>
-          </Link>
-        </li>
+          <li className="sidebar-item">
+            <Link
+              to="/guides"
+              className="sidebar-link"
+              onClick={() => handleLinkClick("/guides")}
+            >
+              <img
+                src="/resources/images/sidebar/guides.png"
+                className="item-icon"
+              />
+              <span className="item-text">Guides</span>
+            </Link>
+          </li>
 
-        <li className="sidebar-item">
-          <Link
-            to="/info-settings"
-            className="sidebar-link"
-            onClick={() => handleLinkClick("/info-settings")}
-          >
-            <img
-              src="/resources/images/sidebar/calc.png"
-              className="item-icon"
-            />
-            <span className="item-text">Info & Settings</span>
-          </Link>
-        </li>
-      </ul>
-    </nav>
+          <li className="sidebar-item">
+            <Link
+              to="/info-settings"
+              className="sidebar-link"
+              onClick={() => handleLinkClick("/info-settings")}
+            >
+              <img
+                src="/resources/images/sidebar/calc.png"
+                className="item-icon"
+              />
+              <span className="item-text">Info & Settings</span>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <NotificationStack />
+    </>
   );
 };
 

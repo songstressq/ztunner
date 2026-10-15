@@ -811,6 +811,7 @@
 /* #endregion SLOT REFERENCE TOGGLES */
 
 /* #region CONDITIONAL STAT TOGGLES */
+
 .ingame_toggle-conditional_stat_header {
   display: flex;
   align-items: center;
@@ -875,6 +876,59 @@
   cursor: not-allowed;
 }
 /* #endregion CONDITIONAL STAT TOGGLES */
+
+/* #region STUN MULTIPLIER TOGGLES */
+
+.stun-multiplier-effects {
+  margin-top: var(--padding-12px);
+  padding: var(--padding-10px) var(--padding-12px);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stun-multiplier-effects-header {
+  font-size: var(--home-11px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: var(--padding-6px);
+}
+
+.stun-multiplier-effect-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--home-12_5px);
+  padding: var(--paddding-3px) 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stun-multiplier-effect-row.is-total {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: var(--padding-6px);
+  padding-top: var(--padding-6px);
+  font-weight: 600;
+  color: var(--theme);
+}
+
+.stun-multiplier-effect-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: var(--padding-8px);
+}
+
+.stun-multiplier-effect-value {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.stun_margin {
+  margin-top: 0 !important;
+}
+
+/* #endregion STUN MULTIPLIER TOGGLES */
 
 /* #region MAIN /// SKILL CALCULATOR */
 

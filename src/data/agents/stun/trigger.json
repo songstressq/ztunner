@@ -43,13 +43,24 @@
   ],
   "ingameEffects": [
     {
+      "id": "trigger-core-soul_searching_gaze",
+      "source": "core",
+      "sourceId": "trigger-core",
+      "label": "Soul-Searching Gaze (Core Passive)",
+      "description": "When Trigger's Aftershock hits an enemy, the target's Stun DMG Multiplier increases by 35% for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+      "shortDescription": "The target's Stun DMG Multiplier is increased by 35% for 5s.",
+      "target": "team",
+      "stunDmgMultiplier": 0.35
+    },
+    {
       "id": "trigger-mindscape_1-sharpened_senses",
       "source": "mindscape",
       "sourceId": "trigger-mindscape_1",
       "label": "Sharpened Senses (Mindscape Cinema N°1)",
       "description": "The Stun DMG Multiplier applied through Core Passive: Soul-Searching Gaze is increased by an additional 20%. When activating Basic Attack: Harmonizing Shot, the cooldown is reduced to 2s. Purge gained upon hitting an enemy with the continuous fire or charged counter in Sniper Stance increases by 25%. Maximum Purge increases to 125.",
-      "shortDescription": "This Mindscape Cinema does not affect Trigger's stats.",
-      "infoOnly": true
+      "shortDescription": "The target's Stun DMG Multiplier is further increased by 20% for 5s.",
+      "target": "team",
+      "stunDmgMultiplier": 0.2
     },
     {
       "id": "trigger-mindscape_2-ether_vision",
