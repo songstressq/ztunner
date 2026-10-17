@@ -281,8 +281,6 @@ export const InfoTooltip = ({
     setTooltip(null);
   };
 
-  // ⭐ Modo triggerAsChild: clonamos el hijo y le inyectamos los handlers,
-  // así el elemento original sigue siendo hijo directo del grid/flex.
   if (triggerAsChild && isValidElement(children)) {
     const child = children as ReactElement<any>;
     const childProps = child.props;
@@ -308,7 +306,6 @@ export const InfoTooltip = ({
     );
   }
 
-  // Modo original (ícono ⓘ)
   return (
     <>
       <div

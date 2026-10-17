@@ -164,7 +164,6 @@ export function collectDefenseBonuses(
       return resKeys.map((k) => (source?.[k] ?? 0) * stacks);
     };
 
-    // ── FLAT ──
     if (effect.flat) {
       const flatValues = getResValues(effect.flat);
       const allSame =
@@ -187,7 +186,6 @@ export function collectDefenseBonuses(
       }
     }
 
-    // ── AFTERSHOCK DEF IGNORE (top-level, no vive dentro de flat) ──
     if ((effect as any).aftershockDefShred) {
       addSource(
         (effect as any).aftershockDefShred * stacks,
@@ -197,7 +195,6 @@ export function collectDefenseBonuses(
       );
     }
 
-    // ---- PER STACK ----
     if (effect.perStack) {
       const perStackValues = getResValues(effect.perStack);
       const allSame =
@@ -224,12 +221,10 @@ export function collectDefenseBonuses(
       }
     }
 
-    // ----  BASE STATS ----
     if (effect.baseStats && effect.baseStats.defShred) {
       addSource(effect.baseStats.defShred * stacks, "defShred", effect, stacks);
     }
 
-    // ---- CONDITIONAL STATS ----
     if (effect.conditionalStats) {
       const conditionalState = activeEffects[`${effect.id}_conditional`];
       if (conditionalState?.enabled) {
@@ -245,7 +240,6 @@ export function collectDefenseBonuses(
       }
     }
 
-    // ---- W-ENGINE OVERCLOCK ----
     if (effect.wEngineOverclock) {
       const ocLevel = overclockLevels[effect.id] || 1;
       const currentLevel =
@@ -277,7 +271,6 @@ export function collectDefenseBonuses(
       }
     }
 
-    // ---- EXCLUSIVE STAT BONUSES ----
     if (effect.exclusiveStatBonuses) {
       for (const bonus of effect.exclusiveStatBonuses) {
         const value = bonus.value * stacks;

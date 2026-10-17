@@ -255,7 +255,6 @@ export function collectDamageBonuses(
       effectInitialStats = teamEffects[effect.id].ownerInitialStats;
     }
 
-    // ---- INITIAL STAT BASED DAMAGE BONUS ----
     if (effect.conditional?.type === "initialStatBasedDamageBonus") {
       const basedOn = effect.conditional.basedOn;
       const initialValue =
@@ -296,7 +295,6 @@ export function collectDamageBonuses(
       );
     }
 
-    // ---- DAMAGE BONUSES (con soporte para currentStatBased) ----
     let damageBonusesToProcess: DamageBonus[] = [];
 
     if (effect.damageBonuses) {
@@ -715,12 +713,10 @@ export function collectDamageBonuses(
       }
     }
 
-    // ---- FLAT SHEER DMG ----
     if (effect.flat?.sheerDmgFlat) {
       bonuses.sheerDmgFlat += effect.flat.sheerDmgFlat * stacks;
     }
 
-    // ---- DYNAMIC STAT BONUSES ----
     if (effect.dynamicStatBonuses && unifiedStats) {
       for (const dynamicBonus of effect.dynamicStatBonuses) {
         const baseStatValue = (unifiedStats[dynamicBonus.stat] as number) || 0;
@@ -751,7 +747,6 @@ export function collectDamageBonuses(
       }
     }
 
-    // ---- SKILL LEVEL BASED ----
     if (
       effect.conditional?.type === "skillLevelBased" &&
       effect.conditional.skillBonusTable
@@ -862,7 +857,6 @@ export function collectDamageBonuses(
       }
     }
 
-    // ---- W-ENGINE OVERCLOCK ----
     if (effect.wEngineOverclock) {
       const overclockLevel = overclockLevels[effect.id] || 1;
       const currentLevel =
@@ -1113,7 +1107,6 @@ export function collectDamageBonuses(
       }
     }
 
-    // ---- EXCLUSIVE STAT BONUSES ----
     if (effect.exclusiveStatBonuses) {
       for (const statBonus of effect.exclusiveStatBonuses) {
         const totalValue = statBonus.value * stacks;
@@ -1150,7 +1143,6 @@ export function collectDamageBonuses(
     }
   }
 
-  // ---- CALCULAR TOTALES ----
   bonuses.breakdown.dmgMod.total =
     bonuses.global +
     Object.values(bonuses.elements).reduce((a, b) => a + b, 0) +

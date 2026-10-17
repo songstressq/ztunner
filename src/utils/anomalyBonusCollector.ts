@@ -543,7 +543,6 @@ export function collectAnomalyBonuses(
         ) || effect.wEngineOverclock.levels[0];
       if (currentLevel?.damageBonuses) {
         currentLevel.damageBonuses.forEach((bonus: any) => {
-          // Defensa: si value no es número, tratamos como 0
           const rawValue =
             typeof bonus?.value === "number" && !Number.isNaN(bonus.value)
               ? bonus.value
@@ -595,7 +594,6 @@ export function collectAnomalyBonuses(
             });
           }
 
-          // ⭐ NUEVO: anomalyTypeDmg (ej. Windswept en Flawless Etiquette)
           if (bonus.type === "anomalyTypeDmg" && bonus.anomalyType) {
             if (!bonuses.perAnomalyType[bonus.anomalyType]) {
               bonuses.perAnomalyType[bonus.anomalyType] = {
@@ -618,7 +616,6 @@ export function collectAnomalyBonuses(
             });
           }
 
-          // ⭐ NUEVO: vortexDmgBonus
           if (bonus.type === "vortexDmgBonus") {
             bonuses.vortexDmgBonus += totalValue;
             bonuses.vortexDmgSources.push({
@@ -634,7 +631,6 @@ export function collectAnomalyBonuses(
             });
           }
 
-          // ⭐ NUEVO: vortexMultiplierBonus
           if (bonus.type === "vortexMultiplierBonus") {
             bonuses.vortexMultiplierBonus += totalValue;
             bonuses.vortexMultiplierSources.push({

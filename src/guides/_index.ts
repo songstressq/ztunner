@@ -17,8 +17,6 @@ interface MDXModule {
   frontmatter: Partial<GuideMeta>;
 }
 
-// ⭐ Un solo glob eager. Vite expone el módulo compilado con
-// `frontmatter` (gracias a remark-mdx-frontmatter) y `default` (componente).
 const mdxModules = import.meta.glob("./*.mdx", { eager: true }) as Record<
   string,
   MDXModule

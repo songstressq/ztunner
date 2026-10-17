@@ -1489,7 +1489,6 @@ export default function AnomalyCalculator({
     if (!selectedEnemy) return 0;
     const enemyDef = selectedEnemy.stats.def;
 
-    // Mismo path que calculateRealDamage con isAnomalyDefShredOnly = true
     let defShredTotal = 0;
     Object.entries(activeEffects).forEach(([effectId, state]) => {
       if (!state.enabled) return;

@@ -336,6 +336,69 @@
       },
       "notes": null
     },
+    {
+      "id": "thracian",
+      "name": "Thracian",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, Thracian will repeatedly perform specific skills to enter a charging state. While in this state, their attacks become more aggressive, and after unleashing high-level skills, they will trigger a large area explosion.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "stunDmgMultiplier": 0.5,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "miasmic_hracian",
+      "name": "Miasmic - Thracian",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, this enemy will activate Miasmic Fields at specific moments, instantly unleashing a powerful large-area attack, while enhancing their skills throughout its duration.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "stunDmgMultiplier": 0.5,
+        "fireResistance": 0.0,
+        "iceResistance": 0.0,
+        "electricResistance": 0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "metamorphosed_scorpse",
+      "name": "Metamorphosed - Scorpse",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, the Metamorphosed - Scorpse conceals itself and attacks through its Mimics. Successfully triggering a Defensive Assist or Dodge Counter against a Mimic will knock the Metamorphosed - Scorpse down, leaving it staggered for a short time. Upon activating the Corruptive Barrier, it summons additional Mimics to attack in coordination with it. It can also spit venom filled with Blastcrawler egg sacs, causing multiple explosive hits.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "stunDmgMultiplier": 0.25,
+        "fireResistance": 0.0,
+        "iceResistance": 0.2,
+        "electricResistance": -0.2,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
 
     {
       "id": "sanguine_sweeper",
@@ -945,6 +1008,27 @@
         "physicalResistance": -0.2,
         "etherResistance": 0.2,
         "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "sacrifice_covenant_guardian",
+      "name": "Sacrifice - Covenant Guardian",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "In combat, Sacrifice - Covenant Guardian will use wings to launch follow-up attacks. When successfully performing a Defensive Assist against some of the Guardian's skills, you can interrupt its attacks. Additionally, the Covenant Guardian will concentrate its Energy to unleash ranged attacks, with some of these ranged skills creating a Miasma Pool on the ground. Homing projectiles summoned from the Miasma Pool will pursue you. Use the brief moment when the projectiles turn to trigger a Perfect Dodge and perform a Dodge Counter.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "stunDmgMultiplier": 1.0,
+        "fireResistance": -0.2,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.0,
+        "windResistance": 0.2,
         "critResistance": 0.0
       },
       "notes": null

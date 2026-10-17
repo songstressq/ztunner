@@ -151,10 +151,10 @@ function applyStatFromKey(base: UnifiedStats, key: string, raw: number) {
       break;
     case "lacerationDmg":
       base.lacerationDmg += value;
-      break; // ⭐
+      break;
     case "sharpDmgBonus":
       base.sharpDmgBonus += value;
-      break; // ⭐
+      break;
     default:
   }
 }
@@ -311,7 +311,7 @@ export function calculateUnifiedStats(
     agentName: string;
     specialty: string;
   }> = [],
-  customBaseStats?: CustomBaseStats, // ⭐ NUEVO
+  customBaseStats?: CustomBaseStats,
 ): UnifiedStats {
   const teamEffectsData = teamEffects || {};
   const custom = customBaseStats ?? {};
@@ -665,7 +665,7 @@ export function calculateUnifiedStats(
       disorderDmgBonus: 0,
     };
 
-  // PRIMERA PASADA: Procesar efectos (EXCLUYENDO currentStatBased )
+  // PRIMERA PASADA: (EXCLUYENDO currentStatBased)
   for (const effect of effectsToProcess) {
     const state = activeEffects[effect.id] || teamEffectsData[effect.id];
     if (!state?.enabled) continue;
@@ -673,7 +673,7 @@ export function calculateUnifiedStats(
     if (effect.condition?.excludeOwner === true) {
       const isOwner = effect.ownerAgentId === agent.id;
       if (isOwner) {
-        continue; // <--- ESTO es lo único importante, los logs de alrededor sobran
+        continue;
       }
     }
 
@@ -683,7 +683,6 @@ export function calculateUnifiedStats(
         effect.source === "gameMode" || effect.ownerAgentId === "gameMode";
 
       if (isGameModeEffect) {
-        // Los gameMode SÍ se filtran por especialidad siempre, sin bypass.
         if (
           agent.specialty.toLowerCase().trim() !==
           effect.condition.requiresSpecialty.toLowerCase().trim()
@@ -691,7 +690,7 @@ export function calculateUnifiedStats(
           continue;
         }
       } else if (effect.target === "team" && !isOwner) {
-        // Team effect de otro agente: aplica a todo el equipo (comportamiento original).
+        // Team effect
       } else if (agent.specialty !== effect.condition.requiresSpecialty) {
         continue;
       }
@@ -1378,10 +1377,10 @@ export function calculateUnifiedStats(
           break;
         case "lacerationDmg":
           base.lacerationDmg += value;
-          break; // ⭐
+          break;
         case "sharpDmgBonus":
           base.sharpDmgBonus += value;
-          break; // ⭐
+          break;
         case "hpFlat":
         case "hp":
           flatHP += value;
@@ -1512,10 +1511,8 @@ export function calculateUnifiedStats(
 
   if (agent.specialty === "Rupture") {
     if (custom.sheerForce !== undefined) {
-      // ⭐ Override manual: valor exacto, sin fórmula
       base.sheerForce = custom.sheerForce;
     } else {
-      // Fórmula automática estándar
       const sfHP = Math.floor(base.hp * 0.1);
       const sfATK = Math.floor(base.atk * 0.3);
       base.sheerForce = sfHP + sfATK;
@@ -1524,8 +1521,6 @@ export function calculateUnifiedStats(
 
   if (agent.specialty === "Armorer") {
     (base as any).__isArmorerAgent = true;
-    // PEN sigue funcional
-    // Energy Regen se oculta en UI, pero se mantiene en stats
   }
 
   if (base._energyRegenRawBonus) {

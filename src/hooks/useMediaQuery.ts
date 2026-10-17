@@ -1,4 +1,3 @@
-// src/hooks/useMediaQuery.ts (o dentro de Home.tsx)
 import { useState, useEffect } from "react";
 
 export function useMediaQuery(query: string): boolean {

@@ -212,12 +212,6 @@ export function formatStatDisplay(
   return `${formatStatName(key)}: ${formatStatValue(key, value, options)}`;
 }
 
-// ─────────────────────────────────────────────────────────────
-// DamageBonus label formatter
-// Maneja los tipos compuestos (element + skillType + anomalyType)
-// reutilizando formatStatName para los casos simples.
-// ─────────────────────────────────────────────────────────────
-
 interface DamageBonusLike {
   type?: string;
   value?: number;
@@ -269,7 +263,6 @@ export function formatDamageBonusLabel(
   const anomalyName = capitalizeWord(bonus.anomalyType);
 
   switch (type) {
-    // ── Básicos ──
     case "global":
       return "Global DMG";
 
@@ -290,7 +283,6 @@ export function formatDamageBonusLabel(
     case "hitExclusive":
       return bonus.hitName ? `${bonus.hitName} DMG` : "Hit-Specific DMG";
 
-    // ── Sheer ──
     case "sheerDmg":
       return "Sheer DMG Bonus";
 
@@ -302,7 +294,6 @@ export function formatDamageBonusLabel(
         ? `${elementName} ${skillName} Sheer DMG`
         : "Skill Sheer DMG";
 
-    // ── SkillType + Element / Stat ──
     case "skillTypeElemental":
       return elementName && skillName
         ? `${elementName} ${skillName} DMG`
@@ -313,7 +304,6 @@ export function formatDamageBonusLabel(
         ? `${skillName} ${bonus.stat ? formatStatName(bonus.stat) : "Stat"}`
         : "Skill Type Stat";
 
-    // ── CRIT ──
     case "critDamageElementalBonus":
       return elementName ? `${elementName} CRIT DMG` : "Elemental CRIT DMG";
 
@@ -321,7 +311,6 @@ export function formatDamageBonusLabel(
     case "assaultCritDmgTotal":
       return "Assault CRIT DMG";
 
-    // ── Anomaly ──
     case "anomalyDmgBonus":
     case "anomalyDmgBonusFlat":
       return "Anomaly DMG Bonus";
@@ -340,7 +329,6 @@ export function formatDamageBonusLabel(
     case "disorderTypeDmg":
       return anomalyName ? `${anomalyName} Disorder DMG` : "Disorder Type DMG";
 
-    // ── Vortex ──
     case "vortexDmg":
     case "vortexDmgBonus":
       return "Vortex DMG Bonus";
@@ -349,14 +337,12 @@ export function formatDamageBonusLabel(
     case "vortexMultiplierBonus":
       return "Vortex Multiplier";
 
-    // ── Refringe / Luminize ──
     case "refringeCoefficient":
       return "Refringe Coefficient";
 
     case "luminizeMultiplierBonus":
       return "Luminize Multiplier";
 
-    // ── Sharp ──
     case "sharpDmg":
       return "Sharp DMG Bonus";
 
@@ -370,19 +356,12 @@ export function formatDamageBonusLabel(
         ? `${elementName} ${skillName} Sharp DMG`
         : "Skill Sharp DMG";
 
-    // ── Fallback: usar STAT_NAMES / camelToTitle ──
     default:
       return formatStatName(type);
   }
 }
 
-// ─────────────────────────────────────────────────────────────
-// Anomaly Type / Attribute display names
-// Usado en los NeonSelect de Disorder, Vortex y Luminize.
-// ─────────────────────────────────────────────────────────────
-
 const ANOMALY_TYPE_DISPLAY: Record<string, string> = {
-  // Anomaly Types
   windswept: "Windswept",
   burn: "Burn",
   shock: "Shock",
@@ -392,7 +371,6 @@ const ANOMALY_TYPE_DISPLAY: Record<string, string> = {
   frost: "Frost",
   auricink: "Auric Ink",
   honededge: "Honed Edge",
-  // Atributos base (fallback para lumiflux, wind, etc.)
   fire: "Fire",
   ice: "Ice",
   electric: "Electric",
@@ -408,7 +386,6 @@ export function formatAnomalyType(type?: string): string {
   if (ANOMALY_TYPE_DISPLAY[normalized]) {
     return ANOMALY_TYPE_DISPLAY[normalized];
   }
-  // Fallback: camelCase → Title Case
   return type
     .replace(/([a-z])([A-Z])/g, "$1 $2")
     .split(" ")

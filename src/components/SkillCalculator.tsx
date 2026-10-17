@@ -215,6 +215,40 @@ export default function SkillCalculator({
     }));
   };
 
+  useEffect(() => {
+    const currentFlux = fluxedAttributes?.[currentSlotIndex] ?? null;
+
+    if (agent.id !== "remielle") {
+      if (currentFlux !== null) {
+        setFluxedAttribute(currentSlotIndex, null);
+      }
+      return;
+    }
+
+    if (currentFlux === null) return;
+
+    const otherSlots = (teamSlotsInfo ?? []).filter(
+      (slot) =>
+        slot.slotIndex !== currentSlotIndex && slot.agentName !== "Empty",
+    );
+
+    const hasMatch = otherSlots.some((slot) => {
+      const agentData = agents.find(
+        (a) => a.displayName === slot.agentName || a.name === slot.agentName,
+      );
+      const attr =
+        agentData?.attribute?.toLowerCase() ||
+        (slot as any).attribute?.toLowerCase() ||
+        "unknown";
+      return attr === currentFlux;
+    });
+
+    if (!hasMatch) {
+      setFluxedAttribute(currentSlotIndex, null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [teamSlotsInfo, agent.id, currentSlotIndex, fluxedAttributes]);
+
   const getSkillCategory = (
     skill: any,
   ): keyof (typeof skillProfiles)[string] | null => {
@@ -363,7 +397,6 @@ export default function SkillCalculator({
         `<span style="color: ${ATTRIBUTE_COLORS.physical}; font-weight: lighter;">${phy}</span>${sep4}` +
         `<span style="color: ${ATTRIBUTE_COLORS.ice}; font-weight: lighter;">${ice}</span>${trailingComma}`,
     );
-    // Hardcoded: "480%/240%/600%/40%/60%/24%" ordered color sequence
     result = result.replace(
       /(480%)(\s*\/\s*)(240%)(\s*\/\s*)(600%)(\s*\/\s*)(40%)(\s*\/\s*)(60%)(\s*\/\s*)(24%)/g,
       (_, a, s1, b, s2, c, s3, d, s4, e, s5, f) =>
@@ -547,25 +580,17 @@ export default function SkillCalculator({
       const stacks = state.stacks || 1;
       const overclockLevel = (state as any).overclockLevel || 1;
 
-      // ⭐ Sumar todas las fuentes posibles, igual que los otros collectors
       let totalValue = 0;
 
-      // 1. Top-level: effect.stunDmgMultiplier (× stacks)
       if (effect.stunDmgMultiplier) {
         totalValue += effect.stunDmgMultiplier * stacks;
       }
-
-      // 2. Flat: effect.flat.stunDmgMultiplier (× stacks)
       if (effect.flat?.stunDmgMultiplier) {
         totalValue += effect.flat.stunDmgMultiplier * stacks;
       }
-
-      // 3. Per-stack: effect.perStack.stunDmgMultiplier (× stacks)
       if (effect.perStack?.stunDmgMultiplier) {
         totalValue += effect.perStack.stunDmgMultiplier * stacks;
       }
-
-      // 4. W-Engine overclock: effect.wEngineOverclock.levels[n].stats.stunDmgMultiplier
       if (effect.wEngineOverclock) {
         const currentLevel =
           effect.wEngineOverclock.levels.find(
@@ -602,8 +627,6 @@ export default function SkillCalculator({
     return effects;
   };
 
-  // ⭐ El bonus de los toggles es un FLOOR, no aditivo.
-  // El slider puede subir por encima, pero nunca bajar del bonus.
   const stunEffects = collectStunEffects();
   const stunEffectsBonus = stunEffects.reduce((sum, e) => sum + e.value, 0);
   const effectiveStunMultiplier = Math.max(stunMultiplier, stunEffectsBonus);
@@ -909,18 +932,85 @@ export default function SkillCalculator({
     agent.id,
   ]);
 
+  const realTimeOwnerStats = useMemo(() => {
+    const statsMap: Record<string, UnifiedStats> = {};
+    if (!teamSlotsInfo) return statsMap;
+
+    Object.entries(activeEffects ?? {}).forEach(([effectId, state]) => {
+      const ownerAgentId = (state as any)?.ownerAgentId;
+      if (!state?.enabled || !ownerAgentId) return;
+      let ownerSlot = teamSlotsInfo.find(
+        (slot) => slot.agentName === ownerAgentId,
+      );
+      if (!ownerSlot) {
+        const agentData = agents.find(
+          (a) =>
+            a.id === ownerAgentId ||
+            a.name === ownerAgentId ||
+            a.displayName === ownerAgentId,
+        );
+        if (agentData) {
+          ownerSlot = teamSlotsInfo.find(
+            (slot) =>
+              slot.agentName === agentData.displayName ||
+              slot.agentName === agentData.name,
+          );
+        }
+      }
+      if (ownerSlot?.stats) {
+        statsMap[effectId] = ownerSlot.stats;
+      }
+    });
+
+    if (teamEffects) {
+      Object.entries(teamEffects).forEach(([effectId, effectState]) => {
+        if (!effectState?.enabled || !effectState.ownerAgentId) return;
+        if (statsMap[effectId]) return;
+        let ownerSlot = teamSlotsInfo.find(
+          (slot) => slot.agentName === effectState.ownerAgentId,
+        );
+        if (!ownerSlot) {
+          const agentData = agents.find(
+            (a) =>
+              a.id === effectState.ownerAgentId ||
+              a.name === effectState.ownerAgentId ||
+              a.displayName === effectState.ownerAgentId,
+          );
+          if (agentData) {
+            ownerSlot = teamSlotsInfo.find(
+              (slot) =>
+                slot.agentName === agentData.displayName ||
+                slot.agentName === agentData.name,
+            );
+          }
+        }
+        if (ownerSlot?.stats) {
+          statsMap[effectId] = ownerSlot.stats;
+        }
+      });
+    }
+
+    return statsMap;
+  }, [teamSlotsInfo, activeEffects, teamEffects]);
+
   const anomalyBonuses = useMemo(() => {
     return collectAnomalyBonuses(
       allEffects,
       allActiveEffects,
       unifiedStats,
       unifiedStats,
-      {},
+      realTimeOwnerStats,
       {},
       agent.id,
       undefined,
     );
-  }, [allEffects, allActiveEffects, unifiedStats, agent.id]);
+  }, [
+    allEffects,
+    allActiveEffects,
+    unifiedStats,
+    agent.id,
+    realTimeOwnerStats,
+  ]);
 
   const calculateRealDamage = (
     baseDamage: number,
@@ -1755,17 +1845,13 @@ export default function SkillCalculator({
 
       const damageWithBonus = baseDamage * totalBonus;
 
-      // ⭐ Buscar CRIT DMG exclusivo que aplique al skill activo.
-      // Preferimos el skill seleccionado; si no, cualquiera de los EX de Dialyn.
       const getApplicableExclusiveCritDmg = (): number => {
         const statBonuses = bonuses.statBonuses || {};
 
-        // 1) Skill actualmente seleccionado
         if (selectedSkillId && statBonuses[selectedSkillId]?.critDmg) {
           return statBonuses[selectedSkillId].critDmg;
         }
 
-        // 2) Cualquier EX Special de Dialyn
         const dialynExIds = agent.skills?.exSkills?.map((s) => s.id) ?? [];
         for (const id of dialynExIds) {
           if (statBonuses[id]?.critDmg) return statBonuses[id].critDmg;
@@ -3178,6 +3264,7 @@ export default function SkillCalculator({
               calculatorState={calculatorState}
               onCalculatorStateChange={onCalculatorStateChange}
               activeEffects={allActiveEffects}
+              teamEffects={teamEffects}
             />
             <AnomalyBonusesPanel
               anomalyBonuses={anomalyBonuses}

@@ -22,10 +22,6 @@ const StunMultiplierInput: React.FC<Props> = ({
   const minValue = Math.max(MIN_SLIDER, effectsBonus);
   const displayValue = Math.max(value, minValue);
 
-  // ⭐ Cuando el bonus cambia (toggle on/off), sumamos/restamos el delta
-  // directamente al valor. El bonus es aditivo:
-  // - User con 60 sin toggle → activa +35 → 95
-  // - User con 95 con toggle → desactiva → 60
   const prevBonusRef = useRef(effectsBonus);
   useEffect(() => {
     const prev = prevBonusRef.current;
@@ -50,7 +46,6 @@ const StunMultiplierInput: React.FC<Props> = ({
     onChange(Math.max(displayValue - 5, minValue));
   };
 
-  // El fill va de 0 a displayValue sobre el track completo (0-200).
   const fillPercent = (displayValue / MAX_SLIDER) * 100;
 
   const minFillPercent =

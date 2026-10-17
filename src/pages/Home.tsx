@@ -14,15 +14,12 @@ const Home = () => {
   const [imageError, setImageError] = useState(false);
 
   const dominantAgent = useMemo(() => {
-    // ⭐ Si hay un Armorer con el theme actual, priorizarlo
     const armorerMatch = agents.find(
       (a) =>
         a.themeColor === dominantTheme &&
         a.specialty?.toLowerCase() === "armorer",
     );
     if (armorerMatch) return armorerMatch;
-
-    // Comportamiento original
     return agents.find((a) => a.themeColor === dominantTheme) || null;
   }, [dominantTheme]);
 
@@ -236,8 +233,8 @@ const Home = () => {
               <iframe
                 className="home_content-trailer_video"
                 width="100%"
-                src="https://www.youtube.com/embed/s-y-Vc1dVkU"
-                title="Zenless Zone Zero Version 3.2 Teaser – Their Secret Histories"
+                src="https://www.youtube-nocookie.com/embed/wHxjO2Ut3Ic?hl=en"
+                title="YouTube video player"
                 loading="lazy"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

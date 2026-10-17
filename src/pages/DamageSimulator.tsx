@@ -154,10 +154,6 @@ const DamageSimulator = () => {
   };
 
   useEffect(() => {
-    // ─────────────────────────────────────────────────────────────
-    // 1) Construir el set de IDs válidos según el gameModes.json actual
-    //    (rooms + buffs, para no purgar los buffs por error)
-    // ─────────────────────────────────────────────────────────────
     const validGameModeIds = new Set<string>();
     const modes = (gameModesData as any).modes || [];
     modes.forEach((mode: any) => {
@@ -173,10 +169,6 @@ const DamageSimulator = () => {
       });
     });
 
-    // ─────────────────────────────────────────────────────────────
-    // 2) Purga huérfanos: cualquier game_mode_* activo que ya no
-    //    exista en el JSON se desactiva (evita basura en localStorage)
-    // ─────────────────────────────────────────────────────────────
     Object.keys(homeSession.teamEffects).forEach((effectId) => {
       const state = homeSession.teamEffects[effectId];
       if (
@@ -615,7 +607,7 @@ const DamageSimulator = () => {
         idx,
         getStatsBySlot,
         slotsInfo,
-        slotBuild.customBaseStats, // ⭐ NUEVO
+        slotBuild.customBaseStats,
       );
       statsMap[idx] = slotStats;
       slotsInfo.push({
@@ -644,16 +636,12 @@ const DamageSimulator = () => {
     if (!hasAnyAgent) {
       return "#afafaf";
     }
-
-    // ⭐ Prioridad 0: Armorer siempre gana
     const armorerSlot = teamSlotsInfo.find(
       (slot) => slot.agent && slot.specialty?.toLowerCase() === "armorer",
     );
     if (armorerSlot?.agent?.themeColor) {
       return armorerSlot.agent.themeColor;
     }
-
-    // Prioridad 1: Anomaly / Attack / Rupture
     const prioritySpecialties = ["anomaly", "attack", "rupture"];
     const prioritySlots = teamSlotsInfo.filter(
       (slot) =>
@@ -679,7 +667,6 @@ const DamageSimulator = () => {
       return bestSlot?.agent?.themeColor || agents[0]?.themeColor || "#7EFFDB";
     }
 
-    // Fallback: el agente con más ATK / Sheer Force
     let bestSlot = null;
     let bestPower = -Infinity;
     for (const slot of teamSlotsInfo) {
@@ -724,12 +711,10 @@ const DamageSimulator = () => {
 }, [builds, teamSlotsInfo]);
 
   /*useEffect(() => {
-    // Forzar 5 segundos de carga para ver el spinner
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 5000);
 
-    // Limpiar el timeout si el componente se desmonta antes de los 5 segundos
     return () => clearTimeout(timer);
   }, []);*/
 
@@ -1077,7 +1062,7 @@ const DamageSimulator = () => {
       0,
       undefined,
       [],
-      build.customBaseStats, // ⭐ NUEVO
+      build.customBaseStats,
     );
 
     const getTeamStatsBySlot = (
@@ -1115,7 +1100,7 @@ const DamageSimulator = () => {
       slotIndex,
       getTeamStatsBySlot,
       teamSlotsInfo,
-      build.customBaseStats, // ⭐ NUEVO
+      build.customBaseStats,
     );
 
     const skinId = build.skinId || "default";

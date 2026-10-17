@@ -454,7 +454,7 @@ export default function BuildCreator() {
           createdAt: Date.now(),
           updatedAt: Date.now(),
           skinId: selectedSkinId,
-          customBaseStats, // ⭐ NUEVO
+          customBaseStats,
         };
         createBuild(build);
         setWEnginesSession((prev) => ({ ...prev, activeBuildId: build.id }));
@@ -479,7 +479,7 @@ export default function BuildCreator() {
       discs: structuredClone(discs),
       activeMindscapes: localMindscapes,
       skinId: selectedSkinId,
-      customBaseStats, // ⭐ NUEVO
+      customBaseStats,
     });
     setIsDirty(false);
     setSavedBuilds(loadAllBuilds());
@@ -551,7 +551,7 @@ export default function BuildCreator() {
     setLocalMindscapes(build.activeMindscapes || []);
     setIsDirty(false);
     setSelectedSkinId(build.skinId || "default");
-    setCustomBaseStats(build.customBaseStats); // ⭐ NUEVO
+    setCustomBaseStats(build.customBaseStats);
     setSkinReady(true);
   }
 
@@ -838,7 +838,7 @@ export default function BuildCreator() {
                 },
               });
               setSelectedSkinId("default");
-              setCustomBaseStats(undefined); // ⭐ NUEVO
+              setCustomBaseStats(undefined);
               setSkinReady(true);
               setAgentModalOpen(false);
             }}

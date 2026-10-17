@@ -11,10 +11,6 @@ Object.keys(localStorage)
 
 */
 
-// ═══════════════════════════════════════════════════════════════
-// TYPES
-// ═══════════════════════════════════════════════════════════════
-
 export type NotificationType = "info" | "success" | "warning" | "error";
 
 export interface NotifyOptions {
@@ -37,10 +33,6 @@ interface NotificationInternal extends NotifyOptions {
   allowDismissForever: boolean;
 }
 
-// ═══════════════════════════════════════════════════════════════
-// LOCAL STORAGE
-// ═══════════════════════════════════════════════════════════════
-
 const DISMISSED_PREFIX = "notif_dismissed_";
 
 function isDismissed(id: string): boolean {
@@ -59,10 +51,6 @@ function markDismissed(id: string) {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════
-// EVENT EMITTER (reemplaza Context)
-// ═══════════════════════════════════════════════════════════════
-
 type Listener = (items: NotificationInternal[]) => void;
 const listeners = new Set<Listener>();
 let queue: NotificationInternal[] = [];
@@ -71,10 +59,6 @@ function emit() {
   const snapshot = [...queue];
   listeners.forEach((fn) => fn(snapshot));
 }
-
-// ═══════════════════════════════════════════════════════════════
-// PUBLIC API
-// ═══════════════════════════════════════════════════════════════
 
 export function notify(opts: NotifyOptions): string | null {
   if (isDismissed(opts.id)) return null;
@@ -101,10 +85,6 @@ export function clearAllNotifications() {
   emit();
 }
 
-// ═══════════════════════════════════════════════════════════════
-// TOAST
-// ═══════════════════════════════════════════════════════════════
-
 interface ToastProps {
   item: NotificationInternal;
   onClose: () => void;
@@ -117,7 +97,6 @@ const Toast: React.FC<ToastProps> = ({ item, onClose, onDismissForever }) => {
   const [mounted, setMounted] = useState(false);
   const [leaving, setLeaving] = useState(false);
 
-  // ⭐ Ref para que el timer no se resetee cuando el padre re-renderiza
   const onCloseRef = useRef(onClose);
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -188,10 +167,6 @@ const Toast: React.FC<ToastProps> = ({ item, onClose, onDismissForever }) => {
     </div>
   );
 };
-
-// ═══════════════════════════════════════════════════════════════
-// STACK
-// ═══════════════════════════════════════════════════════════════
 
 const NotificationStack: React.FC = () => {
   const [items, setItems] = useState<NotificationInternal[]>([]);

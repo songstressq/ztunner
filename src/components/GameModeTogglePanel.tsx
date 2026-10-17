@@ -30,6 +30,61 @@ type ModeDef = {
   buffs?: SectionDef[];
 };
 
+const ALL_RES_SHRED_KEYS = [
+  "fireResShred",
+  "iceResShred",
+  "electricResShred",
+  "physicalResShred",
+  "etherResShred",
+  "windResShred",
+] as const;
+
+interface FlatRow {
+  key: string;
+  label: string;
+  formatKey: string;
+  value: number;
+}
+
+function buildFlatRows(flat: Record<string, unknown> | undefined): FlatRow[] {
+  const entries = Object.entries(flat ?? {});
+  if (entries.length === 0) return [];
+
+  const allResValues = ALL_RES_SHRED_KEYS.map((k) => flat?.[k]);
+  const allResPresent = allResValues.every(
+    (v) => typeof v === "number" && v > 0,
+  );
+  const allResEqual =
+    allResPresent && allResValues.every((v) => v === allResValues[0]);
+
+  if (allResEqual) {
+    const remaining = entries.filter(
+      ([k]) => !(ALL_RES_SHRED_KEYS as readonly string[]).includes(k),
+    );
+    return [
+      {
+        key: "allResShred",
+        label: "All-Attribute RES Shred",
+        formatKey: "fireResShred",
+        value: allResValues[0] as number,
+      },
+      ...remaining.map(([k, v]) => ({
+        key: k,
+        label: formatStatName(k),
+        formatKey: k,
+        value: Number(v),
+      })),
+    ];
+  }
+
+  return entries.map(([k, v]) => ({
+    key: k,
+    label: formatStatName(k),
+    formatKey: k,
+    value: Number(v),
+  }));
+}
+
 const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
   activeEffectId,
   onSelectEffect,
@@ -296,13 +351,13 @@ const GameModeTogglePanel: React.FC<GameModeTogglePanelProps> = ({
                     <div className="ingame_toggle-stats_header">
                       Active Bonuses
                     </div>
-                    {Object.entries(effect.flat).map(([stat, value]) => (
-                      <div key={stat} className="ingame_toggle-stat_row">
+                    {buildFlatRows(effect.flat).map((row) => (
+                      <div key={row.key} className="ingame_toggle-stat_row">
                         <span className="ingame_toggle-stat_name">
-                          {formatStatName(stat)}:
+                          {row.label}:
                         </span>
                         <span className="ingame_toggle-stat_value">
-                          {formatStatValue(stat, Number(value))}
+                          {formatStatValue(row.formatKey, row.value)}
                         </span>
                       </div>
                     ))}

@@ -353,7 +353,6 @@ const ConditionalEffectToggle = ({
   const damageStatLabel = (() => {
     if (!isDamageBonus) return formatStatName(affectedStat || "");
     const scope = formatStatName(damageBonusType || "global");
-    // Si el scope ya es un stat con "Bonus" (ej. "Anomaly DMG Bonus"), usarlo directo
     if (/bonus/i.test(scope)) return scope;
     return `${scope} DMG Bonus`;
   })();

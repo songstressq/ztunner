@@ -17,10 +17,7 @@ const GuideDetail = () => {
   const GuideComponent = slug ? getGuideComponent(slug) : null;
 
   useEffect(() => {
-    // Reset al cambiar de guía
     setToc([]);
-
-    // Busca headings en el content
     const collectHeadings = () => {
       if (!contentRef.current) return false;
       const headings = Array.from(
@@ -38,7 +35,6 @@ const GuideDetail = () => {
       return true;
     };
 
-    // Intento inmediato + reintento tras el paint del MDX
     if (collectHeadings()) return;
     const timer = setTimeout(() => collectHeadings(), 50);
     const timer2 = setTimeout(() => collectHeadings(), 250);

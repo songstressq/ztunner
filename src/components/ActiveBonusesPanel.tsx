@@ -682,7 +682,7 @@ export default function ActiveBonusesPanel({
               {expandedSections.sharpDmg ? "▼" : "▶"}
             </span>
             <span className="damage_panel-item_header-title">
-              General Sharp DMG Bonus
+              Global Sharp DMG Bonus
             </span>
             <span className="damage_panel-item_header-tag">
               +{formatPercentage(bonuses.sharpDmgBonus || 0)}

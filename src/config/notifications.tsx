@@ -19,13 +19,13 @@ export const siteNotifications: SiteNotification[] = [
     delay: 2500,
   },
   {
-    id: "notification_roxy",
-    title: "ADDED: Roxy Ifrita Pryce",
+    id: "notification_remielle_special_voidflare",
+    title: "NEW: Remielle's Special Voidflares",
     message:
-      "Roxy and her Signature W-Engine have been added, in case you haven't noticed yet.",
+      "You can now simulate the damage of Remielle's special Voidflares in her Luminize DMG Calculator.",
     type: "info",
     duration: 10000,
-    delay: 3500,
+    delay: 3000,
   },
   // {
   //   id: "changelog_v1_2",
