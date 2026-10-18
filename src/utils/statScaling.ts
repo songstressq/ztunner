@@ -1509,16 +1509,6 @@ export function calculateUnifiedStats(
     base.critRate += critRateFromCritDmg;
   }
 
-  if (agent.specialty === "Rupture") {
-    if (custom.sheerForce !== undefined) {
-      base.sheerForce = custom.sheerForce;
-    } else {
-      const sfHP = Math.floor(base.hp * 0.1);
-      const sfATK = Math.floor(base.atk * 0.3);
-      base.sheerForce = sfHP + sfATK;
-    }
-  }
-
   if (agent.specialty === "Armorer") {
     (base as any).__isArmorerAgent = true;
   }
@@ -1883,9 +1873,13 @@ export function calculateUnifiedStats(
   }
 
   if (agent.specialty === "Rupture") {
-    const sfHP = Math.floor(base.hp * 0.1);
-    const sfATK = Math.floor(base.atk * 0.3);
-    base.sheerForce = (base.sheerForce || 0) + sfHP + sfATK;
+    if (custom.sheerForce !== undefined) {
+      base.sheerForce = custom.sheerForce;
+    } else {
+      const sfHP = Math.floor(base.hp * 0.1);
+      const sfATK = Math.floor(base.atk * 0.3);
+      base.sheerForce = (base.sheerForce || 0) + sfHP + sfATK;
+    }
   } else {
     if (!("sheerForce" in base)) base.sheerForce = 0;
   }
