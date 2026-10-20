@@ -341,7 +341,7 @@
 
 .home_content-patch_main_grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: var(--padding-10px);
 }
 
@@ -361,7 +361,7 @@
 }
 
 .more_space {
-  grid-template-columns: 1fr 1fr 1fr 1fr !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
   grid-template-rows: auto 1fr !important;
 }
 
@@ -404,72 +404,56 @@
 }
 
 /* Remielle */
-.remielle_img {
-  border: 2px solid color-mix(in srgb, #d3557b 70%, white);
+.agent_a_img {
+  border: 2px solid color-mix(in srgb, #ee754e 70%, white);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 0 12px color-mix(in srgb, #d3557b 35%, transparent);
-  background: color-mix(in srgb, #d3557b 20%, transparent);
+    0 0 12px color-mix(in srgb, #ee754e 35%, transparent);
+  background: color-mix(in srgb, #ee754e 20%, transparent);
 }
-.remielle_icons {
-  border: 1px solid color-mix(in srgb, #d3557b 70%, white);
+.agent_a_icons {
+  border: 1px solid color-mix(in srgb, #ee754e 70%, white);
 }
-.remielle_name {
+.agent_a_name {
   /*color: #d3557b;*/
-  color: color-mix(in srgb, #d3557b 50%, white);
+  color: color-mix(in srgb, #ee754e 50%, white);
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.1),
-    0 0 6px color-mix(in srgb, #d3557b 35%, transparent);
+    0 0 6px color-mix(in srgb, #ee754e 35%, transparent);
 }
 
-.normal_img {
+.agent_b_img {
+  border: 2px solid color-mix(in srgb, #4771e8 70%, white);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 12px color-mix(in srgb, #4771e8 35%, transparent);
+  background: color-mix(in srgb, #4771e8 20%, transparent);
+}
+.agent_b_icons {
+  border: 1px solid color-mix(in srgb, #4771e8 70%, white);
+}
+.agent_b_name {
+  color: color-mix(in srgb, #4771e8 50%, white);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 0 6px color-mix(in srgb, #4771e8 35%, transparent);
+}
+
+.no_agent_img {
   border: 2px solid color-mix(in srgb, #b4b4b4 70%, white);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.12),
     0 0 12px color-mix(in srgb, #b4b4b4 35%, transparent);
   background: color-mix(in srgb, #b4b4b4 20%, transparent);
 }
-
-.normal_name {
-  /*color: #b4b4b4;*/
+.no_agent_icons {
+  border: 1px solid color-mix(in srgb, #b4b4b4 70%, white);
+}
+.no_agent_name {
   color: color-mix(in srgb, #b4b4b4 50%, white);
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.1),
     0 0 6px color-mix(in srgb, #b4b4b4 35%, transparent);
-}
-
-/* Sigrid */
-.sigrid_img {
-  border: 2px solid color-mix(in srgb, #4bd9c8 70%, white);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 0 12px color-mix(in srgb, #4bd9c8 35%, transparent);
-  background: color-mix(in srgb, #4bd9c8 20%, transparent);
-}
-.sigrid_icons {
-  border: 1px solid color-mix(in srgb, #4bd9c8 70%, white);
-}
-.sigrid_name {
-  /* color: #4bd9c8;*/
-  color: color-mix(in srgb, #4bd9c8 50%, white);
-  text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.1),
-    0 0 6px color-mix(in srgb, #4bd9c8 35%, transparent);
-}
-
-/* Thorned Rose */
-.thorned_rose_img {
-  border: 2px solid color-mix(in srgb, #b46d6c 70%, white);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 0 12px color-mix(in srgb, #b46d6c 35%, transparent);
-  background: color-mix(in srgb, #b46d6c 20%, transparent);
-}
-.thorned_rose_name {
-  color: #b89273;
-  text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.1),
-    0 0 6px color-mix(in srgb, #b46d6c 35%, transparent);
 }
 
 /* Agent icons */
@@ -540,15 +524,15 @@
 
   .home_content-patch_main_grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    row-gap: var(--padding-5px);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: var(--padding-12px);
     column-gap: 0;
   }
 
-  .home_content-single_card {
+  .owo .home_content-single_card {
     grid-template-columns: 1fr;
-    grid-template-rows: 12.5% 1fr 1fr;
+    grid-template-rows: 12.5% 1fr;
 
     margin-bottom: 0;
   }
@@ -556,14 +540,6 @@
   .home_content-single_card h4 {
     margin: auto 0;
     padding: 0 var(--padding-10px);
-  }
-
-  .order_2 {
-    grid-row: 2;
-  }
-
-  .order_3 {
-    grid-row: 3;
   }
 }
 

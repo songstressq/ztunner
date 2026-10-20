@@ -225,15 +225,16 @@ const Home = () => {
         <div className="agents-block home_content-trailer">
           <div className="agents-wrapper" style={dominantEmptyStyle}>
             <div>
-              <h2 className="home_content-title_h2">ZZZ Latest Trailer</h2>
+              <h2 className="home_content-title_h2">ZZZ Latest Video</h2>
               <div
                 className="home_divider"
                 style={{ backgroundColor: dominantTheme }}
               />
+
               <iframe
                 className="home_content-trailer_video"
                 width="100%"
-                src="https://www.youtube-nocookie.com/embed/wHxjO2Ut3Ic?hl=en"
+                src="https://www.youtube-nocookie.com/embed/AkWvzeXDUxY?hl=en"
                 title="YouTube video player"
                 loading="lazy"
                 frameBorder="0"
@@ -300,7 +301,7 @@ const Home = () => {
             <div>
               <h2 className="home_content-title_h2">
                 <span className="title_dot">⏺</span> Zenless Zone Zero: Version
-                3.2 — Their Secret Histories
+                3.3 — Journey to the Sky
               </h2>
 
               <div
@@ -312,93 +313,104 @@ const Home = () => {
                 {/* New Agents */}
                 <div className="home_content-single_card">
                   <h4>New Agents</h4>
-                  <div className="home_content-card_section order_2">
+                  <div className="home_content-card_section">
                     <div className="home_content-agent_image">
                       <div className="home_content-agent_icons">
                         <img
-                          src="/resources/images/icons/attributes/Electric.png"
-                          alt="Electric"
-                          className="remielle_icons"
+                          src="/resources/images/icons/attributes/Fire.png"
+                          alt="Fire"
+                          className="agent_a_icons"
                         />
                         <img
-                          src="/resources/images/icons/specialties/Armorer.png"
+                          src="/resources/images/icons/specialties/Anomaly.png"
                           alt="Anomaly"
-                          className="remielle_icons"
+                          className="agent_a_icons"
                         />
                       </div>
                       <img
-                        src="/resources/images/agents/other/claret.png"
-                        alt="Claret Flint"
-                        className="remielle_img"
+                        src="/resources/images/agents/other/phoenix.png"
+                        alt="Phoenix Reffaela"
+                        className="agent_a_img"
                       />
                     </div>
-                    <p className="remielle_name">Claret Flint</p>
+                    <p className="agent_a_name">Phoenix Reffaela</p>
                   </div>
-                  <div className="home_content-card_section order_3">
+                  <div className="home_content-card_section">
                     <div className="home_content-agent_image">
                       <div className="home_content-agent_icons">
                         <img
                           src="/resources/images/icons/attributes/Wind.png"
                           alt="Ice"
-                          className="sigrid_icons"
+                          className="agent_b_icons"
                         />
                         <img
-                          src="/resources/images/icons/specialties/Stun.png"
+                          src="/resources/images/icons/specialties/Attack.png"
                           alt="Attack"
-                          className="sigrid_icons"
+                          className="agent_b_icons"
                         />
                       </div>
                       <img
-                        src="/resources/images/agents/other/roxy.png"
-                        alt="Roxy Ifrita Pryce"
-                        className="sigrid_img"
+                        src="/resources/images/agents/other/severian.png"
+                        alt="Severian Lowell"
+                        className="agent_b_img"
                       />
                     </div>
-                    <p className="sigrid_name">Roxy Ifrita Pryce</p>
+                    <p className="agent_b_name">Severian Lowell</p>
                   </div>
                 </div>
                 {/* New W-Engines */}
                 <div className="home_content-single_card more_space">
                   <h4 className="space_more">New W-Engines</h4>
-                  <div className="home_content-card_section order_2">
+                  <div className="home_content-card_section">
                     <div className="home_content-agent_image">
+                      <div className="home_content-agent_icons">
+                        <img
+                          src="/resources/images/icons/specialties/Anomaly.png"
+                          alt="Anomaly"
+                          className="agent_a_icons"
+                        />
+                      </div>
                       <img
-                        src="/resources/images/wengines/crimson_thirst.png"
-                        alt="Crimson Thirst"
-                        className="remielle_img no_agent_icon"
+                        src="/resources/images/wengines/plume_of_rebirth.png"
+                        alt="Plume of Rebirth"
+                        className="agent_a_img no_agent_icon"
                       />
                     </div>
-                    <p className="remielle_name">Crimson Thirst</p>
+                    <p className="agent_a_name">Plume of Rebirth</p>
                   </div>
-                  <div className="home_content-card_section order_2">
+                  <div className="home_content-card_section">
                     <div className="home_content-agent_image">
+                      <div className="home_content-agent_icons">
+                        <img
+                          src="/resources/images/icons/specialties/Attack.png"
+                          alt="Attack"
+                          className="agent_b_icons"
+                        />
+                      </div>
                       <img
-                        src="/resources/images/wengines/catty_luck.png"
-                        alt="Ode of Resurrected Wings"
-                        className="normal_img no_agent_icon"
+                        src="/resources/images/wengines/incarcerating_grip.png"
+                        alt="Incarcerating Grip"
+                        className="agent_b_img no_agent_icon"
                       />
                     </div>
-                    <p className="normal_name">Catty Luck</p>
+                    <p className="agent_b_name">Incarcerating Grip</p>
                   </div>
-                  <div className="home_content-card_section order_3">
+                  <div className="home_content-card_section">
                     <div className="home_content-agent_image">
+                      <div className="home_content-agent_icons">
+                        <img
+                          src="/resources/images/icons/specialties/Armorer.png"
+                          alt="Armorer"
+                          className="no_agent_icons"
+                        />
+                      </div>
                       <img
-                        src="/resources/images/wengines/bloodmarrow_coffer.png"
-                        alt="Bloodmarrow Coffer"
-                        className="normal_img no_agent_icon"
+                        src="/resources/images/wengines/candlelit_scheme.png"
+                        alt="Candlelit Scheme"
+                        className="no_agent_img no_agent_icon"
                       />
                     </div>
-                    <p className="normal_name">Bloodmarrow Coffer</p>
-                  </div>
-                  <div className="home_content-card_section order_3">
-                    <div className="home_content-agent_image">
-                      <img
-                        src="/resources/images/wengines/crimson_moon_casket.png"
-                        alt="Crimson Moon Casket"
-                        className="sigrid_img no_agent_icon"
-                      />
-                    </div>
-                    <p className="sigrid_name">Crimson Moon Casket</p>
+                    <p className="no_agent_name">Candlelit Scheme</p>
                   </div>
                 </div>
                 {/* New Disc Sets */}
@@ -412,10 +424,10 @@ const Home = () => {
                       <img
                         src="/resources/images/sets/feathered_fate.png"
                         alt="Feathered Fate"
-                        className="remielle_img no_agent_icon"
+                        className="agent_a_img no_agent_icon"
                       />
                     </div>
-                    <p className="remielle_name">Feathered Fate</p>
+                    <p className="agent_a_name">Feathered Fate</p>
                   </div>
 
                   <div className="home_content-card_section order_3">

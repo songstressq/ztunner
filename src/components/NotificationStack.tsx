@@ -19,12 +19,9 @@ export interface NotifyOptions {
   message?: string;
   type?: NotificationType;
   duration?: number;
-  action?: {
-    label: string;
-    href?: string;
-    onClick?: () => void;
-  };
+  action?: { label: string; href?: string; onClick?: () => void };
   allowDismissForever?: boolean;
+  theme?: string;
 }
 
 interface NotificationInternal extends NotifyOptions {
@@ -93,7 +90,7 @@ interface ToastProps {
 
 const Toast: React.FC<ToastProps> = ({ item, onClose, onDismissForever }) => {
   const { homeSession } = useSession();
-  const theme = homeSession.dominantTheme || "#AFAFAF";
+  const theme = item.theme || homeSession.dominantTheme || "#AFAFAF";
   const [mounted, setMounted] = useState(false);
   const [leaving, setLeaving] = useState(false);
 
