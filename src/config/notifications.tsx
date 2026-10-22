@@ -21,7 +21,7 @@ export const siteNotifications: SiteNotification[] = [
   },
   {
     id: "notification_phoenix_missing",
-    title: "ADDED: Phoenix Reffaela",
+    title: "ADDED: Phoenix Reffaella",
     message:
       "Added Phoenix and her W-Engine to Z-Tunner, including her special Anomaly CRIT mechanics. More info in #announcements on the Discord server.",
     type: "info",

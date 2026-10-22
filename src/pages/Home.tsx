@@ -316,11 +316,11 @@ const Home = () => {
                       </div>
                       <img
                         src="/resources/images/agents/other/phoenix.png"
-                        alt="Phoenix Reffaela"
+                        alt="Phoenix Reffaella"
                         className="agent_a_img"
                       />
                     </div>
-                    <p className="agent_a_name">Phoenix Reffaela</p>
+                    <p className="agent_a_name">Phoenix Reffaella</p>
                   </div>
                   <div className="home_content-card_section">
                     <div className="home_content-agent_image">
