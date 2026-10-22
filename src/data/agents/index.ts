@@ -33,6 +33,7 @@ import norma from "./stun/norma_hollowell.json";
 import orphie from "./attack/orphie_and_magus.json"; //ok
 import pan from "./defense/pan_yinhu.json"; //ok
 import piper from "./anomaly/piper_wheel.json"; //ok
+import phoenix from "./anomaly/phoenix_reffaella.json";
 import promeia from "./anomaly/promeia.json"; //ok
 import pulchra from "./stun/pulchra_fellini.json"; //ok
 import pyrois from "./attack/pyrois.json"; //ok
@@ -100,6 +101,7 @@ export const agents: Agent[] = [
   orphie as Agent, //✅
   pan as Agent, //✅
   piper as Agent, //✅
+  phoenix as Agent,
   promeia as Agent, //✅
   pulchra as Agent, //✅
   pyrois as Agent, //✅

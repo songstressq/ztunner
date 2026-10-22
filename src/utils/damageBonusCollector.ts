@@ -53,6 +53,9 @@ export interface CollectedBonuses {
   elementStatBonuses?: Record<string, Record<string, number>>;
   sheerDmgFlat?: number;
   assaultCritDmgTotal?: number;
+  assaultCritDmgOwner?: { agentId: string; displayName: string };
+  anomalyCritDmgTotal?: number;
+  anomalyCritDmgOwner?: { agentId: string; displayName: string };
   sharpDmgBonus: number;
   elementSharpDmgBonus: Record<string, number>;
   skillTypeElementalSharp: Record<string, Record<string, number>>;
@@ -245,6 +248,24 @@ export function collectDamageBonuses(
       bonuses.assaultCritDmgTotal =
         (bonuses.assaultCritDmgTotal || 0) +
         (effect as any).assaultCritDmgBase * stacks;
+      if (!bonuses.assaultCritDmgOwner) {
+        bonuses.assaultCritDmgOwner = {
+          agentId: owner.ownerAgentId || "",
+          displayName: owner.ownerDisplayName || "",
+        };
+      }
+    }
+
+    if ((effect as any).anomalyCritDmgBase) {
+      bonuses.anomalyCritDmgTotal =
+        (bonuses.anomalyCritDmgTotal || 0) +
+        (effect as any).anomalyCritDmgBase * stacks;
+      if (!bonuses.anomalyCritDmgOwner) {
+        bonuses.anomalyCritDmgOwner = {
+          agentId: owner.ownerAgentId || "",
+          displayName: owner.ownerDisplayName || "",
+        };
+      }
     }
 
     let effectInitialStats = initialStats;
@@ -669,6 +690,22 @@ export function collectDamageBonuses(
           case "assaultCritDmgBonus":
             bonuses.assaultCritDmgTotal =
               (bonuses.assaultCritDmgTotal || 0) + totalValue;
+            if (!bonuses.assaultCritDmgOwner) {
+              bonuses.assaultCritDmgOwner = {
+                agentId: owner.ownerAgentId || "",
+                displayName: owner.ownerDisplayName || "",
+              };
+            }
+            break;
+          case "anomalyCritDmgBonus":
+            bonuses.anomalyCritDmgTotal =
+              (bonuses.anomalyCritDmgTotal || 0) + totalValue;
+            if (!bonuses.anomalyCritDmgOwner) {
+              bonuses.anomalyCritDmgOwner = {
+                agentId: owner.ownerAgentId || "",
+                displayName: owner.ownerDisplayName || "",
+              };
+            }
             break;
           case "sharpDmg": {
             bonuses.sharpDmgBonus += totalValue;

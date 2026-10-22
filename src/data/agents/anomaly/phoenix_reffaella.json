@@ -1,0 +1,632 @@
+{
+  "id": "phoenix",
+  "name": "Phoenix Reffaella",
+  "specialty": "Anomaly",
+  "faction": "Krampus Compliance Authority",
+  "attribute": "Fire",
+  "rarity": "S",
+
+  "fullName": "Phoenix Reffaella",
+  "displayName": "Phoenix",
+  "attributeIcon": "Fire",
+
+  "themeColor": "#FC5858",
+
+  "skins": [
+    { "id": "default", "img": "phoenix.png" },
+    {
+      "id": "the_illness_called_life",
+      "img": "phoenix-the_illness_called_life.png"
+    },
+    { "id": "daydream_complex", "img": "phoenix-daydream_complex.png" }
+  ],
+
+  "baseStats": {
+    "hp": 7673.2,
+    "atk": 797,
+    "def": 612
+  },
+
+  "combatBase": {
+    "impact": 86,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 118,
+    "anomalyMastery": 116,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["Anomaly Mastery", "Anomaly Proficiency", "ATK"]
+  },
+
+  "coreEnhancement": [
+    { "level": 0, "stats": { "atkFlat": 0, "anomalyMastery": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "anomalyMastery": 12 } },
+    { "level": 2, "stats": { "atkFlat": 25, "anomalyMastery": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "anomalyMastery": 12 } },
+    { "level": 4, "stats": { "atkFlat": 25, "anomalyMastery": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "anomalyMastery": 12 } },
+    { "level": 6, "stats": { "atkFlat": 25, "anomalyMastery": 0 } }
+  ],
+
+  "ingameEffects": [
+    {
+      "id": "phoenix_reffaella-core-nirvana",
+      "source": "core",
+      "sourceId": "phoenix_reffaella-core",
+      "label": "Nirvana (Core Passive)",
+      "description": "Phoenix's Anomaly Proficiency increases by 85. ...",
+      "shortDescription": "Phoenix's Anomaly Proficiency is increased by 85.",
+      "target": "self",
+      "flat": { "anomalyProficiency": 85 }
+    },
+    {
+      "id": "phoenix_reffaella-core-nirvana_2",
+      "source": "core",
+      "sourceId": "phoenix_reffaella-core",
+      "label": "Nirvana (Core Passive)",
+      "description": "When any squad member deals Anomaly DMG to an enemy, the enemy enters the Sear state for 20s. Repeated triggers reset the duration. When an enemy in the Sear state takes Anomaly DMG, the DMG has a chance to trigger a critical hit, with a base CRIT Rate of 30% and CRIT DMG of 25%. ...",
+      "shortDescription": "All squad members' Anomaly DMG can trigger critical hits with a base CRIT DMG of 25%.",
+      "target": "team",
+      "damageBonuses": [{ "type": "anomalyCritDmgBonus", "value": 0.25 }]
+    },
+    {
+      "id": "phoenix_reffaella-core-krampus_ace",
+      "source": "core",
+      "sourceId": "phoenix_reffaella-core",
+      "label": "Krampus Ace (Additional Ability)",
+      "description": "When another character in your squad is an Anomaly character or shares the same faction:\n\nAnomaly DMG against enemies in the Sear state gains 15% increased CRIT DMG.",
+      "shortDescription": "All squad members' Anomaly CRIT DMG is increased by 15%.",
+      "target": "team",
+      "damageBonuses": [{ "type": "anomalyCritDmgBonus", "value": 0.15 }]
+    },
+    {
+      "id": "phoenix_reffaella-mindscape_1-lingering_pain_and_thrilling_procession",
+      "source": "mindscape",
+      "sourceId": "phoenix_reffaella-mindscape_1",
+      "label": "Lingering Pain and Thrilling Procession (Mindscape Cinema N°1)",
+      "description": "Upon entering the battlefield, Phoenix gains 1 point of Ascension. In Investigation Zone mode, this effect can trigger once every 180s. The CRIT DMG of Anomaly DMG dealt to enemies in the Sear state is increased by an additional 25%. When a Combustion Attack deals DMG, Pyre generation efficiency increases by 15%.",
+      "shortDescription": "All squad members' Anomaly CRIT DMG is increased by 25%.",
+      "target": "team",
+      "damageBonuses": [{ "type": "anomalyCritDmgBonus", "value": 0.25 }]
+    },
+    {
+      "id": "phoenix_reffaella-mindscape_2-curiosity_wont_kill_the_cat",
+      "source": "mindscape",
+      "sourceId": "phoenix_reffaella-mindscape_2",
+      "label": "Curiosity Won't Kill the Cat (Mindscape Cinema N°2)",
+      "description": "When Phoenix applies Burn to an enemy, its duration is increased by 2s. Phoenix's DMG against enemies in the Sear state increases by 30%.",
+      "shortDescription": "Phoenix's DMG is increased by 30%.",
+      "target": "self",
+      "damageBonuses": [{ "type": "global", "value": 0.3 }]
+    },
+    {
+      "id": "phoenix_reffaella-mindscape_4-lifes_end_and_the_heartless_wonderland",
+      "source": "mindscape",
+      "sourceId": "phoenix_reffaella-mindscape_4",
+      "label": "Life's End and the Heartless Wonderland (Mindscape Cinema N°4)",
+      "description": "When the Finishing Move of Soul-Searching Blaze or Basic Attack: Purifying Flame hits an enemy affected by an Attribute Anomaly, it triggers 1 additional instance of Abloom, resolving the corresponding Attribute Anomaly DMG at a fixed 600% multiplier.",
+      "shortDescription": "This Mindscape Cinema does not affect Phoenix's stats.",
+      "infoOnly": true
+    },
+    {
+      "id": "phoenix_reffaella-mindscape_6-notes_from_confinement",
+      "source": "mindscape",
+      "sourceId": "phoenix_reffaella-mindscape_6",
+      "label": "Notes From Confinement (Mindscape Cinema N°6)",
+      "description": "Phoenix ignores 15% of the targets' All-Attribute RES. When Phoenix uses EX Special Attack: Dazzling Flare, she gains 1 point of Ascension. Abloom effects triggered",
+      "shortDescription": "Phoenix's DMG ignores 15% of the target's All-Attribute RES.",
+      "target": "self",
+      "flat": {
+        "iceResShred": 0.15,
+        "etherResShred": 0.15,
+        "fireResShred": 0.15,
+        "electricResShred": 0.15,
+        "physicalResShred": 0.15,
+        "windResShred": 0.15
+      }
+    }
+  ],
+
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "phoenix_reffaella-basic_attack-server_life",
+        "name": "Server Life (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nPerform up to 4 consecutive attacks forward, dealing Fire DMG. The 3rd and 4th Basic Attacks are considered /bCombustion Attacks//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "2nd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "3rd-Hit DMG Multiplier",
+            "damageType": "fire"
+          },
+          {
+            "name": "4th-Hit DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["15.6", "67.7", "178.1", "389.2"] },
+          { "level": 2, "multipliers": ["17.1", "73.9", "194.3", "424.6"] },
+          { "level": 3, "multipliers": ["18.6", "80.1", "210.5", "460.0"] },
+          { "level": 4, "multipliers": ["20.1", "86.3", "226.7", "495.4"] },
+          { "level": 5, "multipliers": ["21.6", "92.5", "242.9", "530.8"] },
+          { "level": 6, "multipliers": ["23.1", "98.7", "259.1", "566.2"] },
+          { "level": 7, "multipliers": ["24.6", "104.9", "275.3", "601.6"] },
+          { "level": 8, "multipliers": ["26.1", "111.1", "291.5", "637.0"] },
+          { "level": 9, "multipliers": ["27.6", "117.3", "307.7", "672.4"] },
+          { "level": 10, "multipliers": ["29.1", "123.5", "323.9", "707.8"] },
+          { "level": 11, "multipliers": ["30.6", "129.7", "340.1", "743.2"] },
+          { "level": 12, "multipliers": ["32.1", "135.9", "356.3", "778.6"] },
+          { "level": 13, "multipliers": ["33.6", "142.1", "372.5", "814.0"] },
+          { "level": 14, "multipliers": ["35.1", "148.3", "388.7", "849.4"] },
+          { "level": 15, "multipliers": ["36.6", "154.5", "404.9", "884.8"] },
+          { "level": 16, "multipliers": ["38.1", "160.7", "421.1", "920.2"] }
+        ]
+      },
+
+      {
+        "id": "phoenix_reffaella-basic_attack-purifying_flame",
+        "name": "Purifying Flame (Basic Attack)",
+        "description": "With enough /bPyre//b, consume 90 /bPyre//b and hold [BASIC] to activate:\n\nPhoenix throws her weapon, dealing massive Fire DMG to enemies in an area ahead.\n\nWhen the Finishing Move hits an enemy affected by Ice Anomaly Ether Anomaly, Electric Anomaly, Fire Anomaly, Physical Anomaly, or Wind Anomaly, it triggers 1 instance of /bAbloom//b, dealing Anomaly DMG of the corresponding attribute with a fixed multiplier.\n\nWhen this instance of /bAbloom//b triggers a critical hit, its CRIT DMG is increased by an additional 40%. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
+        "levels": [
+          { "level": 1, "multipliers": ["547.3"] },
+          { "level": 2, "multipliers": ["597.1"] },
+          { "level": 3, "multipliers": ["646.9"] },
+          { "level": 4, "multipliers": ["696.7"] },
+          { "level": 5, "multipliers": ["746.5"] },
+          { "level": 6, "multipliers": ["796.3"] },
+          { "level": 7, "multipliers": ["846.1"] },
+          { "level": 8, "multipliers": ["895.9"] },
+          { "level": 9, "multipliers": ["945.7"] },
+          { "level": 10, "multipliers": ["995.5"] },
+          { "level": 11, "multipliers": ["1045.3"] },
+          { "level": 12, "multipliers": ["1095.1"] },
+          { "level": 13, "multipliers": ["1144.9"] },
+          { "level": 14, "multipliers": ["1194.7"] },
+          { "level": 15, "multipliers": ["1244.5"] },
+          { "level": 16, "multipliers": ["1294.3"] }
+        ]
+      },
+
+      {
+        "id": "phoenix_reffaella-basic_attack-meltdown",
+        "name": "Meltdown (Basic Attack)",
+        "description": "If /bSpecial Attack: Fire Sweep//b does not trigger a /bPerfect Block//b, press [BASIC] to activate:\n\nCharges forward, dealing Fire DMG. This skill is considered a /bCombustion Attack//b. During this skill, press [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [{ "name": "DMG Multiplier", "damageType": "fire" }],
+        "levels": [
+          { "level": 1, "multipliers": ["178.1"] },
+          { "level": 2, "multipliers": ["194.3"] },
+          { "level": 3, "multipliers": ["210.5"] },
+          { "level": 4, "multipliers": ["226.7"] },
+          { "level": 5, "multipliers": ["242.9"] },
+          { "level": 6, "multipliers": ["259.1"] },
+          { "level": 7, "multipliers": ["275.3"] },
+          { "level": 8, "multipliers": ["291.5"] },
+          { "level": 9, "multipliers": ["307.7"] },
+          { "level": 10, "multipliers": ["323.9"] },
+          { "level": 11, "multipliers": ["340.1"] },
+          { "level": 12, "multipliers": ["356.3"] },
+          { "level": 13, "multipliers": ["372.5"] },
+          { "level": 14, "multipliers": ["388.7"] },
+          { "level": 15, "multipliers": ["404.9"] },
+          { "level": 16, "multipliers": ["421.1"] }
+        ]
+      }
+    ],
+
+    "dashAttacks": [
+      {
+        "id": "phoenix_reffaella-dash_attack-lunge",
+        "name": "Lunge (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nDashes forward and slashes, dealing Fire DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["104.0"] },
+          { "level": 2, "multipliers": ["113.5"] },
+          { "level": 3, "multipliers": ["123.0"] },
+          { "level": 4, "multipliers": ["132.5"] },
+          { "level": 5, "multipliers": ["142.0"] },
+          { "level": 6, "multipliers": ["151.5"] },
+          { "level": 7, "multipliers": ["161.0"] },
+          { "level": 8, "multipliers": ["170.5"] },
+          { "level": 9, "multipliers": ["180.0"] },
+          { "level": 10, "multipliers": ["189.5"] },
+          { "level": 11, "multipliers": ["199.0"] },
+          { "level": 12, "multipliers": ["208.5"] },
+          { "level": 13, "multipliers": ["218.0"] },
+          { "level": 14, "multipliers": ["227.5"] },
+          { "level": 15, "multipliers": ["237.0"] },
+          { "level": 16, "multipliers": ["246.5"] }
+        ]
+      }
+    ],
+
+    "dodgeCounters": [
+      {
+        "id": "phoenix_reffaella-dodge_counter-twin_passage_of_karmic_fire",
+        "name": "Twin Passage of Karmic Fire (Dodge Counter)",
+        "description": "After triggering a [DODGE], press [BASIC] to activate:\n\nDashes forwars and unleashes a quick slash, dealing Fire DMG. Character is invulnerable while using this skill.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["296.2"] },
+          { "level": 2, "multipliers": ["323.2"] },
+          { "level": 3, "multipliers": ["350.2"] },
+          { "level": 4, "multipliers": ["377.2"] },
+          { "level": 5, "multipliers": ["404.2"] },
+          { "level": 6, "multipliers": ["431.2"] },
+          { "level": 7, "multipliers": ["458.2"] },
+          { "level": 8, "multipliers": ["485.2"] },
+          { "level": 9, "multipliers": ["512.2"] },
+          { "level": 10, "multipliers": ["539.2"] },
+          { "level": 11, "multipliers": ["566.2"] },
+          { "level": 12, "multipliers": ["593.2"] },
+          { "level": 13, "multipliers": ["620.2"] },
+          { "level": 14, "multipliers": ["647.2"] },
+          { "level": 15, "multipliers": ["674.2"] },
+          { "level": 16, "multipliers": ["701.2"] }
+        ]
+      }
+    ],
+
+    "quickAssists": [
+      {
+        "id": "phoenix_reffaella-quick_assist-emergency_aid",
+        "name": "Emergency Aid (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nDashes forward and unleashes a quick slash, dealing Fire DMG. Character is invulnerable while using this skill.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["95.4"] },
+          { "level": 2, "multipliers": ["104.1"] },
+          { "level": 3, "multipliers": ["112.8"] },
+          { "level": 4, "multipliers": ["121.5"] },
+          { "level": 5, "multipliers": ["130.2"] },
+          { "level": 6, "multipliers": ["138.9"] },
+          { "level": 7, "multipliers": ["147.6"] },
+          { "level": 8, "multipliers": ["156.3"] },
+          { "level": 9, "multipliers": ["165.0"] },
+          { "level": 10, "multipliers": ["173.7"] },
+          { "level": 11, "multipliers": ["182.4"] },
+          { "level": 12, "multipliers": ["191.1"] },
+          { "level": 13, "multipliers": ["199.8"] },
+          { "level": 14, "multipliers": ["208.5"] },
+          { "level": 15, "multipliers": ["217.2"] },
+          { "level": 16, "multipliers": ["225.9"] }
+        ]
+      }
+    ],
+
+    "perfectAssists": null,
+
+    "assistFollowup": [
+      {
+        "id": "phoenix_reffaella-assist_follow_up-regeneration_therapy",
+        "name": "Regeneration Therapy (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nThrows her weapon at the enemy, then recalls it and performs a slash, dealing Fire DMG. Character is invulnerable while using this skill.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["426.5"] },
+          { "level": 2, "multipliers": ["465.3"] },
+          { "level": 3, "multipliers": ["504.1"] },
+          { "level": 4, "multipliers": ["542.9"] },
+          { "level": 5, "multipliers": ["581.7"] },
+          { "level": 6, "multipliers": ["620.5"] },
+          { "level": 7, "multipliers": ["659.3"] },
+          { "level": 8, "multipliers": ["698.1"] },
+          { "level": 9, "multipliers": ["736.9"] },
+          { "level": 10, "multipliers": ["775.7"] },
+          { "level": 11, "multipliers": ["814.5"] },
+          { "level": 12, "multipliers": ["853.3"] },
+          { "level": 13, "multipliers": ["892.1"] },
+          { "level": 14, "multipliers": ["930.9"] },
+          { "level": 15, "multipliers": ["969.7"] },
+          { "level": 16, "multipliers": ["1008.5"] }
+        ]
+      }
+    ],
+
+    "specialAttacks": [
+      {
+        "id": "phoenix_reffaella-special-fire_sweep",
+        "name": "Fire Sweep (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nAfter retreating back, quickly launches an upward slash forward, dealing Fire DMG. During the retreat, DMG taken is reduced by 40%.\n\nIf attacked at the instant the upward slash begins, or if the slash hits an enemy flashing red or yellow, a /bPerfect Block//b is triggered, negating that instance of DMG.\n\nPress [BASIC] to immediately follow up with the 3rd hit of a /bBasic Attack//b. Anti-Interrupt level is increased while using this skill.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["45.6"] },
+          { "level": 2, "multipliers": ["49.8"] },
+          { "level": 3, "multipliers": ["54.0"] },
+          { "level": 4, "multipliers": ["58.2"] },
+          { "level": 5, "multipliers": ["62.4"] },
+          { "level": 6, "multipliers": ["66.6"] },
+          { "level": 7, "multipliers": ["70.8"] },
+          { "level": 8, "multipliers": ["75.0"] },
+          { "level": 9, "multipliers": ["79.2"] },
+          { "level": 10, "multipliers": ["83.4"] },
+          { "level": 11, "multipliers": ["87.6"] },
+          { "level": 12, "multipliers": ["91.8"] },
+          { "level": 13, "multipliers": ["96.0"] },
+          { "level": 14, "multipliers": ["100.2"] },
+          { "level": 15, "multipliers": ["104.4"] },
+          { "level": 16, "multipliers": ["108.6"] }
+        ]
+      }
+    ],
+
+    "exSkills": [
+      {
+        "id": "phoenix_reffaella-ex_special_attack-blazing_slash",
+        "name": "Blazing Slash (EX Special Attack)",
+        "description": "While possessing /bAscension//b, press [SPECIAL] to consume 1 point of /bAscension//b and activate:\n\nAfter retreating, quickly performs a powerful upward slash, dealing massive Fire DMG. Hold [SPECIAL] while retreating to continue charging.\n\nWhile charging, release [SPECIAL] to perform a powerful upward slash, dealing massive Fire DMG. When chained into from a /bCombustion Attack//b, skips the retreat and immediately performs the upward slash. DMG taken while retreating and charging is reduced by 40%.\n\nReceiving an attack just as the upward slash begins or hitting an enemy flashing red or yellow triggers a /bPerfect Block//b. This skill counts as a /bCombustion Attack//b. Character is invulnerable while using this skill.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["380.5"] },
+          { "level": 2, "multipliers": ["415.1"] },
+          { "level": 3, "multipliers": ["449.7"] },
+          { "level": 4, "multipliers": ["484.3"] },
+          { "level": 5, "multipliers": ["518.9"] },
+          { "level": 6, "multipliers": ["553.5"] },
+          { "level": 7, "multipliers": ["588.1"] },
+          { "level": 8, "multipliers": ["622.7"] },
+          { "level": 9, "multipliers": ["657.3"] },
+          { "level": 10, "multipliers": ["691.9"] },
+          { "level": 11, "multipliers": ["726.5"] },
+          { "level": 12, "multipliers": ["761.1"] },
+          { "level": 13, "multipliers": ["795.7"] },
+          { "level": 14, "multipliers": ["830.3"] },
+          { "level": 15, "multipliers": ["864.9"] },
+          { "level": 16, "multipliers": ["899.5"] }
+        ]
+      },
+
+      {
+        "id": "phoenix_reffaella-ex_special_attack-dazzling_flare",
+        "name": "Dazzling Flare (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nQuickly spins around, dealing massive Fire DMG to enemies.\n\nReceiving an attack at the moment the spin begins or hitting an enemy flashing red or yellow triggers a /bPerfect Block//b. This skill is considered a /bCombustion Attack//b. Character is invulnerable while using this skill.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["457.6"] },
+          { "level": 2, "multipliers": ["499.2"] },
+          { "level": 3, "multipliers": ["540.8"] },
+          { "level": 4, "multipliers": ["582.4"] },
+          { "level": 5, "multipliers": ["624.0"] },
+          { "level": 6, "multipliers": ["665.6"] },
+          { "level": 7, "multipliers": ["707.2"] },
+          { "level": 8, "multipliers": ["748.8"] },
+          { "level": 9, "multipliers": ["790.4"] },
+          { "level": 10, "multipliers": ["832.0"] },
+          { "level": 11, "multipliers": ["873.6"] },
+          { "level": 12, "multipliers": ["915.2"] },
+          { "level": 13, "multipliers": ["956.8"] },
+          { "level": 14, "multipliers": ["998.4"] },
+          { "level": 15, "multipliers": ["1040.0"] },
+          { "level": 16, "multipliers": ["1081.6"] }
+        ]
+      },
+
+      {
+        "id": "phoenix_reffaella-ex_special_attack-falling_sun",
+        "name": "Falling Sun (EX Special Attack)",
+        "description": "After using /bEX Special Attack: Dazzling Flare//b, and with enough Energy, press or hold [EX] to activate:\n\nRises into the air and throws her weapon, dealing massive Fire DMG to enemies. Gains 1 point of /bAscension//b upon activating this skill. Up to 1 point of /bAscension//b can be held.\n\nReceiving an attack at the moment she starts rising or hitting an enemy flashing red or yellow triggers a /bPerfect Block//b. This skill is considered a /bCombustion Attack//b. Character is invulnerable while using this skill.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["623.0"] },
+          { "level": 2, "multipliers": ["679.7"] },
+          { "level": 3, "multipliers": ["736.4"] },
+          { "level": 4, "multipliers": ["793.1"] },
+          { "level": 5, "multipliers": ["849.8"] },
+          { "level": 6, "multipliers": ["906.5"] },
+          { "level": 7, "multipliers": ["963.2"] },
+          { "level": 8, "multipliers": ["1019.9"] },
+          { "level": 9, "multipliers": ["1076.6"] },
+          { "level": 10, "multipliers": ["1133.3"] },
+          { "level": 11, "multipliers": ["1190.0"] },
+          { "level": 12, "multipliers": ["1246.7"] },
+          { "level": 13, "multipliers": ["1303.4"] },
+          { "level": 14, "multipliers": ["1360.1"] },
+          { "level": 15, "multipliers": ["1416.8"] },
+          { "level": 16, "multipliers": ["1473.5"] }
+        ]
+      }
+    ],
+
+    "chainAttacks": [
+      {
+        "id": "phoenix_reffaella-chain_attack-last_minute_salvation",
+        "name": "Last-Minute Salvation (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nUnleashes multiple attacks forward, dealing Fire DMG. This skill is considered a /bCombustion Attack//b. Character is invulnerable while using this skill.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["882.7"] },
+          { "level": 2, "multipliers": ["963.0"] },
+          { "level": 3, "multipliers": ["1043.3"] },
+          { "level": 4, "multipliers": ["1123.6"] },
+          { "level": 5, "multipliers": ["1203.9"] },
+          { "level": 6, "multipliers": ["1284.2"] },
+          { "level": 7, "multipliers": ["1364.5"] },
+          { "level": 8, "multipliers": ["1444.8"] },
+          { "level": 9, "multipliers": ["1525.1"] },
+          { "level": 10, "multipliers": ["1605.4"] },
+          { "level": 11, "multipliers": ["1685.7"] },
+          { "level": 12, "multipliers": ["1766.0"] },
+          { "level": 13, "multipliers": ["1846.3"] },
+          { "level": 14, "multipliers": ["1926.6"] },
+          { "level": 15, "multipliers": ["2006.9"] },
+          { "level": 16, "multipliers": ["2087.2"] }
+        ]
+      }
+    ],
+
+    "ultimate": [
+      {
+        "id": "phoenix_reffaella-ultimate-perpetual_resurrection",
+        "name": "Perpetual Resurrection (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nFlies into the air, then dives at the enemy, consuming all of Phoenix's HP to trigger an explosion, dealing massive Fire DMG. Phoenix then enters the /bWither//b state and triggers the next character's /bQuick Assist//b. This skill is considered a /bCombustion Attack//b. Active attacks cannot be performed while in the /bWither//b state.\n\nAfter using this skill, /bSoul-Searching Blaze//b is automatically activated after a short period.\n\nPress [BASIC] to quickly activate /bSoul-Searching Blaze//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["1813.9"] },
+          { "level": 2, "multipliers": ["1978.8"] },
+          { "level": 3, "multipliers": ["2143.7"] },
+          { "level": 4, "multipliers": ["2308.6"] },
+          { "level": 5, "multipliers": ["2473.5"] },
+          { "level": 6, "multipliers": ["2638.4"] },
+          { "level": 7, "multipliers": ["2803.3"] },
+          { "level": 8, "multipliers": ["2968.2"] },
+          { "level": 9, "multipliers": ["3133.1"] },
+          { "level": 10, "multipliers": ["3298.0"] },
+          { "level": 11, "multipliers": ["3462.9"] },
+          { "level": 12, "multipliers": ["3627.8"] },
+          { "level": 13, "multipliers": ["3792.7"] },
+          { "level": 14, "multipliers": ["3957.6"] },
+          { "level": 15, "multipliers": ["4122.5"] },
+          { "level": 16, "multipliers": ["4287.4"] }
+        ]
+      },
+
+      {
+        "id": "phoenix_reffaella-ultimate-soul_searching_blaze",
+        "name": "Soul-Searching Blaze",
+        "description": "Triggered when Phoenix is in the /bWither//b state, the next time she enters the field through a normal switch-in, /bQuick Assist//b, or /bDefensive Assist//b:\n\nPhoenix covers herself in flames, dealing Fire DMG to nearby enemies, and exits the /bWither//b state. This damage is considered /bUltimate//b DMG. She then recovers all HP consumed by /bUltimate: Perpetual Resurrection//b, plus an additional 10% of her Max HP.\n\nWhen the /bFinishing Move//b hits an enemy affected by Ice Anomaly, Ether Anomaly, Electric Anomaly, Fire Anomaly, Physical Anomaly, or Wind Anomaly, it triggers 1 instance of /bAbloom//b, resolving the corresponding Attribute Anomaly at a fixed multiplier.\n\nWhen this /bAbloom//b effect triggers a critical hit, its CRIT DMG is increased by an additional 40%.\n\nWhen Phoenix enters the field via /bChain Attack: Last-Minute Salvation//b or /bUltimate: Perpetual Resurrection//b while in the /bWither//b state, the HP recovery and /bAbloom//b effects described above are also triggered. Character is invulnerable while using this skill.\n\nPress [BASIC] to follow up with the 3rd hit of a /bBasic Attack//b.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": ["95.5"] },
+          { "level": 2, "multipliers": ["104.2"] },
+          { "level": 3, "multipliers": ["112.9"] },
+          { "level": 4, "multipliers": ["121.6"] },
+          { "level": 5, "multipliers": ["130.3"] },
+          { "level": 6, "multipliers": ["139.0"] },
+          { "level": 7, "multipliers": ["147.7"] },
+          { "level": 8, "multipliers": ["156.4"] },
+          { "level": 9, "multipliers": ["165.1"] },
+          { "level": 10, "multipliers": ["173.8"] },
+          { "level": 11, "multipliers": ["182.5"] },
+          { "level": 12, "multipliers": ["191.2"] },
+          { "level": 13, "multipliers": ["199.9"] },
+          { "level": 14, "multipliers": ["208.6"] },
+          { "level": 15, "multipliers": ["217.3"] },
+          { "level": 16, "multipliers": ["226.0"] }
+        ]
+      }
+    ],
+
+    "mindscapeAbilities": [
+      {
+        "id": "phoenix_reffaella-core-searing_corrosion",
+        "name": "Sear State - Additional DMG (Core Passive)",
+        "description": "Enemies in the Sear state take Fire DMG equal to 50% of Phoenix's ATK every 8s. This DMG is considered EX Special Attack DMG..",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "fire"
+          }
+        ],
+        "levels": [{ "level": 1, "multipliers": [50] }]
+      }
+    ]
+  }
+}

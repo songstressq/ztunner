@@ -181,6 +181,10 @@ export interface AnomalyCalculationResult {
   withAP: number;
   withBonuses: number;
   realDamage: number;
+  realAnomalyCritDamage?: number;
+  anomalyCritDmgTotal?: number;
+  anomalyCritDmgOwner?: { agentId: string; displayName: string };
+  assaultCritDmgOwner?: { agentId: string; displayName: string };
   disorderDamage?: {
     timePassed: number;
     multiplier: number;

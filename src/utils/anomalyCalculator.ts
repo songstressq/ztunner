@@ -83,10 +83,8 @@ export function calculateAnomalyDamage({
   let realDamage = 0;
   let realCritDamage = 0;
   let assaultCritDmgTotal = 0;
-
   if (attribute === "physical" && damageBonuses?.assaultCritDmgTotal) {
     assaultCritDmgTotal = damageBonuses.assaultCritDmgTotal;
-
     realDamage = calculateRealDamage(
       Math.round(damageAfterStun),
       attribute,
@@ -104,7 +102,6 @@ export function calculateAnomalyDamage({
       false,
       true,
     );
-
     realCritDamage = calculateRealDamage(
       Math.round(damageAfterStun * (1 + assaultCritDmgTotal)),
       attribute,
@@ -142,6 +139,32 @@ export function calculateAnomalyDamage({
     );
   }
 
+  // Phoenix — independent CRIT block, applies to any attribute
+  let realAnomalyCritDamage = 0;
+  let anomalyCritDmgTotal = 0;
+  let anomalyCritDmgOwner: { agentId: string; displayName: string } | undefined;
+  if (damageBonuses?.anomalyCritDmgTotal) {
+    anomalyCritDmgTotal = damageBonuses.anomalyCritDmgTotal;
+    anomalyCritDmgOwner = damageBonuses.anomalyCritDmgOwner;
+    realAnomalyCritDamage = calculateRealDamage(
+      Math.round(damageAfterStun * (1 + anomalyCritDmgTotal)),
+      attribute,
+      undefined,
+      skillId,
+      "anomaly",
+      0,
+      `${definition.anomalyType} Anomaly (Phoenix CRIT)`,
+      0,
+      0,
+      true,
+      false,
+      undefined,
+      undefined,
+      false,
+      true,
+    );
+  }
+
   return {
     baseDamage: Math.round(baseDamage),
     withAP: Math.round(damageWithAP),
@@ -150,6 +173,10 @@ export function calculateAnomalyDamage({
     realDamage,
     realCritDamage,
     assaultCritDmgTotal,
+    assaultCritDmgOwner: damageBonuses?.assaultCritDmgOwner,
+    realAnomalyCritDamage,
+    anomalyCritDmgTotal,
+    anomalyCritDmgOwner,
     dmgMod,
     buffMod,
     refringeMod,

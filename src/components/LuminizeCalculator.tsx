@@ -12,6 +12,7 @@ import {
   type CalculatorUIState,
 } from "@/context/SessionContext";
 import { ingameEffectsRegistry } from "@/data/ingameEffectsRegistry";
+import { agents } from "@/data/agents";
 
 const REMIELLE_MS1_EFFECT_ID = "remielle_dan-mindscape_1-naive_oath_1";
 const SELF_LUMINIZE_LEVEL_COEFFICIENT = 0.025;
@@ -692,6 +693,14 @@ export default function LuminizeCalculator({
     }
     const damageAfterRes = Math.round(rawDamage * resMultiplier);
     const finalDamage = Math.round(damageAfterRes * (1 + stunMultiplier / 100));
+
+    const anomalyCritDmgTotal = damageBonuses?.anomalyCritDmgTotal ?? 0;
+    const anomalyCritDmgOwner = damageBonuses?.anomalyCritDmgOwner;
+    const realAnomalyCritDamage =
+      anomalyCritDmgTotal > 0
+        ? Math.round(finalDamage * (1 + anomalyCritDmgTotal))
+        : 0;
+
     return {
       voidflare,
       sourceName,
@@ -710,6 +719,9 @@ export default function LuminizeCalculator({
       isSelfLuminize,
       defMultiplier,
       effectiveDef,
+      realAnomalyCritDamage,
+      anomalyCritDmgTotal,
+      anomalyCritDmgOwner,
     };
   }, [
     voidflareData,
@@ -728,6 +740,32 @@ export default function LuminizeCalculator({
   ]);
 
   const formatNumber = (num: number) => Math.round(num).toLocaleString("en-US");
+
+  const getPossessive = (name: string) => {
+    const cleanName = name.trim();
+    const lastName = cleanName.charAt(cleanName.length - 1).toLowerCase();
+    if (lastName === "s") {
+      return `${cleanName}'`;
+    }
+    return `${cleanName}'s`;
+  };
+
+  const getCritOwnerDisplayName = (
+    owner?: { agentId?: string; displayName?: string } | null,
+  ): string => {
+    if (!owner?.agentId) return owner?.displayName || "Unknown";
+    const found = agents.find((a) => a.id === owner.agentId);
+    if (found) {
+      return (
+        found.fullName ||
+        found.displayName ||
+        found.name ||
+        owner.displayName ||
+        "Unknown"
+      );
+    }
+    return owner.displayName || "Unknown";
+  };
 
   const sourceOptionsBase = teamSlotsInfo
     .filter((s) => s.slotIndex !== currentSlotIndex && s.agentName !== "Empty")
@@ -1079,6 +1117,28 @@ export default function LuminizeCalculator({
                 {formatNumber(result.finalDamage)}
               </div>
             </div>
+
+            {/* Phoenix CRIT DMG */}
+            {(result.anomalyCritDmgTotal ?? 0) > 0 && (
+              <div className="anomaly-grid-total-row">
+                <div className="anomaly-row-cell step">▤</div>
+                <div className="anomaly-row-cell calculation">
+                  <span className="total-label">Final Luminize CRIT DMG</span>
+                  <span className="total-target">
+                    {getPossessive(
+                      getCritOwnerDisplayName(result.anomalyCritDmgOwner),
+                    )}{" "}
+                    Luminize CRIT DMG:{" "}
+                    {((result.anomalyCritDmgTotal ?? 0) * 100).toFixed(0)}%
+                  </span>
+                </div>
+                <div className="anomaly-row-cell before" />
+                <div className="anomaly-row-cell arrow">=</div>
+                <div className="anomaly-row-cell after crit-value">
+                  {formatNumber(result.realAnomalyCritDamage)}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       ) : (

@@ -48,7 +48,7 @@
       "sourceId": "nekomata-core",
       "label": "Stealthy Paws (Core Passive)",
       "description": "When Nekomata's Dodge Counter or Quick Assist hits an enemy, her DMG increases by a percentage for 6s",
-      "shortDescription": "Nekomata' DMG is increased by 60% for 6s.",
+      "shortDescription": "Nekomata's DMG is increased by 60% for 6s.",
       "target": "self",
       "damageBonuses": [{ "type": "global", "value": 0.6 }]
     },

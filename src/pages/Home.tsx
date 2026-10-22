@@ -183,6 +183,18 @@ const Home = () => {
                 style={{ backgroundColor: dominantTheme }}
               />
               <div className="home_content_changelog_item">
+                <span>v1.2.2 — Anomaly CRIT</span>
+
+                <h3>● Added - Phoenix's Anomaly CRIT Mechanic</h3>
+                <p>
+                  Added support for Phoenix's special mechanic that allows
+                  Anomaly DMG to CRIT, both for Phoenix herself and other agents
+                  in the Damage Calculator. All Anomaly types are supported,
+                  including Assault, Burn, Corruption, Shock, Windswept, and
+                  Luminize.
+                </p>
+              </div>
+              <div className="home_content_changelog_item">
                 <span>v1.2.1 — Stun DMG Multiplier Bonuses</span>
                 <h3>● Added - Stun DMG Multiplier Bonuses</h3>
                 <p>
@@ -190,33 +202,6 @@ const Home = () => {
                   DMG Multiplier% to the squad, making build creation for
                   Stunners a bit more meaningful. After all, the original name
                   of this app was ZTunner, without the -.
-                </p>
-              </div>
-              <div className="home_content_changelog_item">
-                <span>v1.2.0 — Custom Base Stats</span>
-
-                <h3>● Added - Custom Base Stats</h3>
-                <p>
-                  Added the ability to manually enter custom stats for an agent
-                  in the Build Creator, allowing you to test specific stat
-                  values without having to fully configure the agent's build.
-                  Empty fields automatically use the calculated values from the
-                  build.
-                </p>
-
-                <h3>● Minor UI Fixes &amp; Improvements</h3>
-                <p>
-                  Added detailed damage descriptions to the main Skill DMG
-                  results grid when hovering over damage type headers.
-                  <br />
-                  In-game toggles now display stat information more accurately,
-                  with more detailed breakdowns of the stats being applied.
-                </p>
-
-                <h3>● Agent-Related Updates</h3>
-                <p>
-                  Fixed Dialyn's External Line (Additional Ability) In-game
-                  effect and its special damage calculation section.
                 </p>
               </div>
             </div>
@@ -269,7 +254,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="home_content-features_card">
-                  <h3>🅾 ZZZ Daze Calculator</h3>
+                  <h3>🅾 Daze Calculator</h3>
                   <p>
                     Implement Daze and Impact calculations in the Damage
                     Calculator, and maybe support for other Stun-related
@@ -280,18 +265,20 @@ const Home = () => {
                     <span>5%</span>
                   </div>{" "}
                 </div>{" "}
-                {/*<div className="home_content-features_card">
-                  <h3>🅾 Low-Spec Mode</h3>
+                <div className="home_content-features_card">
+                  <h3>🅾 Abloom DMG Calculator</h3>
                   <p>
-                    Optimize Z-Tunner for better performance on lower-spec and
-                    mobile devices, improving responsiveness and reducing
-                    resource usage.
+                    Implement Abloom DMG calculations in the Damage Calculator,
+                    including its additional Anomaly-related DMG and other
+                    multipliers/mechanics that interact with it.
+                    <br /> ✱ Currently noted for a future update, since EVERYONE
+                    NOW GETS ABLOOM.
                   </p>
                   <div className="home_content-progress_bar">
-                    {renderProgressBar(25)}
-                    <span>25%</span>
+                    {renderProgressBar(0)}
+                    <span>0%</span>
                   </div>{" "}
-                </div>{" "}*/}
+                </div>{" "}
               </div>
             </div>
           </div>

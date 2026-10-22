@@ -34,7 +34,7 @@
   },
   "recommendedStats": {
     "className": "stat-recommended",
-    "stats": ["CRIT DMG", "CRIT Rate", "ATK"]
+    "stats": ["CRIT DMG", "CRIT Rate", "ATK", "PEN Ratio"]
   },
   "coreEnhancement": [
     { "level": 0, "stats": { "atkFlat": 0, "critRate": 0 } },

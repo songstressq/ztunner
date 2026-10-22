@@ -1,0 +1,122 @@
+{
+  "id": "plume_of_rebirth",
+  "name": "Plume of Rebirth",
+  "rarity": "S",
+  "specialty": "Anomaly",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "Anomaly Mastery%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.3
+  },
+
+  "ingameEffects": [
+    {
+      "id": "plume_of_rebirth-hatching_day-anomaly_proficiency",
+      "source": "wEngine",
+      "sourceId": "plume_of_rebirth",
+      "label": "Hatching Day (W-Engine Passive)",
+      "description": "The equipper's Anomaly Proficiency is increasde. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's Fire DMG increases by a percentage for 20s. Repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's Anomaly Proficiency.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "anomalyProficiency": 90 }
+          },
+          {
+            "level": 2,
+            "stats": { "anomalyProficiency": 99 }
+          },
+          {
+            "level": 3,
+            "stats": { "anomalyProficiency": 108 }
+          },
+          {
+            "level": 4,
+            "stats": { "anomalyProficiency": 117 }
+          },
+          {
+            "level": 5,
+            "stats": { "anomalyProficiency": 126 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    },
+
+    {
+      "id": "plume_of_rebirth-hatching_day-fire_dmg",
+      "source": "wEngine",
+      "sourceId": "plume_of_rebirth",
+      "label": "Hatching Day (W-Engine Passive)",
+      "description": "The equipper's Anomaly Proficiency is increasde. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's Fire DMG increases by a percentage for 20s. Repeated triggers reset the duration.",
+      "shortDescription": "Increases the equipper's Fire DMG for 20s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.4
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.44
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.48
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.52
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "damageBonuses": [
+              {
+                "type": "element",
+                "element": "fire",
+                "value": 0.56
+              }
+            ]
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Anomaly"
+      }
+    }
+  ]
+}

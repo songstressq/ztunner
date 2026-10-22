@@ -11,7 +11,8 @@
   "themeColor": "#E65D97",
   "skins": [
     { "id": "default", "img": "sunna.png" },
-    { "id": "afternoon_tea_break", "img": "sunna-afternoon_tea_break.png" }
+    { "id": "afternoon_tea_break", "img": "sunna-afternoon_tea_break.png" },
+    { "id": "delusions_in_business", "img": "sunna-delusions_in_business.png" }
   ],
   "baseStats": { "hp": 8477.2, "atk": 675.75, "def": 600.59 },
   "combatBase": {

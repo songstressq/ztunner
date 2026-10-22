@@ -80,7 +80,8 @@ export interface DamageBonus {
     | "critDamageElementalBonus"
     | "sharpDmg"
     | "elementSharpDmg"
-    | "skillTypeElementalSharp";
+    | "skillTypeElementalSharp"
+    | "anomalyCritDmgBonus";
   value: number;
   element?:
     | "fire"
@@ -291,7 +292,7 @@ export interface IngameEffect {
   damageBonuses?: DamageBonus[];
   exclusiveStatBonuses?: ExclusiveStatBonus[];
   aftershockDefShred?: number;
-
+  anomalyCritDmgBase?: number;
   dynamicStatBonuses?: DynamicStatBonus[];
 
   referenceStatEffect?: ReferenceStatEffect;

@@ -11,7 +11,8 @@
   "themeColor": "#FF6B93",
   "skins": [
     { "id": "default", "img": "nangong_yu.png" },
-    { "id": "rhapsodys_muse", "img": "nangong_yu-rhapsodys_muse.png" }
+    { "id": "rhapsodys_muse", "img": "nangong_yu-rhapsodys_muse.png" },
+    { "id": "heartfelt_support", "img": "nangong_yu-heartfelt_support.png" }
   ],
   "baseStats": { "hp": 8374, "atk": 671.5, "def": 622.62 },
   "combatBase": {

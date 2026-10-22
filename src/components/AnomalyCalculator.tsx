@@ -1429,6 +1429,24 @@ export default function AnomalyCalculator({
 
   const capitalize = (text: string) =>
     text.charAt(0).toUpperCase() + text.slice(1);
+
+  const getCritOwnerDisplayName = (
+    owner?: { agentId?: string; displayName?: string } | null,
+  ): string => {
+    if (!owner?.agentId) return owner?.displayName || "Unknown";
+    const found = agents.find((a) => a.id === owner.agentId);
+    if (found) {
+      return (
+        found.fullName ||
+        found.displayName ||
+        found.name ||
+        owner.displayName ||
+        "Unknown"
+      );
+    }
+    return owner.displayName || "Unknown";
+  };
+
   const getPossessive = (name: string) => {
     const cleanName = name.trim();
     const lastName = cleanName.charAt(cleanName.length - 1).toLowerCase();
@@ -1789,18 +1807,25 @@ export default function AnomalyCalculator({
                   {anomalyResult.realDamage.toLocaleString()}
                 </div>
               </div>
-              {/* CRIT (Assault) */}
+              {/* CRIT (Assault — Jane) */}
               {definition.anomalyType === "assault" &&
                 anomalyResult.assaultCritDmgTotal > 0 && (
                   <div className="anomaly-grid-total-row">
                     <div className="anomaly-row-cell step">▤</div>
                     <div className="anomaly-row-cell calculation">
                       <span className="total-label">
-                        Final Assault CRIT DMG
+                        {" "}
+                        Final Assault CRIT DMG{" "}
                       </span>
                       <span className="total-target">
-                        {getPossessive(agent.displayName || agent.name)} Assault
-                        CRIT DMG:{" "}
+                        {getPossessive(
+                          getCritOwnerDisplayName(
+                            anomalyResult.assaultCritDmgOwner,
+                          ) ||
+                            agent.displayName ||
+                            agent.name,
+                        )}{" "}
+                        Assault CRIT DMG:{" "}
                         {(anomalyResult.assaultCritDmgTotal * 100).toFixed(0)}%
                       </span>
                     </div>
@@ -1811,6 +1836,36 @@ export default function AnomalyCalculator({
                     </div>
                   </div>
                 )}
+
+              {/* CRIT (Phoenix — any anomaly type) */}
+              {(anomalyResult.anomalyCritDmgTotal ?? 0) > 0 && (
+                <div className="anomaly-grid-total-row">
+                  <div className="anomaly-row-cell step">▤</div>
+                  <div className="anomaly-row-cell calculation">
+                    <span className="total-label">
+                      Final {capitalize(definition.anomalyType)} CRIT DMG
+                    </span>
+                    <span className="total-target">
+                      {getPossessive(
+                        getCritOwnerDisplayName(
+                          anomalyResult.anomalyCritDmgOwner,
+                        ),
+                      )}{" "}
+                      Anomaly CRIT DMG:{" "}
+                      {((anomalyResult.anomalyCritDmgTotal ?? 0) * 100).toFixed(
+                        0,
+                      )}
+                      %
+                    </span>
+                  </div>
+                  <div className="anomaly-row-cell before" />
+                  <div className="anomaly-row-cell arrow">=</div>
+                  <div className="anomaly-row-cell after crit-value">
+                    {anomalyResult.realAnomalyCritDamage?.toLocaleString() ??
+                      "0"}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

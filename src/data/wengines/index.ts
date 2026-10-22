@@ -35,6 +35,7 @@ import chief_sidekick from "./stun/chief_sidekick.json"; //Norma
 import bellicose_blaze from "./attack/bellicose_blaze.json"; //Orphie & Magus
 import tremor_trigram_vessel from "./defense/tremor_trigram_vessel.json"; //Pan Yinhu
 import roaring_ride from "./anomaly/roaring_ride.json"; //Piper
+import plume_of_rebirth from "./anomaly/plume_of_rebirth.json"; //Phoenix
 import frostfall_sickle from "./anomaly/frostfall_sickle.json"; //Promeia
 import box_cutter from "./stun/box_cutter.json"; //Pulchra
 import sol_exuvia from "./attack/sol_exuvia.json"; //Pyrois
@@ -124,6 +125,7 @@ export const wEngines: WEngine[] = [
   bellicose_blaze as WEngine, //✅
   tremor_trigram_vessel as WEngine,
   roaring_ride as WEngine, //✅
+  plume_of_rebirth as WEngine,
   frostfall_sickle as WEngine, //✅
   box_cutter as WEngine, //✅
   sol_exuvia as WEngine,

@@ -267,6 +267,35 @@ const InfoAndSettings = () => {
               />
 
               <div className="changelog_grid">
+                {/* v1.2.0*/}
+                <div className="home_content_changelog_item">
+                  <span>v1.2.0 — Custom Base Stats</span>
+
+                  <h3>● Added - Custom Base Stats</h3>
+                  <p>
+                    Added the ability to manually enter custom stats for an
+                    agent in the Build Creator, allowing you to test specific
+                    stat values without having to fully configure the agent's
+                    build. Empty fields automatically use the calculated values
+                    from the build.
+                  </p>
+
+                  <h3>● Minor UI Fixes &amp; Improvements</h3>
+                  <p>
+                    Added detailed damage descriptions to the main Skill DMG
+                    results grid when hovering over damage type headers.
+                    <br />
+                    In-game toggles now display stat information more
+                    accurately, with more detailed breakdowns of the stats being
+                    applied.
+                  </p>
+
+                  <h3>● Agent-Related Updates</h3>
+                  <p>
+                    Fixed Dialyn's External Line (Additional Ability) In-game
+                    effect and its special damage calculation section.
+                  </p>
+                </div>
                 {/* v1.1.3 */}
                 <div className="home_content_changelog_item">
                   <span>v1.1.3 — Anomaly Formulas &amp; Other Fixes</span>

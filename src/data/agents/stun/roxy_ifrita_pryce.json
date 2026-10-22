@@ -40,7 +40,7 @@
 
   "recommendedStats": {
     "className": "stat-recommended",
-    "stats": ["CRIT Rate", "ATK"]
+    "stats": ["CRIT Rate", "ATK", "Energy Regen", "CRIT DMG"]
   },
 
   "coreEnhancement": [

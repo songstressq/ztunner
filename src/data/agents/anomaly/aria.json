@@ -13,7 +13,8 @@
     { "id": "default", "img": "aria.png" },
     { "id": "aria-alt", "img": "aria-alt.png" },
     { "id": "aria-discordant_note", "img": "aria-discordant_note.png" },
-    { "id": "aria-discordant_note_alt", "img": "aria-discordant_note_alt.png" }
+    { "id": "aria-discordant_note_alt", "img": "aria-discordant_note_alt.png" },
+    { "id": "aria-cuteness_loading", "img": "aria-cuteness_loading.png" }
   ],
   "baseStats": { "hp": 7749.7, "atk": 788.45, "def": 619.61 },
   "combatBase": {

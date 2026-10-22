@@ -20,23 +20,14 @@ export const siteNotifications: SiteNotification[] = [
     theme: "#8891f0",
   },
   {
-    id: "notification_remielle_special_voidflare",
-    title: "NEW: Remielle's Special Voidflares",
-    message:
-      "You can now simulate the damage of Remielle's special Voidflares in her Luminize DMG Calculator.",
-    type: "info",
-    duration: 10000,
-    delay: 3000,
-    theme: "#FEDBF3",
-  },
-  {
     id: "notification_phoenix_missing",
-    title: "UPDATE: Phoenix Reffaela",
+    title: "ADDED: Phoenix Reffaela",
     message:
-      "Phoenix's availability depends on me figuring out her mechanics. If I win my 50/50, she'll be available much sooner. For now, enjoy the story!",
+      "Added Phoenix and her W-Engine to Z-Tunner, including her special Anomaly CRIT mechanics. More info in #announcements on the Discord server.",
     type: "info",
     duration: 10000,
     delay: 3000,
+    theme: "#FC5858",
   },
   // {
   //   id: "changelog_v1_2",
