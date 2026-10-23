@@ -399,6 +399,27 @@
       },
       "notes": null
     },
+    {
+      "id": "etheric_other_truvia",
+      "name": "Etheric Other - Truvia",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "Blasphemer initially fights in human form, wielding a longsword to deliver swift close-range attacks — watch out for certain high-intensity skills that require a Chain Parry. At specific opportunities, it shifts into mermaid form, reversing its grip on the longsword to wield it as a staff, dragging the Agent into the Singularity Leakage. During this phase, it activates the Corruptive Barrier and launches a Cooperative Offensive using spatial abilities and clones.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "stunDmgMultiplier": 0.5,
+        "fireResistance": -0.2,
+        "iceResistance": 0.4,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.0,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
 
     {
       "id": "sanguine_sweeper",

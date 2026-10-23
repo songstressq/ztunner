@@ -6,82 +6,55 @@
       "rooms": [
         {
           "id": "room_1",
-          "label": "Room 1: Phaethon of the Scorched Horizon",
+          "label": "Room 1: Etheric Other - Truvia",
           "effects": [
             {
               "id": "game_mode_da_room1_effect_a",
-              "label": "Phaethon of the Scorched Horizon - Global DMG",
-              "description": "... After Scorched Horizon activates Gale Scorcher, they gain 5 stacks of Into Flames. Each stack of Into Flames increases DMG dealt by 10% and reduces CRIT DMG taken by 25%. ... ",
-              "shortDescription": "All squad members' DMG is increased by 10%, stacking up to 5 times.",
+              "label": "Etheric Other - Truvia - Anomaly DMG",
+              "description": "... While in the Wax Wings state, the Boss takes 30% increased Attribute Anomaly DMG and accumulates an additional 5% Daze when entering an Attrobute Anomaly state, but no longer gains Afterglow Marks. ... ",
+              "shortDescription": "All squad members' Anomaly DMG is increased by 30%.",
               "source": "gameMode",
               "target": "team",
-              "damageBonuses": [
-                {
-                  "type": "global",
-                  "value": 0.1
-                }
-              ],
-              "maxStacks": 5
-            },
-            {
-              "id": "game_mode_da_room1_effect_b",
-              "label": "Phaethon of the Scorched Horizon - CRIT DMG",
-              "description": "... After Scorched Horizon activates Gale Scorcher, they gain 5 stacks of Into Flames. Each stack of Into Flames increases DMG dealt by 10% and reduces CRIT DMG taken by 25%. ... ",
-              "shortDescription": "All squad members' CRIT DMG is decreased by 25%, stacking up to 5 times.",
-              "source": "gameMode",
-              "target": "team",
-              "perStack": { "critDmg": -0.25 },
-              "maxStacks": 5
+              "perStack": { "anomalyDmgBonus": 0.3 }
             }
           ]
         },
         {
           "id": "room_2",
-          "label": "Room 2: Infernal Revenant",
+          "label": "Room 2: Unknown Corruption Complex",
           "effects": [
             {
               "id": "game_mode_da_room2_effect_a",
-              "label": "Infernal Revenant - Anomaly DMG",
-              "description": "After Infernal Revenant enters the Infernal state, the Attribute Anomaly DMG it takes is reduced by 30%; ...",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is decreased by 30%.",
+              "label": "Unknown Corruption Complex - CRIT DMG",
+              "description": "When dealing sufficient DMG to the boss enemy's legs, Impaired will be triggered. Upon successfully breaking the boss enemy's legs, the Agent restores 1,000 Decibels, and the boss gains 1 stack of Disintegration for 20 seconds, up to a maximum of 4 stacks. When the Agent's attacks hit an enemy, for each stack of Disintegration the taget has, CRIT DMG is increased by 25%. ...",
+              "shortDescription": "All squad members' CRIT DMG is increased by 25%.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": -0.3 }
-            },
-            {
-              "id": "game_mode_da_room2_effect_b",
-              "label": "Infernal Revenant - CRIT DMG",
-              "description": "... every time Chain Parry is triggered, the Boss gains 1 stack of Overheat; triggering Defensive Assist or Perfect Dodge 2 times in total applies 1 stack of Overheat on the Boss, and each stack of Overheat increases CRIT DMG of the whole squad by 25%, stacking up to 3 times and lasting 20s. Triggering Defensive Assist or retriggering Overheat resets the duration.",
-              "shortDescription": "All squad members' CRIT DMG is increased by 25% for 20s, stacking up to 3 times.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "critDmg": 0.25 },
-              "maxStacks": 3
+              "perStack": { "critDmg": 0.25 }
             }
           ]
         },
         {
           "id": "room_3",
-          "label": "Room 3: Kusarikku",
+          "label": "Room 3: Discordant Solo - Vesper",
           "effects": [
             {
               "id": "game_mode_da_room3_effect_a",
-              "label": "Kusarikku - Anomaly DMG",
-              "description": "Attribute Anomaly DMG taken by Kusarikku is reduced by 40%. ...",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies is decreased by 40%.",
+              "label": "Discordant Solo - Vesper - Anomaly DMG",
+              "description": "... Agent Anomaly Buildup Rate increased by 15%, Anomaly DMG dealt to Discordant Solo increases by 30%, when Agents are in Ether Veil during combat, Discordant Solo's Stun DMG Multiplier increases by 30%. ...",
+              "shortDescription": "All squad members' Anomaly DMG is increased by 30%.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": -0.4 }
+              "perStack": { "anomalyDmgBonus": 0.3 }
             },
             {
               "id": "game_mode_da_room3_effect_b",
-              "label": "Kusarikku - Laceration DMG",
-              "description": "... When an Agent successfully uses a Defensive Assist against Kusarikku's Rift Assault, applies 1 stack of Exposed to Kusarikku. When Kuarikku becomes Stunned, applies 2 stacks of Exposed. Each stack of Exposed increases the Laceration DMG Kusarikku receives by 10. Exposed can stack up to 4 times and lasts 30s. Repeated triggers reset the duration.",
-              "shortDescription": "All squad members' Laceration DMG is increased by 10% for 30s, stacking up to 4 times.",
+              "label": "Discordant Solo - Vesper - Stun DMG Multiplier",
+              "description": "... Agent Anomaly Buildup Rate increased by 15%, Anomaly DMG dealt to Discordant Solo increases by 30%, when Agents are in Ether Veil during combat, Discordant Solo's Stun DMG Multiplier increases by 30%. ...",
+              "shortDescription": "The target's Stun DMG Multiplier is increased by 30%.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "lacerationDmg": 0.1 },
-              "maxStacks": 4
+              "stunDmgMultiplier": 0.3
             }
           ]
         }
@@ -93,28 +66,37 @@
           "effects": [
             {
               "id": "game_mode_da_buff1_effect_a",
-              "label": "Deadly Assault: Frigidity",
-              "description": "Agent Ice DMG incraeses by 15%, and their Anomaly Proficiency increases by 60. ...",
-              "shortDescription": "All squad members' Ice DMG is increased by 15%, and their Anomaly Proficiency is increased by 60.",
+              "label": "Deadly Assault: Blazing Descent",
+              "description": "If there are 2/3 Anomaly specialty Agents in your squad, the whole squad's Anomaly Proficiency increases by 20/50 respectively. ...",
+              "shortDescription": "With 2 Anomaly Agents in the squad, all squad members' Anomaly Proficiency is increased by 20.",
               "source": "gameMode",
               "target": "team",
-              "damageBonuses": [
-                {
-                  "type": "element",
-                  "element": "ice",
-                  "value": 0.15
-                }
-              ],
-              "flat": { "anomalyProficiency": 60 }
+              "flat": { "anomalyProficiency": 20 }
             },
             {
               "id": "game_mode_da_buff1_effect_b",
-              "label": "Deadly Assault: Frigidity",
-              "description": "... When an Agent triggers Abloom or Disorder on an enemy, Attribute Anomaly DMG and Disorder DMG deal by the whole squad increase by 25%, ...",
-              "shortDescription": "All squad members' DMG from Attribute Anomalies and Disorder is increased by 25%.",
+              "label": "Deadly Assault: Blazing Descent",
+              "description": "If there are 2/3 Anomaly specialty Agents in your squad, the whole squad's Anomaly Proficiency increases by 20/50 respectively. ...",
+              "shortDescription": "With 3 Anomaly Agents in the squad, all squad members' Anomaly Proficiency is increased by 50.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "anomalyDmgBonus": 0.25, "disorderDmgBonus": 0.25 }
+              "flat": { "anomalyProficiency": 50 }
+            },
+            {
+              "id": "game_mode_da_buff1_effect_c",
+              "label": "Deadly Assault: Blazing Descent",
+              "description": "... When an Anomaly specialty Agent deals Attribute Anomaly DMG and triggers a critical hit, Attribute Anomaly DMG dealt by the whole squad increases by 20%, and Fire Attribute Anomaly DMG increases by 10% for 15s; repeated triggers reset the duration. ...",
+              "shortDescription": "All squad members' Anomaly DMG is increased by 20%, and ther Burn Anomaly DMG is increased by 10% for 15s.",
+              "source": "gameMode",
+              "target": "team",
+              "flat": { "anomalyDmgBonus": 0.2 },
+              "damageBonuses": [
+                {
+                  "type": "anomalyTypeDmg",
+                  "anomalyType": "burn",
+                  "value": 0.1
+                }
+              ]
             }
           ]
         },
@@ -124,23 +106,13 @@
           "effects": [
             {
               "id": "game_mode_da_buff2_effect_a",
-              "label": "Deadly Assault: Defense Crusher",
-              "description": "... Agents with the Attack specialty have their ATK increased by 20%. After using Ultimate, their CRIT DMG increases by 50% for 20s. Repeated triggers reset the duration.",
-              "shortDescription": "Attack Agents' ATK is increased by 20%.",
+              "label": "Deadly Assault: Radiant Sky",
+              "description": "... After the Agent uses an EX Special Attack or Special Attack, Sharp DMG increases by 30%, and attacks that hit enemies ignore 20% of their Electric RES and Ether RES for 15s; repeated triggers reset the duration.",
+              "shortDescription": "All squad members' Sharp DMG is increased by 30%, and their DMG ignores 20% of the target Electric RES and Ether RES for 15s.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "atkPercentRaw": 0.2 },
-              "requiresSpecialty": "Attack"
-            },
-            {
-              "id": "game_mode_da_buff2_effect_b",
-              "label": "Deadly Assault: Defense Crusher",
-              "description": "... Agents with the Attack specialty have their ATK increased by 20%. After using Ultimate, their CRIT DMG increases by 50% for 20s. Repeated triggers reset the duration.",
-              "shortDescription": "Attack Agents' CRIT DMG is increased by 50% for 20s.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "critDmg": 0.5 },
-              "requiresSpecialty": "Attack"
+              "flat": { "electricResShred": 0.2, "etherResShred": 0.2 },
+              "damageBonuses": [{ "type": "sharpDmg", "value": 0.3 }]
             }
           ]
         },
@@ -150,25 +122,21 @@
           "effects": [
             {
               "id": "game_mode_da_buff3_effect_a",
-              "label": "Deadly Assault: Knide Edge",
-              "description": "Agent DEF increases by 15%, and their Sharp DMG increases by 15%. ...",
-              "shortDescription": "All squad members' DEF is increased by 15%, and their Sharp DMG is increased by 15%.",
+              "label": "Deadly Assault: Perfect Rhythm",
+              "description": "... Attribtue Anomaly DMG dealt by Agents increases by 15%. Agains Stunned enemies, Attribute Anomaly DMG dealt additionaly increases by 25%.",
+              "shortDescription": "All squad members' Anomaly DMG is increased by 15%.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "defPercentRaw": 0.15 },
-              "damageBonuses": [{ "type": "sharpDmg", "value": 0.15 }]
+              "perStack": { "anomalyDmgBonus": 0.15 }
             },
             {
               "id": "game_mode_da_buff3_effect_b",
-              "label": "Deadly Assault: Knide Edge",
-              "description": "... After an Agent uses an EX Special Attack or Special Attack, Electric DMG and Wind DMG increase by 30% for 15s. Repeated triggers reset the duration.",
-              "shortDescription": "All squad members' Electric DMG and Wind DMG is increased 30% for 15s.",
+              "label": "Deadly Assault: Perfect Rhythm",
+              "description": "... Attribtue Anomaly DMG dealt by Agents increases by 15%. Agains Stunned enemies, Attribute Anomaly DMG dealt additionaly increases by 25%.",
+              "shortDescription": "All squad members' Anomaly DMG is further increased by 25% against Stunned enemies.",
               "source": "gameMode",
               "target": "team",
-              "damageBonuses": [
-                { "type": "element", "element": "electric", "value": 0.3 },
-                { "type": "element", "element": "wind", "value": 0.3 }
-              ]
+              "perStack": { "anomalyDmgBonus": 0.25 }
             }
           ]
         }
