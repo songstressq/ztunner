@@ -6,7 +6,7 @@ export interface SiteNotification extends NotifyOptions {
 
 export const siteNotifications: SiteNotification[] = [
   {
-    id: "notification_discord",
+    id: "notification_discord_1",
     title: "Join the Z-Tunner Discord!",
     message:
       "If you have any feedback about Z-Tunner, feel free to share it on the server!",
@@ -20,10 +20,10 @@ export const siteNotifications: SiteNotification[] = [
     theme: "#8891f0",
   },
   {
-    id: "notification_phoenix_missing",
-    title: "ADDED: Phoenix Reffaella",
+    id: "notification_phoenix_anomaly",
+    title: "UPDATED: Phoenix Reffaella",
     message:
-      "Added Phoenix and her W-Engine to Z-Tunner, including her special Anomaly CRIT mechanics. More info in #announcements on the Discord server.",
+      "Phoenix's Anomaly CRIT DMG is now consistent with her in-game mechanics, including its interaction with Jane's Assault CRIT DMG.",
     type: "info",
     duration: 10000,
     delay: 3000,

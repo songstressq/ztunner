@@ -31,6 +31,26 @@ interface NotificationInternal extends NotifyOptions {
 }
 
 const DISMISSED_PREFIX = "notif_dismissed_";
+const RESET_VERSION_KEY = "notif_reset_version";
+
+const NOTIFICATION_RESET_VERSION = "2026-10-29-v1";
+
+function applyNotificationReset() {
+  try {
+    const stored = localStorage.getItem(RESET_VERSION_KEY);
+    if (stored === NOTIFICATION_RESET_VERSION) return;
+
+    Object.keys(localStorage)
+      .filter((k) => k.startsWith(DISMISSED_PREFIX))
+      .forEach((k) => localStorage.removeItem(k));
+
+    localStorage.setItem(RESET_VERSION_KEY, NOTIFICATION_RESET_VERSION);
+  } catch {
+    /* noop */
+  }
+}
+
+applyNotificationReset();
 
 function isDismissed(id: string): boolean {
   try {

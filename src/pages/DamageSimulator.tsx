@@ -879,13 +879,20 @@ const DamageSimulator = () => {
       }
 
       if (isAgentChanging) {
-        setHomeSession((prev) => ({
-          ...prev,
-          slotCalculatorStates: {
-            ...prev.slotCalculatorStates,
-            [slotIndex]: { ...defaultCalculatorState },
-          },
-        }));
+        setHomeSession((prev) => {
+          const prevSlotState =
+            prev.slotCalculatorStates[slotIndex] || defaultCalculatorState;
+          return {
+            ...prev,
+            slotCalculatorStates: {
+              ...prev.slotCalculatorStates,
+              [slotIndex]: {
+                ...defaultCalculatorState,
+                selectedEnemyId: prevSlotState.selectedEnemyId,
+              },
+            },
+          };
+        });
       }
 
       if (newBuildId === null) {
