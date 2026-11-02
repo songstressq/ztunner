@@ -400,6 +400,27 @@
       "notes": null
     },
     {
+      "id": "miasma_ravager_avarus",
+      "name": "Avarus",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Ether Mutants",
+      "description": "During combat, Miasma Ravager Avarus will use its massive body to perform rolling attacks. If you successfully counter this skill with Defensive Assists 3 times in a row, you can interrupt its rolling attack and expose its weakness. After taking a certain amount of DMG in battle, it will activate a Miasmic Field.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "stunDmgMultiplier": 0.5,
+        "fireResistance": -0.2,
+        "iceResistance": 0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": -0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
       "id": "etheric_other_truvia",
       "name": "Etheric Other - Truvia",
       "level": 60,

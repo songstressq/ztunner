@@ -18,7 +18,7 @@
       "source": "wEngine",
       "sourceId": "plume_of_rebirth",
       "label": "Hatching Day (W-Engine Passive)",
-      "description": "The equipper's Anomaly Proficiency is increasde. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's Fire DMG increases by a percentage for 20s. Repeated triggers reset the duration.",
+      "description": "The equipper's Anomaly Proficiency is increased. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's Fire DMG increases by a percentage for 20s. Repeated triggers reset the duration.",
       "shortDescription": "Increases the equipper's Anomaly Proficiency.",
       "target": "self",
       "wEngineOverclock": {
@@ -56,7 +56,7 @@
       "source": "wEngine",
       "sourceId": "plume_of_rebirth",
       "label": "Hatching Day (W-Engine Passive)",
-      "description": "The equipper's Anomaly Proficiency is increasde. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's Fire DMG increases by a percentage for 20s. Repeated triggers reset the duration.",
+      "description": "The equipper's Anomaly Proficiency is increased. When Anomaly DMG dealt by any squad member to an enemy triggers a critical hit, the equipper's Fire DMG increases by a percentage for 20s. Repeated triggers reset the duration.",
       "shortDescription": "Increases the equipper's Fire DMG for 20s.",
       "target": "self",
       "wEngineOverclock": {

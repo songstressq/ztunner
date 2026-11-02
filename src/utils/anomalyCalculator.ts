@@ -297,6 +297,7 @@ export function calculateVortexDamage({
   additionalMV = 0,
   isVortex = false,
   refringeCoefficient = 0,
+  damageBonuses,
 }: {
   attribute: AttributeType;
   slotAttribute: AttributeType;
@@ -314,10 +315,14 @@ export function calculateVortexDamage({
   additionalMV?: number;
   isVortex?: boolean;
   refringeCoefficient?: number;
+  damageBonuses?: CollectedBonuses;
 }): {
   multiplier: number;
   damage: number;
   realDamage: number;
+  realAnomalyCritDamage?: number;
+  anomalyCritDmgTotal?: number;
+  anomalyCritDmgOwner?: { agentId: string; displayName: string };
   dmgMod: number;
   buffMod: number;
   refringeMod: number;
@@ -377,10 +382,39 @@ export function calculateVortexDamage({
     true,
   );
 
+  // Phoenix
+  let realAnomalyCritDamage = 0;
+  let anomalyCritDmgTotal = 0;
+  let anomalyCritDmgOwner: { agentId: string; displayName: string } | undefined;
+  if (damageBonuses?.anomalyCritDmgTotal) {
+    anomalyCritDmgTotal = damageBonuses.anomalyCritDmgTotal;
+    anomalyCritDmgOwner = damageBonuses.anomalyCritDmgOwner;
+    realAnomalyCritDamage = calculateRealDamage(
+      Math.round(damageAfterStun * (1 + anomalyCritDmgTotal)),
+      attribute,
+      undefined,
+      "vortex",
+      "anomaly",
+      0,
+      `Vortex (${def.anomalyType}) (Phoenix CRIT)`,
+      undefined,
+      undefined,
+      true,
+      isVortex,
+      stats.penRatio || 0,
+      stats.pen || 0,
+      false,
+      true,
+    );
+  }
+
   return {
     multiplier: totalMultiplier,
     damage: Math.round(damageAfterStun),
     realDamage,
+    realAnomalyCritDamage,
+    anomalyCritDmgTotal,
+    anomalyCritDmgOwner,
     dmgMod,
     buffMod,
     refringeMod,

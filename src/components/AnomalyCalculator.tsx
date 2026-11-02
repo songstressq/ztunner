@@ -109,8 +109,6 @@ export default function AnomalyCalculator({
   const {
     disorderTimeRemaining,
     disorderSelectedAttribute,
-    vortexSourceSlot,
-    vortexTimeRemaining,
     aliceTimeRemaining,
     aliceDisorderSelectedAttribute,
     aliceAssaultSourceSlot,
@@ -131,17 +129,6 @@ export default function AnomalyCalculator({
     onCalculatorStateChange((prev) => ({
       ...prev,
       disorderSelectedAttribute: value,
-    }));
-  };
-
-  const setVortexSourceSlot = (slot: number | null) => {
-    onCalculatorStateChange((prev) => ({ ...prev, vortexSourceSlot: slot }));
-  };
-
-  const setVortexTimeRemaining = (value: number) => {
-    onCalculatorStateChange((prev) => ({
-      ...prev,
-      vortexTimeRemaining: value,
     }));
   };
 
@@ -301,7 +288,10 @@ export default function AnomalyCalculator({
     multiplier: 0,
     damage: 0,
     realDamage: 0,
-    previousAttribute: "—",
+    realAnomalyCritDamage: 0,
+    anomalyCritDmgTotal: 0,
+    anomalyCritDmgOwner: undefined,
+    previousAttribute: "---",
     totalBonusDamageUsed: 0,
     sourceAtk: 0,
   };
@@ -309,9 +299,6 @@ export default function AnomalyCalculator({
   const [disorderResult, setDisorderResult] =
     useState<any>(emptyDisorderResult);
   const [showDisorderSection, setShowDisorderSection] = useState(true);
-  const [showVortexSection, setShowVortexSection] = useState(true);
-  const [showBorrowedVortex, setShowBorrowedVortex] = useState(false);
-  const [vortexResult, setVortexResult] = useState<any>(null);
   const [selectedPreviousAttribute, setSelectedPreviousAttribute] = useState<
     AttributeType | string
   >(() => {
@@ -530,26 +517,6 @@ export default function AnomalyCalculator({
 
     return options;
   }, [teamSlotsInfo, currentSlotIndex, agent, definition, agentAttribute]);
-
-  const getWindSlotsOptions = useCallback(() => {
-    const options: Array<{
-      slotIndex: number;
-      agentName: string;
-      attribute: string;
-      label: string;
-    }> = [];
-    teamSlotsInfo?.forEach((slot) => {
-      if (slot.attribute?.toLowerCase() === "wind") {
-        options.push({
-          slotIndex: slot.slotIndex,
-          agentName: slot.agentName,
-          attribute: slot.attribute,
-          label: `Slot ${slot.slotIndex + 1}: ${slot.agentName} (Wind)`,
-        });
-      }
-    });
-    return options;
-  }, [teamSlotsInfo]);
 
   const getSourceStatsAndBonuses = useCallback(
     (sourceSlotIndex: number, attribute: AttributeType) => {
@@ -959,6 +926,7 @@ export default function AnomalyCalculator({
         additionalMV: 0,
         isVortex: true,
         refringeCoefficient: unifiedStats._refringeCoefficient || 0,
+        damageBonuses: sourceDamageBonuses,
       });
       setDisorderResult({
         timeRemaining: disorderTimeRemaining,
@@ -966,6 +934,9 @@ export default function AnomalyCalculator({
         multiplier: result.multiplier,
         damage: result.damage,
         realDamage: result.realDamage,
+        realAnomalyCritDamage: result.realAnomalyCritDamage ?? 0,
+        anomalyCritDmgTotal: result.anomalyCritDmgTotal ?? 0,
+        anomalyCritDmgOwner: result.anomalyCritDmgOwner,
         previousAttribute: selectedAttribute,
         totalBonusDamageUsed: sourceTotalBonusDamage,
         sourceAtk: sourceStats.atk,
@@ -1196,103 +1167,6 @@ export default function AnomalyCalculator({
     teamSlotsInfo,
     aliceDisorderSelectedAttribute,
     JSON.stringify(teamSlotsInfo?.map((s) => s.activeEffects)),
-  ]);
-
-  useEffect(() => {
-    if (
-      isWindAgent ||
-      vortexSourceSlot === null ||
-      !selectedEnemy ||
-      !unifiedStats
-    ) {
-      setVortexResult(null);
-      return;
-    }
-    const windSlotInfo = teamSlotsInfo?.find(
-      (s) => s.slotIndex === vortexSourceSlot,
-    );
-    if (!windSlotInfo?.stats || !windSlotInfo.agent) {
-      setVortexResult(null);
-      return;
-    }
-    const windStats = windSlotInfo.stats;
-    const windAgent = windSlotInfo.agent;
-    const windActiveEffects = windSlotInfo.activeEffects || {};
-    const windAllEffects = Object.keys(windActiveEffects)
-      .filter((id) => windActiveEffects[id]?.enabled)
-      .map((id) => ingameEffectsRegistry[id])
-      .filter(Boolean);
-    const windAnomalyBonuses = collectAnomalyBonuses(
-      windAllEffects,
-      windActiveEffects,
-      windStats,
-      windStats,
-      {},
-      {},
-      windAgent.id,
-      agentAttribute as AttributeType,
-    );
-    const windDamageBonuses = collectDamageBonuses(
-      windAllEffects,
-      windActiveEffects,
-      {},
-      {},
-      windStats,
-      {},
-      teamEffects,
-      windAgent.id,
-    );
-    const windElemBonus = windDamageBonuses.elements?.["wind"] || 0;
-    const windAttrBonus = windStats.attributeDmgBonus?.["wind"] || 0;
-    const totalElementBonus = windElemBonus + windAttrBonus;
-    const sourceBonuses = {
-      global: windDamageBonuses.global || 0,
-      elements: { wind: totalElementBonus },
-      skillTypes: windDamageBonuses.skillTypes || {},
-    };
-    const slotBonuses = {
-      vortexDmgBonus: anomalyBonuses?.vortexDmgBonus ?? 0,
-      vortexMultiplierBonus: anomalyBonuses?.vortexMultiplierBonus ?? 0,
-    };
-    const windTotalBonusDamage =
-      (windStats.attributeDmgBonus["wind"] ?? 0) +
-      (windDamageBonuses.global || 0) +
-      (windDamageBonuses.elements["wind"] || 0) +
-      (windAnomalyBonuses?.anomalyDmgBonus ?? 0);
-    const result = calculateVortexDamage({
-      attribute: agentAttribute as AttributeType,
-      slotAttribute: agentAttribute,
-      timeRemaining: vortexTimeRemaining,
-      stats: windStats,
-      enemy: selectedEnemy,
-      sourceBonuses,
-      slotBonuses,
-      stunMultiplier,
-      calculateRealDamage,
-      additionalMV: 0,
-      isVortex: true,
-    });
-    setVortexResult({
-      ...result,
-      sourceAgentName: windSlotInfo.agentName,
-      sourceAttribute: "wind",
-      timeRemaining: vortexTimeRemaining,
-      sourceAtk: windStats.atk,
-      totalBonusDamageUsed: windTotalBonusDamage,
-      dmgMod: result.dmgMod ?? 1,
-      buffMod: result.buffMod ?? 1,
-    });
-  }, [
-    isWindAgent,
-    vortexSourceSlot,
-    vortexTimeRemaining,
-    selectedEnemy,
-    unifiedStats,
-    teamSlotsInfo,
-    stunMultiplier,
-    calculateRealDamage,
-    agentAttribute,
-    anomalyBonuses,
   ]);
 
   const handleDisorderChange = (value: string) => {
@@ -2297,6 +2171,34 @@ export default function AnomalyCalculator({
                   {disorderResult.realDamage.toLocaleString()}
                 </div>
               </div>
+
+              {/* Phoenix CRIT DMG — Vortex */}
+              {isWindAgent && (disorderResult.anomalyCritDmgTotal ?? 0) > 0 && (
+                <div className="anomaly-grid-total-row">
+                  <div className="anomaly-row-cell step">▤</div>
+                  <div className="anomaly-row-cell calculation">
+                    <span className="total-label">Final Vortex CRIT DMG</span>
+                    <span className="total-target">
+                      {getPossessive(
+                        getCritOwnerDisplayName(
+                          disorderResult.anomalyCritDmgOwner,
+                        ),
+                      )}{" "}
+                      Vortex CRIT DMG:{" "}
+                      {(
+                        (disorderResult.anomalyCritDmgTotal ?? 0) * 100
+                      ).toFixed(0)}
+                      %
+                    </span>
+                  </div>
+                  <div className="anomaly-row-cell before" />
+                  <div className="anomaly-row-cell arrow">=</div>
+                  <div className="anomaly-row-cell after crit-value">
+                    {disorderResult.realAnomalyCritDamage?.toLocaleString() ??
+                      "0"}
+                  </div>
+                </div>
+              )}
             </div>
           ) : null}
         </div>
@@ -3674,344 +3576,6 @@ export default function AnomalyCalculator({
           </div>
         </div>
       )}
-
-      {/* ⭐ VORTEX "PRESTADO" - Para agentes no-Wind con aliado Wind */}
-      {showBorrowedVortex &&
-        !isWindAgent &&
-        getWindSlotsOptions().length > 0 && (
-          <div
-            className="anomaly_summary-main_wrapper"
-            style={{ marginTop: 16 }}
-          >
-            <div className="anomaly-grid-header">
-              <div className="anomaly-title-with-icon">
-                <span className="no-img-icon">🌪️</span>
-                <span className="anomaly-title-text">
-                  {" "}
-                  Vortex DMG (from Wind Ally){" "}
-                </span>
-              </div>
-            </div>
-            {/* Selector de fuente Wind */}
-            <div
-              className="disorder-selector-wrapper"
-              style={{ paddingBottom: 0 }}
-            >
-              <div className="disorder-selector-header">
-                <label>Select Wind Agent Source:</label>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "8px",
-                  padding: "4px 0",
-                }}
-              >
-                {getWindSlotsOptions().map((opt) => {
-                  const isSelected = vortexSourceSlot === opt.slotIndex;
-                  return (
-                    <button
-                      key={opt.slotIndex}
-                      className={`polarity-btn ${isSelected ? "active" : ""}`}
-                      onClick={() => setVortexSourceSlot(opt.slotIndex)}
-                      style={{
-                        padding: "6px 14px",
-                        fontFamily: "ZZZ",
-                        borderRadius: "8px",
-                        cursor: "pointer",
-                        transition: "all 0.3s",
-                        border: `2px solid ${
-                          isSelected
-                            ? agent.themeColor || "#7EFFDB"
-                            : "rgba(255,255,255,0.2)"
-                        }`,
-                        color: isSelected ? "#000" : "rgba(255,255,255,0.8)",
-                        background: isSelected
-                          ? agent.themeColor || "#7EFFDB"
-                          : "rgba(255,255,255,0.08)",
-                        boxShadow: isSelected
-                          ? `0 0 12px ${agent.themeColor || "#7EFFDB"}44`
-                          : "none",
-                        fontWeight: isSelected ? "bold" : "normal",
-                      }}
-                    >
-                      {opt.label}
-                    </button>
-                  );
-                })}
-                <button
-                  className={`polarity-btn ${vortexSourceSlot === null ? "active" : ""}`}
-                  onClick={() => setVortexSourceSlot(null)}
-                  style={{
-                    padding: "6px 14px",
-                    fontFamily: "ZZZ",
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                    transition: "all 0.3s",
-                    border: `2px solid ${
-                      vortexSourceSlot === null
-                        ? "#ff6b6b"
-                        : "rgba(255,255,255,0.2)"
-                    }`,
-                    color:
-                      vortexSourceSlot === null
-                        ? "#fff"
-                        : "rgba(255,255,255,0.8)",
-                    background:
-                      vortexSourceSlot === null
-                        ? "#ff6b6b"
-                        : "rgba(255,255,255,0.08)",
-                    boxShadow:
-                      vortexSourceSlot === null ? "0 0 12px #ff6b6b44" : "none",
-                    fontWeight: vortexSourceSlot === null ? "bold" : "normal",
-                  }}
-                >
-                  None
-                </button>
-              </div>
-            </div>
-            {/* Slider de tiempo */}
-            {vortexSourceSlot !== null && (
-              <>
-                <div className="disorder_slider_selector">
-                  <label>Time Remaining (Non-Wind Anomaly):</label>
-                  <div className="slider-container">
-                    <input
-                      type="range"
-                      min="0"
-                      max="10"
-                      step="0.5"
-                      value={vortexTimeRemaining}
-                      onChange={(e) =>
-                        setVortexTimeRemaining(Number(e.target.value))
-                      }
-                      style={
-                        {
-                          "--fill": `${(vortexTimeRemaining / 10) * 100}%`,
-                          "--theme": agent?.themeColor || "#ff4684",
-                        } as React.CSSProperties
-                      }
-                    />
-                    <span className="slider-value">
-                      {vortexTimeRemaining.toFixed(1)}s
-                    </span>
-                  </div>
-                  <div className="slider-time-passed">
-                    {" "}
-                    Time Passed:{" "}
-                    <strong>{(10 - vortexTimeRemaining).toFixed(1)}s</strong>
-                  </div>
-                </div>
-                {/* Grid de resultados del Vortex prestado */}
-                {vortexResult && (
-                  <div className="anomaly-grid" style={{ marginTop: 8 }}>
-                    <div className="anomaly-grid-header-row">
-                      <div className="anomaly-header-cell step">#</div>
-                      <div className="anomaly-header-cell calculation">
-                        {" "}
-                        Calculation{" "}
-                      </div>
-                      <div className="anomaly-header-cell before">Before</div>
-                      <div className="anomaly-header-cell arrow">→</div>
-                      <div className="anomaly-header-cell after">After</div>
-                    </div>
-                    <div className="anomaly-grid-row">
-                      <div className="anomaly-row-cell step">①</div>
-                      <div className="anomaly-row-cell calculation">
-                        <span className="calc-label">Previous Anomaly</span>
-                        <span className="calc-detail">
-                          {ANOMALY_DEFINITIONS[agentAttribute]?.anomalyType ||
-                            agentAttribute}
-                        </span>
-                      </div>
-                      <div className="anomaly-row-cell before">—</div>
-                      <div className="anomaly-row-cell arrow">→</div>
-                      <div className="anomaly-row-cell after highlight-ap">
-                        {ANOMALY_DEFINITIONS[agentAttribute]?.anomalyType ||
-                          agentAttribute}
-                      </div>
-                    </div>
-                    <div className="anomaly-grid-row">
-                      <div className="anomaly-row-cell step">②</div>
-                      <div className="anomaly-row-cell calculation">
-                        <span className="calc-label">Base Multiplier</span>
-                        <span className="calc-detail">
-                          {(() => {
-                            const def = ANOMALY_DEFINITIONS[agentAttribute];
-                            if (!def?.vortexFormula) return "—";
-                            const { base, perSecond, perTick } =
-                              def.vortexFormula;
-                            let formula = `${(base * 100).toFixed(0)}%`;
-                            if (perTick) {
-                              formula += ` + [t/0.5]*${(perTick * 100).toFixed(0)}%`;
-                            } else if (perSecond) {
-                              formula += ` + t*${(perSecond * 100).toFixed(0)}%`;
-                            }
-                            return formula;
-                          })()}
-                        </span>
-                      </div>
-                      <div className="anomaly-row-cell before">
-                        {`${(ANOMALY_DEFINITIONS[agentAttribute]?.vortexFormula?.base || 0) * 100}%`}
-                      </div>
-                      <div className="anomaly-row-cell arrow">×</div>
-                      <div className="anomaly-row-cell after highlight-ap">
-                        {(vortexResult.multiplier * 100).toFixed(1)}%
-                      </div>
-                    </div>
-                    <div className="anomaly-grid-row highlight-row">
-                      <div className="anomaly-row-cell step">③</div>
-                      <div className="anomaly-row-cell calculation">
-                        <span className="calc-label">Time Remaining</span>
-                        <span className="calc-detail">
-                          {vortexResult.timeRemaining.toFixed(1)}s / 10s
-                        </span>
-                      </div>
-                      <div className="anomaly-row-cell before">
-                        {(
-                          (vortexResult.sourceAtk ?? 0) *
-                          (ANOMALY_DEFINITIONS[agentAttribute]?.vortexFormula
-                            ?.base || 0)
-                        ).toLocaleString()}
-                      </div>
-                      <div className="anomaly-row-cell arrow">×</div>
-                      <div className="anomaly-row-cell after highlight-bonus">
-                        {vortexResult.multiplier.toFixed(2)}×
-                      </div>
-                    </div>
-                    <div className="anomaly-grid-row">
-                      <div className="anomaly-row-cell step">④</div>
-                      <div className="anomaly-row-cell calculation">
-                        <span className="calc-label">Base DMG</span>
-                        <span className="calc-detail">
-                          {" "}
-                          ATK × Total Multiplier{" "}
-                        </span>
-                      </div>
-                      <div className="anomaly-row-cell before">
-                        {Math.round(
-                          vortexResult.sourceAtk ?? 0,
-                        ).toLocaleString()}
-                      </div>
-                      <div className="anomaly-row-cell arrow">×</div>
-                      <div className="anomaly-row-cell after highlight-value">
-                        {Math.round(
-                          (vortexResult.sourceAtk ?? 0) *
-                            vortexResult.multiplier,
-                        ).toLocaleString()}
-                      </div>
-                    </div>
-                    {/* Paso ⑤: DMG% Mod */}
-                    {(() => {
-                      const beforeValue =
-                        (vortexResult.sourceAtk ?? 0) * vortexResult.multiplier;
-                      const dmgMod = vortexResult.dmgMod ?? 1;
-                      const withDMG = beforeValue * dmgMod;
-                      const dmgPercent =
-                        Math.round((dmgMod - 1) * 100 * 10) / 10;
-                      return (
-                        <div className="anomaly-grid-row">
-                          <div className="anomaly-row-cell step">⑤</div>
-                          <div className="anomaly-row-cell calculation">
-                            <span className="calc-label">DMG% Mod</span>
-                            <span className="calc-detail">
-                              {" "}
-                              +{dmgPercent.toFixed(1)}%{" "}
-                            </span>
-                          </div>
-                          <div className="anomaly-row-cell before">
-                            {Math.round(beforeValue).toLocaleString()}
-                          </div>
-                          <div className="anomaly-row-cell arrow">×</div>
-                          <div className="anomaly-row-cell after highlight-bonus">
-                            {Math.round(withDMG).toLocaleString()}
-                          </div>
-                        </div>
-                      );
-                    })()}
-                    {/* Paso ⑥: Vortex Bonus */}
-                    {(() => {
-                      const beforeValue =
-                        (vortexResult.sourceAtk ?? 0) * vortexResult.multiplier;
-                      const dmgMod = vortexResult.dmgMod ?? 1;
-                      const withDMG = beforeValue * dmgMod;
-                      const buffMod = vortexResult.buffMod ?? 1;
-                      const withBuff = withDMG * buffMod;
-                      const buffPercent =
-                        Math.round((buffMod - 1) * 100 * 10) / 10;
-                      return (
-                        <div className="anomaly-grid-row">
-                          <div className="anomaly-row-cell step">⑥</div>
-                          <div className="anomaly-row-cell calculation">
-                            <span className="calc-label">Vortex Bonus</span>
-                            <span className="calc-detail">
-                              {" "}
-                              +{buffPercent.toFixed(1)}%{" "}
-                            </span>
-                          </div>
-                          <div className="anomaly-row-cell before">
-                            {Math.round(withDMG).toLocaleString()}
-                          </div>
-                          <div className="anomaly-row-cell arrow">×</div>
-                          <div className="anomaly-row-cell after highlight-bonus">
-                            {Math.round(withBuff).toLocaleString()}
-                          </div>
-                        </div>
-                      );
-                    })()}
-                    {stunMultiplier > 0 && (
-                      <div className="anomaly-grid-row stun-row">
-                        <div className="anomaly-row-cell step">⑦</div>
-                        <div className="anomaly-row-cell calculation">
-                          <span className="calc-label">Stun</span>
-                          <span className="calc-detail">
-                            {" "}
-                            +{stunMultiplier}%{" "}
-                          </span>
-                        </div>
-                        <div className="anomaly-row-cell before">
-                          {Math.round(
-                            (vortexResult.sourceAtk ?? 0) *
-                              vortexResult.multiplier *
-                              (1 + vortexResult.totalBonusDamageUsed),
-                          ).toLocaleString()}
-                        </div>
-                        <div className="anomaly-row-cell arrow">×</div>
-                        <div className="anomaly-row-cell after highlight-stun">
-                          {Math.round(
-                            (vortexResult.sourceAtk ?? 0) *
-                              vortexResult.multiplier *
-                              (1 + vortexResult.totalBonusDamageUsed) *
-                              (1 + stunMultiplier / 100),
-                          ).toLocaleString()}
-                        </div>
-                      </div>
-                    )}
-                    <div className="anomaly-grid-total-row">
-                      <div className="anomaly-row-cell step">☑</div>
-                      <div className="anomaly-row-cell calculation">
-                        <span className="total-label">
-                          {" "}
-                          Final Vortex DMG (from {vortexResult.sourceAgentName})
-                        </span>
-                        <span className="total-target">
-                          {" "}
-                          vs {selectedEnemy.name}{" "}
-                        </span>
-                      </div>
-                      <div className="anomaly-row-cell before" />
-                      <div className="anomaly-row-cell arrow">=</div>
-                      <div className="anomaly-row-cell after total-value">
-                        {vortexResult.realDamage.toLocaleString()}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        )}
     </div>
   );
 }

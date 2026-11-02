@@ -50,8 +50,6 @@ export interface CalculatorUIState {
   skillLevel: number;
   disorderSelectedAttribute: string;
   disorderTimeRemaining: number;
-  vortexSourceSlot: number | null;
-  vortexTimeRemaining: number;
   aliceDisorderSelectedAttribute: string;
   aliceTimeRemaining: number;
   aliceAssaultSourceSlot: number | null;
@@ -82,8 +80,6 @@ export const defaultCalculatorState: CalculatorUIState = {
   skillLevel: 11,
   disorderSelectedAttribute: "",
   disorderTimeRemaining: 10,
-  vortexSourceSlot: null,
-  vortexTimeRemaining: 10,
   aliceDisorderSelectedAttribute: "",
   aliceTimeRemaining: 10,
   aliceAssaultSourceSlot: null,

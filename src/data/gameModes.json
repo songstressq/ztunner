@@ -152,30 +152,28 @@
           "effects": [
             {
               "id": "game_mode_sd_room1_effect_a",
-              "label": "Shiyu Defense: Metamorphosed - Scorpse",
-              "description": "Agent Sharp DMG increases by 20%. After defeating normal enemies, Agents with the Stun specialty restore 15 energy. ...",
-              "shortDescription": "All squad members' Sharp DMG is increased by 20%.",
+              "label": "Shiyu Defense: Miasma Ravager - Avarus",
+              "description": "Anomaly specialty Agents' Fire DMG is increased by 20%. ...",
+              "shortDescription": "Anomaly Agents' Fire DMG is increased by 20%.",
               "source": "gameMode",
               "target": "team",
-              "damageBonuses": [{ "type": "sharpDmg", "value": 0.2 }]
+              "damageBonuses": [
+                {
+                  "type": "element",
+                  "element": "fire",
+                  "value": 0.35
+                }
+              ],
+              "condition": { "requiresSpecialty": "Anomaly" }
             },
             {
               "id": "game_mode_sd_room1_effect_b",
-              "label": "Shiyu Defense: Metamorphosed - Scorpse",
-              "description": "... When Agents' Basic Attack, Special Attack, and Ultimate hit enemies, PEN Ratio increases by 10%. If the enemy is Stunned, ignore 15% of their Electric RES. ...",
-              "shortDescription": "All squad members' PEN Ratio is increased by 10%.",
+              "label": "Shiyu Defense: Miasma Ravager - Avarus",
+              "description": "... When an Agent deals Attribute Anomaly DMG and triggers a critical hit, the squad recovers 20 Energy, and Attribute Anomaly DMG increases by 30% for 20s. This effect can trigger once evert 20s. ...",
+              "shortDescription": "All squad members' Anomaly DMG is increased by 30% for 20s.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "penRatio": 0.1 }
-            },
-            {
-              "id": "game_mode_sd_room1_effect_c",
-              "label": "Shiyu Defense: Metamorphosed - Scorpse",
-              "description": "... When Agents' Basic Attack, Special Attack, and Ultimate hit enemies, PEN Ratio increases by 10%. If the enemy is Stunned, ignore 15% of their Electric RES. ...",
-              "shortDescription": "All squad members' DMG ignores 15% of the target's Electric RES.",
-              "source": "gameMode",
-              "target": "team",
-              "flat": { "electricResShred": 0.15 }
+              "perStack": { "anomalyDmgBonus": 0.3 }
             }
           ]
         },
@@ -185,21 +183,12 @@
           "effects": [
             {
               "id": "game_mode_sd_room2_effect_a",
-              "label": "Shiyu Defense: Miasmic - Thracian",
-              "description": "If there are 2/3 Agents with the Anomaly specialty in your squad, Attribute Anomaly DMG dealt by Agents increases by 10%/60%, and the whole squad initially gains 500/1,500 Decibels upon entering combat. ...",
-              "shortDescription": "With 2 Anomaly Agents in the squad, all squad members' DMG from Attribute Anomalies is increased by 10%.",
+              "label": "Shiyu Defense: Lockspring",
+              "description": "Agents' Sharp DMG increased by 20%, and DEF increases by 20%. ...",
+              "shortDescription": "All squad members' Sharp DMG is increased by 20%, and their DEF is increased by 20%.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.1 }
-            },
-            {
-              "id": "game_mode_sd_room2_effect_b",
-              "label": "Shiyu Defense: Miasmic - Thracian",
-              "description": "If there are 2/3 Agents with the Anomaly specialty in your squad, Attribute Anomaly DMG dealt by Agents increases by 10%/60%, and the whole squad initially gains 500/1,500 Decibels upon entering combat. ...",
-              "shortDescription": "With 3 Anomaly Agents in the squad, all squad members' DMG from Attribute Anomalies is increased by 60%.",
-              "source": "gameMode",
-              "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.6 }
+              "perStack": { "sharpDmgBonus": 0.2, "defPercentRaw": 0.2 }
             }
           ]
         },
@@ -209,43 +198,25 @@
           "effects": [
             {
               "id": "game_mode_sd_room3_effect_a",
-              "label": "Shiyu Defense: Sacrifice - Covenant Guardian",
-              "description": "Agent Fire DMG and Ether DMG increase by 15%, and Sheer DMG increases by 15%. ...",
-              "shortDescription": "All squad members' Fire DMG and Ether DMG is increased by 15%, and their Sheer DMG is increased by 15%.",
+              "label": "Shiyu Defense: Miasmic Komano Manato",
+              "description": "Attack specialty Agents' Ether DMG and Ice DMG increase by 20%, and CRIT DMG increases by 40%. ...",
+              "shortDescription": "Attack Agents' Ether DMG and Ice DMG is increased by 20%, and ther CRIT DMG is increased by 40%.",
               "source": "gameMode",
-              "target": "team",
-              "damageBonuses": [
-                { "type": "element", "element": "fire", "value": 0.15 },
-                { "type": "element", "element": "ether", "value": 0.15 },
-                { "type": "sheerDmg", "value": 0.15 }
-              ]
-            },
-            {
-              "id": "game_mode_sd_room3_effect_b",
-              "source": "gameMode",
-              "sourceId": "game_mode_sd_room3_effect_b",
-              "label": "Shiyu Defense: Sacrifice - Covenant Guardian",
-              "description": "... Agent Ultimate DMG increases by 30%. When an Ultimate attack hits an enemy, it ignores 10% of the target's All-Attribute RES. ...",
-              "shortDescription": "All squad members' Ultimate DMG is increased by 30%, and it ignores 10% of the target's All-Attribute RES.",
               "target": "team",
               "damageBonuses": [
                 {
-                  "type": "skillType",
-                  "skillType": "ultimate",
-                  "value": 0.3
+                  "type": "element",
+                  "element": "ether",
+                  "value": 0.2
+                },
+                {
+                  "type": "element",
+                  "element": "ice",
+                  "value": 0.2
                 }
               ],
-              "flat": {
-                "fireResShred": 0.1,
-                "iceResShred": 0.1,
-                "electricResShred": 0.1,
-                "physicalResShred": 0.1,
-                "etherResShred": 0.1,
-                "windResShred": 0.1
-              },
-              "condition": {
-                "skillTypes": ["ultimate"]
-              }
+              "flat": { "critDmg": 0.4 },
+              "condition": { "requiresSpecialty": "Attack" }
             }
           ]
         }
