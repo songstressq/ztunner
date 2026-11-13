@@ -17,6 +17,7 @@ export const MAIN_STATS_BY_SLOT = {
     "Fire DMG Bonus%",
     "Physical DMG Bonus%",
     "Electric DMG Bonus%",
+    "Wind DMG Bonus%",
   ],
 
   6: ["HP%", "ATK%", "DEF%", "Anomaly Mastery%", "Impact%", "Energy Regen%"],

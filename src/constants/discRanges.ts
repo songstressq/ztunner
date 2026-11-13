@@ -16,6 +16,7 @@ export const MAIN_RANGES_S = {
   "Ether DMG Bonus%": { min: 0.075, max: 0.3 },
   "Electric DMG Bonus%": { min: 0.075, max: 0.3 },
   "Ice DMG Bonus%": { min: 0.075, max: 0.3 },
+  "Wind DMG Bonus%": { min: 0.075, max: 0.3 },
   "Impact%": { min: 0.045, max: 0.18 },
   "Energy Regen%": { min: 0.15, max: 0.6 },
 } as const;

@@ -13,6 +13,7 @@ export type StatKey =
   | "PEN"
   | "Fire DMG Bonus%"
   | "Physical DMG Bonus%"
+  | "Electric DMG Bonus%"
   | "Ether DMG Bonus%"
   | "Ice DMG Bonus%"
   | "Wind DMG Bonus%"

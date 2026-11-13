@@ -134,6 +134,8 @@ export function applyDiscToCombatStats(combat: any, disc: DriveDisc) {
       case "Ether DMG Bonus%":
       case "Ice DMG Bonus%":
       case "Physical DMG Bonus%":
+      case "Electric DMG Bonus%":
+      case "Wind DMG Bonus%":
         combat.attributeDmgBonus += s.value;
         break;
     }
