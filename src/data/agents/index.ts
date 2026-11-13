@@ -44,6 +44,7 @@ import seed from "./attack/seed.json"; //ok
 import seth from "./defense/seth_lowell.json"; //ok
 import sigrid from "./attack/sigrid_de_lazur.json";
 import sanby from "./attack/soldier_0_anby.json"; //ok
+import severian from "./attack/severian_lowell.json";
 import soldier_11 from "./attack/soldier_11.json"; //ok
 import soukaku from "./support/soukaku.json"; //ok
 import silly from "./rupture/starlight_billy_kid.json"; //ok
@@ -113,6 +114,7 @@ export const agents: Agent[] = [
   seth as Agent, //✅  NOTE: M6 needs in game testing?
   sigrid as Agent, //✅
   sanby as Agent, //✅
+  severian as Agent,
   soldier_11 as Agent, //✅
   soukaku as Agent, //✅
   silly as Agent, //✅

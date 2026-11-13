@@ -1075,6 +1075,48 @@
       },
       "notes": null
     },
+    {
+      "id": "airspace_sentinel",
+      "name": "Airspace Sentinel",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "The Airspace Sentinel will expose its core when performing certain moves or after an Agent successfully parries specific moves. Attacking the exposed core deals additional damage and triggers Impaired.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "stunDmgMultiplier": 0.5,
+        "fireResistance": 0.0,
+        "iceResistance": -0.2,
+        "electricResistance": 0.0,
+        "physicalResistance": 0.0,
+        "etherResistance": 0.2,
+        "windResistance": -0.2,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
+    {
+      "id": "miasmic_doppelganger_the_defector",
+      "name": "Miasmic - Doppelganger - The Defector",
+      "level": 60,
+      "type": "boss",
+      "enemyType": "Specials",
+      "description": "In combat, this enemy uses identical skills to those of their target, launching fierce attacks with blades and guns. After taking a certain amount of DMG, they activates Miasmic Field and unleash powerful, swift piercing attacks.",
+      "stats": {
+        "def": 953,
+        "defBase": 953,
+        "stunDmgMultiplier": 0.25,
+        "fireResistance": -0.2,
+        "iceResistance": 0.0,
+        "electricResistance": 0.0,
+        "physicalResistance": -0.2,
+        "etherResistance": 0.2,
+        "windResistance": 0.0,
+        "critResistance": 0.0
+      },
+      "notes": null
+    },
 
     {
       "id": "mirage_archer_unit",

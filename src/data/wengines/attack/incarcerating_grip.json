@@ -1,0 +1,92 @@
+{
+  "id": "incarcerating_grip",
+  "name": "Incarcerating Grip",
+  "rarity": "S",
+  "specialty": "Attack",
+
+  "baseStatType": "ATK",
+  "advancedStatType": "CRIT Rate%",
+
+  "stats": {
+    "base": 713,
+    "advanced": 0.24
+  },
+
+  "ingameEffects": [
+    {
+      "id": "incarcerating_grip-evil_caught_within-crit_rate",
+      "source": "wEngine",
+      "sourceId": "incarcerating_grip",
+      "label": "Evil Caught Within (W-Engine Passive)",
+      "description": "The equipper's CRIT Rate is increased. When the equipper's Basic Attack hits an enemy, their ATK increases by a percentage, and their DMG ignores a portion of the target's Wind RES for 16s.",
+      "shortDescription": "The equipper's CRIT Rate is increased.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "critRate": 0.2 }
+          },
+          {
+            "level": 2,
+            "stats": { "critRate": 0.23 }
+          },
+          {
+            "level": 3,
+            "stats": { "critRate": 0.26 }
+          },
+          {
+            "level": 4,
+            "stats": { "critRate": 0.29 }
+          },
+          {
+            "level": 5,
+            "stats": { "critRate": 0.32 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    },
+
+    {
+      "id": "incarcerating_grip-evil_caught_within-atk_percent_wind_res_shred",
+      "source": "wEngine",
+      "sourceId": "incarcerating_grip",
+      "label": "Evil Caught Within (W-Engine Passive)",
+      "description": "The equipper's CRIT Rate is increased. When the equipper's Basic Attack hits an enemy, their ATK increases by a percentage, and their DMG ignores a portion of the target's Wind RES for 16s.",
+      "shortDescription": "The equipper's ATK is increased, and their DMG ignores a percentage of the target's Wind RES fpr 16s.",
+      "target": "self",
+      "wEngineOverclock": {
+        "levels": [
+          {
+            "level": 1,
+            "stats": { "atkPercentRaw": 0.1, "windResShred": 0.15 }
+          },
+          {
+            "level": 2,
+            "stats": { "atkPercentRaw": 0.115, "windResShred": 0.173 }
+          },
+          {
+            "level": 3,
+            "stats": { "atkPercentRaw": 0.13, "windResShred": 0.195 }
+          },
+          {
+            "level": 4,
+            "stats": { "atkPercentRaw": 0.145, "windResShred": 0.218 }
+          },
+          {
+            "level": 5,
+            "stats": { "atkPercentRaw": 0.16, "windResShred": 0.24 }
+          }
+        ],
+        "stackMultiplier": false
+      },
+      "condition": {
+        "requiresSpecialty": "Attack"
+      }
+    }
+  ]
+}

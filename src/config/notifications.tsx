@@ -20,14 +20,13 @@ export const siteNotifications: SiteNotification[] = [
     theme: "#8891f0",
   },
   {
-    id: "notification_phoenix_anomaly",
-    title: "UPDATED: Phoenix Reffaella",
-    message:
-      "Phoenix's Anomaly CRIT DMG is now consistent with her in-game mechanics, including its interaction with Jane's Assault CRIT DMG.",
+    id: "notification_severian_lowell",
+    title: "ADDED: SEVERIAN LOWELL",
+    message: "Severian and his W-Engine are now available in Z-Tunner.",
     type: "info",
     duration: 10000,
     delay: 3000,
-    theme: "#FC5858",
+    theme: "#4461d4",
   },
   // {
   //   id: "changelog_v1_2",

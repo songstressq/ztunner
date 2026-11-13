@@ -44,6 +44,7 @@ import ode_of_resurrected_wings from "./anomaly/ode_of_resurrected_wings.json"; 
 import crimson_moon_casket from "./stun/crimson_moon_casket.json";
 import cordis_germina from "./attack/cordis_germina.json"; //Seed
 import peacekeeper_specialized from "./defense/peacekeeper_specialized.json"; //Seth
+import incarcerating_grip from "./attack/incarcerating_grip.json"; //Severian
 import knights_extolment from "./attack/knights_extolment.json"; //sigrid
 import severed_innocence from "./attack/severed_innocence.json"; //Soldier 0 - Anby
 import the_brimstone from "./attack/the_brimstone.json"; //Soldier 11
@@ -134,6 +135,7 @@ export const wEngines: WEngine[] = [
   crimson_moon_casket as WEngine,
   cordis_germina as WEngine, //✅
   peacekeeper_specialized as WEngine,
+  incarcerating_grip as WEngine,
   knights_extolment as WEngine,
   severed_innocence as WEngine, //✅
   the_brimstone as WEngine, //✅

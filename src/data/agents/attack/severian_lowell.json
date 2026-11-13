@@ -1,0 +1,571 @@
+{
+  "id": "severian",
+  "name": "Severian Lowell",
+  "specialty": "Attack",
+  "faction": "Metropolitan Order Division",
+  "attribute": "Wind",
+  "rarity": "S",
+
+  "fullName": "Severian Lowell",
+  "displayName": "Severian",
+  "attributeIcon": "Wind",
+
+  "themeColor": "#4461d4",
+
+  "skins": [
+    { "id": "default", "img": "severian.png" },
+    { "id": "solemnly_impeccable", "img": "severian-solemnly_impeccable.png" }
+  ],
+
+  "baseStats": {
+    "hp": 7826,
+    "atk": 858,
+    "def": 606
+  },
+
+  "combatBase": {
+    "impact": 94,
+    "critRate": 0.05,
+    "critDmg": 0.5,
+    "anomalyProficiency": 90,
+    "anomalyMastery": 91,
+    "penRatio": 0,
+    "pen": 0,
+    "energyRegen": 1.2,
+
+    "attributeDmgBonus": {
+      "fire": 0,
+      "ice": 0,
+      "electric": 0,
+      "physical": 0,
+      "ether": 0,
+      "wind": 0
+    }
+  },
+
+  "recommendedStats": {
+    "className": "stat-recommended",
+    "stats": ["CRIT Rate", "CRIT DMG", "ATK"]
+  },
+
+  "coreEnhancement": [
+    { "level": 0, "stats": { "atkFlat": 0, "critDmg": 0 } },
+    { "level": 1, "stats": { "atkFlat": 0, "critDmg": 0.096 } },
+    { "level": 2, "stats": { "atkFlat": 25, "critDmg": 0 } },
+    { "level": 3, "stats": { "atkFlat": 0, "critDmg": 0.096 } },
+    { "level": 4, "stats": { "atkFlat": 25, "critDmg": 0 } },
+    { "level": 5, "stats": { "atkFlat": 0, "critDmg": 0.096 } },
+    { "level": 6, "stats": { "atkFlat": 25, "critDmg": 0 } }
+  ],
+
+  "ingameEffects": [
+    {
+      "id": "severian_lowell-core-endless_breeze_1",
+      "source": "core",
+      "sourceId": "severian_lowell-core",
+      "label": "Endless Breeze (Core Passive)",
+      "description": "Severian's CRIT DMG increases by 60%, and his DMG increases by 25%. If there is another Wind character in the squad, his DMG increases by an additional 30%. ...",
+      "shortDescription": "Severian's CRIT DMG is increased by 60%, and his DMG is increased by 25%.",
+      "target": "self",
+      "flat": { "critDmg": 0.6 },
+      "damageBonuses": [{ "type": "global", "value": 0.25 }]
+    },
+    {
+      "id": "severian_lowell-core-endless_breeze_2",
+      "source": "core",
+      "sourceId": "severian_lowell-core",
+      "label": "Endless Breeze (Core Passive)",
+      "description": "Severian's CRIT DMG increases by 60%, and his DMG increases by 25%. If there is another Wind character in the squad, his DMG increases by an additional 30%. ...",
+      "shortDescription": "Severian's DMG is further increased by 30%.",
+      "target": "self",
+      "damageBonuses": [{ "type": "global", "value": 0.3 }]
+    },
+    {
+      "id": "severian_lowell-core-optimal_setup",
+      "source": "core",
+      "sourceId": "severian_lowell-core",
+      "label": "Optimal Setup (Core Passive)",
+      "description": "When another character in your squad is a Support or Stun character, or shares the same faction:\n\nFor every 1% CRIT Rate Severian has, his ATK increases by 8.5. This effect is capped at 100% CRIT Rate.",
+      "shortDescription": "Severian's DMG is further increased by 30%.",
+      "target": "self",
+      "conditional": {
+        "type": "currentStatBased",
+        "basedOn": "critRate",
+        "threshold": 0,
+        "perUnit": 1,
+        "perUnitBonus": 8.5,
+        "maxBonus": 850,
+        "affectedStats": ["atkFlatRaw"]
+      }
+    },
+    {
+      "id": "severian_lowell-mindscape_1-double_espresso",
+      "source": "mindscape",
+      "sourceId": "severian_lowell-mindscape_1",
+      "label": "Double Espresso (Mindscape Cinema N°1)",
+      "description": "When Severian uses a Chain Attack, the accumulated Flow increases to 50. When Severian switches in through Entry Skill: Clear Out, the skill is replaced with a Chain Attack. The entry type is not changed, and it is treated as a non-heavy attack. This effect can trigger once every 60s. Each time Severian uses Basic Attack: Azure Wind's Shadowhunt, he gains 1 stack of Windborne. When Severian's attacks hit a target, they ignore 15% of the target's Wind RES.",
+      "shortDescription": "Severian's DMG ignores 15% of the target's Wind RES.",
+      "target": "self",
+      "flat": {
+        "windResShred": 0.15
+      }
+    },
+    {
+      "id": "severian_lowell-mindscape_2-reins_of_reason",
+      "source": "mindscape",
+      "sourceId": "severian_lowell-mindscape_2",
+      "label": "Reins of Reason (Mindscape Cinema N°2)",
+      "description": "When Severian enters the battlefield, he recovers 150 Flow. In Investigation Zone mode, this effect can trigger once every 180s. When Severian triggers a Perfect Dodge or uses Basic Attack: Azure Wind's Shadowhunt, his PEN Ratio increases by 20% for 25s.",
+      "shortDescription": "Severian's PEN Ratio is increased by 25% for 25s.",
+      "target": "self",
+      "flat": { "penRatio": 0.2 }
+    },
+    {
+      "id": "severian_lowell-mindscape_4-between_light_and_shadow",
+      "source": "mindscape",
+      "sourceId": "severian_lowell-mindscape_4",
+      "label": "Between Light and Shadow (Mindscape Cinema N°4)",
+      "description": "When Severian enters combat or switches on-field, his ATK increases by 10% for 30s. Repeated triggers reset the duration. When Severian uses Basic Attack: Raging Whirlwind or Basic Attack: Azure Wind's Shadowhunt, his Decibel Generation Rate increases by 10% for 15s.",
+      "shortDescription": "Severian's ATK is increased by 10% for 30s.",
+      "target": "self",
+      "flat": { "atkPercentRaw": 0.1 }
+    },
+    {
+      "id": "severian_lowell-mindscape_6-beneath_a_little_star",
+      "source": "mindscape",
+      "sourceId": "severian_lowell-mindscape_6",
+      "label": "Beneath a Little Star (Mindscape Cinema N°6)",
+      "description": "Severian's max Flow increases to 180, and the Flow gained when entering the battlefield increases to 180. The additional DMG Multiplier of the final hit of Basic Attack: Azure Wind's Shadowhunt is increased by a fixed 350%. Upon using the final hit of Basic Attack: Azure Wind's Shadowhunt, Severian gains Windrise: Accumulates 5 Flow per second for 5s. Repeated triggers reset the duration.",
+      "shortDescription": "This Mindscape Cinema does not affect Severian's stats.",
+      "infoOnly": true
+    }
+  ],
+
+  "skills": {
+    "basicAttacks": [
+      {
+        "id": "severian_lowell-basic_attack-swift_edge",
+        "name": "Swift Edge (Basic Attack)",
+        "description": "Press [BASIC] to activate:\n\nLaunches up to 4 attacks forward, dealing Wind DMG.\n\nWhen the 4th attack hits an enemy, it accumulates 20 /bFlow//b. The 4th attack can dodge enemy attacks upon the moment of activation.\n\nUpon successfully dodging an enemy attack, this /bBasic Attack//b's DMG Multiplier and Daze Multiplier are increased to those of /bBasic Attack: Raging Whirlwind//b, and an additional 15 /bFlow//b is accumulated. Character is invulnerable during the 4th attack.\n\nWhen Severian uses a /bDash Attack//b, /bDodge Counter//b, or /bDodge: Spontaneity//b during a /bBasic Attack//b combo, it does not interrupt the /bBasic Attack//b combo count.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "1st Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "2nd Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "3rd Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "4th Hit DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "4th Attack Successful Perfect Dodge DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [65.4, 106.6, 178.0, 241.6, 338.2] },
+          { "level": 2, "multipliers": [71.4, 116.3, 194.2, 263.6, 369.0] },
+          { "level": 3, "multipliers": [77.4, 126.0, 210.4, 285.6, 399.8] },
+          { "level": 4, "multipliers": [83.4, 135.7, 226.6, 307.6, 430.6] },
+          { "level": 5, "multipliers": [89.4, 145.4, 242.8, 329.6, 461.4] },
+          { "level": 6, "multipliers": [95.4, 155.1, 259.0, 351.6, 492.2] },
+          { "level": 7, "multipliers": [101.4, 164.8, 275.2, 373.6, 523.0] },
+          { "level": 8, "multipliers": [107.4, 174.5, 291.4, 395.6, 553.8] },
+          { "level": 9, "multipliers": [113.4, 184.2, 307.6, 417.6, 584.6] },
+          { "level": 10, "multipliers": [119.4, 193.9, 323.8, 439.6, 615.4] },
+          { "level": 11, "multipliers": [125.4, 203.6, 340.0, 461.6, 646.2] },
+          { "level": 12, "multipliers": [131.4, 213.3, 356.2, 483.6, 677.0] },
+          { "level": 13, "multipliers": [137.4, 223.0, 372.4, 505.6, 707.8] },
+          { "level": 14, "multipliers": [143.4, 232.7, 388.6, 527.6, 738.6] },
+          { "level": 15, "multipliers": [149.4, 242.4, 404.8, 549.6, 769.4] },
+          { "level": 16, "multipliers": [155.4, 252.1, 421.0, 571.6, 800.2] }
+        ]
+      },
+
+      {
+        "id": "severian_lowell-basic_attack-raging_whirlwind",
+        "name": "Raging Whirlwind (Basic Attack)",
+        "description": "Automatically activates when Severian is attacked at the moment he launches the first three attacks of his /bBasic Attack//b, or when he has /bShadowflash//b and is hit by a non-Control Skill enemy attack while not invulnerable:\n\nDashes forward, dealing massive Wind DMG to enemies in an area ahead. Upon activating this skill, accumulates 15 /bFlow//b. Upon hitting an enemy, an additional 20 /bFlow//b is accumulated.\n\nHold [BASIC] while activating this skill to quickly launch /bBasic Attack: Azure Wind's Shadowhunt//b. When the final hit of /bBasic Attack: Azure Wind's Shadowhunt//b is unleashed, it accumulates 20 /bFlow//b. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [338.2] },
+          { "level": 2, "multipliers": [369.0] },
+          { "level": 3, "multipliers": [399.8] },
+          { "level": 4, "multipliers": [430.6] },
+          { "level": 5, "multipliers": [461.4] },
+          { "level": 6, "multipliers": [492.2] },
+          { "level": 7, "multipliers": [523.0] },
+          { "level": 8, "multipliers": [553.8] },
+          { "level": 9, "multipliers": [584.6] },
+          { "level": 10, "multipliers": [615.4] },
+          { "level": 11, "multipliers": [646.2] },
+          { "level": 12, "multipliers": [677.0] },
+          { "level": 13, "multipliers": [707.8] },
+          { "level": 14, "multipliers": [738.6] },
+          { "level": 15, "multipliers": [769.4] },
+          { "level": 16, "multipliers": [800.2] }
+        ]
+      },
+
+      {
+        "id": "severian_lowell-basic_attack-azure_winds_shadowhunt",
+        "name": "Azure Wind's Shadowhunt (Basic Attack)",
+        "description": "With enough /bFlow//b, hold [BASIC] to consume 100 /bFlow//b and activate:\n\nDodges backward and charges up, then continuously darts around the field while unleashing slashes, dealing massive Wind DMG to enemies in an area in front. The backward dodge can dodge enemy attacks.\n\nSuccessfully dodging an enemy attack triggers /bVital View//b and accumulates 15 Flow. Character is invulnerable while using this skill.",
+        "skillType": "basic",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [2027.7] },
+          { "level": 2, "multipliers": [2212.1] },
+          { "level": 3, "multipliers": [2396.5] },
+          { "level": 4, "multipliers": [2580.9] },
+          { "level": 5, "multipliers": [2765.3] },
+          { "level": 6, "multipliers": [2949.7] },
+          { "level": 7, "multipliers": [3134.1] },
+          { "level": 8, "multipliers": [3318.5] },
+          { "level": 9, "multipliers": [3502.9] },
+          { "level": 10, "multipliers": [3687.3] },
+          { "level": 11, "multipliers": [3871.7] },
+          { "level": 12, "multipliers": [4056.1] },
+          { "level": 13, "multipliers": [4240.5] },
+          { "level": 14, "multipliers": [4424.9] },
+          { "level": 15, "multipliers": [4609.3] },
+          { "level": 16, "multipliers": [4793.7] }
+        ]
+      }
+    ],
+
+    "dashAttacks": [
+      {
+        "id": "severian_lowell-dash_attack-sheer_assault",
+        "name": "Sheer Assault (Dash Attack)",
+        "description": "Press [BASIC] during a dodge to activate:\n\nLaunches an attack forward, dealing Wind DMG.",
+        "skillType": "dash",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [107.4] },
+          { "level": 2, "multipliers": [117.2] },
+          { "level": 3, "multipliers": [127.0] },
+          { "level": 4, "multipliers": [136.8] },
+          { "level": 5, "multipliers": [146.6] },
+          { "level": 6, "multipliers": [156.4] },
+          { "level": 7, "multipliers": [166.2] },
+          { "level": 8, "multipliers": [176.0] },
+          { "level": 9, "multipliers": [185.8] },
+          { "level": 10, "multipliers": [195.6] },
+          { "level": 11, "multipliers": [205.4] },
+          { "level": 12, "multipliers": [215.2] },
+          { "level": 13, "multipliers": [225.0] },
+          { "level": 14, "multipliers": [234.8] },
+          { "level": 15, "multipliers": [244.6] },
+          { "level": 16, "multipliers": [254.4] }
+        ]
+      }
+    ],
+
+    "dodgeCounters": [
+      {
+        "id": "severian_lowell-dodge_counter-fatal_end",
+        "name": "Fatal End (Dodge Counter)",
+        "description": "When /bDodge: Windshift//b triggers a [COUNTER], press [BASIC] to activate:\n\nLaunches a quick slash forward, dealing Wind DMG. If switched off-field immediately after triggering a /bPerfect Dodge//b with /bDodge: Windshift//b, this skill is activated automatically. Character is invulnerable while using this skill.",
+        "skillType": "counter",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [306.9] },
+          { "level": 2, "multipliers": [334.8] },
+          { "level": 3, "multipliers": [362.7] },
+          { "level": 4, "multipliers": [390.6] },
+          { "level": 5, "multipliers": [418.5] },
+          { "level": 6, "multipliers": [446.4] },
+          { "level": 7, "multipliers": [474.3] },
+          { "level": 8, "multipliers": [502.2] },
+          { "level": 9, "multipliers": [530.1] },
+          { "level": 10, "multipliers": [558.0] },
+          { "level": 11, "multipliers": [585.9] },
+          { "level": 12, "multipliers": [613.8] },
+          { "level": 13, "multipliers": [641.7] },
+          { "level": 14, "multipliers": [669.6] },
+          { "level": 15, "multipliers": [697.5] },
+          { "level": 16, "multipliers": [725.4] }
+        ]
+      }
+    ],
+
+    "quickAssists": [
+      {
+        "id": "severian_lowell-quick_assist-field_orders",
+        "name": "Field Orders (Quick Assist)",
+        "description": "When the active character is launched, press [ASSIST] to activate:\n\nDashes forward quickly, unleashing claw strikes and slashes at enemies ahead to deal Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [64.2] },
+          { "level": 2, "multipliers": [70.1] },
+          { "level": 3, "multipliers": [76.0] },
+          { "level": 4, "multipliers": [81.9] },
+          { "level": 5, "multipliers": [87.8] },
+          { "level": 6, "multipliers": [93.7] },
+          { "level": 7, "multipliers": [99.6] },
+          { "level": 8, "multipliers": [105.5] },
+          { "level": 9, "multipliers": [111.4] },
+          { "level": 10, "multipliers": [117.3] },
+          { "level": 11, "multipliers": [123.2] },
+          { "level": 12, "multipliers": [129.1] },
+          { "level": 13, "multipliers": [135.0] },
+          { "level": 14, "multipliers": [140.9] },
+          { "level": 15, "multipliers": [146.8] },
+          { "level": 16, "multipliers": [152.7] }
+        ]
+      },
+
+      {
+        "id": "severian_lowell-quick_assist-clear_out",
+        "name": "Clear Out (Entry Skill)",
+        "description": "When Severian has /bWindborne//b and is in combat, press [ASSIST] to switch him into battle and activate:\n\nUnleashes a powerful slash against enemies ahead, dealing Wind DMG. Activating this skill is considered activating a /bQuick Assist//b. This skill is not counted as a heavy attack. Character is invulnerable while using this skill.",
+        "skillType": "quickAssist",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [154.1] },
+          { "level": 2, "multipliers": [168.2] },
+          { "level": 3, "multipliers": [182.3] },
+          { "level": 4, "multipliers": [196.4] },
+          { "level": 5, "multipliers": [210.5] },
+          { "level": 6, "multipliers": [224.6] },
+          { "level": 7, "multipliers": [238.7] },
+          { "level": 8, "multipliers": [252.8] },
+          { "level": 9, "multipliers": [266.9] },
+          { "level": 10, "multipliers": [281.0] },
+          { "level": 11, "multipliers": [295.1] },
+          { "level": 12, "multipliers": [309.2] },
+          { "level": 13, "multipliers": [323.3] },
+          { "level": 14, "multipliers": [337.4] },
+          { "level": 15, "multipliers": [351.5] },
+          { "level": 16, "multipliers": [365.6] }
+        ]
+      }
+    ],
+
+    "perfectAssists": null,
+
+    "assistFollowup": [
+      {
+        "id": "severian_lowell-assist_follow_up-fight_force_with_force",
+        "name": "Fight Force with Force (Assist Follow-Up)",
+        "description": "Press [BASIC] after a [PERFECT] to activate:\n\nUnleashes slashes, claw strikes, and cannon fire against enemies in sequence, dealing Wind DMG. Character is invulnerable while using this skill.",
+        "skillType": "followup",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [364.7] },
+          { "level": 2, "multipliers": [397.9] },
+          { "level": 3, "multipliers": [431.1] },
+          { "level": 4, "multipliers": [464.3] },
+          { "level": 5, "multipliers": [497.5] },
+          { "level": 6, "multipliers": [530.7] },
+          { "level": 7, "multipliers": [563.9] },
+          { "level": 8, "multipliers": [597.1] },
+          { "level": 9, "multipliers": [630.3] },
+          { "level": 10, "multipliers": [663.5] },
+          { "level": 11, "multipliers": [696.7] },
+          { "level": 12, "multipliers": [729.9] },
+          { "level": 13, "multipliers": [763.1] },
+          { "level": 14, "multipliers": [796.3] },
+          { "level": 15, "multipliers": [829.5] },
+          { "level": 16, "multipliers": [862.7] }
+        ]
+      }
+    ],
+
+    "specialAttacks": [
+      {
+        "id": "severian_lowell-special-gale_rend",
+        "name": "Gale Rend (Special Attack)",
+        "description": "Press [SPECIAL] to activate:\n\nUnleashes slashes and stabs forward, dealing Wind DMG.",
+        "skillType": "special",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [58.4] },
+          { "level": 2, "multipliers": [63.8] },
+          { "level": 3, "multipliers": [69.2] },
+          { "level": 4, "multipliers": [74.6] },
+          { "level": 5, "multipliers": [80.0] },
+          { "level": 6, "multipliers": [85.4] },
+          { "level": 7, "multipliers": [90.8] },
+          { "level": 8, "multipliers": [96.2] },
+          { "level": 9, "multipliers": [101.6] },
+          { "level": 10, "multipliers": [107.0] },
+          { "level": 11, "multipliers": [112.4] },
+          { "level": 12, "multipliers": [117.8] },
+          { "level": 13, "multipliers": [123.2] },
+          { "level": 14, "multipliers": [128.6] },
+          { "level": 15, "multipliers": [134.0] },
+          { "level": 16, "multipliers": [139.4] }
+        ]
+      }
+    ],
+
+    "exSkills": [
+      {
+        "id": "severian_lowell-ex_special_attack-swiftwind_rupture",
+        "name": "Swiftwind Rupture (EX Special Attack)",
+        "description": "With enough Energy, press [EX] to activate:\n\nUnleashes a combination of slashes, claw strikes, and cannon fire forward, dealing massive Wind DMG and gaining 1 stack of /bShadowflash//b.\n\nHold [EX] to continuously consume Energy before the cannon attack, and repeatedly launch wind blades that deal Wind DMG to enemies.\n\nWhen reaching the maximum amount of Energy consumed, gains an additional stack of /bShadowflash//b. Character is invulnerable while using this skill.",
+        "skillType": "ex",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "Combo Skill DMG Multiplier",
+            "damageType": "wind"
+          },
+          {
+            "name": "Wind Blade Max DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [566.0, 409.2] },
+          { "level": 2, "multipliers": [617.5, 446.4] },
+          { "level": 3, "multipliers": [669.0, 483.6] },
+          { "level": 4, "multipliers": [720.5, 520.8] },
+          { "level": 5, "multipliers": [772.0, 558.0] },
+          { "level": 6, "multipliers": [823.5, 595.2] },
+          { "level": 7, "multipliers": [875.0, 632.4] },
+          { "level": 8, "multipliers": [926.5, 669.6] },
+          { "level": 9, "multipliers": [978.0, 706.8] },
+          { "level": 10, "multipliers": [1029.5, 744.0] },
+          { "level": 11, "multipliers": [1081.0, 781.2] },
+          { "level": 12, "multipliers": [1132.5, 818.4] },
+          { "level": 13, "multipliers": [1184.0, 855.6] },
+          { "level": 14, "multipliers": [1235.5, 892.8] },
+          { "level": 15, "multipliers": [1287.0, 930.0] },
+          { "level": 16, "multipliers": [1338.5, 967.2] }
+        ]
+      }
+    ],
+
+    "chainAttacks": [
+      {
+        "id": "severian_lowell-chain_attack-coldblade_reap",
+        "name": "Coldblade Reap (Chain Attack)",
+        "description": "When a [CHAIN] is triggered, select the character to activate:\n\nPerforms a series of attacks forward, dealing massive Wind DMG. After using this skill, accumulates 35 /bFlow//b. Character is invulnerable while using this skill.",
+        "skillType": "chain",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [871.4] },
+          { "level": 2, "multipliers": [950.7] },
+          { "level": 3, "multipliers": [1030.0] },
+          { "level": 4, "multipliers": [1109.3] },
+          { "level": 5, "multipliers": [1188.6] },
+          { "level": 6, "multipliers": [1267.9] },
+          { "level": 7, "multipliers": [1347.2] },
+          { "level": 8, "multipliers": [1426.5] },
+          { "level": 9, "multipliers": [1505.8] },
+          { "level": 10, "multipliers": [1585.1] },
+          { "level": 11, "multipliers": [1664.4] },
+          { "level": 12, "multipliers": [1743.7] },
+          { "level": 13, "multipliers": [1823.0] },
+          { "level": 14, "multipliers": [1902.3] },
+          { "level": 15, "multipliers": [1981.6] },
+          { "level": 16, "multipliers": [2060.9] }
+        ]
+      }
+    ],
+
+    "ultimate": [
+      {
+        "id": "severian_lowell-ultimate-annihilating_windstorm",
+        "name": "Annihilating Windstorm (Ultimate)",
+        "description": "When Decibel Rating is at Maximum, press [ULTIMATE] to activate:\n\nUnleashes multiple rapid slashes in succession, dealing massive Wind DMG. After using this skill, accumulates 100 /bFlow//b. Character is invulnerable while using this skill.",
+        "skillType": "ultimate",
+        "statBase": "atk",
+        "hits": [
+          {
+            "name": "DMG Multiplier",
+            "damageType": "wind"
+          }
+        ],
+        "levels": [
+          { "level": 1, "multipliers": [2676.4] },
+          { "level": 2, "multipliers": [2919.8] },
+          { "level": 3, "multipliers": [3163.2] },
+          { "level": 4, "multipliers": [3406.6] },
+          { "level": 5, "multipliers": [3650.0] },
+          { "level": 6, "multipliers": [3893.4] },
+          { "level": 7, "multipliers": [4136.8] },
+          { "level": 8, "multipliers": [4380.2] },
+          { "level": 9, "multipliers": [4623.6] },
+          { "level": 10, "multipliers": [4867.0] },
+          { "level": 11, "multipliers": [5110.4] },
+          { "level": 12, "multipliers": [5353.8] },
+          { "level": 13, "multipliers": [5597.2] },
+          { "level": 14, "multipliers": [5840.6] },
+          { "level": 15, "multipliers": [6084.0] },
+          { "level": 16, "multipliers": [6327.4] }
+        ]
+      }
+    ],
+
+    "mindscapeAbilities": []
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 interface FooterProps {
   theme?: string;
@@ -13,6 +14,7 @@ const Footer: React.FC<FooterProps> = ({
 }) => {
   const linkClass =
     linkVariant === "manager" ? "manager-social-link" : "social-link";
+  const { trackEvent } = useAnalytics();
 
   return (
     <div
@@ -38,6 +40,13 @@ const Footer: React.FC<FooterProps> = ({
             rel="noopener noreferrer"
             className={linkClass}
             title="Join our Discord"
+            onClick={() =>
+              trackEvent("zzz_footer_click", {
+                button: "discord",
+                destination: "https://discord.gg/yjZCUpWn9",
+                link_variant: linkVariant,
+              })
+            }
           >
             <svg
               className="social-icon"
@@ -58,6 +67,13 @@ const Footer: React.FC<FooterProps> = ({
             rel="noopener noreferrer"
             className={`${linkClass} donation`}
             title="Support me on Ko-fi"
+            onClick={() =>
+              trackEvent("zzz_footer_click", {
+                button: "kofi",
+                destination: "https://ko-fi.com/ztunner",
+                link_variant: linkVariant,
+              })
+            }
           >
             <svg
               className="social-icon"
