@@ -6,7 +6,7 @@ export interface SiteNotification extends NotifyOptions {
 
 export const siteNotifications: SiteNotification[] = [
   {
-    id: "notification_discord_1",
+    id: "notification_discord_2",
     title: "Join the Z-Tunner Discord!",
     message:
       "If you have any feedback about Z-Tunner, feel free to share it on the server!",
@@ -14,19 +14,23 @@ export const siteNotifications: SiteNotification[] = [
     duration: 15000,
     action: {
       label: "Join Server",
-      href: "https://discord.gg/yjZCUpWn9",
+      href: "https://discord.gg/DjzfEemmv",
     },
     delay: 2500,
     theme: "#8891f0",
   },
   {
-    id: "notification_severian_lowell",
-    title: "ADDED: SEVERIAN LOWELL",
-    message: "Severian and his W-Engine are now available in Z-Tunner.",
+    id: "notification_invitation",
+    title: "If you want Sunbringer...",
+    message:
+      "You can use my ZZZ invitation link for a 50/50 chance to get Sunbringer added to Z-Tunner early (It'd be a great help 🤙).",
     type: "info",
-    duration: 10000,
+    duration: 20000,
+    action: {
+      label: "PRE-REGISTER",
+      href: "https://hoyo.link/tW2iGahe8?s_c=GUMPA9VM2K&utm_share=return",
+    },
     delay: 3000,
-    theme: "#4461d4",
   },
   // {
   //   id: "changelog_v1_2",

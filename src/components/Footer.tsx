@@ -35,7 +35,7 @@ const Footer: React.FC<FooterProps> = ({
         <div className="social-links">
           {/* Discord */}
           <a
-            href="https://discord.gg/yjZCUpWn9"
+            href="https://discord.gg/DjzfEemmv"
             target="_blank"
             rel="noopener noreferrer"
             className={linkClass}
@@ -43,7 +43,7 @@ const Footer: React.FC<FooterProps> = ({
             onClick={() =>
               trackEvent("zzz_footer_click", {
                 button: "discord",
-                destination: "https://discord.gg/yjZCUpWn9",
+                destination: "https://discord.gg/DjzfEemmv",
                 link_variant: linkVariant,
               })
             }

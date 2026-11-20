@@ -6,25 +6,10 @@
       "rooms": [
         {
           "id": "room_1",
-          "label": "Room 1: Etheric Other - Truvia",
+          "label": "Room 1: Infernal Revenant",
           "effects": [
             {
               "id": "game_mode_da_room1_effect_a",
-              "label": "Etheric Other - Truvia - Anomaly DMG",
-              "description": "... While in the Wax Wings state, the Boss takes 30% increased Attribute Anomaly DMG and accumulates an additional 5% Daze when entering an Attrobute Anomaly state, but no longer gains Afterglow Marks. ... ",
-              "shortDescription": "All squad members' Anomaly DMG is increased by 30%.",
-              "source": "gameMode",
-              "target": "team",
-              "perStack": { "anomalyDmgBonus": 0.3 }
-            }
-          ]
-        },
-        {
-          "id": "room_2",
-          "label": "Room 2: Infernal Revenant",
-          "effects": [
-            {
-              "id": "game_mode_da_room2_effect_a",
               "label": "Infernal Revenant - Anomaly DMG",
               "description": "After Infernal Revenant enters the Infernal state, the Attribute Anomaly DMG it takes is reduced by 30%. Every flintstone shattered gives 20 Energy to the whole team. Every time Chain Parry is triggered, the Boss gains 1 stacks of Overheat; triggering Defensive Assist or Perfect Dodge 2 times in total applies 1 stack of Overheat on the Boss, and each stack of Overheat increases CRIT DMG of the whole squad by 25%, stacking up to 3 times and lasting 20s. Triggering Defensive Assit or retriggering Overheat resets the duration. ...",
               "shortDescription": "All squad members' Anomaly DMG is decreased by 30%.",
@@ -33,7 +18,7 @@
               "perStack": { "anomalyDmgBonus": -0.3 }
             },
             {
-              "id": "game_mode_da_room2_effect_b",
+              "id": "game_mode_da_room1_effect_b",
               "label": "Infernal Revenant - CRIT DMG",
               "description": "After Infernal Revenant enters the Infernal state, the Attribute Anomaly DMG it takes is reduced by 30%. Every flintstone shattered gives 20 Energy to the whole team. Every time Chain Parry is triggered, the Boss gains 1 stacks of Overheat; triggering Defensive Assist or Perfect Dodge 2 times in total applies 1 stack of Overheat on the Boss, and each stack of Overheat increases CRIT DMG of the whole squad by 25%, stacking up to 3 times and lasting 20s. Triggering Defensive Assit or retriggering Overheat resets the duration. ...",
               "shortDescription": "All squad members' CRIT DMG is increased by 25% for 20s, stacking up to 3 times.",
@@ -45,20 +30,41 @@
           ]
         },
         {
+          "id": "room_2",
+          "label": "Room 2: Kusarikku",
+          "effects": [
+            {
+              "id": "game_mode_da_room2_effect_a",
+              "label": "Kusarikku - Anomaly DMG",
+              "description": "... Attribute Anomaly DMG taken by Kusarikku is reduced by 40%. ...",
+              "shortDescription": "All squad members' Anomaly DMG is decreased by 40%.",
+              "source": "gameMode",
+              "target": "team",
+              "perStack": { "anomalyDmgBonus": -0.4 }
+            },
+            {
+              "id": "game_mode_da_room2_effect_b",
+              "label": "Kusarikku - Anomaly DMG",
+              "description": "... When an Agent successfully uses a Defensive Assist agains Kusarikku's Rift Assault, applies 1 stack of Exposed to Kusarikku. When Kusarikku becomes Stunned, applies 2 stacks of Exposed. Each stack of Exposed increases Laceration DMG Kusarikku receives by 20%. Exposed can stack up to 4 times and lasts 30s. Repeated triggers reset the duration. ...",
+              "shortDescription": "All squad members' Laceration DMG is increased by 20% for 30s, stacking up to 4 times.",
+              "source": "gameMode",
+              "target": "team",
+              "flat": { "lacerationDmg": 0.2 }
+            }
+          ]
+        },
+        {
           "id": "room_3",
-          "label": "Room 3: Typhon Destroyer",
+          "label": "Room 3: Phaeton of the Scorched Horizon",
           "effects": [
             {
               "id": "game_mode_da_room3_effect_a",
-              "label": "Typhon Destroyer - Anomaly DMG",
-              "description": "Agents inflict Overwhelmed when loading a Defensive Assist hit against a Boss enemy, and 3 stacks of Overwhelmed when accumulating 3 Defensive Assist hits and triggering Impaired. Each stack of Overwhelmed increases Daze by 15%, and Chain Attack and Ultimate DMG taken while Stunned by 10%. The enemy will fix the impaired parts and reset the impairment level while charging, and will reset its Overwhelmed stacks after recovering from Stun. ...",
-              "shortDescription": "All squad members' DMG from Chain Attacks and Ultimates is increased by 10%.",
+              "label": "Phaeton of the Scorched Horizon - CRIT DMG",
+              "description": "... After Scorched Horizon activates Gale Scorcher, they gain 5 stacks of Into Flames. Each stack of Into Flames increases DMG dealt by 10% and reduces CRIT DMG taken by 25%. ...",
+              "shortDescription": "All squad members' CRIT DMG is decreased by 25%, stacking up to 5 times.",
               "source": "gameMode",
               "target": "team",
-              "damageBonuses": [
-                { "type": "skillType", "skillType": "ultimate", "value": 0.1 },
-                { "type": "skillType", "skillType": "chain", "value": 0.1 }
-              ]
+              "perStack": { "critDmg": -0.25 }
             }
           ]
         }
@@ -70,22 +76,34 @@
           "effects": [
             {
               "id": "game_mode_da_buff1_effect_a",
-              "label": "Deadly Assault: Blazing Radiance",
-              "description": "Anomaly specialty Agents' ATK increases by 10%, and Fire Anomaly Buildup Rate increases by 10%. ...",
-              "shortDescription": "Anomaly Agents' ATK is increased by 10%.",
+              "label": "Deadly Assault: Sweeping Frost",
+              "description": "Agents' Wind DMG increases by 30%. When attacks hit enemies, ignore 30% of their Wind RES. ...",
+              "shortDescription": "All squad members' Wind DMG is increased by 30%, and their DMG ignores 30% of the target's Wind RES.",
               "source": "gameMode",
               "target": "team",
-              "flat": { "atkPercentRaw": 0.1 },
-              "condition": { "requiresSpecialty": "Anomaly" }
+              "damageBonuses": [
+                {
+                  "type": "element",
+                  "element": "wind",
+                  "value": 0.3
+                }
+              ],
+              "perStack": { "windResShred": 0.3 }
             },
             {
               "id": "game_mode_da_buff1_effect_b",
-              "label": "Deadly Assault: Blazing Descent",
-              "description": "... When an Agent deals Attribute Anomaly DMG and triggers a critical hit, the whole squad's Anomaly Proficiency increases by 30 and Attribute Anomaly DMG increases by 10% for 15s; repeated triggers reset the duration. ...",
-              "shortDescription": "All squad members' Anomaly Proficiency is increased by 30, and their Anomaly DMG is increased by 10% for 15s.",
+              "label": "Deadly Assault: Sweeping Frost",
+              "description": "... Attack specialty Agents's CRIT DMG icnreases by 40% and Basic Attack DMG increases by 50%.",
+              "shortDescription": "Attack Agents' CRIT DMG is increased by 40%, and their DMG from Basic Attacks is increased by 50%.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "anomalyProficiency": 30, "anomalyDmgBonus": 0.1 }
+              "damageBonuses": [
+                { "type": "skillType", "skillType": "basic", "value": 0.5 }
+              ],
+              "perStack": { "critDmg": 0.4 },
+              "condition": {
+                "requiresReceiverSpecialty": ["Attack"]
+              }
             }
           ]
         },
@@ -95,21 +113,30 @@
           "effects": [
             {
               "id": "game_mode_da_buff2_effect_a",
-              "label": "Deadly Assault: Storm Tribulation",
-              "description": "Agents' Wind DMG increases by 40%, and Wind CRIT DMG increases by 40%.",
-              "shortDescription": "All squad members' Wind DMG is increased by 40%, and their Wind CRIT DMG is increased by 40%.",
+              "label": "Deadly Assault: Surging Thunder",
+              "description": "Agents' DEF increases by 10%, and their Sharp DMG increases by 15%. ...",
+              "shortDescription": "All squad members' DEF is increased by 10%, and their Sharp DMG is increased by 15%. ...",
+              "source": "gameMode",
+              "target": "team",
+              "perStack": { "defPercentRaw": 0.1, "sharpDmgBonus": 0.15 }
+            },
+            {
+              "id": "game_mode_da_buff2_effect_b",
+              "label": "Deadly Assault: Surging Thunder",
+              "description": "... After an Agent uses an EX Special Attack, Special Attack, or Ultimate, Electric DMG and Wind DMG increases by 20% for 15s; repeated triggers reset the duration.",
+              "shortDescription": "... All squad members' Electric DMG and Wind DMG is increased by 20% for 15s.",
               "source": "gameMode",
               "target": "team",
               "damageBonuses": [
                 {
                   "type": "element",
-                  "element": "wind",
-                  "value": 0.4
+                  "element": "electric",
+                  "value": 0.2
                 },
                 {
-                  "type": "critDamageElementalBonus",
+                  "type": "element",
                   "element": "wind",
-                  "value": 0.4
+                  "value": 0.2
                 }
               ]
             }
@@ -121,35 +148,22 @@
           "effects": [
             {
               "id": "game_mode_da_buff3_effect_a",
-              "label": "Deadly Assault: Corroding Edge",
-              "description": "Agents' Electric DMG increases by 30%, Sharp DMG increases by 10%.",
-              "shortDescription": "All squad members' Electric DMG is increased by 30%, and their Sharp DMG is increased by 10%. ...",
+              "label": "Deadly Assault: Spirit Zenith",
+              "description": "Anomaly specialty Agents' ATK increases by 10%, and Fire and Wind Anomaly Buildup Rate increases by 10%.",
+              "shortDescription": "Anomaly Agents' ATK is increased by 10%.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "sharpDmgBonus": 0.1 },
-              "damageBonuses": [
-                {
-                  "type": "element",
-                  "element": "electric",
-                  "value": 0.3
-                }
-              ]
+              "perStack": { "atkPercentRaw": 0.1 },
+              "condition": { "requiresSpecialty": "Anomaly" }
             },
             {
               "id": "game_mode_da_buff3_effect_b",
-              "label": "Deadly Assault: Corroding Edge",
-              "description": "... Attack or Armorer specialty Agents' PEN Ratio increases by 20%, and DMG dealt by Special Attack and EX Special Attack increases by 30%.",
-              "shortDescription": "Attack and Armorer Agents' PEN Ratio is increased by 20%, and their DMG from Special Attacks and EX Special Attacks is increased by 30%.",
+              "label": "Deadly Assault: Spirit Zenith",
+              "description": "... When an Agent deals Attribute Anomaly DMG and triggers a critical hit, the whole squad gains 20 Energy, and Attribute Anomaly DMG increases by 20% for 20s. This effect can trigger once every 20s.",
+              "shortDescription": "All squad members' Anomaly DMG is increased by 20% for 20s.",
               "source": "gameMode",
               "target": "team",
-              "perStack": { "penRatio": 0.2 },
-              "damageBonuses": [
-                { "type": "skillType", "skillType": "special", "value": 0.3 },
-                { "type": "skillType", "skillType": "ex", "value": 0.3 }
-              ],
-              "condition": {
-                "requiresReceiverSpecialty": ["Attack", "Armorer"]
-              }
+              "perStack": { "anomalyDmgBonus": 0.2 }
             }
           ]
         }
@@ -199,7 +213,7 @@
               "id": "game_mode_sd_room2_effect_a",
               "label": "Shiyu Defense: Miasmic - Doppelganger - The Defector",
               "description": "Agents with the Anomaly specialty that deal Attribute Anomaly DMG and trigger a CRIT increase the whole squad's ATK by 10% and Attribtue Anomaly DMG by 20% for 15s; repeated triggers reset the duration. ...",
-              "shortDescription": "Anomaly Agents' ATK is increased by 1%, and their Anomaly DMG is increased by 20% for 15s.",
+              "shortDescription": "Anomaly Agents' ATK is increased by 10%, and their Anomaly DMG is increased by 20% for 15s.",
               "source": "gameMode",
               "target": "team",
               "perStack": { "atkPercentRaw": 0.1, "anomalyDmgBonus": 0.2 },
